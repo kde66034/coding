@@ -72,6 +72,9 @@
             font-weight: normal;
             margin-bottom: 10px;
         }
+        .article h3 {
+            font-weight: normal;
+        }
         .article p {
             margin-bottom: 10px;
         }
@@ -139,47 +142,48 @@
             </ul>
         </nav>
         <article class="article">
-            <h2>HTML 기본 문서</h2>
-            <p>HTML 기본 문서의 &lt;html&gt; 요소는 &lt;head&gt; 요소와 &lt;body&gt; 요소로 구성되어 있으며, &lt;head&gt; 요소 안에는 &lt;meta&gt;, &lt;title&gt;,
-                &lt;link&gt;, &lt;style&gt;, &lt;script&gt; 등의 요소들이 올 수 있습니다.
+            <h2>마크업 기본 문법 규칙</h2>
+            <p>마크업을 할 때 기본적으로 알고 있어야 하는 문법 규칙들</p>
+
+            <h3>1. 요소는 시작 태그와 종료 태그가 있어야 합니다.</h3>
+            <p class="box">&lt;p&gt;요소는 시작 태그와 종료 태그가 있어야 한다.&lt;/p&gt; (O)<br>
+                &lt;p&gt;요소는 시작 태그와 종료 태그가 있어야 한다. (X)
             </p>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>요소명</th>
-                        <th>설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="center">&lt;meta&gt;</td>
-                        <td>HTML 문서의 설명, 키워드, 문서의 작정자 등을 지정</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;title&gt;</td>
-                        <td>HTML 문서의 제목 지정</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;link&gt;</td>
-                        <td>외부의 CSS 파일을 HTML 문서에 연결 시 사용</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;style&gt;</td>
-                        <td>HTML 문서 내에서 스타일(CSS)을 정의함</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;script&gt;</td>
-                        <td>자바스크립트를 HTML 문서 내부에 정의, 외부에서 자바스크립트 파일을 불러올 때 사용</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="box">
-                &lt;meta name = "viewport" /&gt;
+            <p>태그 중에는 종료 태그가 없는 요소도 있는데 이러한 요소를 빈 요소(empty element)라고 하며 
+                자주 사용되는 빈 요소에는 &lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, &lt;input&gt;, &lt;meta&gt;, &lt;link&gt; 등이 있습니다.
             </p>
-            <p>뷰포트라고 하면 문서를 조절해 주는 속성이다.</p>
-            <p class="box">
-                &lt;style name = "viewport" /&gt;
+
+            <h3>2. 요소는 제대로 중첩되어야 합니다.</h3>
+            <p class="box">&lt;p&gt;중첩된 요소가 있을 때는 &lt;strong&gt;바르게&lt;/strong&gt; 표현해야 한다. &lt;/p&gt; (O)<br>
+                &lt;p&gt;중첩된 요소가 있을 때는 &lt;strong&gt;바르게&lt;/p&gt; 표현해야 한다. &lt;/strong&gt; (X)
             </p>
+            <p>마지막에 정의한 태그를 가장 먼저 닫아야 한다는 뜻이며, 이런 중첩 관계를 부모-자식 관계라고도 합니다. 위의 예시에서는 &lt;p&gt;가 부모, &lt;strong&gt;이 자식 요소가 되죠.
+            </p>
+
+            <h3>3. img 태그에는 alt 속성이 있어야 합니다.</h3>
+            <p class="box">&lt;img src="images/today.gif alt="오늘"&gt; (O)<br>
+                &lt;img src="images/today.gif&gt; (X)
+            </p>
+            <p>alt 속성을 지정해야 하는 이유는 문법적으로도 필요하나, 이미지를 보지 못하는 환경에서도 이에 대한 정보가 제공되어야 하기 때문입니다.
+            </p>
+
+            <h3>4. 권장하는 사항도 있습니다.</h3>
+            <p class="box">&lt;p&gt;태그나 속성은 소문자로 마크업 하는 것을 권장한다. &lt;/p&gt; (권장)<br>
+                &lt;P&gt;태그나 속성은 소문자로 마크업 하는 것을 권장한다. &lt;/P&gt;<br>
+                &lt;p title="속성 값"&gt;속성의 값에는 따옴표 처리를 권장한다. &lt;/p&gt; (권장)<br>
+                &lt;p title=속성 값&gt;속성의 값에는 따옴표 처리를 권장한다. &lt;/p&gt;
+            </p>
+            <p>가급적 소문자로 통일해서 마크업하며, 속성에 대한 값에 따옴표 처리를 하는 것을 권장합니다.
+            </p>
+
+            <h3>5. 주석처리 방법</h3>
+            <p>주석이란 협업 시 다음 작업자가 현재 작업 중인 내용을 이해하기 쉽도록 도와주는 설명문이며, 이는 브라우저 화면에 출력되지 않고 처리 방법은 다음과 같습니다.
+            </p>
+            <p class="box">&lt;!-- header --&gt;<br>
+                &lt;!-- 여기서부터 공지 사항입니다. --&gt;
+            </p>
+
+            
         </article>
     </section>
 </body>
