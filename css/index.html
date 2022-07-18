@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
+    <style>
+        /* 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'SCoreDream';
+        }
+        #main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            border: 8px solid #000;
+            box-sizing: border-box;
+        }
+        #main h1 {
+            font-size: 8vw;
+            text-align: center;
+            margin-bottom: 4vw;
+            line-height: 1.2;
+            
+        }
+        #main h1 em {
+            display: block;
+            font-style: normal;
+        }
+        #main nav {}
+        #main nav ul {}
+        #main nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #main nav ul li a {
+            font-size: 18px;
+            text-decoration: none;
+            color: #000;
+            padding: 1vw 2vw;
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin: 0.5vw;
+            transition: all 0.3s;
+        }
+        #main nav ul li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <h1>CSS <em>레퍼런스 북</em></h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>

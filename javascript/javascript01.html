@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 : 데이터 저장하기</title>
-    <!-- 오후에 자바스크립트 수업을 했습니다. -->
     
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="assets/ico/favicon2.png">
@@ -58,6 +57,29 @@
             font-size: 18px;
             line-height: 1.8;
         }
+
+        #plist {
+            padding: 4vw 2vw;
+            border-bottom: 1px dashed #cdcdcd;
+            
+        }
+
+        #plist ul li a {
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 800px) {
+            header h1 {
+                font-size: 40px;
+            }
+            header nav ul li a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,6 +94,12 @@
             </ul>
         </nav>
     </header>
+
+    <section id="plist">
+        <ul>
+            <li><a href="basic.html">자바스크립트 기본 규칙</a></li>
+        </ul>
+    </section>
 
     <main id="main">
         <div class="list">
