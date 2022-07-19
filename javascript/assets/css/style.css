@@ -1,12 +1,12 @@
 /* 웹 폰트 */
-@import url('https://webfontworld.github.io/NexonLv1GothicLow/NexonLv1GothicLow.css');
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 
 /* 리셋 */
 /* 여백 초기화 */
 * {
     margin: 0;
     padding: 0;
-    font-family: 'NexonLv1GothicLow';
+    font-family: 'NexonLv1Gothic';
     font-size: 16px;
     line-height: 1.6;
 }
