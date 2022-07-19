@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML 기초</title>
+    <title>시멘틱 마크업</title>
 
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <style>
@@ -142,47 +142,47 @@
             </ul>
         </nav>
         <article class="article">
-            <h2>마크업 기본 문법 규칙</h2>
-            <p>마크업을 할 때 기본적으로 알고 있어야 하는 문법 규칙들</p>
-
-            <h3>1. 요소는 시작 태그와 종료 태그가 있어야 합니다.</h3>
-            <p class="box">&lt;p&gt;요소는 시작 태그와 종료 태그가 있어야 한다.&lt;/p&gt; (O)<br>
-                &lt;p&gt;요소는 시작 태그와 종료 태그가 있어야 한다. (X)
+            <h2>시멘틱 마크업(Semantic markup)</h2>
+            <p>
+                시멘틱(semantic)의 사전적 의미는 '의미론적인'이며, 마크업을 할 때 의미에 부합하는 태그를
+                사용하라는 뜻입니다.
             </p>
-            <p>태그 중에는 종료 태그가 없는 요소도 있는데 이러한 요소를 빈 요소(empty element)라고 하며 
-                자주 사용되는 빈 요소에는 &lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, &lt;input&gt;, &lt;meta&gt;, &lt;link&gt; 등이 있습니다.
+            <p>
+                HTML 문서들은 시각으로 사용자들에게 정보를 전달하지만, 시각장애인과 같이 시각으로 정보를
+                전달받지 못하는 사람들이 있습니다. 
             </p>
-
-            <h3>2. 요소는 제대로 중첩되어야 합니다.</h3>
-            <p class="box">&lt;p&gt;중첩된 요소가 있을 때는 &lt;strong&gt;바르게&lt;/strong&gt; 표현해야 한다. &lt;/p&gt; (O)<br>
-                &lt;p&gt;중첩된 요소가 있을 때는 &lt;strong&gt;바르게&lt;/p&gt; 표현해야 한다. &lt;/strong&gt; (X)
+            <p class="box">
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="ko"&gt;<br>
+                &lt;head&gt;<br>
+                　　&lt;meta charset="UTF-8"&gt;<br>
+                　　&lt;title&gt;시멘틱 마크업&lt;/title&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                　　반응형웹<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt; 
             </p>
-            <p>마지막에 정의한 태그를 가장 먼저 닫아야 한다는 뜻이며, 이런 중첩 관계를 부모-자식 관계라고도 합니다. 위의 예시에서는 &lt;p&gt;가 부모, &lt;strong&gt;이 자식 요소가 되죠.
+            <p>
+                만약 위의 예시에서 body 태그 안의 '반응형웹'이 문서 내에서 제목으로
+                사용되었다고 가정할 경우, 스크린 리더(음성낭독프로그램)에서는 이를 그저
+                '반응형웹'이라고만 읽을 뿐 이것이 제목인지를 알 수 없습니다.
             </p>
-
-            <h3>3. img 태그에는 alt 속성이 있어야 합니다.</h3>
-            <p class="box">&lt;img src="images/today.gif alt="오늘"&gt; (O)<br>
-                &lt;img src="images/today.gif&gt; (X)
+            <p class="box">
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="ko"&gt;<br>
+                &lt;head&gt;<br>
+                　　&lt;meta charset="UTF-8"&gt;<br>
+                　　&lt;title&gt;시멘틱 마크업&lt;/title&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                　　&lt;h1&gt;반응형웹&lt;/h1&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt; 
             </p>
-            <p>alt 속성을 지정해야 하는 이유는 문법적으로도 필요하나, 이미지를 보지 못하는 환경에서도 이에 대한 정보가 제공되어야 하기 때문입니다.
+            <p>하지만 위와 같이 '반응형웹' 부분을 제목을 의미하는 &lt;h1&gt; 태그로 감싼다면 
+                스크린 리더가 이를 '반응형웹 헤딩 일'이라고 읽어 이 부분이 제목임을 쉽게 알 수 있습니다.
             </p>
-
-            <h3>4. 권장하는 사항도 있습니다.</h3>
-            <p class="box">&lt;p&gt;태그나 속성은 소문자로 마크업 하는 것을 권장한다. &lt;/p&gt; (권장)<br>
-                &lt;P&gt;태그나 속성은 소문자로 마크업 하는 것을 권장한다. &lt;/P&gt;<br>
-                &lt;p title="속성 값"&gt;속성의 값에는 따옴표 처리를 권장한다. &lt;/p&gt; (권장)<br>
-                &lt;p title=속성 값&gt;속성의 값에는 따옴표 처리를 권장한다. &lt;/p&gt;
-            </p>
-            <p>가급적 소문자로 통일해서 마크업하며, 속성에 대한 값에 따옴표 처리를 하는 것을 권장합니다.
-            </p>
-
-            <h3>5. 주석처리 방법</h3>
-            <p>주석이란 협업 시 다음 작업자가 현재 작업 중인 내용을 이해하기 쉽도록 도와주는 설명문이며, 이는 브라우저 화면에 출력되지 않고 처리 방법은 다음과 같습니다.
-            </p>
-            <p class="box">&lt;!-- header --&gt;<br>
-                &lt;!-- 여기서부터 공지 사항입니다. --&gt;
-            </p>
-
             
         </article>
     </section>

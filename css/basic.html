@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+
+        #header {
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1 {
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            display: inline-block;
+            padding: 0.7vw 1vw 0.3vw 1vw;
+            
+        }
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* 컨텐츠  */
+        #contents {
+            padding: 2vw;
+        }
+        #contents .menu {
+            border-bottom: 1px dashed #dedede;
+            padding-bottom: 2vw;
+        }
+        
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+        #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            padding: 0.7vw 1vw 0.3vw 1vw;
+            word-break: keep-all;
+            display: inline-block;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+            
+        }
+        .article p {
+            margin-bottom: 10px;
+        }
+        .article .table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+        .article .table tr th {
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td {
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center {
+            text-align: center;
+        }
+        .article .box {
+            background-color: #f5f5f5;
+            padding: 15px;
+        }
+
+        /* 미디어 쿼리 */
+        @media (max-width: 800px) {
+            #header {
+                padding: 16px;
+            }
+            #header h1 {
+                font-size: 40px;
+            }
+            #header nav ul li a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="basic.html">CSS 단위</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <h2>font-size, 단위의 고찰</h2>
+            <p>
+                문자의 글자 크기를 지정하는 속성이며 크기를 명시하지 않을 시 기본 크기는 16px입니다.
+            </p>
+
+            <h3>1. px</h3>
+            <p>
+                해상도에 따라 상대적으로 달라지는 기본 단위입니다.
+            </p>
+            <p class="box">
+                font-size: 12px;
+            </p>
+            <!-- 1. px -->
+
+            <h3>2. %</h3>
+            <p>
+                부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위로, 다음과 같이 표현합니다.
+            </p>
+            <p class="box">
+                font-size: 150px;
+            </p>
+            <p>
+                특별한 설정이 없다면 16px이 100%가 되므로, 150%는 24px이 됩니다.
+                부모 요소가 10px이라면 150%는 15px이 되죠.
+            </p>
+            <!-- 2. % -->
+
+            <h3>3. em</h3>
+            <p>
+                부모 요소의 글자 크기를 100% 기준으로 계산한 100분의 1 단위로, 다음과 같이 표현합니다.
+            </p>
+            <p class="box">
+                font-size: 1.5em;
+            </p>
+            <p>
+                특별한 설정이 없다면 16px이 1em가 되므로, 1.5em은 24px(16px × 1.5 = 24px)이 됩니다.
+                부모 요소가 10px이라면 1.5em는 15px이 되죠.
+            </p>
+            <p>
+                글자 크기를 각 단위로 환산하면 다음과 같습니다.
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>px</th>
+                        <th>%</th>
+                        <th>em</th>
+                        <th>pt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">8px</td>
+                        <td class="center">50%</td>
+                        <td class="center">0.500em</td>
+                        <td class="center">6pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">12px</td>
+                        <td class="center">75%</td>
+                        <td class="center">0.750em</td>
+                        <td class="center">9pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">16px</td>
+                        <td class="center">100%</td>
+                        <td class="center">1.000em</td>
+                        <td class="center">12pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">20px</td>
+                        <td class="center">125%</td>
+                        <td class="center">1.250em</td>
+                        <td class="center">15pt</td>
+                    </tr>
+                    <tr>
+                        <td class="center">24px</td>
+                        <td class="center">150%</td>
+                        <td class="center">1.500em</td>
+                        <td class="center">18pt</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 3. em -->
+            
+            <h3>4. rem</h3>
+            <p>
+                rem은 em과 비슷하나 부모요소가 아닌 최상위 요소의 크기를 100% 기준으로 계산합니다.
+                rem의 r은 root 즉, html 요소를 뜻하므로 html 요소에서 지정한 글자 크기가 1rem이 됩니다.
+            </p>
+            <p class="box">
+                font-size: 1.5rem;
+            </p>
+            <p>
+                아래의 예제에서 em과 rem의 차이점을 알아봅시다.
+            </p>
+            <p class="box">
+                &lt;head&gt;<br>
+                　　&lt;meta charset="UTF-8"&gt;<br>
+                　　&lt;title&gt;글자의 단위&lt;/title&gt;<br>
+                　　&lt;style type="text/css"&gt;<br>
+                　　　　① html { font-size: 24px; }<br>
+                　　　　② ul { font-size: 12px; }<br>
+                　　　　③ li { font-size: 1.5em; }<br>
+                　　　　④ li:nth-child(4) { font-size: 1.5rem; }<br>
+                　　&lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                　　&lt;p&gt;오늘 진료는 본관에서 실시합니다.&lt;/p&gt;<br>
+                　　&lt;ul&gt;<br>
+                　　　　&lt;li&gt;내과&lt;/li&gt;<br>
+                　　　　&lt;li&gt;이비인후과&lt;/li&gt;<br>
+                　　　　&lt;li&gt;정형외과&lt;/li&gt;<br>
+                　　　　&lt;li&gt;피부과&lt;/li&gt;<br>
+                　　&lt;/ul&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt; 
+            </p>
+            <p>
+                ① root - 최상위 요소의 글자 크기를 24px로 지정
+            </p>
+            <p>
+                ② ul의 글자 크기는 12px로 지정
+            </p>
+            <p>
+                ③ 모든 li의 글자 크기는 부모 요소인 ul 글자 크기 12px의 1.5배 즉, 18px
+            </p>
+            <p>
+                ④ 네 번째 li의 글자 크기는 최상위 요소 html의 글자 크기의 1.5배 즉, 36px
+            </p>
+            <!-- 4. rem -->
+
+            <h3>5. vw, vh</h3>
+            <p>
+                vw는 뷰포트 너비값의 100분의 1 단위, vh는 뷰포트 높이값의 100분의 1 단위이며
+                다음과 같이 표현합니다.
+            </p>
+            <p class="box">
+                font-size: 10vw;
+            </p>
+            <p>
+                위 예문은 글자 크기가 뷰포트 너비의 10% 크기라는 의미입니다.
+            </p>
+            <p>
+                다음 예제에서는 h3는 뷰포트의 5%에 해당하는 글자 크기를 갖게 되고, p는 뷰포트의 50%에 해당하는
+                가로 크기를 가지게 됩니다.
+            </p>
+            <p class="box">
+                &lt;head&gt;<br>
+                　　&lt;meta charset="UTF-8"&gt;<br>
+                　　&lt;title&gt;뷰포트 기준 단위&lt;/title&gt;<br>
+                　　&lt;style type="text/css"&gt;<br>
+                　　　　h3 { font-size: 5vw; }<br>
+                　　　　p { font-size: 50vw; }<br>
+                　　&lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                　　&lt;h3&gt;과일&lt;/h3&gt;<br>
+                　　&lt;p&gt;여름 복숭아는 장마철 재배했을 때 비를 맞아 당도가 떨어지는 경우가 많다.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt; 
+            </p>
+        </article>
+    </section>
+</body>
+</html>
