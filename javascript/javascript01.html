@@ -83,6 +83,7 @@
                     </details>
                 </div>
             </div>
+            <!-- sample01 -->
 
             <div id="sample02" class="sample">
                 <h3>02. 변수 : 데이터 저장 + 데이터 변경</h3>
@@ -111,6 +112,55 @@
                     </details>
                 </div>
             </div>
+            <!-- sample02 -->
+
+            <div id="sample03" class="sample">
+                <h3>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</h3>
+                <p>기존 변수에 저장해두었던 데이터를 변경하고 추가할 수 있습니다.</p>
+                <div class="script">
+<pre><code lang="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;   // 변수 x의 값에 300을 추가 (x+300)
+    y += 400;   // 변수 y의 값에 400을 추가 (y+400)
+    z += "jquery";  // 변수 z의 값에 문자열 "jquery"를 추가 (z+"jquery")
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample03_result">
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- sample03 -->
+
+            <div id="sample04" class="sample">
+                <h3>04. 변수 : 지역 변수 + 전역 변수 + 매개 변수</h3>
+                <p>변수는 어디에 쓰냐에 따라 지역변수와 전역변수로 나눌 수 있습니다.</p>
+                <div class="script">
+<pre><code lang="language-js">{
+    
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample04_result">
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- sample04 -->
 
         </div>
         <!-- // main_sample -->
@@ -157,6 +207,23 @@
             //document.write(z);
 
             document.querySelector(".sample02_result").innerHTML = x + "<br>" + y + "<br>" + z;
+        }
+
+        // 03
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x += 300;   // 변수 x의 값에 300을 추가 (x+300)
+            y += 400;   // 변수 y의 값에 400을 추가 (y+400)
+            z += "jquery";  // 변수 z의 값에 문자열 "jquery"를 추가 (z+"jquery")
+
+            //document.write(x);
+            //document.write(y);
+            //document.write(z);
+
+            document.querySelector(".sample03_result").innerHTML = x + "<br>" + y + "<br>" + z;
         }
     </script>
 </body>
