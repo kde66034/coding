@@ -15,7 +15,7 @@
         <h1>JavaScript</h1>
         <nav class="header_nav">
             <ul>
-                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
                 <li><a href="javascript02.html">데이터 불러오기</a></li>
                 <li><a href="javascript03.html">데이터 실행하기</a></li>
                 <li><a href="javascript04.html">데이터 제어하기</a></li>
@@ -28,11 +28,11 @@
                 <li><a href="#">브라우저 객체</a></li>
                 <li><a href="#">요소 객체</a></li>
                 <li><a href="#">이벤트 객체</a></li>
-                <li><a href="operator.html">연산자</a></li>
             </ul>
             <ul class="study">
                 <li><a href="#">기본 규칙</a></li>
                 <li><a href="#">기본 명령어</a></li>
+                <li><a href="operator.html">연산자</a></li>
             </ul>
         </nav>
     </header>
@@ -457,7 +457,7 @@
             <!-- sample13 -->
 
             <div id="sample14" class="sample">
-                <h3>14. 객체 : 데이터 저장(키와 값) : 표현 방법 5</h3>
+                <h3>★14. 객체 : 데이터 저장(키와 값) : 표현 방법 5</h3>
                 <p>
                     배열 속에 객체가 있는 표현 방법입니다.
                 </p>
@@ -485,7 +485,7 @@
             <!-- sample14 -->
 
             <div id="sample15" class="sample">
-                <h3>15. 객체 : 데이터 저장(키와 값) : 표현 방법 6</h3>
+                <h3>★15. 객체 : 데이터 저장(키와 값) : 표현 방법 6</h3>
                 <p>
                     객체 속에 배열이 있는 표현 방법입니다.
                 </p>
@@ -758,6 +758,50 @@
 
             document.querySelector(".sample15_result").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.d;
         }
+
+        // 16 객체 : 객체 속의 변수
+        {
+            const a = 100;
+            const b = 200;
+            const c = "javascript";
+
+            const obj = {a, b, c}
+
+            // document.write(obj.a);
+            // document.write(obj.b);
+            // document.write(obj.c);
+        }
+
+        // 17 객체 : 객체 속의 함수
+        {
+            const obj = {
+                a : 100, 
+                b : [200, 300],
+                c : {x : 400, y : 500},
+                d : "javascript", 
+                e : function() {
+                    document.write("자바스크립트가 실행되었습니다.")
+                }, 
+                f : function() {
+                    document.write(obj.d + "가 실행되었습니다.")
+                }, 
+                g : function() {
+                    document.write(this.d + "가 실행되었습니다.")
+                }
+            }
+
+            document.write(obj.a);
+            document.write(obj.b[0]);
+            document.write(obj.b[1]);
+            document.write(obj.b);
+            document.write(obj.c.x);
+            document.write(obj.c.y);
+            document.write(obj.c);
+            obj.e();
+            obj.f();
+            obj.g();
+        }
+
     </script>
 </body>
 </html>
