@@ -38,230 +38,226 @@
     <!-- // header -->
 
     <main id="main">
-        <div class="main_menu">
-            <ul>
-                <li><a href="#sample01">01. 산술 연산자</a></li>
-                <li><a href="#sample02">02. 대입 연산자</a></li>
-                <li><a href="#sample03">03. 비교 연산자</a></li>
-                <li><a href="#sample04">04. 논리 연산자</a></li>
-            </ul>
+        <div class="document">
+            <h2 class="t_tit">자바스크립트 연산자</h2>
+            <p class="t_desc">
+                <i>프로그램에 필요한 수식을 만들 때  필요한 것</i>이 연산자이며 자바스크립트
+                에서 연산자에는 <i>산술 연산자</i>, <i>대입 연산자</i>, <i>비교 연산자</i>, <i>논리 연산자</i> 등이 있습니다.
+            </p>
+        
+        <hr>
+
+        <h3 class="t_tit2">01. 산술 연산자</h3>
+        <p class="t_desc">
+            사칙연산을 다루는 정도의 <i>기본적이고 아주 많이 쓰이는 중요한 연산자</i>입니다.
+        </p>
+        <table class="t_table">
+            <thead>
+                <tr>
+                    <th>산술 연산자 종류</th>
+                    <th>속성 설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2" class="ce">+</td>
+                    <td>더하기 연산을 할 때 사용</td>
+                </tr>
+                <tr>
+                    <td>문자와 문자, 문자와 변수 등을 연결할 때 사용</td>
+                </tr>
+                <tr>
+                    <td class="ce">-</td>
+                    <td>빼기 연산을 할 때 사용</td>
+                </tr>
+                <tr>
+                    <td class="ce">*</td>
+                    <td>곱하기 연산을 할 때 사용</td>
+                </tr>
+                <tr>
+                    <td class="ce">/</td>
+                    <td>몫을 구할 때 사용</td>
+                </tr>
+                <tr>
+                    <td class="ce">%</td>
+                    <td>나머지 구할 때 사용</td>
+                </tr>
+                <tr>
+                    <td class="ce">++</td>
+                    <td>1씩 증가 시킬 때 사용</td>
+                </tr>
+                <tr>
+                    <td class="ce">--</td>
+                    <td>1씩 감소 시킬 때 사용</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- 01. 산술 연산자 -->
+
+        <hr>
+
+        <h3 class="t_tit2">02. 대입 연산자</h3>
+        <p class="t_desc">
+            <i>값을 변수에 대입(저장)하는 방식</i>의 연산자로, 대입연산자에서의 '='는 '같다'가 아닌
+            대입(저장)함을 의미합니다.
+        </p>
+        <table class="t_table">
+            <thead>
+                <tr>
+                    <th>대입 연산자 종류</th>
+                    <th>속성 설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ce">=</td>
+                    <td>num = 1은 우변의 1값을 좌변의 num 변수에 대입(저장)</td>
+                </tr>
+                <tr>
+                    <td class="ce">+=</td>
+                    <td>num += 2는 num = num + 2와 같음</td>
+                </tr>
+                <tr>
+                    <td class="ce">-=</td>
+                    <td>num -= 2는 num = num - 2와 같음</td>
+                </tr>
+                <tr>
+                    <td class="ce">*=</td>
+                    <td>num *= 2는 num = num * 2와 같음</td>
+                </tr>
+                <tr>
+                    <td class="ce">/=</td>
+                    <td>num /= 2는 num = num / 2와 같음</td>
+                </tr>
+                <tr>
+                    <td class="ce">%=</td>
+                    <td>num %= 2는 num = num % 2와 같음</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- 02. 대입 연산자 -->
+
+        <hr>
+        
+        <h3 class="t_tit2">03. 비교 연산자</h3>
+        <p class="t_desc">
+            <i>값을 비교해 결과값을 'true(참)'나 'false(거짓)'로 출력</i>하는 방식의 연산자입니다. 
+        </p>
+        <table class="t_table">
+            <thead>
+                <tr>
+                    <th>비교 연산자 종류</th>
+                    <th>속성 설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ce">></td>
+                    <td>a > b가 참이면 true, 거짓이면 false</td>
+                </tr>
+                <tr>
+                    <td class="ce">&lt;</td>
+                    <td>a &lt; b가 참이면 true, 거짓이면 false</td>
+                </tr>
+                <tr>
+                    <td class="ce">>=</td>
+                    <td>a >= b가 참이면 true, 거짓이면 false</td>
+                </tr>
+                <tr>
+                    <td class="ce">&lt;=</td>
+                    <td>a &lt;= b가 참이면 true, 거짓이면 false</td>
+                </tr>
+                <tr>
+                    <td class="ce">==</td>
+                    <td>
+                        a == b, a와 b가 같으면 true, 같지 않으면 false. <br>
+                        == 연산자의 경우 데이터 타입은 비교하지 않음. <br>
+                        --> ex) 5 == '5'는 true가 나옴. 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ce">!=</td>
+                    <td>a != b, a와 b가 같지 않으면 true, 같으면 false.</td>
+                </tr>
+                <tr>
+                    <td class="ce">===</td>
+                    <td>
+                        a === b, a와 b가 같고 데이터 타입도 같으면 true, 그렇지 않으면 false.
+                        --> ex) 5 == '5'는 false가 나옴.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ce">!==</td>
+                    <td>
+                        a !== b, a와 b가 같지 않거나 데이터 타입이 같지 않으면 true, 같으면 false.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <p class="t_desc">
+            <i>이상</i>, <i>초과</i>, <i>이하</i>, <i>미만</i>은 아래와 같이 표현합니다.
+        </p>
+        <table class="t_table">
+            <tr>
+                <td class="ce">이상</td>
+                <td>num >= 10</td>
+            </tr>
+            <tr>
+                <td class="ce">초과</td>
+                <td>num > 10</td>
+            </tr>
+            <tr>
+                <td class="ce">이하</td>
+                <td>num &lt;= 10</td>
+            </tr>
+            <tr>
+                <td class="ce">미만</td>
+                <td>num &lt; 10</td>
+            </tr>
+        </table>
+        <!-- 03. 비교 연산자 -->
+
+        <hr>
+
+        <h3 class="t_tit2">04. 논리 연산자</h3>
+        <p class="t_desc">
+            자바스크립트에는 3종류의 논리 연산자 <i>'&& (AND)'</i>, <i>'|| (OR)'</i>, <i>'!(NOT)'</i>가 있습니다.
+        </p>
+        <table class="t_table">
+            <thead>
+                <tr>
+                    <th>논리 연산자 종류</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ce">&& (AND 연산자)</td>
+                    <td>
+                        a && b, a와 b 모두 참일 때 true가 됨. <br>
+                        --> true && true = true / true && false = false <br>
+                        --> false && true = false / false && false = false <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ce">|| (OR 연산자)</td>
+                    <td>
+                        a || b, a와 b 중 하나만 참이면 true가 됨. <br>
+                        --> true || true = true / true || false = true <br>
+                        --> false || true = true / false || false = false <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ce">! (NOT 연산자)</td>
+                    <td>
+                        !a, a가 true면 false, false면 true로 바꿔줌.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- 04. 논리 연산자 -->
         </div>
-        <div class="main_sample">
-            <div id="sample01" class="sample">
-                <h3>01. 산술 연산자</h3>
-                <p>
-                    산술 연산자의 종류는 다음과 같습니다.
-                </p>
-                
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>산술 연산자 종류</th>
-                            <th>속성 설명</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="2" class="center">+</td>
-                            <td class="center">더하기 연산을 할 때 사용</td>
-                        </tr>
-                        <tr>
-                            <td class="center">문자와 문자, 문자와 변수 등을 연결할 때 사용</td>
-                        </tr>
-                        <tr>
-                            <td class="center">-</td>
-                            <td class="center">빼기 연산을 할 때 사용</td>
-                        </tr>
-                        <tr>
-                            <td class="center">*</td>
-                            <td class="center">곱하기 연산을 할 때 사용</td>
-                        </tr>
-                        <tr>
-                            <td class="center">/</td>
-                            <td class="center">몫을 구할 때 사용</td>
-                        </tr>
-                        <tr>
-                            <td class="center">%</td>
-                            <td class="center">나머지 구할 때 사용</td>
-                        </tr>
-                        <tr>
-                            <td class="center">++</td>
-                            <td class="center">1씩 증가 시킬 때 사용</td>
-                        </tr>
-                        <tr>
-                            <td class="center">--</td>
-                            <td class="center">1씩 감소 시킬 때 사용</td>
-                        </tr>
-                    </tbody>
-                </table>
-            <!-- sample01 -->
-
-            <div id="sample02" class="sample">
-                <h3>02. 대입 연산자</h3>
-                <p>
-                    대입 연산자의 종류는 다음과 같습니다. 대입 연산자의 '='는 '같다'를 의미하지 않으며 변수에 대입(저장)함을 의미합니다.
-                </p>
-                
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>대입 연산자 종류</th>
-                            <th>속성 설명</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="center">=</td>
-                            <td class="center">num = 1은 우변의 1값을 좌변의 num 변수에 대입(저장)</td>
-                        </tr>
-                        <tr>
-                            <td class="center">+=</td>
-                            <td class="center">num += 2는 num = num + 2와 같음</td>
-                        </tr>
-                        <tr>
-                            <td class="center">-=</td>
-                            <td class="center">num -= 2는 num = num - 2와 같음</td>
-                        </tr>
-                        <tr>
-                            <td class="center">*=</td>
-                            <td class="center">num *= 2는 num = num * 2와 같음</td>
-                        </tr>
-                        <tr>
-                            <td class="center">/=</td>
-                            <td class="center">num /= 2는 num = num / 2와 같음</td>
-                        </tr>
-                        <tr>
-                            <td class="center">%=</td>
-                            <td class="center">num %= 2는 num = num % 2와 같음</td>
-                        </tr>
-                    </tbody>
-                </table>
-            <!-- sample02 -->
-
-            <div id="sample03" class="sample">
-                <h3>03. 비교 연산자</h3>
-                <p>
-                    비교 연산자는 값을 비교하여 결과값을 Boolean(논리)값인 true나 false로 반환합니다.
-                </p>
-                
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>비교 연산자 종류</th>
-                            <th>속성 설명</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="center">></td>
-                            <td>a > b가 참이면 true, 거짓이면 false</td>
-                        </tr>
-                        <tr>
-                            <td class="center"><</td>
-                            <td>a < b가 참이면 true, 거짓이면 false</td>
-                        </tr>
-                        <tr>
-                            <td class="center">>=</td>
-                            <td>a >= b가 참이면 true, 거짓이면 false</td>
-                        </tr>
-                        <tr>
-                            <td class="center"><=</td>
-                            <td>a <= b가 참이면 true, 거짓이면 false</td>
-                        </tr>
-                        <tr>
-                            <td class="center">==</td>
-                            <td>
-                                a == b, a와 b가 같으면 true, 같지 않으면 false. <br>
-                                == 연산자의 경우 데이터 타입은 비교하지 않음. <br>
-                                --> ex) 5 == '5'는 true가 나옴. 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="center">!=</td>
-                            <td>a != b, a와 b가 같지 않으면 true, 같으면 false.</td>
-                        </tr>
-                        <tr>
-                            <td class="center">===</td>
-                            <td>
-                                a === b, a와 b가 같고 데이터 타입도 같으면 true, 그렇지 않으면 false.
-                                --> ex) 5 == '5'는 false가 나옴.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="center">!==</td>
-                            <td>
-                                a !== b, a와 b가 같지 않거나 데이터 타입이 같지 않으면 true, 같으면 false.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>이상, 초과, 이하, 미만 표현은 다음과 같이 합니다.</p>
-                <table class="table">
-                    <tr>
-                        <td class="center">이상</td>
-                        <td>num >= 10</td>
-                    </tr>
-                    <tr>
-                        <td class="center">초과</td>
-                        <td>num > 10</td>
-                    </tr>
-                    <tr>
-                        <td class="center">이하</td>
-                        <td>num <= 10</td>
-                    </tr>
-                    <tr>
-                        <td class="center">미만</td>
-                        <td>num < 10</td>
-                    </tr>
-                </table>
-            </div>
-            <!-- sample03 -->
-
-            <div id="sample04" class="sample">
-                <h3>04. 논리 연산자</h3>
-                <p>
-                    논리 연산자의 종류는 다음과 같습니다.
-                </p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>논리 연산자 종류</th>
-                                <th>설명</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="center">&& (AND 연산자)</td>
-                                <td>
-                                    a && b, a와 b 모두 참일 때 true가 됨. <br>
-                                    --> true && true = true / true && false = false <br>
-                                    --> false && true = false / false && false = false <br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center">|| (OR 연산자)</td>
-                                <td>
-                                    a || b, a와 b 중 하나만 참이면 true가 됨. <br>
-                                    --> true || true = true / true || false = true <br>
-                                    --> false || true = true / false || false = false <br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center">! (NOT 연산자)</td>
-                                <td>
-                                    !a, a가 true면 false, false면 true로 바꿔줌.
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                
-                <h3>4-1. 논리 연산자를 이용한 부등식 표현</h3>
-                <p>
-                    'x의 값이 20보다 크고 30보다 작다.'를 일반적 부등식 표현으로 '20 < x < 30'이지만
-                    자바스크립트에서는 'AND 연산자'를 사용하여 표현합니다.
-                </p>
-            </div>
-        <!-- // main_sample -->
 
         <div class="main_desc"></div>
     </main>
