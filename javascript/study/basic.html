@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">기본 규칙</h2>
+            <p class="t_desc">
+                자바스크립트를 다루기 위해서는 먼저 <em>기초적 특징</em>과 <em>기본 문법</em>을 숙지할 필요가 있습니다.
+            </p>
+            <h2 class="t_tit2">자바스크립트란?</h2>
+            <p class="t_desc2">
+                JavaScript는 웹 페이지에서 복잡한 기능을 구현할 수 있도록 하는 스크립트 <em>프로그래밍 언어</em>입니다.
+                HTML은 정적인 레이아웃을, 자바스크립트는 <em>동적인 기능을 표현</em>합니다.
+            </p>
+            <p class="t_desc">
+                자바스크립트는 1995년 넷스케이프 커뮤니케이션의 브렌던 아이크가 개발하였스며 Netscape 
+                Navigsator2.0에 구현되었습니다. 1996년에는 마이크로소프트사의 Internet Explorer3.0 
+                탑재되었으며 java 애플릿으로 구현된 웹 브라우저의 지지부진한 보급과 맞물려 빠르게 보급
+                되었습니다. 1997년부터 ESMAScript를 따르는 표준화 작업을 통해 현재는 모든 브라우저에서
+                 지원됩니다.
+            </p>
+
+            <h3 class="t_tit2">자바스크립트 기본 규칙</h3>
+            <h4 class="t_tit3">1. 세미콜론(;)</h4>
+            <p class="t_desc">
+                하나의 실행문이 끝나면 세미콜론(;)을 붙여줍니다.
+                붙이지 않아도 무관하나 처음 학습한다면 붙이는 것을 권장합니다.
+            </p>
+            <p class="t_desc2">
+                var num = 5;<br>
+                document.write(num);
+            </p>
+            <h4 class="t_tit3">2. 대소문자 구분</h3>
+            <p class="t_desc">
+                자바스크립트 명령어는 꼭 대소문자를 구분합니다.
+            </p>
+            <p class="t_desc2">
+                var num = 5;<br>
+                document.write(num); (O)<br>
+                document.write(Num); (X)
+            </p>
+            <h4 class="t_tit3">3. 들여쓰기</h3>
+            <p class="t_desc">
+                가독성을 위해 들여쓰기를 합니다.
+            </p>
+            <p class="t_desc2">
+                var avgDistance = function() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var speed = distance * time;<br>
+                }
+            </p>
+            <h4 class="t_tit3">4. 주석</h4>
+            <p class="t_desc">
+                일반적으로 특정 코드에 대한 설명을 입력할 때나 특정 부분 코드가 실행되지 않도록 할 때
+                사용하며, 이 주석 표시는 프로그램에 영향을 끼치지 않습니다.
+            </p>
+            <p class="t_desc2">
+                // 한 줄 주석 처리 방법<br>
+                <br>
+                /* 여러 줄 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;주석 처리 방법 */
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

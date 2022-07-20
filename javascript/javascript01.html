@@ -12,7 +12,7 @@
 </head>
 <body>
     <header id="header">
-        <h1>JavaScript</h1>
+        <h1><a href="index.html">JavaScript</a></h1>
         <nav class="header_nav">
             <ul>
                 <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
@@ -21,18 +21,17 @@
                 <li><a href="javascript04.html">데이터 제어하기</a></li>
             </ul>
             <ul>
-                <li><a href="#">문자열 객체</a></li>
-                <li><a href="#">배열 객체</a></li>
-                <li><a href="#">수학 객체</a></li>
-                <li><a href="#">숫자 객체</a></li>
-                <li><a href="#">브라우저 객체</a></li>
-                <li><a href="#">요소 객체</a></li>
-                <li><a href="#">이벤트 객체</a></li>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="study">
-                <li><a href="#">기본 규칙</a></li>
-                <li><a href="#">기본 명령어</a></li>
-                <li><a href="operator.html">연산자</a></li>
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
             </ul>
         </nav>
     </header>
@@ -517,6 +516,64 @@
             </div>
             <!-- sample15 -->
 
+            <div id="sample16" class="sample">
+                <h3>★16. 객체 : 데이터 저장(키와 값) : 표현 방법 7</h3>
+                <p>
+                    객체 속에 변수가 있는 표현 방법입니다.
+                </p>
+                <div class="script">
+<pre><code lang="language-js">{
+    const a = 100;
+    const b = 200;
+    const c = "javascript";
+
+    const obj = {a, b, c};
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample16_result">
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- sample16 -->
+
+            <div id="sample17" class="sample">
+                <h3>★17. 객체 : 데이터 저장(키와 값) : 표현 방법 8</h3>
+                <p>
+                    객체 속에 함수가 있는 표현 방법입니다.
+                </p>
+                <div class="script">
+<pre><code lang="language-js">{
+    const a = 100;
+    const b = 200;
+    const c = "javascript";
+
+    const obj = {a, b, c};
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample17_result">
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- sample17 -->
+
         </div>
         <!-- // main_sample -->
 
@@ -765,11 +822,13 @@
             const b = 200;
             const c = "javascript";
 
-            const obj = {a, b, c}
+            const obj = {a, b, c};
 
             // document.write(obj.a);
             // document.write(obj.b);
             // document.write(obj.c);
+
+            document.querySelector(".sample16_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
 
         // 17 객체 : 객체 속의 함수
@@ -788,7 +847,7 @@
                 g : function() {
                     document.write(this.d + "가 실행되었습니다.")
                 }
-            }
+            };
 
             document.write(obj.a);
             document.write(obj.b[0]);
@@ -800,6 +859,8 @@
             obj.e();
             obj.f();
             obj.g();
+
+            // document.querySelector(".sample17_result").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.b + "<br>" + obj.c.x + "<br>" + obj c.y + "<br>" + obj.c;
         }
 
     </script>
