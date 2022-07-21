@@ -88,11 +88,10 @@ body {
 }
 
 /* 메인 영역 */
-.main_header {}
 .main_header h2 {
     font-size: 80px;
     text-align: center;
-    padding: 5% 10%;
+    padding: 10% 10% 5% 10%;
     font-family: Tmon;
 }
 .main_header h2 em {
@@ -114,6 +113,7 @@ body {
     padding: 5px 15px;
     display: inline-block;
     color: #fff;
+    margin-bottom: 5px;
 }
 .main_menu li.active a {
     background-color: #000;
@@ -160,4 +160,40 @@ body {
 .main_refer .table table tr td span {
     font-size: 16px;
     line-height: 1.6;
+}
+
+
+
+/* 미디어 쿼리 */
+@media (max-width: 900px) {
+    #header {
+        display: none;
+    }
+    .main_header h2 {
+        font-size: 40px;
+        padding: 40px;
+    }
+    .main_header h2 em {
+        font-size: 40px;
+    }
+    .main_refer {
+        border: 0;
+        padding: 0;
+    }
+    .main_refer .table {
+        overflow-x: auto;
+    }
+    .main_refer .table table {
+        min-width: 900px;
+    }
+}
+@media (max-width: 460px) {
+    .main_header h2 {
+        font-size: 30px;
+        padding: 20px;
+    }
+    .main_header h2 em {
+        font-size: 30px;
+    }
+    
 }
