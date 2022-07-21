@@ -341,9 +341,9 @@
 <pre><code class="language-js">{
     const arr = [100, 200, 300, 400, 500];
 
-        for(let i of arr){
-            document.write(i);
-        }
+    for(let i of arr){
+        document.write(i);
+    }
 }
 </code></pre>
                 </div>
@@ -372,10 +372,10 @@
 <pre><code class="language-js">{
     const arr = [100, 200, 300, 400, 500];
 
-        for(let i in arr){
-            // document.write(i);
-            document.write(arr[i]);
-        }
+    for(let i in arr){
+        // document.write(i);
+        document.write(arr[i]);
+    }
 }
 </code></pre>
                 </div>
@@ -403,31 +403,31 @@
 <pre><code class="language-js">{
     const arr = [100, 200, 300, 400, 500];
 
-        //forEach
+    //forEach
 
-        arr.forEach(function(el){
-            document.write(el);
-            console.log(el);    // Chrome에서 검사(F12)에 들어간 후 console 창에서만 확인 가능
-        });
+    arr.forEach(function(el){
+        document.write(el);
+        console.log(el);    // Chrome에서 검사(F12)에 들어간 후 console 창에서만 확인 가능
+    });
 
-        arr.forEach(function(element, index, array){
-            document.write(element);
-            document.write(index);
-            document.write(array);
-        });
+    arr.forEach(function(element, index, array){
+        document.write(element);
+        document.write(index);
+        document.write(array);
+    });
 
-        //map() , forEach문과 큰 차이 없음
+    //map() , forEach문과 큰 차이 없음
 
-        arr.map(function(el){
-            document.write(el);
-            console.log(el);
-        });
+    arr.map(function(el){
+        document.write(el);
+        console.log(el);
+    });
 
-        arr.map(function(element, index, array){
-            document.write(element);
-            document.write(index);
-            document.write(array);
-        });
+    arr.map(function(element, index, array){
+        document.write(element);
+        document.write(index);
+        document.write(array);
+    });
 }
 </code></pre>
                 </div>
