@@ -42,7 +42,7 @@
         <div class="document">
             <h2 class="t_tit">for문</h2>
             <p class="t_desc">
-                특정 구문을 여러번 반복시킬 때 사용하는 반복문입니다.
+                특정 구문을 <i>여러번 반복시킬 때 사용</i>하는 반복문입니다.
             </p>
             <p class="t_box">
                 for (초기 값; 조건식; 증감값) {<br>
@@ -54,7 +54,7 @@
 
             <h3 class="t_tit2">0부터 99까지 출력</h3>
             <div class="t_code">
-<pre><code>for(let i = 0; i &lt; 100; i++) {
+<pre><code class="language-js">for(let i = 0; i &lt; 100; i++) {
     document.write(i);
 }
 </code></pre>
@@ -62,7 +62,7 @@
 
             <h3 class="t_tit2">1부터 100까지 출력</h3>
             <div class="t_code">
-<pre><code>for(let i = 1; i &lt;= 100; i++) {
+<pre><code class="language-js">for(let i = 1; i &lt;= 100; i++) {
     document.write(i);
 }
 </code></pre>
@@ -70,10 +70,10 @@
 
             <h3 class="t_tit2">1부터 100까지 출력(짝수)</h3>
             <p class="t_desc">
-                짝수만 출력할 때는 증가값을 2로 합니다.
+                짝수만 출력할 때는 <i>증가값을 2로</i> 합니다.
             </p>
             <div class="t_code">
-<pre><code>// i+=2 는 i = i + 2 를 의미함
+<pre><code class="language-js">// i+=2 는 i = i + 2 를 의미함
 
 for(let i = 1; i &lt;= 100; i+=2){
     document.write(i);
@@ -86,13 +86,13 @@ for(let i = 1; i &lt;= 100; i+=2){
                 중첩 for문을 이용하여 테이블을 만들 수 있습니다.
             </p>
             <div class="t_code">
-<pre><code>let table = "&lt;table&gt;";
+<pre><code class="language-js">let table = "&lt;table&gt;";
             
     for(let i = 0; i &lt; 10; i++){
         table += "&lt;tr&gt;";
 
         for(let j = 0; j &lt; 10; j++){
-            table += "&lt;td&gt;1&lt;/td&gt;"
+            table += "&lt;td&gt;안녕&lt;/td&gt;"
         }
 
     table += "&lt;/tr&gt;";
@@ -133,8 +133,6 @@ document.write(i);
                 </script>
             </div>  
         </div>
-
-        
     </main>
     <!-- // main -->
 
