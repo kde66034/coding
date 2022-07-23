@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 01 : 반응형</title>
+    <title>레이아웃 유형 01_05 : Grid</title>
 
     <style>
         * {
             margin: 0;
+            padding: 0;
         }
         body {
             background-color: #FFF3E0;
@@ -16,60 +17,35 @@
         #wrap {
             width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "aside section"
+                "footer footer"
+            ;
+            grid-template-columns: 400px 800px;
+            grid-template-rows: 100px 100px 780px 100px;
         }
         #header {
-            width: 100%;
-            height: 100px;
             background-color: #FFE0B2;
+            grid-area: header;
         }
         #nav {
-            width: 100%;
-            height: 100px;
             background-color: #FFCC80;
+            grid-area: nav;
         }
         #aside {
-            width: 30%;
-            height: 780px;
             background-color: #FFB74D;
-            float: left;
+            grid-area: aside;
         }
         #section {
-            width: 70%;
-            height: 780px;
             background-color: #FFA726;
-            float: left;
+            grid-area: section;
         }
         #footer {
-            width: 100%;
-            height: 100px;
             background-color: #FF9800;
-            clear: both;
-        }
-
-        @media (max-width : 1220px) {
-            #wrap {
-                width: 100%;
-            }
-        }
-
-        @media (max-width : 768px) {
-            #wrap {
-                width: 100%;
-            }
-        }
-
-        @media (max-width : 480px) {
-            #wrap {
-                width: 100%;
-            }
-            #aside {
-                width: 100%;
-                height: 300px;
-            }
-            #section {
-                width: 100%;
-                height: 480px;
-            }
+            grid-area: footer;
         }
     </style>
 </head>
@@ -81,5 +57,15 @@
         <div id="section"></div>
         <div id="footer"></div>
     </div>
+
+
+    <!-- 
+        layout 01_01 : float 방식 레이아웃
+        layout 01_02 : float 방식 반응형 레이아웃
+        layout 01_03 : flex 방식 레이아웃
+        layout 01_04 : flex 방식 반응형 레이아웃
+        layout 01_05 : grid 방식 레이아웃
+        layout 01_06 : grid 방식 반응형 레이아웃
+     -->
 </body>
 </html>

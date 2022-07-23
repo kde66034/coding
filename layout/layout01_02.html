@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 01-2 (grid)</title>
+    <title>레이아웃 유형 01_02 : Float 반응형</title>
 
     <style>
         * {
             margin: 0;
+            padding: 0;
         }
         body {
             background-color: #FFF3E0;
@@ -16,50 +17,40 @@
         #wrap {
             width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns:
-                "header header"
-                "nav nav"
-                "aside aside"
-                "section section"
-                "footer footer"
-            ;
         }
         #header {
-            width: 1200px;
+            width: 100%;
             height: 100px;
             background-color: #FFE0B2;
         }
         #nav {
-            width: 1200px;
+            width: 100%;
             height: 100px;
             background-color: #FFCC80;
         }
         #aside {
-            width: 400px;
+            width: 30%;
             height: 780px;
             background-color: #FFB74D;
+            float: left;
         }
         #section {
-            width: 800px;
+            width: 70%;
             height: 780px;
             background-color: #FFA726;
+            float: left;
         }
         #footer {
-            width: 1200px;
+            width: 100%;
             height: 100px;
             background-color: #FF9800;
+            clear: both;
         }
 
-        @media (max-width : 1220px) {
+        /* 미디어 쿼리 */
+        @media (max-width : 1300px) {
             #wrap {
-                width: 100%;
-            }
-            #aside {
-                width: 30%;
-            }
-            #section {
-                width: 70%;
+                width: 96%;
             }
         }
 
@@ -67,18 +58,9 @@
             #wrap {
                 width: 100%;
             }
-            #aside {
-                width: 30%;
-            }
-            #section {
-                width: 70%;
-            }
         }
 
         @media (max-width : 480px) {
-            #wrap {
-                width: 100%;
-            }
             #aside {
                 width: 100%;
                 height: 300px;
@@ -98,5 +80,15 @@
         <div id="section"></div>
         <div id="footer"></div>
     </div>
+
+
+    <!-- 
+        layout 01_01 : float 방식 레이아웃
+        layout 01_02 : float 방식 반응형 레이아웃
+        layout 01_03 : flex 방식 레이아웃
+        layout 01_04 : flex 방식 반응형 레이아웃
+        layout 01_05 : grid 방식 레이아웃
+        layout 01_06 : grid 방식 반응형 레이아웃
+     -->
 </body>
 </html>

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 03 : 반응형</title>
+    <title>레이아웃 유형 03_04 : Flex 반응형</title>
 
     <style>
         * {
             margin: 0;
+            padding: 0;
         }
         body {
             background-color: #E1F5FE;
@@ -18,106 +19,87 @@
             margin: 0 auto;
         }
         #header {
-            width: 100%;
             height: 100px;
             background-color: #B3E5FC;
         }
         #nav {
-            width: 100%;
             height: 100px;
             background-color: #81D4FA;
         }
+        #main {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            height: 780px;
+        }
         #aside {
-            width: 25%;
+            width: 30%;
             height: 780px;
             background-color: #4FC3F7;
-            float: left;
         }
-        #section1 {
-            width: 75%;
+        #article1 {
+            width: 70%;
             height: 260px;
             background-color: #29B6F6;
-            float: left;
         }
-        #section2 {
-            width: 75%;
+        #article2-1 {
+            width: 100%;
             height: 260px;
             background-color: #03A9F4;
-            float: left;
         }
-        #section3 {
-            width: 75%;
+        #article2-2 {
+            width: 100%;
             height: 260px;
             background-color: #039BE5;
-            float: left;
         }
         #footer {
-            width: 100%;
             height: 100px;
             background-color: #0288D1;
-            clear: both;
         }
 
-        @media (max-width : 1220px) {
+        /* 미디어 쿼리 */
+        @media (max-width : 1300px) {
             #wrap {
-                width: 100%;
+                width: 96%;
             }
-            #aside {
-                width: 25%;
+            #article2 {
+                display: flex;
             }
-            #section1 {
-                width: 75%;
-            }
-            #section2 {
-                width: 37.5%;
+            #article2-1 {
+                width: 50%;
                 height: 520px;
             }
-            #section3 {
-                width: 37.5%;
+            #article2-2 {
+                width: 50%;
                 height: 520px;
             }
         }
-
         @media (max-width : 768px) {
             #wrap {
                 width: 100%;
             }
-            #aside {
-                width: 25%;
-            }
-            #section1 {
-                width: 75%;
+            #article1 {
+                width: 100%;
                 height: 390px;
             }
-            #section2 {
-                width: 75%;
+            #article2-1 {
+                width: 100%;
                 height: 390px;
             }
-            #section3 {
-                width: 0;
-                height: 0;
+            #article2-2 {
+                display: none;
             }
         }
-
         @media (max-width : 480px) {
-            #wrap {
-                width: 100%;
-            }
             #aside {
                 width: 100%;
                 height: 200px;
             }
-            #section1 {
-                width: 100%;
+            #article1 {
                 height: 430px;
             }
-            #section2 {
-                width: 100%;
+            #article2-1 {
                 height: 150px;
-            }
-            #section3 {
-                width: 0;
-                height: 0;
             }
         }
     </style>
@@ -126,11 +108,25 @@
     <div id="wrap">
         <div id="header"></div>
         <div id="nav"></div>
-        <div id="aside"></div>
-        <div id="section1"></div>
-        <div id="section2"></div>
-        <div id="section3"></div>
+        <div id="main" class="clearfix">
+            <div id="aside"></div>
+            <div id="article1"></div>
+            <div id="article2">
+                <div id="article2-1"></div>
+                <div id="article2-2"></div>
+            </div>
+        </div>
         <div id="footer"></div>
     </div>
+
+
+    <!-- 
+        layout 03_01 : float 방식 레이아웃
+        layout 03_02 : float 방식 반응형 레이아웃
+        layout 03_03 : flex 방식 레이아웃
+        layout 03_04 : flex 방식 반응형 레이아웃
+        layout 03_05 : grid 방식 레이아웃
+        layout 03_06 : grid 방식 반응형 레이아웃
+     -->
 </body>
 </html>
