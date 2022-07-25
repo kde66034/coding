@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">레이아웃(Layout)</h2>
+        <p class="t_desc">
+            <i>웹을 구성하는 요소들을 보다 알아보기 쉽게 효과적으로 배치</i>시켜주는 작업입니다.
+        </p>
+    
+        <hr>
+
+        <h3 class="t_tit2">레이아웃의 3가지 유형</h3>
+        <p class="t_desc">
+            레이아웃에는 <i>Float, Flex, Grid라는 총 3가지 유형</i>(방법)이 있습니다.
+            사용 방법은 아래와 같으며 1번의 경우 정렬하고자 하는 요소에,
+            2·3번의 경우는 부모 태그에 적습니다.
+        </p>
+        <p class="t_box">
+            1. float: left;<br>
+            2. display: flex;<br>
+            3. display: grid;
+        </p>
+        
+        <!-- // 레이아웃 3가지 유형 -->
+
+        <hr>
+
+        <h3 class="t_tit2">01. Float</h3>
+        <p class="t_desc">
+            Float란 '띄우다'라는 의미를 지니며 레이아웃의 틀을 잡을 때 사용됩니다.
+            레이아웃의 틀을 잡을 때에는 &lt;div&gt; 태그가 사용됩니다. 하지만
+            해당 태그는 block 형식이기 때문에 요소들이 가로로 나란히 정렬될 수 없습니다.
+        </p>
+        <p class="t_box">
+            float: left;
+        </p>
+        <br>
+        <p class="t_desc">
+            이때, 나란히 정렬해주고자 하는 요소의 CSS 속성에 위와 같이 <i>float: left;를
+            추가하여 block 형식을 해제</i>시켜 세로로 정렬 되어 있던 요소들을 <i>가로로 나란히 
+            정렬하는 것이 가능</i>합니다.
+        </p>
+        <p class="t_box">
+            <i>clear: both;</i>
+        </p>
+        <br>
+        <p class="t_desc">
+            단, 이 속성을 쓰게 될 경우 속성을 썼던 아래의 요소가 보이지 않게 되는데,
+            보이지 않는 해당 요소에 위와 같은 CSS 속성을 쓰면 해결됩니다.
+        </p>
+
+        <!-- 코드펜 -->
+        <p class="codepen" data-height="500" data-default-tab="css,result" data-slug-hash="oNqeBop" data-user="kde66034" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/kde66034/pen/oNqeBop">
+            layout - float</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        <!-- // 01. float -->
+    
+        <h3 class="t_tit2">02. Flex</h3>
+        <p class="t_desc">
+            레이아웃을 정렬하는 유형 중 하나로 기존의 <i>Float 방식보다 더 쉽고 간단</i>히 사용
+            할 수 있습니다.
+        </p>
+        <p class="t_box">
+            display: flex;<br>
+            flex-wrap: wrap;
+        </p>
+        <br>
+        <p class="t_desc">
+            위의 내용을 자식 태그를 감싸고 있는 <i>부모 요소에게만 적용</i>해주시면 가로로 나란히
+            정렬 가능합니다.
+        </p>
+
+        <!-- 코드펜 -->
+        <p class="codepen" data-height="500" data-default-tab="css,result" data-slug-hash="dymzNem" data-user="kde66034" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/kde66034/pen/dymzNem">
+            Untitled</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        <!-- // 02. flex -->
+
+        <h3 class="t_tit2">03. Grid</h3>
+        <p class="t_desc">
+            table처럼 레이아웃을 잡을 수 있는 방법 중 하나입니다. 사용 방법은 아래의 코드들을
+            부모 요소에 넣는 것입니다.
+        </p>
+        <p class="t_box">
+            display: grid;<br>
+            grid-template-areas: <br>
+                "header header"<br>
+                "nav nav"<br>
+                "aside section"<br>
+                "footer footer";<br>
+            grid-template-columns: 30% 70%;<br>
+            grid-template-rows: 100px 100px 780px 100px;
+        </p>
+        <br>
+        <p class="t_desc">
+            <i>display: grid;로 Grid 사용을 활성화</i>하며, <i>grid-template-areas에서 요소를 배치</i>하고,
+            <i>grid-template-columns에서는 요소 배치 가로 길이</i>를, <i>grid-template-rows에서
+            는 세로 길이를 지정</i>해줍니다.
+        </p>
+        <p class="t_box">
+            #aside {<br>
+                <i>grid-area: aside;</i><br>
+            }
+        </p>
+        <br>
+        <p class="t_desc">
+            마지막으로 부모 요소의 grid-template-areas에서 언급된 이름을 자식 요소의
+            grid-area 속성에 똑같이 적어 <i>연결시켜주는 작업이 필요</i>합니다.
+        </p>
+
+        <!-- 코드펜 -->
+        <p class="codepen" data-height="500" data-default-tab="css,result" data-slug-hash="rNdzjKj" data-user="kde66034" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/kde66034/pen/rNdzjKj">
+            layout - grid</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        <!-- // 03. grid -->
+
+
+    </div>
+</body>
+</html>

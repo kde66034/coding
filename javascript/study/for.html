@@ -32,7 +32,9 @@
             <ul class="study">
                 <li><a href="basic.html">기본 규칙</a></li>
                 <li><a href="operator.html">연산자</a></li>
-                <li><a href="for.html">for문</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
             </ul>
         </nav>
     </header>
@@ -40,15 +42,52 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">for문</h2>
+            <h2 class="t_tit">반복문</h2>
             <p class="t_desc">
-                특정 구문을 <i>여러번 반복시킬 때 사용</i>하는 반복문입니다.
+                프로그램에서 필요한 결과 값을 도출하기 위해 실행문의 순서를
+                <i>여러번 반복시킬 때 사용</i>하는 문법입니다.
+                while문, do while문, for문 등이 있지만 <i>for문이 가장 많이 쓰입니다.</i>
             </p>
             <p class="t_box">
                 for (초기 값; 조건식; 증감값) {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
                 }
             </p>
+
+            <h3 class="t_tit2">while문</h3>
+            <p class="t_desc">
+                조건식이 true일 경우에 계속해서 반복하는 반복문입니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">for(let i = 0; i &lt; 100; i++) {
+    document.write(i);
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">do while문</h3>
+            <p class="t_desc">
+                설명
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">for(let i = 1; i &lt;= 100; i++) {
+    document.write(i);
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">for문</h3>
+            <p class="t_desc">
+                짝수만 출력할 때는 <i>증가값을 2로</i> 합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// i+=2 는 i = i + 2 를 의미함
+
+for(let i = 1; i &lt;= 100; i+=2){
+    document.write(i);
+}
+</code></pre>
+            </div>
         
             <hr>
 
@@ -69,6 +108,55 @@
             </div>
 
             <h3 class="t_tit2">1부터 100까지 출력(짝수)</h3>
+            <p class="t_desc">
+                짝수만 출력할 때는 <i>증가값을 2로</i> 합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// i+=2 는 i = i + 2 를 의미함
+
+for(let i = 1; i &lt;= 100; i+=2){
+    document.write(i);
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">1부터 100까지 출력(5의 배수)</h3>
+            <p class="t_desc">
+                짝수만 출력할 때는 <i>증가값을 2로</i> 합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// i+=2 는 i = i + 2 를 의미함
+
+for(let i = 1; i &lt;= 100; i+=2){
+    document.write(i);
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">구구단 출력하기</h3>
+            <p class="t_desc">
+                중첩 for문을 이용하여 테이블을 만들 수 있습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">let table = "&lt;table&gt;";
+            
+    for(let i = 0; i &lt; 10; i++){
+        table += "&lt;tr&gt;";
+
+        for(let j = 0; j &lt; 10; j++){
+            table += "&lt;td&gt;안녕&lt;/td&gt;"
+        }
+
+    table += "&lt;/tr&gt;";
+    }
+
+    table += "&lt;/table&gt;";
+
+document.write(i);
+</code></pre>              
+            </div>
+
+            <h3 class="t_tit2">1부터 100까지 출력(5의 배수 빨간색, 7의 배수 파란색)</h3>
             <p class="t_desc">
                 짝수만 출력할 때는 <i>증가값을 2로</i> 합니다.
             </p>
@@ -144,5 +232,95 @@ document.write(i);
     <script>
         hljs.highlightAll();
     </script>
+
+    <script>
+        //for문 이용해서 1~100 출력 (5의 배수, 7의 배수)
+        // {
+        //     for(let i = 1; i <= 100; i++) {
+        //         if(i % 5 == 0) {
+        //             document.write("<span style='color: blue'>"+ i +"</span>", "<br>");
+        //         } 
+        //         if(i % 7 == 0) {
+        //             document.write("<span style='color: red'>"+ i +"</span>", "<br>");
+        //         }
+        //     }
+        // }
+
+        //for문을 이용해서 1~100 출력 (짝수는 빨간색, 홀수 파란색)
+        // {
+        //     for(let i = 1; i <= 100; i++) {
+        //         if (i % 2 == 0) {
+        //             document.write("<span style='color: red'>"+ i +"</span>", "<br>");
+        //         } else {
+        //             document.write("<span style='color: blue'>"+ i +"</span>", "<br>");
+        //         }
+        //     } 
+        // }
+
+        //for문을 이용해서 1~100 출력 (짝수는 빨간색, 홀수 파란색) : 조건부 연산자
+        // {
+        //     for(let i = 1; i <= 100; i++) {
+        //         (i % 2 == 0) ? document.write("<span style='color: red'>"+ i +"</span>", "<br>") : document.write("<span style='color: blue'>"+ i +"</span>", "<br>")
+        //     } 
+        // }
+
+        //for문 이용해서 구구단 출력
+        // (2, 3, 4, 5, 6, 7, 8, 9) - 8번 반복
+        // (1, 2, 3, 4, 5, 6, 7, 8, 9) - 9번 반복
+
+        // i * j = sum
+
+        // 2 * 1 = 2       3 * 1 = 3       4 * 1 = 4
+        // 2 * 2 = 4
+        // 2 * 3 = 6
+        // 2 * 4 = 8
+        // 2 * 5 = 10
+        // 2 * 6 = 12
+        // 2 * 7 = 14
+        // 2 * 8 = 16
+        // 2 * 9 = 18
+        // {
+        //     for(let i = 2; i <= 9; i++) {
+        //         for(let j = 1; j <= 9; j++) {
+        //             let sum = i * j
+        //             document.write(i + "*" + j + "=" + sum);
+        //             document.write("<br>");
+        //         }
+        //     }
+
+        //     document.write("<br>");
+        // }
+
+        //for문 이용해서 테이블 만들기
+        {   
+            //데이터 타입(자료형)
+            // let table = 1; //숫자
+            // let table1 = "1"; //문자
+            // let table11 = true; //불린(true, false)
+            // let table2 = []; //배열
+            // let table3 = {}; //객체
+            // let table4 = null; //특수값(null, undefined)
+
+            let table = "<table class='testTable'>";
+            let s = 0;
+                
+                //10번 반복 (for문 이용) 1~100까지 표로 나오게 하기
+                for(let i = 1; i <= 10; i++) {
+                    table += "<tr>"
+
+                    for(let j = 1; j <= 10; j++) {
+                        s++
+                        table += "<td>"+s+"</td>";
+                    }
+
+                    table += "</tr>";
+                }
+
+            table += "</table>";
+
+            document.write(table);
+        }
+    </script>
+
 </body>
 </html>
