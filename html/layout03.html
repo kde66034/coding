@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li class="active"><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃 03</h2>
+                <p class="t_desc">
+                    전체 영역이 들어간 구조이며 실제 사이트에서 이런 구조를 많이 사용하고
+                    <i>컨테이너를 만들어 가운데 영역을 설정</i>한다.
+                </p>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FsSf61hXUWtTKD6tkMjuojN%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D22%253A39" allowfullscreen></iframe>
+                </div>
+
+                <!-- // 레이아웃03 -->
+
+                <h3 class="t_tit2">Float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    레이아웃의 틀을 잡을 때 &lt;div&gt; 태그가 사용되며 해당 태그는
+                    Block 형식이므로 가로로 나란히 정렬이 불가능하다. <br>
+                    이때 나란히 정렬해주고자 하는 요소의 CSS 속성에 <i>float: left;</i>를
+                    적어주면 나란히 정렬이 가능하다. <br>
+                    <br>
+                    단, 이 속성을 쓰게 될 경우, 속성을 썼던 아래의 요소가 보이지 않게
+                    되는 버그가 발생하는데 이럴 때에는 보이지 않는 해당 요소에 <i>clear: both;</i>를
+                    적어놓으면 해결된다. <br>
+                    <br>
+                    또한 clear: both; 대신 맨 아래의 <i>clearfix</i> 부분을 적어놓는 방법도 있다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    width: 1200px;
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    width: 1200px;
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    width: 1200px;
+}
+#aside {
+    width: 300px;
+    height: 780px;
+    background-color: #4FC3F7;
+    float: left;
+}
+#article1 {
+    width: 900px;
+    height: 260px;
+    background-color: #29B6F6;
+    float: left;
+}
+#article2 {
+    width: 900px;
+    height: 260px;
+    background-color: #03A9F4;
+    float: left;
+}
+#article3 {
+    width: 900px;
+    height: 260px;
+    background-color: #039BE5;
+    float: left;
+}
+#footer {
+    width: 1200px;
+    height: 100px;
+    background-color: #0288D1;
+    /* clear: both; */
+}
+
+/* clearfix */
+.clearfix::before, 
+.clearfix::after {
+    content: '';
+    display: block;
+    line-height: 0;
+}
+.clearfix::after {
+    clear: both;
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - float" src="https://codepen.io/kde66034/embed/jOzLgbW?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/jOzLgbW">
+                        layout03 - float</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <!-- // float -->
+
+                <h3 class="t_tit2">Float을 이용한 레이아웃 - 반응형</h3>
+                <p class="t_desc2">
+                    <i>wrap 속성의 width만을 1200px로 고정</i>시킨 후 <i>나머지 속성의 width 값은
+                    퍼센테이지로 환산</i>시킨다. <br>
+                    미디어 쿼리에서 노트북 전용(max-width: 1300px), 태블릿 PC 전용(768px), 
+                    스마트폰 전용(480px) 사이즈를 만든다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+        
+}
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+    float: left;
+}
+#article1 {
+    width: 70%;
+    height: 260px;
+    background-color: #29B6F6;
+    float: left;
+}
+#article2 {
+    width: 70%;
+    height: 260px;
+    background-color: #03A9F4;
+    float: left;
+}
+#article3 {
+    width: 70%;
+    height: 260px;
+    background-color: #039BE5;
+    float: left;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+    /* clear: both; */
+}
+
+/* clearfix */
+.clearfix::before, 
+.clearfix::after {
+    content: '';
+    display: block;
+    line-height: 0;
+}
+.clearfix::after {
+    clear: both;
+}
+
+/* 미디어 쿼리 */
+@media (max-width : 1300px) {
+    #wrap {
+        width: 96%;
+    }
+    #article2 {
+        width: 35%;
+        height: 520px;
+    }
+    #article3 {
+        width: 35%;
+        height: 520px;
+    }
+}
+@media (max-width : 768px) {
+    #wrap {
+        width: 100%;
+    }
+    #article1 {
+        width: 70%;
+        height: 390px;
+    }
+    #article2 {
+        width: 70%;
+        height: 390px;
+    }
+    #article3 {
+        display: none;
+    }
+}
+@media (max-width : 480px) {
+    #aside {
+        width: 100%;
+        height: 100px;
+    }
+    #article1 {
+        width: 100%;
+        height: 430px;
+    }
+    #article2 {
+        width: 100%;
+        height: 150px;
+    }
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - float 반응형" src="https://codepen.io/kde66034/embed/GRxvVpL?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/GRxvVpL">
+                        layout03 - float 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <!-- // float 반응형 -->
+
+                <h3 class="t_tit2">Flex를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    <i>가로로 정렬해주고자 하는 요소들이 담긴 부모 요소</i> #main에 <i>display: flex;</i>를 적어줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 780px;
+}
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+}
+#article1 {
+    width: 70%;
+    height: 260px;
+    background-color: #29B6F6;
+}
+#article2 {
+    width: 70%;
+    height: 260px;
+    background-color: #03A9F4;
+}
+#article3 {
+    width: 70%;
+    height: 260px;
+    background-color: #039BE5;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - flex" src="https://codepen.io/kde66034/embed/qBoXeaK?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/qBoXeaK">
+                        layout03 - flex</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <!-- // flex -->
+
+                <h3 class="t_tit2">Flex를 이용한 레이아웃 - 반응형</h3>
+                <div class="t_code">
+<pre><code class="language-css">
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 780px;
+}
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+}
+#article1 {
+    width: 70%;
+    height: 260px;
+    background-color: #29B6F6;
+}
+#article2-1 {
+    width: 100%;
+    height: 260px;
+    background-color: #03A9F4;
+}
+#article2-2 {
+    width: 100%;
+    height: 260px;
+    background-color: #039BE5;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+}
+
+/* 미디어 쿼리 */
+@media (max-width : 1300px) {
+    #wrap {
+        width: 96%;
+    }
+    #article2 {
+        display: flex;
+    }
+    #article2-1 {
+        width: 50%;
+        height: 520px;
+    }
+    #article2-2 {
+        width: 50%;
+        height: 520px;
+    }
+}
+@media (max-width : 768px) {
+    #wrap {
+        width: 100%;
+    }
+    #article1 {
+        width: 100%;
+        height: 390px;
+    }
+    #article2-1 {
+        width: 100%;
+        height: 390px;
+    }
+    #article2-2 {
+        display: none;
+    }
+}
+@media (max-width : 480px) {
+    #aside {
+        width: 100%;
+        height: 200px;
+    }
+    #article1 {
+        height: 430px;
+    }
+    #article2-1 {
+        height: 150px;
+    }
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - flex 반응형" src="https://codepen.io/kde66034/embed/qBoXeRy?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/qBoXeRy">
+                        layout03 - flex 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <!-- // flex 반응형 -->
+
+                <h3 class="t_tit2">Grid를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    table처럼 레이아웃을 잡을 수 있는 방법 중 하나입니다. <br>
+                    <i>display: grid;로 Grid 사용을 활성화</i>하며, <i>grid-template-columns에서는 요소 배치 가로 길이</i>를, 
+                    <i>grid-template-rows에서는 세로 길이</i>를 지정해줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: grid;
+    grid-template-areas: 
+        "aside article1 article1"
+        "aside article2 article2"
+        "aside article3 article3";
+    grid-template-columns: 300px 900px;
+    grid-template-rows: 260px 260px 260px;
+}
+#aside {
+        background-color: #4FC3F7;
+        grid-area: aside;
+}
+#article1 {
+        grid-area: article1;
+        background-color: #29B6F6;
+}
+#article2 {
+        grid-area: article2;
+        background-color: #03A9F4;
+}
+#article3 {
+        grid-area: article3;
+        background-color: #039BE5;
+}
+#footer {
+        height: 100px;
+        background-color: #0288D1;
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - grid" src="https://codepen.io/kde66034/embed/QWmMevE?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/QWmMevE">
+                        layout03 - grid</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <!-- // grid -->
+
+                <h3 class="t_tit2">Grid를 이용한 레이아웃 - 반응형</h3>
+                <div class="t_code">
+<pre><code class="language-css">
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: grid;
+    grid-template-areas: 
+        "aside article1 article1"
+        "aside article2 article2"
+        "aside article3 article3";
+    grid-template-columns: 300px 900px;
+    grid-template-rows: 260px 260px 260px;
+}
+#aside {
+    background-color: #4FC3F7;
+    grid-area: aside;
+}
+#article1 {
+    grid-area: article1;
+    background-color: #29B6F6;
+}
+#article2 {
+    grid-area: article2;
+    background-color: #03A9F4;
+}
+#article3 {
+    grid-area: article3;
+    background-color: #039BE5;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+}
+
+/* 미디어 쿼리 */
+@media (max-width : 1300px) {
+    #wrap {
+        width: 96%;
+    }
+    #main {
+        display: grid;
+        grid-template-areas: 
+            "aside article1 article1"
+            "aside article2 article3"
+            "aside article2 article3";
+        grid-template-columns: 30% 35% 35%;
+        grid-template-rows: 260px 520px;
+    }
+}
+@media (max-width : 768px) {
+    #wrap {
+        width: 100%;
+    }
+    #main {
+        display: grid;
+        grid-template-areas: 
+            "aside article1"
+            "aside article2";
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 390px 390px;
+    }
+    #article3 {
+        display: none;
+    }
+}
+@media (max-width : 480px) {
+    #main {
+        display: grid;
+        grid-template-areas: 
+            "aside"
+            "article1"
+            "article2";
+        grid-template-columns: 100%;
+        grid-template-rows: 200px 430px 150px;
+    }
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - grid 반응형" src="https://codepen.io/kde66034/embed/GRxvVEV?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/GRxvVEV">
+                        layout03 - grid 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+
+                <!-- // grid 반응형 -->
+
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
