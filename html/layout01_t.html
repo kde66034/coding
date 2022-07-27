@@ -24,7 +24,7 @@
             사용 방법은 아래와 같으며 1번의 경우 정렬하고자 하는 요소에,
             2·3번의 경우는 부모 태그에 적습니다.
         </p>
-        <p class="t_box">
+        <p class="t_desc2">
             1. float: left;<br>
             2. display: flex;<br>
             3. display: grid;
@@ -40,7 +40,7 @@
             레이아웃의 틀을 잡을 때에는 &lt;div&gt; 태그가 사용됩니다. 하지만
             해당 태그는 block 형식이기 때문에 요소들이 가로로 나란히 정렬될 수 없습니다.
         </p>
-        <p class="t_box">
+        <p class="t_desc2">
             float: left;
         </p>
         <br>
@@ -49,31 +49,58 @@
             추가하여 block 형식을 해제</i>시켜 세로로 정렬 되어 있던 요소들을 <i>가로로 나란히 
             정렬하는 것이 가능</i>합니다.
         </p>
-        <p class="t_box">
+        <p class="t_desc2">
             <i>clear: both;</i>
         </p>
         <br>
         <p class="t_desc">
             단, 이 속성을 쓰게 될 경우 속성을 썼던 아래의 요소가 보이지 않게 되는데,
+            이는 그 아래의 요소의 height 값이 0이 되어버리는 버그 때문입니다.
             보이지 않는 해당 요소에 위와 같은 CSS 속성을 쓰면 해결됩니다.
         </p>
+        <p class="t_desc">
+            반응형으로 만들 경우 <i>wrap 속성의 width만을 1200px로 고정</i>시킨 후<i> 
+            나머지 속성의 width 값은 퍼센테이지로 환산</i>시킵니다. <br>
+            미디어 쿼리에서 노트북 전용(max-width: 1300px), 태블릿 PC 전용(768px), 
+            스마트폰 전용(480px) 사이즈를 만듭니다.
+        </p>
 
-        <!-- 코드펜 -->
-        <p class="codepen" data-height="500" data-default-tab="css,result" data-slug-hash="oNqeBop" data-user="kde66034" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-            <span>See the Pen <a href="https://codepen.io/kde66034/pen/oNqeBop">
-            layout - float</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span>
-          </p>
-          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <!-- 코드펜 01 -->
+        <h4 class="t_tit3">결과</h4>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout - float 반응형" src="https://codepen.io/kde66034/embed/BardgjP?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/BardgjP">
+                layout - float 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout02 - float 반응형" src="https://codepen.io/kde66034/embed/zYWdVmN?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/zYWdVmN">
+                layout02 - float 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - float 반응형" src="https://codepen.io/kde66034/embed/GRxvVpL?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/GRxvVpL">
+                layout03 - float 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+        <p class="t_desc">
+            clear: both;를 쓰는 대신, float를 적용한 요소의 부모 요소에 <i>overflow: hidden;</i>을 적용하거나
+            3번째처럼 <i>clearfix</i>를 쓰는 방법이 있습니다. clearfix 사용법은 위의 코드펜 3번째 CSS에 적혀있습니다.
+        </p>
 
         <!-- // 01. float -->
     
         <h3 class="t_tit2">02. Flex</h3>
         <p class="t_desc">
             레이아웃을 정렬하는 유형 중 하나로 기존의 <i>Float 방식보다 더 쉽고 간단</i>히 사용
-            할 수 있습니다.
+            할 수 있습니다. 단, 마이크로소프트社의 인터넷 익스플로어에서는 사용할 수 없습니다.
         </p>
-        <p class="t_box">
+        <p class="t_desc2">
             display: flex;<br>
             flex-wrap: wrap;
         </p>
@@ -83,13 +110,29 @@
             정렬 가능합니다.
         </p>
 
-        <!-- 코드펜 -->
-        <p class="codepen" data-height="500" data-default-tab="css,result" data-slug-hash="dymzNem" data-user="kde66034" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-            <span>See the Pen <a href="https://codepen.io/kde66034/pen/dymzNem">
-            Untitled</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span>
-          </p>
-          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <!-- 코드펜 02 -->
+        <h4 class="t_tit3">결과</h4>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout - flex 반응형" src="https://codepen.io/kde66034/embed/xxWLogR?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/xxWLogR">
+                layout - flex 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout02 - flex 반응형" src="https://codepen.io/kde66034/embed/qBoXzwp?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/qBoXzwp">
+                layout02 - flex 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - flex 반응형" src="https://codepen.io/kde66034/embed/qBoXeRy?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/qBoXeRy">
+                layout03 - flex 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
 
         <!-- // 02. flex -->
 
@@ -98,13 +141,13 @@
             table처럼 레이아웃을 잡을 수 있는 방법 중 하나입니다. 사용 방법은 아래의 코드들을
             부모 요소에 넣는 것입니다.
         </p>
-        <p class="t_box">
+        <p class="t_desc2">
             display: grid;<br>
             grid-template-areas: <br>
-                "header header"<br>
-                "nav nav"<br>
-                "aside section"<br>
-                "footer footer";<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"header header"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"nav nav"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"aside section"<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"footer footer";<br>
             grid-template-columns: 30% 70%;<br>
             grid-template-rows: 100px 100px 780px 100px;
         </p>
@@ -114,9 +157,9 @@
             <i>grid-template-columns에서는 요소 배치 가로 길이</i>를, <i>grid-template-rows에서
             는 세로 길이를 지정</i>해줍니다.
         </p>
-        <p class="t_box">
+        <p class="t_desc2">
             #aside {<br>
-                <i>grid-area: aside;</i><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<i>grid-area: aside;</i><br>
             }
         </p>
         <br>
@@ -125,13 +168,29 @@
             grid-area 속성에 똑같이 적어 <i>연결시켜주는 작업이 필요</i>합니다.
         </p>
 
-        <!-- 코드펜 -->
-        <p class="codepen" data-height="500" data-default-tab="css,result" data-slug-hash="rNdzjKj" data-user="kde66034" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-            <span>See the Pen <a href="https://codepen.io/kde66034/pen/rNdzjKj">
-            layout - grid</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span>
-          </p>
-          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <!-- 코드펜 03 -->
+        <h4 class="t_tit3">결과</h4>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout - grid 반응형" src="https://codepen.io/kde66034/embed/MWVvMOY?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/MWVvMOY">
+                layout - grid 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout02 - grid 반응형" src="https://codepen.io/kde66034/embed/eYMEqOg?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/eYMEqOg">
+                layout02 - grid 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="layout03 - grid 반응형" src="https://codepen.io/kde66034/embed/GRxvVEV?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kde66034/pen/GRxvVEV">
+                layout03 - grid 반응형</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
 
         <!-- // 03. grid -->
 

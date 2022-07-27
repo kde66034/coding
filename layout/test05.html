@@ -15,6 +15,7 @@
         #header {
             height: 100px;
             background-color: #F48080;
+            line-height: 100px;
         }
         #header .logo {
             width: 300px;
@@ -32,6 +33,7 @@
         #banner {
             height: 400px;
             background-color: #EC5C5C;
+            line-height: 400px;
         }
         #banner .ad {
             height: 400px;
@@ -45,6 +47,7 @@
         #section .s-top {
             height: 250px;
             overflow: hidden;
+            line-height: 250px;
         }
         #section .s-top .s-box1 {
             width: 200px;
@@ -85,35 +88,39 @@
         #section .s-bot {
             height: 250px;
             background-color: #EA7F7F;
+            line-height: 250px;
         }
 
         #section2 {
             height: 500px;
             background-color: #FFBFBF;
-            overflow: hidden;
         }
         #section2 .sec1 {
             width: 740px;
             height: 500px;
             background-color: #EB6666;
             float: left;
+            line-height: 500px;
         }
         #section2 .sec2 {
             width: 460px;
             height: 250px;
             background-color: #CE5F5F;
             float: left;
+            line-height: 250px;
         }
         #section2 .sec3 {
             width: 460px;
             height: 250px;
             background-color: #FE7F7F;
             float: left;
+            line-height: 250px;
         }
 
         #footer {
             height: 100px;
             background-color: #FF9C9C;
+            line-height: 100px;
         }
         #footer .footer1 {
             height: 100px;
@@ -174,8 +181,38 @@
 
     <script>
         {
-            const arr = []
-        }
+            const obj = {
+                a: "로고", 
+                b: "메뉴", 
+                c: "광고", 
+                d: "섹션1", 
+                e: "섹션2", 
+                f: "섹션3", 
+                g: "섹션4", 
+                h: "섹션5", 
+                i: "섹션6", 
+                j: "섹션1", 
+                k: "공지사항1", 
+                l: "공지사항2", 
+                m: "공지사항3", 
+                n: "푸터"
+            };
+
+            document.querySelector(".logo").innerHTML = obj.a;
+            document.querySelector(".menu").innerHTML = obj.b;
+            document.querySelector(".ad").innerHTML = obj.c;
+            document.querySelector(".s-box1").innerHTML = obj.d;
+            document.querySelector(".s-box2").innerHTML = obj.e;
+            document.querySelector(".s-box3").innerHTML = obj.f;
+            document.querySelector(".s-box4").innerHTML = obj.g;
+            document.querySelector(".s-box5").innerHTML = obj.h;
+            document.querySelector(".s-box6").innerHTML = obj.i;
+            document.querySelector(".s-bot").innerHTML = obj.j;
+            document.querySelector(".sec1").innerHTML = obj.k;
+            document.querySelector(".sec2").innerHTML = obj.l;
+            document.querySelector(".sec3").innerHTML = obj.m;
+            document.querySelector(".footer1").innerHTML = obj.n;
+        }        
     </script>
 
 </body>

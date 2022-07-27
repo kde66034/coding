@@ -54,7 +54,8 @@
             <div id="sample01" class="sample">
                 <h3 class="t_tit2">01. if문(1)</h3>
                 <p class="t_desc">
-                    조건에 맞으면 실행문을 실행시켜 줍니다. Chrome F12 키를 통해 <i>콘솔 창에서만 확인 가능.</i>
+                    <i>조건에 맞으면(참(ture)이면) 참의 결과를 실행</i>시켜줍니다. <br>
+                    console.log로 출력시켰기 때문에 Chrome F12 키를 통해 <i>콘솔 창에서만 확인 가능.</i>
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">/*
@@ -63,10 +64,10 @@ if (조건식) {
 }
 */
 
-var age = 10;
-var admissionFee = '';
-if (age &lt; 13) {
-    admissionFee = '2,000원';
+var age = 10;       // age(나이)는 10세이다.
+var admissionFee = ' ';     // (입장료) 결과 실행 칸
+if (age &lt; 13) {      // age = 10, 13 이하이므로 true
+    admissionFee = '2,000원';   // true이므로 '2000원' 출력됨
 }
 console.log(admissionFee);
 </code></pre>
@@ -86,7 +87,8 @@ console.log(admissionFee);
             <div id="sample02" class="sample">
                 <h3 class="t_tit2">02. if문(2)</h3>
                 <p class="t_desc">
-                    else를 통해 <i>if 안의 조건식이 사실이 아닐 경우 그 다음 실행문으로</i> 넘겨줍니다.
+                    else를 통해 if 안의 조건식이 <i>사실이 아닐 경우 그 다음 실행문으로</i> 넘겨줍니다. <br>
+                    <i>중첩 갯수는 무제한</i>이나 <i>else 사용 시 중괄호{ }를 사용하며 들여쓰기에 주의</i>합니다.
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">/*
@@ -97,12 +99,12 @@ if (조건식) {
 }
 */
 
-var age = 20;
-var admissionFee = '';
-if (age &lt; 13) {
-    admissionFee = '2,000원';
+var age = 20;       // age 20세
+var admissionFee = ' ';     // (입장료) 결과 실행 칸
+if (age &lt; 13) {      // 13보다 많으므로 false
+    admissionFee = '2,000원';       // false이므로 실행X
 } else {
-    admissionFee = '4,000원';
+    admissionFee = '4,000원';       // 실행O, '4,000원' 출력됨
 }
 console.log(admissionFee);
 </code></pre>
@@ -123,7 +125,7 @@ console.log(admissionFee);
             <div id="sample03" class="sample">
                 <h3 class="t_tit2">03. if문(3)</h3>
                 <p class="t_desc">
-                    else if를 통해 경우의 수를 3가지로 늘릴 수 있습니다.
+                    else if를 통해 <i>경우의 수를 여러개로 늘릴 수 있습니다.</i>
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">/*
@@ -136,14 +138,14 @@ if (조건식) {
 }
 */
 
-var age = 20;
+var age = 20;       // age 20세
 var admissionFee = '';
-if (age &lt; 13) {
-    admissionFee = '2,000원';
-} else if (age >= 13 && age &lt; 20) { // 13~19
-    admissionFee = '4,000원';
+if (age &lt; 13) {      // false
+    admissionFee = '2,000원';       // 실행 X
+} else if (age >= 13 && age &lt; 20) { // 13~19세에 미포함이므로 false
+    admissionFee = '4,000원';       // 실행 X
 } else {
-    admissionFee = '6,000원';
+    admissionFee = '6,000원';       // 실행 O, '6,000원' 출력됨
 }
 console.log(admissionFee);
 </code></pre>
@@ -163,7 +165,9 @@ console.log(admissionFee);
             <div id="sample04" class="sample">
                 <h3 class="t_tit2">04. if문 중첩(4)</h3>
                 <p class="t_desc">
-                    if문안에 if문을 <i>중첩하여 사용 가능</i>합니다.
+                    if문안에 if문을 <i>중첩하여 사용 가능</i>합니다. <br>
+                    이번 예시 또한 중첩 갯수는 무제한이지만 else if와 if문 중첩 등으로 문장이
+                    매우 복잡해지므로 <i>들여쓰기에 각별히 신경을 써야 합니다.</i>
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">/*
@@ -174,10 +178,10 @@ if (조건식) {
 }
 */
 
-var html = Number(prompt('html 점수입력', ''));
-var css = Number(prompt('css 점수입력', ''));
-var javascript = Number(prompt('javascript 점수입력', ''));
-var avg = (html + css + javascript) / 3;
+var html = Number(prompt('html 점수입력', ''));     // html 점수 입력하는 프롬프트 실행
+var css = Number(prompt('css 점수입력', ''));       // css 점수 입력하는 프롬프트 실행
+var javascript = Number(prompt('javascript 점수입력', ''));     // javascript 점수 입력하는 프롬프트 실행
+var avg = (html + css + javascript) / 3;    // 평균점수 계산 : html + css + javascript ÷ 3 = 평균
 var comment;
 if (avg >= 60) {
     if (html &lt; 40) {
@@ -199,7 +203,7 @@ document.write(comment);
                     <details>
                         <summary>결과 보기</summary>
                         <div class="sample04_result">
-                            평균 90점 합격<br>
+                            평균 60점 합격<br>
                             평균 59점 불합격
                         </div>
                     </details>
