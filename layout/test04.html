@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트04</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #F48080;
+        }
+        #header .logo {
+            width: 300px;
+            height: 100px;
+            background-color: #F86464;
+            float: left;
+            line-height: 100px;
+        }
+        #header .menu {
+            width: 900px;
+            height: 100px;
+            background-color: #FEA5A5;
+            float: left;
+            line-height: 100px;
+        }
+
+        #banner {
+            width: 100%;
+            height: 400px;
+            background-color: #EC5C5C;
+        }
+        #banner .image {
+            width: 100%;
+            height: 400px;
+            background-color: #FF8A8A;
+            line-height: 400px;
+        }
+
+        #ad {
+            width: 100%;
+            height: 500px;
+            background-color: #FEA5A5;
+        }
+        #ad .ad1 {
+            width: 100%;
+            height: 250px;
+            background-color: #C66868;
+            line-height: 250px;
+        }
+        #ad .ad2 {
+            width: 100%;
+            height: 250px;
+            background-color: #EA7F7F;
+            line-height: 250px;
+        }
+
+        #section {
+            width: 100%;
+            height: 500px;
+            background-color: #FFBFBF;
+        }
+        #section .box1 {
+            width: 740px;
+            height: 500px;
+            background-color: #EB6666;
+            float: left;
+            line-height: 500px;
+        }
+        #section .box2 {
+            width: 460px;
+            height: 250px;
+            background-color: #CE5F5F;
+            float: left;
+            line-height: 250px;
+        }
+        #section .box3 {
+            width: 460px;
+            height: 250px;
+            background-color: #FE7F7F;
+            float: left;
+            line-height: 250px;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #FF9C9C;
+        }
+        #footer .footer1 {
+            width: 100%;
+            height: 100px;
+            background-color: #FF8888;
+            line-height: 100px;
+        }
+
+        .container {
+            width: 1200px;
+            height: inherit; /* 부모로부터 상속 */
+            margin: 0 auto;
+            overflow: hidden;
+            /* background-color: rgba(0,0,0,0.3); */
+
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="logo"></div>
+                <div class="menu"></div>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="container">
+                <div class="image"></div>
+            </div>
+        </div>
+        <div id="ad">
+            <div class="container">
+                <div class="ad1"></div>
+                <div class="ad2"></div>
+            </div>
+        </div>
+        <div id="section">
+            <div class="container">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer1"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        {
+            const obj = {
+                a: "로고", 
+                b: "메뉴", 
+                c: "이미지 슬라이드", 
+                d: "광고1", 
+                e: "광고2", 
+                f: "공지사항1", 
+                g: "공지사항2", 
+                h: "공지사항3", 
+                i: "푸터"
+            };
+
+            document.querySelector(".logo").innerHTML = obj.a;
+            document.querySelector(".menu").innerHTML = obj.b;
+            document.querySelector(".image").innerHTML = obj.c;
+            document.querySelector(".ad1").innerHTML = obj.d;
+            document.querySelector(".ad2").innerHTML = obj.e;
+            document.querySelector(".box1").innerHTML = obj.f;
+            document.querySelector(".box2").innerHTML = obj.g;
+            document.querySelector(".box3").innerHTML = obj.h;
+            document.querySelector(".footer1").innerHTML = obj.i;
+        }
+    </script>
+</body>
+</html>
