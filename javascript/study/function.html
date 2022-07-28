@@ -57,7 +57,7 @@
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">function func() {
-    document.write("함수가 실행되었습니다.1<br>");
+    document.write("함수가 실행되었습니다.1");
 }
 func(); // 이걸 써야 출력됨
 </code></pre>
@@ -81,7 +81,7 @@ func(); // 이걸 써야 출력됨
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">const func = function() {
-    document.write("함수가 실행되었습니다.2<br>"); // 변수 이름 (func)을 쓰고 있어서 익명함수
+    document.write("함수가 실행되었습니다.2"); // 변수 이름 (func)을 쓰고 있어서 익명함수
 }
 func();
 </code></pre>
@@ -109,7 +109,7 @@ func();
 <pre><code class="language-js">function func(str) {
     document.write(str);
 }
-func("함수가 실행되었습니다.3<br>");
+func("함수가 실행되었습니다.3");
 </code></pre>
                 </div>
                 <div class="result">
@@ -131,7 +131,7 @@ func("함수가 실행되었습니다.3<br>");
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">function func() {
-    const str = "함수가 실행되었습니다.4<br>";
+    const str = "함수가 실행되었습니다.4";
     return str;     // 실행문은 아니지만 결과값으로 저장됨
 }
 document.write(func());     // 도큐멘트 안에 실행문이 들어가는 형태, 리턴값이 있기에 가능함
