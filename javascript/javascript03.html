@@ -35,6 +35,7 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
                 <li><a href="study/function.html">함수</a></li>
+                <li><a href="study/var.html">지역변수·전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -78,13 +79,13 @@
             <div id="sample01" class="sample">
                 <h3>01. 선언적 함수</h3>
                 <p>
-                    함수를 선언할 때 <i>이름을 붙여주는 함수</i>.
+                    함수를 선언할 때 이름을 붙여주는 함수이다.
                 </p>
                 <div class="script">
 <pre><code class="language-js">function func() {
     document.write("함수가 실행되었습니다.1<br>");
 }
-func();
+func();     // 이게 있어야 출력됨
 </code></pre>
                 </div>
                 <div class="result">
@@ -101,10 +102,10 @@ func();
             <div id="sample02" class="sample">
                 <h3>02. 익명 함수</h3>
                 <p>
-                    말 그대로 <i>이름 없는 함수</i>로 함수코드가 변수명에 저장된 형태이다.
+                    말 그대로 이름 없는 함수로 앞에 const를 붙이며 시작하고 함수코드가 변수명에 저장된 형태이다.
                 </p>
                 <div class="script">
-<pre><code class="language-js">const func = function() {
+<pre><code class="language-js">const func = function() {        // const func()라는 변수명에 함수 코드를 저장시키는 것
     document.write("함수가 실행되었습니다.2<br>");
 }
 func();
@@ -124,20 +125,24 @@ func();
             <div id="sample03" class="sample">
                 <h3>03. 매개변수 함수</h3>
                 <p>
-                    함수 호출 시 인수로 전달된 값을 함수 내부에서 사용 가능하도록 해주는 변수.
+                    함수 호출 시 인수로 전달된 값을 함수 내부에서 사용 가능하도록 해주는 변수로 변수는 여러 개 사용도 가능하다.
                 </p>
                 <div class="script">
-<pre><code class="language-js">function func(str) {
-    document.write(str);
+<pre><code class="language-js">function func(str1, str2, str3) {        // 변수 여러개 저장 가능
+    document.write(str1);
+    document.write(str2);
+    document.write(str3);
 }
-func("함수가 실행되었습니다.3<br>");
+func("함수가 실행되었습니다.3", "함수실행.3", "함수.3");        // 순서대로 func(str1, str2, str3...)이런 식으로 출력되는 것
 </code></pre>
                 </div>
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
                         <div class="sample03_result">
-                            함수가 실행되었습니다.3
+                            함수가 실행되었습니다.3<br>
+                            함수실행.3<br>
+                            함수.3
                         </div>
                     </details>
                 </div>
@@ -147,12 +152,12 @@ func("함수가 실행되었습니다.3<br>");
             <div id="sample04" class="sample">
                 <h3>04. 리턴값 함수</h3>
                 <p>
-                    함수가 기능을 수행하고 그 결과를 호출한 곳으로 <i>돌려주는 값</i>이다.
+                    함수가 기능을 수행하고 그 결과를 호출한 곳으로 돌려주는(return) 값이다.
                 </p>
                 <div class="script">
 <pre><code class="language-js">function func() {
     const str = "함수가 실행되었습니다.4<br>";
-    return str;
+    return str;     // return으로 결과값 뿌려줌, 종료를 의미하기도 함.
 }
 document.write(func());
 </code></pre>
@@ -171,16 +176,20 @@ document.write(func());
             <div id="sample05" class="sample">
                 <h3>05. 화살표 함수 : 선언적 함수</h3>
                 <p>
-                    위의 함수들을 <i>화살표 식으로 간략화</i> 할 수 있다.
+                    함수를 선언할 때 이름을 붙여주는 함수이다. <br>
+                    아래 예시와 같이 화살표 식으로 간략화 할 수 있다. 최종적으로는 중괄호{ }도 생략 가능.
                 </p>
                 <div class="script">
-<pre><code class="language-js">/*
+<pre><code class="language-js">// 화살표 함수로 간략화
+/*
 func = () => {
-    document.write("함수가 실행되었습니다.1");
+    document.write("함수가 실행되었습니다.5");
 }
+func();
 */
 
-func = () => document.write("함수가 실행되었습니다.1");
+// 중괄호 생략
+func = () => document.write("함수가 실행되었습니다.5"); 
 
 func();
 </code></pre>
@@ -189,7 +198,7 @@ func();
                     <details>
                         <summary>결과보기</summary>
                         <div class="sample05_result">
-                            "함수가 실행되었습니다.1"
+                            "함수가 실행되었습니다.5"
                         </div>
                     </details>
                 </div>
@@ -198,14 +207,18 @@ func();
 
             <div id="sample06" class="sample">
                 <h3>06. 화살표 함수 : 익명 함수</h3>
+                <p>
+                    말 그대로 이름 없는 함수로 앞에 const를 붙이며 시작하고 함수코드가 변수명에 저장된 형태이다. <br>
+                    아래 예시와 같이 화살표 식으로 간략화 할 수 있다. 최종적으로는 중괄호{ }도 생략 가능.
+                </p>
                 <div class="script">
 <pre><code class="language-js">/*
 const func = () => {
-    document.write("함수가 실행되었습니다.2");
+    document.write("함수가 실행되었습니다.6");
 }
 */
 
-const func = () => document.write("함수가 실행되었습니다.2");
+const func = () => document.write("함수가 실행되었습니다.6");
 
 func();
 </code></pre>
@@ -214,7 +227,7 @@ func();
                     <details>
                         <summary>결과보기</summary>
                         <div class="sample06_result">
-                            함수가 실행되었습니다.2
+                            함수가 실행되었습니다.6
                         </div>
                     </details>
                 </div>
@@ -223,6 +236,10 @@ func();
 
             <div id="sample07" class="sample">
                 <h3>07. 화살표 함수 : 매개변수 함수</h3>
+                <p>
+                    함수 호출 시 인수로 전달된 값을 함수 내부에서 사용 가능하도록 해주는 변수로 변수는 여러 개 사용도 가능하다. <br>
+                    아래 예시와 같이 화살표 식으로 간략화 할 수 있다. 최종적으로는 중괄호{ }도 생략 가능.
+                </p>
                 <div class="script">
 <pre><code class="language-js">/*
 func = (str) => {
@@ -231,14 +248,14 @@ func = (str) => {
 */
 func = str => document.write(str);
 
-func("함수가 실행되었습니다.3");
+func("함수가 실행되었습니다.7");
 </code></pre>
                 </div>
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
                         <div class="sample07_result">
-                            함수가 실행되었습니다.3
+                            함수가 실행되었습니다.7
                         </div>
                     </details>
                 </div>
@@ -247,9 +264,13 @@ func("함수가 실행되었습니다.3");
 
             <div id="sample08" class="sample">
                 <h3>08. 화살표 함수 : 리턴값 함수</h3>
+                <p>
+                    함수가 기능을 수행하고 그 결과를 호출한 곳으로 돌려주는(return) 값이다. <br>
+                    아래 예시와 같이 화살표 식으로 간략화 할 수 있다. 중괄호 안 내용이 두 줄이 되기 때문에 중괄호는 그대로 남겨둔다.
+                </p>
                 <div class="script">
 <pre><code class="language-js">func = () => {
-    const str = "함수가 실행되었습니다.4";
+    const str = "함수가 실행되었습니다.8";
     return str;
 }
 
@@ -260,12 +281,110 @@ document.write(func());
                     <details>
                         <summary>결과보기</summary>
                         <div class="sample08_result">
-                            함수가 실행되었습니다.4
+                            함수가 실행되었습니다.8
                         </div>
                     </details>
                 </div>
             </div>
             <!-- //sample08 -->
+
+            <div id="sample09" class="sample">
+                <h3>09. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값</h3>
+                <p>
+                    한 화살표 함수 안에 익명 함수와 매개변수 함수, 리턴값 함수를 모두 담은 예시.
+                </p>
+                <div class="script">
+<pre><code class="language-js">{
+    const func = (str) => {     // 익명함수 = (매개변수) => {}
+        return str;     // 리턴값
+    }
+    document.write(func("함수가 실행되었습니다.9<br>"));    // 리턴값처럼 출력
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample09_result">
+                            함수가 실행되었습니다.9
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample09 -->
+
+            <div id="sample10" class="sample">
+                <h3>10. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호 생략</h3>
+                <p>
+                    한 화살표 함수 안에 익명 함수와 매개변수 함수(변수가 1개일 경우에만 괄호 생략 可), 리턴값 함수를 모두 담은 예시.
+                </p>
+                <div class="script">
+<pre><code class="language-js">{
+    const func = str => {   // 변수 1개일 때는 괄호 생략 가능
+        return str;     // 결과 의미
+    }
+    document.write(func("함수가 실행되었습니다.10<br>"));
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample10_result">
+                            함수가 실행되었습니다.10
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample10 -->
+
+            <div id="sample11" class="sample">
+                <h3>11. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <p>
+                    한 화살표 함수 안에 익명 함수와 매개변수 함수(변수가 1개일 경우에만 괄호 생략 可)를 모두 담고 리턴값 함수와 중괄호를 생략한 예시.
+                </p>
+                <div class="script">
+<pre><code class="language-js">{
+    const func = str => str; // 리턴 생략, 중괄호도 생략
+
+    document.write(func("함수가 실행되었습니다.11<br>"));
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample11_result">
+                            함수가 실행되었습니다.11
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample11 -->
+
+            <div id="sample12" class="sample">
+                <h3>12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <p>
+                    선언적 함수이므로 const를 쓰지 않는 점 외에는 11번과 같습니다.
+                </p>
+                <div class="script">
+<pre><code class="language-js">{
+    func = str => str;      // 선언적함수에서는 const만 지우면 됨
+
+    document.write(func("함수가 실행되었습니다.12<br>"));
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample12_result">
+                            함수가 실행되었습니다.12
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample12 -->
 
         </div>
 
@@ -404,15 +523,98 @@ document.write(func());
         //     document.write(func());
         // }
 
-        // 01. 선언적 함수
+        // // 01. 선언적 함수
+        // {
+        //     function func() {
+        //         document.write("함수가 실행되었습니다.1<br>");
+        //     }
+        //     func();
+        // }
+        // // 02. 익명 함수
+        // {
+        //     const func = function() {
+        //         document.write("함수가 실행되었습니다.2<br>");
+        //     }
+        //     func();
+        // }
+        // // 03. 매개변수 함수 (변수 여러개 쓸 수 있음!)
+        // {
+        //     function func(str1, str2, str3) {
+        //         document.write(str1);
+        //         // document.write(str2);
+        //         // document.write(str3);
+        //     }
+        //     func("함수가 실행되었습니다.3<br>", "함수실행3<br>", "함수3<br>");
+        // }
+        // // 04. 리턴값 함수
+        // {
+        //     function func() {
+        //         const str = "함수가 실행되었습니다.4<br>";
+        //         return str;     // return으로 결과값 뿌려줌, 종료를 의미하기도 함.
+        //     }
+        //     document.write(func());
+        // }
+        // // 05. 화살표 함수 (선언적 함수)
+        // {
+        //     func = () => {
+        //         document.write("함수가 실행되었습니다.5<br>");
+        //     }
+        //     func();
+        // }
+        // // 06. 화살표 함수 (익명 함수)
+        // {
+        //     const func = () => {
+        //         document.write("함수가 실행되었습니다.6<br>");
+        //     }
+        //     func();
+        // }
+        // // 07. 화살표 함수 (매개변수 함수)
+        // {
+        //     func = (str1, str2, str3) => {
+        //         document.write(str1);
+        //         // document.write(str2);
+        //         // document.write(str3);
+        //     }
+        //     func("함수가 실행되었습니다.7<br>", "함수실행7<br>", "함수7<br>");
+        // }
+        // // 08. 화살표 함수 (리턴값 함수)
+        // {
+        //     func = () => {
+        //         const str = "함수가 실행되었습니다.8<br>";
+        //         return str;     // return으로 결과값 뿌려줌, 종료를 의미하기도 함.
+        //     }
+        //     document.write(func());
+        // }
+        
+        // // 09. 화살표 함수 : 익명함수 + 매개변수 함수 + 리턴값 함수
+        // {
+        //     const func = (str) => {     // 익명함수 = (매개변수) => {}
+        //         return str;     // 리턴값
+        //     }
+        //     document.write(func("함수가 실행되었습니다.9<br>"));    // 리턴값처럼 출력
+        // }
 
-        // 02. 익명 함수
-        // 03. 매개변수 함수
-        // 04. 리턴값 함수
-        // 05. 화살표 함수 (선언적 함수)
-        // 06. 화살표 함수 (익명 함수)
-        // 07. 화살표 함수 (매개변수 함수)
-        // 08. 화살표 함수 (리턴값 함수)
+        // // 10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략
+        // {
+        //     const func = str => {   // 변수 1개일 때는 괄호 생략 가능
+        //         return str;     // 결과 의미
+        //     }
+        //     document.write(func("함수가 실행되었습니다.10<br>"));
+        // }
+
+        // // 11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+        // {
+        //     const func = str => str; // 리턴 생략, 중괄호도 생략
+
+        //     document.write(func("함수가 실행되었습니다.11<br>"));
+        // }
+
+        // // 12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+        // {
+        //     func = str => str;      // 선언적함수에서는 const만 지우면 됨
+
+        //     document.write(func("함수가 실행되었습니다.12<br>"));
+        // }
     </script>
 </body>
 </html>
