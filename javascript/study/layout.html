@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+    <style>
+        .document .t_iframe {
+            position: relative;
+            padding-top: 56%;
+            width: 100%;
+            height: 0;
+        }
+        .document .t_iframe iframe {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">레이아웃 01</h2>
+            <div class="t_frame">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FsSf61hXUWtTKD6tkMjuojN%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+            </div>
+            <p class="t_desc">
+                이번 레이아웃은 헤더, 내비게이션 바, 그리고 사이드바와 옆의 섹션, 마지막으로
+                아래에는 푸터 영역이 배치된 기본적이고 단순한 형태입니다. 한 번 따라해볼까요?
+            </p>
+
+            <hr>
+            
+            <h2 class="t_tit2">01. Float 방식</h2>
+            <p class="t_desc">
+                레이아웃 정렬 방식 중 float 방식을 이용하여 정렬해보도록 하겠습니다.
+            </p>
+            <p class="t_desc2">
+                잘 정렬되다가 aside 영역과 section 영역이 나란히 붙지 못하는 모습을 볼 수 있습니다. 
+                이 때, 두 영역을 한 줄로 나란히 배치하기 위해서는 해당 aside, section 영역 속성에
+                <i>float: left;</i>를 설정해줍니다. <br>
+                하지만 그렇게 되면 section 밑의 footer 영역의 height 값이 0이 되어버리는
+                버그가 발생하는데 그럴 때에는 버그가 걸린 해당 영역 footer에 <i>clear: both;</i>
+                를 설정해주시면 됩니다.
+            </p>
+
+            <h3 class="t_tit2">자바스크립트 기본 규칙</h3>
+            <h4 class="t_tit3">1. 세미콜론(;)</h4>
+            <p class="t_desc">
+                하나의 실행문이 끝나면 세미콜론(;)을 붙여줍니다.
+                붙이지 않아도 무관하나 처음 학습한다면 붙이는 것을 권장합니다.
+            </p>
+            <div class="t_box">
+                var num = 5<i>;</i><br>
+                document.write(num)<i>;</i>
+            </div>
+
+            <h4 class="t_tit3">2. 대소문자 구분</h3>
+            <p class="t_desc">
+                자바스크립트 명령어는 꼭 대소문자를 구분합니다.
+            </p>
+            <p class="t_box">
+                var <i>num</i> = 5;<br>
+                document.write(<i>num</i>) (O)<br>
+                document.write(<i>Num</i>) (X)
+            </p>
+            <h4 class="t_tit3">3. 들여쓰기</h3>
+            <p class="t_desc">
+                가독성을 위해 들여쓰기를 합니다.
+            </p>
+            <p class="t_box">
+                var avgDistance = function() {<br>
+                <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>var speed = distance * time;<br>
+                }
+            </p>
+            <h4 class="t_tit3">4. 주석</h4>
+            <p class="t_desc">
+                일반적으로 <i>특정 코드에 대한 설명</i>을 입력할 때나 <i>특정 부분 코드가 실행되지 않도록 할 때</i>
+                사용하며, 이 주석 표시는 <i>프로그램에 영향을 끼치지 않습니다.</i>
+            </p>
+            <p class="t_desc">
+                주석 처리 방법은 <i>주석 처리할 줄을 클릭 후 Ctrl + [/]키</i>를 누르시면 됩니다.
+            </p>
+            <p class="t_box">
+                <i>//</i> 한 줄 주석 처리 방법<br>
+                <br>
+                <i>/*</i> 여러 줄 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;주석 처리 방법 <i>*/</i>
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">출력하는 방법</h3>
+            <p class="t_desc">
+                자바스크립트에서는 출력 방법이 여러가지 있으며 이는 <i>기본 명령어</i>입니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>분류</th>
+                        <th>메소드</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">입력</td>
+                        <td>prompt()</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="3">출력</td>
+                        <td>document.write()</td>
+                    </tr>
+                    <tr>
+                        <td>alert()</td>
+                    </tr>
+                    <tr>
+                        <td>console.log()</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">확인</td>
+                        <td>confirm()</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;출력 방법 : 기본 명령어&lt;/title&gt;
+    &lt;script&gt;
+        prompt('입력 제목', '입력 내용');
+        document.write('출력 내용')
+        alert('출력 내용');
+        console.log('출력 내용');
+        confirm('확인 내용');
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">자바스크립트 사용 방법</h3>
+            <p class="t_desc">
+                자바스크립트의 사용법에는 
+                <i>①외부 파일로 로드하는 방법</i>, 
+                <i>②script 태그에 사용하는 방법</i>, 
+                <i>③body 태그에 직접 기술하는 방법</i>
+                등이 있습니다.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Javasript&lt;/title&gt;
+    &lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
+    &lt;script type="text/Javasript" src="js/script.js"&gt;&lt;/script&gt;
+    &lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
+    &lt;script&gt;
+        document.write("Javasript");
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 3. body 태그에 직접 기술하는 방법 --&gt;
+    &lt;a href="#" onclick="alert('Javasript')"&gt;&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
