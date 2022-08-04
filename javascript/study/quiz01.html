@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 조건문</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 만들기</h2>
+            <p class="t_desc">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 퀴즈를 만들어보도록 하겠습니다. <br>
+                <i>변수(let)와 상수(const)에 쿼리 셀렉터 값을 저장</i>시키고, 그 동안 배운 스크립트를
+                통해 문제 정보를 HTML 태그에 출력시키고, 정답을 숨겼다가 버튼을 눌러 보이게 하는
+                등의 <i>다양한 효과들을 재현</i>시켜봅시다!
+            </p>
+
+     <!-- // 퀴즈 만들기  -->
+
+            <h3 class="t_tit2">01. 선택자</h3>
+            <p class="t_desc">
+                상수 <i>const를 필요한 만큼 선언</i>시킨 다음 적절한 이름을 붙여주고, <i>쿼리 셀렉터</i>를 통해 연결 시켜주고자 하는 CSS 속성명을
+                아래의 예시와 같이 입력하여 <i>연결 작업을 하도록 합시다.</i>
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">//const 적절한 이름 = document.querySelector("연결시켜주고자 하는 CSS 속성명");
+
+const quizType = document.querySelector(".quiz__type");                             // 퀴즈 종류
+const quizNumber = document.querySelector(".quiz__question .number");               // 퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");                     // 퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");               // 정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");                 // 정답 결과
+const quizInput = document.querySelector(".quiz__answer .input");                   // 사용자 정답
+const quizView = document.querySelector(".quiz__view");
+</code></pre>
+            </div>
+
+            <!-- // 01. 선택자 -->
+
+            <h3 class="t_tit2">02. 문제정보 출력하기</h3>
+            <p class="t_desc">
+                
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// 문제 정보
+const answerType = "웹디자인기능사";    // 문제 타입
+const answerNum = "1";      // 문제 번호
+const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지통합 전략은?";      // 질문
+const answerResult = "CIP";        // 정답
+
+// 문제 출력 (innerText 대신 textContent를 사용해도 됨 / 익스플로어 호환되는 건 textContent)
+quizType.innerText = answerType;
+quizNumber.innerText = "0" + answerNum + ". ";
+quizAsk.innerText = answerAsk;
+quizResult.innerText = "정답은 [ " + answerResult + " ] 입니다.";
+</code></pre>
+            </div>
+
+            <!-- // 02. 선택자 -->
+
+
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
