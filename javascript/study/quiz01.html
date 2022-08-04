@@ -55,8 +55,9 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">퀴즈 만들기</h2>
-            <p class="t_desc">
+            <p class="t_desc2">
                 이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 퀴즈를 만들어보도록 하겠습니다. <br>
+                이번 학습 내용을 잘 활용하여 웹디자인기능사 시험 공부 열심히 해 봅시다! <br>
                 <i>변수(let)와 상수(const)에 쿼리 셀렉터 값을 저장</i>시키고, 그 동안 배운 스크립트를
                 통해 문제 정보를 HTML 태그에 출력시키고, 정답을 숨겼다가 버튼을 눌러 보이게 하는
                 등의 <i>다양한 효과들을 재현</i>시켜봅시다!
@@ -64,48 +65,122 @@
 
      <!-- // 퀴즈 만들기  -->
 
-            <h3 class="t_tit2">01. 선택자</h3>
+    <hr>
+
+            <h3 class="t_tit2">01. 정답 확인하기 유형</h3>
             <p class="t_desc">
-                상수 <i>const를 필요한 만큼 선언</i>시킨 다음 적절한 이름을 붙여주고, <i>쿼리 셀렉터</i>를 통해 연결 시켜주고자 하는 CSS 속성명을
-                아래의 예시와 같이 입력하여 <i>연결 작업을 하도록 합시다.</i>
+                첫번째 정답 확인하기 유형의 자바스크립트 소스와 부연 설명(주석 처리됨)이다. <br>
+                HTML과 CSS 소스를 함께 보고 싶다면 맨 아래의 '원본 소스 보기' 버튼을 누를 것.
             </p>
             <div class="t_code">
-<pre><code class="language-js">//const 적절한 이름 = document.querySelector("연결시켜주고자 하는 CSS 속성명");
+<pre><code class="language-js">// 선택자 : 상수 const를 필요한 만큼 선언한 다음 CSS 속성명과 연결시킨다.
+//const 적절한 상수 이름 = document.querySelector("CSS 속성명");
+const quizType = document.querySelector(".quiz__type");                 // 퀴즈 종류
+const quizNumber = document.querySelector(".quiz__question .number");   // 퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");         // 퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");     // 정답 결과
+const quizDog = document.querySelector(".quiz__view .dog");             // 강아지
 
-const quizType = document.querySelector(".quiz__type");                             // 퀴즈 종류
-const quizNumber = document.querySelector(".quiz__question .number");               // 퀴즈 번호
-const quizAsk = document.querySelector(".quiz__question .ask");                     // 퀴즈 질문
-const quizConfirm = document.querySelector(".quiz__answer .confirm");               // 정답 확인 버튼
-const quizResult = document.querySelector(".quiz__answer .result");                 // 정답 결과
-const quizInput = document.querySelector(".quiz__answer .input");                   // 사용자 정답
-const quizView = document.querySelector(".quiz__view");
-</code></pre>
-            </div>
+// 문제 정보
+// HTML 부분은 비워두고 이곳에다가 출력하고자 하는 값을 입력한다. 업데이트 시 이곳에서 수정할 것.
+const answerType = "웹디자인기능사";
+const answerNum = "1";
+const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+const answerResult = "연변대비";
 
-            <!-- // 01. 선택자 -->
-
-            <h3 class="t_tit2">02. 문제정보 출력하기</h3>
-            <p class="t_desc">
-                
-            </p>
-            <div class="t_code">
-<pre><code class="language-js">// 문제 정보
-const answerType = "웹디자인기능사";    // 문제 타입
-const answerNum = "1";      // 문제 번호
-const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지통합 전략은?";      // 질문
-const answerResult = "CIP";        // 정답
-
-// 문제 출력 (innerText 대신 textContent를 사용해도 됨 / 익스플로어 호환되는 건 textContent)
+// 문제 출력
+// 위의 '문제 정보'에서 상수에 저장해두었던 값을 출력시키는 방법임
+// TMI) innerText 대신 textContent를 사용하면 익스플로어까지 호환 가능.
 quizType.innerText = answerType;
 quizNumber.innerText = "0" + answerNum + ". ";
 quizAsk.innerText = answerAsk;
-quizResult.innerText = "정답은 [ " + answerResult + " ] 입니다.";
+quizResult.innerText = answerResult;
+
+// 정답 숨기기
+// '정답 확인' 버튼을 누르기 전까지는 정답을 숨겨야 함
+quizResult.style.display = "none";
+
+// 정답 확인
+quizConfirm.addEventListener("click", function(){
+    quizConfirm.style.display = "none";     // 정답 버튼 클릭하면 확인 버튼 안보이게 함
+    quizResult.style.display = "block";     // 숨겨진 정답을 보이게 함
+    quizDog.classList.add("like");          // 정답을 확인하면 강아지가 웃고 있어야 함 --> class에 "like" 추가
+});
 </code></pre>
             </div>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/quizEffect01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/quizEffect01.html">원본 소스 보기</a>
+            </div>
+            <!-- // 01. 정답 확인하기 유형 -->
 
-            <!-- // 02. 선택자 -->
+            <hr>
 
+            <h3 class="t_tit2">02. 주관식 유형</h3>
+            <p class="t_desc">
+                두번째 주관식 유형의 자바스크립트 소스와 부연 설명(주석 처리됨)이다. <br>
+                HTML과 CSS 소스를 함께 보고 싶다면 맨 아래의 '원본 소스 보기' 버튼을 누를 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// 선택자
+const quizType = document.querySelector(".quiz__type");                 // 퀴즈 종류
+const quizNumber = document.querySelector(".quiz__question .number");   // 퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");         // 퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");     // 정답 결과
+const quizInput = document.querySelector(".quiz__answer .input");       // 사용자 정답
+const quizView = document.querySelector(".quiz__view");             // 강아지
 
+// 문제 정보
+const answerType = "웹디자인기능사";
+const answerNum = "2";
+const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지통합 전략은 무엇인가요?";
+let answerResult = "CIP";       // 상수 const 아닌 변수 let 써줘야 함
+
+// 문제 출력
+quizType.innerText = answerType;
+quizNumber.innerText = "0" + answerNum + ". ";      // 문제 번호를 "0N. " 식으로 출력시킴
+quizAsk.innerText = answerAsk;
+quizResult.innerText = "정답은 “ " + answerResult + " ” 입니다.";
+
+// 정답 숨기기
+quizResult.style.display = "none";
+
+// 정답 확인 - 정답 버튼 눌렀을 때
+quizConfirm.addEventListener("click", () => {
+    quizInput.style.display = "none";       // 정답 버튼을 누르면 입력창을 없앤다
+    quizResult.style.display = "block";     // 숨겨져있던 정답을 공개시킨다
+    quizConfirm.style.display = "none";     // 정답 확인 버튼을 없앤다
+        
+    // 사용자가 입력한 정답
+    const userWord = quizInput.value.toLowerCase().trim();       // 사용자의 입력값 , toLowerCase 입력하면 대소문자 구분 사라짐 , 여백 상관X
+    answerResult = answerResult.toLowerCase().trim();
+        
+    // 콘솔창 테스트용 (테스트 마치면 주석처리하기!)
+    // console.log(userWord);
+    // console.log(answerResult);
+
+    // 사용자 정답 == 문제 정답 (일치하는지 확인하기), if문 사용
+    if(userWord == answerResult){
+        // 정답일 경우
+        quizView.classList.add("like");     // 강아지 미소짓도록 하기
+    } else {
+        // 오답일 경우
+        quizView.classList.add("dislike");      // 강아지 슬퍼하도록 하기
+    }
+});
+</code></pre>
+            </div>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/quizEffect02.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/quizEffect02.html">원본 소스 보기</a>
+            </div>
+            <!-- // 02. 주관식 유형 -->
 
         </div>
     </main>
