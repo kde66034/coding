@@ -216,101 +216,30 @@
             }
         ]
 
-        // 문제 출력
-        // textContent가 innerText보다 사용빈도 더 높음
-        // quizType[0].textContent = quizInfo[0].answerType;
-        // quizType[1].textContent = quizInfo[1].answerType;
-        // quizType[2].textContent = quizInfo[2].answerType;
-        // quizType[3].textContent = quizInfo[3].answerType;
-
-        // quizNumber[0].textContent = "0" + quizInfo[0].answerNum + ". ";
-        // quizNumber[1].textContent = "0" + quizInfo[1].answerNum + ". ";
-        // quizNumber[2].textContent = "0" + quizInfo[2].answerNum + ". ";
-        // quizNumber[3].textContent = "0" + quizInfo[3].answerNum + ". ";
-
-        // quizAsk[0].textContent = quizInfo[0].answerAsk;
-        // quizAsk[1].textContent = quizInfo[1].answerAsk;
-        // quizAsk[2].textContent = quizInfo[2].answerAsk;
-        // quizAsk[3].textContent = quizInfo[3].answerAsk;
-
-        // quizResult[0].textContent = quizInfo[0].answerResult;
-        // quizResult[1].textContent = quizInfo[1].answerResult;
-        // quizResult[2].textContent = quizInfo[2].answerResult;
-        // quizResult[3].textContent = quizInfo[3].answerResult;
-
-        // 문제 출력 : for문
-        // for(let i = 0; i < 4; i++) {        // 4 대신 quizInfo.length를 써줘야 함. 문제가 추가되어도 수정해줄 필요 없기때문. 굉장히 편리!
-        //     quizType[i].textContent = quizInfo[i].answerType;
-        //     quizNumber[i].textContent = "0" + quizInfo[i].answerNum + ". ";
-        //     quizAsk[i].textContent = quizInfo[i].answerAsk;
-        //     quizResult[i].textContent = quizInfo[i].answerResult;
-        // }
-
-        // 문제 출력 : forEach문
-        // function 안에 e를 꼭 써줘야 함. 
-        // e는 데이터, i는 번호
+        // 문제 출력 for Each
         quizInfo.forEach((e, i) => {
-            quizType[i].textContent = quizInfo[i].answerType;
-            quizNumber[i].textContent = "0" + quizInfo[i].answerNum + ". ";
-            quizAsk[i].textContent = quizInfo[i].answerAsk;
-            quizResult[i].textContent = quizInfo[i].answerResult;
+            quizType[i].innerText = quizInfo[i].answerType;
+            quizNumber[i].innerText = quizInfo[i].answerNum;
+            quizAsk[i].innerText = quizInfo[i].answerAsk;
+            quizResult[i].innerText = quizInfo[i].answerResult;
         });
-        
-        // 정답 숨기기
-        // quizResult[0].style.display = "none";
-        // quizResult[1].style.display = "none";
-        // quizResult[2].style.display = "none";
-        // quizResult[3].style.display = "none";
 
-        // 정답 숨기기 : for문
+        // for문 : 정답 지우기
         for(let i = 0; i < quizInfo.length; i++) {
-            // quizResult[i].style.display = "none";
-        }
-    
-        // 먼저 콘솔창으로 테스트
-        // quizInfo.forEach((element) => {
-        //     console.log(element);
-        // });
-
-        // 정답 숨기기 : forEach
-        quizInfo.forEach((e, i) => {
             quizResult[i].style.display = "none";
-        });
+        }
 
-        // 정답 확인
-        // quizConfirm이 여러개이므로 선택자 다음 [0] 이런 식으로 번호 붙여주기
-        quizConfirm[0].addEventListener("click", () => {
-            // alert("test")
-        });
-
-        // 하지만 0,1,2,3 다 만들어줘야해서 귀찮음
-
-        // forEach로 간략화
-        //요소 btn을 만들어서, 선택자 quizConfirm 과 연결시킴
-        //펑션 괄호 안의 순서는 반드시 (element, index, array)이기때문에 btn=element, num=index가 됨.
+        // 마무리 forEach 버튼클릭 if문 결과
         quizConfirm.forEach((btn, num) => {
-            btn.addEventListener("click", () => {
-                
-                // 사용자 정답
-                const userWord = quizInput[num].value; //.toLowerCase().trim() 붙여주면 대소문자구분X / 공백 상관X
+            btn.addEventListener("click" ,() => {
+                //사용자 입력
+                const userWord = quizInput[num].value;
 
-                console.log(userWord);
-                console.log(quizInfo[num].answerResult);
-                // quizInfo[num] = answerResult.value.toLowerCase().trim();
-
-                // 사용자 정답 == 문제 정답 (맞는지 확인)
+                //출력
                 if(userWord == quizInfo[num].answerResult) {
-                    //정답
                     quizView[num].classList.add("like");
-                    quizConfirm[num].style.display = "none";
-                    quizResult[num].style.display = "none";
-                    quizInput[num].style.display = "block";
                 } else {
-                    //오답
                     quizView[num].classList.add("dislike");
-                    quizConfirm[num].style.display = "none";
-                    quizResult[num].style.display = "block";
-                    quizInput[num].style.display = "none";
                 }
             });
         });
