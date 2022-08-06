@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 03</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 만들기 03</h2>
+            <p class="t_desc2">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 퀴즈를 만들어보도록 하겠습니다. <br>
+                이번 학습 내용을 잘 활용하여 웹디자인기능사 시험 공부 열심히 해 봅시다! <br>
+                <i>변수(let)와 상수(const)에 쿼리 셀렉터 값을 저장</i>시키고, 그 동안 배운 스크립트를
+                통해 문제 정보를 HTML 태그에 출력시키고, 정답을 숨겼다가 버튼을 눌러 보이게 하는
+                등의 <i>다양한 효과들을 구현</i>시켜봅시다!
+            </p>
+
+     <!-- // 퀴즈 만들기  -->
+
+    <hr>
+
+            <h3 class="t_tit2">주관식(여러 문제) 유형</h3>
+            <p class="t_desc">
+                세 번째 주관식(여러 문제) 유형의 자바스크립트 소스와 부연 설명(주석 처리됨)이다. <br>
+                HTML과 CSS 소스를 함께 보고 싶다면 맨 아래의 '원본 소스 보기' 버튼을 누를 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// 선택자 : 상수 const를 필요한 만큼 선언한 다음 HTML 영역의 div, 시맨틱 태그 등의 Class명과 연결시킨다.
+// 문제(&lt;div class="quiz"&gt;)가 여러개이므로 뒤에 All을 꼭! 붙여주기
+const quizType = document.querySelectorAll(".quiz__type");                 // 퀴즈 종류
+const quizNumber = document.querySelectorAll(".quiz__question .number");   // 퀴즈 번호
+const quizAsk = document.querySelectorAll(".quiz__question .ask");         // 퀴즈 질문
+const quizConfirm = document.querySelectorAll(".quiz__answer .confirm");   // 정답 확인 버튼
+const quizResult = document.querySelectorAll(".quiz__answer .result");     // 정답 결과
+const quizInput = document.querySelectorAll(".quiz__answer .input");       // 사용자 정답
+const quizView = document.querySelectorAll(".quiz__view");             // 강아지
+
+// 문제 정보
+const quizInfo = [
+    {
+        answerType: "웹디자인기능사 2016년 4회",
+        answerNum: "1",
+        answerAsk: "먼저 본 색의 영향으로 나중에 보는 색이 다르게 보이는 현상은?",
+        answerResult: "계시대비"
+    },
+    {
+        answerType: "웹디자인기능사 2016년 4회",
+        answerNum: "2",
+        answerAsk: "HTML 문서의 시작을 알려주는 태그는?",
+        answerResult: "&lt;html&gt;"
+    },
+    {
+        answerType: "웹디자인기능사 2016년 4회",
+        answerNum: "3",
+        answerAsk: "E-mail 송신 시에 사용되는 프로토콜은?",
+        answerResult: "SMTP"
+    },
+    {
+        answerType: "웹디자인기능사 2016년 4회",
+        answerNum: "4",
+        answerAsk: "웹사이트 제작 단계 중 사이트의 목적과 사용자 분석에 따라 사이트의 디자인 방향을 설정하는 단계는?",
+        answerResult: "콘셉트 도출"
+    }
+]
+</code></pre>
+            </div>
+            <p class="t_desc2">
+                위의 예시와 같이 상수(const)를 필요한 만큼 생성한 후 HTML 영역의 div, 시맨틱 태그 등의 class명과 연결시킨다. <br>
+                또한 이번 포스팅에서는 <i>문제를 여러개 만들었기 때문</i>에 <i>document.querySelector 뒤에 All을 반드시 붙여</i>야 한다. <br>
+                문제 정보는 배열 안에 객체가 담긴 형태로 입력시켰다.
+            </p>
+
+            <hr>
+
+            <div class="t_code">
+<pre><code class="language-js">// 문제 출력 : 원시적 방법
+// textContent가 innerText보다 사용빈도 더 높음
+// quizType[0].textContent = quizInfo[0].answerType;
+// quizType[1].textContent = quizInfo[1].answerType;
+// quizType[2].textContent = quizInfo[2].answerType;
+// quizType[3].textContent = quizInfo[3].answerType;
+
+// quizNumber[0].textContent = "0" + quizInfo[0].answerNum + ". ";
+// quizNumber[1].textContent = "0" + quizInfo[1].answerNum + ". ";
+// quizNumber[2].textContent = "0" + quizInfo[2].answerNum + ". ";
+// quizNumber[3].textContent = "0" + quizInfo[3].answerNum + ". ";
+
+// quizAsk[0].textContent = quizInfo[0].answerAsk;
+// quizAsk[1].textContent = quizInfo[1].answerAsk;
+// quizAsk[2].textContent = quizInfo[2].answerAsk;
+// quizAsk[3].textContent = quizInfo[3].answerAsk;
+
+// quizResult[0].textContent = quizInfo[0].answerResult;
+// quizResult[1].textContent = quizInfo[1].answerResult;
+// quizResult[2].textContent = quizInfo[2].answerResult;
+// quizResult[3].textContent = quizInfo[3].answerResult;
+
+// 문제 출력 : for문
+// for(let i = 0; i &lt; quizInfo.length; i++) {        // 4 대신 quizInfo.length를 쓰면 문제가 추가돼도 수정할 필요 X
+//     quizType[i].textContent = quizInfo[i].answerType;
+//     quizNumber[i].textContent = "0" + quizInfo[i].answerNum + ". ";
+//     quizAsk[i].textContent = quizInfo[i].answerAsk;
+//     quizResult[i].textContent = quizInfo[i].answerResult;
+// }
+
+// 문제 출력 : forEach문
+// function 괄호 안에 e를 꼭 써줘야 함. 
+// e는 데이터(element), i는 번호(index)
+quizInfo.forEach((e, i) => {
+    quizType[i].textContent = quizInfo[i].answerType;
+    quizNumber[i].textContent = "0" + quizInfo[i].answerNum + ". ";
+    quizAsk[i].textContent = quizInfo[i].answerAsk;
+    quizResult[i].textContent = quizInfo[i].answerResult;
+});
+</code></pre>
+            </div>
+            <p class="t_desc2">
+                문제 출력 방법은 원시적인 방법과 for문, forEach문, 이렇게 총 3가지의 방법이 있다. <br>
+                forEach문이 가장 간략화된 방법으로 최종적으로는 원시적 방법과 for문을 주석처리 후 <i>forEach문을 사용</i>한다.
+            </p>
+
+            <hr>
+
+            <div class="t_code">
+<pre><code class="language-js">// 정답 숨기기 : 원시적 방법
+// quizResult[0].style.display = "none";
+// quizResult[1].style.display = "none";
+// quizResult[2].style.display = "none";
+// quizResult[3].style.display = "none";
+
+// 정답 숨기기 : for문
+// for(let i = 0; i &lt; quizInfo.length; i++) {
+//     quizResult[i].style.display = "none";
+// }
+
+// 정답 숨기기 : 콘솔창으로 테스트
+// quizInfo.forEach((element) => {
+//     console.log(element);
+// });
+
+// 정답 숨기기 : forEach
+quizInfo.forEach((e, i) => {
+    quizResult[i].style.display = "none";
+});
+</code></pre>
+            </div>
+            <p class="t_desc2">
+                문제를 출력했다면 일단 정답 확인 버튼을 누르기 전까지 보이게 해서는 안된다. <br>
+                정답 숨기는 방법도 원시적 방법과 for문, forEach 이렇게 3가지가 있으며 최종적으로는 forEach를 사용한다.
+            </p>
+            
+            <hr>
+
+            <div class="t_code">
+<pre><code class="language-js">// 정답 확인 : forEach
+// 요소 btn을 만들어서, 선택자 quizConfirm 과 연결시킴
+// 펑션 괄호 안의 순서는 반드시 (element, index, array)이기때문에 자동으로 btn=element, num=index가 됨.
+quizConfirm.forEach((btn, num) => {
+    btn.addEventListener("click", () => {       // 클릭 시 이벤트 발생 시키기
+            
+        // 사용자 정답
+        const userWord = quizInput[num].value; // 사용자가 입력한 답을 userWord라는 상수에 저장!
+
+        // 사용자 정답 == 문제 정답 (맞는지 확인)
+        if(userWord == quizInfo[num].answerResult) {
+            //정답이면
+            // alert("정답");   // alert 테스트용, 테스트 마친 후 주석처리
+            quizView[num].classList.add("like");    // 강아지 미소
+            quizConfirm[num].style.display = "none";    // 정답확인버튼 숨김
+            quizResult[num].style.display = "none";     // 정답 숨기기
+            quizInput[num].style.display = "block";     // 입력창 남기기
+        } else {
+            //오답이면
+            // alert("오답");
+            quizView[num].classList.add("dislike");     // 강아지 슬픔
+            quizConfirm[num].style.display = "none";    // 정답확인버튼 숨김
+            quizResult[num].style.display = "block";    // 정답 표시
+            quizInput[num].style.display = "none";      // 입력창 숨김
+        }
+    });
+});
+</code></pre>
+            </div>
+            <p class="t_desc2">
+                이제 정답 입력 후의 동작을 만들어야 한다. <i>식이 복잡해지기 때문에 반드시 forEach문을 사용</i>해야 할 것. <br>
+                addEventListener를 통해 클릭 시의 이벤트를, if문을 통해 사용자의 입력 데이터와 문제 정답을 비교하고 그 다음
+                나와야 할 동작들을 위의 예시 코드와 같이 구현하도록 한다.
+            </p>
+
+            <hr>
+
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/quizEffect03.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/quizEffect03.html">원본 소스 보기</a>
+            </div>
+            <!-- // 03. 주관식 여러 문제 유형 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
