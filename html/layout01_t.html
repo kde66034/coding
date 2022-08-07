@@ -12,7 +12,7 @@
 <body>
     <div class="document">
         <h2 class="t_tit">레이아웃(Layout)</h2>
-        <p class="t_desc">
+        <p class="t_desc2">
             <i>웹을 구성하는 요소들을 보다 알아보기 쉽게 효과적으로 배치</i>시켜주는 작업입니다.
         </p>
     
@@ -49,10 +49,10 @@
             추가하여 block 형식을 해제</i>시켜 세로로 정렬 되어 있던 요소들을 <i>가로로 나란히 
             정렬하는 것이 가능</i>합니다.
         </p>
+        <br>
         <p class="t_desc2">
             <i>clear: both;</i>
         </p>
-        <br>
         <p class="t_desc">
             단, 이 속성을 쓰게 될 경우 속성을 썼던 아래의 요소가 보이지 않게 되는데,
             이는 그 아래의 요소의 height 값이 0이 되어버리는 버그 때문입니다.
@@ -60,11 +60,12 @@
         </p>
         <p class="t_desc">
             반응형으로 만들 경우 <i>wrap 속성의 width만을 1200px로 고정</i>시킨 후<i> 
-            나머지 속성의 width 값은 퍼센테이지로 환산</i>시킵니다. <br>
-            미디어 쿼리에서 노트북 전용(max-width: 1300px), 태블릿 PC 전용(768px), 
+            나머지 속성의 width 값은 백분율로 환산</i>시켜야 하며 미디어 쿼리에서 노트북
+            전용(max-width: 1300px), 태블릿 PC 전용(768px), 
             스마트폰 전용(480px) 사이즈를 만듭니다.
         </p>
 
+        <br>
         <!-- 코드펜 01 -->
         <h4 class="t_tit3">결과</h4>
         <div class="t_iframe">
@@ -88,6 +89,7 @@
                 on <a href="https://codepen.io">CodePen</a>.
               </iframe>
         </div>
+        <br>
         <p class="t_desc">
             clear: both;를 쓰는 대신, float를 적용한 요소의 부모 요소에 <i>overflow: hidden;</i>을 적용하거나
             3번째처럼 <i>clearfix</i>를 쓰는 방법이 있습니다. clearfix 사용법은 위의 코드펜 3번째 CSS에 적혀있습니다.
@@ -104,12 +106,12 @@
             display: flex;<br>
             flex-wrap: wrap;
         </p>
-        <br>
         <p class="t_desc">
             위의 내용을 자식 태그를 감싸고 있는 <i>부모 요소에게만 적용</i>해주시면 가로로 나란히
             정렬 가능합니다.
         </p>
 
+        <br>
         <!-- 코드펜 02 -->
         <h4 class="t_tit3">결과</h4>
         <div class="t_iframe">
@@ -151,12 +153,12 @@
             grid-template-columns: 30% 70%;<br>
             grid-template-rows: 100px 100px 780px 100px;
         </p>
-        <br>
         <p class="t_desc">
             <i>display: grid;로 Grid 사용을 활성화</i>하며, <i>grid-template-areas에서 요소를 배치</i>하고,
             <i>grid-template-columns에서는 요소 배치 가로 길이</i>를, <i>grid-template-rows에서
             는 세로 길이를 지정</i>해줍니다.
         </p>
+        <br>
         <p class="t_desc2">
             #aside {<br>
             &nbsp;&nbsp;&nbsp;&nbsp;<i>grid-area: aside;</i><br>
@@ -168,6 +170,7 @@
             grid-area 속성에 똑같이 적어 <i>연결시켜주는 작업이 필요</i>합니다.
         </p>
 
+        <br>
         <!-- 코드펜 03 -->
         <h4 class="t_tit3">결과</h4>
         <div class="t_iframe">

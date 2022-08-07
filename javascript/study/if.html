@@ -49,6 +49,7 @@
                 <li><a href="element.html">요소 선택</a></li>
                 <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
                 <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
             </ul>
         </nav>
     </header>
@@ -57,16 +58,18 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">조건문</h2>
-            <p class="t_desc">
-                프로그램에서 주어진 표현식의 결과에 따라 별도의 명령을 수행하도록 제어하는 실행문으로
-                <i>if가 가장 기본이 되는 실행문입니다.</i>
+            <p class="t_desc2">
+                프로그램에서 주어진 표현식의 결과에 따라 별도의 명령을 수행하도록 제어하는 실행문입니다. <br>
+                그 중 <i>if가 가장 기본이 되는 실행문입니다.</i>
             </p>
 
      <!-- // 반복문이란?  -->
 
+            <hr>
+
             <div id="sample01" class="sample">
-                <h3 class="t_tit2">01. if문(1)</h3>
-                <p class="t_desc">
+                <h3 class="t_tit2">01. if문</h3>
+                <p class="t_desc2">
                     <i>조건에 맞으면(참(ture)이면) 참의 결과를 실행</i>시켜줍니다. <br>
                     console.log로 출력시켰기 때문에 Chrome F12 키를 통해 <i>콘솔 창에서만 확인 가능.</i>
                 </p>
@@ -98,8 +101,8 @@ console.log(admissionFee);
             <!-- // 01. if문(1) -->
 
             <div id="sample02" class="sample">
-                <h3 class="t_tit2">02. if문(2)</h3>
-                <p class="t_desc">
+                <h3 class="t_tit2">02. if문(else)</h3>
+                <p class="t_desc2">
                     else를 통해 if 안의 조건식이 <i>사실이 아닐 경우 그 다음 실행문으로</i> 넘겨줍니다. <br>
                     <i>중첩 갯수는 무제한</i>이나 <i>else 사용 시 중괄호{ }를 사용하며 들여쓰기에 주의</i>합니다.
                 </p>
@@ -136,8 +139,8 @@ console.log(admissionFee);
 
 
             <div id="sample03" class="sample">
-                <h3 class="t_tit2">03. if문(3)</h3>
-                <p class="t_desc">
+                <h3 class="t_tit2">03. if문(else if)</h3>
+                <p class="t_desc2">
                     else if를 통해 <i>경우의 수를 여러개로 늘릴 수 있습니다.</i>
                 </p>
                 <div class="t_code">
@@ -176,8 +179,8 @@ console.log(admissionFee);
             <!-- // 03. if문(3) -->
 
             <div id="sample04" class="sample">
-                <h3 class="t_tit2">04. if문 중첩(4)</h3>
-                <p class="t_desc">
+                <h3 class="t_tit2">04. 중첩 if문</h3>
+                <p class="t_desc2">
                     if문안에 if문을 <i>중첩하여 사용 가능</i>합니다. <br>
                     이번 예시 또한 중첩 갯수는 무제한이지만 else if와 if문 중첩 등으로 문장이
                     매우 복잡해지므로 <i>들여쓰기에 각별히 신경을 써야 합니다.</i>
@@ -216,8 +219,8 @@ document.write(comment);
                     <details>
                         <summary>결과 보기</summary>
                         <div class="sample04_result">
-                            평균 60점 합격<br>
-                            평균 59점 불합격
+                            평균 60점 이상 합격<br>
+                            평균 59점 이하(60점 미만) 불합격
                         </div>
                     </details>
                 </div>

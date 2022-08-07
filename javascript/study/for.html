@@ -49,6 +49,7 @@
                 <li><a href="element.html">요소 선택</a></li>
                 <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
                 <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
             </ul>
         </nav>
     </header>
@@ -57,7 +58,7 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">반복문</h2>
-            <p class="t_desc">
+            <p class="t_desc2">
                 프로그램에서 필요한 결과 값을 도출하기 위해 실행문의 순서를
                 <i>여러번 반복시킬 때 사용</i>하는 문법입니다.
                 while문, do while문, for문 등이 있지만 <i>for문이 가장 많이 쓰입니다.</i>
@@ -69,6 +70,8 @@
             </p>
 
      <!-- // 반복문이란?  -->
+
+            <hr>
 
             <div id="sample01" class="sample">
                 <h3 class="t_tit2">01. while문</h3>
@@ -154,7 +157,7 @@ console.log(n);
             <div id="sample03" class="sample">
                 <h3 class="t_tit2">03. for문 : 짝수 출력</h3>
                 <p class="t_desc">
-                    짝수만 출력할 때는 <i>let i = 2</i>로 지정합니다.
+                    짝수만 출력할 때는 <i>let i = 2</i>로 지정합니다. (2에서 2씩 더하면 4, 6, 8, 10, …)
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">// i+=2 는 i = i + 2 를 의미함
@@ -228,7 +231,7 @@ for(let i = 2; i &lt;= 100; i+=2){
             <div id="sample04" class="sample">
                 <h3 class="t_tit2">04. for문 : 홀수 출력</h3>
                 <p class="t_desc">
-                    홀수만 출력할 때는 <i>let i = 1</i>로 지정합니다.
+                    홀수만 출력할 때는 <i>let i = 1</i>로 지정합니다. (1에서 2씩 더하면 3, 5, 7, 9, …)
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">// i+=2 는 i = i + 2 를 의미함
@@ -665,7 +668,9 @@ for(let i = 2; i &lt;= 100; i+=2){
             <div id="sample09" class="sample">
                 <h3 class="t_tit2">09. for문 : 구구단 출력하기</h3>
                 <p class="t_desc">
-                    복잡해 보이지만 아래의 과정을 통해서 구구단을 출력할 수 있습니다.
+                    for문을 중첩시켜 구구단을 출력할 수 있습니다. <br>
+                    첫 번째 for문의 <i>i에 2부터 9까지</i>를, 두 번째 for문의 <i>j에는 1부터 9까지</i>를 반복시킨 다음 <br>
+                    그 <i>i와 j를 곱한 값을 sum에 저장</i>시키고 최종적으로 아래 예시와 같이 document.write를 통해 구구단을 출력시킵니다.
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">/* 

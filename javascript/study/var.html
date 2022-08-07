@@ -48,6 +48,7 @@
                 <li><a href="element.html">요소 선택</a></li>
                 <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
                 <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
             </ul>
         </nav>
     </header>
@@ -55,17 +56,17 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">지역변수와 전역변수</h2>
+            <h2 class="t_tit">전역변수와 지역변수</h2>
             <p class="t_desc2">
-                변수는 중괄호(함수 블록){ }를 기준으로 변수 선언 위치에 따라 <i>지역변수</i>와 <i>전역변수</i>로 나뉜다. <br>
-                <i>전역변수</i>는 <i>블록 바깥이나 안쪽이나 자유롭게 사용 가능</i>한 반면, <i>지역 변수는 블록 내에서만 사용 가능</i>하다.
+                변수는 중괄호(함수 블록){ }를 기준으로 변수 선언 위치에 따라 <i>전역변수</i>와 <i>지역변수</i>로 나뉜다. <br>
+                <i>지역 변수는 블록 내에서만 사용 가능</i>한 반면, <i>전역변수는 블록 바깥이나 안쪽이나 자유롭게 사용 가능</i>하다.
             </p>
             <!-- //지역변수와 전역변수 -->
 
             <hr>
 
             <h3 class="t_tit2">전역변수와 지역변수의 선언 위치</h3>
-            <p class="t_desc">
+            <p class="t_desc2">
                 이렇게 블록 { }에 의해 변수 범위가 달라지는 것을 <i>변수의 scope(스코프)</i>라고 한다.
             </p>
             <table class="t_table">
@@ -94,7 +95,7 @@
             <!-- //전역변수와 지역변수의 선언 위치 -->
 
             <h3 class="t_tit2">예시 01</h3>
-            <p class="t_desc">
+            <p class="t_desc2">
                 아래의 예시에서는 함수 블록 내의 kor 변수가 전역변수이며 getScore() 함수를
                 호출하게 되면 kor 변수 값이 90에서 100으로 변경된다.
             </p>
@@ -111,7 +112,7 @@ console.log(kor);   // 100
             <!-- //예시01 -->
 
             <h3 class="t_tit2">예시 02</h3>
-            <p class="t_desc">
+            <p class="t_desc2">
                 아래의 예시에서는 함수 블록 내의 kor 변수를 var로 정의했고, var로 선언된 변수는
                 지역변수가 되어 블록 바깥의 전역변수 kor과 다른 별도의 변수가 된다.
             </p>
@@ -146,7 +147,7 @@ console.log(kor);   // error
             <hr>
 
             <h3 class="t_tit2">함수 레벨 스코프와 블록 레벨 스코프</h3>
-            <p class="t_desc">
+            <p class="t_desc2">
                 var는 함수 블록 내에서만 지역변수가 존재하며 블록이나 제어문 블록에서는
                 지역변수가 존재하지 않는다. <br>
                 <i>let과 const는 블록이나 제어문 블록에서도 지역변수 선언 가능</i>하다.

@@ -48,6 +48,7 @@
                 <li><a href="element.html">요소 선택</a></li>
                 <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
                 <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
             </ul>
         </nav>
     </header>
@@ -81,29 +82,37 @@
                 하나의 실행문이 끝나면 세미콜론(;)을 붙여줍니다.
                 붙이지 않아도 무관하나 처음 학습한다면 붙이는 것을 권장합니다.
             </p>
-            <div class="t_box">
+            <div class="t_desc2">
                 var num = 5<i>;</i><br>
                 document.write(num)<i>;</i>
             </div>
+
+            <br>
 
             <h4 class="t_tit3">2. 대소문자 구분</h3>
             <p class="t_desc">
                 자바스크립트 명령어는 꼭 대소문자를 구분합니다.
             </p>
-            <p class="t_box">
+            <p class="t_desc2">
                 var <i>num</i> = 5;<br>
                 document.write(<i>num</i>) (O)<br>
                 document.write(<i>Num</i>) (X)
             </p>
+
+            <br>
+
             <h4 class="t_tit3">3. 들여쓰기</h3>
             <p class="t_desc">
                 가독성을 위해 들여쓰기를 합니다.
             </p>
-            <p class="t_box">
+            <p class="t_desc2">
                 var avgDistance = function() {<br>
                 <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>var speed = distance * time;<br>
                 }
             </p>
+
+            <br>
+
             <h4 class="t_tit3">4. 주석</h4>
             <p class="t_desc">
                 일반적으로 <i>특정 코드에 대한 설명</i>을 입력할 때나 <i>특정 부분 코드가 실행되지 않도록 할 때</i>
@@ -112,7 +121,7 @@
             <p class="t_desc">
                 주석 처리 방법은 <i>주석 처리할 줄을 클릭 후 Ctrl + [/]키</i>를 누르시면 됩니다.
             </p>
-            <p class="t_box">
+            <p class="t_desc2">
                 <i>//</i> 한 줄 주석 처리 방법<br>
                 <br>
                 <i>/*</i> 여러 줄 <br>
@@ -180,7 +189,7 @@
             <p class="t_desc">
                 자바스크립트의 사용법에는 
                 <i>①외부 파일로 로드하는 방법</i>, 
-                <i>②script 태그에 사용하는 방법</i>, 
+                <i>②script 태그에 기술하는 방법</i>, 
                 <i>③body 태그에 직접 기술하는 방법</i>
                 등이 있습니다.
             </p>
@@ -190,15 +199,15 @@
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Javasript&lt;/title&gt;
-    &lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
+    &lt;!-- ①외부 파일로 로드하는 방법 --&gt;
     &lt;script type="text/Javasript" src="js/script.js"&gt;&lt;/script&gt;
-    &lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
+    &lt;!-- ②script 태그에 기술하는 방법 --&gt;
     &lt;script&gt;
         document.write("Javasript");
     &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;!-- 3. body 태그에 직접 기술하는 방법 --&gt;
+    &lt;!-- ③body 태그에 직접 기술하는 방법 --&gt;
     &lt;a href="#" onclick="alert('Javasript')"&gt;&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;
