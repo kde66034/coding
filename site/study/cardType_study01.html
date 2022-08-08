@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 STUDY 01</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">카드 유형 STUDY</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="cardType_study01.html">카드 유형 01</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 카드 유형</h2>
+            <p class="t_desc2">
+                이번 포스팅에서는 Figma에서 만든 카드 유형 섹션을 HTML과 CSS 코드로 옮기는 작업을
+                해보도록 하겠습니다. <br>
+                <i>최대한 웹 표준을 준수</i>하기 위해 <i>시맨틱 태그를 사용</i>하고 이미지 출력 시 figure 태그로 감싸며,
+                <i>img 태그에서 alt(설명)칸에 부연 설명</i>을 넣는 등의 작업을 잊지 말도록 합시다!
+            </p>
+
+     <!-- // 사이트 만들기 : 카드 유형  -->
+
+            <hr>
+
+            <h3 class="t_tit2">Figma</h3>
+            <p class="t_desc">
+                먼저 만들고자 하는 웹 사이트의 모양을 Figma라는 프로그램을 이용하여 아래와 같이 만들어주도록 하자. <br>
+                이번에 만들 웹 사이트의 유형은 <i>카드 유형 섹션</i>이다.
+            </p>
+            <div class="t_iframe">       
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FtnsaEM1JocXMMqYyaoWru4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D5%253A129" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2">HTML 소스</h3>
+            <p class="t_desc">
+                웹 표준 준수를 위해 <i>시맨틱 태그를 적극 사용</i>하고 img 태그에서의 alt 기능도 적극 활용할 것. <br>
+                자세한 설명은 아래 예시 코드의 주석처리 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;body&gt;
+    &lt;section id="cardType" class="card__wrap nexon section"&gt;
+        &lt;h2&gt;별빛 제빵교실 개강소식🍞&lt;/h2&gt;
+        &lt;p&gt;별빛 제빵교실이 2022년 8월 23일 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!&lt;/p&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;!-- 이미지 넣을 때 그냥 img태그 쓰지말고 figure 태그 안에 넣어서 써야 웹표준 준수한거임 --&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg01.jpg" alt="제빵 기초 강의"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="title"&gt;제빵 기초 강의&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        제빵의 기초가 되는 강의입니다. 초심자도 이해하기 쉽게 강의가 진행되며 
+                        초반에는 이론 강의부터 시작해 중반부터는 실습을 시작하여 제빵의 기초를 익히도록 합니다.
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg02.jpg" alt="제빵 심화 과정"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="title"&gt;제빵 심화 과정&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        이제 기초 강의가 너무 쉬워 시시하다고 느껴질 즈음 심화과정에 들어가게 될 겁니다.
+                        시중에 판매되고 있는 제과점 빵들을 직접 만들어보는 시간을 갖게 됩니다.
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg03.jpg" alt="나만의 제빵 포트폴리오 만들기"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="title"&gt;나만의 제빵 포트폴리오 만들기&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        이제 빵집 창업해도 문제 없을 정도의 실력을 갖추게 되셨을 겁니다! 이제는 능숙해진 제빵 실력에
+                        나만의 개성을 더하여 튼튼한 포트폴리오를 만들어보아요!
+                    &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">CSS 소스</h3>
+            <p class="t_desc">
+                reset에서 margin값과 padding값을 0으로 초기화 시키는 작업부터 시작한다. <br>
+                자세한 설명은 아래 예시 코드의 주석처리된 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+    
+    .nexon {    
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;    /* 폰트 굵기 초기화 */
+    }
+    a {
+        text-decoration: none;
+        color: #000;    /* 하이퍼링크 밑줄 무효화 */
+    }
+    img {
+        width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section > h2 {
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section > p {
+        font-size: 22px;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 70px;
+        color: #666;
+    }
+
+    /* cardType */
+    .card__inner {
+        display: flex;
+        justify-content: space-between;     /* 간격 떨어뜨리기 */
+    }
+    .card {
+        width: 32%;     /* 향후 반응형을 위해 백분율로 입력 */
+        background: #f5f5f5;
+    }
+    .card__body {
+        padding: 24px;
+    }
+    .card__body .title {
+        font-size: 22px;
+        padding-bottom: 10px;
+    }
+    .card__body .desc {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.4;
+        padding-bottom: 20px;
+        color: #666;
+    }
+    .card__body .btn {
+
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+            <!-- // CSS 소스 -->
+
+            <h3 class="t_tit2">최종 결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/site/cardType/cardType01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/cardType/cardType01.html">원본 소스 보기</a>
+            </div>
+            <!-- // 최종 결과 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

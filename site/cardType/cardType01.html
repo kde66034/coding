@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 01</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-between;     /* 간격 떨어뜨리기 */
+        }
+        .card {
+            width: 32%;
+            background: #f5f5f5;
+        }
+        .card__body {
+            padding: 24px;
+        }
+        .card__body .title {
+            font-size: 22px;
+            padding-bottom: 10px;
+        }
+        .card__body .desc {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.4;
+            padding-bottom: 20px;
+            color: #666;
+        }
+        .card__body .btn {
+
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType" class="card__wrap nexon section">
+        <h2>별빛 제빵교실 개강소식🍞</h2>
+        <p>별빛 제빵교실이 2022년 8월 23일 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!</p>
+        <div class="card__inner container">
+            <article class="card">
+                <!-- 이미지 넣을 때 그냥 img태그 쓰지말고 figure 태그 안에 넣어서 써야 웹표준 준수한거임 -->
+                <figure class="card__header">
+                    <img src="img/card_bg01.jpg" alt="제빵 기초 강의">
+                </figure>
+                <div class="card__body">
+                    <h3 class="title">제빵 기초 강의</h3>
+                    <p class="desc">
+                        제빵의 기초가 되는 강의입니다. 초심자도 이해하기 쉽게 강의가 진행되며 
+                        초반에는 이론 강의부터 시작해 중반부터는 실습을 시작하여 제빵의 기초를 익히도록 합니다.
+                    </p>
+                    <a class="btn" href="/">더 자세히 보기</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02.jpg" alt="제빵 심화 과정">
+                </figure>
+                <div class="card__body">
+                    <h3 class="title">제빵 심화 과정</h3>
+                    <p class="desc">
+                        이제 기초 강의가 너무 쉬워 시시하다고 느껴질 즈음 심화과정에 들어가게 될 겁니다.
+                        시중에 판매되고 있는 제과점 빵들을 직접 만들어보는 시간을 갖게 됩니다.
+                    </p>
+                    <a class="btn" href="/">더 자세히 보기</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg03.jpg" alt="나만의 제빵 포트폴리오 만들기">
+                </figure>
+                <div class="card__body">
+                    <h3 class="title">나만의 제빵 포트폴리오 만들기</h3>
+                    <p class="desc">
+                        이제 빵집 창업해도 문제 없을 정도의 실력을 갖추게 되셨을 겁니다! 이제는 능숙해진 제빵 실력에
+                        나만의 개성을 더하여 튼튼한 포트폴리오를 만들어보아요!
+                    </p>
+                    <a class="btn" href="/">더 자세히 보기</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
