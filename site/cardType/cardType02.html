@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카드 유형 01</title>
+    <title>카드 유형 02</title>
 
     <style>
         /* fonts */
-        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
 
-        .nexon {
-            font-family: 'NexonLv1Gothic';
+        .gmarket {
+            font-family: 'GmarketSans';
             font-weight: 400;
         }
 
@@ -73,6 +73,7 @@
         .card__body .title {
             font-size: 28px;
             padding-bottom: 10px;
+            position: relative;     /* 우측에 달린 버튼 고정할 위치 지정 */
         }
         .card__body .desc {
             font-size: 18px;
@@ -80,15 +81,14 @@
             line-height: 1.4;
             color: #666;
         }
-        .card__body .button {
-            display: inline-flex;
-            flex-wrap: wrap;
-            flex-direction: row-reverse;
+        .card__body .btn {
+            position: absolute;     /* 버튼 위치를 title쪽으로 고정시킴 */
+            right: 0;
         }
     </style>
 </head>
 <body>
-    <section id="cardType" class="card__wrap nexon section">
+    <section id="cardType" class="card__wrap gmarket section">
         <h2>포트폴리오 만들기</h2>
         <p>
             취업용 포트폴리오, 어떻게 만들지 고민되시나요? 걱정하지 마세요☺<br>
@@ -103,7 +103,7 @@
                 <div class="card__body">
                     <h3 class="title">
                         아이디어 스케치
-                        <span class="button" aria-hidden="true">
+                        <span class="btn" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="24" height="24" rx="5" fill="#B48F6D"/>
                                 <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13H18V11H6V13Z" fill="white"/>
@@ -122,7 +122,7 @@
                 <div class="card__body">
                     <h3 class="title">
                         팀 만들기
-                        <span class="button" aria-hidden="true">
+                        <span class="btn" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="24" height="24" rx="5" fill="#B48F6D"/>
                                 <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13H18V11H6V13Z" fill="white"/>
@@ -139,7 +139,14 @@
                     <img src="img/card2_bg03.jpg" alt="설문 조사 이미지">
                 </figure>
                 <div class="card__body">
-                    <h3 class="title">설문 조사</h3>
+                    <h3 class="title">설문 조사
+                        <span class="btn" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#B48F6D"/>
+                                <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13H18V11H6V13Z" fill="white"/>
+                            </svg>
+                        </span>
+                    </h3>
                     <p class="desc">
                         팀원 구성을 마치고 주제를 다 정했다면 바깥으로 나가 직접 주제를 바탕으로 한 설문 조사를 하도록 합…
                     </p>
@@ -150,7 +157,15 @@
                     <img src="img/card2_bg04.jpg" alt="문제 해결하기 이미지">
                 </figure>
                 <div class="card__body">
-                    <h3 class="title">문제 해결하기</h3>
+                    <h3 class="title">
+                        문제 해결하기
+                        <span class="btn" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#B48F6D"/>
+                                <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13H18V11H6V13Z" fill="white"/>
+                            </svg>
+                        </span>
+                    </h3>
                     <p class="desc">
                         설문 조사 결과를 바탕으로 사람들이 직면하는 문제와 불편 사항을 해결할 방법에 대해 팀원들과 토론…
                     </p>
@@ -166,7 +181,15 @@
                     <img src="img/card2_bg05.jpg" alt="아이디어 도출 이미지">
                 </figure>
                 <div class="card__body">
-                    <h3 class="title">아이디어 도출</h3>
+                    <h3 class="title">
+                        아이디어 도출
+                        <span class="btn" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#B48F6D"/>
+                                <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13H18V11H6V13Z" fill="white"/>
+                            </svg>
+                        </span>
+                    </h3>
                     <p class="desc">
                         팀원들과의 토론 끝에 아이디어를 도출해내는 시간을 갖습니다. 포스트잇도 붙여가면서 즐겁게 문제…
                     </p>
@@ -177,7 +200,15 @@
                     <img src="img/card2_bg06.jpg" alt="와이어프레임 구상 이미지">
                 </figure>
                 <div class="card__body">
-                    <h3 class="title">와이어프레임 구상</h3>
+                    <h3 class="title">
+                        와이어프레임 구상
+                        <span class="btn" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#B48F6D"/>
+                                <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13H18V11H6V13Z" fill="white"/>
+                            </svg>
+                        </span>
+                    </h3>
                     <p class="desc">
                         이제 문제 해결 방법도 무사히 도출해냈으니 와이어프레임을 구상해보도록 하죠. 이런 식으로 스마트폰…
                     </p>
@@ -188,7 +219,15 @@
                     <img src="img/card2_bg07.jpg" alt="GUI 구상 이미지">
                 </figure>
                 <div class="card__body">
-                    <h3 class="title">GUI 구상</h3>
+                    <h3 class="title">
+                        GUI 구상
+                        <span class="btn" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#B48F6D"/>
+                                <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13H18V11H6V13Z" fill="white"/>
+                            </svg>
+                        </span>
+                    </h3>
                     <p class="desc">
                         Fimga나 XD 등의 프로그램을 이용하여 GUI를 구상해내도록 합시다. 위와 같이 스마트폰으로 테스…
                     </p>
@@ -199,7 +238,15 @@
                     <img src="img/card2_bg08.jpg" alt="코딩 작업 이미지">
                 </figure>
                 <div class="card__body">
-                    <h3 class="title">코딩 작업</h3>
+                    <h3 class="title">
+                        코딩 작업
+                        <span class="btn" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="5" fill="#B48F6D"/>
+                                <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13H18V11H6V13Z" fill="white"/>
+                            </svg>
+                        </span>
+                    </h3>
                     <p class="desc">
                         이제 코딩을 통해 앱 스토어에 출시된 앱들과 마찬가지로 서비스를 실체화시켜보도록 합니다. 팀원들과…
                     </p>
