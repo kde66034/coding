@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : 비트맵과 벡터 방식</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+                <li class="active"><a href="bitmap_vector.html">비트맵·벡터 방식</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">비트맵(Bitmap) 방식</h2>
+                <p class="t_desc2">
+                    <i>서로 다른 점(픽셀)들의 조합으로 그려지는 이미지 표현 방식</i>을 비트맵이라고 하며, 사진 이미지에서
+                    주로 사용된다. <i>크기를 늘리거나 줄이면 원본 이미지에 손상</i>이 가는 것이 단점이자 큰 특징이며 이에 대해
+                    우리는 <i>'계단현상'</i>이나 '이미지가 깨졌다'라고 흔히 표현한다.
+                </p>
+                
+                <img src="https://cdn.imweb.me/upload/56ddef026a42e.png" alt="좌측에는 선명한 화질의 운동화 사진이 있고, 우측에는 확대되어 화질이 좋지 않은 계단현상이 발생한 운동화 사진이 있다.">
+                
+                <h3 class="t_tit2">치명적 단점 「계단현상」에도 많이 사용되는 이유는?</h3>
+                <p class="t_desc">
+                    이미지를 표시하는 방식 중 <i>가장 컴퓨터에 부담을 덜 주는 구조</i>를 갖기 때문에 웹에서 이미지를 표시할 때에는
+                    주로 비트맵 방식 이미지를 사용한다. 우리가 흔히 사용하는 <i>.jpg, .jpeg, .png, .gif</i> 등이 비트맵 방식이다.
+                </p>
+
+                <h3 class="t_tit2">대표적 파일 확장자와 특징 정리</h3>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th class="ce">확장자</th>
+                            <th class="ce">특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">BMP</td>
+                            <td>픽셀 데이터를 압축하지 않고 그대로 저장. 구조가 간단한 반면 파일 용량이 커진다는 단점이 있음</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">JPG</td>
+                            <td>화려한 포토샵 효과를 표현할 수 있으며 손실 압축 방식을 사용함</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">GIF</td>
+                            <td>256 이하의 색상을 가진 무손실 압축 방식을 사용하며, 애니메이션 구현이 가능함</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">PNG</td>
+                            <td>256 색상 영상뿐만 아니라 트루컬러 영상도 지원함. 무손실 압축 방식을 사용하기 때문에 파일 용량이 커지지만 픽셀 값이 변경되지 않은 장점이 있음</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">WEBP</td>
+                            <td>새로 나온 확장자이며, PNG와 JPG의 장점을 모두 갖고 있음</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- // 비트맵 -->
+
+                <hr>
+                <br>
+
+                <h2 class="t_tit">벡터(Vector) 방식</h2>
+                <p class="t_desc2">
+                    <i>점과 점을 연결해 수학적인 원리로 그림을 그려 표현하는 방식</i>을 벡터 방식이라고 하며 <i>이미지를 확대하고 축소해도
+                    전혀 손상되지 않는 장점</i>이 있지만, 사진과 같은 복잡한 그림을 표현할 때엔 <i>컴퓨터에 엄청난 부담을 준다는 단점</i> 때문에
+                    웹상에서는 잘 사용되지 않는다.
+                </p>
+                
+                <img src="https://cdn.imweb.me/upload/f9d74947691f5.png" alt="벡터 방식으로 그려진 장미 일러스트로 확대해도 화질이 손상되지 않는 모습을 보여주는 이미지">
+                
+                <h3 class="t_tit2">웹상에서 벡터 방식이 사용되는 곳은?</h3>
+                <p class="t_desc">
+                    최근에는 컴퓨터 하드웨어가 발달했기 때문에 <i>웹사이트의 로고나 아이콘 표시에 벡터 방식 그래픽이 많이 사용</i>되고 있으며,
+                    벡터 파일 형식에는 <i>.ai, .eps, .svg</i> 등이 있다.
+                </p>
+
+                <h3 class="t_tit2">대표적 파일 확장자와 특징 정리</h3>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th class="ce">확장자</th>
+                            <th class="ce">특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">AI</td>
+                            <td>대표적 벡터 방식 드로잉 프로그램 Adobe Illustrator에서 사용하는 자체 확장자 파일</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">EPS</td>
+                            <td>2차원 벡터 그래픽, 텍스트, 비트맵 이미지 지원</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">SVG</td>
+                            <td>벡터, 래스터 이미지, 텍스트로 구성된 이미지의 텍스트 기반 설명으로, 해상도의 영향을 받지 않고 고화질 이미지를 적은 용량의 파일로 만들 수 있음</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">PDF</td>
+                            <td>벡터와 래스터 그래픽을 모두 표시 가능한 범용 표준 파일 형식</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- // 벡터 -->
+
+                <hr>
+                <br>
+
+                <h2 class="t_tit">비트맵과 벡터 비교하기</h2>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th class="ce"></th>
+                            <th class="ce">비트맵<br>(Bitmap)</th>
+                            <th class="ce">벡터<br>(Vector)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">
+                                정의
+                            </td>
+                            <td>
+                                정사각형의 픽셀에 저장된
+                                비트 정보들의 집합
+                            </td>
+                            <td>
+                                수학적 함수 관계로 만든
+                                그래픽 이미지
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">
+                                확대
+                            </td>
+                            <td>
+                                계단 현상 발생
+                            </td>
+                            <td>
+                                뚜렷한 외곽선
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">
+                                변화·회전
+                            </td>
+                            <td>
+                                이미지 품질 손상
+                            </td>
+                            <td>
+                                변화 없음
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">
+                                특징
+                            </td>
+                            <td>
+                                사실적인 표현, 특수 효과,
+                                풍부한 색감 표현
+                            </td>
+                            <td>
+                                선명한 표현, 효과적인
+                                응용 작업
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">
+                                단점
+                            </td>
+                            <td>
+                                이미지의 축소, 확대로 인한
+                                이미지 품질 손상
+                            </td>
+                            <td>
+                                사진과 같은 이미지 그래픽의
+                                정교한 작업의 한계점
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">
+                                확장자
+                            </td>
+                            <td>
+                                JPG, PNG, GIF 등
+                            </td>
+                            <td>
+                                AI, SVG, VML 등
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">
+                                프로그램
+                            </td>
+                            <td>
+                                포토샵, 페인터 등
+                            </td>
+                            <td>
+                                일러스트레이터, 플래시 등
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
