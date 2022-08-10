@@ -70,6 +70,11 @@
         .card__body .title {
             font-size: 22px;
             padding-bottom: 10px;
+            /* 한 줄 효과 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 30px;    /* 제목 길어져도 한 줄 유지 */
         }
         .card__body .desc {
             font-size: 18px;
@@ -77,6 +82,12 @@
             line-height: 1.4;
             padding-bottom: 20px;
             color: #666;
+            /* 4줄효과 : 글이 넘쳐도 4줄을 넘지 않도록 해줌 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;  /* 4줄까지 제한 */
+            -webkit-box-orient: vertical;
         }
         .card__body .btn {
 
@@ -84,7 +95,7 @@
     </style>
 </head>
 <body>
-    <section id="cardType" class="card__wrap nexon section">
+    <section id="cardType01" class="card__wrap nexon section">
         <h2>별빛 제빵교실 개강소식🍞</h2>
         <p>별빛 제빵교실이 2022년 8월 23일 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!</p>
         <div class="card__inner container">
