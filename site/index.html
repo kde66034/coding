@@ -4,9 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>사이트 만들기</title>
+
+    <link href="https://webfontworld.github.io/cafe24/Cafe24Danjunghae.css" rel="stylesheet">
+    <style>
+        /* 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cafe24Danjunghae';
+        }
+        #main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            border: 8px solid #427262;
+            box-sizing: border-box;
+        }
+        #main h1 {
+            font-size: 8vw;
+            text-align: center;
+            line-height: 1.2;
+            font-weight: normal;
+            color: #427262;
+            margin-bottom: 4vw;
+        }
+        #main h1 em {
+            display: block;
+            font-style: normal;
+        }
+        #main nav {}
+        #main nav ul {}
+        #main nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #main nav ul li a {
+            text-decoration: none;
+            color: #427262;
+            border: 1px solid #427262;
+            font-size: 22px;
+            padding: 1vw 2vw;
+            margin: 0.5vw;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        #main nav ul li a:hover {
+            background-color: #427262;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    
+    <main id="main">
+        <h1>사이트 만들기 <em>레퍼런스 북</em></h1>
+        <nav>
+            <ul>
+                <li><a href="study/cardType_study01.html">카드 유형 01</a></li>
+                <li><a href="study/cardType_study02.html">카드 유형 02</a></li>
+                <li><a href="study/cardType_study03.html">카드 유형 03</a></li>
+            </ul>
+        </nav>
+    </main>
 </body>
 </html>

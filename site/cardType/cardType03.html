@@ -72,7 +72,7 @@
         }
 
         .card__inner {
-            display: flex;
+            display: flex;      /* 플렉스로 한 줄 정렬하기 */
             flex-wrap: nowrap;
             justify-content: center;
         }
@@ -87,7 +87,6 @@
             border-radius: 10px;
             box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
             position: relative;     /* 버튼을 고정할 이미지 */
-            object-fit: fill;
         }
         .card__inner .card .image .img_btn {
             width: 168px;
@@ -126,13 +125,13 @@
             text-align: right;
             color: #666;
             display: flex;
-            flex-direction: row-reverse;        /* 프로필 우측 정렬 */
+            flex-direction: row-reverse;    /* 프로필 우측 정렬 */
             height: 50px;
         }
         .card__inner .card .propic {
             width: 49.3px;
             height: 49.3px;
-            margin-left: 10.3px;
+            margin-left: 10.3px;    /* 프로필 사진이랑 이름 떨어뜨리기 */
             border-radius: 25px;
         }
         .userInfo {
