@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 03</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .s_core {
+            font-family: 'SCoreDream';
+            font-weight: 500;
+        }
+        body {
+            background-color: #1e40a3;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+        }
+
+        /* common */
+        .container {
+
+        }
+        .section {
+
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+
+        /* ir 효과 (이미지 대체 효과 == alt) */
+        /* 화면상에서는 안나오게 함과 동시에 스크린리더기에는 읽히게 하는 작업 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* cardType02 */
+        .card__wrap {
+            width: 1160px;
+            margin: 120px auto;
+        }
+
+        .card__inner {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+        .card__inner .card {
+            width: 386px;
+            padding: 30px 26px;
+            background-color: #fff;
+            border-right: 1px solid #d9d9d9;        /* 오른쪽 방향에만 선 그리기 */
+        }
+        .card__inner .card img {
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+            position: relative;     /* 버튼을 고정할 이미지 */
+            object-fit: fill;
+        }
+        .card__inner .card .image .img_btn {
+            width: 168px;
+            padding: 6px;
+            border-radius: 26px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            text-align: center;
+            line-height: 1.4;
+            color: #666;
+            font-weight: 300;
+            position: absolute;     /* 버튼을 .card img 쪽으로 옮기기 */
+            transform: translate(82%, -775%);       /* 버튼 위치값 변경 */
+        }
+
+        .card__inner .card .title {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        .card__inner .card .desc {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 25px;
+            /* 3줄효과 : 글이 넘쳐도 3줄을 넘지 않도록 해줌 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+        }
+        .card__inner .card .profile {
+            font-size: 16px;
+            line-height: 1.4;
+            text-align: right;
+            color: #666;
+            display: flex;
+            flex-direction: row-reverse;        /* 프로필 우측 정렬 */
+            height: 50px;
+        }
+        .card__inner .card .propic {
+            width: 49.3px;
+            height: 49.3px;
+            margin-left: 10.3px;
+            border-radius: 25px;
+        }
+        .userInfo {
+            font-size: 16px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.4;
+            width: 131.4px;
+            height: 49.3px;
+        }
+        .userInfo > .userName a {
+            font-weight: 500;
+            color: #ff1d54;
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType02" class="card__wrap s_core section">
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="image">
+                    <img src="img/card2_bg01.jpg" alt="포트폴리오">
+                    <div class="img_btn"># Editorial Design</div>
+                </figure>
+                
+                <h3 class="title">
+                    김민주의 감성 넘치는 포트폴리오,<br>
+                    같이 구경하실래요?
+                </h3>
+                <p class="desc">
+                    수험생 시절 받았던 스트레스를 늘 감성 카페를 찾아다니며 풀던 나는 감성 없이는 살 수 없는 사람이 되었고…
+                </p>
+                <div class="profile">
+                    <img class="propic" src="img/people01.jpg" alt="김민주의 프로필 사진">
+                    <span class="userInfo">
+                        <span class="userName"><a href="#">Minju Kim</a></span><br>
+                        9 resources
+                    </span>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="image">
+                    <img src="img/card2_bg08.jpg" alt="포트폴리오">
+                    <div class="img_btn"># Front-End</div>
+                </figure>
+                <h3 class="title">
+                    코딩천재 박지수의 포트폴리오,<br>
+                    한 번 볼래?😎
+                </h3>
+                <p class="desc">
+                    어린 시절부터 난 이과 머리였다. 학창시절 12년동안 단 한 번도 수학을 포기한 적이 없었으며 그런 나에게 코딩이란…
+                </p>
+                <div class="profile">
+                    <img class="propic" src="img/people02.jpg" alt="박지수의 프로필 사진">
+                    <span class="userInfo">
+                        <span class="userName"><a href="#">Jisu Park</a></span><br>
+                        8 Resources
+                    </span>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="image">
+                    <img src="img/card2_bg07.jpg" alt="한민철의 포트폴리오">
+                    <div class="img_btn"># 3D Artist</div>
+                </figure>
+                <h3 class="title">
+                    3D 아티스트가 되고 싶은 한민철의<br>
+                    포트폴리오, 봐 주세요😘
+                </h3>
+                <p class="desc">
+                    C4D를 처음 배운 그 순간 나는 결심했다. 반드시 3D 그래픽을 전공하겠다고 말이다. 난 이 분야의 아티스트로…
+                </p>
+                <div class="profile">
+                    <img class="propic" src="img/people03.jpg" alt="한민철의 프로필 사진">
+                    <span class="userInfo">
+                        <span class="userName"><a href="#">Mincheol Han</a></span><br>
+                        7 Resources
+                    </span>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+</body>
+</html>
