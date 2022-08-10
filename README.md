@@ -23,4 +23,8 @@ https://kde66034.github.io/coding/html/index.html
 https://kde66034.github.io/coding/html/alphabet.html   
 
 ### 사이트 만들기 메인 페이지
+<<<<<<< HEAD
 https://kde66034.github.io/coding/site/index.html   
+=======
+https://kde66034.github.io/coding/site/index.html   
+>>>>>>> bd8d8223164cf2f76b41da7b3a9a32c7404073eb
