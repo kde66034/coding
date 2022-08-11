@@ -32,7 +32,7 @@
 
     <main id="main">
         <div class="quiz__wrap">
-            <div class="quiz">
+            <!-- <div class="quiz">
                 <span class="quiz__type"></span>
                 <h2 class="quiz__question">
                     <span class="number"></span>
@@ -83,7 +83,7 @@
                     <div class="result"></div>
                 </div>
                 
-            </div>
+            </div> -->
         </div>
     </main>
     <!-- // main -->
@@ -94,7 +94,158 @@
     <!-- // footer -->
 
     <script>
-        
+        // 문제 정보
+        const quizInfo = [
+            {
+                answerType: "2013년 4회 웹디자인기능사",
+                answerNum: "1.",
+                answerAsk: "웹 디자인에 관한 설명으로 거리가 먼 것은?",
+                answerChoice: {
+                    1: "가. 웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+                    2: "나. 웹 디자인은 개인용 홈페이지 외 기업용, 상업용 등 매우 다양하다.",
+                    3: "다. 웹 디자인은 웹과 디자인이라는 두 가지 개념이 결합된 것이다.",
+                    4: "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+                }, 
+                answerResult: "4",
+                answerEx: "기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물은 캐릭터에 관한 설명이다."
+            },
+            {
+                answerType: "2013년 4회 웹디자인기능사",
+                answerNum: "2.",
+                answerAsk: "환경 디자인에 속하지 않는 것은?",
+                answerChoice: {
+                    1: "가. 인테리어 디자인",
+                    2: "나. 무대 디자인",
+                    3: "다. 가구 디자인",
+                    4: "라. 조경 디자인",
+                }, 
+                answerResult: "3",
+                answerEx: "인테리어, 무대, 조경 디자인은 실내외 공간 환경에 영향을 미치는 반면, 가구 디자인의 경우 오직 인테리어에만 영향을 주기 때문에 환경 디자인이라고 볼 수 없다."
+            },
+            {
+                answerType: "2013년 4회 웹디자인기능사",
+                answerNum: "3.",
+                answerAsk: "다음 중 HTML의 주석문 처리로 옳은 것은?",
+                answerChoice: {
+                    1: "가. !-- 여기는 주석문입니다. --",
+                    2: "나. ?-- 여기는 주석문입니다. --",
+                    3: "다. {-- 여기는 주석문입니다. --}",
+                    4: "라. 〈!-- 여기는 주석문입니다. --〉",
+                }, 
+                answerResult: "4",
+                answerEx: "HTML에서는 <!-- --> 로 주석문 처리한다."
+            },
+            {
+                answerType: "2013년 4회 웹디자인기능사",
+                answerNum: "4.",
+                answerAsk: "다음 중 네트워크를 구성하는 모든 노드들이 중심의 한 노드에 일대일로 연결된 네트워크 형태는?",
+                answerChoice: {
+                    1: "가. Tree형",
+                    2: "나. Ring형",
+                    3: "다. Bus형",
+                    4: "라. Star형",
+                }, 
+                answerResult: "4",
+                answerEx: "중심의 한 노드가 모든 노드들과 일대일로 연결된 모습이 마치 별(star)같기 때문에 이를 Star형이라고 한다."
+            },
+            {
+                answerType: "2013년 4회 웹디자인기능사",
+                answerNum: "5.",
+                answerAsk: "컴퓨터그래픽스의 RGB 색상체계에서 R=0, G=0, B=0 으로 설정할 때 모니터에 나타나는 색상은?",
+                answerChoice: {
+                    1: "가. Black",
+                    2: "나. White",
+                    3: "다. Blue",
+                    4: "라. Yellow",
+                }, 
+                answerResult: "1",
+                answerEx: "RGB 값이 모두 0일 경우 검은색이 된다."
+            },
+            {
+                answerType: "2013년 4회 웹디자인기능사",
+                answerNum: "6.",
+                answerAsk: "16만 7천 컬러 이상의 색상과 256단계의 알파 채널을 사용하기 위해서는 최소 몇 bit가 필요한가?",
+                answerChoice: {
+                    1: "가. 8비트",
+                    2: "나. 16비트",
+                    3: "다. 24비트",
+                    4: "라. 32비트",
+                }, 
+                answerResult: "4",
+                answerEx: "16만 7천 컬러 이상의 색상과 256단계의 알파 채널을 표현하기 위해서 최소 32비트가 필요하다."
+            }
+        ]
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        // 문제 출력
+        function updateQuiz() {
+            const exam = [];    // 기출문제 시험 정보 저장하기
+
+            // forEach로 문제 6번 반복시키기 
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                <div class="quiz">
+                <span class="quiz__type">${question.answerType}</span>
+                <h2 class="quiz__question">
+                    <span class="number">${question.answerNum}</span>
+                    <div class="ask">${question.answerAsk}</div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답이다멍!💕</div>
+                    <div class="false">틀렸다왈!💔</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select3">
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select4">
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <span class="choice"></span>
+                        </label>
+                    </div>
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+                
+            </div>
+                `);               
+            });
+            
+            // 문제 6개(exam.push(``)안에 옮긴 div class="quiz" 박스) 출력시키기
+            quizWrap.innerHTML = exam.join('');
+            
+        }
+        updateQuiz();
     </script>
 </body>
 
