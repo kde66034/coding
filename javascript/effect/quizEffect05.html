@@ -32,58 +32,6 @@
 
     <main id="main">
         <div class="quiz__wrap">
-            <!-- <div class="quiz">
-                <span class="quiz__type"></span>
-                <h2 class="quiz__question">
-                    <span class="number"></span>
-                    <div class="ask"></div>
-                </h2>
-                <div class="quiz__view">
-                    <div class="true">정답이다멍!💕</div>
-                    <div class="false">틀렸다왈!💔</div>
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
-                            </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
-                        </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz__answer">
-                    <div class="quiz__selects">
-                        <label for="select1">
-                            <input type="radio" id="select1" class="select" name="select" value="1">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select2">
-                            <input type="radio" id="select2" class="select" name="select" value="2">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select3">
-                            <input type="radio" id="select3" class="select" name="select" value="3">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select4">
-                            <input type="radio" id="select4" class="select" name="select" value="4">
-                            <span class="choice"></span>
-                        </label>
-                    </div>
-                    <button class="confirm">정답 확인하기</button>
-                    <div class="result"></div>
-                </div>
-                
-            </div> -->
         </div>
     </main>
     <!-- // main -->
@@ -94,11 +42,19 @@
     <!-- // footer -->
 
     <script>
+        // const num = [100, 200, 300, 400, 500];
+
+        // num.forEach((el) => {
+        //     console.log(el);
+        //     // += 해주지 않으면 데이터가 변경되기 때문에 500만 출력됨
+        //     document.querySelector(".quiz__wrap").textContent += el;
+        // });
+
         // 문제 정보
         const quizInfo = [
             {
                 answerType: "2013년 4회 웹디자인기능사",
-                answerNum: "1.",
+                answerNum: "1",
                 answerAsk: "웹 디자인에 관한 설명으로 거리가 먼 것은?",
                 answerChoice: {
                     1: "가. 웹 페이지를 디자인하고 제작하는 것을 의미한다.",
@@ -111,7 +67,7 @@
             },
             {
                 answerType: "2013년 4회 웹디자인기능사",
-                answerNum: "2.",
+                answerNum: "2",
                 answerAsk: "환경 디자인에 속하지 않는 것은?",
                 answerChoice: {
                     1: "가. 인테리어 디자인",
@@ -124,7 +80,7 @@
             },
             {
                 answerType: "2013년 4회 웹디자인기능사",
-                answerNum: "3.",
+                answerNum: "3",
                 answerAsk: "다음 중 HTML의 주석문 처리로 옳은 것은?",
                 answerChoice: {
                     1: "가. !-- 여기는 주석문입니다. --",
@@ -137,7 +93,7 @@
             },
             {
                 answerType: "2013년 4회 웹디자인기능사",
-                answerNum: "4.",
+                answerNum: "4",
                 answerAsk: "다음 중 네트워크를 구성하는 모든 노드들이 중심의 한 노드에 일대일로 연결된 네트워크 형태는?",
                 answerChoice: {
                     1: "가. Tree형",
@@ -150,7 +106,7 @@
             },
             {
                 answerType: "2013년 4회 웹디자인기능사",
-                answerNum: "5.",
+                answerNum: "5",
                 answerAsk: "컴퓨터그래픽스의 RGB 색상체계에서 R=0, G=0, B=0 으로 설정할 때 모니터에 나타나는 색상은?",
                 answerChoice: {
                     1: "가. Black",
@@ -163,7 +119,7 @@
             },
             {
                 answerType: "2013년 4회 웹디자인기능사",
-                answerNum: "6.",
+                answerNum: "6",
                 answerAsk: "16만 7천 컬러 이상의 색상과 256단계의 알파 채널을 사용하기 위해서는 최소 몇 bit가 필요한가?",
                 answerChoice: {
                     1: "가. 8비트",
@@ -176,76 +132,86 @@
             }
         ]
 
-        // 선택자
+        // 선택자 - 나머지 선택자는 exam.push 안에 있기 때문에 나중에 정한다.
         const quizWrap = document.querySelector(".quiz__wrap");
-
-        // 문제 출력
+        
         function updateQuiz() {
-            const exam = [];    // 기출문제 시험 정보 저장하기
+            const exam = [];
 
-            // forEach로 문제 6번 반복시키기 
             quizInfo.forEach((question, number) => {
                 exam.push(`
-                <div class="quiz">
-                <span class="quiz__type">${question.answerType}</span>
-                <h2 class="quiz__question">
-                    <span class="number">${question.answerNum}</span>
-                    <div class="ask">${question.answerAsk}</div>
-                </h2>
-                <div class="quiz__view">
-                    <div class="true">정답이다멍!💕</div>
-                    <div class="false">틀렸다왈!💔</div>
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
+                    <div class="quiz">
+                        <span class="quiz__type">${question.answerType}</span>
+                        <h2 class="quiz__question">
+                            <span class="number">${question.answerNum}. </span>
+                            <div class="ask">${question.answerAsk}</div>
+                        </h2>
+                        <div class="quiz__view">
+                            <div class="true">정답이다멍!💕</div>
+                            <div class="false">틀렸다왈!💔</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div>
                             </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
                         </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
+                        <div class="quiz__answer">
+                            <div class="quiz__selects">
+                                <label for="select1${number}">
+                                    <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label for="select2${number}">
+                                    <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label for="select3${number}">
+                                    <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label for="select4${number}">
+                                    <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="quiz__answer">
-                    <div class="quiz__selects">
-                        <label for="select1">
-                            <input type="radio" id="select1" class="select" name="select" value="1">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select2">
-                            <input type="radio" id="select2" class="select" name="select" value="2">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select3">
-                            <input type="radio" id="select3" class="select" name="select" value="3">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select4">
-                            <input type="radio" id="select4" class="select" name="select" value="4">
-                            <span class="choice"></span>
-                        </label>
-                    </div>
-                    <button class="confirm">정답 확인하기</button>
-                    <div class="result"></div>
-                </div>
-                
-            </div>
-                `);               
+                `);
             });
-            
-            // 문제 6개(exam.push(``)안에 옮긴 div class="quiz" 박스) 출력시키기
+
+            exam.push(`
+                <div class="quiz__confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>    
+                </div>
+            `)
+
+            // join으로 합쳐주기
             quizWrap.innerHTML = exam.join('');
-            
         }
         updateQuiz();
+        
+        // 정답 확인
+        function answerQuiz() {
+            const quizSelects = document.querySelectorAll(".quiz__selects");    // 보기
+            const quizView = document.querySelectorAll(".quiz__view");    // 강아지
+            const quiziew = document.querySelectorAll(".quiz__view");    // 정답 버튼
+
+        }
+        answerQuiz();
     </script>
 </body>
 
