@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 04</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/sebang/SebangGothic.css');
+        @import url('https://webfontworld.github.io/naver/NanumSquare.css');
+
+        .sebang {
+            font-family: 'SebangGothic';
+            font-weight: 400;
+        }
+        .square {
+            font-family: 'NanumSquare';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            vertical-align: top;
+            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+        }
+
+        /* common */
+        .container {
+            width: 1160px;  /* 1200px에서 좌우로 20px 패딩값 준거 빼서 1160px */
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+        .section > h2.tit {
+            width: 1160px;  /* 1200px에서 좌우로 20px 패딩값 준거 빼서 1160px */
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+            text-align: left;
+            border-top: 1px solid #000;
+            margin-bottom: 30px;
+            
+        }
+        .section > h2.tit span {
+            background-color: #000;
+            display: inline-block;
+            color: #fff;
+            padding: 5px 15px;
+            font-size: 12px;
+            font-family: 'SebangGothic';
+        }
+        .section > h2.tit span::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+        }
+
+        /* 스크린리더기에는 읽히게 하되 겉으론 안보이게 
+            하고자 하는 속성에 blind 클래스값 주기 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* cardType04 */
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card.first {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 30px;
+            position: relative;
+        }
+        .card.first::before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #000;
+            left: 0;
+            bottom: -55px;
+            position: absolute;
+        }
+        .card.first::after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #000;
+            left: 0;
+            bottom: -140px;
+            position: absolute;
+        }
+        .card.first .card__header {
+            width: 68%;
+        }
+        .card.first .card__contents {
+            width: 30%;
+        }
+        .card.first .card__contents .sub {
+            font-size: 14px;
+            line-height: 1;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .card.first .card__contents .title {
+            font-size: 36px;
+            line-height: 1.3;
+            margin-bottom: 50px;
+            word-break: keep-all;
+        }
+        .card.first .card__contents .desc {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .card.first .card__contents .more {
+            display: none;
+        }
+
+        .card {
+            width: 24%;
+            /* background: #ccc; */
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+        }
+        .card__header {
+            width: 28%;
+        }
+        .card__contents {
+            height: 68%;
+        }
+        .card__contents .sub {
+            display: none;
+        }
+        .card__contents .title {
+            font-family: 'SebangGothic';
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .card__contents .desc {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #666;
+
+            /* 2줄효과 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical;
+        }
+        .card__contents .more {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType04" class="card__wrap section square">
+        <h2 class="tit">
+            <span>Portfolio</span>
+        </h2>
+        <div class="card__inner container">
+            <article class="card first">
+                <figure class="card__header">
+                    <img src="img/card4_bg01.jpg" alt="포트폴리오1">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub"></span>
+                    <h3 class="title">Google에 입사 성공한 포트폴리오 공개!</h3>
+                    <p class="desc">
+                        ‘노력은 결코 배신하지 않는다.’ 이 말의 의미를 이해하기까지 많은 시간이
+                         걸렸다. 어린 시절 늘 뒤쳐지기만 했던 나의 Google 입사 과정을 모두 공개하겠다.
+                    </p>
+                    <a class="more" href="/"></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card4_bg02s.jpg" alt="포트폴리오1">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub"></span>
+                    <h3 class="title">aesthetic portfolio</h3>
+                    <p class="desc">
+                        감성적인 포트폴리오를
+                        지금 구경해보세요.
+                    </p>
+                    <a class="more" href="/"></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card4_bg03s.jpg" alt="포트폴리오1">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub"></span>
+                    <h3 class="title">aesthetic portfolio</h3>
+                    <p class="desc">
+                        감성적인 포트폴리오를
+                        지금 구경해보세요.
+                    </p>
+                    <a class="more" href="/"></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card4_bg04s.jpg" alt="포트폴리오1">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub"></span>
+                    <h3 class="title">aesthetic portfolio</h3>
+                    <p class="desc">
+                        감성적인 포트폴리오를
+                        지금 구경해보세요.
+                    </p>
+                    <a class="more" href="/"></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card4_bg05s.jpg" alt="포트폴리오1">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub"></span>
+                    <h3 class="title">aesthetic portfolio</h3>
+                    <p class="desc">
+                        감성적인 포트폴리오를
+                        지금 구경해보세요.
+                    </p>
+                    <a class="more" href="/"></a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
