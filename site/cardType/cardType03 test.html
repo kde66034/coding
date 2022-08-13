@@ -68,113 +68,103 @@
 
         /* cardType03 */
         body {
-            background-color: #2254c3;
+            background-color: #1E40A3;
         }
         .card__inner {
-            display: flex;  /* 플렉스로 한 줄 정리 */
+            display: flex;
         }
         .card__inner .card {
-            padding: 26px;
-            width: 33.333%;
+            padding: 30px 26px 25px 30px;
+            width: 33.3333%;
             background-color: #fff;
         }
 
-        /* 오른쪽 방향에만 윤곽선 주기 */
         .card__inner .card:nth-child(1) {
-            border-right: 1px solid #eee;
+            border-right: 1px solid #f5f5f5;
         }
         .card__inner .card:nth-child(2) {
-            border-right: 1px solid #eee;
+            border-right: 1px solid #f5f5f5;
         }
 
         .card__header {
             position: relative; /* figcaption을 고정할 위치 */
+            margin-bottom: 25px;
         }
         .card__header img {
             border-radius: 10px;
-            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
         }
         .card__header figcaption {
-            padding: 6px 16px;
+            width: 140px;
+            font-size: 16px;
             border-radius: 50px;
-            background-color: #fff;
-            position: absolute; /* 위치를 card__header쪽으로 옮김 */
-            right: 10px;
-            top: 10px;
+            background-color: #f5f5f5;
+            padding: 6px 16px;
             text-align: center;
-            font-size: 14px;
-            color: #7b7b7b;
+            position: absolute;
+            right: 5px;
+            top: 5px;
         }
 
-        .card__contents h3 {
-            font-size: 20px;
-            line-height: 1.4;
-            margin-bottom: 10px;
+        .card__contents {
             
-            /* 2줄효과 */
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2; 
-            -webkit-box-orient: vertical;
+
+        }
+        .card__contents h3 {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 12px;
         }
         .card__contents p {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 25px;
             color: #666;
-            font-size: 16px;
-            line-height: 1.7;
-            margin-bottom: 30px;
-
-            /* 3줄효과 */
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 3; 
-            -webkit-box-orient: vertical;
         }
 
-        /* 카드 하단 유저 정보 */
         .card__footer {
-            display: flex;  /* 플렉스로 떨어진 것들 붙이기 */
-            justify-content: flex-end;  /* 아이템 끝(우측)으로 정렬 */
+            display: flex;
+            justify-content: flex-end;
         }
         .card__footer h4 {
+            font-size: 16px;
+            color: #ff1d54;
+            font-weight: 500;
             text-align: right;
-            color: #dd2a2a;
         }
         .card__footer em {
-            display: block;
             color: #666;
             font-style: normal;
+            display: block;
+            font-weight: 300;
         }
         .card__footer span {
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            border-radius: 25px;
             overflow: hidden;
             display: block;
             margin-left: 10px;
-            margin-top: 3px;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+            margin-top: 5px;
         }
+
     </style>
 </head>
 <body>
     <section id="cardType03" class="card__wrap score section">
-        <h2 class="blind">포트폴리오 구경하기</h2> <!-- 스크린리더기에는 읽히게 하되 겉으론 안보이게 하려면 blind 처리하기 -->
+        <h2 class="blind">포트폴리오 구경하기</h2>
         <div class="card__inner container">
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card3_bg01.jpg" alt="김민주의 포트폴리오">
-                    <figcaption># Editorial Design</figcaption>
+                    <img src="img/card3_bg01.jpg" alt="포트폴리오01">
+                    <figcaption>
+                        # Editorial Design
+                    </figcaption>
                 </figure>
                 <div class="card__contents">
-                    <h3>
-                        김민주의 감성 넘치는 포트폴리오,<br>같이 구경하실래요?
-                    </h3>
+                    <h3>김민주의 감성 넘치는 포트폴리오, <br>같이 구경하실래요?</h3>
                     <p>
-                        수험생 시절 받았던 스트레스를 늘 감성 카페를 찾아다니며 풀던 나는 감성 없이는 살 수 없는 사람이 되었고
-                        그렇게 나는 감성적인 사진들만을 올리는 인스타 계정을 생성하게 되었다.    
+                        수험생 시절 받았던 스트레스를 늘 감성 카페를 찾아다니며 풀던 나는 감성 없이는 살 수 없는 사람이 되었고…
                     </p>
                 </div>
                 <div class="card__footer">
@@ -184,46 +174,46 @@
             </article>
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card3_bg02.jpg" alt="박지수의 포트폴리오">
-                    <figcaption># Front-End</figcaption>
+                    <img src="img/card3_bg01.jpg" alt="포트폴리오01">
+                    <figcaption>
+                        # Front-end
+                    </figcaption>
                 </figure>
                 <div class="card__contents">
-                    <h3>
-                        코딩천재 박지수의 포트폴리오,<br>
+                    <h3>코딩천재 박지수의 포트폴리오,<br>
                         한 번 볼래?😎
                     </h3>
                     <p>
-                        어린 시절부터 난 이과 머리였다. 학창시절 12년동안 단 한 번도 수학을 포기한 적이 없었으며 그런 나에게 코딩이란
-                        너무나도 즐거운 취미활동이었으며 자연스럽게 개발자를 꿈꾸게 되었다.
+                        어린 시절부터 난 이과 머리였다. 학창시절 12년동안 단 한 번도 수학을 포기한 적이 없었으며 그런 나에게 코딩이란…
                     </p>
                 </div>
                 <div class="card__footer">
-                    <h4>Jisu Park <em>8 resources</em></h4>
+                    <h4>Jisu Park <em>9 resources</em></h4>
                     <span><img src="img/card_bg03_icon02.png" alt="박지수"></span>
                 </div>
             </article>
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card3_bg03.jpg" alt="한민철의 포트폴리오">
-                    <figcaption># 3D Artist</figcaption>
+                    <img src="img/card3_bg03.jpg" alt="포트폴리오03">
+                    <figcaption>
+                        # 3D Design
+                    </figcaption>
                 </figure>
                 <div class="card__contents">
                     <h3>
-                        3D 아티스트가 되고 싶은 한민철의<br>
+                        3D 아티스트가 되고 싶은 한민철의 <br>
                         포트폴리오, 봐 주세요😘
                     </h3>
                     <p>
-                        C4D를 처음 배운 그 순간 나는 결심했다. 반드시 3D 그래픽을 전공하겠다고 말이다. 난 이 분야의 아티스트로 
-                        성공해 돈방석에 앉는 것을 목표로 앞으로 나아갈 것이다.
+                        C4D를 처음 배운 그 순간 나는 결심했다. 반드시 3D 그래픽을 전공하겠다고 말이다. 난 이 분야의 아티스트로…
                     </p>
                 </div>
                 <div class="card__footer">
-                    <h4>Mincheol Han <em>7 resources</em></h4>
+                    <h4>Mincheol Han <em>9 resources</em></h4>
                     <span><img src="img/card_bg03_icon03.png" alt="한민철"></span>
                 </div>
             </article>
         </div>
-
     </section>
 </body>
 </html>

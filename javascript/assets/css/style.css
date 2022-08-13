@@ -124,35 +124,28 @@ body {
 }
 .sample table tr td {
     border: 1px solid #e6e6e6;
-    padding: 3px;
+    padding: 6px;
 }
 /* td의 class 중 "_P"가 들어가는 속성들에 적용할 CSS */
 .sample table tr td[class*="_P"] {
-    background-color: #000;
+    color: #fff;
+}
+.sample table tr td[class*="_P"]:hover {
+    color: #000;
+    cursor: help;
 }
 
-/* 테이블 */
-/* .table {
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-
+@media (max-width: 800px) {
+    .sample .table {
+        overflow-x: scroll;
+    }
+    .sample .table table {
+        width: 780px;
+    }
+    .sample table tr td[class*="_P"] {
+        color: #000;
+    }
 }
-.table tr th {
-    border: 1px solid #dedede;
-    padding: 10px;
-    font-weight: normal;
-    background-color: #f5f5f5;
-}
-.table tr td {
-    border: 1px solid #dedede;
-    padding: 10px;
-}
-.table .center {
-    text-align: center;
-} */
 
 /* 티스토리용 문서 */
 .document i {
