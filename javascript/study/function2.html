@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 내장함수</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">내장 함수</h2>
+            <p class="t_desc2">
+                자바스크립트에 <i>기본적으로 내장되어 있는 함수들</i>을 말한다.
+            </p>
+
+     <!-- // 내장함수란?  -->
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">인코딩, 디코딩 함수</h3>
+                <p class="t_desc2">
+                    'https://www.google.com/search?query=<i>자바스크립트</i>'<br>
+                    <br>
+                    위와 같이 URL 주소에 쿼리 정보를 전송해 데이터를 처리해야 하는 프로그램의 경우
+                     <i>한글과 같은 유니코드 문자가 포함되어 있으면 오류가 발생</i>할 수 있는데
+                    이런 경우 인코딩 함수를 이용해 문자를 부호화시키고 부호화된 문자를
+                    다시 디코딩 함수를 이용해 원래 문자로 되돌릴 수 있다.
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">encodeURIComponent()</td>
+                            <td>영문, 숫자와 ( ) - _ . ~ * ! ' 을 제외한 문자를 인코딩한다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">decodeURIComponent()</td>
+                            <td>encodeURIComponent()의 디코딩 함수</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h4 class="t_tit3">예제 코드 보기</h4>
+                <div class="t_code">
+<pre><code class="language-js">var encodeStr = '자바스크립트';
+console.log(encodeURIComponent(encodeStr));     // 문자 부호화되어 외계어(?)출력
+var decodeStr = encodeURIComponent(encodeStr);
+console.log(decodeURIComponent(decodeStr));     // 부호화된 것을 다시 문자로 디코딩해서 '자바스크립트' 제대로 출력됨
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample01_result">
+                            %EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8<br>
+                            자바스크립트
+                        </div>
+                    </details>
+                </div>
+                <!-- // 인코딩,디코딩 함수 -->
+                
+                <h3 class="t_tit2">숫자, 유·무한 값 판별 함수</h3>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">isNaN()</td>
+                            <td>
+                                숫자인지 아닌지를 판별하는 함수. 
+                                숫자면 false, 숫자가 아니면 true를 반환. <br>
+                                NaN은 Not a Number의 약자.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">isFinite()</td>
+                            <td>유한값인지 무한값인지를 판별하는 함수. 유한값이면 true, 무한값이면 false를 반환.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h4 class="t_tit3">예제 코드 보기</h4>
+                <div class="t_code">
+<pre><code class="language-js">var num1 = '숫자';
+if (!isNaN(num1)) {     // isNaN이 아닌 !isNaN임에 주목!
+    console.log('숫자');
+} else {
+    console.log('숫자아님');    // num1은 문자열이므로 true를 반환해야 하지만 isNan 앞에 느낌표가 붙어서 반대로 false 반환
+}
+
+var num2 = 1 / 0;
+if (isFinite(num2)) {
+    console.log('유한값');
+} else {
+    console.log('무한값');
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample02_result">
+                            숫자아님<br>
+                            무한값
+                        </div>
+                    </details>
+                </div>
+                <!-- // 숫자, 유·무한 값 판별 함수 -->
+
+                <h3 class="t_tit2">숫자, 문자 변환 함수</h3>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">Number()</td>
+                            <td>
+                                숫자로 변환해주는 함수
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">parselnt()</td>
+                            <td>숫자와 문자가 포함됐을 경우 정수 부분만 숫자로 변환해주는 함수</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">parseFloat()</td>
+                            <td>숫자와 문자가 포함됐을 경우 소수 부분까지 숫자로 변환해주는 함수</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">String()</td>
+                            <td>문자로 변환해주는 함수</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h4 class="t_tit3">예제 코드 보기</h4>
+                <div class="t_code">
+<pre><code class="language-js">var num3 = '10';
+console.log(Number(num3));      // 따옴표 안에 있는 문자열 '10'을 숫자 10으로 변경
+
+var num4 = '100px';
+console.log(parseInt(num4));    // 정수부분 100 제외하고 px 무시함
+
+var num5 = '33.3%';
+console.log(parseFloat(num5));      // 소수 부분까지 숫자 변환, 문자 '%' 무시
+
+var num6 = 10;
+console.log(typeof num6);       // typeof는 변수 안 데이터가 어떤 형태인지를 판별해줌, 숫자이므로 number출력
+console.log(typeof String(num6));   // String(num6)으로 10을 '10'(문자열)로 바꿈 --> 타입이 string으로 변했음
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample03_result">
+                            10<br>
+                            100 <br>
+                            33.3 <br>
+                            number <br>
+                            string
+                        </div>
+                    </details>
+                </div>
+                <!-- // 숫자,문자 변환함수 -->
+
+                <h3 class="t_tit2">자바스크립트 코드 변경 함수</h3>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">eval()</td>
+                            <td>문자를 자바스크립트 코드로 변경해주는 함수</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h4 class="t_tit3">예제 코드 보기</h4>
+                <div class="t_code">
+<pre><code class="language-js">var str1 = 'var num7 = 10';
+var str2 = 'var num8 = 20';
+
+//eval 함수를 통해 문자열에서 js코드로 변경
+eval(str1);
+eval(str2);
+consloe.log(num7 + num8);   //무사히 둘을 더해 30 출력
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample04_result">
+                            30
+                        </div>
+                    </details>
+                </div>
+                
+            </div>
+
+            
+            
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+</body>
+</html>
