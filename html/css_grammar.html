@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li class="active"><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">CSS 기본 문법</h2>
+                <p class="t_desc2">
+                    CSS 정의 방법에는 <i>내부 스타일시트, 외부 스타일시트, @import 방식, 인라인 스타일시트</i> 총 4가지가 있다. <br>
+                    이 중 외부 스타일시트가 많이 사용되며 CSS 코드가 적은 경우 내부 스타일시트가 사용된다. <br>
+                    인라인 스타일시트는 잘 사용되지 않지만 우선순위를 높여야 할 때 간혹 사용된다. <br>
+                    또한 CSS에서의 주석 처리는 <i>/* */</i> 로 한다. <br>
+                    <br>
+                    이번 포스팅에서는 4가지 CSS 정의 방법에 대해 살펴보고자 한다.
+                </p>
+                <!-- // CSS 기본문법 -->
+
+                <hr>
+
+                <h3 class="t_tit2">01. 내부 스타일시트</h3>
+                <p class="t_desc2">
+                    <i>CSS를 HTML 문서 내에 &lt;style&gt; 태그로 기재하여 사용</i>하는 방법으로 코드 양이 적을 때 사용한다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;내부 스타일시트&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        p { color : red; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;안녕1&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <div class="sample01_result">
+                    <details>   
+                        <summary>결과 보기</summary>
+                        <div>
+                            <p style=color:red;>안녕1</p>
+                        </div>
+                    </details>
+                </div>
+                <!-- // 01. 내부스타일시트 -->
+
+                <h3 class="t_tit2">02. 외부 스타일시트</h3>
+                <p class="t_desc2">
+                    스타일 속성을 <i>따로 저장하여 HTML 문서에 파일명으로 연결</i>하는 방법. 스타일 속성은 *.css 확장자 파일로 저장하고 
+                    HTML에서는 &lt;link&gt; 태그를 이용해 가져오도록 한다. 가장 많이 쓰이는 방법.<br>
+                    <br>
+                    내부 스타일시트는 그 스타일이 기술된 페이지에만 적용되지만, 외부 스타일시트는 그 스타일을 선언한 모든 HTML 페이지에 적용된다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;외부 스타일시트&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;안녕2&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <br>
+                <h3 class="t_tit3">외부 CSS 파일(style.css) 내용</h3>
+                <div class="t_code">
+<pre><code class="language-css">@charset "utf-8";
+p { color : red; }
+</code></pre>
+                </div>
+                <div class="sample02_result">
+                    <details>   
+                        <summary>결과보기</summary>
+                        <div>
+                            <p style=color:red;>안녕2</p>
+                        </div>
+                    </details>
+                </div>
+                <!-- // 02. 외부스타일시트 -->
+
+                <h3 class="t_tit2">03. @import</h3>
+                <p class="t_desc2">
+                    <i>CSS 안에 다른 CSS 파일을 불러들일 때 사용하는 방식</i>이다. 웹 폰트를 import 방식으로 불러올 때에도 사용되는 방법.
+                    하지만 CSS 파일을 너무 여러개로 분리하면 복잡해지고 유지보수하기 힘들어지기 때문에 적당히 쓰도록 하자.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;스타일시트 포함&lt;/title&gt;
+    &lt;!-- CSS 영역 안에 또 다른 CSS 파일을 불러옴 --&gt;
+    &lt;style type="text/css"&gt;
+        @import url ("style.css");
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;안녕3&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <div class="sample03_result">
+                    <details>   
+                        <summary>결과 보기</summary>
+                        <div>
+                            <p style=color:red;>안녕3</p>
+                        </div>
+                    </details>
+                </div>
+                <!-- // 03. import -->
+
+                <h3 class="t_tit2">04. 인라인 스타일(inline style)</h3>
+                <p class="t_desc2">
+                    <i>태그에 직접 CSS를 정의</i>해주는 방법. 해당 요소(태그)에 직접 style=" " 형식으로 기술한다. <br>
+                    잘 쓰이지 않는 방법이지만 <i>부득이하게 우선순위를 절대적으로 높여야 할 요소가 있을 경우 사용</i>한다. <br>
+                    요소마다 일일이 인라인 스타일을 사용하게 되면 나중에 한꺼번에 수정할 때 피눈물 흘리게 될 것이니 남용은 금물!
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;인라인 스타일&lt;/title&gt;    
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 만약 p의 color를 blue로 설정한 CSS 파일이 이 문서에 사용됐다고 해도
+    인라인 방식을 쓰면 우선순위가 가장 높아지기 때문에 빨간 글씨로 출력됨 --&gt;
+    &lt;p style="color:red;"&gt;안녕4&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <div class="sample04_result">
+                    <details>   
+                        <summary>결과 보기</summary>
+                        <div>
+                            <p style=color:red;>안녕4</p>
+                        </div>
+                    </details>
+                </div>
+                <!-- //04. 인라인 -->
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

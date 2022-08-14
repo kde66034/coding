@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 요소</title>
+
+    <style>
+        /* web font */
+        @font-face {
+            font-family: 'yg-jalnan';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'yg-jalnan';
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        header {
+            background-color: #FFB2B2;
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            background-color: #E98888;
+            width: 160px;
+            height: 160px;
+            text-align: center;
+            font-size: 25px;
+            margin: 20px;
+            line-height: 160px;
+        }
+
+        nav {
+            background-color: #E98888;
+            height: 80px;
+            width: 940px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        li {
+            line-height: 80px;
+        }
+
+        #container {
+            width: 1160px;
+            margin: 0 auto;
+            min-width: 1160px;
+            position: relative;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        .body {
+            height: 600px;
+            background-color: #FFB2B2;
+            margin-top: 20px;
+            display: flex;
+        }
+
+        section {
+            width: 400px;
+            height: 560px;
+            background-color: #E98888;
+            margin: 20px 10px 20px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            line-height: 600px;
+        }
+
+        .aside {
+            margin: 20px;
+        }
+
+        article {
+            background-color: #E98888;
+            width: 258px;
+            height: 270px;
+            margin-bottom: 20px;
+            line-height: 270px;
+            text-align: center;
+        }
+
+        aside {
+            background-color: #E98888;
+            font-size: 25px;
+            width: 258px;
+            height: 270px;
+            text-align: center;
+            line-height: 270px;
+        }
+
+        footer {
+            background-color: #FFB2B2;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        address {
+            background-color: #E98888;
+            text-align: center;
+            padding: 10px;
+            margin: 20px;
+            font-style: normal;
+        }
+
+        footer > p {
+            background-color: #E98888;
+            text-align: center;
+            padding: 10px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1><a href="#">반응형웹</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">MENU 01</a></li>
+                    <li><a href="#">MENU 02</a></li>
+                    <li><a href="#">MENU 03</a></li>
+                    <li><a href="#">MENU 04</a></li>
+                    <li><a href="#">MENU 05</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="body">
+            <div class="main">
+                <section>
+                    <h2>콘텐츠 그룹 01</h2>
+                </section>
+                <section>
+                    <h2>콘텐츠 그룹 02</h2>
+                </section>
+            </div>
+            <div class="aside">
+                <article>
+                    <h2>주요 기사</h2>
+                </article>
+                <aside>광고</aside>
+            </div>
+        </div>
+        <footer>
+            <address>서울특별시 중구 세종대로 110 02)123-456 abc1234@gmail.com</address>
+            <p>Copyright &copy; All Right Reserved</p>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+</html>

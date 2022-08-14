@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : 구조 관련 요소</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">HTML 구조 관련 요소</h2>
+                <p class="t_desc2">
+                    HTML 구조 관련 요소 중 블록 레벨 요소의 태그들에 대해 살펴보도록 하자. <br>
+                    이번 포스팅에서 살펴볼 태그명은 <i>&lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;aside&gt;</i> 총 6개이다.
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th class="ce">요소 유형</th>
+                            <th class="ce">태그명</th>
+                            <th class="ce">태그의 의미 및 특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="12" class="ce">
+                                블록 레벨 요소
+                            </td>
+                            <td rowspan="2" class="ce">
+                                &lt;header&gt;<br>
+                                &lt;/header&gt;
+                            </td>
+                            <td>
+                                1. HTML 문서의 헤더 영역을 의하는 태그로 제목, 내비게이션, 검색 등의 내용 포함될 수 있음
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함 가능하지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함 불가
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;section&gt;<br>
+                                &lt;/section&gt;
+                            </td>
+                            <td>
+                                1. HTML 문서에서 맥락이 동일한 요소들을 주제별로 그룹화하는 태그이며, 섹션 주제에 대한 제목 요소(&lt;h2&gt;~&lt;h6&gt;)를 포함할 것을 권장
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소가 포함될 수 있음
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;footer&gt;<br>
+                                &lt;/footer&gt;
+                            </td>
+                            <td>
+                                1. HTML 문서의 푸터 영역을 의미하며 섹션 작성자나 저작권에 대한 정보, 관련 문서 링크 포함될 수 있음
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함 가능하지만 &lt;header&gt;, &lt;footer&gt; 태그는 포함 불가
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;nav&gt;<br>
+                                &lt;/nav&gt;
+                            </td>
+                            <td>
+                                1. HTML 문서의 메인 메뉴, 목차 등을 정의해주는 태그
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소가 포함될 수 있음
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;article&gt;<br>
+                                &lt;/article&gt;
+                            </td>
+                            <td>
+                                1. HTML 문서 내에서 독립적으로 배포 또는 재사용 가능한 게시물, 뉴스 기사, 블로그 포스팅 등을 의미하며 제목 요소(&lt;h2&gt;~&lt;h6&gt;)를 포함할 것을 권장
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소가 포함될 수 있음
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="ce">
+                                &lt;aside&gt;<br>
+                                &lt;/aside&gt;
+                            </td>
+                            <td>
+                                1. 메인 콘텐츠와 직접적으로 관련 없는 영역을 의미하는 태그, HTML 문서의 우측이나 좌측의 사이드 메뉴나 광고 영역 등으로 사용됨
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2. 텍스트, 인라인 요소, 블록 레벨 요소가 포함될 수 있음
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="t_tit2">예시 레이아웃</h3>
+                <p class="t_desc2">
+                    Figma에서 만든 예시 레이아웃을 구조 태그를 이용하여 코딩해보도록 하자.
+                </p>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Ffu89iQ9SbJCv671kLH7hxz%2F%25EC%2598%2588%25EC%25A0%259C%3Fnode-id%3D2%253A2" allowfullscreen></iframe>
+                </div>
+                <h3 class="t_tit2">HTML/CSS 코드</h3>
+                <div class="t_iframe">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="구조관련요소 예제" src="https://codepen.io/kde66034/embed/RwMegJy?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/RwMegJy">
+                        구조관련요소 예제</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+                <h3 class="t_tit2">결과물</h3>
+                <div class="t_iframe">
+                    <iframe src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
