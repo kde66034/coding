@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 01</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h1 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+
+        /* imageType */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;     /* 간격 떨어뜨리기 */
+        }
+        .image {
+            width: 570px;
+            position: relative;
+        }
+        .image__header > img {
+            
+        }
+        .card__body {
+            position: absolute;
+            left: 0;
+            top: 202px;
+            color: #fff;
+            margin-left: 30px;
+        }
+        .card__body h3 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .card__body p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        .card__body .btn {
+            width: 120px;
+            background-color: rgba(96, 52, 0, 0.8);
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+        }
+        .card__body .btn > a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <section id="imageType01" class="image__wrap nexon section">
+        <h1>별빛 제빵교실 개강소식🍞</h1>
+        <p>별빛 제빵교실이 2022년 8월 23일 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!</p>
+        <div class="image__inner container">
+            <article class="image">
+                <figure class="image__header">
+                    <img src="img/imageType01_bg01.jpg" alt="제빵 포트폴리오">
+                </figure>
+                <div class="card__body">
+                    <h3 class="title">나만의 제빵 포트폴리오</h3>
+                    <p class="desc">
+                        자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. <br>
+                        열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
+                    </p>
+                    <div class="btn">
+                        <a href="/">
+                            더 자세히 보기
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__header">
+                    <img src="img/imageType01_bg02.jpg" alt="제빵 포트폴리오">
+                </figure>
+                <div class="card__body">
+                    <h3 class="title">나만의 제빵 포트폴리오</h3>
+                    <p class="desc">
+                        자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. <br>
+                        열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
+                    </p>
+                    <div class="btn">
+                        <a href="/">
+                            더 자세히 보기
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

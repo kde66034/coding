@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 문자열 메서드</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h1 class="t_tit">문자열 메서드 : indexOf</h1>
+            <p class="t_desc2">
+                이번 포스팅에서는 문자열 메서드 중 indexOf에 대해 다뤄보도록 하겠습니다. <br>
+            </p>
+            <hr>
+            <!-- // indexOf란? -->
+
+            <h2 class="t_tit2">indexOf()</h2>
+            <p class="t_desc2">
+                문자열에서 특정 문자열의 <i>첫번째로 시작되는 위치</i>를 찾고, <i>그 위치를 숫자로 반환</i>한다.
+            </p>
+            <p class="t_box">
+                "문자열".indexOf(검색값) <br>
+                "문자열".indexOf(검색값, 위치값) <br>
+                <br>
+                <i>찾는 문자열이 없으면 -1을 리턴</i>(출력)한다. <br>
+                문자열을 찾을 때 <i>대소문자를 구분</i>한다.
+            </p>
+            <h3 class="t_tit3">코드 보기</h3>
+            <div class="t_code">
+<pre><code class="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.indexOf("javascript");         // 0 : 시작위치를 의미함
+const currentStr2 = str1.indexOf("reference");          // 11
+const currentStr3 = str1.indexOf("j");                  // 0
+const currentStr4 = str1.indexOf("a");                  // 1
+const currentStr5 = str1.indexOf("v");                  // 2
+const currentStr6 = str1.indexOf("jquery");             // -1 : 없는 데이터를 의미함
+const currentStr7 = str1.indexOf("b");                  // -1
+const currentStr8 = str1.indexOf("javascript", 0);      // 0
+const currentStr9 = str1.indexOf("javascript", 1);      // -1
+const currentStr10 = str1.indexOf("reference", 0);      // 11 : reference는 11부터 시작하기 때문에 0~11 중 아무 숫자나 입력해도 11 출력
+const currentStr11 = str1.indexOf("reference", 1);      // 11
+const currentStr12 = str1.indexOf("reference", 11);     // 11
+const currentStr13 = str1.indexOf("reference", 12);     // -1
+</code></pre>
+            </div>
+            <!-- // indexOf 설명 -->
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

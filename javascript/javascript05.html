@@ -188,7 +188,7 @@
             <br>
 
             <div id="sample02" class="sample">
-                <h3>02. 문자열 메서드 : toUpperCase() / toLowerCase()</h3>
+                <h3>02. toUpperCase() / toLowerCase()</h3>
                 <p>
                     toUpperCase는 문자열을 대문자로, toLowerCase는 소문자로 변경한다.
                 </p>
@@ -483,9 +483,9 @@ const currentStr17 = str4.split('').reverse().join('/');   // e/c/n/e/r/e/f/e/r/
             <br>
 
             <div id="sample10" class="sample">
-                <h3>10. indexOf() : </h3>
+                <h3>10. indexOf()</h3>
                 <p>
-                    문자열에서 특정 문자의 위치를 찾고, 숫자를 반환한다.
+                    문자열에서 특정 문자열의 첫번째로 시작되는 위치를 찾고, 그 위치를 숫자로 반환한다.
                 </p>
                 <div class="box">
                     "문자열".indexOf(검색값) <br>
@@ -498,11 +498,11 @@ const currentStr2 = str1.indexOf("reference");          // 11
 const currentStr3 = str1.indexOf("j");                  // 0
 const currentStr4 = str1.indexOf("a");                  // 1
 const currentStr5 = str1.indexOf("v");                  // 2
-const currentStr6 = str1.indexOf("jquery");             // -1 : 없는 데이터
+const currentStr6 = str1.indexOf("jquery");             // -1 : 없는 데이터를 의미함
 const currentStr7 = str1.indexOf("b");                  // -1
 const currentStr8 = str1.indexOf("javascript", 0);      // 0
 const currentStr9 = str1.indexOf("javascript", 1);      // -1
-const currentStr10 = str1.indexOf("reference", 0);      // 11
+const currentStr10 = str1.indexOf("reference", 0);      // 11 : reference는 11부터 시작하기 때문에 0~11 중 아무 숫자나 입력해도 11 출력
 const currentStr11 = str1.indexOf("reference", 1);      // 11
 const currentStr12 = str1.indexOf("reference", 11);     // 11
 const currentStr13 = str1.indexOf("reference", 12);     // -1
