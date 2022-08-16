@@ -80,14 +80,14 @@
 
                 <li><a href="#sample10">10. 문자열 메서드 : 검색 : indexOf() : 문자열에서 특정 문자의 위치를 찾음 : 반환(숫자) ★</a></li>
                 <li><a href="#sample10">10. 문자열 메서드 : 검색 : lastIndexOf() : 문자열에서 특정 문자의 위치를 뒤에서부터 찾음 : 반환(숫자)</a></li>
-                <li><a href="#sample09">09. 문자열 메서드 : 검색 : search() : 문자열을 검색(정규식) : 반환(숫자) ★</a></li>
-                <li><a href="#sample10">10. 문자열 메서드 : 검색 : match() : 문자열을 검색(정규식) : 반환(배열)</a></li>
+                <li><a href="#sample11">11. 문자열 메서드 : 검색 : search() : 문자열을 검색(정규식) : 반환(숫자) ★</a></li>
+                <li><a href="#sample11">11. 문자열 메서드 : 검색 : match() : 문자열을 검색(정규식) : 반환(배열)</a></li>
                 <li><a href="#sample11">11. 문자열 메서드 : 검색 : includes() : 문자열 포함 여부 검색 : 반환(불린 true/false) ★</a></li>
                 <li><a href="#sample11">11. 문자열 메서드 : 검색 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)</a></li>
                 <li><a href="#sample11">11. 문자열 메서드 : 검색 : charCodeAt() : 지정한 인덱스의 문자를 추출 : 반환(숫자)</a></li>
 
-                <li><a href="#sample12">12. 문자열 메서드 : 검색 : startsWith() : 문자열 포함 여부 앞에서 검색 : 반환(불린 true/false)</a></li>
-                <li><a href="#sample13">13. 문자열 메서드 : 검색 : endsWith() : 문자열 포함 여부 뒤에서 검색 : 반환(불린 true/false)</a></li>
+                <li><a href="#sample11">11. 문자열 메서드 : 검색 : startsWith() : 문자열 포함 여부 앞에서 검색 : 반환(불린 true/false)</a></li>
+                <li><a href="#sample11">11. 문자열 메서드 : 검색 : endsWith() : 문자열 포함 여부 뒤에서 검색 : 반환(불린 true/false)</a></li>
             </ul>
         </div>
         <!-- // main menu -->
@@ -185,10 +185,12 @@
             </div>
             <!-- sample01 -->
 
+            <br>
+
             <div id="sample02" class="sample">
                 <h3>02. 문자열 메서드 : toUpperCase() / toLowerCase()</h3>
                 <p>
-                    toUpperCase는 문자열을 대문자로, toLowerCase는 소문자로 변경합니다.
+                    toUpperCase는 문자열을 대문자로, toLowerCase는 소문자로 변경한다.
                 </p>
                 <div class="table">
                     <table>
@@ -240,22 +242,21 @@ document.querySelector(".sample02_M2").innerHTML = "toLowerCase()";
 document.querySelector(".sample02_P2").innerHTML = currentStr2;
 </code></pre>
                 </div>
-                <div class="result">
-                    <details>
-                        <summary>결과 보기</summary>
-                        <div class="sample02_result">
-                            결과
-                        </div>
-                    </details>
-                </div>
             </div>
             <!-- sample02 -->
+
+            <br>
 
             <div id="sample03" class="sample">
                 <h3>03. trim() / trimStart() / trimEnd()</h3>
                 <p>
-                    문자열의 앞·뒤 공백을 제거합니다.
+                    문자열의 앞·뒤 공백을 제거한다.
                 </p>
+                <div class="box">
+                    trim() : 문자열 앞·뒤 공백 제거 <br>
+                    trimStart() : 문자열 앞 공백만 제거 <br>
+                    trimEnd() : 문자열 뒷 공백만 제거
+                </div>
                 <div class="table">
                     <table>
                         <colgroup>
@@ -295,42 +296,38 @@ document.querySelector(".sample02_P2").innerHTML = currentStr2;
                     </table>
                 </div>
                 <div class="script">
-<pre><code lang="language-js">
-            const str1 = "　　　javascript　　　";
-            const currentStr1 = str1.trim();
+<pre><code lang="language-js">// 앞 뒤 모든 공백 제거
+const str1 = "　　　javascript　　　";
+const currentStr1 = str1.trim();
 
-            document.querySelector(".sample03_N1").innerHTML = "1";
-            document.querySelector(".sample03_Q1").innerHTML = str1;
-            document.querySelector(".sample03_M1").innerHTML = "trim()";
-            document.querySelector(".sample03_P1").innerHTML = currentStr1;
+document.querySelector(".sample03_N1").innerHTML = "1";
+document.querySelector(".sample03_Q1").innerHTML = str1;
+document.querySelector(".sample03_M1").innerHTML = "trim()";
+document.querySelector(".sample03_P1").innerHTML = currentStr1;
 
-            const str2 = "　　　javascript　　　";
-            const currentStr2 = str2.trimStart();
+// 앞 공백만 제거
+const str2 = "　　　javascript　　　";
+const currentStr2 = str2.trimStart();
 
-            document.querySelector(".sample03_N2").innerHTML = "2";
-            document.querySelector(".sample03_Q2").innerHTML = str2;
-            document.querySelector(".sample03_M2").innerHTML = "trimStart()";
-            document.querySelector(".sample03_P2").innerHTML = currentStr2;
+document.querySelector(".sample03_N2").innerHTML = "2";
+document.querySelector(".sample03_Q2").innerHTML = str2;
+document.querySelector(".sample03_M2").innerHTML = "trimStart()";
+document.querySelector(".sample03_P2").innerHTML = currentStr2;
 
-            const str3 = "　　　javascript　　　";
-            const currentStr3 = str3.trimEnd();
+// 뒤 공백만 제거
+const str3 = "　　　javascript　　　";
+const currentStr3 = str3.trimEnd();
 
-            document.querySelector(".sample03_N3").innerHTML = "3";
-            document.querySelector(".sample03_Q3").innerHTML = str3;
-            document.querySelector(".sample03_M3").innerHTML = "trimEnd()";
-            document.querySelector(".sample03_P3").innerHTML = currentStr3;
+document.querySelector(".sample03_N3").innerHTML = "3";
+document.querySelector(".sample03_Q3").innerHTML = str3;
+document.querySelector(".sample03_M3").innerHTML = "trimEnd()";
+document.querySelector(".sample03_P3").innerHTML = currentStr3;
 </code></pre>
-                </div>
-                <div class="result">
-                    <details>
-                        <summary>결과 보기</summary>
-                        <div class="sample03_result">
-                            결과
-                        </div>
-                    </details>
                 </div>
             </div>
             <!-- sample03 -->
+
+            <br>
 
             <div id="sample04" class="sample">
                 <h3>04. slice() / substring() / substr()</h3>
@@ -346,8 +343,7 @@ document.querySelector(".sample02_P2").innerHTML = currentStr2;
                     "문자열".substr(시작위치, 길이)
                 </div>
                 <div class="script">
-<pre><code lang="language-js">
-const str1 = "javascript reference";
+<pre><code lang="language-js">const str1 = "javascript reference";
 const currentStr1 = str1.slice(0);
 const currentStr2 = str1.slice(1);  // "avascript reference" 출력, j 빠짐
 const currentStr3 = str1.slice(2);  // "vascript reference" 출력, ja 빠짐
@@ -390,53 +386,17 @@ const currentStr35 = str1.substr(-3, 3);    // "nce"
             </div>
             <!-- sample04 -->
 
+            <br>
+
             <div id="sample05" class="sample">
                 <h3>05. split()</h3>
                 <p>
-                    문자열에서 원하는 값을 배열로 반환합니다.
+                    문자열에서 원하는 값을 배열로 반환한다.
                 </p>
                 <div class="box">
                     // "문자열".split(구분자); <br>
                     // "문자열".split(정규식 표현);<br>
                     // "문자열".split(구분자, 제한(개수설정));
-                </div>
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col style="width: 5%;">
-                            <col style="width: 32%;">
-                            <col style="width: 22%;">
-                            <col style="width: 42%;">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>번호</th>
-                                <th>기본값</th>
-                                <th>메서드</th>
-                                <th>리턴값</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="sample05_N1"></td>
-                                <td class="sample05_Q1"></td>
-                                <td class="sample05_M1"></td>
-                                <td class="sample05_P1"></td>
-                            </tr>
-                            <tr>
-                                <td class="sample05_N2"></td>
-                                <td class="sample05_Q2"></td>
-                                <td class="sample05_M2"></td>
-                                <td class="sample05_P2"></td>
-                            </tr>
-                            <tr>
-                                <td class="sample05_N3"></td>
-                                <td class="sample05_Q3"></td>
-                                <td class="sample05_M3"></td>
-                                <td class="sample05_P3"></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="script">
 <pre><code lang="language-js">const str1 = "javascript reference";
@@ -467,6 +427,8 @@ const currentStr17 = str4.split('').reverse().join('/');   // e/c/n/e/r/e/f/e/r/
                 </div>
             </div>
             <!-- sample05 -->
+
+            <br>
 
             <div id="sample06" class="sample">
                 <h3>06. </h3>
@@ -518,10 +480,12 @@ const currentStr17 = str4.split('').reverse().join('/');   // e/c/n/e/r/e/f/e/r/
             </div>
             <!-- sample06 -->
 
+            <br>
+
             <div id="sample10" class="sample">
                 <h3>10. indexOf() : </h3>
                 <p>
-                    문자열에서 특정 문자의 위치를 찾고, 숫자를 반환합니다.
+                    문자열에서 특정 문자의 위치를 찾고, 숫자를 반환한다.
                 </p>
                 <div class="box">
                     "문자열".indexOf(검색값) <br>

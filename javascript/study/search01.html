@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 서치 01</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">검색 이펙트 만들기 01</h2>
+            <p class="t_desc2">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 검색 이펙트를 만들어보도록 하겠습니다. <br>
+                이번 학습 내용을 잘 활용하여 그동안 배웠던 HTML 태그와 CSS 속성, JavaScript 실행문들을 <i>검색창에 키워드를 입력해서
+                설명을 볼 수 있는 페이지</i>를 만들어보도록 합시다. 나중에 모르는 게 생겼을 때 공부하기 편하게 말이죠!<br>
+                <br>
+                자, 그럼 시작해볼까요?
+            </p>
+
+     <!-- // 검색 이펙트 만들기  -->
+
+    <hr>
+
+            <h3 class="t_tit2">HTML 소스 보기</h3>
+            <p class="t_desc">
+                검색 이펙트 01의 HTML 소스와 부연 설명(주석 처리됨)이다. <br>
+                CSS 소스를 함께 보고 싶다면 맨 아래의 'CSS 소스 보기' 버튼을 누를 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;body&gt;
+    &lt;header id="header"&gt;
+        &lt;h1&gt;Search&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li class="active"&gt;&lt;a href="searchEffect01.html"&gt;01&lt;/a&gt;
+                    &lt;ul class="sub"&gt;
+                        &lt;li class="active"&gt;&lt;a href="searchEffect01.html"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="searchEffect01_css.html"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="searchEffect01_js.html"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect02.html"&gt;02&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect03.html"&gt;03&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect04.html"&gt;04&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect05.html"&gt;05&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect06.html"&gt;06&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;!-- // header --&gt;
+
+    &lt;main id="main"&gt;
+        &lt;div class="search__wrap"&gt;
+            &lt;span&gt;indexOf()를 이용하여 검색하기&lt;/span&gt;
+            &lt;h1&gt;HTML 태그 검색하기&lt;/h1&gt;
+            &lt;div class="search__box"&gt;     &lt;!-- 검색상자 --&gt;
+                &lt;label for="search"&gt;검색하기&lt;/label&gt;        &lt;!-- 스크린리더기에 읽히지만 겉으로는 안보이게 CSS 속성으로 처리 --&gt;
+                &lt;input type="text" id="search" placeholder="HTML 태그를 입력해주세요."&gt;       &lt;!-- 아무것도 입력 안했을때 나타나는 문구 --&gt;
+            &lt;/div&gt;
+            &lt;div class="search__list"&gt;
+                &lt;div class="html"&gt;
+                    &lt;ul&gt;
+                        &lt;li data-name="a"&gt;&lt;strong&gt;a&lt;/strong&gt; : 다른 페이지로의 이동을 설정함&lt;/li&gt;
+                        &lt;li data-name="abbr"&gt;&lt;strong&gt;abbr&lt;/strong&gt; : 줄임말이나 머리글자를 표현 할 때 사용&lt;/li&gt;
+                        &lt;li data-name="acronym"&gt;&lt;strong&gt;acronym&lt;/strong&gt; : 줄임말이나 머리글자를 표현 할 때 사용&lt;/li&gt;
+                        &lt;li data-name="address"&gt;&lt;strong&gt;address&lt;/strong&gt; : 가까운 HTML 요소의 사람, 단체, 조직 등에 대한 연락처 정보를 나타냅니다.&lt;/li&gt;
+                        &lt;li data-name="applet"&gt;&lt;strong&gt;applet&lt;/strong&gt; : 사용되지 않음&lt;/li&gt;
+                        &lt;li data-name="area"&gt;&lt;strong&gt;area&lt;/strong&gt; : 이미지의 핫스팟 영역을 정의하고 하이퍼링크 (en-US)를 추가할 수 있습니다. map 요소 안에서만 사용할 수 있습니다.&lt;/li&gt;
+                        &lt;li data-name="article"&gt;&lt;strong&gt;article&lt;/strong&gt; : 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다.&lt;/li&gt;
+                        &lt;li data-name="aside"&gt;&lt;strong&gt;aside&lt;/strong&gt; : 문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다.&lt;/li&gt;
+                        &lt;li data-name="audio"&gt;&lt;strong&gt;audio&lt;/strong&gt; : 문서에 소리 콘텐츠를 포함할 때 사용합니다.&lt;/li&gt;
+                        &lt;li data-name="b"&gt;&lt;strong&gt;b&lt;/strong&gt; : 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.&lt;/li&gt;
+                        &lt;li data-name="base"&gt;&lt;strong&gt;base&lt;/strong&gt; : 문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다.&lt;/li&gt;
+                        &lt;li data-name="bdi"&gt;&lt;strong&gt;bdi&lt;/strong&gt; : bdi 태그는&lt;/li&gt;
+                        &lt;li data-name="bdo"&gt;&lt;strong&gt;bdo&lt;/strong&gt; : 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.&lt;/li&gt;
+                        &lt;li data-name="bgsound"&gt;&lt;strong&gt;bgsound&lt;/strong&gt; : 배경 사운드 설정. 현재 사용되지 않음.&lt;/li&gt;
+                        &lt;li data-name="big"&gt;&lt;strong&gt;big&lt;/strong&gt; : big. 현재 사용되지 않음.&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;            
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;!-- // main --&gt;
+
+    &lt;footer id="footer"&gt;
+        &lt;a href="mailto:kde66034@gmail.com"&gt;kde66034@gmail.com&lt;/a&gt;
+    &lt;/footer&gt;
+    &lt;!-- // footer --&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">JavaScript 소스 보기</h3>
+            <p class="t_desc">
+                검색 이펙트 01의 JavaScript 소스와 부연 설명(주석 처리됨)이다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// 선택자 : 상수 const를 필요한 만큼 선언 후 HTML 영역의 div, 시맨틱태그 등의 class명과 연결
+const searchBox = document.querySelector(".search__box input");   // 검색 영역
+const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+
+// 검색 영역 이벤트
+searchBox.addEventListener("keyup", () => { // 사용자가 검색 영역에 keyup 했을 때(키를 눌렀다가 떼었을 때)
+    const searchWord = searchBox.value;     // 사용자가 입력한 키워드 값
+            
+    searchList.forEach(el => {
+        const htmlName = el.dataset.name;   // 데이터 셋팅
+
+        if(htmlName.indexOf(searchWord)){
+            el.classList.add("hide");       // 사용자가 입력한 키워드의 알파벳이 포함된 내용 출력
+        } else {
+            el.classList.remove("hide");    // indexOf값이 0이 되는 값만 hide를 지워줌
+        }
+    });
+});
+</code></pre>
+            </div>
+
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/quizEffect01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/quizEffect01.html">원본 소스 보기</a>
+            </div>
+            <!-- // 01. 정답 확인하기 유형 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

@@ -13,9 +13,16 @@
 </head>
 <body>
     <header id="header">
+        <h1>Search</h1>
         <nav>
             <ul>
-                <li class="active"><a href="searchEffect01.html">01</a></li>
+                <li class="active"><a href="searchEffect01.html">01</a>
+                    <ul class="sub">
+                        <li class="active"><a href="searchEffect01.html">HTML</a></li>
+                        <li><a href="searchEffect01_css.html">CSS</a></li>
+                        <li><a href="searchEffect01_js.html">JavaScript</a></li>
+                    </ul>
+                </li>
                 <li><a href="searchEffect02.html">02</a></li>
                 <li><a href="searchEffect03.html">03</a></li>
                 <li><a href="searchEffect04.html">04</a></li>
@@ -28,29 +35,32 @@
 
     <main id="main">
         <div class="search__wrap">
-            <span>indexOf()를 이용하여 CSS 속성 검색하기</span>
+            <span>indexOf()를 이용하여 검색하기</span>
             <h1>HTML 태그 검색하기</h1>
             <div class="search__box">
+                <label for="search">검색하기</label>
                 <input type="text" id="search" placeholder="HTML 태그를 입력해주세요.">
             </div>
             <div class="search__list">
-                <ul>
-                    <li><strong>a</strong> : 다른 페이지로의 이동을 설정함</li>
-                    <li><strong>abbr</strong> : 줄임말이나 머리글자를 표현 할 때 사용</li>
-                    <li><strong>acronym</strong> : 줄임말이나 머리글자를 표현 할 때 사용</li>
-                    <li><strong>address</strong> : 가까운 HTML 요소의 사람, 단체, 조직 등에 대한 연락처 정보를 나타냅니다.</li>
-                    <li><strong>applet</strong> : 사용되지 않음</li>
-                    <li><strong>area</strong> : 이미지의 핫스팟 영역을 정의하고 하이퍼링크 (en-US)를 추가할 수 있습니다. map 요소 안에서만 사용할 수 있습니다.</li>
-                    <li><strong>article</strong> : 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다.</li>
-                    <li><strong>aside</strong> : 문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다.</li>
-                    <li><strong>audio</strong> : 문서에 소리 콘텐츠를 포함할 때 사용합니다.</li>
-                    <li><strong>b</strong> : 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.</li>
-                    <li><strong>base</strong> : 문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다.</li>
-                    <li><strong>bdi</strong> : bdi 태그는</li>
-                    <li><strong>bdo</strong> : 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.</li>
-                    <li><strong>bgsound</strong> : 배경 사운드 설정. 현재 사용되지 않음.</li>
-                    <li><strong>big</strong> : big. 현재 사용되지 않음.</li>
-                </ul>
+                <div class="html">
+                    <ul>
+                        <li data-name="a"><strong>a</strong> : 다른 페이지로의 이동을 설정함</li>
+                        <li data-name="abbr"><strong>abbr</strong> : 줄임말이나 머리글자를 표현 할 때 사용</li>
+                        <li data-name="acronym"><strong>acronym</strong> : 줄임말이나 머리글자를 표현 할 때 사용</li>
+                        <li data-name="address"><strong>address</strong> : 가까운 HTML 요소의 사람, 단체, 조직 등에 대한 연락처 정보를 나타냅니다.</li>
+                        <li data-name="applet"><strong>applet</strong> : 사용되지 않음</li>
+                        <li data-name="area"><strong>area</strong> : 이미지의 핫스팟 영역을 정의하고 하이퍼링크 (en-US)를 추가할 수 있습니다. map 요소 안에서만 사용할 수 있습니다.</li>
+                        <li data-name="article"><strong>article</strong> : 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다.</li>
+                        <li data-name="aside"><strong>aside</strong> : 문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다.</li>
+                        <li data-name="audio"><strong>audio</strong> : 문서에 소리 콘텐츠를 포함할 때 사용합니다.</li>
+                        <li data-name="b"><strong>b</strong> : 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.</li>
+                        <li data-name="base"><strong>base</strong> : 문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다.</li>
+                        <li data-name="bdi"><strong>bdi</strong> : bdi 태그는</li>
+                        <li data-name="bdo"><strong>bdo</strong> : 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.</li>
+                        <li data-name="bgsound"><strong>bgsound</strong> : 배경 사운드 설정. 현재 사용되지 않음.</li>
+                        <li data-name="big"><strong>big</strong> : big. 현재 사용되지 않음.</li>
+                    </ul>
+                </div>            
             </div>
         </div>
     </main>
@@ -60,5 +70,27 @@
         <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
     </footer>
     <!-- // footer -->
+
+
+    <script>
+        // 선택자 : 상수 const를 필요한 만큼 선언 후 HTML 영역의 div, 시맨틱태그 등의 class명과 연결
+        const searchBox = document.querySelector(".search__box input");   // 검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+
+        // 검색 영역 이벤트
+        searchBox.addEventListener("keyup", () => { // 사용자가 검색 영역에 keyup 했을 때(키를 눌렀다가 떼었을 때)
+            const searchWord = searchBox.value;     // 사용자가 입력한 키워드 값
+            
+            searchList.forEach(el => {
+                const htmlName = el.dataset.name;   // 데이터 셋팅
+
+                if(htmlName.indexOf(searchWord)){
+                    el.classList.add("hide");       // 사용자가 입력한 키워드의 알파벳이 포함된 내용 출력
+                } else {
+                    el.classList.remove("hide");    // indexOf값이 0이 되는 값만 hide를 지워줌
+                }
+            });
+        });
+    </script>
 </body>
 </html>
