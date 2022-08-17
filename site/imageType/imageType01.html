@@ -67,24 +67,31 @@
         .image__header > img {
             
         }
-        .card__body {
+        .image__body {
             position: absolute;
             left: 0;
             top: 202px;
             color: #fff;
             margin-left: 30px;
         }
-        .card__body h3 {
+        .image__body h3 {
             font-size: 32px;
             margin-bottom: 10px;
         }
-        .card__body p {
+        .image__body p {
             font-size: 16px;
             line-height: 1.5;
             margin-bottom: 10px;
             font-weight: 300;
+            /* 2줄효과 : 글이 넘쳐도 2줄을 넘지 않도록 해줌 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            padding-right: 30px;
         }
-        .card__body .btn {
+        .image__body .btn {
             width: 120px;
             background-color: rgba(96, 52, 0, 0.8);
             padding: 10px 15px;
@@ -92,7 +99,7 @@
             font-weight: 300;
             text-align: center;
         }
-        .card__body .btn > a {
+        .image__body .btn > a {
             color: #fff;
         }
     </style>
@@ -106,10 +113,10 @@
                 <figure class="image__header">
                     <img src="img/imageType01_bg01.jpg" alt="제빵 포트폴리오">
                 </figure>
-                <div class="card__body">
+                <div class="image__body">
                     <h3 class="title">나만의 제빵 포트폴리오</h3>
                     <p class="desc">
-                        자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. <br>
+                        자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. 
                         열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
                     </p>
                     <div class="btn">
@@ -123,7 +130,7 @@
                 <figure class="image__header">
                     <img src="img/imageType01_bg02.jpg" alt="제빵 포트폴리오">
                 </figure>
-                <div class="card__body">
+                <div class="image__body">
                     <h3 class="title">나만의 제빵 포트폴리오</h3>
                     <p class="desc">
                         자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. <br>
