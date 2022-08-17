@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 서치 01</title>
+    <title>자바스크립트 : 서치 02</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -58,7 +58,7 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">검색 이펙트 만들기 01</h2>
+            <h2 class="t_tit">검색 이펙트 만들기 02</h2>
             <p class="t_desc2">
                 이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 검색 이펙트를 만들어보도록 하겠습니다. <br>
                 이번 학습 내용을 잘 활용하여 그동안 배웠던 CSS 속성들을 <i>검색창 형식으로 원하는 결과가 나오도록</i>
@@ -73,7 +73,7 @@
 
             <h3 class="t_tit2">HTML 소스 보기</h3>
             <p class="t_desc">
-                검색 이펙트 01의 HTML 소스와 부연 설명(주석 처리됨)이다. <br>
+                검색 이펙트 02의 HTML 소스와 부연 설명(주석 처리됨)이다. <br>
                 CSS 소스를 함께 보고 싶다면 맨 아래의 'CSS 소스 보기' 버튼을 누를 것.
             </p>
             <div class="t_code">
@@ -82,14 +82,8 @@
         &lt;h1&gt;Search&lt;/h1&gt;
         &lt;nav&gt;
             &lt;ul&gt;
-                &lt;li class="active"&gt;&lt;a href="searchEffect01.html"&gt;01&lt;/a&gt;
-                    &lt;ul class="sub"&gt;
-                        &lt;li class="active"&gt;&lt;a href="searchEffect01.html"&gt;HTML&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="searchEffect01_css.html"&gt;CSS&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="searchEffect01_js.html"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a href="searchEffect02.html"&gt;02&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="searchEffect01.html"&gt;01&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="active"&gt;&lt;a href="searchEffect02.html"&gt;02&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href="searchEffect03.html"&gt;03&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href="searchEffect04.html"&gt;04&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href="searchEffect05.html"&gt;05&lt;/a&gt;&lt;/li&gt;
@@ -102,29 +96,22 @@
     &lt;main id="main"&gt;
         &lt;div class="search__wrap"&gt;
             &lt;span&gt;indexOf()를 이용하여 검색하기&lt;/span&gt;
-            &lt;h1&gt;HTML 태그 검색하기&lt;/h1&gt;
+            &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
             &lt;div class="search__box"&gt;     &lt;!-- 검색상자 --&gt;
-                &lt;label for="search"&gt;검색하기&lt;/label&gt;        &lt;!-- 스크린리더기에 읽히지만 겉으로는 안보이게 CSS 속성으로 처리 --&gt;
-                &lt;input type="text" id="search" placeholder="HTML 태그를 입력해주세요."&gt;       &lt;!-- 아무것도 입력 안했을때 나타나는 문구 --&gt;
+                &lt;label for="search"&gt;검색하기&lt;/label&gt;    &lt;!-- 스크린리더기에 읽히지만 겉으로는 안보이게 CSS 속성으로 처리 --&gt;
+                &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요."&gt;
+            &lt;/div&gt;
+            &lt;div class="search__info"&gt;    &lt;!-- 전체 속성 개수 출력용 --&gt;
+                &lt;div class="type"&gt;플렉스, 애니메이션, 백그라운드, 기타 등등 유형별로 검색해보세요.&lt;/div&gt;
+                &lt;div&gt;전체 속성 개수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
             &lt;/div&gt;
             &lt;div class="search__list"&gt;
-                &lt;div class="html"&gt;
+                &lt;div class="css"&gt;
                     &lt;ul&gt;
-                        &lt;li data-name="a"&gt;&lt;strong&gt;a&lt;/strong&gt; : 다른 페이지로의 이동을 설정함&lt;/li&gt;
-                        &lt;li data-name="abbr"&gt;&lt;strong&gt;abbr&lt;/strong&gt; : 줄임말이나 머리글자를 표현 할 때 사용&lt;/li&gt;
-                        &lt;li data-name="acronym"&gt;&lt;strong&gt;acronym&lt;/strong&gt; : 줄임말이나 머리글자를 표현 할 때 사용&lt;/li&gt;
-                        &lt;li data-name="address"&gt;&lt;strong&gt;address&lt;/strong&gt; : 가까운 HTML 요소의 사람, 단체, 조직 등에 대한 연락처 정보를 나타냅니다.&lt;/li&gt;
-                        &lt;li data-name="applet"&gt;&lt;strong&gt;applet&lt;/strong&gt; : 사용되지 않음&lt;/li&gt;
-                        &lt;li data-name="area"&gt;&lt;strong&gt;area&lt;/strong&gt; : 이미지의 핫스팟 영역을 정의하고 하이퍼링크 (en-US)를 추가할 수 있습니다. map 요소 안에서만 사용할 수 있습니다.&lt;/li&gt;
-                        &lt;li data-name="article"&gt;&lt;strong&gt;article&lt;/strong&gt; : 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다.&lt;/li&gt;
-                        &lt;li data-name="aside"&gt;&lt;strong&gt;aside&lt;/strong&gt; : 문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다.&lt;/li&gt;
-                        &lt;li data-name="audio"&gt;&lt;strong&gt;audio&lt;/strong&gt; : 문서에 소리 콘텐츠를 포함할 때 사용합니다.&lt;/li&gt;
-                        &lt;li data-name="b"&gt;&lt;strong&gt;b&lt;/strong&gt; : 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.&lt;/li&gt;
-                        &lt;li data-name="base"&gt;&lt;strong&gt;base&lt;/strong&gt; : 문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다.&lt;/li&gt;
-                        &lt;li data-name="bdi"&gt;&lt;strong&gt;bdi&lt;/strong&gt; : bdi 태그는&lt;/li&gt;
-                        &lt;li data-name="bdo"&gt;&lt;strong&gt;bdo&lt;/strong&gt; : 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.&lt;/li&gt;
-                        &lt;li data-name="bgsound"&gt;&lt;strong&gt;bgsound&lt;/strong&gt; : 배경 사운드 설정. 현재 사용되지 않음.&lt;/li&gt;
-                        &lt;li data-name="big"&gt;&lt;strong&gt;big&lt;/strong&gt; : big. 현재 사용되지 않음.&lt;/li&gt;
+                        &lt;li data-name="accent-color"&gt;&lt;strong&gt;accent-color&lt;/strong&gt; : 다른 페이지로의 이동을 설정함&lt;/li&gt;
+                        &lt;li data-name="align-content" data-type="플렉스"&gt;&lt;strong&gt;align-content&lt;/strong&gt; : 콘텐츠 아이템의 상하관계 정렬 상태를 설정&lt;/li&gt;
+                        &lt;li data-name="align-items" data-type="플렉스"&gt;&lt;strong&gt;align-items&lt;/strong&gt; : 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정함&lt;/li&gt;
+                        &lt;!-- … 길어지므로 이하 생략 --&gt;
                     &lt;/ul&gt;
                 &lt;/div&gt;            
             &lt;/div&gt;
@@ -143,24 +130,35 @@
 
             <h3 class="t_tit2">JavaScript 소스 보기</h3>
             <p class="t_desc">
-                검색 이펙트 01의 JavaScript 소스와 부연 설명(주석 처리됨)이다.
+                검색 이펙트 02의 JavaScript 소스와 부연 설명(주석 처리됨)이다.
             </p>
             <div class="t_code">
 <pre><code class="language-js">// 선택자 : 상수 const를 필요한 만큼 선언 후 HTML 영역의 div, 시맨틱태그 등의 class명과 연결
 const searchBox = document.querySelector(".search__box input");   // 검색 영역
 const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
 
-// 검색 영역 이벤트
-searchBox.addEventListener("keyup", () => { // 사용자가 검색 영역에 keyup 했을 때(키를 눌렀다가 떼었을 때)
-    const searchWord = searchBox.value;     // 사용자가 입력한 키워드 값
-            
+// 전체 개수 구하기
+searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
+
+// 전체 개수 구하기 : for문 (복잡, 권장하지 않음)
+// for(let i = 0; i &lt;= searchList.length; i++) {
+//     const searchInfo = document.querySelector(".search__info .num");
+    
+//     searchInfo.innerText = i;
+// }
+
+// 검색영역
+searchBox.addEventListener("keyup", () => {
+    const searchWord = searchBox.value;     // 사용자가 입력한 키워드
+
     searchList.forEach(el => {
-        const htmlName = el.dataset.name;   // 데이터 셋팅
+        const cssName = el.dataset.name;    // CSS 속성 모든 값
 
-        if(htmlName.indexOf(searchWord)){
-            el.classList.add("hide");       // 사용자가 입력한 키워드의 알파벳이 포함된 내용 출력
+        if(cssName.includes(searchWord)) {
+            el.classList.remove("hide");   // 일치값이 있으면 보여줌(숨김 효과를 제거)
         } else {
-            el.classList.remove("hide");    // indexOf값이 0이 되는 값만 hide를 지워줌
+            el.classList.add("hide");    // 없으면 사라지게 하기(숨김 효과 활성화)
         }
     });
 });
@@ -168,10 +166,10 @@ searchBox.addEventListener("keyup", () => { // 사용자가 검색 영역에 key
             </div>
 
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
-                <iframe src="https://kde66034.github.io/coding/javascript/effect/searchEffect01.html" frameborder="0"></iframe>
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/searchEffect02.html" frameborder="0"></iframe>
             </div>
             <div class="t_link">
-                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/searchEffect01.html">원본(HTML/JS) 소스 보기</a>
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/searchEffect02.html">원본(HTML/JS) 소스 보기</a>
             </div>
             <div class="t_link">
                 <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/search.css">CSS 소스 보기</a>

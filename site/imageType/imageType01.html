@@ -61,24 +61,23 @@
             justify-content: space-between;     /* 간격 떨어뜨리기 */
         }
         .image {
-            width: 570px;
-            position: relative;
-        }
-        .image__header > img {
-            
-        }
-        .image__body {
-            position: absolute;
-            left: 0;
-            top: 202px;
+            width: 49%;
+            height: 370px;
+            padding: 200px 30px 30px 30px;
             color: #fff;
-            margin-left: 30px;
+            box-sizing: border-box;
         }
-        .image__body h3 {
+        .image.img1 {
+            background: url(img/imageType01_bg01.jpg) no-repeat center;
+        }
+        .image.img2 {
+            background: url(img/imageType01_bg02.jpg) no-repeat center;
+        }
+        .image__title {
             font-size: 32px;
             margin-bottom: 10px;
         }
-        .image__body p {
+        .image__desc {
             font-size: 16px;
             line-height: 1.5;
             margin-bottom: 10px;
@@ -91,16 +90,13 @@
             -webkit-box-orient: vertical;
             padding-right: 30px;
         }
-        .image__body .btn {
-            width: 120px;
+        .image__btn {
             background-color: rgba(96, 52, 0, 0.8);
             padding: 10px 15px;
             font-size: 16px;
             font-weight: 300;
-            text-align: center;
-        }
-        .image__body .btn > a {
             color: #fff;
+            display: inline-block;
         }
     </style>
 </head>
@@ -109,39 +105,25 @@
         <h1>별빛 제빵교실 개강소식🍞</h1>
         <p>별빛 제빵교실이 2022년 8월 23일 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!</p>
         <div class="image__inner container">
-            <article class="image">
-                <figure class="image__header">
-                    <img src="img/imageType01_bg01.jpg" alt="제빵 포트폴리오">
-                </figure>
-                <div class="image__body">
-                    <h3 class="title">나만의 제빵 포트폴리오</h3>
-                    <p class="desc">
-                        자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. 
-                        열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
-                    </p>
-                    <div class="btn">
-                        <a href="/">
-                            더 자세히 보기
-                        </a>
-                    </div>
-                </div>
+            <article class="image img1">
+                <h3 class="image__title">나만의 제빵 포트폴리오</h3>
+                <p class="image__desc">
+                    자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. 
+                    열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
+                </p>
+                <a class="image__btn" href="/" title="자세히 보기">
+                    자세히 보기
+                </a>
             </article>
-            <article class="image">
-                <figure class="image__header">
-                    <img src="img/imageType01_bg02.jpg" alt="제빵 포트폴리오">
-                </figure>
-                <div class="image__body">
-                    <h3 class="title">나만의 제빵 포트폴리오</h3>
-                    <p class="desc">
-                        자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. <br>
-                        열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
-                    </p>
-                    <div class="btn">
-                        <a href="/">
-                            더 자세히 보기
-                        </a>
-                    </div>
-                </div>
+            <article class="image img2">
+                <h3 class="image__title">나만의 제빵 포트폴리오</h3>
+                <p class="image__desc">
+                    자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. 
+                    열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
+                </p>
+                <a class="image__btn" href="/" title="자세히 보기">
+                    자세히 보기
+                </a>
             </article>
         </div>
     </section>

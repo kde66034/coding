@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 STUDY 01</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">이미지 유형 STUDY</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="cardType_study01.html">카드 유형 01</a></li>
+                <li><a href="cardType_study02.html">카드 유형 02</a></li>
+                <li><a href="cardType_study03.html">카드 유형 03</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 이미지 유형 01</h2>
+            <p class="t_desc2">
+                이번 포스팅에서는 Figma에서 만든 이미지 유형 섹션을 HTML과 CSS 코드로 옮기는 작업을
+                해보도록 하겠습니다.
+            </p>
+
+     <!-- // 사이트 만들기 : 이미지 유형  -->
+
+            <hr>
+
+            <h3 class="t_tit2">Figma</h3>
+            <p class="t_desc">
+                먼저 만들고자 하는 웹 사이트의 모양을 Figma라는 프로그램을 이용하여 아래와 같이 만들어주도록 하자. <br>
+                이번에 만들 웹 사이트의 유형은 <i>이미지 위에 제목과 본문(설명), 버튼을 올려놓는 간단한 방식</i>이다.
+            </p>
+            <div class="t_iframe">       
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FtnsaEM1JocXMMqYyaoWru4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D783%253A129" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2">HTML 소스</h3>
+            <p class="t_desc">
+                웹 표준 준수를 위해 <i>시맨틱 태그를 적극 사용</i>하고, 이미지는 img 태그가 아닌 article 태그에 CSS로 나중에 추가해줄 것.<br>
+                자세한 설명은 아래 예시 코드의 주석처리 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;body&gt;
+    &lt;section id="imageType01" class="image__wrap nexon section"&gt;
+        &lt;h1&gt;별빛 제빵교실 개강소식🍞&lt;/h1&gt;
+        &lt;p&gt;별빛 제빵교실이 2022년 8월 23일 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!&lt;/p&gt;
+        &lt;div class="image__inner container"&gt;
+            &lt;article class="image img1"&gt;
+                &lt;h3 class="image__title"&gt;나만의 제빵 포트폴리오&lt;/h3&gt;
+                &lt;p class="image__desc"&gt;
+                    자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. 
+                    열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
+                &lt;/p&gt;
+                &lt;a class="image__btn" href="/" title="자세히 보기"&gt;
+                    자세히 보기
+                &lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="image img2"&gt;
+                &lt;h3 class="image__title"&gt;나만의 제빵 포트폴리오&lt;/h3&gt;
+                &lt;p class="image__desc"&gt;
+                    자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. 
+                    열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
+                &lt;/p&gt;
+                &lt;a class="image__btn" href="/" title="자세히 보기"&gt;
+                    자세히 보기
+                &lt;/a&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">CSS 소스</h3>
+            <p class="t_desc">
+                reset에서 margin값과 padding값을 0으로 초기화 시키는 작업부터 시작한다. <br>
+                또한, HTML에서 추가하지 않았던 <i>이미지를 background: url() 형식으로 추가</i>한다. <br>
+                자세한 설명은 아래 예시 코드의 주석처리된 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+    .nexon {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    img {
+        width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section > h1 {
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section > p {
+        font-size: 22px;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 70px;
+        color: #666;
+    }
+
+    /* imageType */
+    .image__inner {
+        display: flex;
+        justify-content: space-between;     /* 간격 떨어뜨리기 */
+    }
+    .image {
+        width: 49%;
+        height: 370px;
+        padding: 200px 30px 30px 30px;
+        color: #fff;
+        box-sizing: border-box;
+    }
+    .image.img1 {
+        background: url(img/imageType01_bg01.jpg) no-repeat center;
+    }
+    .image.img2 {
+        background: url(img/imageType01_bg02.jpg) no-repeat center;
+    }
+    .image__title {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    .image__desc {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        font-weight: 300;
+        /* 2줄효과 : 글이 넘쳐도 2줄을 넘지 않도록 해줌 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        padding-right: 30px;
+    }
+    .image__btn {
+        background-color: rgba(96, 52, 0, 0.8);
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 300;
+        color: #fff;
+        display: inline-block;
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+            <!-- // CSS 소스 -->
+
+            <h3 class="t_tit2">최종 결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/site/imageType/imageType01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kde66034.github.io/coding/site/imageType/imageType01.html">원본 사이트 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/site/imageType/imageType01.html">원본 소스 보기</a>
+            </div>
+            <!-- // 최종 결과 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

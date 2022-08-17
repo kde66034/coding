@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 STUDY 01</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">이미지 유형 STUDY</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="cardType_study01.html">카드 유형 01</a></li>
+                <li><a href="cardType_study02.html">카드 유형 02</a></li>
+                <li><a href="cardType_study03.html">카드 유형 03</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 이미지 유형 02</h2>
+            <p class="t_desc2">
+                이번 포스팅에서는 Figma에서 만든 이미지 유형 섹션을 HTML과 CSS 코드로 옮기는 작업을
+                해보도록 하겠습니다.
+            </p>
+
+     <!-- // 사이트 만들기 : 이미지 유형  -->
+
+            <hr>
+
+            <h3 class="t_tit2">Figma</h3>
+            <p class="t_desc">
+                먼저 만들고자 하는 웹 사이트의 모양을 Figma라는 프로그램을 이용하여 아래와 같이 만들어주도록 하자. <br>
+                이번에 만들 웹 사이트의 유형은 <i>이미지 위에 제목과 자세히 보기 버튼</i>을 올려놓고 그걸 <i>hover 효과로 위로 나타나게 하는 애니메이션</i>을 주도록 하겠다.
+            </p>
+            <div class="t_iframe">       
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FtnsaEM1JocXMMqYyaoWru4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D798%253A122" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2">HTML 소스</h3>
+            <p class="t_desc">
+                웹 표준 준수를 위해 <i>시맨틱 태그를 적극 사용</i>하도록 하자. 자세한 설명은 아래 예시 코드의 주석처리 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;body&gt;
+    &lt;section id="imageType02" class="image__wrap gmarket section"&gt;
+        &lt;h1&gt;별빛 제빵교실 강사 소개🍞&lt;/h1&gt;
+        &lt;p&gt;사람 아닌 동물이지만 훌륭한 실력을 가진 별빛 제빵교실의 강사분들을 소개합니다!&lt;/p&gt;
+        &lt;div class="image__inner container"&gt;
+            &lt;article class="image img1"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/imageType02_bg01.jpg" alt="댕댕이"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;댕댕이&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="image img2"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/imageType02_bg02.jpg" alt="냥냥이"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;냥냥이&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="image img3"&gt;
+                &lt;figure class="image__box"&gt;
+                    &lt;img src="img/imageType02_bg03.jpg" alt="북극곰"&gt;
+                &lt;/figure&gt;
+                &lt;div class="image__desc"&gt;
+                    &lt;h3&gt;북극곰&lt;/h3&gt;
+                    &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">CSS 소스</h3>
+            <p class="t_desc">
+                reset에서 margin값과 padding값을 0으로 초기화 시키는 작업부터 시작한다. <br>
+                또한, <i>애니메이션 효과를 주기 위해 transition 속성과 :hover 속성을 적극 활용</i>한다.<br>
+                자세한 설명은 아래 예시 코드의 주석처리된 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+    .gmarket {
+        font-family: 'GmarketSans';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    img {
+        width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section > h1 {
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section > p {
+        font-size: 22px;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 70px;
+        color: #666;
+    }
+
+    /* imageType */
+    .image__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    .image {
+        width: 32%;
+        position: relative;
+        overflow: hidden;
+    }
+    .image__box {
+        height: 100%;
+    }
+    .image__box img {
+        transition: all 0.5s ease-in-out;   /* 0.5초동안 걸쳐 변화 주도록 애니메이션 설정 */
+    }
+    .image__desc {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;     /* image__desc 박스 안넘치게 하기 */
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* 이미지 설명칸 배경색, h3/more 글씨색상 설정 */
+    .img1 > .image__desc {
+        background: rgba(178, 82, 36, 0.5);
+    }
+    .img1 > .image__desc h3 {
+        color: #fff;
+    }
+    .img1 > .image__desc .more {
+        color: #fff;
+    }
+    .img2 > .image__desc {
+        background-color: rgba(187, 238, 239, 0.5);
+    }
+    .img2 > .image__desc h3 {
+        color: #006462;
+    }
+    .img2 > .image__desc .more {
+        color: #006462;
+    }
+    .img3 > .image__desc {
+        background-color: rgba(161, 166, 172, 0.5);
+    }
+    .img3  > .image__desc h3 {
+        color: #183169;
+    }
+    .img3  > .image__desc .more {
+        color: #183169;
+    }
+
+    /* 위로 올라오는 애니메이션 주기 위해 hover 효과 주기 */
+    .img1 .image__desc {
+        bottom: -100px;
+    }
+    .img1:hover .image__desc {
+        bottom: 0;
+    }
+    .img2 .image__desc {
+        bottom: -100px;
+    }
+    .img2:hover .image__desc {
+        bottom: 0;
+    }
+    .img3 .image__desc {
+        bottom: -100px;
+    }
+    .img3:hover .image__desc {
+        bottom: 0;
+    }
+
+    .image:hover .image__box img {
+        transform: scale(1.05);     /* 마우스 커서 올리면 1.05정도 이미지 키워줌 */
+    }
+
+    /* 이미지 설명칸 글씨 크기와 margin값 등등... */
+    .image__desc h3 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .image__desc .more {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .image__desc .more:hover {
+        text-decoration: underline;
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+            <!-- // CSS 소스 -->
+
+            <h3 class="t_tit2">최종 결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/site/imageType/imageType02.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kde66034.github.io/coding/site/imageType/imageType02.html">원본 사이트 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/site/imageType/imageType02.html">원본 소스 보기</a>
+            </div>
+            <!-- // 최종 결과 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

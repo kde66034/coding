@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 02</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h1 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+
+        /* imageType */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;     /* 간격 떨어뜨리기 */
+        }
+        .image {
+            width: 33.3333%;
+            height: 520px;
+            position: relative;
+            margin: 0 10px;
+        }
+        .image__body1 {
+            position: absolute;
+            height: 100px;
+            width: 100%;
+            bottom: 9px;
+            color: #fff;
+            backdrop-filter: blur(4px);
+            background-color: rgba(178, 82, 36, 0.5);
+        }
+        .image__body2 {
+            position: absolute;
+            height: 100px;
+            width: 100%;
+            bottom: 9px;
+            color: #006462;
+            backdrop-filter: blur(4px);
+            background-color: rgba(187, 238, 239, 0.5);
+        }
+        .image__body3 {
+            position: absolute;
+            height: 100px;
+            width: 100%;
+            bottom: 9px;
+            color: #183169;
+            backdrop-filter: blur(4px);
+            background-color: rgba(161, 166, 172, 0.5);
+        }
+        .image__title {
+            font-size: 24px;
+            height: 30px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        } 
+        .image__btn1, .image__btn2, .image__btn3 {
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+        }
+        .image__btn1 > a {
+            color: #fff;
+        }
+        .image__btn2 > a {
+            color: #006462;
+        }
+        .image__btn3 > a {
+            color: #183169;
+        }
+    </style>
+</head>
+<body>
+    <section id="imageType02" class="image__wrap gmarket section">
+        <h1>별빛 제빵교실 강사 소개🍞</h1>
+        <p>사람 아닌 동물이지만 훌륭한 실력을 가진 별빛 제빵교실의 강사분들을 소개합니다!</p>
+        <div class="image__inner container">
+            <article class="image">
+                <figure class="image__header">
+                    <img src="img/imageType02_bg01.jpg" alt="댕댕이">
+                </figure>
+                <div class="image__body1">
+                    <h3 class="image__title">댕댕이</h3>
+                    <div class="image__btn1">
+                        <a href="/" title="자세히 보기">자세히 보기</a>
+                    </div>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__header">
+                    <img src="img/imageType02_bg02.jpg" alt="냥냥이">
+                </figure>
+                <div class="image__body2">
+                    <h3 class="image__title">냥냥이</h3>
+                    <div class="image__btn2">
+                        <a href="/" title="자세히 보기">자세히 보기</a>
+                    </div>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__header">
+                    <img src="img/imageType02_bg03.jpg" alt="북극곰">
+                </figure>
+                <div class="image__body3">
+                    <h3 class="image__title">북극곰</h3>
+                    <div class="image__btn3">
+                        <a href="/" title="자세히 보기">자세히 보기</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

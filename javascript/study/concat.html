@@ -58,74 +58,33 @@
 
     <main id="main">
         <div class="document">
-            <h1 class="t_tit">문자열 메서드 : indexOf() / lastIndexOf()</h1>
+            <h1 class="t_tit">문자열 메서드 : concat()</h1>
             <p class="t_desc2">
-                이번 포스팅에서는 문자열 메서드 중 indexOf와 lastIndexOf에 대해 다뤄보도록 하겠습니다. <br>
+                이번 포스팅에서는 문자열 메서드 중 concat()에 대해 다뤄보도록 하겠습니다. 
             </p>
             <hr>
-            <!-- // indexOf란? -->
+            <!-- // concat() 이란? -->
 
-            <h2 class="t_tit2">indexOf()</h2>
+            <h2 class="t_tit2">concat()</h2>
             <p class="t_desc2">
-                문자열에서 특정 문자열의 <i>첫번째로 시작되는 위치</i>를 앞에서부터 찾고, <i>그 위치를 숫자로 반환</i>한다.
+                <i>둘 이상의 문자열을 결합해 새로운 문자열을 반환</i>해준다.
             </p>
             <p class="t_box">
-                "문자열".indexOf(검색값) <br>
-                "문자열".indexOf(검색값, 위치값) <br>
-                <br>
-                <i>찾는 문자열이 없으면 -1을 리턴</i>(출력)한다. <br>
-                문자열을 찾을 때 <i>대소문자를 구분</i>한다.
+                //"문자열".concat(문자열) : "문자열" + "문자열" 추가됨<br>
+                //"문자열".concat(문자열, 문자열, …) : 무한으로 추가 가능함
             </p>
             <h3 class="t_tit3">코드 보기</h3>
             <div class="t_code">
-<pre><code class="language-js">const str1 = "javascript reference";
-const currentStr1 = str1.indexOf("javascript");         // 0 : 시작위치를 의미함
-const currentStr2 = str1.indexOf("reference");          // 11
-const currentStr3 = str1.indexOf("j");                  // 0
-const currentStr4 = str1.indexOf("a");                  // 1
-const currentStr5 = str1.indexOf("v");                  // 2
-const currentStr6 = str1.indexOf("jquery");             // -1 : 없는 데이터를 의미함
-const currentStr7 = str1.indexOf("b");                  // -1
-const currentStr8 = str1.indexOf("javascript", 0);      // 0
-const currentStr9 = str1.indexOf("javascript", 1);      // -1
-const currentStr10 = str1.indexOf("reference", 0);      // 11 : reference는 11부터 시작하기 때문에 0~11 중 아무 숫자나 입력해도 11 출력
-const currentStr11 = str1.indexOf("reference", 1);      // 11
-const currentStr12 = str1.indexOf("reference", 11);     // 11
-const currentStr13 = str1.indexOf("reference", 12);     // -1
+<pre><code class="language-js">const str1 = "javascript";
+const currentStr1 = str1.concat("reference");   // javascriptreference
+const currentStr2 = str1.concat(" ", "reference");   // javascript reference
+const currentStr3 = str1.concat(",", "reference");   // javascript,reference
+const currentStr4 = str1.concat(", ", "reference", ", ", "book");   // javascript, reference, book
+// 배열을 넣을수도 있다.
+const currentStr5 = str1.concat(" ", ["reference","book"]);   // javascript reference,book
 </code></pre>
             </div>
-            <!-- // indexOf 설명 -->
-
-            <h2 class="t_tit2">lastIndexOf()</h2>
-            <p class="t_desc2">
-                문자열에서 특정 문자열의 첫번째로 시작되는 위치를 <i>뒤에서부터 찾고, 그 위치를 숫자로 반환</i>한다.
-            </p>
-            <p class="t_box">
-                "문자열".lastIndexOf(검색값) <br>
-                "문자열".lastIndexOf(검색값, 위치값) <br>
-                <br>
-                <i>찾는 문자열이 없으면 -1을 리턴</i>(출력)한다. <br>
-                문자열을 찾을 때 <i>대소문자를 구분</i>한다.
-            </p>
-            <h3 class="t_tit3">코드 보기</h3>
-            <div class="t_code">
-<pre><code class="language-js">const str1 = "javascript reference";
-const currentStr14 = str1.lastIndexOf("javascript");        // 0
-const currentStr15 = str1.lastIndexOf("reference");         // 11
-const currentStr16 = str1.lastIndexOf("j");                 // 0
-const currentStr17 = str1.lastIndexOf("a");                 // 3 : 뒤에서부터 시작해서 처음 나오는 a가 3번째 자리임
-const currentStr18 = str1.lastIndexOf("v");                 // 2
-const currentStr19 = str1.lastIndexOf("jquery");            // -1
-const currentStr20 = str1.lastIndexOf("b");                 // -1
-const currentStr21 = str1.lastIndexOf("javascript", 0);     // 0
-const currentStr22 = str1.lastIndexOf("javascript", 1);     // 0
-const currentStr23 = str1.lastIndexOf("reference", 0);      // -1
-const currentStr24 = str1.lastIndexOf("reference", 1);      // -1
-const currentStr25 = str1.lastIndexOf("reference", 11);     // 11
-const currentStr26 = str1.lastIndexOf("reference", 12);     // 11
-</code></pre>
-            </div>
-            <!-- // indexOf 설명 -->
+            <!-- // concat() 설명 -->
         </div>
     </main>
     <!-- //main -->
