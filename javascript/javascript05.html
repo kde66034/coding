@@ -554,13 +554,15 @@ const currentStr22 = str1.padEnd(6);             // 456___ : 456 + 공백3칸
             <br>
 
             <div id="sample10" class="sample">
-                <h3>10. indexOf()</h3>
+                <h3>10. indexOf() / lastIndexOf()</h3>
                 <p>
                     문자열에서 특정 문자열의 첫번째로 시작되는 위치를 찾고, 그 위치를 숫자로 반환한다.
                 </p>
                 <div class="box">
                     "문자열".indexOf(검색값) <br>
-                    "문자열".indexOf(검색값, 위치값)
+                    "문자열".indexOf(검색값, 위치값) <br>
+                    "문자열".lastIndexOf(검색값) <br>
+                    "문자열".lastIndexOf(검색값, 위치값)
                 </div>
                 <div class="script">
 <pre><code lang="language-js">const str1 = "javascript reference";
@@ -577,10 +579,51 @@ const currentStr10 = str1.indexOf("reference", 0);      // 11 : reference는 11�
 const currentStr11 = str1.indexOf("reference", 1);      // 11
 const currentStr12 = str1.indexOf("reference", 11);     // 11
 const currentStr13 = str1.indexOf("reference", 12);     // -1
+
+const currentStr14 = str1.lastIndexOf("javascript");        // 0
+const currentStr15 = str1.lastIndexOf("reference");         // 11
+const currentStr16 = str1.lastIndexOf("j");                 // 0
+const currentStr17 = str1.lastIndexOf("a");                 // 3 : 뒤에서부터 시작해서 처음 나오는 a가 3번째 자리임
+const currentStr18 = str1.lastIndexOf("v");                 // 2
+const currentStr19 = str1.lastIndexOf("jquery");            // -1
+const currentStr20 = str1.lastIndexOf("b");                 // -1
+const currentStr21 = str1.lastIndexOf("javascript", 0);     // 0
+const currentStr22 = str1.lastIndexOf("javascript", 1);     // 0
+const currentStr23 = str1.lastIndexOf("reference", 0);      // -1
+const currentStr24 = str1.lastIndexOf("reference", 1);      // -1
+const currentStr25 = str1.lastIndexOf("reference", 11);     // 11
+const currentStr26 = str1.lastIndexOf("reference", 12);     // 11
 </code></pre>
                 </div>
             </div>
             <!-- sample10 -->
+
+            <br>
+
+            <div id="sample11" class="sample">
+                <h3>11. includes()</h3>
+                <p>
+                    문자열 포함 여부를 검색해서 불린(true/false)으로 반환한다.
+                </p>
+                <div class="box">
+                    "문자열".includes(검색값) <br>
+                    "문자열".includes(검색값, 시작값)
+                </div>
+                <div class="script">
+<pre><code lang="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.includes("javascript");        // true : 포함됨
+const currentStr2 = str1.includes("j");                 // true
+const currentStr3 = str1.includes("b");                 // false : 포함되지 않음
+const currentStr4 = str1.includes("reference");         // true
+const currentStr5 = str1.includes("reference", 1);      // true
+const currentStr6 = str1.includes("reference", 11);     // true
+const currentStr7 = str1.includes("reference", 12);     // false
+</code></pre>
+                </div>
+            </div>
+            <!-- sample11 -->
+
+            <br>
         </div>
         <!-- main sample -->
 
@@ -855,27 +898,57 @@ const currentStr13 = str1.indexOf("reference", 12);     // -1
             // console.log(currentStr17);
         }
 
-        // 10. indexOf()
+        // 10. indexOf() / lastIndexOf()
         {
             //"문자열".indexOf(검색값)
             //"문자열".indexOf(검색값, 위치값)
+            //"문자열".lastIndexOf(검색값)
+            //"문자열".lastIndexOf(검색값, 위치값)
 
             const str1 = "javascript reference";
-            const currentStr1 = str1.indexOf("javascript");         // 0 : 시작위치를 의미함
-            const currentStr2 = str1.indexOf("reference");          // 11
-            const currentStr3 = str1.indexOf("j");                  // 0
-            const currentStr4 = str1.indexOf("a");                  // 1
-            const currentStr5 = str1.indexOf("v");                  // 2
-            const currentStr6 = str1.indexOf("jquery");             // -1 : 없는 데이터
-            const currentStr7 = str1.indexOf("b");                  // -1
-            const currentStr8 = str1.indexOf("javascript", 0);      // 0
-            const currentStr9 = str1.indexOf("javascript", 1);      // -1
-            const currentStr10 = str1.indexOf("reference", 0);      // 11
-            const currentStr11 = str1.indexOf("reference", 1);      // 11
-            const currentStr12 = str1.indexOf("reference", 11);     // 11
-            const currentStr13 = str1.indexOf("reference", 12);     // -1
+            const currentStr1 = str1.indexOf("javascript");             // 0 : 시작위치를 의미함
+            const currentStr2 = str1.indexOf("reference");              // 11
+            const currentStr3 = str1.indexOf("j");                      // 0
+            const currentStr4 = str1.indexOf("a");                      // 1
+            const currentStr5 = str1.indexOf("v");                      // 2
+            const currentStr6 = str1.indexOf("jquery");                 // -1 : 없는 데이터
+            const currentStr7 = str1.indexOf("b");                      // -1
+            const currentStr8 = str1.indexOf("javascript", 0);          // 0
+            const currentStr9 = str1.indexOf("javascript", 1);          // -1
+            const currentStr10 = str1.indexOf("reference", 0);          // 11
+            const currentStr11 = str1.indexOf("reference", 1);          // 11
+            const currentStr12 = str1.indexOf("reference", 11);         // 11
+            const currentStr13 = str1.indexOf("reference", 12);         // -1
+            
+            const currentStr14 = str1.lastIndexOf("javascript");        // 0
+            const currentStr15 = str1.lastIndexOf("reference");         // 11
+            const currentStr16 = str1.lastIndexOf("j");                 // 0
+            const currentStr17 = str1.lastIndexOf("a");                 // 3 : 뒤에서부터 시작해서 처음 나오는 a가 3번째 자리임
+            const currentStr18 = str1.lastIndexOf("v");                 // 2
+            const currentStr19 = str1.lastIndexOf("jquery");            // -1
+            const currentStr20 = str1.lastIndexOf("b");                 // -1
+            const currentStr21 = str1.lastIndexOf("javascript", 0);     // 0
+            const currentStr22 = str1.lastIndexOf("javascript", 1);     // 0
+            const currentStr23 = str1.lastIndexOf("reference", 0);      // -1
+            const currentStr24 = str1.lastIndexOf("reference", 1);      // -1
+            const currentStr25 = str1.lastIndexOf("reference", 11);     // 11
+            const currentStr26 = str1.lastIndexOf("reference", 12);     // 11
 
-            // console.log(currentStr13);  
+            // console.log(currentStr26);  
+        }
+
+        // 11. includes()
+        {
+            const str1 = "javascript reference";
+            const currentStr1 = str1.includes("javascript");        // true : 포함됨
+            const currentStr2 = str1.includes("j");                 // true
+            const currentStr3 = str1.includes("b");                 // false : 포함되지 않음
+            const currentStr4 = str1.includes("reference");         // true
+            const currentStr5 = str1.includes("reference", 1);      // true
+            const currentStr6 = str1.includes("reference", 11);     // true
+            const currentStr7 = str1.includes("reference", 12);     // false
+
+            console.log(currentStr7)
         }
     </script>
 </body>
