@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : Sass</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">Sass(SCSS)란?</h2>
+                <p class="t_desc">
+                    Sass(=SCSS)에 대해 이해하기 전에 우선 CSS부터 이해하고 넘어가야 한다. 
+                    CSS란 표현하지 못하는 게 없을 정도로 충분히 훌륭한 언어이긴 하나 치명적 단점 또한 존재한다. 
+                    CSS는 규모가 커질수록 코드가 복잡해지고 유지보수에 매우 불리하다. <br>
+                    Sass는 이러한 <i>CSS의 치명적 단점을 보완하기 위해 나온 CSS 확장 언어</i>이며, CSS에 존재하지 않는 다양한 기능들도 가지고 있다. 
+                </p>
+                <!-- // sass란? -->
+
+                <h3 class="t_tit2">Sass(SCSS)를 사용해야 하는 이유</h3>
+                <p class="t_desc">
+                    Sass(SCSS)는 다음과 같은 장점들을 가지고 있다.
+                </p>
+                <p class="t_desc2">
+                    · 가독성 : CSS보다 간단명료한 문법으로 CSS를 구조화하여 표현 가능 <br>
+                    · 호환성 : 모든 버전의 CSS와 완벽 호환 <br>
+                    · 기능성 : 다양한 기능을 제공하며, CSS보다 모든 면에서 뛰어남 <br>
+                    · 인지도 : 업계에서도 인정받으며 실무에서 많이 사용됨 <br>
+                    · 확장성 : Sass 기반의 프레임워크가 다수 존재 <br>
+                    · 안정성·신뢰도 : 오랜 기간동안 적극적인 서포트 아래 관리되어 온 확장 언어 <br>
+                </p>
+                <!-- // sass 장점 -->
+
+                <h3 class="t_tit2">Sass와 SCSS의 차이점</h3>
+                <p class="t_desc">
+                    본 포스팅에서는 지금까지 Sass와 SCSS를 묶어서 설명했지만 사실 Sass와 SCSS는 
+                    같은 CSS의 파생 언어이기는 하지만 문법 생김새는 다르다. 이에 대해 설명해보도록 하겠다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">/* Sass 예시코드 */
+$font-stack: Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+
+/* SCSS 예시코드 */
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_desc">
+                    위의 예시코드에서 알 수 있듯이 <i>Sass는 들여쓰기와 줄바꿈 형식으로만</i> 이루어졌으며
+                    CSS에서의 중괄호와 세미콜론을 생략하고 사용하는 반면, <i>SCSS</i>는 기존의 CSS와 
+                        다를 바 없이 <i>중괄호와 세미콜론을 사용</i>하는 것을 알 수 있다. <br>
+                    <br>
+                    SCSS는 Sass의 3 버전에서부터 등장한 언어로 기존 Sass의 문법 방식이 CSS와 상이하여
+                    불편하고 익숙치 않을 퍼블리셔들에게 친근하고 익숙한 CSS와 비슷한 구문을 가지고 등장하였다. <br>
+                    Sass 공식 레퍼런스조차도 Sass보다 CSS와 더 비슷한 SCSS를 선호하고 있으며 사용자 수도 SCSS 쪽이
+                    압도적으로 많기 때문에 <i>SCSS를 사용할 것을 권장한다.</i>
+                </p>
+                <!-- // Sass와 SCSS의 차이점 -->
+
+                <hr>
+                <br>
+
+                <h2 class="t_tit">CSS에는 없고 Sass(SCSS)에만 있는 기능</h2>
+                <p class="t_desc">
+                    CSS에는 없지만 Sass(SCSS)에 있는 기능이 있다.
+                </p>
+                
+                <h3 class="t_tit2">변수(SCSS Variables)</h3>
+                <p class="t_desc">
+                    자바스크립트에서처럼 <i>재사용하려는 속성 정보를 변수에 저장하는 방법</i>이 존재한다. <br>
+                    사용 방법은 $ 기호를 사용하는 방법이 있다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">/* CSS */
+/* 재사용 불가능. 일일이 수작업 해줘야 함. */
+body {
+    font: 100% Helvetica, sans-serif;
+    color: #333;
+}
+
+/* SCSS */
+/* 자바스크립트의 변수처럼 속성을 저장해서 언제든지 재사용 가능. */
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
