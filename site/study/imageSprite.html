@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 스프라이트</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">이미지 유형 STUDY</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="cardType_study01.html">카드 유형 01</a></li>
+                <li><a href="cardType_study02.html">카드 유형 02</a></li>
+                <li><a href="cardType_study03.html">카드 유형 03</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">이미지 스프라이트</h2>
+            <p class="t_desc2">
+                이번 포스팅에서는 지난번에 올렸던 <a href="https://kde66034.tistory.com/48">이미지 유형 03 포스팅</a>에서 활용된 
+                <i>이미지 스프라이트 효과와 백그라운드, IR 효과</i>에 대해 심도 있게 다뤄보도록 하겠습니다.
+            </p>
+
+     <!-- // 이미지 스프라이트란?  -->
+
+            <hr>
+
+            <h3 class="t_tit2">이미지 스프라이트(Image Sprite)란?</h3>
+            <p class="t_desc">
+                <i>여러 이미지를 하나의 이미지로 합쳐서 관리하는 이미지</i>를 의미한다. 
+                웹을 제작하다보면 사용되는 이미지 수는 기하급수적으로 증가하게 될 것이며 그만큼
+                웹 브라우저가 서버에 요청해야 할 이미지의 수가 늘어나게 되므로 로딩 시간이 오래 걸리게 된다. 
+                하지만 <i>이미지 스프라이트를 사용한다면 요청해야 할 이미지의 수를 줄여 로딩 시간을 절약</i>하는 것이 가능하다. 
+            </p>
+            <!-- // 이미지 스프라이트란? -->
+
+            <h3 class="t_tit2">Figma 예제</h3>
+            <p class="t_desc">
+                다음 예제는 SNS 공유 기능을 위한 아이콘(36x36px 사이즈)을 14px 간격으로 떨어뜨려
+                아이콘 하나당 50px씩 차지하도록 레이아웃을 짜 놓은 이미지 스프라이트 예제이다. 
+                해당 이미지 스프라이트 프레임을 SVG 파일로 추출하여 사용 가능하다.
+            </p>
+            <div class="t_iframe">       
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FtnsaEM1JocXMMqYyaoWru4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1041%253A282" allowfullscreen></iframe>
+            </div>
+            <!-- // 피그마 예제 -->
+            
+            <h3 class="t_tit2">HTML 코드 예제</h3>
+            <p class="t_desc">
+                Figma 예제에서처럼 아이콘 여러개를 배치한 후 SVG 파일로 무사히 추출해냈다면 이제 HTML 영역에
+                아래와 같이 코딩하도록 한다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;div class="image__sns"&gt;
+    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;공유하기&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;Twitter&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;Instagram&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;YouTube&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;Facebook&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">CSS 코드 예제</h3>
+            <p class="t_desc">
+                이제 CSS 코드에서 본격적으로 <i>이미지 스프라이트와 IR 효과, 백그라운드 효과를 활용</i>해보자. 
+            </p>
+            <p class="t_desc2">
+                01. 먼저 출력해주고자 하는 image__sns 태그의 a 영역에 백그라운드 효과로 Figma로 생성한 이미지 스프라이트용
+                SVG 파일을 출력시켜주도록 한다. <br>
+                <br>
+                02. 그런 다음 nth-child를 이용해 background-position을 -50px 단위로 옮겨주면서 각각의 다른 아이콘들을 출력시켜준다. <br>
+                <br>
+                03. 그런 다음 IR 효과를 이용해 방금 전 HTML 코드 예제에서 입력해뒀던 텍스트를 보이지 않도록 작업한다. 
+                이는 시각 장애인용 스크린 리더기에는 텍스트가 읽히도록 하면서 동시에 비장애인들에게는 텍스트가 보이지 않도록 하기 위함이다.
+            </p>
+
+            <div class="t_code">
+<pre><code class="language-css">.image__sns a {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 5px;
+    background: url(img/image_bg03_icon.svg);   /* 백그라운드로 아이콘 5개 만든거 출력하기 */
+}
+
+/* 이미지 스프라이트 */
+/* 아이콘 5개를 이어 만든 프레임을 SVG로 추출하여 그 좌표값을 아래와 같이
+    옮겨가며 아이콘 하나씩 보이도록 하는 기법 */
+.image__sns a:nth-child(1) {    
+    /* 첫 번째 아이콘은 그대로 */
+}
+.image__sns a:nth-child(2) {
+    background-position: -50px 0;
+}
+.image__sns a:nth-child(3) {
+    background-position: -100px 0;
+}
+.image__sns a:nth-child(4) {
+    background-position: -150px 0;
+}
+.image__sns a:nth-child(5) {
+    background-position: -200px 0;
+}
+
+/* ir 효과 (이미지 대체 효과 == alt) */
+/* 화면상에서는 안나오게 함과 동시에 스크린리더기에는 읽히게 하는 작업 */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+</code></pre>
+            </div>
+            <!-- // CSS 소스 -->
+
+            <h3 class="t_tit2">최종 결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/site/imageType/imageType03.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kde66034.github.io/coding/site/imageType/imageType03.html">원본 사이트 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/site/imageType/imageType03.html">원본 소스 보기</a>
+            </div>
+            <!-- // 최종 결과 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
