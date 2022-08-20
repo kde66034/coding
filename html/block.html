@@ -4,194 +4,127 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>블록 레벨 요소와 인라인 요소</title>
+    <title>HTML 레퍼런스 북</title>
 
-    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'GmarketSans';
-        }
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
 
-        #header {
-            padding: 2vw;
-            border-bottom: 1px dashed #dedede;
-        }
-        #header h1 {
-            font-size: 4vw;
-            margin-bottom: 2vw;
-        }
-        #header nav ul li {
-            list-style: none;
-            display: inline;
-        }
-        #header nav ul li a {
-            text-decoration: none;
-            color: #000;
-            border: 1px solid #000;
-            display: inline-block;
-            padding: 0.7vw 1vw 0.3vw 1vw;
-            
-        }
-        #header nav ul li a:hover {
-            background-color: #000;
-            color: #fff;
-        }
-
-        /* 컨텐츠 */
-        #contents {
-            padding: 2vw;
-        }
-        #contents .menu {
-            border-bottom: 1px dashed #dedede;
-            padding-bottom: 2vw;
-        }
-        #contents .menu ul {}
-        #contents .menu ul li {
-            list-style: none;
-            display: inline;
-        }
-        #contents .menu ul li a {
-            text-decoration: none;
-            color: #000;
-            border: 1px solid #000;
-            background-color: #000;
-            color: #fff;
-            padding: 0.7vw 1vw 0.3vw 1vw;
-            word-break: keep-all;
-            display: inline-block;
-            margin-top: 0.7vw;
-            margin-bottom: 0.7vw;
-        }
-        .article {
-            padding: 2vw 0;
-            line-height: 1.6;
-        }
-        .article h2 {
-            font-weight: normal;
-            margin-bottom: 10px;
-        }
-        .article h3 {
-            font-weight: normal;
-        }
-        .article p {
-            margin-bottom: 10px;
-        }
-        .article .table {
-            width: 100%;
-            border-spacing: 0;
-            border-collapse: collapse;
-            margin-bottom: 10px;
-        }
-        .article .table tr th {
-            border: 1px solid #dedede;
-            padding: 10px;
-            font-weight: normal;
-            background-color: #f5f5f5;
-        }
-        .article .table tr td {
-            border: 1px solid #dedede;
-            padding: 10px;
-        }
-        .article .table .center {
-            text-align: center;
-        }
-        .article .box {
-            background-color: #f5f5f5;
-            padding: 15px;
-        }
-
-        /* 미디어 쿼리 */
-        @media (max-width: 800px) {
-            #header {
-                padding: 16px;
-            }
-            #header h1 {
-                font-size: 40px;
-            }
-            #header nav ul li a {
-                padding: 5px 10px;
-                font-size: 18px;
-            }
-            #contents {
-                padding: 16px;
-            }
-        }
-    </style>
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <header id="header">
-        <h1>HTML</h1>
-        <nav>
-            <ul>
-                <li><a href="#">기초</a></li>
-                <li><a href="#">주제</a></li>
-                <li><a href="#">알파벳</a></li>
-            </ul>
-        </nav>
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
     </header>
-    <section id="contents">
-        <nav class="menu">
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
             <ul>
-                <li><a href="basic.html">기본 문서</a></li>
-                <li><a href="markup.html">기본 규칙</a></li>
-                <li><a href="#">W3C validator</a></li>
-                <li><a href="semantic_markup.html">시멘틱 마크업</a></li>
-                <li><a href="block.html">블록·인라인 요소</a></li>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li class="active"><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
             </ul>
         </nav>
-        <article class="article">
-            <h2>블록 레벨 요소와 인라인 요소</h2>
-            <p>
-                요소의 유형은 '블록 레벨 요소'와 '인라인 요소'로 나누어집니다.
-                이 두 가지 요소에 대해 자세히 설명하겠습니다.
-            </p>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">블록 레벨 요소와 인라인 요소</h2>
+                <p class="t_desc2">
+                    요소의 유형은 <i>'블록 레벨 요소'와 '인라인 요소'</i>로 나누어집니다. 이 두 가지 요소에 대해 자세히 설명하겠습니다.
+                </p>
+                <!-- // 블록 레벨 요소와 인라인 요소 -->
+                
+                <hr>
 
-            <h3>1. 블록 레벨 요소(Block-level Elements)</h3>
-            <p class="box">
-                &lt;!DOCTYPE html&gt;<br>
-                &lt;html lang="ko"&gt;<br>
-                &lt;head&gt;<br>
-                　　&lt;meta charset="UTF-8"&gt;<br>
-                　　&lt;title&gt;블록 레벨 요소&lt;/title&gt;<br>
-                &lt;/head&gt;<br>
-                &lt;body&gt;<br>
-                　　&lt;h1&gt;블록 레벨 요소&lt;/h1&gt;<br>
-                　　&lt;h2&gt;블록 레벨 요소 성질&lt;/h2&gt;<br>
-                　　&lt;p&gt;줄 바꿈이 생깁니다.&lt;/p&gt;<br>
-                &lt;/body&gt;<br>
-                &lt;/html&gt; 
-            </p>
-            <p>
-                블록 레벨 요소는 마크업을 할 때 줄이 바뀌는 특성을 갖고 있습니다. 위의 예시에서 마크업 했던 &lt;h1&gt;, &lt;h2&gt;, &lt;p&gt;
-                요소들은 블록의 성질을 갖고 있어 화면상 줄 바꿈 현상이 일어납니다. 즉 나열될 수 없습니다.
-            </p>
+                <h3 class="t_tit2">1. 블록 레벨 요소(Block-level Elements)</h3>
+                <p class="t_box">
+                    div, p, h1~h6, ul, li, ol, table, form, section, footer 등이 있다.
+                </p>
+                <p class="t_desc">
+                    블록 레벨 요소는 마크업을 할 때 <i>줄이 바뀌는 특성</i>을 갖고 있습니다. 아래의 예시에서 마크업 했던 &lt;h1&gt;, &lt;h2&gt;, &lt;p&gt; 요소들은 블록의 성질을 갖고 있어 화면상 줄 바꿈 현상이 일어납니다. 즉, <i>나열될 수 없습니다.</i>
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;블록 레벨 요소&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;블록 레벨 요소&lt;/h1&gt;
+    &lt;h2&gt;블록 레벨 요소 성질&lt;/h2&gt;
+    &lt;p&gt;줄 바꿈이 생깁니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <br>
+                <div class="t_iframe">
+                    <iframe scrolling="no" title="블록 레벨 요소" src="https://codepen.io/kde66034/embed/yLKZpgd?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/yLKZpgd">
+                        블록 레벨 요소</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+                <!-- // 블록 -->
 
-            <h3>2. 인라인 요소(Inline Element)</h3>
-            <p>
-                인라인 요소는 블록 레벨 요소와 달리 줄 바꿈 특성이 없어 행이 바뀌지 않고 한 줄로 나란히 출력됩니다.
-            </p>
-            <p class="box">
-                &lt;!DOCTYPE html&gt;<br>
-                &lt;html lang="ko"&gt;<br>
-                &lt;head&gt;<br>
-                　　&lt;meta charset="UTF-8"&gt;<br>
-                　　&lt;title&gt;인라인 요소&lt;/title&gt;<br>
-                &lt;/head&gt;<br>
-                &lt;body&gt;<br>
-                　　&lt;strong&gt;인라인 요소&lt;/strong&gt;<br>
-                　　&lt;span&gt;인라인 요소는 한 줄로 출력됩니다.&lt;/span&gt;<br>
-                &lt;/body&gt;<br>
-                &lt;/html&gt; 
-            </p>
-            <p>
-                위에서 마크업 했던 &lt;strong&gt;, &lt;span&gt; 요소들이 인라인 성질을 갖고 있으며
-                행이 바뀌지 않고 한 줄로 나란히 출력됩니다.
-            </p>
+                <h3 class="t_tit2">2. 인라인 요소(Inline Element)</h3>
+                <p class="t_box">
+                    span, a, em, i, strong, b, del, ins, sub, sup, textarea 등이 있다.
+                </p>
+                <p class="t_desc">
+                    인라인 요소는 블록 레벨 요소와 달리 <i>줄 바꿈 특성이 없어 행이 바뀌지 않고 한 줄로 나란히 출력</i>됩니다. 
+                    아래의 예시에서 마크업 했던 &lt;strong&gt;, &lt;span&gt; 요소들이 인라인 성질을 갖고 있으며 행이 바뀌지 않고 한 줄로 나란히 출력됩니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;인라인 요소&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;strong&gt;인라인 요소&lt;/strong&gt;
+    &lt;span&gt;인라인 요소는 한 줄로 출력됩니다.&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <br>
+                <div class="t_iframe">
+                    <iframe scrolling="no" title="인라인" src="https://codepen.io/kde66034/embed/qBogprq?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/kde66034/pen/qBogprq">
+                        인라인</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+                <!-- // 인라인 -->     
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
 
-            
-        </article>
-    </section>
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
 </body>
 </html>
