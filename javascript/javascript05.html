@@ -37,20 +37,6 @@
                 <li><a href="effect/parallaxEffect01.html">패랠랙스 효과</a></li>
                 <li><a href="effect/gameEffect01.html">게임 효과</a></li>
             </ul>
-            <ul class="study">
-                <li><a href="study/basic.html">기본 규칙</a></li>
-                <li><a href="study/operator.html">연산자</a></li>
-                <li><a href="study/for.html">반복문</a></li>
-                <li><a href="study/if.html">조건문</a></li>
-                <li><a href="study/type.html">데이터 타입</a></li>
-                <li><a href="study/function.html">함수</a></li>
-                <li><a href="study/var.html">지역변수·전역변수</a></li>
-                <li><a href="study/element.html">요소 선택</a></li>
-                <li><a href="study/quiz01.html">퀴즈 만들기 01</a></li>
-                <li><a href="study/quiz02.html">퀴즈 만들기 02</a></li>
-                <li><a href="study/quiz03.html">퀴즈 만들기 03</a></li>
-                <li><a href="study/quiz04.html">퀴즈 만들기 04</a></li>
-            </ul>
         </nav>
     </header>
     <!-- // header -->
@@ -80,11 +66,11 @@
 
                 <li><a href="#sample10">10. 문자열 메서드 : 검색 : indexOf() : 문자열에서 특정 문자의 위치를 찾음 : 반환(숫자) ★</a></li>
                 <li><a href="#sample10">10. 문자열 메서드 : 검색 : lastIndexOf() : 문자열에서 특정 문자의 위치를 뒤에서부터 찾음 : 반환(숫자)</a></li>
-                <li><a href="#sample11">11. 문자열 메서드 : 검색 : search() : 문자열을 검색(정규식) : 반환(숫자) ★</a></li>
-                <li><a href="#sample11">11. 문자열 메서드 : 검색 : match() : 문자열을 검색(정규식) : 반환(배열)</a></li>
                 <li><a href="#sample11">11. 문자열 메서드 : 검색 : includes() : 문자열 포함 여부 검색 : 반환(불린 true/false) ★</a></li>
-                <li><a href="#sample11">11. 문자열 메서드 : 검색 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)</a></li>
-                <li><a href="#sample11">11. 문자열 메서드 : 검색 : charCodeAt() : 지정한 인덱스의 문자를 추출 : 반환(숫자)</a></li>
+                <li><a href="#sample12">12. 문자열 메서드 : 검색 : search() : 문자열을 검색(정규식) : 반환(숫자) ★</a></li>
+                <li><a href="#sample13">13. 문자열 메서드 : 검색 : match() : 문자열을 검색(정규식) : 반환(배열)</a></li>
+                <li><a href="#sample14">14. 문자열 메서드 : 검색 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)</a></li>
+                <li><a href="#sample14">14. 문자열 메서드 : 검색 : charCodeAt() : 지정한 인덱스의 문자를 추출 : 반환(숫자)</a></li>
 
                 <li><a href="#sample11">11. 문자열 메서드 : 검색 : startsWith() : 문자열 포함 여부 앞에서 검색 : 반환(불린 true/false)</a></li>
                 <li><a href="#sample11">11. 문자열 메서드 : 검색 : endsWith() : 문자열 포함 여부 뒤에서 검색 : 반환(불린 true/false)</a></li>
@@ -624,6 +610,78 @@ const currentStr7 = str1.includes("reference", 12);     // false
             <!-- sample11 -->
 
             <br>
+
+            <div id="sample12" class="sample">
+                <h3>12. search()</h3>
+                <p>
+                    문자열(정규식)을 검색하고 위치값을 숫자로 반환한다.
+                </p>
+                <div class="box">
+                    "문자열".search("검색값"); <br>
+                    "문자열".search(정규식 표현);
+                </div>
+                <div class="script">
+<pre><code lang="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.search("javascript");             //0
+const currentStr2 = str1.search("reference");              // 11
+const currentStr3 = str1.search("j");                      // 0
+const currentStr4 = str1.search("a");                      // 1
+const currentStr5 = str1.search("v");                      // 2
+const currentStr6 = str1.search("jquery");                 // -1 : 없는 데이터
+const currentStr7 = str1.search("b");                      // -1
+const currentStr8 = str1.search(/[a-z]/g);                 // 0
+</code></pre>
+                </div>
+            </div>
+            <!-- sample12 -->
+
+            <br>
+
+            <div id="sample13" class="sample">
+                <h3>13. match() : 반환(배열)</h3>
+                <p>
+                    매치되는 문자열(정규식)을 찾고 그 값을 그대로 배열로 반환한다. <br>
+                    정규식을 사용하여 매치되는 글자가 몇 개 들어갔는지 등을 확인할 수 있다.
+                </p>
+                <div class="box">
+                    "문자열".match("매치값"); <br>
+                    "문자열".match(정규식 표현);
+                </div>
+                <div class="script">
+<pre><code lang="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.match("javascript");   //javascript
+const currentStr2 = str1.match("reference");    //reference
+const currentStr3 = str1.match("r");            //r
+const currentStr4 = str1.match(/reference/);    //reference
+const currentStr5 = str1.match(/Reference/);    //null
+const currentStr6 = str1.match(/Reference/i);   //reference
+const currentStr7 = str1.match(/r/g);           //['r', 'r', 'r']
+const currentStr8 = str1.match(/e/g);           //['e', 'e', 'e', 'e']
+</code></pre>
+                </div>
+            </div>
+            <!-- sample13 -->
+
+            <br>
+
+            <div id="sample14" class="sample">
+                <h3>14. charAt() : 첫 글자 출력</h3>
+                <p>
+                    문자열의 위치를 숫자로 입력하면 그 위치의 문자열 한 글자를 출력한다. 
+                </p>
+                <div class="box">
+                    //"문자열".charAt(숫자);
+                </div>
+                <div class="script">
+<pre><code lang="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.charAt();         //j
+const currentStr2 = str1.charAt("0");      //j
+const currentStr3 = str1.charAt("1");      //a
+const currentStr4 = str1.charAt("2");      //v
+</code></pre>
+                </div>
+            </div>
+            <!-- sample14 -->
         </div>
         <!-- main sample -->
 
@@ -948,7 +1006,51 @@ const currentStr7 = str1.includes("reference", 12);     // false
             const currentStr6 = str1.includes("reference", 11);     // true
             const currentStr7 = str1.includes("reference", 12);     // false
 
-            console.log(currentStr7)
+            // console.log(currentStr7);
+        }
+
+        // 12. search() : 반환(숫자)
+        {
+            //"문자열".search("검색값");
+            //"문자열".search(정규식 표현);
+
+            const str1 = "javascript reference";
+            const currentStr1 = str1.search("javascript");             //0
+            const currentStr2 = str1.search("reference");              // 11
+            const currentStr3 = str1.search("j");                      // 0
+            const currentStr4 = str1.search("a");                      // 1
+            const currentStr5 = str1.search("v");                      // 2
+            const currentStr6 = str1.search("jquery");                 // -1 : 없는 데이터
+            const currentStr7 = str1.search("b");                      // -1
+            const currentStr8 = str1.search(/[a-z]/g);                 // 0
+
+            // console.log(currentStr8);
+        }
+
+        // 13. match() : 반환(배열)
+        {
+            const str1 = "javascript reference";
+            const currentStr1 = str1.match("javascript");   //javascript
+            const currentStr2 = str1.match("reference");    //reference
+            const currentStr3 = str1.match("r");            //r
+            const currentStr4 = str1.match(/reference/);    //reference
+            const currentStr5 = str1.match(/Reference/);    //null
+            const currentStr6 = str1.match(/Reference/i);   //reference
+            const currentStr7 = str1.match(/r/g);           //['r', 'r', 'r']
+            const currentStr8 = str1.match(/e/g);           //['e', 'e', 'e', 'e']
+
+            // console.log(currentStr8);
+        }
+
+        // 14. charAt() : 첫 글자 출력
+        {
+            //"문자열".charAt(숫자);
+
+            const str1 = "javascript reference";
+            const currentStr1 = str1.charAt();         //j
+            const currentStr2 = str1.charAt("0");      //j
+            const currentStr3 = str1.charAt("1");      //a
+            const currentStr4 = str1.charAt("2");      //v
         }
     </script>
 </body>
