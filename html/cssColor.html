@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li class="active"><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">CSS 색상 표현 방법</h2>
+                <p class="t_desc2">
+                    CSS의 색상 표현 방법에 대해 설명하는 포스팅입니다.
+                </p>
+                <!-- // CSS 색상 표현 방법 -->
+    
+                <hr>
+
+                <h2 class="t_tit2">1. 색상명으로 표현</h2>
+                <p class="t_desc">
+                    <i>색상 이름으로 표현</i> 가능하다. <br>
+                    약 140가지의 색상명들이 브라우저에 미리 정의되어 있다. 
+                </p>
+                <p class="t_desc2">
+                    color: yellow; <br>
+                    <br>
+                    // yellow, red, green, blue... 등등 색상명 넣기
+                </p>
+                <!-- // 1 -->
+
+                <h2 class="t_tit2">2. RGB 값으로 표현</h2>
+                <p class="t_desc">
+                    <i>RGB(Red Green Blue)와 같은 형식으로 색을 표현</i>할 수 있다. <br>
+                    RGB 각각의 변수에 0에서 255 사이의 정수를 입력하거나 백분율 값을 지정해 색상을 결정한다.
+                </p>
+                <p class="t_desc2">
+                    background-color:rgb(255, 0, 0);
+                </p>
+                <!-- // 2 -->
+
+                <h2 class="t_tit2">3. RGBA 값으로 표현</h2>
+                <p class="t_desc">
+                    2번의 RGB 방식에서 <i>불투명도까지 조절 가능</i>한 방법이다. <br>
+                    rgb 변수 다음에 오는 자리에서 0.0(투명)부터 1.0(불투명) 사이의 값을 입력해 불투명도를 조절한다.
+                </p>
+                <p class="t_desc2">
+                    background-color:rgba(255, 0, 0, 0.2);
+                </p>
+                <!-- // 3 -->
+
+                <h2 class="t_tit2">4. HEX 값으로 표현</h2>
+                <p class="t_desc">
+                    <i>#123456 형식의 16진수 값으로 색상을 표현</i>하는 방법이다.
+                </p>
+                <p class="t_desc2">
+                    color: #F5F5F5;
+                    background-color: #000000;
+                </p>
+                <!-- // 4 -->
+    
+                <h2 class="t_tit2">5. HSL/HSLA 값으로 표현</h2>
+                <p class="t_desc">
+                    HSL은 색상, 채도, 명도로 색상을 정의하며 HSLA는 HSL 방식에서 불투명도까지 조절 가능하다. 
+                    색상은 0~360까지의 색상환에 따라 결정되며, 0:red, 120:green, 240:blue로 나타난다.채도와 명도는 백분율로 나타낸다.HSLA는 HSL방식에서 불불투명도 지정 기능이 추가된 것이며 HSLA(색상, 채도, 명도, 불투명도) 형식으로 표시한다.
+                </p>
+                <p class="t_desc2">
+                    background-color: hsl(0, 100%, 80%); <br>
+                    color: hsla(0, 100%, 60%, 0.5);
+                </p>
+                <!-- //5 -->
+
+
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
