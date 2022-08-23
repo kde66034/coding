@@ -474,16 +474,15 @@
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
         const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
         const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+        let count = 0;
 
         // 전체 개수 구하기
         searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
         
-        
-
         searchKeyword.forEach(el => {
             el.addEventListener("click", () => {
-                // let cnt = 0;
                 const searchWord = el.innerText;    // 사용자가 클릭한 알파벳
+                searchWord.textContent = searchInfo.length  // 선택한 알파벳 개수
                 // console.log(searchWord);
 
                 searchList.forEach(el => {
@@ -493,24 +492,15 @@
                     // 알파벳 첫글자 == CSS 속성의 첫글자
                     if(searchWord.charAt(0) === cssName.charAt(0)) {
                         el.classList.remove("hide");
-
-                        searchInfo.textContent = cssName.length;
+                        count++;    // 개수 더해줌
                     } else {
                         el.classList.add("hide");
                     }
-
-                    // if (!el.classList.value) {
-                    //     cnt++;
-                    // }
-
-                    // searchInfo.innerHTML = cnt;
+                    searchInfo.textContent = count; // 검색한 CSS의 속성 개수에 count 저장해서 출력함
                 });
+                count = 0;  // 개수 초기화
             });
         });
-
-        // 전체 개수 구하기 (알파벳별)
-        
-        
     </script>
 </body>
 </html>
