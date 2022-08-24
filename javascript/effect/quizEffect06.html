@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트 06 : 틀린 문제 정리하기</title>
+    <title>퀴즈 이펙트 06 : 객관식(여러문제) 확인하기 : 슬라이드 형식</title>
 
     <link rel="stylesheet" href="../assets/css/quiz.css">
 
@@ -16,15 +16,15 @@
 
 <body>
     <header id="header">
-        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(여러 문제) 유형</em></h1>
+        <h1><a href="../javascript01.html">Quiz</a> <em>슬라이드 형식</em></h1>
         <nav>
             <ul>
                 <li><a href="quizEffect01.html">01</a></li>
                 <li><a href="quizEffect02.html">02</a></li>
                 <li><a href="quizEffect03.html">03</a></li>
                 <li><a href="quizEffect04.html">04</a></li>
-                <li class="active"><a href="quizEffect05.html">05</a></li>
-                <li><a href="quizEffect06.html">06</a></li>
+                <li><a href="quizEffect05.html">05</a></li>
+                <li class="active"><a href="quizEffect06.html">06</a></li>
             </ul>
         </nav>
     </header>
@@ -32,6 +32,58 @@
 
     <main id="main">
         <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <!-- <span class="number"></span>
+                    <div class="ask"></div> -->
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답이다멍!💕</div>
+                    <div class="false">틀렸다왈!💔</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <!-- <label for="select1">
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select3">
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select4">
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <span class="choice"></span>
+                        </label> -->
+                    </div>
+                    <div class="result"></div>
+                    <button class="confirm">다음 문제 보기</button>
+                </div>
+                
+            </div>
         </div>
     </main>
     <!-- // main -->
@@ -42,725 +94,156 @@
     <!-- // footer -->
 
     <script>
-        // const num = [100, 200, 300, 400, 500];
-
-        // num.forEach((el) => {
-        //     console.log(el);
-        //     // += 해주지 않으면 데이터가 변경되기 때문에 500만 출력됨
-        //     document.querySelector(".quiz__wrap").textContent += el;
-        // });
-
         // 문제 정보
         const quizInfo = [
             {
-                answerType: "2013년 1회 웹디자인기능사 - 디자인일반",
-                answerNum: "4",
-                answerAsk: "독일공장연맹(DWB)에 대한 설명으로 옳은 것은?",
-                answerChoice: {
-                    1: "유겐트(Jugend)라는 신문을 중심으로 양식이 전개되면서 청춘양식이라고 불렸다.",
-                    2: "이들의 새로운 조형운동은 권위적이고 세속적인 과거의 모든 양식으로부터의 분리를 주장하였다.",
-                    3: "대표적인 작가로 구스타프클럼트, 요셉 호프만 등이다.",
-                    4: "창립의 중심인물은 무테지우스이며 공업문명을 중심으로 조형을 발전시키고자 하였다",
-                }, 
-                answerResult: "4",
-                answerEx: "정답은 : 4번! 독일공장연맹(DWB) => 헤르만 무테지우스 외우세요."
+                answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+                answerNum: "1",
+                answerAsk: "웹 디자인에 관한 설명으로 거리가 먼 것은?",
+                answerChoice: [
+                    "가. 웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+                    "나. 웹 디자인은 개인용 홈페이지 외 기업용, 상업용 등 매우 다양하다.",
+                    "다. 웹 디자인은 웹과 디자인이라는 두 가지 개념이 결합된 것이다.",
+                    "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+                ],
+                answerResult: "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+                answerEx: "정답 : 4 <br>기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물은 캐릭터에 관한 설명이다."
             },
             {
-                answerType: "2013년 1회 웹디자인기능사 - 디자인일반",
-                answerNum: "10",
-                answerAsk: "모든 사물은 구, 원기둥 및 원뿔 형태와 같은 기하학적 형태로 구성되어 있다고 주장한 사람은?",
-                answerChoice: {
-                    1: "파파넥",
-                    2: "고흐",
-                    3: "세잔",
-                    4: "오장팡",
-                }, 
-                answerResult: "3",
-                answerEx: "정답은 : 3번! 세잔이 그랬습니다. 세잔은 큐비즘(입체파) 대표적인 인물이죠"
+                answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+                answerNum: "2",
+                answerAsk: "다음 중 시각 디자인에 속하지 않는 것은?",
+                answerChoice: [
+                    "가. 텍스타일 디자인",
+                    "나. 패키지 디자인",
+                    "다. POP 디자인",
+                    "라. 타이포그래피",
+                ],
+                answerResult: "가. 텍스타일 디자인",
+                answerEx: "정답 : 1 <br>텍스타일 디자인은 질감을 포인트로 하기 때문에 시각 디자인이라 보기 힘들다."
             },
             {
-                answerType: "2013년 1회 웹디자인기능사 - 디자인일반",
-                answerNum: "11",
-                answerAsk: "스파트(spot) 광고에 대한 설명이 옳은 것은?",
-                answerChoice: {
-                    1: "전국 방송망으로 방송국에서 전국에 실시하는 광고",
-                    2: "일정시간을 정해 30초 CM 10개를 계속 방송하는 형태",
-                    3: "지역 방송국에 제한되어 방송하는 것",
-                    4: "프로그램과 프로그램 사이에 광고를 삽입하는 것",
-                }, 
-                answerResult: "4",
-                answerEx: "정답은 : 4번! 기억해주세요 spot 광고란 '라디오나 텔레비전 방송에서, 프로그램 사이 또는 프로그램 진행 중에 아주 짧게 나가는 광고' 입니다."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 디자인일반",
-                answerNum: "15",
-                answerAsk: "다음 중 굿 디자인(Good Design)의 조건이 아닌 것은?",
-                answerChoice: {
-                    1: "심미성",
-                    2: "독창성",
-                    3: "대중성",
-                    4: "경제성",
-                }, 
-                answerResult: "3",
-                answerEx: "정답은 : 3번! 굿디자인 4가지 외우세요 : 심미성, 독창성, 합목적성, 경제성 입니다."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 디자인일반",
-                answerNum: "18",
-                answerAsk: "먼셀의 표색계에서 색상을 표시하는 기호로 맞는 것은?",
-                answerChoice: {
-                    1: "C/HV",
-                    2: "HC/V",
-                    3: "HV/C",
-                    4: "CV/G",
-                }, 
-                answerResult: "3",
-                answerEx: "정답은 : 3번! 외우세요 HV/C 5R4/14이면 5단계 빨강색, 명도는4 채도는 14에요."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 디자인일반",
-                answerNum: "19",
-                answerAsk: "신문광고의 구성요소 중 조형적 요소가 아닌 것은?",
-                answerChoice: {
-                    1: "헤드라인",
-                    2: "일러스트레이션",
-                    3: "심볼 마크",
-                    4: "보더 라인",
-                }, 
-                answerResult: "1",
-                answerEx: "정답 1번. 신문광고의 구성요소 : 일러스트레이션, 심볼마크, 보더라인"
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 인터넷일반",
-                answerNum: "22",
-                answerAsk: "웹서버의 일반적인 동작 과정으로 옳은 것은?",
-                answerChoice: {
-                    1: "연결설정→클라이언트가 정보요청→서버의 응답→연결종료",
-                    2: "연결설정→서버의 응답→클라이언트가 정보요청→연결종료",
-                    3: "클라이언트가 정보요청→연결설정→서버의 응답→연결종료",
-                    4: "클라이언트가 정보요청→서버의 응답→연결설정→연결종료",
-                }, 
-                answerResult: "1",
-                answerEx: "정답은 1번! 연결을 설정해야 연결이 되겠죠? 정보를 요청해야 응답을 할 수 가 있겠습니다."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 인터넷일반",
-                answerNum: "23",
-                answerAsk: "하나의 회선을 다수의 아주 짧은 시간 간격으로 분할하여 다중화 하는 전송 방식은?",
-                answerChoice: {
-                    1: "FCM",
-                    2: "TDM",
-                    3: "CSM",
-                    4: "FDD",
-                }, 
-                answerResult: "2",
-                answerEx: "정답은 : 2번! 시분할 다중화 (Time-division multiplexing), 시분할 다중화란 전송로를 점유하는 시간을 분할하여 한 개의 전송로에 여러 개의 가상 경로를 구성하는 통신 방식이다."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 인터넷일반",
-                answerNum: "31",
-                answerAsk: "인터넷 익스플로러 6.0에서 웹페이지의 글자가 깨져 보이는 경우에는 [보기]-[인코딩] 메뉴에서 무엇을 선택해야 하는가",
-                answerChoice: {
-                    1: "자동선택",
-                    2: "자동복구",
-                    3: "오류복구",
-                    4: "오류보기",
-                }, 
-                answerResult: "1",
-                answerEx: "정답 1번"
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 인터넷일반",
-                answerNum: "33",
-                answerAsk: "인터넷의 시조이며, 미 국방성이 군사목적으로 UCLA, 스탠포드 대학 등이 보유한 컴퓨터 네트워크로 연결한 것은 무엇일까?",
-                answerChoice: {
-                    1: "USENET",
-                    2: "FTP",
-                    3: "WAIS",
-                    4: "ARPANET",
-                }, 
-                answerResult: "4",
-                answerEx: "정답은 : 4번! 인터넷의 시조 = 알파넷."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 인터넷일반",
-                answerNum: "34",
-                answerAsk: "다음과 관련 있는 TCP/IP 프로토콜 계층으로 옳은 것은? SMTP, FTP, Telnet, HTTP",
-                answerChoice: {
-                    1: "물리 계층",
-                    2: "네트워크 계층",
-                    3: "전송 계층",
-                    4: "응용 계층",
-                }, 
-                answerResult: "4",
-                answerEx: "정답 4번. 여러가지 프로토콜들이 나오면 응용계층을 생각해주세요."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 인터넷일반",
-                answerNum: "39",
-                answerAsk: "위지웍(WYSIWYG) 기반의 웹 에디터가 아닌 것은?",
-                answerChoice: {
-                    1: "Namo Web Editor",
-                    2: "FrontPage",
-                    3: "Edit Plus",
-                    4: "Netscape Composer",
-                }, 
-                answerResult: "3",
-                answerEx: "정답은 3번. 에딧플러스는 메모장 같은 형식으로 하드코딩에 특화되어있죠, 위지위그란 이미지 같은걸 드래그앤 드롭같은 사용자 편의기능을 제공하는 방식의 에디터를 말합니다."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "41",
-                answerAsk: "컴퓨터그래픽스의 역사 중 제4세대에 해당하는 래스터 스캔형 CRT 시대에 대한 설명으로 거리가 먼 것은?",
-                answerChoice: {
-                    1: "색, 면으로 입체물의 표면을 도색할 수 있게 되었다.",
-                    2: "프랙탈 이론을 실천한 여러 사례가 발표되었다.",
-                    3: "슈퍼리얼리즘과 사실주의적인 경향을 갖고 있다.",
-                    4: "보잉사가 CRT를 구사하여 제트 여객기 보잉 737을 설계하였다.",
-                }, 
-                answerResult: "4",
-                answerEx: "정답 4번! 보잉737 은 1964년 부터 생산되었고 래스터스캔 CRT는 1980년도의 기술이다."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "43",
-                answerAsk: "웹페이지를 작성할 때 배경이미지와 메뉴에 관한 설명으로 틀린 것은?",
-                answerChoice: {
-                    1: "스타일 시트를 이용하여 배경 이미지의 반복 횟수를 증가시킨다.",
-                    2: "배경 이미지가 클 경우 용량 증가로 로딩이 늦어진다.",
-                    3: "메뉴는 메타포를 이용하여 디자인한다.",
-                    4: "배경의 색상을 분할시켜 사용하면 프레임이 사용된 것처럼 보인다.",
-                }, 
-                answerResult: "1",
-                answerEx: "정답은 : 1번! 배경이미지의 반복 횟수를 증가시키면 그만큼 로딩시간이 길어지겠죠?"
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "44",
-                answerAsk: "웹 페이지 저작에 필요한 S/W 중 웹에디터가 아닌 것은?",
-                answerChoice: {
-                    1: "Internet Space Builder",
-                    2: "EditPlus",
-                    3: "Hotdog Professional",
-                    4: "Dramweaver",
-                }, 
-                answerResult: "1",
-                answerEx: "정답은 : 1번! Internet Space Builder은 3D 기술을 제작하는 쪽이라고 하네요."
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "48",
-                answerAsk: "컴퓨터 그래픽스의 단위 중 1인치당 몇 개의 픽셀이 들어가 있는지를 표현하는 것은?",
-                answerChoice: {
-                    1: "LPI",
-                    2: "EPI",
-                    3: "PPI",
-                    4: "DPI",
-                }, 
-                answerResult: "3",
-                answerEx: "정답은 : 3번! PPI = pixel per inch"
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "57",
-                answerAsk: "다음 중 연관성 있는 여러 가지 이미지를 조합하여 하나의 새로운 이미지를 제작하는 방법은?",
-                answerChoice: {
-                    1: "화상 처리(Image Processing)",
-                    2: "디지털 페인팅(Digital Painting)",
-                    3: "포토 콜라주(Photo Collage)",
-                    4: "전자출판(DTP)",
-                }, 
-                answerResult: "3",
-                answerEx: "정답은 : 3번! 포토 콜라주는 포토몽타주라고 불리는 사진 콜라주 작업은 여러 장의 사진을 자르고 결합하여 하나의 새로운 이미지를 만드는 다양한 유형의 이미지 편집 작업입니다"
-            },
-            {
-                answerType: "2013년 1회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "60",
-                answerAsk: "다음 ( )안에 공통으로 들어갈 알맞은 용어는? <br> ( )은/는 형판, 보기판 이라는 뜻을 가진 단어로, ( )디자 인이란 웹 사이트 레이아웃의 형을 만드는 것을 말한다. 개략적인 디자인을 만들고, 그 이후에 세부적인 디자인 요 소를 별도로 만드는 방법이다.",
-                answerChoice: {
-                    1: "텍스트(Text)",
-                    2: "템플릿(Template)",
-                    3: "컬러(Color)",
-                    4: "인터페이스(Interface)",
-                }, 
-                answerResult: "2",
-                answerEx: "정답2번. 템플릿은 형판이라는 뜻입니다. (템플릿 하면 형판 떠올려 주세요)"
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 디자인일반",
-                answerNum: "6",
-                answerAsk: "자연적 또는 인공적 모양 중에서 ( A )은/는 외관으로 나타나는 윤곽을 나타내지만, ( B )은/는 좀 더 넓은 의미의 일반적인 ( A )와/과 모양을 나타내며, 눈으로 파악한 대상물의 기본적 특성을 제시한다. 괄호 안에 들어갈 알맞은 용어는?",
-                answerChoice: {
-                    1: "A : 점, B : 형",
-                    2: "A : 선, B : 형태",
-                    3: "A : 형, B : 면",
-                    4: "A : 형, B : 형태",
-                }, 
-                answerResult: "4",
-                answerEx: "정답4번. 형은 2차원적인 표현이고, 형태는 3차원적인 표현이다. 따라서 형은 나타나기는 하지만 눈으로 파악할 수 있는건 형태이다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 디자인일반",
-                answerNum: "13",
-                answerAsk: "먼셀 표색계의 채도에 대한 설명으로 가장 옳은 것은?",
-                answerChoice: {
-                    1: "채도는 색의 밝고 어두운 정도를 말하며 검정을 0 으로하고 흰색으로 10 으로 한다.",
-                    2: "여러 유채색을 정원 모양으로 배열하여 표현한 것을 채도라 한다",
-                    3: "채도는 1에서 14 단계로 표기하며 채도가 높을수록 선명하다",
-                    4: "5R4/12에서 5는 채도를 의미한다.",
-                }, 
-                answerResult: "3",
-                answerEx: "정답3번. 색의 밝고 어두운 정도는 명도이며, 채도는 색의 강렬함을 표현하고 있기 때문에 높을 수록 선명합니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 디자인일반",
-                answerNum: "16",
-                answerAsk: "아르누보는 신예술이라는 의미로 전통적 양식에서 탈피하고 새로운 미를 창조하려는 신예술 운동을 주장한 인물은?",
-                answerChoice: {
-                    1: "윌리암 모리스(Morris. W)",
-                    2: "앙리 반 데 벨데(Van de velde. Henri)",
-                    3: "헤르만 무테지우스(Muthesius. H)",
-                    4: "구스타프 클링트(Klimt. G)",
-                }, 
-                answerResult: "2",
-                answerEx: "정답2번. 앙리 반 데 벨데(Van de velde. Henri)는 윌리엄 모리스의 영향을 받아 아르누보라는 신예술을 주장한 벨기에의 건축가입니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 인터넷일반",
-                answerNum: "22",
-                answerAsk: "다음 중 HTML에 대한 설명으로 틀린 것은?",
-                answerChoice: {
-                    1: "HTML은 대소문자를 구분한다.",
-                    2: "ASCII 문자로 되어 있는 일반 Text 형태이다",
-                    3: "HTML로 제작된 페이지는 웹브라우저에서 해석되어 실행된다.",
-                    4: "HTML의 문서는 태그(tag)로 구성되어 있다",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. 대-소문자를 구분하는 것은 자바스크립트 입니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 인터넷일반",
-                answerNum: "28",
-                answerAsk: "다음 중 컴퓨터 네트워크의 장점에 대한 설명으로 틀린 것은?",
-                answerChoice: {
-                    1: "공유를 통하여 보안성을 높일 수 있다.",
-                    2: "다른 주변장치를 공유할 수 있다",
-                    3: "공동 작업을 할 수 있다.",
-                    4: "하나의 응용프로그램을 여러 사람이 사용할 수 있다.",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. 공유를 하면 오히려 보안성이 떨어집니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 인터넷일반",
-                answerNum: "30",
-                answerAsk: "인터넷에서 접속하고자 하는 URL을 정확히 입력하였지만 “페이지를 표시할 수 없다”는 메시지와 함께 접속이 되지 않았다. 그러나 IP 주소를 입력하면 접속이 되는 경우, 클라이언트 측에서 찾을 수 있는 원인으로 가장 적당한 것은?",
-                answerChoice: {
-                    1: "IP 주소를 할당받지 못한 경우",
-                    2: "Proxy 서버를 설정하지 않은 경우",
-                    3: "FTP 서버를 설정하지 않은 경우",
-                    4: "DNS 서버를 설정하지 않은 경우",
-                }, 
-                answerResult: "4",
-                answerEx: "정답4번. DNS(Domain Name System)는 범국제적 단위로 웹사이트의 IP 주소와 도메인 주소를 이어주는 환경/시스템 입니다. 그리고 이 안에서 부분적으로 역할을 하는 서버를 풀네임으로 DNS 서버라고 합니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 인터넷일반",
-                answerNum: "34",
-                answerAsk: "자바스크립트에서 일정한 시간마다 브라우저 상태를 파악하거나 동작을 수행하는데 사용되는 함수는?",
-                answerChoice: {
-                    1: "window.setInterval()",
-                    2: "window.setTimer()",
-                    3: "window.timer()",
-                    4: "window.setTime()",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. setTimeout()을 이용해 일정 시간이 지난 후에 함수를 실행하는 방법, setInterval()을 이용해 일정 시간 간격을 두고 함수를 실행하는 방법입니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 인터넷일반",
-                answerNum: "37",
-                answerAsk: "자원을 해킹(hacking)으로부터 보호하기 위한 방법으로 틀린것은?",
-                answerChoice: {
-                    1: "조직 내부의 네트워크 컴퓨터들은 공용 IP 주소를 사용하고 외부와 연결되는 컴퓨터에만 개인용 IP 주소를 할당한다.",
-                    2: "조직 내부의 네트워크를 보호하기 위해 방화벽을 설치하여 네트워크 보안을 강화한다.",
-                    3: "특정 자원을 사용할 필요가 있는 사용자에게는 필요한 권한만을 할당한다",
-                    4: "보안상 문제가 알려진 서비스나 운영체제의 경우 제조사에서 제공하는 패치프로그램을 수시로 적용한다.",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. 조직 내부의 네트워크 컴퓨터들은 개인 IP 주소를,외부와 연결되는 컴퓨터에만 공용 IP주소를 할당하여 내부 IP주소를 보호합니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 인터넷일반",
-                answerNum: "40",
-                answerAsk: "웹페이지 제작 시 사용되는 스타일시트(CSS)에 대한 설명으로 틀린 것은?",
-                answerChoice: {
-                    1: "내부 스타일시트 적용 시 〈HTML〉와 〈/HTML〉 내에서 자유롭게 정의할 수 있다.",
-                    2: "Inline CS와 Internal CS가 부분적으로 충돌할 경우, 충돌하지 않는 Internal CS는 그대로 상속 적용된다.",
-                    3: "외부스타일시트의 파일 타입(확장자)은 .CSS 이다",
-                    4: "웹 문서 내에 특정 영역에만 영향을 주기 위해 〈SPAN〉,〈DIV〉 태그를 사용한다.",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. 내부 스타일 시트 적용시, 주로 태그 내에서 CSS 스타일을 적용합니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "44",
-                answerAsk: "웹 사이트에 등재할 이미지의 크기가 클 경우 크기를 조정하기 위한 가장 올바른 방법은?",
-                answerChoice: {
-                    1: "웹에서 소스 수정으로 사이즈를 조정한다.",
-                    2: "드림위버에서 이미지 크기를 줄인다",
-                    3: "포토샵의 이미지 사이즈에서 픽셀 수를 줄인다",
-                    4: "나모 웹 에디터에서 웹용으로 저장할 때 Quality를 낮춘다.",
-                }, 
-                answerResult: "3",
-                answerEx: "정답3번. 웹으로 사이즈를 조정하면 원하는 곳을 골라서 줄일 수 없으며, 드림 위버는 어도비에서 나온 웹 개발 시스템입니다. 또한 Quality는 투명도를 조절하는 코드입니다. <br> 포토샵으로 줄여야 함"
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "45",
-                answerAsk: "컴퓨터 그래픽스 시스템의 입력 장치로 틀린 것은?",
-                answerChoice: {
-                    1: "디지타이저(Digitizer)",
-                    2: "타블릿(Tablet)",
-                    3: "스캐너(Scanner)",
-                    4: "플로터(Plotter)",
-                }, 
-                answerResult: "4",
-                answerEx: "정답4번. 플로터(Plotter)는 인쇄장치 출력장치에 해당합니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "47",
-                answerAsk: "콘텐츠를 분류, 분석, 그룹핑 하는 등의 작업이 이뤄지는 정보 체계화(Contents Branch) 과정을 단계별로 가장 적절하게 나열한 것은?",
-                answerChoice: {
-                    1: "콘텐츠 수집 → 콘텐츠 그룹화 → 콘텐츠 구조화 → 계층구조의 설계 → 콘텐츠 구조설계 테스트",
-                    2: "콘텐츠 수집 → 계층구조의 설계 → 콘텐츠 그룹화 → 콘텐츠 구조화 → 콘텐츠 구조설계 테스트",
-                    3: "콘텐츠 수집 → 콘텐츠 그룹화 → 콘텐츠 구조화 → 콘텐츠 구조설계 테스트 → 계층구조의 설계",
-                    4: "콘텐츠 수집 → 콘텐트 구조화 → 콘텐츠 구조설계 테스트 → 콘텐츠 그룹화 → 계층구조의 설계",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. 콘텐츠를 수집을 하고 그룹화, 구조화를 하여야 계층 구조를 설계할 수 있기 때문에 1번이 가장 적합합니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "50",
-                answerAsk: "1. 점묘법과 같이 제한된 수의 색상들을 사용하여 다양한 색상을 시각적으로 섞어서 만드는 것이다. 2. 예를 들어 노란색과 빨간색을 섞어서 기술적으로 잘 배치하면 주황색과 같이 보이도록 할 수 있다. 등의 특징을 가진 것은?",
-                answerChoice: {
-                    1: "Halftone",
-                    2: "Gradation",
-                    3: "Pixe",
-                    4: "Dithering",
-                }, 
-                answerResult: "4",
-                answerEx: "정답4번. 제한된 수의 색상을 사용하여 다양한 색을 시각적으로 혼합해 만드는 것은 Dithering을 의미합니다"
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "54",
-                answerAsk: "플래시(Flash)에서 맨 앞과 맨 끝 키 프레임에만 변화를 주면 중간 과정의 애니메이션을 만들어 주는 것을 무엇이라고 하는가?",
-                answerChoice: {
-                    1: "Motion",
-                    2: "Tweening",
-                    3: "Transform",
-                    4: "Guide",
-                }, 
-                answerResult: "2",
-                answerEx: "정답2번. Tweening는 중간에, 사이에 라는 뜻이며 플레시에서는 키프레임 사이를 자동으로 채워주는 기능입니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "55",
-                answerAsk: "일반적으로 Photoshop에서 검정색과 흰색의 이미지로 구성되어 선택된 영역이 합성되지 않도록 마스크 역할을 하는 메뉴는?",
-                answerChoice: {
-                    1: "조정 레이어(Adjustment Layer)",
-                    2: "알파채널(Alpha Channel)",
-                    3: "Z 버퍼(Z-buffer)",
-                    4: "히스토리(History)",
-                }, 
-                answerResult: "2",
-                answerEx: "정답2번. 알파채널은 α 채널과 이미지 처리 분야에 있고, 각 화소에 대해 색상 표현의 데이터로부터 분리한 보조 데이터를 일컫습니다. 보통 화상 마스크, 복구 화상 합성 등에 쓰입니다."
-            },
-            {
-                answerType: "2014년 5회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "56",
-                answerAsk: "대상물의 위치 이동으로 움직임을 표현하는 것으로 종이 등에 특정한 형태를 그리고 잘라낸 후 각각의 종이들을 한 장면씩 움직여 가며 촬영하는 애니메이션 기법은?",
-                answerChoice: {
-                    1: "컷 아웃 애니메이션",
-                    2: "셀 애니메이션",
-                    3: "투광 애니메이션",
-                    4: "스톰모션 애니메이션",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. 셀 애니메이션은 그림을 한장씩 직접 그려 만드는 것이며, 투광 애니메이션은 그림자로 애니메이션을 표현하며, 스톰 모션은 프레임 마다 조금씩 움직여 만들어 나가는 애니메이션이다"
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 디자인일반",
+                answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
                 answerNum: "3",
-                answerAsk: "디자인에서 사용되는 용어 설명으로 잘못된 것은?",
-                answerChoice: {
-                    1: "2차원의 화면이나 형식 위에, 3차원의 공간에 존재하는 형(shape)이나 형태(form)를 표시하는 것을 투시(perspective)라 한다.",
-                    2: "장소나 위치 또는 방위가 변화되는 과정이나 움직임을 시차(parallax)라고 한다.",
-                    3: "점진적 변화, 규칙적 단계에 의해 진행되는 변화과정을 그라데이션(gradation)이라고 한다.",
-                    4: "시각적 영역 안에서 어떤 형이나 형태가 다른 형이나 형태를 부분적으로 덮어 감추어지는 현상을 중첩이라 한다.",
-                }, 
-                answerResult: "2",
-                answerEx: "정답2번. 시차(parallax)란 어떤 물체를 서로 다른 두 지점에서 보았을 때 생기는 방향의 차이를 말합니다."
+                answerAsk: "환경 디자인에 속하지 않는 것은?",
+                answerChoice: [
+                    "가. 인테리어 디자인",
+                    "나. 무대 디자인",
+                    "다. 가구 디자인",
+                    "라. 조경 디자인",
+                ],
+                answerResult: "다. 가구 디자인",
+                answerEx: "정답 : 3 <br>인테리어, 무대, 조경 디자인은 환경 디자인이지만 가구 디자인은 환경보다는 인테리어에만 영향을 주기 때문에 환경 디자인이라 보기 힘들다."
             },
             {
-                answerType: "2010년 4회 웹디자인기능사 - 디자인일반",
-                answerNum: "9",
-                answerAsk: "다음에 해당하는 디자인의 기본조건은? → 창조는 기존의 디자인을 바탕으로 보다 나은 디자인을 만드는 것이다.",
-                answerChoice: {
-                    1: "합목적성",
-                    2: "심미성",
-                    3: "경제성",
-                    4: "독창성",
-                }, 
-                answerResult: "4",
-                answerEx: "정답4번. 디자인의 기본조건에는 합목적성, 심미성, 독창성, 경제성, 질서성이 있으며 독창성의 주요 키워드는 디자인의 핵심, 아이디어 독창적, 이미지, 인상적인, 독특함, 개성, 차별성, 문제점 개선 등이 있습니다."
+                answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+                answerNum: "4",
+                answerAsk: "색채에 대한 설명으로 맞는 것은?",
+                answerChoice: [
+                    "가. 색채는 심리적 성질을 갖지 못한다.",
+                    "나. 물체가 발광하지 않고 빛을 받아서 흡수되는 색이다.",
+                    "다. 색채의 분류는 무채색, 유채색 중성색 3가지는 있다.",
+                    "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
+                ],
+                answerResult: "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
+                answerEx: "정답 : 4 <br>색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다."
             },
             {
-                answerType: "2010년 4회 웹디자인기능사 - 디자인일반",
-                answerNum: "10",
-                answerAsk: "유채색에서 볼 수 있는 대비로 연속대비라고도 하며, 잔상 효과와 가장 밀접한 관련이 있는 것은?",
-                answerChoice: {
-                    1: "동시대비",
-                    2: "계시대비",
-                    3: "채도대비",
-                    4: "명도대비",
-                }, 
-                answerResult: "2",
-                answerEx: "정답2번. 유채색에서 볼 수 있는 대비로 연속대비라고도 하며, 잔상 효과와 가장 밀접한 관련이 있는 것은 '계시대비'입니다."
+                answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+                answerNum: "5",
+                answerAsk: "다음 중 “합목정성”과 “심미성” 에서도 존재하는 창의적 디자인 조건은?",
+                answerChoice: [
+                    "가. 독창성",
+                    "나. 질서성",
+                    "다. 경제성",
+                    "라. 최소성",
+                ],
+                answerResult: "가. 독창성",
+                answerEx: "정답 : 1 <br>창의적 디자인 조건은 독창성이다."
             },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 디자인일반",
-                answerNum: "19",
-                answerAsk: "다음 그림에서 나타나는 착시 현상은? 뮐러 리어 Müller-Lyer 착시의 예로 안쪽으로 모아진 화살표(←→)와 반대로 바깥으로 벌어진 화살표 그림",
-                answerChoice: {
-                    1: "방향의 착시",
-                    2: "대비의 착시",
-                    3: "분할의 착시",
-                    4: "길이의 착시",
-                }, 
-                answerResult: "4",
-                answerEx: "정답4번. 길이의 착시란 같은 길이지만 조건에 따라 길이가 다르게 보이는 현상을 말합니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 인터넷일반",
-                answerNum: "26",
-                answerAsk: "자바스크립트(Javascript)에 대한 설명으로 틀린 것은?",
-                answerChoice: {
-                    1: "자바스크립트를 지원하는 브라우저만 있으면 모든 운영체제에서 실행된다.",
-                    2: "자바스크립트는 소스프로그램을 컴파일 한 후 HTML문서에 삽입한다.",
-                    3: "자바스크립트 객체는 자신의 프로토타입 객체에 있는 프로퍼티를 상속 받는다.",
-                    4: "클라이언트측 자바스크립트는 HTML문서 내에 적용하여 브라우저를 제어하는데 사용된다.",
-                }, 
-                answerResult: "2",
-                answerEx: "정답2번. HTML 문서에 JavaScript 삽입 방법은 내부 코드/외부 코드 적용이 있습니다. 내부코드는 script 태그를 이용하는 방법이고, 외부 코드는 JavaScript 파일을 만든 후 문서에 연결하는 방법입니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 인터넷일반",
-                answerNum: "37",
-                answerAsk: "VRML(Virtual Reality Modeling Language)에 대한 설명으로 틀린 것은?",
-                answerChoice: {
-                    1: "VRML은 그래픽 기능뿐만 아니라 텍스트, 이미지, 애니메이션, 사운드 등 각종 멀티미디어 데이터를 2차원적 공간에 통합하여 서로상호작용 할 수 있다.",
-                    2: "VRML 은 상당한 인력과 고급 컴퓨터를 이용한 오랜 시간의 그래픽 렌더링이 필요한 프로그램 언어이다.",
-                    3: "VRML은 웹 상에 가상공간을 구축할 수 있게 함으로써 원격지의 사용자와 함께 가상공간을 공유할 수 있다.",
-                    4: "VRML은 HTML과의 결합뿐만 아니라, 기존의 실시간 멀티미디어 전송 기술과 자바 등의 새로운 언어 체계도 수용 할 수 있다.",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. VRML은 3차원 인터렉티브 벡터 그래픽을 표현하는 표준 파일 형식으로, 월드 와이드 웹을 염두에 두고 만들어 졌습니다. 현재는 X3D로 대체되었습니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 인터넷일반",
-                answerNum: "38",
-                answerAsk: "자바스크립트에서 사용자의 특정한 행동에 대해 어떤 처리를 해줄 것인가를 정의하는 것은?",
-                answerChoice: {
-                    1: "event",
-                    2: "object",
-                    3: "event handler",
-                    4: "event provider",
-                }, 
-                answerResult: "3",
-                answerEx: "정답3번. 자바스크립트에서 사용자의 특정한 행동에 대해 어떤 처리를 해줄 것인가를 정의하는 것은 'event handler'입니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "44",
-                answerAsk: "자바스크립트에서 사용자의 특정한 행동에 대해 어떤 처리를 해줄 것인가를 정의하는 것은?",
-                answerChoice: {
-                    1: "LPI",
-                    2: "EPI",
-                    3: "PPI",
-                    4: "DPI",
-                }, 
-                answerResult: "3",
-                answerEx: "정답3번. 1인치당 픽셀의 수를 나타내는 단위는 'PPI'입니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "45",
-                answerAsk: "다음이 설명하고 있는 것은? <br> → 기존 HTML의 단점을 개선하여 동적인 웹페이지를 만들 수 있도록 하기 위한 기술. 문서의 각 요소를 하나의 객체로서 위치와 스타일을 지정할 수 있고, 또한 사용자와의 상호작용을 첨가하거나 움직임이 가능함. 자바스크립트를 기반으로 함.",
-                answerChoice: {
-                    1: "CGI",
-                    2: "JAVA",
-                    3: "DHTML",
-                    4: "CSS",
-                }, 
-                answerResult: "3",
-                answerEx: "정답3번. 위에서 설명하고 있는 내용은 'DHTML'입니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "47",
-                answerAsk: "내비게이션 디자인(Navigation design) 구조와 관계가 없는 것은?",
-                answerChoice: {
-                    1: "Protocol structure",
-                    2: "Grid structure",
-                    3: "Hierarchical structure",
-                    4: "Sequential structure",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. protocol은 컴퓨터 내부에서, 또는 컴퓨터 사이에서 데이터의 교환 방식을 정의하는 규칙 체계로 내비게이션 디자인과 관계가 없습니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "56",
-                answerAsk: "다음 설명과 같은 모델링 기법은? <br> → 단순한 모양에서 점차적으로 복잡한 형상을 구축해 나가는 기법. 구름이나 바다 물결, 소용돌이, 담배연기, 산, 강 등을 표현하는 기법.",
-                answerChoice: {
-                    1: "프랙탈(Fractal)",
-                    2: "고체(Solid)",
-                    3: "표면(Surface)",
-                    4: "와이어 프레임(Wire Frame)",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. 위 설명과 같은 모델링 기법은'프렉탈(Fractal)'입니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "57",
-                answerAsk: "바람직한 웹사이트 초기화면구성이라고 볼 수 있는 것은?",
-                answerChoice: {
-                    1: "자료를 테이블화 시켜서 제시하였다.",
-                    2: "JAVA applet을 많이 사용한다.",
-                    3: "웹사이트를 홍보할 수 있는 동영상을 게시한다.",
-                    4: "ActiveX를 많이 사용한다.",
-                }, 
-                answerResult: "1",
-                answerEx: "정답1번. 바람직한 웹사이트 초기화면구성이라고 볼 수 있는 것은 자료를 테이블화 시켜서 제시하는 것입니다."
-            },
-            {
-                answerType: "2010년 4회 웹디자인기능사 - 웹그래픽디자인",
-                answerNum: "58",
-                answerAsk: "랜덤 스캔 방식의 화면표시 장치의 특징으로 틀린 것은?",
-                answerChoice: {
-                    1: "그래픽스 명령어를 반복 실행하여 화면에 디스플레이 한다.",
-                    2: "화상을 이루고 있는 선분을 따라 전자빔을 쏘아 그린다.",
-                    3: "프레임 버퍼의 크기가 클수록 고화질의 디스플레이가 가능하다.",
-                    4: "앨리어싱이 발생하지 않으므로 안티앨리어싱 처리가 불필요하다.",
-                }, 
-                answerResult: "3",
-                answerEx: "정답3번. 랜덤스캔은 화면의 임의의 점에서 임의의 점까지에 이르는 직선상으로만 전자빔을 움직이는 방식으로 시작점부터 끝점까지 선을 긋는 것이기 때문에 벡터 스캔이라고도 합니다. 하지만 프레임 버퍼는 화면에 나타날 영상 정보를 일시적으로 저장하는 기억 장치로 면 각 점의 온(on)/오프(off)나 색깔을 비트맵으로 기억하고 있습니다."
-            },
-        ]
-
-        // 선택자 - 나머지 선택자는 exam.push 안에 있기 때문에 나중에 정한다.
-        const quizWrap = document.querySelector(".quiz__wrap");
+        ];
         
-        function updateQuiz() {
-            const exam = [];
+        const quizType =  document.querySelector(".quiz__type");                // 문제 유형
+        const quizQuestion = document.querySelector(".quiz__question");         // 문제 번호, 질문
+        const quizSelects = document.querySelector(".quiz__selects");           // 객관식 보기
+        const quizResult =  document.querySelector(".quiz__answer .result");    // 문제 해설
+        const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
+        const quizView = document.querySelector(".quiz__view");                 // 강아지
 
-            quizInfo.forEach((question, number) => {
-                exam.push(`
-                    <div class="quiz">
-                        <span class="quiz__type">${question.answerType}</span>
-                        <h2 class="quiz__question">
-                            <span class="number">${question.answerNum}. </span>
-                            <div class="ask">${question.answerAsk}</div>
-                        </h2>
-                        <div class="quiz__view">
-                            <div class="true">정답이다멍!💕</div>
-                            <div class="false">틀렸다왈!💔</div>
-                            <div class="dog">
-                                <div class="head">
-                                    <div class="ears"></div>
-                                    <div class="face"></div>
-                                    <div class="eyes">
-                                        <div class="teardrop"></div>
-                                    </div>
-                                    <div class="nose"></div>
-                                    <div class="mouth">
-                                        <div class="tongue"></div>
-                                    </div>
-                                    <div class="chin"></div>
-                                </div>
-                                <div class="body">
-                                    <div class="tail"></div>
-                                    <div class="legs"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="quiz__answer">
-                            <div class="quiz__selects">
-                                <label for="select1${number}">
-                                    <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
-                                    <span class="choice">${question.answerChoice[1]}</span>
-                                </label>
-                                <label for="select2${number}">
-                                    <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
-                                    <span class="choice">${question.answerChoice[2]}</span>
-                                </label>
-                                <label for="select3${number}">
-                                    <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
-                                    <span class="choice">${question.answerChoice[3]}</span>
-                                </label>
-                                <label for="select4${number}">
-                                    <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
-                                    <span class="choice">${question.answerChoice[4]}</span>
-                                </label>
-                                
-                            </div>
-                        </div>
-                    </div>
-                `);
-            });
-
-            exam.push(`
-                <div class="quiz__confirm">
-                    <button class="check">정답 확인하기</button>
-                    <div class="ex"></div>    
-                </div>
-            `)
-
-            // join으로 합쳐주기
-            quizWrap.innerHTML = exam.join('');
-        }
-        updateQuiz();
+        let quizCount = 0;
+        let quizScore = 0;
         
-        //정답 확인
-        function answerQuiz(){
-            const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
-            const quizView = document.querySelectorAll(".quiz__view");          //강아지
-            //사용자가 체크한 라디오 박스  == 문제 정답
-            quizInfo.forEach((question, number) => {
-                const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
-                const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
-                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
-                const quizView = document.querySelectorAll(".quiz__view");
-                console.log(quizSelects)
-                if(userAnswer == question.answerResult){
-                    console.log("정답")
-                    quizView[number].classList.add("like");
-                } else {
-                    console.log("오답")
-                    quizView[number].classList.add("dislike");
-                    const div = document.createElement("div");
-                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
-                }
-            });
+        // 문제 출력
+        const updateQuiz = (index) => {
+            const questionTag = `
+                <span class="number">${quizInfo[index].answerNum}. </span>
+                <div class="ask">${quizInfo[index].answerAsk}</div>
+            `;
+            const choiceTag = `
+                <label for="select1">
+                    <input type="radio" id="select1" class="select" name="select" value="1">
+                    <span class="choice">${quizInfo[index].answerChoice[0]}</span>
+                </label>
+                <label for="select2">
+                    <input type="radio" id="select2" class="select" name="select" value="2">
+                    <span class="choice">${quizInfo[index].answerChoice[1]}</span>
+                </label>
+                <label for="select3">
+                    <input type="radio" id="select3" class="select" name="select" value="3">
+                    <span class="choice">${quizInfo[index].answerChoice[2]}</span>
+                </label>
+                <label for="select4">
+                    <input type="radio" id="select4" class="select" name="select" value="4">
+                    <span class="choice">${quizInfo[index].answerChoice[3]}</span>
+                </label>
+            `;
+            // 문제 출력
+            quizType.innerHTML = quizInfo[index].answerType;    // 문제 유형
+            quizQuestion.innerHTML = questionTag;           // 번호, 질문
+            quizSelects.innerHTML = choiceTag;              // 객관식 보기
+            quizResult.innerHTML = quizInfo[index].answerEx;    // 해설
+
+            const quizChoice = quizSelects.querySelectorAll(".choice"); 
+
+            for(let i = 0; i < quizChoice.length; i++) {
+                quizChoice[i].setAttribute("onclick", "choiceSelected(this)");  // 클릭한값 저장
+            }
+
+            // 문제, 해설 숨기기
+            quizResult.style.display ="none";
+            quizConfirm.style.display ="none";
         }
-        document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
+        updateQuiz(quizCount);
+
+        const choiceSelected = (answer) => {
+            let userAnswer = answer.textContent;    // 사용자가 체크한 정답
+            let currentAnswer = quizInfo[quizCount].answerResult;   // 문제 정답
+
+            if(userAnswer == currentAnswer) {
+                console.log("정답");
+                quizView.classList.add("like");
+                quizScore++;
+            } else {
+                console.log("오답");
+                quizView.classList.add("dislike");
+                quizResult.style.display = "block";
+            }
+            quizConfirm.style.display = "block";
+        }
+
+        // 정답 확인 버튼
+        const answerQuiz = () => {
+            quizCount++;
+            updateQuiz(quizCount);
+            quizView.classList.remove("like", "dislike");   //다음문제 갔을 때 강아지 표정 리셋
+
+            // 마지막 문제
+            if(quizInfo.length -1 == quizCount) {
+                quizConfirm.textContent = `총 ${quizCount+1} 문제 중에 ${quizScore} 문제를 맞춤`;
+            }
+        }
+
+        quizConfirm.addEventListener("click", answerQuiz);
     </script>
 </body>
 
