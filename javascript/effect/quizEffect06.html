@@ -170,8 +170,8 @@
         const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
         const quizView = document.querySelector(".quiz__view");                 // 강아지
 
-        let quizCount = 0;
-        let quizScore = 0;
+        let quizCount = 0;  // 문제 개수를 세기 위한 변수 생성
+        let quizScore = 0;  // 맞춘 문제 개수를 세기 위한 변수 생성
         
         // 문제 출력
         const updateQuiz = (index) => {
@@ -219,30 +219,29 @@
             let userAnswer = answer.textContent;    // 사용자가 체크한 정답
             let currentAnswer = quizInfo[quizCount].answerResult;   // 문제 정답
 
+            // 사용자 체크한 답과 진짜 문제 정답이 같다면...
             if(userAnswer == currentAnswer) {
                 console.log("정답");
                 quizView.classList.add("like");
-                quizScore++;
+                quizScore++;    // 정답 개수 확인 후 변수에 1씩 더해줌
             } else {
                 console.log("오답");
                 quizView.classList.add("dislike");
-                quizResult.style.display = "block";
+                quizResult.style.display = "block";     // 해설 보이게 함 
             }
-            quizConfirm.style.display = "block";
+            quizConfirm.style.display = "block";        // 다음문제 버튼 보이게 함
         }
 
         // 정답 확인 버튼
         const answerQuiz = () => {
-            quizCount++;
-            updateQuiz(quizCount);
-            quizView.classList.remove("like", "dislike");   //다음문제 갔을 때 강아지 표정 리셋
-
             // 마지막 문제
             if(quizInfo.length -1 == quizCount) {
-                quizConfirm.textContent = `총 ${quizCount+1} 문제 중에 ${quizScore} 문제를 맞춤`;
+                quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞춤`;
             }
+            quizCount++;    // 문제를 다 풀면 다음 문제로 넘어갈 수 있도록 문제 번호 더해줌
+            updateQuiz(quizCount);  
+            quizView.classList.remove("like", "dislike");   //다음문제 갔을 때 강아지 표정 리셋   
         }
-
         quizConfirm.addEventListener("click", answerQuiz);
     </script>
 </body>

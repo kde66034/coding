@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 06</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 만들기 06 : 객관식(여러 문제) 유형 : 슬라이드</h2>
+            <p class="t_desc2">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 퀴즈를 만들어보도록 하겠습니다. <br>
+                이번 학습 내용을 잘 활용하여 웹디자인기능사 시험 공부 열심히 해 봅시다! <br>
+                <i>변수(let)와 상수(const)에 쿼리 셀렉터 값을 저장</i>시키고, 그 동안 배운 스크립트를
+                통해 문제 정보를 HTML 태그에 출력시키고, 정답을 숨겼다가 버튼을 눌러 보이게 하는
+                등의 <i>다양한 효과들을 구현</i>시켜봅시다!
+            </p>
+
+     <!-- // 퀴즈 만들기  -->
+
+    <hr>
+
+            <h3 class="t_tit2">문제 정보·선택자 생성</h3>
+            <p class="t_desc2">
+                문제 정보를 배열 안의 객체 형태로 작성해준다. 다른 퀴즈 효과와는 달리 answerResult에 번호가 아닌
+                answerChoice에 있는 정답 그 자체를 그대로 똑같이 입력해준다. 필요한 const 상수를 생성해준 다음 연결해주는
+                작업까지 마치면 마지막으로는 let 변수에 문제 개수를 세기 위한 변수와 맞춘 개수를 세기 위한 변수를 생성하자.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// 문제 정보
+const quizInfo = [
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "1",
+        answerAsk: "웹 디자인에 관한 설명으로 거리가 먼 것은?",
+        answerChoice: [
+            "가. 웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+            "나. 웹 디자인은 개인용 홈페이지 외 기업용, 상업용 등 매우 다양하다.",
+            "다. 웹 디자인은 웹과 디자인이라는 두 가지 개념이 결합된 것이다.",
+            "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+        ],
+        answerResult: "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+        answerEx: "정답 : 4 <br>기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물은 캐릭터에 관한 설명이다."
+    },
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "2",
+        answerAsk: "다음 중 시각 디자인에 속하지 않는 것은?",
+        answerChoice: [
+            "가. 텍스타일 디자인",
+            "나. 패키지 디자인",
+            "다. POP 디자인",
+            "라. 타이포그래피",
+        ],
+        answerResult: "가. 텍스타일 디자인",
+        answerEx: "정답 : 1 <br>텍스타일 디자인은 질감을 포인트로 하기 때문에 시각 디자인이라 보기 힘들다."
+    },
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "3",
+        answerAsk: "환경 디자인에 속하지 않는 것은?",
+        answerChoice: [
+            "가. 인테리어 디자인",
+            "나. 무대 디자인",
+            "다. 가구 디자인",
+            "라. 조경 디자인",
+        ],
+        answerResult: "다. 가구 디자인",
+        answerEx: "정답 : 3 <br>인테리어, 무대, 조경 디자인은 환경 디자인이지만 가구 디자인은 환경보다는 인테리어에만 영향을 주기 때문에 환경 디자인이라 보기 힘들다."
+    },
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "4",
+        answerAsk: "색채에 대한 설명으로 맞는 것은?",
+        answerChoice: [
+            "가. 색채는 심리적 성질을 갖지 못한다.",
+            "나. 물체가 발광하지 않고 빛을 받아서 흡수되는 색이다.",
+            "다. 색채의 분류는 무채색, 유채색 중성색 3가지는 있다.",
+            "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
+        ],
+        answerResult: "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
+        answerEx: "정답 : 4 <br>색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다."
+    },
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "5",
+        answerAsk: "다음 중 “합목정성”과 “심미성” 에서도 존재하는 창의적 디자인 조건은?",
+        answerChoice: [
+            "가. 독창성",
+            "나. 질서성",
+            "다. 경제성",
+            "라. 최소성",
+        ],
+        answerResult: "가. 독창성",
+        answerEx: "정답 : 1 <br>창의적 디자인 조건은 독창성이다."
+    },
+];
+    
+const quizType =  document.querySelector(".quiz__type");                // 문제 유형
+const quizQuestion = document.querySelector(".quiz__question");         // 문제 번호, 질문
+const quizSelects = document.querySelector(".quiz__selects");           // 객관식 보기
+const quizResult =  document.querySelector(".quiz__answer .result");    // 문제 해설
+const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
+const quizView = document.querySelector(".quiz__view");                 // 강아지
+
+let quizCount = 0;  // 문제 개수를 세기 위한 변수 생성
+let quizScore = 0;  // 맞춘 문제 개수를 세기 위한 변수 생성
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">문제 출력</h3>
+            <p class="t_desc2">
+                HTML 요소 중 변경될 사항만을 매개변수를 이용하여 효율적으로 가져오도록 하자. <br>
+                그런 다음, 문제를 출력시켜주고 정답 확인 버튼과 해설을 잠시 숨겨주도록 한다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const updateQuiz = (index) => {
+    const questionTag = `
+        &lt;span class="number">${quizInfo[index].answerNum}. &lt;/span>
+        &lt;div class="ask">${quizInfo[index].answerAsk}&lt;/div>
+    `;
+    const choiceTag = `
+        &lt;label for="select1"&gt;
+            &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[0]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select2"&gt;
+            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[1]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select3"&gt;
+            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[2]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select4"&gt;
+            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[3]}&lt;/span&gt;
+        &lt;/label&gt;
+    `;
+    // 문제 출력
+    quizType.innerHTML = quizInfo[index].answerType;    // 문제 유형
+    quizQuestion.innerHTML = questionTag;           // 번호, 질문
+    quizSelects.innerHTML = choiceTag;              // 객관식 보기
+    quizResult.innerHTML = quizInfo[index].answerEx;    // 해설
+
+    const quizChoice = quizSelects.querySelectorAll(".choice");     // 보기 선택하는 선택자 생성
+
+    for(let i = 0; i &lt; quizChoice.length; i++) {
+        quizChoice[i].setAttribute("onclick", "choiceSelected(this)");  // 클릭한값 저장
+    }
+
+    // 문제, 해설 숨기기
+    quizResult.style.display ="none";
+    quizConfirm.style.display ="none";
+}
+updateQuiz(quizCount);
+</code></pre>
+            </div>
+
+
+            <h3 class="t_tit2">정답 확인·정답 확인 버튼·마지막 문제</h3>
+            <p class="t_desc2">
+                사용자가 체크한 정답과 진짜 문제의 정답 변수를 생성하고 if(else)문을 통해
+                정답일 경우에는 강아지를 미소짓게, 오답일 경우 강아지를 슬프게 만들자. 그런 다음
+                정답 확인 버튼을 누르면 다음 문제로 넘어갈 수 있도록 설정하고, 마지막 문제에서는
+                매개변수를 통해 '총 $문제 중에 $ 문제를 맞춤'이라는 문구를 출력시키도록 한다. 
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const choiceSelected = (answer) => {
+    let userAnswer = answer.textContent;    // 사용자가 체크한 정답
+    let currentAnswer = quizInfo[quizCount].answerResult;   // 문제 정답
+
+    // 사용자 체크한 답과 진짜 문제 정답이 같다면...
+    if(userAnswer == currentAnswer) {
+        console.log("정답");
+        quizView.classList.add("like");
+        quizScore++;    // 정답 개수 확인 후 변수에 1씩 더해줌
+    } else {
+        console.log("오답");
+        quizView.classList.add("dislike");
+        quizResult.style.display = "block";     // 해설 보이게 함 
+    }
+    quizConfirm.style.display = "block";        // 다음문제 버튼 보이게 함
+}
+
+// 정답 확인 버튼
+const answerQuiz = () => {
+    // 마지막 문제
+    if(quizInfo.length -1 == quizCount) {
+        quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞춤`;
+    }
+    quizCount++;    // 문제를 다 풀면 다음 문제로 넘어갈 수 있도록 문제 번호 더해줌
+    updateQuiz(quizCount);  
+    quizView.classList.remove("like", "dislike");   //다음문제 갔을 때 강아지 표정 리셋   
+}
+quizConfirm.addEventListener("click", answerQuiz);
+</code></pre>
+            </div>
+
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/quizEffect06.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kde66034.github.io/coding/javascript/effect/quizEffect06.html">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/quizEffect06.html">원본 소스 보기</a>
+            </div>
+            <!-- // 04. 객관식 문제 유형 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

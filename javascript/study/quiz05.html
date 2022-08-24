@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 퀴즈 04</title>
+    <title>자바스크립트 : 퀴즈 05</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -58,16 +58,189 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">2013년 4회 웹디자인기능사 기출문제 풀어보기</h2>
+            <h2 class="t_tit">퀴즈 만들기 05 : 2013년 4회 웹디자인기능사</h2>
             <p class="t_desc2">
-                그동안 만들었던 퀴즈 이펙트를 이용하여 2013년 4회 웹디자인기능사 기출문제들을
-                풀 수 있도록 했습니다. 열심히 공부하세요!
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 퀴즈를 만들어보도록 하겠습니다. <br>
+                이번 학습 내용을 잘 활용하여 웹디자인기능사 시험 공부 열심히 해 봅시다! <br>
+                <i>변수(let)와 상수(const)에 쿼리 셀렉터 값을 저장</i>시키고, 그 동안 배운 스크립트를
+                통해 문제 정보를 HTML 태그에 출력시키고, 정답을 숨겼다가 버튼을 눌러 보이게 하는
+                등의 <i>다양한 효과들을 구현</i>시켜봅시다!
             </p>
 
-            <!-- // 퀴즈 만들기  -->
+     <!-- // 퀴즈 만들기  -->
 
-            <hr>
+    <hr>
 
+            <h3 class="t_tit2">JS 소스</h3>
+            <p class="t_desc">
+                다섯번째 객관식(여러 문제) 유형의 자바스크립트 소스와 부연 설명(주석 처리됨)이다. <br>
+                기존 문제 풀이 기능에 총 문제수와 정답 개수, 총 점수, 합격 여부 등을 표시하는 기능을 추가하자. <br>
+                HTML과 CSS 소스를 함께 보고 싶다면 맨 아래의 '원본 소스 보기' 버튼을 누를 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">&lt;script&gt;
+    //선택자
+    //문제 정보는 길어서 생략^^
+    const quizInfo = [
+            {
+                answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+                answerNum: "1",
+                answerAsk: "웹 디자인에 관한 설명으로 거리가 먼 것은?",
+                answerChoice: {
+                    1: "가. 웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+                    2: "나. 웹 디자인은 개인용 홈페이지 외 기업용, 상업용 등 매우 다양하다.",
+                    3: "다. 웹 디자인은 웹과 디자인이라는 두 가지 개념이 결합된 것이다.",
+                    4: "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+                }, 
+                answerResult: "4",
+                answerEx: "정답 : 4 <br>기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물은 캐릭터에 관한 설명이다."
+            }, ...
+    ];
+
+    const quizWrap = document.querySelector(".quiz__wrap");
+    let quizScore = 0;      // 맞은개수
+    let quizScore2 = 0;     // 총점수
+    
+    // 문제 출력
+    const updateQuiz = () => {
+        const exam = [];
+        
+
+        quizInfo.forEach((question, number) => {
+            exam.push(`
+                &lt;div class="quiz"&gt;
+                    &lt;span class="quiz__type"&gt;${question.answerType}&lt;/span&gt;
+                    &lt;h2 class="quiz__question"&gt;
+                        &lt;span class="number"&gt;${question.answerNum}. &lt;/span&gt;
+                        &lt;div class="ask"&gt;${question.answerAsk}&lt;/div&gt;
+                    &lt;/h2&gt;
+                    &lt;div class="quiz__view"&gt;
+                        &lt;div class="true"&gt;정답이다멍!💕&lt;/div&gt;
+                        &lt;div class="false"&gt;틀렸다왈!💔&lt;/div&gt;
+                        &lt;div class="dog"&gt;
+                            &lt;div class="head"&gt;
+                                &lt;div class="ears"&gt;&lt;/div&gt;
+                                &lt;div class="face"&gt;&lt;/div&gt;
+                                &lt;div class="eyes"&gt;
+                                    &lt;div class="teardrop"&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="nose"&gt;&lt;/div&gt;
+                                &lt;div class="mouth"&gt;
+                                    &lt;div class="tongue"&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="chin"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="body"&gt;
+                                &lt;div class="tail"&gt;&lt;/div&gt;
+                                &lt;div class="legs"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="quiz__answer"&gt;
+                        &lt;div class="quiz__selects"&gt;
+                            &lt;label for="select1${number}"&gt;
+                                &lt;input type="radio" id="select1${number}" class="select" name="select${number}" value="1"&gt;
+                                &lt;span class="choice"&gt;${question.answerChoice[1]}&lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label for="select2${number}"&gt;
+                                &lt;input type="radio" id="select2${number}" class="select" name="select${number}" value="2"&gt;
+                                &lt;span class="choice"&gt;${question.answerChoice[2]}&lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label for="select3${number}"&gt;
+                                &lt;input type="radio" id="select3${number}" class="select" name="select${number}" value="3"&gt;
+                                &lt;span class="choice"&gt;${question.answerChoice[3]}&lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label for="select4${number}"&gt;
+                                &lt;input type="radio" id="select4${number}" class="select" name="select${number}" value="4"&gt;
+                                &lt;span class="choice"&gt;${question.answerChoice[4]}&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            `);
+        });
+        exam.push(`
+            &lt;div class="quiz__confirm"&gt;
+                &lt;button class="check"&gt;정답 확인하기&lt;/button&gt;
+                &lt;div class="ex"&gt;&lt;/div&gt;
+                &lt;div class="resultInfo"&gt;
+                    &lt;div class="quizInfoNum"&gt;총 문제수 : &lt;p class="num"&gt;0&lt;/p&gt;&lt;/div&gt;
+                    &lt;div class="quizResultNum"&gt;정답 개수 : &lt;p class="num"&gt;0&lt;/p&gt;&lt;/div&gt;
+                    &lt;div class="quizScoreNum"&gt;총 점수 : &lt;p class="num"&gt;0&lt;/p&gt;&lt;/div&gt;
+                    &lt;div class="passValue"&gt;합격 여부 : &lt;p class="value"&gt;&lt;/p&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        `);
+        
+        quizWrap.innerHTML = exam.join('');
+    };
+    updateQuiz();
+
+    // 전체 문제 수
+    // console.log(quizInfo.length);
+    const quizInfoNum = document.querySelector(".quizInfoNum .num")
+    quizInfoNum.textContent = quizInfo.length;
+
+    // 맞힌 수
+    // console.log(quizScore);
+    const quizResultNum = document.querySelector(".quizResultNum .num")
+    quizResultNum.textContent = quizScore;
+
+    // 총 점수
+    const quizScoreNum = document.querySelector(".quizScoreNum .num");
+
+    // 합격 불합격 여부
+    const passValue = document.querySelector(".passValue .value");
+
+    // 정답 확인
+    const answerQuiz = () => {
+        const quizSelects = document.querySelectorAll(".quiz__selects");    // 객관식 보기
+
+        // 사용자가 체크한 보기 == 문제의 정답
+        quizInfo.forEach((question, number) => {
+            const userSelector = `input[name=select${number}]:checked`;     // 사용자가 체크한 것
+            const quizSelectsWrap = quizSelects[number];
+            const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;
+            const quizView = document.querySelectorAll(".quiz__view");      // 강아지 (60마리나 되니까 All 붙일것)
+
+
+            if(userAnswer == question.answerResult) {
+                // console.log("정답");
+                quizView[number].classList.add("like"); //강아지 웃음
+                quizScore++;    // 정답이면 맞은 개수에 1씩 추가
+                quizScore2 += 1.6;    // 정답이면 점수 1.6씩 추가
+            } else {
+                // console.log("오답");
+                quizView[number].classList.add("dislike"); //강아지 울음
+                const divBox = document.createElement("div");
+                quizSelectsWrap.appendChild(divBox).innerHTML = `<p class="result">${question.answerEx}</p>`;
+            }
+            quizResultNum.textContent = quizScore;      // 맞은 개수 출력
+            quizScoreNum.textContent = quizScore2;      // 총 점수 출력
+
+            // 합격 불합격 여부 알림
+            if(quizScore >= 40) {
+                passValue.textContent = "합격입니다! 🎉";
+            } else {
+                passValue.textContent = "불합격입니다… 😰";
+            }
+        });
+    };
+
+    // 정답 확인 클릭
+    document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <p class="t_desc2">
+                HTML 영역에 적혀있어야 할 것들은 quizInfo.forEach((question, number) => ) { <i>exam.push(``)</i>... }안에 넣는다.
+            </p>
+
+            <h3 class="t_tit2">결과</h3>
+            <p class="t_desc">
+                2013년 4회 웹디자인기능사 기출문제들을 풀 수 있도록 했습니다. 열심히 공부해서 우리 모두 무사히 합격합시다~! 🥰 <br>
+                '원본 사이트 보기'를 눌러 문제를 풀어보세요.
+            </p>
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
                 <iframe src="https://kde66034.github.io/coding/javascript/effect/quizEffect05.html" frameborder="0"></iframe>
             </div>
@@ -77,7 +250,7 @@
             <div class="t_link">
                 <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/quizEffect05.html">원본 소스 보기</a>
             </div>
-            <!-- // 05 -->
+            <!-- // 04. 객관식 문제 유형 -->
 
         </div>
     </main>
