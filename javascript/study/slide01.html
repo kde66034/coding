@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 슬라이드 01</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트 01</h2>
+            <p class="t_desc2">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 슬라이드 이펙트를 만들어보도록 하겠습니다. 
+                HTML과 자바스크립트 소스를 설명드리며 CSS는 복잡해지기 때문에 CSS 소스 보기 버튼을 클릭하여 봐 주시기 바랍니다. <br>
+                <br>
+                자, 그럼 시작해볼까요?
+            </p>
+
+     <!-- // 검색 이펙트 만들기  -->
+
+    <hr>
+
+            <h3 class="t_tit2">HTML 소스 보기 : 모달 박스</h3>
+            <p class="t_desc">
+                슬라이드 이펙트 01의 HTML 소스와 부연 설명(주석 처리됨)이다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;body class="img06"> &lt;!-- 백그라운드 이미지 / CSS로 이미지 출력시킴 -->
+    &lt;header id="header">
+        &lt;h1>JAVASCRIPT SLIDER EFFECT 01&lt;/h1>
+        &lt;p>슬라이드 이펙트 ① - 트랜지션 효과&lt;/p>
+        &lt;ul>
+            &lt;li class="active">&lt;a href="sliderEffect01.html">01&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="sliderEffect02.html">02&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="sliderEffect03.html">03&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="sliderEffect04.html">04&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="sliderEffect05.html">05&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="sliderEffect06.html">06&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="sliderEffect07.html">07&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/header>
+    &lt;!-- // header -->
+
+    &lt;main id="main">
+        &lt;section id="sliderType01">
+            &lt;div class="slider__wrap">
+                &lt;div class="slider__img">
+                    &lt;div class="slider">&lt;img src="../assets/img/effect_bg03.jpg" alt="이미지1">&lt;/div>
+                    &lt;div class="slider">&lt;img src="../assets/img/effect_bg04.jpg" alt="이미지2">&lt;/div>
+                    &lt;div class="slider">&lt;img src="../assets/img/effect_bg10.jpg" alt="이미지3">&lt;/div>
+                    &lt;div class="slider">&lt;img src="../assets/img/effect_bg07.jpg" alt="이미지4">&lt;/div>
+                    &lt;div class="slider">&lt;img src="../assets/img/effect_bg08.jpg" alt="이미지5">&lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/section>
+    &lt;/main>
+    &lt;!-- // main -->
+
+    &lt;footer id="footer">
+        &lt;div class="modal__wrap">
+            &lt;div class="modal__btn">
+                &lt;label for="btn">소스 보기&lt;/label>
+            &lt;/div>
+            &lt;div class="modal__cont">
+                &lt;div class="modal__box">
+                    &lt;div class="title">
+                        &lt;span class="dot" aria-label="true">&lt;/span>
+                        &lt;div class="tabs">
+                            &lt;div class="active">
+                                &lt;span class="favicon">
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff">&lt;/circle>
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange">&lt;/path>
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow">&lt;/path>
+                                    &lt;/svg>
+                                &lt;/span>
+                                &lt;en>JavaScript&lt;/en>
+                                &lt;span class="close">
+                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                                    &lt;/svg>
+                                &lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;span class="favicon">
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff">&lt;/circle>
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange">&lt;/path>
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow">&lt;/path>
+                                    &lt;/svg>
+                                &lt;/span>
+                                &lt;en>HTML&lt;/en>
+                                &lt;span class="close">
+                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                                    &lt;/svg>
+                                &lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;span class="favicon">
+                                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        &lt;circle cx="9" cy="9" r="9" fill="#fff">&lt;/circle>
+                                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange">&lt;/path>
+                                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow">&lt;/path>
+                                    &lt;/svg>
+                                &lt;/span>
+                                &lt;en>CSS&lt;/en>
+                                &lt;span class="close">
+                                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                                    &lt;/svg>
+                                &lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;span class="plus" aria-label="true">
+                            &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                &lt;path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                                &lt;path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                            &lt;/svg>
+                        &lt;/span>
+                    &lt;/div>
+                    &lt;div class="cont">
+                        &lt;div class="active">
+&lt;pre>&lt;code lang="language-js">// 선택자
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+let count = 0;
+
+// 전체 개수 구하기
+searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
+&lt;/code>&lt;/pre>
+                        &lt;/div>
+                        &lt;div>
+&lt;pre>&lt;code lang="language-js">// 선택자2
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+let count = 0;
+
+// 전체 개수 구하기
+searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
+
+// 선택자2
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+let count = 0;
+
+// 전체 개수 구하기
+searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력 ffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+&lt;/code>&lt;/pre>
+                        &lt;/div>
+                        &lt;div>
+&lt;pre>&lt;code lang="language-js">// 선택자3
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+let count = 0;
+
+// 전체 개수 구하기
+searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
+// 선택자3
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+let count = 0;
+
+// 전체 개수 구하기
+searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력
+
+// 선택자3
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");   // 알파벳
+const searchList = document.querySelectorAll(".search__list ul li");    // 목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+let count = 0;
+
+// 전체 개수 구하기
+searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력 yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+&lt;/code>&lt;/pre>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="modal__close">
+                    &lt;span class="close">
+                        &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                            &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                        &lt;/svg>
+                    &lt;/span>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/footer>
+    &lt;!-- // footer -->
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">JavaScript 소스 보기 : 모달 박스</h3>
+            <p class="t_desc">
+                슬라이드 이펙트 01의 JavaScript 소스와 부연 설명(주석 처리됨)이다. <br>
+                이 내용은 따로 common.min.js 파일로 빼놓도록 하자.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">hljs.highlightAll();
+
+// 모달 창
+const modalBtn = document.querySelector(".modal__btn");     // 소스 보기 버튼
+const modalCont = document.querySelector(".modal__cont");   // 모달 창
+const modalClose = document.querySelector(".modal__close"); // 모달 창 닫기 버튼
+
+modalBtn.addEventListener("click", () => {
+    modalCont.classList.add("show");    // 소스보기 버튼 누르면 모달 창 띄우기
+    modalCont.classList.remove("hide");
+});
+
+modalClose.addEventListener("click", () => {
+    modalCont.classList.add("hide");     // X 버튼 누르면 모달 창 닫기
+});
+
+// 탭 메뉴
+const tabBtn = document.querySelectorAll(".modal__box .tabs > div");
+const tabCont = document.querySelectorAll(".modal__box .cont > div");
+
+tabBtn.forEach((element, index) => {
+    // 버튼을 클릭함
+    element.addEventListener("click", (event) => {
+        event.preventDefault();   // 클릭한 버튼을 누름으로 발생하는 이벤트 무효화
+        // 버튼 클릭해도(href="#" 때문에 발생하는)끌올 막을 수 있음.
+        
+        // 클래스 active를 모두 제거
+        tabBtn.forEach(li => {
+            li.classList.remove("active");      // li(버튼)을 누르면 먼저 active(버튼눌린)효과 지워준다.
+        });
+
+        // 내가 클릭한 버튼에 active 효과 추가
+        element.classList.add("active");        // 그런 다음 내가 누른 버튼에만 active 효과를 넣어주도록 한다.
+
+        // 버튼을 클릭하면 모든 자식 박스(콘텐츠) 숨기기
+        tabCont.forEach(div => {
+            div.style.display = "none";
+        });
+
+        // [i]클릭한 버튼과 [i]그에 알맞는 자식 박스(콘텐츠)를 출력시킴
+        tabCont[index].style.display = "block";
+    });
+});
+</code></pre>
+            </div>
+            <!-- js -->
+
+            <h3 class="t_tit2">JavaScript 소스 보기 : 이미지 변화</h3>
+            <p class="t_desc">
+                슬라이드 이펙트 01의 3초마다 변화하는 이미지 효과 JavaScript 소스와 부연 설명(주석 처리됨)이다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// 이미지 변화
+&lt;script src="../assets/js/highlight.min.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/common.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    const sliderWrap = document.querySelector(".slider__wrap");
+    const sliderImg = sliderWrap.querySelector(".slider__img");
+    const slider = sliderWrap.querySelectorAll(".slider");
+
+    let currentIndex = 0;       // 현재 보이는 이미지
+    let slideCount = slider.length      // 이미지 개수
+
+    setInterval(() => {
+        let nextIndex = (currentIndex + 1) % 5;  // 다음 이미지
+
+        slider[currentIndex].style.opacity = "0";  // 첫번째 이미지를 안보이게 처리
+        slider[nextIndex].style.opacity = "1";  // 두번째 이미지를 보이게 처리
+
+        currentIndex = nextIndex;
+    }, 3000);
+    // 3000 = 3초에 한 번씩 실행시킴
+&lt;/script&gt;
+</code></pre>
+            </div>
+
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/slideEffect01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/slideEffect01.html">원본(HTML/JS) 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/slider.css">CSS 소스 보기</a>
+            </div>
+            <!-- //  -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
