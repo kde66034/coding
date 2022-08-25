@@ -8,6 +8,45 @@
 
     <link rel="stylesheet" href="../assets/css/slider.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
+
+    <style>
+        /* slider */
+        .slider__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider__img {
+            position: relative;
+            width: 800px;
+            height: 534px;
+        }
+        .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .slider::before {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 5px 10px;
+        }
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(2)::before {content: '이미지2';}
+        .slider:nth-child(3)::before {content: '이미지3';}
+        .slider:nth-child(4)::before {content: '이미지4';}
+        .slider:nth-child(5)::before {content: '이미지5';}
+        .slider:nth-child(1) {z-index: 5;}
+        .slider:nth-child(2) {z-index: 4;}
+        .slider:nth-child(3) {z-index: 3;}
+        .slider:nth-child(4) {z-index: 2;}
+        .slider:nth-child(5) {z-index: 1;}
+    </style>
 </head>
 <body class="img06">
     <header id="header">
@@ -26,7 +65,17 @@
     <!-- // header -->
 
     <main id="main">
-
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider"><img src="../assets/img/effect_bg03.jpg" alt="이미지1"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg04.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg10.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg07.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg08.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- // main -->
 
@@ -34,7 +83,6 @@
         <div class="modal__wrap">
             <div class="modal__btn">
                 <label for="btn">소스 보기</label>
-                <input class="btn" type="checkbox" id="btn" name="btn" />
             </div>
             <div class="modal__cont">
                 <div class="modal__box">
@@ -160,42 +208,50 @@ searchInfo.textContent = searchList.length; // CSS 속성 총 개수 출력 yyyy
                         </div>
                     </div>
                 </div>
+                <div class="modal__close">
+                    <span class="close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
             </div>
         </div>
     </footer>
     <!-- // footer -->
 
     <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.min.js"></script>
     <script>
-        hljs.highlightAll();
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");
+        const slider = sliderWrap.querySelectorAll(".slider");
 
-        // 탭 메뉴
-        const tabBtn = document.querySelectorAll(".modal__box .tabs > div");
-        const tabCont = document.querySelectorAll(".modal__box .cont > div");
+        let currentIndex = 0;       // 현재 보이는 이미지
+        let slideCount = slider.length      // 이미지 개수
 
-        tabBtn.forEach((element, index) => {
-            // 버튼을 클릭함
-            element.addEventListener("click", (event) => {
-                event.preventDefault();   // 클릭한 버튼을 누름으로 발생하는 이벤트 무효화
-                // 버튼 클릭해도(href="#" 때문에 발생하는)끌올 막을 수 있음.
-                
-                // 클래스 active를 모두 제거
-                tabBtn.forEach(li => {
-                    li.classList.remove("active");      // li(버튼)을 누르면 먼저 active(버튼눌린)효과 지워준다.
-                });
+        setInterval(() => {
+            let nextIndex = (currentIndex + 1) % 5;  // 다음 이미지
 
-                // 내가 클릭한 버튼에 active 효과 추가
-                element.classList.add("active");        // 그런 다음 내가 누른 버튼에만 active 효과를 넣어주도록 한다.
+            slider[currentIndex].style.opacity = "0";  // 첫번째 이미지를 안보이게 처리
+            slider[nextIndex].style.opacity = "1";  // 두번째 이미지를 보이게 처리
 
-                // 버튼을 클릭하면 모든 자식 박스(콘텐츠) 숨기기
-                tabCont.forEach(div => {
-                    div.style.display = "none";
-                });
+            currentIndex = nextIndex;
 
-                // [i]클릭한 버튼과 [i]그에 알맞는 자식 박스(콘텐츠)를 출력시킴
-                tabCont[index].style.display = "block";
-            });
-        });
+            // slider[1].style.opacity = "0";  // 두번째 이미지를 안보이게 처리
+            // slider[2].style.opacity = "1";  // 세번째 이미지를 보이게 처리
+
+            // slider[2].style.opacity = "0";  // 세번째 이미지를 안보이게 처리
+            // slider[3].style.opacity = "1";  // 네번째 이미지를 보이게 처리
+
+            // slider[3].style.opacity = "0";  // 네번째 이미지를 안보이게 처리
+            // slider[4].style.opacity = "1";  // 다섯번째 이미지를 보이게 처리
+
+            // slider[4].style.opacity = "0";  // 다섯번째 이미지를 안보이게 처리
+            // slider[0].style.opacity = "1";  // 첫번째 이미지를 보이게 처리
+        }, 3000);
+        // 1000 = 1초에 한 번씩 실행시킴
     </script>
 </body>
 </html>
