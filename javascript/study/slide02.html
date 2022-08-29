@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 슬라이드 02</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트 02</h2>
+            <p class="t_desc2">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 슬라이드 이펙트를 만들어보도록 하겠습니다. 
+                2초마다 다음 사진으로 슬라이드 되는 효과이며, JS 코드와 GSAP, jQuery 코드 세 가지를 보여드리겠습니다.
+                HTML, CSS 코드는 원본 소스 보기 버튼을 눌러 확인해주세요. <br>
+                <br>
+                자, 그럼 시작해볼까요?
+            </p>
+
+     <!-- // 슬라이드 이펙트 만들기  -->
+
+    <hr>
+
+            <h3 class="t_tit2">JS 코드</h3>
+            <p class="t_desc">
+                슬라이드 이펙트 02의 JS 소스와 부연 설명(주석 처리됨)이다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");     
+const sliderImg = document.querySelector(".slider__img");       // 보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");   // 움직이는 영역
+const slider = document.querySelectorAll(".slider");            // 이미지
+
+let currentIndex = 0;               // 현재 이미지
+let sliderCount = slider.length;    // 이미지 개수
+        
+sliderInner.style.transition = "all 0.6s"
+
+//sliderInner.style.transform += "translateX(0px)";          800 * 0
+//sliderInner.style.transform += "translateX(-800px)";       800 * 1
+//sliderInner.style.transform += "translateX(-1600px)";      800 * 2
+//sliderInner.style.transform += "translateX(-2400px)";      800 * 3
+//sliderInner.style.transform += "translateX(-3200px)";      800 * 4
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % sliderCount;      //123401234...
+            
+    // if(currentIndex &lt; 5) {
+    //     currentIndex++;
+    // } else {
+    //     currentIndex = 0;
+    // }
+
+    // (currentIndex &lt; 4) ? currentIndex++ : currentIndex = 0;
+
+    console.log(currentIndex);
+
+    sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)"
+}, 2000);        
+</code></pre>
+            </div>
+            <!-- // js 소스 -->
+
+            <h3 class="t_tit2">JS 코드 : 간략화</h3>
+            <div class="t_code">
+<pre><code class="language-js">&lt;script&gt;
+    const sliderInner = document.querySelector(".slider__inner");   // 움직이는 영역
+    const slider = document.querySelectorAll(".slider");            // 이미지
+    let currentIndex = 0;   // 현재 이미지
+
+    sliderInner.style.transition = "all 0.6s";  // 0.6초씩 변화주기
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slider.length;
+
+        sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+    }, 2000);
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <!-- // js 간략화 -->
+
+            <h3 class="t_tit2">GSAP 코드</h3>
+            <div class="t_code">
+<pre><code class="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    const slider = document.querySelectorAll('.slider'); // 이미지
+    
+    let currentIndex = 0;
+    //let sliderCount = slider.length;
+    
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % ".slider".length;
+        // to 선택자 document.write 안써도 인식 가능
+        // 밑에와 같은 구조로 써줄 것
+        gsap.to(".slider__inner", {
+            //duration : 0.6,
+            x : -800 * currentIndex, // 객체 스타일 구조
+        });
+    }, 2000);
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <!-- // gsap -->
+
+            <h3 class="t_tit2">jQuery 코드</h3>
+            <div class="t_code">
+<pre><code class="language-js">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    let currentIndex = 0;
+
+    setInterval(() => {
+        // $ = document.querySelector 간략화된 표현
+        currentIndex = (currentIndex + 1) % $(".slider").length;
+
+        // $(".slider__inner").css(
+        //     "transform", "translateX("+ -800 * currentIndex + "px)"
+        // );
+
+        $(".slider__inner").css("position", "relative");
+        $(".slider__inner").animate({
+            left: -800 * currentIndex
+        }, 600);
+
+    }, 2000);
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <!-- // jquery -->
+
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/sliderEffect02.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/sliderEffect02.html">원본(HTML/JS) 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/slider.css">CSS 소스 보기</a>
+            </div>
+            <!-- //  -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
