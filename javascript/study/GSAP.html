@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : GSAP</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">GSAP란?</h2>
+            <p class="t_desc2">
+                GreenSock에서 만든 JavaScript 애니메이션 라이브러리로 일반적으로 애니메이션 효과는
+                CSS 또는 jQuery의 .animate() 등으로 구현하지만, 기존의 CSS와 jQuery로 구현하기 어려운
+                복잡한 애니메이션을 구현하기 위해 만들어진 것이 바로 GSAP입니다. <br>
+            </p>
+            <!-- //gsap란? -->
+
+            <hr>
+
+            <h3 class="t_tit2">GSAP 적용 방법</h3>
+            <p class="t_desc">
+                <a href="https://greensock.com/docs/v3/Installation">GreenSock 공식 홈페이지</a>에서 설치 파일에서 다운로드 하는 방법이 있지만 
+                귀찮으니 그냥 아래의 코드를 복붙하자.
+            </p>
+            <div class="t_code">
+<pre><code lang="language-js">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">기존 JS 코드와 GSAP 코드를 비교해보자</h3>
+            <p class="t_desc">
+                <a href="https://kde66034.tistory.com/64">슬라이드 이펙트 02</a> 포스팅에서 사용된 JS 코드를 가지고 왔다.
+            </p>
+            
+            <div class="t_code">
+<pre><code lang="language-js">&lt;script&gt;
+    const sliderInner = document.querySelector(".slider__inner");
+    const slider = document.querySelectorAll(".slider");
+    let currentIndex = 0;
+
+    sliderInner.style.transition = "all 0.6s";
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slider.length;
+
+        sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+    }, 2000);
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                GSAP 코드로 바꿔보도록 하자. JS 코드보다 좀 더 간략화 된 모습을 알 수 있다. <br>
+                사용 문법은 <i>gsap.to(".요소 클래스값", { 속성 });</i> 이러하다.
+            </p>
+            <div class="t_code">
+<pre><code lang="language-js">&lt;script&gt;
+    const slider = document.querySelectorAll('.slider');
+    
+    let currentIndex = 0;
+    
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % ".slider".length;
+        gsap.to(".slider__inner", {
+            x : -800 * currentIndex
+        });
+    }, 2000);
+&lt;/script&gt;
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

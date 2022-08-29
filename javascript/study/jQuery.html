@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : jQuery</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery란?</h2>
+            <p class="t_desc2">
+                HTML의 클라이언트 사이드 조작을 단순화하도록 설계된 크로스 플랫폼의 JavaScript 라이브러리로,
+                존 레식이 2006년 8월 26일, 뉴욕 시 바캠프에서 최초 공개하였습니다. 엘리먼트를 선택하는 강력한 방법과
+                선택된 엘리먼트들을 효율적으로 제어할 수 있는 다양한 수단 등을 제공하죠.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">jQuery를 사용하는 이유는?</h3>
+            <p class="t_desc2">
+                01. 어떠한 브라우저에서도 동일하게 작동한다. <br>
+                02. 직관적이고 편리한 API를 제공한다. <br>
+                03. CSS 스타일의 selector를 사용할 수 있어 편리하다. <br>
+                04. 이벤트 처리(ex: Ajax, Animation 등…) 효과를 사용하기 쉽다. <br>
+                05. 다양한 플러그인이 존재하며 충돌 위험도 적다.
+            </p>
+
+            <h3 class="t_tit2">jQuery 적용 방법</h3>
+            <p class="t_desc">
+                jQuery(이하 '제이쿼리')를 사용하기 위해서는 먼저 제이쿼리 라이브러리를 추가해야 한다. <br>
+                추가 방법은 아래와 같이 3가지가 있다.
+            </p>
+            <div class="t_code">
+<pre><code lang="language-js">&lt;!-- 적용방법 01 : API 직접 다운받아 사용하기 --&gt;
+&lt;script src="js/jquery.js"&gt;&lt;/script&gt;
+&lt;!-- 적용방법 02 : Google CDN 이용하기 --&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;!-- 적용방법 03 : 제이쿼리 공식에서 제공하는 최신 버전 --&gt;
+&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+</code></pre>
+            </div>
+            <div class="t_box">
+                <a href="https://jquery.com/download/">이곳</a>에서 다양한 jQuery API를 다운로드 할 수 있다.
+            </div>
+
+            <h3 class="t_tit2">jQuery의 문법</h3>
+            <p class="t_desc">
+                아주 간편히 <i>HTML에서의 요소를 선택하여 해당 요소에 동작 함수를 설정</i>할 수 있다. <br>
+                <i>$기호가 제이쿼리를 의미</i>하며 제이쿼리에 접근 가능하도록 해주는 식별자이다. 
+            </p>
+            <div class="t_box">
+                $(<i>선택자</i>).<i>동작함수</i>();
+            </div>
+
+            <h3 class="t_tit2">jQuery 본격적으로 사용해보기</h3>
+            <p class="t_desc">
+                먼저 HTML 영역에서 hello라는 클래스 값을 가진 div 요소를 만든 다음, jQuery를 이용하여 해당 요소에 넣을
+                문구와 CSS 속성 등을 지정해봅시다.
+            </p>
+            <div class="t_code">
+<pre><code lang="language-html">&lt;html&gt;
+    &lt;body&gt;
+        &lt;div class="hello"&gt;&lt;/div&gt;
+        &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+            $('.hello').html('안녕!').css('background-color','powderblue');
+     &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+            <div class="t_box">
+                $('.hello').html('안녕!').css('background-color','powderblue'); <br>
+                <i>$('.연결할 요소의 클래스 값').html('출력할 문구')</i> <br>
+                <br>
+                CSS 속성의 경우 'background-color: powderblue;'를 추가하고 싶다면 <br>
+                <i>.css('background-color', 'powderblue');</i> <br>
+                이런 식으로 입력해주도록 한다.
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과 보기</summary>
+                    <div class="sample01_result">
+                        <p style="background-color: powderblue;">안녕!</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
