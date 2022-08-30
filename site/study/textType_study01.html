@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형 STUDY 01</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">텍스트 유형 STUDY 01</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="cardType_study01.html">카드 유형 01</a></li>
+                <li><a href="cardType_study02.html">카드 유형 02</a></li>
+                <li><a href="cardType_study03.html">카드 유형 03</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 텍스트 유형 STUDY 01</h2>
+            <p class="t_desc2">
+                이번 포스팅에서는 Figma에서 만든 텍스트 유형 섹션을 HTML과 CSS 코드로 옮기는 작업을
+                해보도록 하겠습니다. <br>
+                아이콘 출력은 아이콘이 들어갈 원을 먼저 코딩으로 만들어 낸 후, 아이콘을 <a href="https://kde66034.tistory.com/49">이미지 스프라이트</a> 기법으로 원 안에 넣는 식으로 코딩을
+                진행하였습니다.
+            </p>
+
+     <!-- // 사이트 만들기 : 텍스트 유형 STUDY 01  -->
+
+            <hr>
+
+            <h3 class="t_tit2">Figma</h3>
+            <p class="t_desc">
+                먼저 만들고자 하는 웹 사이트의 모양을 Figma라는 프로그램을 이용하여 아래와 같이 만들어주도록 하자. 
+                그와 동시에 이미지 스프라이트용 아이콘 SVG를 출력할 페이지도 따로 만들도록 한다. 만드는 방법은 지난 <a href="https://kde66034.tistory.com/49">이미지 스프라이트</a> 포스팅을 참조할 것.
+            </p>
+            <div class="t_iframe">       
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FtnsaEM1JocXMMqYyaoWru4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1274%253A165" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2">HTML 소스</h3>
+            <p class="t_desc">
+                웹 표준 준수를 위해 <i>시맨틱 태그를 적극 사용</i>하도록 하자. 
+                img 태그의 alt와 같은 효과를 주기 위해 아이콘이 들어갈 span 태그의 클래스 값을 <i>"ir"</i>로 설정하자.
+                자세한 설명은 아래 예시 코드의 주석처리 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code lang="language-html">&lt;body&gt;
+    &lt;section id="cardType01" class="card__wrap nexon section"&gt;
+        &lt;p&gt;텍스트 유형 01&lt;/p&gt;
+        &lt;h2&gt;자바스크립트에 대해 분석하자&lt;/h2&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;span id="card__icon" class="icon__logo1" aria-hidden="분석하기"&gt;
+                        &lt;a href="#" class="link1"&gt;&lt;span class="ir"&gt;분석하기&lt;/span&gt;&lt;/a&gt;
+                    &lt;/span&gt;
+                    &lt;h3 class="title"&gt;분석하기&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.
+                    &lt;/p&gt;
+                    &lt;a href="#" class="more"&gt;
+                        더 보기
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;span id="card__icon" class="icon__logo2" aria-hidden="분석하기"&gt;
+                        &lt;a href="#" class="link2"&gt;&lt;span class="ir"&gt;분석하기&lt;/span&gt;&lt;/a&gt;
+                    &lt;/span&gt;
+                    &lt;h3 class="title"&gt;리서치하기&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.
+                    &lt;/p&gt;
+                    &lt;a href="#" class="more"&gt;
+                        더 보기
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;span id="card__icon" class="icon__logo3" aria-hidden="분석하기"&gt;
+                        &lt;a href="#" class="link3"&gt;&lt;span class="ir"&gt;분석하기&lt;/span&gt;&lt;/a&gt;
+                    &lt;/span&gt;
+                    &lt;h3 class="title"&gt;조사하기&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.
+                    &lt;/p&gt;
+                    &lt;a href="#" class="more"&gt;
+                        더 보기
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;span id="card__icon" class="icon__logo4" aria-hidden="분석하기"&gt;
+                        &lt;a href="#" class="link4"&gt;&lt;span class="ir"&gt;분석하기&lt;/span&gt;&lt;/a&gt;
+                    &lt;/span&gt;
+                    &lt;h3 class="title"&gt;리서치하기&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.
+                    &lt;/p&gt;
+                    &lt;a href="#" class="more"&gt;
+                        더 보기
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;span id="card__icon" class="icon__logo5" aria-hidden="분석하기"&gt;
+                        &lt;a href="#" class="link5"&gt;&lt;span class="ir"&gt;분석하기&lt;/span&gt;&lt;/a&gt;
+                    &lt;/span&gt;
+                    &lt;h3 class="title"&gt;분석하기&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.
+                    &lt;/p&gt;
+                    &lt;a href="#" class="more"&gt;
+                        더 보기
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;span id="card__icon" class="icon__logo6" aria-hidden="분석하기"&gt;
+                        &lt;a href="#" class="link6"&gt;&lt;span class="ir"&gt;분석하기&lt;/span&gt;&lt;/a&gt;
+                    &lt;/span&gt;
+                    &lt;h3 class="title"&gt;제작하기&lt;/h3&gt;
+                    &lt;p class="desc"&gt;
+                        자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.
+                    &lt;/p&gt;
+                    &lt;a href="#" class="more"&gt;
+                        더 보기
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">CSS 소스</h3>
+            <p class="t_desc">
+                reset에서 margin값과 padding값을 0으로 초기화 시키는 작업부터 시작한다. 
+                <i>아이콘 출력은 이미지 스프라이트와 IR 효과를 적극 활용</i>하도록 한다.
+                자세한 설명은 아래 예시 코드의 주석처리된 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code lang="language-css">&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+    .nexon {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    img {
+        width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 20px auto;
+        min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section > h2 {
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    .section > p {
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* cardType */
+    .card__inner {
+        display: flex;
+        justify-content: space-between;     /* 간격 떨어뜨리기 */
+    }
+    .card {
+        width: 32%;
+        background: #f5f5f5;
+    }
+    #card__icon {
+        width: 60px;
+        height: 60px;
+        display: block;
+        border-radius: 100%;
+        margin-bottom: 10px;
+    }
+    /* 아이콘 하나하나에 색깔 넣어주기 */
+    .icon__logo1 {
+        background-color: #ff8383;
+    }
+    .icon__logo2 {
+        background-color: #ffbe83;
+    }
+    .icon__logo3 {
+        background-color: #b2e295;
+    }
+    .icon__logo4 {
+        background-color: #83b4ff;
+    }
+    .icon__logo5 {
+        background-color: #d083ff;
+    }
+    .icon__logo6 {
+        background-color: #83d7cd;
+    }
+
+    .card__body {
+        padding: 20px;
+    }
+    .card__body .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        /* 한 줄 효과 */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding-right: 30px;    /* 제목 길어져도 한 줄 유지 */
+    }
+    .card__body .desc {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.4;
+        padding-bottom: 20px;
+        color: #666;
+        margin-bottom: 20px;
+        /* 4줄효과 : 글이 넘쳐도 4줄을 넘지 않도록 해줌 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;  /* 4줄까지 제한 */
+        -webkit-box-orient: vertical;
+    }
+    .card__body .more {
+        font-size: 18px;
+        font-weight: 300;
+        color: #666;
+        margin-bottom: 20px;
+        text-decoration: underline;
+    }
+
+    /* ir 효과 (이미지 대체 효과 == alt) */
+    /* 화면상에서는 안나오게 함과 동시에 스크린리더기에는 읽히게 하는 작업 */
+    .ir {
+        display: block;
+        overflow: hidden;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+
+    /* 이미지 스프라이트 */
+    /* 아이콘 여러개를 이어 만든 프레임을 SVG로 추출하여 그 좌표값을 아래와 같이
+        옮겨가며 아이콘 하나씩 보이도록 하는 기법 */
+    #card__icon a {
+        width: 30px;
+        height: 30px;
+        display: block;
+        background: url(img/textType_icon01.svg);   /*만들어놓은 이미지스프라이트용 svg 불러오기*/
+        padding: 15px;
+    }
+    /* nth-child가 먹히지 않으니 a의 클래스값을 link1, link2... 이런식으로 바꾸자 */
+    #card__icon a.link1 {
+        background-position: 0px 0;
+    }
+    #card__icon a.link2 {
+        background-position: -80px 0;
+    }
+    #card__icon a.link3 {
+        background-position: -160px 0;
+    }
+    #card__icon a.link4 {
+        background-position: -240px 0;
+    }
+    #card__icon a.link5 {
+        background-position: -320px 0;
+    }
+    #card__icon a.link6 {
+        background-position: -400px 0;
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+            <!-- // CSS 소스 -->
+
+            <h3 class="t_tit2">최종 결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/site/textType/textType01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kde66034.github.io/coding/site/cardType/textType01.html">원본 사이트 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/site/cardType/textType01.html">원본 소스 보기</a>
+            </div>
+            <!-- // 최종 결과 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
