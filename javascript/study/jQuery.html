@@ -108,126 +108,6 @@ $(function() {
             </div>
             <!-- // jQuery의 문법 -->
 
-            <h3 class="t_tit2">기본 선택자</h3>
-            <p class="t_box">
-                $("선택자") <br>
-                $("#gnb")
-            </p>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>선택자 종류</th>
-                        <th colspan="2">선택자 설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">태그 선택자</td>
-                        <td class="ce">$("p")</td>
-                        <td>p 요소 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">id 선택자</td>
-                        <td class="ce">$("#gnb")</td>
-                        <td>#gnb 요소 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">class 선택자</td>
-                        <td class="ce">$(".logo")</td>
-                        <td>.logo인 요소 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">자식 선택자</td>
-                        <td class="ce">$("#gnb > ul > li")</td>
-                        <td>#gnb의 자식 요소(ul)의 자식 요소 li를 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">하위 선택자</td>
-                        <td class="ce">$("#gnb ul")</td>
-                        <td>#gnb의 하위에 있는 모든 li 요소를 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">인접 선택자</td>
-                        <td class="ce">$("#visual + #content")</td>
-                        <td>#visual 다음에 오는 #content 요소를 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">형제 선택자</td>
-                        <td class="ce">$("#visual ~ #footer")</td>
-                        <td>#visual의 형제 요소 #footer를 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">종속 선택자</td>
-                        <td class="ce">$("div.util")</td>
-                        <td>div 요소 중 class가 util인 요소를 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">그룹 선택자</td>
-                        <td class="ce">$(".left, .right, #banner")</td>
-                        <td>.left, .right, #banner 요소들을 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">전체 선택자</td>
-                        <td class="ce">$("*")</td>
-                        <td>모든 요소를 선택</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- // 기본 선택자 -->
-
-            <h3 class="t_tit2">속성 선택자</h3>
-            <table class="t_table">
-                <thead>
-                    <tr>
-                        <th>선택자 종류</th>
-                        <th colspan="2">선택자 설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ce">요소[속성]</td>
-                        <td class="ce">$("span[class]")</td>
-                        <td>span 요소 중 class 속성을 가지고 있는 요소를 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">요소[속성='값']</td>
-                        <td class="ce">$("span[class='abc']")</td>
-                        <td>span 요소 중 class가 'abc'인 요소를 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">요소[속성!='값']</td>
-                        <td class="ce">$("span[class!='abc']")</td>
-                        <td>span 요소 중 class가 'abc'가 아닌 요소를 선택</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">요소[속성~='값']</td>
-                        <td class="ce">$("span[class~='abc']")</td>
-                        <td>span 요소 중 class가 'abc'를 포함하는 요소를 선택. 'abc' 앞으로 연결된 문자가 없어야 하며 'bg abc'는 선택되지만 'bg_abc'는 선택되지 않음.</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">요소[속성*='값']</td>
-                        <td class="ce">$("span[class*='abc']")</td>
-                        <td>span 요소 중 class가 'abc'를 포함하는 요소를 모두 선택. 'bg abc', 'bg_abc' 모두 선택.</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">요소[속성|='값']</td>
-                        <td class="ce">$("span[class|='abc']")</td>
-                        <td>span 요소 중 class가 'abc'나 'abc-'로 시작하는 요소를 선택.</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">요소[속성^='값']</td>
-                        <td class="ce">$("span[class^='abc']")</td>
-                        <td>span 요소 중 class가 'abc'로 시작하는 요소를 선택.</td>
-                    </tr>
-                    <tr>
-                        <td class="ce">요소[속성$='값']</td>
-                        <td class="ce">$("span[class$='abc']")</td>
-                        <td>span 요소 중 class가 'abc'로 끝나는 요소를 선택.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- // 기본 선택자 -->
-
             <h3 class="t_tit2">jQuery 본격적으로 사용해보기</h3>
             <p class="t_desc">
                 먼저 HTML 영역에서 hello라는 클래스 값을 가진 div 요소를 만든 다음, jQuery를 이용하여 해당 요소에 넣을
@@ -261,6 +141,7 @@ $(function() {
                     </div>
                 </details>
             </div>
+            <!-- // 제이쿼리 사용해보기 -->
         </div>
     </main>
     <!-- //main -->
