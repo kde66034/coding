@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형 02</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+        }
+
+        /* common */
+        .container {
+            width: 1600px;
+            margin: 0 auto;
+            min-width: 1600px;  /* 반응형 할 때 없애줄 것 */
+        }
+        .section {
+            padding: 120px 0;
+            display: flex;
+            
+        }
+        .card__title {
+            
+        }
+        .card__title > h2 {
+            font-size: 70px;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: bold;
+            width: 340px;
+        }
+        .card__title .subtitle {
+            border-radius: 16px;
+            background-color: #ff3344;
+            margin-bottom: 20px;
+            width: 202px;
+            height: 32px;
+        }
+        .card__title .subtitle > p {
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            color: #fff;
+            padding: 6px 0;
+        }
+        .main__desc > p {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.4;
+            width: 372px;
+        }
+
+        /* cardType */
+        #card__icon {
+            width: 80px;
+            height: 80px;
+            display: block;
+            border-radius: 100%;
+            margin-bottom: 10px;
+        }
+        /* 아이콘 하나하나에 색깔 넣어주기 */
+        .icon__logo1 {
+            background-color: #dafbeb;
+        }
+        .icon__logo2 {
+            background-color: #e8ffd6;
+        }
+        .icon__logo3 {
+            background-color: #fde2e2;
+        }
+        .icon__logo4 {
+            background-color: #daddfb;
+        }
+
+        .card__title {
+            margin-right: 200px;
+        }
+        .card__body {
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .card__body .title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            /* 한 줄 효과 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 30px;    /* 제목 길어져도 한 줄 유지 */
+        }
+        .card__body .desc {
+            width: 498px;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 72px;
+        }
+
+        /* ir 효과 (이미지 대체 효과 == alt) */
+        /* 화면상에서는 안나오게 함과 동시에 스크린리더기에는 읽히게 하는 작업 */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* 이미지 스프라이트 */
+        /* 아이콘 5개를 이어 만든 프레임을 SVG로 추출하여 그 좌표값을 아래와 같이
+            옮겨가며 아이콘 하나씩 보이도록 하는 기법 */
+        #card__icon a {
+            width: 40px;
+            height: 40px;
+            display: block;
+            background: url(img/textType_icon02.svg);
+            padding: 20px;
+        }
+        /* nth-child가 먹히지 않으니 a의 클래스값을 link1, link2... 이런식으로 바꾸자 */
+        #card__icon a.link1 {
+            background-position: 0px 0;
+        }
+        #card__icon a.link2 {
+            background-position: -100px 0;
+        }
+        #card__icon a.link3 {
+            background-position: -200px 0;
+        }
+        #card__icon a.link4 {
+            background-position: -300px 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType02" class="card__wrap gmarket section container">
+        <div class="card__title">
+            <div class="subtitle">
+                <p>FRONTEND</p>
+            </div>
+            <h2>프론트앤드<br>전문과정</h2>
+            <div class="main__desc">
+                <p>프론트앤드 개발자로 취업하기 위한 <br>
+                    전문 과정입니다. <br>
+                    여러분들도 도전해보세요!</p>
+            </div>
+        </div>
+        <div class="card__inner">
+            <article class="card">
+                <div class="card__body">
+                    <span id="card__icon" class="icon__logo1" aria-hidden="웹 디자인">
+                        <a href="#" class="link1"><span class="ir">웹 디자인</span></a>
+                    </span>
+                    <h3 class="title">웹 디자인</h3>
+                    <p class="desc">
+                        웹디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 퍼블리싱은 웹 사이트를 제작할
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__body">
+                    <span id="card__icon" class="icon__logo3" aria-hidden="프론트앤드 개발자">
+                        <a href="#" class="link3"><span class="ir">프론트앤드 개발자</span></a>
+                    </span>
+                    <h3 class="title">프론트앤드 개발자</h3>
+                    <p class="desc">
+                        사이트와 상호작용하는 모든 부분에 대한 개발, 관리, 유지 보수를 하는 것 솔루션의 프로세스를 개발합니다.
+                    </p>
+                </div>
+            </article>
+        </div>
+        <div class="card__inner">
+            <article class="card">
+                <div class="card__body">
+                    <span id="card__icon" class="icon__logo2" aria-hidden="웹 퍼블리셔">
+                        <a href="#" class="link2"><span class="ir">웹 퍼블리셔</span></a>
+                    </span>
+                    <h3 class="title">웹 퍼블리셔</h3>
+                    <p class="desc">
+                        퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__body">
+                    <span id="card__icon" class="icon__logo4" aria-hidden="백앤드 개발자">
+                        <a href="#" class="link4"><span class="ir">백앤드 개발자</span></a>
+                    </span>
+                    <h3 class="title">백앤드 개발자</h3>
+                    <p class="desc">
+                        용어 자체에서 알 수 있듯이, 백엔드는 웹사이트나 웹 애플리케이션 또는 모바일 솔루션의프로세스와 관련된입니다.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
