@@ -1,0 +1,43 @@
+/* imageType */
+.image__inner {
+    display: flex;
+    justify-content: space-between;     /* 간격 떨어뜨리기 */
+}
+.image {
+    width: 49%;
+    height: 370px;
+    padding: 200px 30px 30px 30px;
+    color: #fff;
+    box-sizing: border-box;
+}
+.image.img1 {
+    background: url(../img/imageType/imageType01_bg01.jpg) no-repeat center;
+}
+.image.img2 {
+    background: url(../img/imageType/imageType01_bg02.jpg) no-repeat center;
+}
+.image__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.image__desc {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-weight: 300;
+    /* 2줄효과 : 글이 넘쳐도 2줄을 넘지 않도록 해줌 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-right: 30px;
+}
+.image__btn {
+    background-color: rgba(96, 52, 0, 0.8);
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    display: inline-block;
+}
