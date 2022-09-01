@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : jQuery</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 탐색 선택자</h2>
+            <p class="t_desc2">
+                제이쿼리에서 사용되는 탐색 선택자에 대해 살펴봅시다.
+            </p>
+            <!-- // jQuery 탐색 선택자 -->
+
+            <hr>
+
+            <h3 class="t_tit2">탐색 선택자</h3>
+            <table class="t_table">
+                <colgroup>
+                    <col style="width: 25%;">
+                    <col style="width: 25%;">
+                    <col style="width: 50%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">선택자 설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">children()</td>
+                        <td class="ce">$('div').children()</td>
+                        <td>div 요소의 자식 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">parent()</td>
+                        <td class="ce">$('p').parent()</td>
+                        <td>p 요소의 부모 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">parents()</td>
+                        <td class="ce">$('p').parents('div')</td>
+                        <td>p 요소의 부모가 되는 모든 div 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">closest()</td>
+                        <td class="ce">$('p').closest('div')</td>
+                        <td>p 요소의 부모가 되는 첫번째 div 요소를 찾음</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">next()</td>
+                        <td class="ce">$('div.m').next()</td>
+                        <td>div.m 요소의 다음 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">nextAll()</td>
+                        <td class="ce">$('div.m').nextAll()</td>
+                        <td>div.m요소의 다음 요소들을 모두 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">nextUntil()</td>
+                        <td class="ce">$('div.m').nextUntil('p')</td>
+                        <td>div.m 다음 요소부터 p 요소 전까지의 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">prev()</td>
+                        <td class="ce">$('div.m').prev()</td>
+                        <td>div.m 요소의 이전 요소를 선택</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- // 속성 선택자 -->
+
+            <h3 class="t_tit2">예제 코드</h3>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html> 
+&lt;html lang="ko"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
+    &lt;title>속성 선택자&lt;title> 
+    &lt;style> 
+        li {
+            margin: 5px;
+        }
+    &lt;/style> 
+    &lt;script src="jquery-3.3.1.min.js">&lt;/script> 
+    &lt;script> 
+        $(document).ready(function() {
+            $(".list1 > li[class='list_1']").css("border", "2px solid red");
+            $(".list1 > li[class!='list_1']").css("border", "2px solid orange");
+            $(".list2 > li[class~='list']").css("background", "yellow");
+            $(".list2 > li[class*='list']").css("border", "2px solid green");
+            $(".list3 > li[class|='list']").css("border", "2px solid blue");
+            $(".list4 > li[class^='list']").css("border", "2px solid navy");
+            $(".list4 > li[class$='bg']").css("background", "purple");
+        });
+    &lt;/script> 
+&lt;/head> 
+&lt;body> 
+    &lt;ul class="list1">
+        &lt;li class="list_1">내용1_1&lt;/li>
+        &lt;li class="list_2">내용1_2&lt;/li>
+        &lt;li class="list_3">내용1_3&lt;/li>
+    &lt;/ul>
+    &lt;ul class="list2">
+        &lt;li class="list bg">내용2_1&lt;/li>
+        &lt;li class="list_1">내용2_2&lt;/li>
+        &lt;li class="list_2">내용2_3&lt;/li>
+    &lt;/ul>
+    &lt;ul class="list3">
+        &lt;li class="list">내용3_1&lt;/li>
+        &lt;li class="list-1">내용3_2&lt;/li>
+        &lt;li class="list-bg">내용3_3&lt;/li>
+    &lt;/ul>
+    &lt;ul class="list4">
+        &lt;li class="list">내용4_1&lt;/li>
+        &lt;li class="list-1">내용4_2&lt;/li>
+        &lt;li class="list-bg">내용4_3&lt;/li>
+    &lt;/ul>
+&lt;/body> 
+&lt;/html>
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">코드펜 결과</h3>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="Untitled" src="https://codepen.io/kde66034/embed/NWYQjoO?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/NWYQjoO">
+                    Untitled</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <!-- // codepen -->
+        </div>
+    </main>
+    <!-- //main -->
+
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

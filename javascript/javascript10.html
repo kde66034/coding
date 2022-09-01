@@ -27,6 +27,7 @@
                 <li><a href="javascript09.html">브라우저 객체</a></li>
                 <li class="active"><a href="javascript10.html">요소 객체</a></li>
                 <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li><a href="javascript12.html">제이쿼리</a></li>
             </ul>
             <ul class="effect">
                 <li><a href="effect/searchEffect.html">검색 효과</a></li>
@@ -60,38 +61,48 @@
                     <li><a href="#">11. 요소 메서드 - 클래스 : classList.remove() : 클래스 삭제하기</a></li>
                     <li><a href="#">12. 요소 메서드 - 클래스 : classList.toggle() : 클래스 추가/삭제하기</a></li>
                     <li><a href="#">13. 요소 메서드 - 클래스 : classList.contains() : 클래스 존재 여부 확인하기</a></li>
+                    <br>
+                    <li><a href="#">01. 요소 속성 - 크기 및 위치 : element.clientWidth : 요소의 가로값(마진/보더 미포함)</a></li>
+                    <li><a href="#">02. 요소 속성 - 크기 및 위치 : element.clientHeight : 요소의 높이값</a></li>
+                    <li><a href="#">03. 요소 속성 - 크기 및 위치 : element.clientTop : 요소의 Y축값(부모 기준)</a></li>
+                    <li><a href="#">04. 요소 속성 - 크기 및 위치 : element.clientLeft : 요소의 X축값(부모 기준)</a></li>
+                    <li><a href="#">05. 요소 속성 - 크기 및 위치 : element.offsetWidth : 요소의 가로값(보더/패딩 포함)</a></li>
+                    <li><a href="#">06. 요소 속성 - 크기 및 위치 : element.offsetHeight : 요소의 높이값(보더/패딩 포함)</a></li>
+                    <li><a href="#">07. 요소 속성 - 크기 및 위치 : element.offsetTop : 요소의 Y축값(문서 기준)</a></li>
+                    <li><a href="#">08. 요소 속성 - 크기 및 위치 : element.offsetLeft : 요소의 X축값(문서 기준)</a></li>
+                    <li><a href="#">09. 요소 메서드 - 크기 및 위치 : element.getBoundingClientRect() : 크기 및 위치</a></li>
                 </ul>
             </div>
-            <div class="main_script">
-                <div class="main_sample">
-                    <div id="sample01" class="sample">
-                        <h3>01. 변수 : 데이터 저장</h3>
-                        <p>변수는 데이터를 저장하는 저장소이며 이 저장소에는 숫자, 문자, 함수, 객체 등을 저장할 수 있습니다.</p>
-                        <div class="script">
-    <pre><code lang="language-js">{
-        var x = 100;            // 변수 x에 100을 저장함
-        var y = 200;            // 변수 y에 200을 저장함
-        var z = "javascript";   // 변수 z에 문자열 "javascript"를 저장함
-    
-        document.write(x);
-        document.write(y);
-        document.write(z);
-    }
-    </code></pre>
+            <!-- // main menu -->
+            <style>
+                
+            </style>
+            <div class="main_sample">
+                <div id="sample01" class="sample">
+                    <h3 class="blue">01. 위치 및 크기를 표현하는 속성 및 메서드</h3>
+                    <div class="View">
+                        <div class="sbox">
+                            <span>
+                                width: 400px <br>
+                                marign: 20px <br>
+                                border: 1px <br>
+                                padding: 20px
+                            </span>
                         </div>
-                        <div class="result">
-                            <details>
-                                <summary>결과 보기</summary>
-                                <div class="sample01_result">
-                                </div>
-                            </details>
-                        </div>
+                        <p class="sResult">여기에 결과값이 표시됩니다.</p>
                     </div>
-                    <!-- sample01 -->
+                    <div class="button">
+                        <a href="#" class="btn1">박스의 가로값(clientWidth)을 구합니다.</a>
+                        <a href="#" class="btn2">박스의 세로값(clientHeight)을 구합니다.</a>
+                        <a href="#" class="btn3">박스의 X값(clientTop)을 구합니다.</a>
+                        <a href="#" class="btn4">박스의 Y값(clientLeft)을 구합니다.</a>
+                        <a href="#" class="btn5">박스의 세로값(offsetWidth)을 구합니다.</a>
+                        <a href="#" class="btn6">박스의 세로값(offsetHeight)을 구합니다.</a>
+                        <a href="#" class="btn7">박스의 세로값(offsetTop)을 구합니다.</a>
+                        <a href="#" class="btn8">박스의 세로값(offsetLeft)을 구합니다.</a>
+                        <a href="#" class="btn9">박스의 getBoundingClientRect()을 구합니다.</a>
+                    </div>
                 </div>
-            </div>
-            <div class="main_desc"></div>
-        </div>
     </main>
     <!-- // main -->
 
@@ -102,6 +113,67 @@
     <script src="assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
+    </script>
+
+    <script>
+        const box1 = document.querySelector("#sample01 .sbox");
+
+        document.querySelector("#sample01 .btn1").addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientWidth + "px(마진/보더 미포함)입니다.";
+        });
+
+        document.querySelector("#sample01 .btn2").addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientHeight + "px(마진/보더 미포함)입니다.";
+        });
+
+        document.querySelector("#sample01 .btn3").addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientTop + "px(부모 기준)입니다.";
+        });
+
+        document.querySelector("#sample01 .btn4").addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientLeft + "px(부모 기준)입니다.";
+        });
+
+        document.querySelector("#sample01 .btn5").addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetWidth + "px(보더/패딩 포함)입니다.";
+        });
+
+        document.querySelector("#sample01 .btn6").addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetHeight + "px(보더/패딩 포함)입니다.";
+        });
+
+        document.querySelector("#sample01 .btn7").addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetTop + "px(문서 기준)입니다.";
+        });
+
+        document.querySelector("#sample01 .btn8").addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetLeft + "px(문서 기준)입니다.";
+        });
+
+        document.querySelector("#sample01 .btn9").addEventListener("click", (e) => {
+            e.preventDefault();
+            const box = document.querySelector("#sample01 .sbox");
+            const result = document.querySelector("#sample01 .sResult");
+            const rect = box.getBoundingClientRect();
+
+            result.innerHTML = "";
+
+            for(let key in rect) {
+                if(typeof rect[key] !== "function") {
+                    let span = document.createElement("span");
+                    span.textContent = `${key}: ${rect[key]}`;
+                    result.appendChild(span);
+                }
+            }
+        });
     </script>
 </body>
 </html>
