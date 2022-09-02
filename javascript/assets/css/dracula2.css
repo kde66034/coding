@@ -5,7 +5,7 @@ pre {
 pre code.hljs {
     display: block;
     overflow-x: auto;
-    padding: 20px;
+    padding: 20px 20px 60px 20px;
     font-family: 'NexonLv1Gothic', 'SCoreDream';
     line-height: 1.6;
     /* margin-bottom: 20px; */
