@@ -75,11 +75,11 @@
                         함수를 선언할 때 이름을 붙여주는 함수이다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">function func() {
-        document.write("함수가 실행되었습니다.1<br>");
-    }
-    func();     // 이게 있어야 출력됨
-    </code></pre>
+<pre><code class="language-js">function func() {
+    document.write("함수가 실행되었습니다.1<br>");
+}
+func();     // 이게 있어야 출력됨
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -98,11 +98,11 @@
                         말 그대로 이름 없는 함수로 앞에 const를 붙이며 시작하고 함수코드가 변수명에 저장된 형태이다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const func = function() {        // const func()라는 변수명에 함수 코드를 저장시키는 것
-        document.write("함수가 실행되었습니다.2<br>");
-    }
-    func();
-    </code></pre>
+<pre><code class="language-js">const func = function() {        // const func()라는 변수명에 함수 코드를 저장시키는 것
+    document.write("함수가 실행되었습니다.2<br>");
+}
+func();
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -121,13 +121,13 @@
                         함수 호출 시 인수로 전달된 값을 함수 내부에서 사용 가능하도록 해주는 변수로 변수는 여러 개 사용도 가능하다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">function func(str1, str2, str3) {        // 변수 여러개 저장 가능
-        document.write(str1);
-        document.write(str2);
-        document.write(str3);
-    }
-    func("함수가 실행되었습니다.3", "함수실행.3", "함수.3");        // 순서대로 func(str1, str2, str3...)이런 식으로 출력되는 것
-    </code></pre>
+<pre><code class="language-js">function func(str1, str2, str3) {        // 변수 여러개 저장 가능
+    document.write(str1);
+    document.write(str2);
+    document.write(str3);
+}
+func("함수가 실행되었습니다.3", "함수실행.3", "함수.3");        // 순서대로 func(str1, str2, str3...)이런 식으로 출력되는 것
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -148,12 +148,12 @@
                         함수가 기능을 수행하고 그 결과를 호출한 곳으로 돌려주는(return) 값이다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">function func() {
-        const str = "함수가 실행되었습니다.4<br>";
-        return str;     // return으로 결과값 뿌려줌, 종료를 의미하기도 함.
-    }
-    document.write(func());
-    </code></pre>
+<pre><code class="language-js">function func() {
+    const str = "함수가 실행되었습니다.4<br>";
+    return str;     // return으로 결과값 뿌려줌, 종료를 의미하기도 함.
+}
+document.write(func());
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -173,19 +173,19 @@
                         아래 예시와 같이 화살표 식으로 간략화 할 수 있다. 최종적으로는 중괄호{ }도 생략 가능.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">// 화살표 함수로 간략화
-    /*
-    func = () => {
-        document.write("함수가 실행되었습니다.5");
-    }
-    func();
-    */
-    
-    // 중괄호 생략
-    func = () => document.write("함수가 실행되었습니다.5"); 
-    
-    func();
-    </code></pre>
+<pre><code class="language-js">// 화살표 함수로 간략화
+/*
+func = () => {
+    document.write("함수가 실행되었습니다.5");
+}
+func();
+*/
+
+// 중괄호 생략
+func = () => document.write("함수가 실행되었습니다.5"); 
+
+func();
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -205,16 +205,16 @@
                         아래 예시와 같이 화살표 식으로 간략화 할 수 있다. 최종적으로는 중괄호{ }도 생략 가능.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">/*
-    const func = () => {
-        document.write("함수가 실행되었습니다.6");
-    }
-    */
-    
-    const func = () => document.write("함수가 실행되었습니다.6");
-    
-    func();
-    </code></pre>
+<pre><code class="language-js">/*
+const func = () => {
+    document.write("함수가 실행되었습니다.6");
+}
+*/
+
+const func = () => document.write("함수가 실행되었습니다.6");
+
+func();
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -234,15 +234,15 @@
                         아래 예시와 같이 화살표 식으로 간략화 할 수 있다. 최종적으로는 중괄호{ }도 생략 가능.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">/*
-    func = (str) => {
-        document.write(str);
-    }
-    */
-    func = str => document.write(str);
-    
-    func("함수가 실행되었습니다.7");
-    </code></pre>
+<pre><code class="language-js">/*
+func = (str) => {
+    document.write(str);
+}
+*/
+func = str => document.write(str);
+
+func("함수가 실행되었습니다.7");
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -262,13 +262,13 @@
                         아래 예시와 같이 화살표 식으로 간략화 할 수 있다. 중괄호 안 내용이 두 줄이 되기 때문에 중괄호는 그대로 남겨둔다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">func = () => {
-        const str = "함수가 실행되었습니다.8";
-        return str;
-    }
-    
-    document.write(func());
-    </code></pre>
+<pre><code class="language-js">func = () => {
+    const str = "함수가 실행되었습니다.8";
+    return str;
+}
+
+document.write(func());
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -287,13 +287,13 @@
                         한 화살표 함수 안에 익명 함수와 매개변수 함수, 리턴값 함수를 모두 담은 예시.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">{
-        const func = (str) => {     // 익명함수 = (매개변수) => {}
-            return str;     // 리턴값
-        }
-        document.write(func("함수가 실행되었습니다.9<br>"));    // 리턴값처럼 출력
+<pre><code class="language-js">{
+    const func = (str) => {     // 익명함수 = (매개변수) => {}
+        return str;     // 리턴값
     }
-    </code></pre>
+    document.write(func("함수가 실행되었습니다.9<br>"));    // 리턴값처럼 출력
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -312,13 +312,13 @@
                         한 화살표 함수 안에 익명 함수와 매개변수 함수(변수가 1개일 경우에만 괄호 생략 可), 리턴값 함수를 모두 담은 예시.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">{
-        const func = str => {   // 변수 1개일 때는 괄호 생략 가능
-            return str;     // 결과 의미
-        }
-        document.write(func("함수가 실행되었습니다.10<br>"));
+<pre><code class="language-js">{
+    const func = str => {   // 변수 1개일 때는 괄호 생략 가능
+        return str;     // 결과 의미
     }
-    </code></pre>
+    document.write(func("함수가 실행되었습니다.10<br>"));
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -337,12 +337,12 @@
                         한 화살표 함수 안에 익명 함수와 매개변수 함수(변수가 1개일 경우에만 괄호 생략 可)를 모두 담고 리턴값 함수와 중괄호를 생략한 예시.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">{
-        const func = str => str; // 리턴 생략, 중괄호도 생략
-    
-        document.write(func("함수가 실행되었습니다.11<br>"));
-    }
-    </code></pre>
+<pre><code class="language-js">{
+    const func = str => str; // 리턴 생략, 중괄호도 생략
+
+    document.write(func("함수가 실행되었습니다.11<br>"));
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -361,12 +361,12 @@
                         선언적 함수이므로 const를 쓰지 않는 점 외에는 11번과 같습니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">{
-        func = str => str;      // 선언적함수에서는 const만 지우면 됨
-    
-        document.write(func("함수가 실행되었습니다.12<br>"));
-    }
-    </code></pre>
+<pre><code class="language-js">{
+    func = str => str;      // 선언적함수에서는 const만 지우면 됨
+
+    document.write(func("함수가 실행되었습니다.12<br>"));
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -385,15 +385,15 @@
                         재활용 목적으로 사용되며 함수와 매개변수를 이용한 형태입니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">{
-        function func(num, str1, str2) {
-            document.write(num + ". " + str1 + "가 " + str2 + "되었습니다. <br>");
-        }
-        func("1", "함수", "실행");
-        func("2", "자바스크립트", "실행");
-        func("3", "제이쿼리", "실행");   // 이런식으로 추가하면서 소스 재활용이 가능함
+<pre><code class="language-js">{
+    function func(num, str1, str2) {
+        document.write(num + ". " + str1 + "가 " + str2 + "되었습니다. <br>");
     }
-    </code></pre>
+    func("1", "함수", "실행");
+    func("2", "자바스크립트", "실행");
+    func("3", "제이쿼리", "실행");   // 이런식으로 추가하면서 소스 재활용이 가능함
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -417,23 +417,23 @@
                         자리에 들어가 출력됩니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">{
-        function func(num, str1, str2) {
-            document.write(num + ". " + str1 + "가 " + str2 + "되었습니다. <br>");
-        }
-        const youNum1 = 1;
-        const youNum2 = 2;
-        const youNum3 = 3;
-        const youStr1 = "함수";
-        const youStr2 = "자바스크립트";
-        const youStr3 = "제이쿼리";
-        const youCom1 = "실행";
-    
-        func(youNum1, youStr1, youCom1);
-        func(youNum2, youStr2, youCom1);
-        func(youNum3, youStr3, youCom1);
+<pre><code class="language-js">{
+    function func(num, str1, str2) {
+        document.write(num + ". " + str1 + "가 " + str2 + "되었습니다. <br>");
     }
-    </code></pre>
+    const youNum1 = 1;
+    const youNum2 = 2;
+    const youNum3 = 3;
+    const youStr1 = "함수";
+    const youStr2 = "자바스크립트";
+    const youStr3 = "제이쿼리";
+    const youCom1 = "실행";
+
+    func(youNum1, youStr1, youCom1);
+    func(youNum2, youStr2, youCom1);
+    func(youNum3, youStr3, youCom1);
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -457,33 +457,33 @@
                         자리에 들어가 출력됩니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">{
-        function func(num, str1, str2) {
-            document.write(num + ". " + str1 + "가 " + str2 + "되었습니다. <br>");
-        }
-        const info = [
-            {
-                num : "1",
-                name : "함수",
-                com : "실행"
-            },
-            {
-                num : "2",
-                name : "자바스크립트",
-                com : "실행"
-            },
-            {
-                num : "3",
-                name : "제이쿼리",
-                com : "실행"
-            }
-        ];
-    
-        func(info[0].num, info[0].name, info[0].com);
-        func(info[1].num, info[1].name, info[1].com);
-        func(info[2].num, info[2].name, info[2].com);
+<pre><code class="language-js">{
+    function func(num, str1, str2) {
+        document.write(num + ". " + str1 + "가 " + str2 + "되었습니다. <br>");
     }
-    </code></pre>
+    const info = [
+        {
+            num : "1",
+            name : "함수",
+            com : "실행"
+        },
+        {
+            num : "2",
+            name : "자바스크립트",
+            com : "실행"
+        },
+        {
+            num : "3",
+            name : "제이쿼리",
+            com : "실행"
+        }
+    ];
+
+    func(info[0].num, info[0].name, info[0].com);
+    func(info[1].num, info[1].name, info[1].com);
+    func(info[2].num, info[2].name, info[2].com);
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -682,7 +682,7 @@
 
                 <div id="sample20" class="sample">
                     <h3>20. 즉시 실행 함수</h3>
-                    <p>설명</p>
+                    <p>마지막에 ();를 붙여 함수를 즉시 실행하는 방식이다.</p>
                     <div class="script">
 <pre><code class="language-js">{
     (function func(){
@@ -709,7 +709,7 @@
 
                 <div id="sample21" class="sample">
                     <h3>21. 파라미터 함수</h3>
-                    <p>설명</p>
+                    <p>func(str) 안에 실행문을 넣어서 출력하는 방식을 파라미터 함수라 한다.</p>
                     <div class="script">
 <pre><code class="language-js">{   
     // 매개변수
@@ -739,7 +739,7 @@
 
                 <div id="sample22" class="sample">
                     <h3>22. 아규먼트 함수</h3>
-                    <p>설명</p>
+                    <p>func 괄호 안에 (a, b)라고 적지만 출력 시에는 arguments[0], arguments[1]과 같이 숫자를 입력해줘야 하는 방식이다.</p>
                     <div class="script">
 <pre><code class="language-js">{
     function func(a, b) {
