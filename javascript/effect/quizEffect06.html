@@ -8,6 +8,7 @@
     <title>퀴즈 이펙트 06 : 객관식(여러문제) 확인하기 : 슬라이드 형식</title>
 
     <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link rel="stylesheet" href="../assets/css/dracula3.css">
 
     <!-- font -->
     <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
@@ -88,11 +89,635 @@
     </main>
     <!-- // main -->
 
+    <div class="modal__wrap">
+        <div class="modal__btn">
+            <label for="btn">소스 보기</label>
+        </div>
+        <div class="modal__cont">
+            <div class="modal__box">
+              <div class="modal__close">
+                <span class="close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </span>
+              </div>
+                <div class="title">
+                    <div class="tabs">
+                        <div class="active">
+                            <en>JavaScript</en>
+                            <span class="close">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div>
+                            <en>HTML</en>
+                            <span class="close">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div>
+                            <en>CSS</en>
+                            <span class="close">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="active">
+<pre><code lang="language-js">// 문제 정보
+    const quizInfo = [
+        {
+            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+            answerNum: "1",
+            answerAsk: "웹 디자인에 관한 설명으로 거리가 먼 것은?",
+            answerChoice: [
+                "가. 웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+                "나. 웹 디자인은 개인용 홈페이지 외 기업용, 상업용 등 매우 다양하다.",
+                "다. 웹 디자인은 웹과 디자인이라는 두 가지 개념이 결합된 것이다.",
+                "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+            ],
+            answerResult: "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+            answerEx: "정답 : 4 &lt;br>기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물은 캐릭터에 관한 설명이다."
+        },
+        {
+            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+            answerNum: "2",
+            answerAsk: "다음 중 시각 디자인에 속하지 않는 것은?",
+            answerChoice: [
+                "가. 텍스타일 디자인",
+                "나. 패키지 디자인",
+                "다. POP 디자인",
+                "라. 타이포그래피",
+            ],
+            answerResult: "가. 텍스타일 디자인",
+            answerEx: "정답 : 1 &lt;br>텍스타일 디자인은 질감을 포인트로 하기 때문에 시각 디자인이라 보기 힘들다."
+        },
+        {
+            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+            answerNum: "3",
+            answerAsk: "환경 디자인에 속하지 않는 것은?",
+            answerChoice: [
+                "가. 인테리어 디자인",
+                "나. 무대 디자인",
+                "다. 가구 디자인",
+                "라. 조경 디자인",
+            ],
+            answerResult: "다. 가구 디자인",
+            answerEx: "정답 : 3 &lt;br>인테리어, 무대, 조경 디자인은 환경 디자인이지만 가구 디자인은 환경보다는 인테리어에만 영향을 주기 때문에 환경 디자인이라 보기 힘들다."
+        },
+        {
+            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+            answerNum: "4",
+            answerAsk: "색채에 대한 설명으로 맞는 것은?",
+            answerChoice: [
+                "가. 색채는 심리적 성질을 갖지 못한다.",
+                "나. 물체가 발광하지 않고 빛을 받아서 흡수되는 색이다.",
+                "다. 색채의 분류는 무채색, 유채색 중성색 3가지는 있다.",
+                "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
+            ],
+            answerResult: "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
+            answerEx: "정답 : 4 &lt;br>색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다."
+        },
+        {
+            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+            answerNum: "5",
+            answerAsk: "다음 중 “합목정성”과 “심미성” 에서도 존재하는 창의적 디자인 조건은?",
+            answerChoice: [
+                "가. 독창성",
+                "나. 질서성",
+                "다. 경제성",
+                "라. 최소성",
+            ],
+            answerResult: "가. 독창성",
+            answerEx: "정답 : 1 &lt;br>창의적 디자인 조건은 독창성이다."
+        },
+    ];
+    
+    const quizType =  document.querySelector(".quiz__type");                // 문제 유형
+    const quizQuestion = document.querySelector(".quiz__question");         // 문제 번호, 질문
+    const quizSelects = document.querySelector(".quiz__selects");           // 객관식 보기
+    const quizResult =  document.querySelector(".quiz__answer .result");    // 문제 해설
+    const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
+    const quizView = document.querySelector(".quiz__view");                 // 강아지
+
+    let quizCount = 0;  // 문제 개수를 세기 위한 변수 생성
+    let quizScore = 0;  // 맞춘 문제 개수를 세기 위한 변수 생성
+    
+    // 문제 출력
+    const updateQuiz = (index) => {
+        const questionTag = `
+            &lt;span class="number">${quizInfo[index].answerNum}. &lt;/span>
+            &lt;div class="ask">${quizInfo[index].answerAsk}&lt;/div>
+        `;
+        const choiceTag = `
+            &lt;label for="select1">
+                &lt;input type="radio" id="select1" class="select" name="select" value="1">
+                &lt;span class="choice">${quizInfo[index].answerChoice[0]}&lt;/span>
+            &lt;/label>
+            &lt;label for="select2">
+                &lt;input type="radio" id="select2" class="select" name="select" value="2">
+                &lt;span class="choice">${quizInfo[index].answerChoice[1]}&lt;/span>
+            &lt;/label>
+            &lt;label for="select3">
+                &lt;input type="radio" id="select3" class="select" name="select" value="3">
+                &lt;span class="choice">${quizInfo[index].answerChoice[2]}&lt;/span>
+            &lt;/label>
+            &lt;label for="select4">
+                &lt;input type="radio" id="select4" class="select" name="select" value="4">
+                &lt;span class="choice">${quizInfo[index].answerChoice[3]}&lt;/span>
+            &lt;/label>
+        `;
+        // 문제 출력
+        quizType.innerHTML = quizInfo[index].answerType;    // 문제 유형
+        quizQuestion.innerHTML = questionTag;           // 번호, 질문
+        quizSelects.innerHTML = choiceTag;              // 객관식 보기
+        quizResult.innerHTML = quizInfo[index].answerEx;    // 해설
+
+        const quizChoice = quizSelects.querySelectorAll(".choice"); 
+
+        for(let i = 0; i &lt; quizChoice.length; i++) {
+            quizChoice[i].setAttribute("onclick", "choiceSelected(this)");  // 클릭한값 저장
+        }
+
+        // 문제, 해설 숨기기
+        quizResult.style.display ="none";
+        quizConfirm.style.display ="none";
+    }
+    updateQuiz(quizCount);
+
+    const choiceSelected = (answer) => {
+        let userAnswer = answer.textContent;    // 사용자가 체크한 정답
+        let currentAnswer = quizInfo[quizCount].answerResult;   // 문제 정답
+
+        // 사용자 체크한 답과 진짜 문제 정답이 같다면...
+        if(userAnswer == currentAnswer) {
+            console.log("정답");
+            quizView.classList.add("like");
+            quizScore++;    // 정답 개수 확인 후 변수에 1씩 더해줌
+        } else {
+            console.log("오답");
+            quizView.classList.add("dislike");
+            quizResult.style.display = "block";     // 해설 보이게 함 
+        }
+        quizConfirm.style.display = "block";        // 다음문제 버튼 보이게 함
+    }
+
+    // 정답 확인 버튼
+    const answerQuiz = () => {
+        // 마지막 문제
+        if(quizInfo.length -1 == quizCount) {
+            quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞춤`;
+        }
+        quizCount++;    // 문제를 다 풀면 다음 문제로 넘어갈 수 있도록 문제 번호 더해줌
+        updateQuiz(quizCount);  
+        quizView.classList.remove("like", "dislike");   //다음문제 갔을 때 강아지 표정 리셋   
+    }
+    quizConfirm.addEventListener("click", answerQuiz);
+</code></pre>
+                    </div>
+                    <div>
+<pre><code lang="language-html">&lt;body>
+    &lt;header id="header">
+        &lt;h1>&lt;a href="../javascript01.html">Quiz&lt;/a> &lt;em>슬라이드 형식&lt;/em>&lt;/h1>
+        &lt;nav>
+            &lt;ul>
+                &lt;li>&lt;a href="quizEffect01.html">01&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="quizEffect02.html">02&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="quizEffect03.html">03&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="quizEffect04.html">04&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="quizEffect05.html">05&lt;/a>&lt;/li>
+                &lt;li class="active">&lt;a href="quizEffect06.html">06&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+    &lt;!-- // header -->
+
+    &lt;main id="main">
+        &lt;div class="quiz__wrap">
+            &lt;div class="quiz">
+                &lt;span class="quiz__type">&lt;/span>
+                &lt;h2 class="quiz__question">
+                    &lt;!-- &lt;span class="number">&lt;/span>
+                    &lt;div class="ask">&lt;/div> -->
+                &lt;/h2>
+                &lt;div class="quiz__view">
+                    &lt;div class="true">정답이다멍!💕&lt;/div>
+                    &lt;div class="false">틀렸다왈!💔&lt;/div>
+                    &lt;div class="dog">
+                        &lt;div class="head">
+                            &lt;div class="ears">&lt;/div>
+                            &lt;div class="face">&lt;/div>
+                            &lt;div class="eyes">
+                                &lt;div class="teardrop">&lt;/div>
+                            &lt;/div>
+                            &lt;div class="nose">&lt;/div>
+                            &lt;div class="mouth">
+                                &lt;div class="tongue">&lt;/div>
+                            &lt;/div>
+                            &lt;div class="chin">&lt;/div>
+                        &lt;/div>
+                        &lt;div class="body">
+                            &lt;div class="tail">&lt;/div>
+                            &lt;div class="legs">&lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="quiz__answer">
+                    &lt;div class="quiz__selects">
+                        &lt;!-- &lt;label for="select1">
+                            &lt;input type="radio" id="select1" class="select" name="select" value="1">
+                            &lt;span class="choice">&lt;/span>
+                        &lt;/label>
+                        &lt;label for="select2">
+                            &lt;input type="radio" id="select2" class="select" name="select" value="2">
+                            &lt;span class="choice">&lt;/span>
+                        &lt;/label>
+                        &lt;label for="select3">
+                            &lt;input type="radio" id="select3" class="select" name="select" value="3">
+                            &lt;span class="choice">&lt;/span>
+                        &lt;/label>
+                        &lt;label for="select4">
+                            &lt;input type="radio" id="select4" class="select" name="select" value="4">
+                            &lt;span class="choice">&lt;/span>
+                        &lt;/label> -->
+                    &lt;/div>
+                    &lt;div class="result">&lt;/div>
+                    &lt;button class="confirm">다음 문제 보기&lt;/button>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/main>
+    &lt;!-- // main -->
+  
+    &lt;footer id="footer">
+    &lt;a href="mailto:kde66034@gmail.com">kde66034@gmail.com&lt;/a>
+    &lt;/footer>
+    &lt;!-- // footer -->
+&lt;/body>
+</code></pre>
+                    </div>
+                    <div>
+<pre><code lang="language-css">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing:border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f6f6f6;
+  background-image:
+      linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+      linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+      linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+      linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+      linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+      linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+      linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+      linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+      linear-gradient(#cdcccc, #cdcccc);
+  background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+}
+
+#header {
+  background: #262626;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  z-index: 10;
+}
+
+#header::before {
+  content: '';
+  border: 4px ridge #a3a3a3;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  box-sizing: border-box;
+  z-index: -1;
+}
+
+#header h1 {
+  padding: 3px 3px 5px 10px;
+  font-family: "DungGeunMo";
+  font-size: 30px;
+  color: #fff;
+}
+
+#header h1 a {
+  color: #fff;
+}
+
+#header h1 em {
+  font-size: 16px;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  #header h1 em {
+      display: none;
+  }
+}
+
+#header nav {
+  padding-right: 10px;
+}
+
+#header nav li {
+  display: inline;
+}
+
+#header nav li a {
+  color: #fff;
+  padding: 0 10px;
+  border: 1px dashed #fff;
+  font-family: "DungGeunMo";
+}
+
+#header nav li.active a {
+  color: #000;
+  background: #fff;
+}
+
+#footer {
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 150px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
+#footer a {
+  color: #000;
+  font-family: "DungGeunMo";
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+/* quiz__wrap */
+.quiz__wrap {
+  display: flex;
+  align-items: flex-start;    /* 맨 위 창 가지런히 정렬하기 */
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 150px;
+  flex-wrap: wrap;
+}
+
+.quiz {
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  border: 8px ridge #cacaca;
+  margin: 10px;
+}
+
+.quiz__type {
+  background-color: #cacaca;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  border: 3px ridge #cacaca;
+  color: #3b3b3b;
+  font-family: "DungGeunMo";
+  padding: 4px;
+}
+
+.quiz__question {
+  border-top: 6px ridge #cacaca;
+  border-bottom: 6px ridge #cacaca;
+  padding: 20px 20px;
+  font-family: 'Binggrae';
+  line-height: 1.4;
+}
+
+.quiz__question .number {
+  color: rgb(197, 75, 75);
+}
+
+.quiz__question .ask {
+  display: inline;
+}
+
+.quiz__answer {
+  border-top: 6px ridge #cacaca;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.quiz__answer .confirm {
+  border: 6px ridge #cacaca;
+  width: 100%;
+  font-size: 22px;
+  padding: 13px 20px;
+  background-color: #d6d6d6;
+  font-family: 'Binggrae';
+  cursor: pointer;
+}
+
+.quiz__answer .result {
+  width: 100%;
+  font-size: 22px;
+  line-height: 1.3;
+  padding: 13px 20px;
+  border: 6px ridge #cacaca;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Binggrae';
+}
+
+.quiz__answer .input {
+  width: 100%;
+  border: 6px ridge #cacaca;
+  font-size: 22px;
+  padding: 13px 20px;
+  background-color: #fff;
+  font-family: 'Binggrae';
+  margin-bottom: 10px;
+}
+
+.quiz__view {
+  background-color: #f5f5f5;
+  font-family: 'Binggrae';
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz__view .true {
+  width: 120px;
+  height: 120px;
+  background-color: #8cd1ff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 120px;
+  position: absolute;
+  left: 70%;
+  top: 100px;
+  opacity: 0;
+}
+
+.quiz__view .false {
+  width: 120px;
+  height: 120px;
+  background-color: rgb(255, 175, 175);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 120px;
+  position: absolute;
+  right: 70%;
+  top: 100px;
+  opacity: 0;
+}
+
+.quiz__view.like .true {
+  opacity: 1;
+  animation: wobble 0.6s;
+}
+
+.quiz__view.dislike .false {
+  opacity: 1;
+  animation: wobble 0.6s;
+}
+
+.quiz__selects {
+  margin: 5px 0;
+}
+
+.quiz__selects label {
+  display: flex;
+}
+
+.quiz__selects label input {
+  position: absolute;
+  left: -9999px;
+}
+
+.quiz__selects label span {
+  font-size: 18px;
+  line-height: 1.3;
+  font-family: 'Binggrae';
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quiz__selects label span::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 15px;
+  display: flex;
+  flex-shrink: 0;
+  box-shadow: inset 0px 0px 0px 4px #b88831;
+  transition: all 0.25s;
+}
+
+.quiz__selects label input:checked + span {
+  background-color: #ebd09d;
+}
+
+.quiz__selects label input:checked + span::before {
+  box-shadow: inset 0px 0px 0px 9px #b88831;
+}
+
+.quiz__confirm {
+  width: 100%;
+  text-align: center;
+  font-family: 'Binggrae';
+}
+.quiz__confirm .check {
+  font-size: 22px;
+  line-height: 1.3;
+  padding: 13px 60px;
+  border: 6px ridge #cacaca;
+  font-family: 'Binggrae';
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  margin: 40px 0;
+  transition: background 0.3s;
+}
+.quiz__confirm .check:hover {
+  background: #b88931c2;
+}
+.resultInfo  {
+  border: 6px ridge #cacaca;
+  padding: 20px;
+  background-color: #f5f5f5;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 500px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.resultInfo p {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #b88831;
+}
+
+@keyframes wobble {
+  0%   {transform: translateX(0) rotate(0deg)}
+  15%  {transform: translateX(-25%) rotate(-5deg)}
+  30%  {transform: translateX(20%) rotate(3deg)}
+  45%  {transform: translateX(-15%) rotate(-3deg)}
+  60%  {transform: translateX(10%) rotate(2deg)}
+  75%  {transform: translateX(-5%) rotate(-1deg)}
+  100% {transform: translateX(0) rotate(0deg)}
+}
+
+/* dog 애니메이션 및 모달 CSS 소스는 길어지므로 생략함 */
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- // modal -->
+
     <footer id="footer">
         <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
     </footer>
     <!-- // footer -->
 
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.min.js"></script>
     <script>
         // 문제 정보
         const quizInfo = [
