@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : jQuery</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery : 속성 관련 메서드</h2>
+            <p class="t_desc2">
+                제이쿼리에서 사용되는 속성 관련 메서드에 대해 알아봅시다.
+            </p>
+            <!-- // jQuery 속성 -->
+
+            <hr>
+
+            <h3 class="t_tit2">attr() 메서드</h3>
+            <p class="t_desc">
+                선택한 요소의 attribute(속성)를 선택, 생성, 변경할 수 있다.
+            </p>
+            <table class="t_table">
+                <colgroup>
+                    
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>실행 분류</th>
+                        <th>형식</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">취득</td>
+                        <td>$("a").attr("href");</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">생성, 변경</td>
+                        <td>$("a").attr("href", "http://www.google.com/").attr("target", "_blank");</td>
+                    </tr>
+                    <tr>
+                        <td>$("a").attr({href: "http://www.google.com/", target: "_blank"});</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">콜백 함수</td>
+                        <td>$("a").attr("href", function(<i>index, h</i>) { <br>
+                            　// <i>index</i>는 각 a 요소의 index 0,1,2 <br>
+                            　// <i>h</i>은 각 a 요소 href 속성 <br>
+                            <i>return</i> attribute (속성) // 각 a 요소의 속성을 생성 및 변경함. <br>
+                            });<br>
+                            ……<br>
+                            &lt;a href="http://www.daum.net" target="_blank" title="새창">다음&lt;/a> <br>
+                            &lt;a href="http://www.naver.com" target="_blank" title="새창">네이버&lt;/a> <br>
+                            &lt;a href="http://www.nate.com" target="_blank" title="새창">네이트&lt;/a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- // 표 -->
+
+            <h3 class="t_tit2">attr() 메서드 : 예제 코드</h3>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html> 
+&lt;html lang="ko"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
+    &lt;title>attr() 메서드&lt;title> 
+    &lt;script src="jquery-3.3.1.min.js">&lt;/script> 
+    &lt;script> 
+        $(document).ready(function() {
+            console.log($("#site > a:eq(0)").attr("href"));
+            $("#site > a:eq(1)").attr("href", "http://m.naver.com").text("네이버 모바일");
+            $("#site a").attr("title", function() {
+                return "새창";
+            });
+        });
+    &lt;/script> 
+&lt;/head> 
+&lt;body> 
+    &lt;div id="site">
+        &lt;a href="http://www.daum.net" target="_blank">다음&lt;/a> <br>
+        &lt;a href="http://www.naver.com" target="_blank">네이버&lt;/a> <br>
+        &lt;a href="http://www.nate.com" target="_blank">네이트&lt;/a>
+    &lt;/div>
+&lt;/body> 
+&lt;/html>
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과 보기</summary>
+                    <div class="sample01_result">
+                        <div class="t_code">
+<pre><code lang="language-html">&lt;div id="site">
+    &lt;a href="http://www.daum.net" target="_blank" title="새창">다음&lt;/a> <br>
+    &lt;a href="http://m.naver.com" target="_blank" title="새창">네이버 모바일&lt;/a> <br>
+    &lt;a href="http://www.nate.com" target="_blank" title="새창">네이트&lt;/a>
+&lt;/div>
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <h3 class="t_tit2">코드펜 결과</h3>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="attr()메서드" src="https://codepen.io/kde66034/embed/WNJNapp?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/WNJNapp">
+                    attr()메서드</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <!-- // codepen -->
+            <!-- //attr -->
+
+            <hr>
+
+            <h3 class="t_tit2">prop() 메서드</h3>
+            <p class="t_desc">
+                attr()가 html attribute(속성)에 관련된 메서드라면 prop()은 자바스크립트 프로퍼티(property)에 관련된 메서드이다. 
+                prop() 메서드는 요소의 속성을 true/false로 제어 가능하다.
+            </p>
+
+            <h3 class="t_tit2">prop() 메서드 : 예제 코드</h3>
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html> 
+&lt;html lang="ko"> 
+&lt;head> 
+    &lt;meta charset="UTF-8"> 
+    &lt;title>prop() 메서드&lt;title> 
+    &lt;script src="jquery-3.3.1.min.js">&lt;/script> 
+    &lt;script> 
+        $(document).ready(function() {
+            console.log($("input:checkbox").eq(0).attr("checked"));
+            console.log($("input:checkbox").eq(1).prop("checked"));
+            $("input:checkbox").eq(0).attr("checked", "checked");
+            $("input:checkbox").eq(1).prop("checked", true);
+            console.log($("input:checkbox").eq(0).attr("checked"));
+            console.log($("input:checkbox").eq(1).prop("checked"));
+        });
+    &lt;/script> 
+&lt;/head> 
+&lt;body> 
+    &lt;input type="checkbox" id="html">&lt;label for="html">html&lt;/label>
+    &lt;input type="checkbox" id="css">&lt;label for="css">css&lt;/label>
+&lt;/body> 
+&lt;/html>
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과 보기</summary>
+                    <div class="sample02_result">
+                        <div class="t_code">
+<pre><code lang="language-html">&lt;input type="checkbox" id="html" checked="checked">
+&lt;label for="html">html&lt;/label>
+&lt;input type="checkbox" id="css">
+&lt;label for="css">css&lt;/label>
+
+// undefined
+// false
+// checked
+// true
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            
+
+            <h3 class="t_tit2">코드펜 결과</h3>
+            <p class="t_desc">
+                attr() 메서드는 checked 속성이 요소에 추가되는 반면, prop() 메서드의 true는 자바스크립트의 프로퍼티로 처리됨을 알 수 있다. 
+                Google Chrome에서 검사(F12) > Console 창에서 확인 가능.
+            </p>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="prop()메서드" src="https://codepen.io/kde66034/embed/eYrYPWr?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/eYrYPWr">
+                    prop()메서드</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <!-- // codepen -->
+            <!-- //prop -->
+        </div>
+    </main>
+    <!-- //main -->
+
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
