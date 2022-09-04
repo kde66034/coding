@@ -89,53 +89,56 @@
     </main>
     <!-- // main -->
 
-    <div class="modal__wrap">
-        <div class="modal__btn">
-            <label for="btn">소스 보기</label>
-        </div>
-        <div class="modal__cont">
-            <div class="modal__box">
-              <div class="modal__close">
-                <span class="close">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </span>
-              </div>
-                <div class="title">
-                    <div class="tabs">
-                        <div class="active">
-                            <en>JavaScript</en>
-                            <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </span>
-                        </div>
-                        <div>
-                            <en>HTML</en>
-                            <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </span>
-                        </div>
-                        <div>
-                            <en>CSS</en>
-                            <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
+    
+    <footer id="footer">
+      <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+      <div class="modal__wrap">
+          <div class="modal__btn">
+              <label for="btn">소스 보기</label>
+          </div>
+          <div class="modal__cont">
+              <div class="modal__box">
+                <div class="modal__close">
+                  <span class="close">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                          <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                  </span>
                 </div>
-                <div class="cont">
-                    <div class="active">
+                  <div class="title">
+                      <div class="tabs">
+                          <div class="active">
+                              <en>JavaScript</en>
+                              <span class="close">
+                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                      <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
+                              </span>
+                          </div>
+                          <div>
+                              <en>HTML</en>
+                              <span class="close">
+                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                      <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
+                              </span>
+                          </div>
+                          <div>
+                              <en>CSS</en>
+                              <span class="close">
+                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                      <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cont">
+                      <div class="active">
 <pre><code lang="language-js">// 선택자
 // 문제(&lt;div class="quiz">)가 여러개이므로 뒤에 All 붙여주기
 const quizType = document.querySelector(".quiz__type");                 // 퀴즈 종류
@@ -204,8 +207,8 @@ function answerQuiz() {
 // 정답 클릭 시 이벤트 출력
 quizConfirm.addEventListener("click", answerQuiz);
 </code></pre>
-                    </div>
-                    <div>
+                      </div>
+                      <div>
 <pre><code lang="language-html">&lt;body>
     &lt;header id="header">
         &lt;h1>&lt;a href="../javascript01.html">Quiz&lt;/a> &lt;em>객관식 유형&lt;/em>&lt;/h1>
@@ -286,8 +289,8 @@ quizConfirm.addEventListener("click", answerQuiz);
     &lt;!-- // footer -->
 &lt;/body>
 </code></pre>
-                    </div>
-                    <div>
+                      </div>
+                      <div>
 <pre><code lang="language-css">* {
   margin: 0;
   padding: 0;
@@ -623,15 +626,12 @@ body {
 
 /* dog 애니메이션 및 모달 CSS 소스는 길어지므로 생략함 */
 </code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
       <!-- // modal -->
-
-    <footer id="footer">
-        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
     </footer>
     <!-- // footer -->
 

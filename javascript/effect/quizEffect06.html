@@ -89,205 +89,207 @@
     </main>
     <!-- // main -->
 
-    <div class="modal__wrap">
-        <div class="modal__btn">
-            <label for="btn">소스 보기</label>
-        </div>
-        <div class="modal__cont">
-            <div class="modal__box">
-              <div class="modal__close">
-                <span class="close">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </span>
-              </div>
-                <div class="title">
-                    <div class="tabs">
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+        <div class="modal__wrap">
+            <div class="modal__btn">
+                <label for="btn">소스 보기</label>
+            </div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                  <div class="modal__close">
+                    <span class="close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                  </div>
+                    <div class="title">
+                        <div class="tabs">
+                            <div class="active">
+                                <en>JavaScript</en>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <en>HTML</en>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <en>CSS</en>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont">
                         <div class="active">
-                            <en>JavaScript</en>
-                            <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </span>
-                        </div>
-                        <div>
-                            <en>HTML</en>
-                            <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </span>
-                        </div>
-                        <div>
-                            <en>CSS</en>
-                            <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="cont">
-                    <div class="active">
 <pre><code lang="language-js">// 문제 정보
-    const quizInfo = [
-        {
-            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
-            answerNum: "1",
-            answerAsk: "웹 디자인에 관한 설명으로 거리가 먼 것은?",
-            answerChoice: [
-                "가. 웹 페이지를 디자인하고 제작하는 것을 의미한다.",
-                "나. 웹 디자인은 개인용 홈페이지 외 기업용, 상업용 등 매우 다양하다.",
-                "다. 웹 디자인은 웹과 디자인이라는 두 가지 개념이 결합된 것이다.",
-                "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
-            ],
-            answerResult: "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
-            answerEx: "정답 : 4 &lt;br>기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물은 캐릭터에 관한 설명이다."
-        },
-        {
-            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
-            answerNum: "2",
-            answerAsk: "다음 중 시각 디자인에 속하지 않는 것은?",
-            answerChoice: [
-                "가. 텍스타일 디자인",
-                "나. 패키지 디자인",
-                "다. POP 디자인",
-                "라. 타이포그래피",
-            ],
-            answerResult: "가. 텍스타일 디자인",
-            answerEx: "정답 : 1 &lt;br>텍스타일 디자인은 질감을 포인트로 하기 때문에 시각 디자인이라 보기 힘들다."
-        },
-        {
-            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
-            answerNum: "3",
-            answerAsk: "환경 디자인에 속하지 않는 것은?",
-            answerChoice: [
-                "가. 인테리어 디자인",
-                "나. 무대 디자인",
-                "다. 가구 디자인",
-                "라. 조경 디자인",
-            ],
-            answerResult: "다. 가구 디자인",
-            answerEx: "정답 : 3 &lt;br>인테리어, 무대, 조경 디자인은 환경 디자인이지만 가구 디자인은 환경보다는 인테리어에만 영향을 주기 때문에 환경 디자인이라 보기 힘들다."
-        },
-        {
-            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
-            answerNum: "4",
-            answerAsk: "색채에 대한 설명으로 맞는 것은?",
-            answerChoice: [
-                "가. 색채는 심리적 성질을 갖지 못한다.",
-                "나. 물체가 발광하지 않고 빛을 받아서 흡수되는 색이다.",
-                "다. 색채의 분류는 무채색, 유채색 중성색 3가지는 있다.",
-                "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
-            ],
-            answerResult: "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
-            answerEx: "정답 : 4 &lt;br>색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다."
-        },
-        {
-            answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
-            answerNum: "5",
-            answerAsk: "다음 중 “합목정성”과 “심미성” 에서도 존재하는 창의적 디자인 조건은?",
-            answerChoice: [
-                "가. 독창성",
-                "나. 질서성",
-                "다. 경제성",
-                "라. 최소성",
-            ],
-            answerResult: "가. 독창성",
-            answerEx: "정답 : 1 &lt;br>창의적 디자인 조건은 독창성이다."
-        },
-    ];
+const quizInfo = [
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "1",
+        answerAsk: "웹 디자인에 관한 설명으로 거리가 먼 것은?",
+        answerChoice: [
+            "가. 웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+            "나. 웹 디자인은 개인용 홈페이지 외 기업용, 상업용 등 매우 다양하다.",
+            "다. 웹 디자인은 웹과 디자인이라는 두 가지 개념이 결합된 것이다.",
+            "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+        ],
+        answerResult: "라. 기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+        answerEx: "정답 : 4 &lt;br>기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물은 캐릭터에 관한 설명이다."
+    },
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "2",
+        answerAsk: "다음 중 시각 디자인에 속하지 않는 것은?",
+        answerChoice: [
+            "가. 텍스타일 디자인",
+            "나. 패키지 디자인",
+            "다. POP 디자인",
+            "라. 타이포그래피",
+        ],
+        answerResult: "가. 텍스타일 디자인",
+        answerEx: "정답 : 1 &lt;br>텍스타일 디자인은 질감을 포인트로 하기 때문에 시각 디자인이라 보기 힘들다."
+    },
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "3",
+        answerAsk: "환경 디자인에 속하지 않는 것은?",
+        answerChoice: [
+            "가. 인테리어 디자인",
+            "나. 무대 디자인",
+            "다. 가구 디자인",
+            "라. 조경 디자인",
+        ],
+        answerResult: "다. 가구 디자인",
+        answerEx: "정답 : 3 &lt;br>인테리어, 무대, 조경 디자인은 환경 디자인이지만 가구 디자인은 환경보다는 인테리어에만 영향을 주기 때문에 환경 디자인이라 보기 힘들다."
+    },
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "4",
+        answerAsk: "색채에 대한 설명으로 맞는 것은?",
+        answerChoice: [
+            "가. 색채는 심리적 성질을 갖지 못한다.",
+            "나. 물체가 발광하지 않고 빛을 받아서 흡수되는 색이다.",
+            "다. 색채의 분류는 무채색, 유채색 중성색 3가지는 있다.",
+            "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
+        ],
+        answerResult: "라. 색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다.",
+        answerEx: "정답 : 4 &lt;br>색채를 느끼는 경우 유채색, 느낄 수 없는 경우 무채색이라 한다."
+    },
+    {
+        answerType: "2013년 4회 웹디자인기능사 - 디자인일반",
+        answerNum: "5",
+        answerAsk: "다음 중 “합목정성”과 “심미성” 에서도 존재하는 창의적 디자인 조건은?",
+        answerChoice: [
+            "가. 독창성",
+            "나. 질서성",
+            "다. 경제성",
+            "라. 최소성",
+        ],
+        answerResult: "가. 독창성",
+        answerEx: "정답 : 1 &lt;br>창의적 디자인 조건은 독창성이다."
+    },
+];
     
-    const quizType =  document.querySelector(".quiz__type");                // 문제 유형
-    const quizQuestion = document.querySelector(".quiz__question");         // 문제 번호, 질문
-    const quizSelects = document.querySelector(".quiz__selects");           // 객관식 보기
-    const quizResult =  document.querySelector(".quiz__answer .result");    // 문제 해설
-    const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
-    const quizView = document.querySelector(".quiz__view");                 // 강아지
+const quizType =  document.querySelector(".quiz__type");                // 문제 유형
+const quizQuestion = document.querySelector(".quiz__question");         // 문제 번호, 질문
+const quizSelects = document.querySelector(".quiz__selects");           // 객관식 보기
+const quizResult =  document.querySelector(".quiz__answer .result");    // 문제 해설
+const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
+const quizView = document.querySelector(".quiz__view");                 // 강아지
 
-    let quizCount = 0;  // 문제 개수를 세기 위한 변수 생성
-    let quizScore = 0;  // 맞춘 문제 개수를 세기 위한 변수 생성
+let quizCount = 0;  // 문제 개수를 세기 위한 변수 생성
+let quizScore = 0;  // 맞춘 문제 개수를 세기 위한 변수 생성
     
+// 문제 출력
+const updateQuiz = (index) => {
+    const questionTag = `
+        &lt;span class="number">${quizInfo[index].answerNum}. &lt;/span>
+        &lt;div class="ask">${quizInfo[index].answerAsk}&lt;/div>
+    `;
+    const choiceTag = `
+        &lt;label for="select1">
+            &lt;input type="radio" id="select1" class="select" name="select" value="1">
+            &lt;span class="choice">${quizInfo[index].answerChoice[0]}&lt;/span>
+        &lt;/label>
+        &lt;label for="select2">
+            &lt;input type="radio" id="select2" class="select" name="select" value="2">
+            &lt;span class="choice">${quizInfo[index].answerChoice[1]}&lt;/span>
+        &lt;/label>
+        &lt;label for="select3">
+            &lt;input type="radio" id="select3" class="select" name="select" value="3">
+            &lt;span class="choice">${quizInfo[index].answerChoice[2]}&lt;/span>
+        &lt;/label>
+        &lt;label for="select4">
+            &lt;input type="radio" id="select4" class="select" name="select" value="4">
+            &lt;span class="choice">${quizInfo[index].answerChoice[3]}&lt;/span>
+        &lt;/label>
+    `;
     // 문제 출력
-    const updateQuiz = (index) => {
-        const questionTag = `
-            &lt;span class="number">${quizInfo[index].answerNum}. &lt;/span>
-            &lt;div class="ask">${quizInfo[index].answerAsk}&lt;/div>
-        `;
-        const choiceTag = `
-            &lt;label for="select1">
-                &lt;input type="radio" id="select1" class="select" name="select" value="1">
-                &lt;span class="choice">${quizInfo[index].answerChoice[0]}&lt;/span>
-            &lt;/label>
-            &lt;label for="select2">
-                &lt;input type="radio" id="select2" class="select" name="select" value="2">
-                &lt;span class="choice">${quizInfo[index].answerChoice[1]}&lt;/span>
-            &lt;/label>
-            &lt;label for="select3">
-                &lt;input type="radio" id="select3" class="select" name="select" value="3">
-                &lt;span class="choice">${quizInfo[index].answerChoice[2]}&lt;/span>
-            &lt;/label>
-            &lt;label for="select4">
-                &lt;input type="radio" id="select4" class="select" name="select" value="4">
-                &lt;span class="choice">${quizInfo[index].answerChoice[3]}&lt;/span>
-            &lt;/label>
-        `;
-        // 문제 출력
-        quizType.innerHTML = quizInfo[index].answerType;    // 문제 유형
-        quizQuestion.innerHTML = questionTag;           // 번호, 질문
-        quizSelects.innerHTML = choiceTag;              // 객관식 보기
-        quizResult.innerHTML = quizInfo[index].answerEx;    // 해설
+    quizType.innerHTML = quizInfo[index].answerType;    // 문제 유형
+    quizQuestion.innerHTML = questionTag;           // 번호, 질문
+    quizSelects.innerHTML = choiceTag;              // 객관식 보기
+    quizResult.innerHTML = quizInfo[index].answerEx;    // 해설
 
-        const quizChoice = quizSelects.querySelectorAll(".choice"); 
+    const quizChoice = quizSelects.querySelectorAll(".choice"); 
 
-        for(let i = 0; i &lt; quizChoice.length; i++) {
-            quizChoice[i].setAttribute("onclick", "choiceSelected(this)");  // 클릭한값 저장
-        }
-
-        // 문제, 해설 숨기기
-        quizResult.style.display ="none";
-        quizConfirm.style.display ="none";
-    }
-    updateQuiz(quizCount);
-
-    const choiceSelected = (answer) => {
-        let userAnswer = answer.textContent;    // 사용자가 체크한 정답
-        let currentAnswer = quizInfo[quizCount].answerResult;   // 문제 정답
-
-        // 사용자 체크한 답과 진짜 문제 정답이 같다면...
-        if(userAnswer == currentAnswer) {
-            console.log("정답");
-            quizView.classList.add("like");
-            quizScore++;    // 정답 개수 확인 후 변수에 1씩 더해줌
-        } else {
-            console.log("오답");
-            quizView.classList.add("dislike");
-            quizResult.style.display = "block";     // 해설 보이게 함 
-        }
-        quizConfirm.style.display = "block";        // 다음문제 버튼 보이게 함
+    for(let i = 0; i &lt; quizChoice.length; i++) {
+        quizChoice[i].setAttribute("onclick", "choiceSelected(this)");  // 클릭한값 저장
     }
 
-    // 정답 확인 버튼
-    const answerQuiz = () => {
-        // 마지막 문제
-        if(quizInfo.length -1 == quizCount) {
-            quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞춤`;
-        }
-        quizCount++;    // 문제를 다 풀면 다음 문제로 넘어갈 수 있도록 문제 번호 더해줌
-        updateQuiz(quizCount);  
-        quizView.classList.remove("like", "dislike");   //다음문제 갔을 때 강아지 표정 리셋   
+    // 문제, 해설 숨기기
+    quizResult.style.display ="none";
+    quizConfirm.style.display ="none";
+}
+updateQuiz(quizCount);
+
+const choiceSelected = (answer) => {
+    let userAnswer = answer.textContent;    // 사용자가 체크한 정답
+    let currentAnswer = quizInfo[quizCount].answerResult;   // 문제 정답
+
+    // 사용자 체크한 답과 진짜 문제 정답이 같다면...
+    if(userAnswer == currentAnswer) {
+        console.log("정답");
+        quizView.classList.add("like");
+        quizScore++;    // 정답 개수 확인 후 변수에 1씩 더해줌
+    } else {
+        console.log("오답");
+        quizView.classList.add("dislike");
+        quizResult.style.display = "block";     // 해설 보이게 함 
     }
-    quizConfirm.addEventListener("click", answerQuiz);
+    quizConfirm.style.display = "block";        // 다음문제 버튼 보이게 함
+}
+
+// 정답 확인 버튼
+const answerQuiz = () => {
+    // 마지막 문제
+    if(quizInfo.length -1 == quizCount) {
+        quizConfirm.textContent = `총 ${quizInfo.length} 문제 중에 ${quizScore} 문제를 맞춤`;
+    }
+    quizCount++;    // 문제를 다 풀면 다음 문제로 넘어갈 수 있도록 문제 번호 더해줌
+    updateQuiz(quizCount);  
+    quizView.classList.remove("like", "dislike");   //다음문제 갔을 때 강아지 표정 리셋   
+}
+quizConfirm.addEventListener("click", answerQuiz);
 </code></pre>
-                    </div>
-                    <div>
+                        </div>
+                        <div>
 <pre><code lang="language-html">&lt;body>
     &lt;header id="header">
         &lt;h1>&lt;a href="../javascript01.html">Quiz&lt;/a> &lt;em>슬라이드 형식&lt;/em>&lt;/h1>
@@ -367,8 +369,8 @@
     &lt;!-- // footer -->
 &lt;/body>
 </code></pre>
-                    </div>
-                    <div>
+                        </div>
+                        <div>
 <pre><code lang="language-css">* {
   margin: 0;
   padding: 0;
@@ -704,15 +706,12 @@ body {
 
 /* dog 애니메이션 및 모달 CSS 소스는 길어지므로 생략함 */
 </code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-      </div>
-      <!-- // modal -->
-
-    <footer id="footer">
-        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+        <!-- // modal -->
     </footer>
     <!-- // footer -->
 
