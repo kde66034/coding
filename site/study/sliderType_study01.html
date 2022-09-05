@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 유형 STUDY 01</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">슬라이드 유형 STUDY 01</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="cardType_study01.html">카드 유형 01</a></li>
+                <li><a href="cardType_study02.html">카드 유형 02</a></li>
+                <li><a href="cardType_study03.html">카드 유형 03</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 슬라이드 유형 STUDY 01</h2>
+            <p class="t_desc2">
+                이번 포스팅에서는 Figma에서 만든 슬라이드 유형 섹션을 HTML과 CSS 코드로 옮기는 작업을
+                해보도록 하겠습니다. 
+            </p>
+
+            <!-- // 사이트 만들기 : 슬라이드 유형 STUDY 01  -->
+
+            <hr>
+
+            <h3 class="t_tit2">Figma</h3>
+            <p class="t_desc">
+                먼저 만들고자 하는 웹 사이트의 모양을 Figma라는 프로그램을 이용하여 아래와 같이 만들어주도록 하자. 
+                그와 동시에 이미지 스프라이트용 아이콘 SVG를 출력할 페이지도 따로 만들도록 한다. 만드는 방법은 지난 <a href="https://kde66034.tistory.com/49">이미지 스프라이트</a> 포스팅을 참조할 것.
+            </p>
+            <div class="t_iframe">       
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FtnsaEM1JocXMMqYyaoWru4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1658%253A327" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2">HTML 소스</h3>
+            <p class="t_desc">
+                웹 표준 준수를 위해 <i>시맨틱 태그를 적극 사용</i>하도록 하자. 
+                img 태그의 alt와 같은 효과를 주기 위해 아이콘이 들어갈 span 태그의 클래스 값을 <i>"ir"</i>로 설정하자.
+                자세한 설명은 아래 예시 코드의 주석처리 내용을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code lang="language-html">&lt;body&gt;
+    &lt;section id="sliderType" class="slider__wrap">
+        &lt;h2 class="blind">슬라이드 영역&lt;/h2>
+        &lt;div class="slider__inner">
+            &lt;div class="slider">
+                &lt;div class="slider__img">
+                    &lt;div class="desc">
+                        &lt;span>BAKING CLASS&lt;/span>
+                        &lt;h3>BAKING PROJECT&lt;/h3>
+                        &lt;p>
+                            당신도 될 수 있다! 제빵사 훌륭한! &lt;br>
+                            당신도 할 수 있다! 창업하기 빵집!
+                        &lt;/p>
+                        &lt;div class="btn">
+                            &lt;a href="#">자세히 보기&lt;/a>
+                            &lt;a href="#" class="black">사이트 보기&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="slider__arrow">
+                    &lt;a href="#" class="left">&lt;span class="ir">이전 이미지&lt;/span>&lt;/a>
+                    &lt;a href="#" class="right">&lt;span class="ir">다음 이미지&lt;/span>&lt;/a>
+                &lt;/div>
+                &lt;div class="slider__dot">
+                    &lt;a href="#" class="dot active">&lt;span class="ir">1&lt;/span>&lt;/a>
+                    &lt;a href="#" class="dot">&lt;span class="ir">2&lt;/span>&lt;/a>
+                    &lt;a href="#" class="dot">&lt;span class="ir">3&lt;/span>&lt;/a>
+                    &lt;a href="#" class="play">&lt;span class="ir">플레이&lt;/span>&lt;/a>
+                    &lt;a href="#" class="stop">&lt;span class="ir">정지&lt;/span>&lt;/a>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+    &lt;!-- // sliderType -->
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">CSS 소스</h3>
+            <p class="t_desc">
+                <i>아이콘 출력은 이미지 스프라이트와 IR 효과를 적극 활용</i>하도록 한다.
+                CSS 공통 요소, 폰트 정보 등은 따로 빼 놓았기 때문에
+                자세히 보고 싶다면 하단의 CSS 소스 보기 버튼을 누를 것.
+            </p>
+            <div class="t_code">
+<pre><code lang="language-css">&lt;style&gt;
+    .slider__inner {
+        margin-top: 30px;
+    }
+    
+    .slider {
+        position: relative;
+    }
+    .slider__img {
+        background: url(../img/sliderType/slider_bg01.jpg) no-repeat center / cover;
+    }
+    
+    .slider__img .desc {
+        width: 1160px;
+        margin: 0 auto;
+        padding: 100px 20px;
+    }
+    .slider__img .desc span {
+        font-size: 16px;
+        background: #fff;
+        padding: 1px 14px 0 14px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .slider__img .desc h3 {
+        font-size: 110px;
+        font-weight: 300;
+        line-height: 1;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        margin-left: -8px;
+    }
+    .slider__img .desc p {
+        font-size: 20px;
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.35;
+        margin-bottom: 130px;
+    }
+    .slider__img .desc .btn a {
+        font-size: 16px;
+        background-color: #fff;
+        padding: 11px 50px;
+        display: inline-block;
+    }
+    .slider__img .desc .btn a.black {
+        background: #000;
+        color: #fff;
+    }
+    
+    /* 이미지 스프라이트를 통한 아이콘 출력 */
+    .slider__arrow a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 56px;
+        background-image: url(../img/sliderType/slider_icon.svg);
+    }
+    .slider__arrow a.left {
+        left: 20px;
+    }
+    .slider__arrow a.right {
+        right: 20px;
+        background-position: -50px 0;
+    }
+    .slider__dot {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 25px;
+    }
+    .slider__dot a {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url(../img/sliderType/slider_icon.svg);
+        background-position: -20px -70px;
+    }
+    .slider__dot a.active {
+        background-position: 0 -70px;
+    }
+    .slider__dot a.play {
+        background-position: -40px -70px;
+    }
+    .slider__dot a.stop {
+        background-position: -60px -70px;
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+            <!-- // CSS 소스 -->
+
+            <h3 class="t_tit2">최종 결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/site/sliderType/sliderType01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kde66034.github.io/coding/site/sliderType/sliderType01.html">원본 사이트 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/site/sliderType/sliderType01.html">원본 소스 보기</a>
+            </div>
+            <!-- // 최종 결과 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

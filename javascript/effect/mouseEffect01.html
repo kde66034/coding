@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마우스 이펙트 01</title>
     <link rel="stylesheet" href="../assets/css/mouse.css">
-    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <link rel="stylesheet" href="../assets/css/dracula2.css">
 
     <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
     <style>
@@ -119,11 +119,148 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">&lt;body>
+  // 마우스 움직이는 값 가져오기 - 마우스 커서 좌표값을 표시시킴
+  // mouseInfo로부터 떨어진 값 == 좌표값
+  window.addEventListener("mousemove", (event) => {       
+    document.querySelector(".clientX").innerText = event.clientX;
+    document.querySelector(".clientY").innerText = event.clientY;
+    document.querySelector(".offsetX").innerText = event.offsetX;
+    document.querySelector(".offsetY").innerText = event.offsetY;
+    document.querySelector(".pageX").innerText = event.pageX;
+    document.querySelector(".pageY").innerText = event.pageY;
+    document.querySelector(".screenX").innerText = event.screenX;
+    document.querySelector(".screenY").innerText = event.screenY;
+  });
+
+  // css로 만든 마우스커서 적용시키기
+  const cursor = document.querySelector(".mouse__cursor");
+
+  window.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX - 25 + "px";
+    cursor.style.top = e.clientY -25 + "px";
+  });
+
+  // 마우스 커서 변경하기 (수동)
+  // document.querySelector(".style1").addEventListener("mouseover", () => {
+  //   cursor.classList.add("style1");
+  // });
+  // document.querySelector(".style1").addEventListener("mouseout", () => {
+  //   cursor.classList.remove("style1");
+  // });
+
+  // document.querySelector(".style2").addEventListener("mouseover", () => {
+  //   cursor.classList.add("style2");
+  // });
+  // document.querySelector(".style2").addEventListener("mouseout", () => {
+  //   cursor.classList.remove("style2");
+  // });
+
+  // document.querySelector(".style3").addEventListener("mouseover", () => {
+  //   cursor.classList.add("style3");
+  // });
+  // document.querySelector(".style3").addEventListener("mouseout", () => {
+  //   cursor.classList.remove("style3");
+  // });
+
+  // document.querySelector(".style4").addEventListener("mouseover", () => {
+  //   cursor.classList.add("style4");
+  // });
+  // document.querySelector(".style4").addEventListener("mouseout", () => {
+  //   cursor.classList.remove("style4");
+  // });
+
+  // document.querySelector(".style5").addEventListener("mouseover", () => {
+  //   cursor.classList.add("style5");
+  // });
+  // document.querySelector(".style5").addEventListener("mouseout", () => {
+  //   cursor.classList.remove("style5");
+  // });
+
+  // document.querySelector(".style6").addEventListener("mouseover", () => {
+  //   cursor.classList.add("style6");
+  // });
+  // document.querySelector(".style6").addEventListener("mouseout", () => {
+  //   cursor.classList.remove("style6");
+  // });
+
+  // for문
+  // for(let i=1; i &lt;= 6; i++) {
+  //   document.querySelector(".style" + i).addEventListener("mouseover", () => {
+  //     cursor.classList.add("style" + i);
+  //   });
+  //   document.querySelector(".style" + i).addEventListener("mouseout", () => {
+  //   cursor.classList.remove("style" + i);
+  //   });
+  // };
+
+  // forEach
+  // document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+  //   span.addEventListener("mouseover", () => {
+  //     cursor.classList.add("style" + (num+1));
+  //   });
+  //   span.addEventListener("mouseout", () => {
+  //     cursor.classList.remove("style" + (num+1));
+  //   });
+  // });
+
+  // getAtrribute() : 'style'이 담김 클래스값을 그대로 가져와 더 정확한 방법
+  document.querySelectorAll(".mouse__wrap span").forEach((span) => {
+    let attr = span.getAttribute("class");
+
+    span.addEventListener("mouseover", () => {
+      cursor.classList.add(attr);
+    });
+    span.addEventListener("mouseout", () => {
+      cursor.classList.remove(attr);
+    });
+  });
+&lt;/body>
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;header id="header">
+  &lt;h1>JAVASCRIPT MOUSE EFFECT 01&lt;/h1>
+  &lt;p>마우스 이펙트 - 마우스 따라다니기&lt;/p>
+  &lt;ul>
+      &lt;li class="active">&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="mouseEffect05.html">05&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="mouseEffect06.html">06&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="mouseEffect07.html">07&lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/header>
+&lt;!-- //header -->
+
+&lt;main id="main">
+&lt;section id="mouseType">
+  &lt;div class="mouse__cursor">&lt;/div>
+  &lt;div class="mouse__wrap">
+    &lt;p>&lt;span class="style1">The future&lt;/span> depends on &lt;span class="style2">what we do&lt;/span> in the &lt;span class="style3">present&lt;/span>.&lt;/p>
+    &lt;p>&lt;span class="style4">미래&lt;/span>는 &lt;span class="style5">현재&lt;/span> 우리가 &lt;span class="style6">무엇을 하는가&lt;/span>에 달려 있다.&lt;/p>
+  &lt;/div>
+&lt;/section>
+
+&lt;div class="mouse__info">
+  &lt;ul>
+    &lt;li>clientX : &lt;span class="clientX">0&lt;/span>px&lt;/li>
+    &lt;li>clientY : &lt;span class="clientY">0&lt;/span>px&lt;/li>
+    &lt;li>offsetX : &lt;span class="offsetX">0&lt;/span>px&lt;/li>
+    &lt;li>offsetY : &lt;span class="offsetY">0&lt;/span>px&lt;/li>
+    &lt;li>pageX : &lt;span class="pageX">0&lt;/span>px&lt;/li>
+    &lt;li>pageY : &lt;span class="pageY">0&lt;/span>px&lt;/li>
+    &lt;li>screenX : &lt;span class="screenX">0&lt;/span>px&lt;/li>
+    &lt;li>screenY : &lt;span class="screenY">0&lt;/span>px&lt;/li>
+  &lt;/ul>
+&lt;/div>
+&lt;/main>
+&lt;!-- //main -->
+
+&lt;footer> 
+&lt;/footer> 
+&lt;!-- //footer -->
 </code></pre>
                         </div>
                         <div>
@@ -685,7 +822,7 @@
         cursor.style.top = e.clientY -25 + "px";
       });
 
-      //
+      // 적용한 마우스커서에 CSS 입히기 (수동)
       // document.querySelector(".style1").addEventListener("mouseover", () => {
       //   cursor.classList.add("style1");
       // });
@@ -748,7 +885,7 @@
       //   });
       // });
 
-      // getAtrribute()
+      // getAtrribute() : 'style'이 담김 클래스값을 그대로 가져와 더 정확한 방법
       document.querySelectorAll(".mouse__wrap span").forEach((span) => {
         let attr = span.getAttribute("class");
 
