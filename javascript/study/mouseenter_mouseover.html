@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 문자열 메서드</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h1 class="t_tit">mouseenter와 mouseover 메서드의 차이는?</h1>
+            <p class="t_desc2">
+                이번 포스팅에서는 <i>mouseenter와 mouseover 메서드의 차이</i>에 대해 다뤄보도록 하겠습니다. 
+            </p>
+            <hr>
+            <!-- // mouseenter와 mouseover의 차이는? -->
+
+            <h2 class="t_tit2">mouseenter, mouseover 이벤트란 무엇인가!?</h2>
+            <p class="t_desc">
+                <i>mouseenter와 mouseover는 어떤 요소 안으로 마우스 커서가 들어오는 순간을 감지하는 이벤트</i>이며,
+                이와 반대로 <i>마우스가 어떤 요소 밖으로 이동하는 순간을 감지하는 이벤트는 mouseout, mouseleave</i>다. 
+            </p>
+            <p class="t_box">
+                mouseenter &lt;-> mouseleave <br>
+                mouseover &lt;-> mouseleave
+            </p>
+            <!-- // mouseenter, mouseover 이벤트란 무엇인가!? -->
+
+            <h2 class="t_tit2">그래서 둘이 뭐가 다른데!?🤔</h2>
+            <p class="t_desc">
+                mouseenter &lt;-> mouseleave의 경우는 이벤트 발생 시 버블링이 일어나지 않으며 자신만이 이벤트를 받을 수 있다. 
+                반면, mouseover &lt;-> mouseleave의 경우는 이벤트가 발생 시 버블링이 일어나며 상위 요소로 전파, preventDefault 메서드를 호출해
+                이벤트의 기본 동작을 취소할 수 있다.
+            </p>
+            <p class="t_box">
+                읽어보면 좋은 글들 <br>
+                <br>
+                MDN - <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event">mouseover</a> / <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event">mouseenter</a> <br>
+                즐거움을 찾자 Find Fun!!:티스토리 - <a href="https://findfun.tistory.com/290">jQuery API - mouseenter(), 마우스 진입 감지 이벤트</a> <br>
+                Velog 너구리오리의 잡다한 지식 - <a href="https://velog.io/@commi1106/MouseOver%EC%99%80-MouseEnter%EC%9D%98-%EC%B0%A8%EC%9D%B4-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B2%84%EB%B8%94%EB%A7%81">MouseOver와 MouseEnter의 차이, 이벤트 버블링</a>
+            </p>
+            <!-- // 그래서 둘이 뭐가 다른데!?🤔 -->
+
+            <h2 class="t_tit2">코드펜 예제로 비교해보자!</h2>
+            <p class="t_desc2">
+                백문이 불여일견이라고 직접 코드펜 예제로 봐야 이해가 겨우 갈 것이다. <br>
+                아래의 코드펜 예제를 통해 숫자가 증가되는 순간을 자세히 살펴보도록 할 것. <br>
+                <br>
+                출처 : <a href="https://findfun.tistory.com/290">https://findfun.tistory.com/290</a>
+            </p>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="mouseenter vs mouseover" src="https://codepen.io/kde66034/embed/poVvaBa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/poVvaBa">
+                    mouseenter vs mouseover</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <!-- // 코드펜 -->
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

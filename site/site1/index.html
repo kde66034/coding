@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="assets/css/text.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/imgText.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
 
 </head>
 <body>
@@ -66,7 +69,36 @@
         </section>
 
         <section id="sliderType" class="slider__wrap">
-            <h2>슬라이드 영역</h2>
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <div class="slider">
+                    <div class="slider__img">
+                        <div class="desc">
+                            <span>DEVELOPER</span>
+                            <h3>NEW PROJECT</h3>
+                            <p>
+                                당신도 훌륭한 제빵사가 될 수 있어요! 화이팅! <br>
+                                당신도 훌륭한 제빵사가 될 수 있어요! 화이팅!
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__arrow">
+                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                        <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+                    </div>
+                    <div class="slider__dot">
+                        <a href="#" class="dot active"><span class="ir">1</span></a>
+                        <a href="#" class="dot"><span class="ir">2</span></a>
+                        <a href="#" class="dot"><span class="ir">3</span></a>
+                        <a href="#" class="play"><span class="ir">플레이</span></a>
+                        <a href="#" class="stop"><span class="ir">정지</span></a>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- // sliderType -->
 
@@ -193,8 +225,16 @@
         </section>
         <!-- // cardType -->
 
-        <section id="bannerType" class="banner__wrap">
-            <h2>배너 영역</h2>
+        <section id="bannerType" class="banner__wrap nexon section">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner">
+                <h3 class="title">유튜버 김땡땡</h3>
+                <p class="desc">
+                    더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+                    <a href="https://www.youtube.com/c/cozyasmr0" title="유튜브 페이지로 이동">https://www.youtube.com/c/kim_TT</a>
+                </p>
+                <span class="small">배너 유형 01</span>
+            </div>
         </section>
         <!-- // bannerType -->
 
@@ -238,8 +278,65 @@
     </main>
     <!-- // mainType -->
 
-    <footer id="footerType">
-        <h2>푸터 영역</h2>
+    <footer id="footerType" class="footer__wrap nexon section gray">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="#">웹표준 사이트</a></li>
+                        <li><a href="#">반응형 사이트</a></li>
+                        <li><a href="#">패럴랙스 사이트</a></li>
+                        <li><a href="#">포트폴리오 사이트</a></li>
+                    </ul>    
+                </div>
+                <div>
+                    <h3>헤더 영역</h3>
+                    <ul>
+                        <li><a href="#">메뉴 유형 01</a></li>
+                        <li><a href="#">메뉴 유형 02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>슬라이드 영역</h3>
+                    <ul>
+                        <li><a href="#">슬라이드 유형 01</a></li>
+                        <li><a href="#">슬라이드 유형 02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>이미지 영역</h3>
+                    <ul>
+                        <li><a href="#">이미지 유형 01</a></li>
+                        <li><a href="#">이미지 유형 02</a></li>
+                        <li><a href="#">이미지/텍스트 유형 01</a></li>
+                        <li><a href="#">이미지/텍스트 유형 02</a></li>
+                        <li><a href="#">텍스트 유형 01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>컨텐츠 영역</h3>
+                    <ul>
+                        <li><a href="#">카드 유형 01</a></li>
+                        <li><a href="#">카드 유형 02</a></li>
+                        <li><a href="#">카드 유형 03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>푸터 영역</h3>
+                    <ul>
+                        <li><a href="#">푸터 메뉴 유형 01</a></li>
+                        <li><a href="#">푸터 컨텍트 유형 02</a></li>
+                        <li><a href="#">푸터 이메일 유형 03</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__right">
+                ⓒ2022 Byeolbit Jeppang Kyoshil<br>
+                All rights reserved.
+            </div>
+        </div>
     </footer>
     <!-- // footerType -->
 </body>
