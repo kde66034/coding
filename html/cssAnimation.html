@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : css 애니메이션 종류</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+        <div class="document">
+            <h1 class="t_tit">CSS Animation</h1>
+            <p class="t_desc2">
+                CSS 애니메이션 종류와 예시 정리.
+            </p>
+            <!-- // CSS 애니메이션이란? -->
+
+            <h2 class="t_tit2">animation</h2>
+            <div class="t_box">
+                animation : name | duration | timing-function | delay | iteration | direction | fill-mode | play-state
+            </div>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">종류</th>
+                        <th class="ce">예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">animation-name</td>
+                        <td>@keyframe에 지정된 이름을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">animation-duration</td>
+                        <td>애니메이션이 실행되는 시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">animation-timing-function</td>
+                        <td>애니메이션 키프레임 움직임을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">animation-delay</td>
+                        <td>애니메이션이 시작되기 전까지 시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">animation-iteration</td>
+                        <td>애니메이션 반복 횟수를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">animation-derection</td>
+                        <td>애니메이션 방향을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">animation-fill-mode</td>
+                        <td>애니메이션 끝나고 난 뒤 어떤 값을 적용할지 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">animation-play-state</td>
+                        <td>애니메이션 실행 상태를 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- // animation -->
+
+            <h2 class="t_tit2">transtion</h2>
+            <div class="t_box">
+                transtion : property | durtion | timing-function | delay
+            </div>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">종류</th>
+                        <th class="ce">예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">transition-property</td>
+                        <td>트랜지션을 적용할 CSS 속성 대상을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">transition-druation</td>
+                        <td>트랜지션 작동시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">transition-timing-function</td>
+                        <td>트랜지션 움직임 효과를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">transition-delay</td>
+                        <td>트랜지션이 시작되기 전까지 시간을 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- // transtion -->
+
+            <h2 class="t_tit2">timing-function</h2>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">종류</th>
+                        <th class="ce">예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">linear</td>
+                        <td>일정한 간격으로 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">ease</td>
+                        <td>처음에는 서서히 가속하고 마지막 부분에서 급격히 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">ease-in</td>
+                        <td>처음에는 천천히 시작하고 마지막에 가속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">ease-out</td>
+                        <td>처음에는 최대 속도로 시작하고 마지막에 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">ease-in-out</td>
+                        <td>처음에는 제로 속도로 시작하고, 중간 지점에서 최고 속도로 움직이고, 마지막 부분에서 서서히 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">step-start</td>
+                        <td>애니메이션을 시작점에서 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">step-end</td>
+                        <td>애니메이션을 끝점에서 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">steps(int, start/end)</td>
+                        <td>애니메이션을 단계별을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">cubic-bezier(n,n,n,n)</td>
+                        <td>버지니아 곡선 값을 만들어서 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- // timing-function -->
+
+            <h2 class="t_tit2">timing-function : ease</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="Untitled" src="https://codepen.io/kde66034/embed/dyeYwKv?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/dyeYwKv">
+                    Untitled</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <!-- // ease -->
+
+            <h2 class="t_tit2">timing-function : step</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="timing-function - step" src="https://codepen.io/kde66034/embed/wvjKRRY?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/wvjKRRY">
+                    timing-function - step</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // step -->
+
+            <h2 class="t_tit2">timing-function : cubic-bezier</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="timing-function" src="https://codepen.io/kde66034/embed/jOxbXJo?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/jOxbXJo">
+                    timing-function</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // cubic-bezier -->
+
+            <h2 class="t_tit2">timing-function : animation-delay</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="animation-delay" src="https://codepen.io/kde66034/embed/GRdpPad?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/GRdpPad">
+                    animation-delay</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-delay -->
+
+            <h2 class="t_tit2">timing-function : animation-iteration-count</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="animation-iteration-count" src="https://codepen.io/kde66034/embed/gOzaZVj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/gOzaZVj">
+                    animation-iteration-count</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-iteration-count -->
+
+            <h2 class="t_tit2">timing-function : animation-direction</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="Untitled" src="https://codepen.io/kde66034/embed/yLjYZyy?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/yLjYZyy">
+                    Untitled</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-direction -->
+
+            <h2 class="t_tit2">timing-function : animation-fill-mode</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="animation-fill-mode" src="https://codepen.io/kde66034/embed/MWGaLKa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/MWGaLKa">
+                    animation-fill-mode</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-fill-mode -->
+
+            <h2 class="t_tit2">timing-function : animation-play-state</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="animation-play-state" src="https://codepen.io/kde66034/embed/ExLVryW?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/ExLVryW">
+                    animation-play-state</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-play-state -->
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

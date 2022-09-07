@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : svg 텍스트 애니메이션</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+        <div class="document">
+            <h1 class="t_tit">SVG 텍스트 애니메이션</h1>
+            <p class="t_desc2">
+                이번 포스팅에서는 텍스트가 서서히 그려지는 효과의 SVG 애니메이션을 만들어보도록 하겠습니다. 
+                &lt;svg> 태그가 사용된 방법입니다.
+            </p>
+            <!-- // svg 텍스트 애니메이션? -->
+
+            <h2 class="t_tit2">HTML 소스</h2>
+            <div class="t_code">
+<pre><code lang="lanugage-html">&lt;svg viewBox="0 0 1320 300">
+    &lt;text x="50%" y="50%" dy="40px" text-anchor="middle">코딩공책&lt;/text>
+&lt;/svg>
+</code></pre>
+            </div>
+            <!-- // html -->
+
+            <h2 class="t_tit2">CSS 소스</h2>
+            <div class="t_code">
+<pre><code lang="lanugage-css">@font-face {
+    font-family: 'Jalnan';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.ttf') format("truetype");
+    font-display: swap;
+}
+
+body {
+  background-color: #FFEBEE;
+}
+svg {
+  font-family: 'Jalnan';
+  font-size: 140px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  animation: stroke 5s infinite alternate;
+  fill: rgba(72,138,204,1);
+}
+@keyframes stroke {
+  0% {
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    fill: rgba(72,138,204,0);
+    stroke: rgba(54,95,160,1);
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(72,138,204,0);
+    stroke: rgba(54,95,160,1);
+  }
+  80% {
+    fill: rgba(72,138,204,0);
+    stroke: rgba(54,95,160,1);
+  }
+  100% {
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    fill: rgba(72,138,204,1);
+    stroke: rgba(54,95,160,0);
+    stroke-width: 0;
+  }
+}
+</code></pre>
+            </div>
+            <!-- // css -->
+            
+            <h2 class="t_tit2">코드펜 결과</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="text animation" src="https://codepen.io/kde66034/embed/KKRdmPK?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/KKRdmPK">
+                    text animation</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
