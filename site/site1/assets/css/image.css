@@ -47,4 +47,11 @@
     .image__inner {
         flex-direction: column;
     }
+    .image {
+        width: 38%;
+        margin-bottom: 20px;
+    }
+    .image__title {
+        /* font-size: 20px; */
+    }
 }

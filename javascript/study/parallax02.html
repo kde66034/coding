@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 패럴럭스01</title>
+    <title>자바스크립트 : 패럴럭스02</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -58,11 +58,13 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">패럴럭스 이펙트 01</h2>
+            <h2 class="t_tit">패럴럭스 이펙트 02</h2>
             <p class="t_desc2">
                 이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 패럴럭스(parallax, 패럴랙스) 이펙트를 만들어보도록 하겠습니다. 
                 먼저 <i>parallax란, '시차(視差)'라는 의미를 가진 천문학 용어</i>이며, 이번 포스팅에서 내비게이션 바에서 특정 섹션으로 가는 버튼을 
-                누르면 해당 섹션으로 시차를 두고 스무스하게 이동시켜 주는 효과를 만들어보고자 합니다.
+                누르면 해당 섹션으로 시차를 두고 스무스하게 이동시켜 주는 효과를 만들어보고자 합니다. <br>
+                <br>
+                지난 <a href="https://kde66034.tistory.com/91">패럴럭스 01 포스팅</a>에서 형태만 dot으로 바꿔보았습니다.
             </p>
 
             <!-- // 패럴럭스 이펙트 만들기  -->
@@ -72,16 +74,16 @@
             <h3 class="t_tit2">HTML 소스
             </h3>
             <p class="t_desc">
-                header, parallax__nav(내비게이션), main(parallax__cont(명언 모음)), aside(parallax__info(스크롤탑값)), footer(모달 박스)로 구성된다.
+                header, parallax__dot(dot 내비게이션), main(parallax__cont(명언 모음)), aside(parallax__info(스크롤탑값)), footer(모달 박스)로 구성된다.
             </p>
             <div class="t_code">
 <pre><code class="language-html">&lt;body class="img10">
     &lt;header id="header">
-        &lt;h1>JAVASCRIPT PARALLAX EFFECT 01&lt;/h1>
+        &lt;h1>JAVASCRIPT PARALLAX EFFECT 02&lt;/h1>
         &lt;p>패럴럭스 이펙트&lt;/p>
         &lt;ul>
-            &lt;li class="active">&lt;a href="parallaxEffect01.html">01&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="parallaxEffect02.html">02&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="parallaxEffect01.html">01&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="parallaxEffect02.html">02&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect03.html">03&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect04.html">04&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect05.html">05&lt;/a>&lt;/li>
@@ -91,20 +93,20 @@
     &lt;/header>
     &lt;!-- //header -->
 
-    &lt;nav id="parallax__nav">
+    &lt;nav id="parallax__dot">
         &lt;ul>
             &lt;li class="active">&lt;a href="#section1">메뉴1&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#section2">메뉴2&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#section3">메뉴3&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#section4">메뉴4&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#section5">메뉴5&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#section6">메뉴6&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#section7">메뉴7&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#section8">메뉴8&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#section9">메뉴9&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section2">&lt;span>메뉴2&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section3">&lt;span>메뉴3&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section4">&lt;span>메뉴4&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section5">&lt;span>메뉴5&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section6">&lt;span>메뉴6&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section7">&lt;span>메뉴7&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section8">&lt;span>메뉴8&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section9">&lt;span>메뉴9&lt;/span>&lt;/a>&lt;/li>
         &lt;/ul>
     &lt;/nav>
-    &lt;!-- //parallax__nav -->
+    &lt;!-- //parallax__dot -->
 
     &lt;main id="parallax__cont">
         &lt;div id="contents">
@@ -203,19 +205,6 @@
 
     &lt;aside id="parallax__info">
         &lt;div class="scroll">scrollTop : &lt;span>0&lt;/span>px&lt;/div>
-        &lt;div class="info">
-            &lt;ul>
-                &lt;li>#section1 offset() : &lt;span class="offset1">0&lt;/span>px&lt;/li>
-                &lt;li>#section2 offset() : &lt;span class="offset2">0&lt;/span>px&lt;/li>
-                &lt;li>#section3 offset() : &lt;span class="offset3">0&lt;/span>px&lt;/li>
-                &lt;li>#section4 offset() : &lt;span class="offset4">0&lt;/span>px&lt;/li>
-                &lt;li>#section5 offset() : &lt;span class="offset5">0&lt;/span>px&lt;/li>
-                &lt;li>#section6 offset() : &lt;span class="offset6">0&lt;/span>px&lt;/li>
-                &lt;li>#section7 offset() : &lt;span class="offset7">0&lt;/span>px&lt;/li>
-                &lt;li>#section8 offset() : &lt;span class="offset8">0&lt;/span>px&lt;/li>
-                &lt;li>#section9 offset() : &lt;span class="offset9">0&lt;/span>px&lt;/li>
-            &lt;/ul>
-        &lt;/div>
     &lt;/aside>
     &lt;!-- //parallax__info -->
 
@@ -229,112 +218,41 @@
             </div>
             <!-- // html -->
 
-            <h3 class="t_tit2">JS 소스 : scrollTop값 구하기 / active 효과 작동시키기
+            <h3 class="t_tit2">JS 소스
             </h3>
             <p class="t_desc">
-                상수(const) scroll을 생성하여 그 안에 "#parallax__info .scroll span"(스크롤탑 값 표시하는 곳)과 연결시킨다. 
-                그런 다음, window.addEventListener를 통해 스크롤탑 값을 구하고 forEach를 통해 active 효과가 원활하게
-                작동하도록 설정한다. <br>
+                부드러운 애니메이션을 주기 위해 e.preventDefault()로 내비게이션 바 이동 기능을 잠시 비활성화 시킨 다음 
+                behavior: "smooth"로 스무스한 애니메이션 효과를 주는 동시에 이동 기능을 재활성화시킨다. <br>
                 <br>
-                마지막으로 // Info 에서처럼 스크롤탑값이 화면에 보일 수 있도록 한다.
+                그 다음 스크롤탑값을 let 변수에 저장하고 그 값을 반올림하여 표시되도록 설정하고, 스크롤이 해당 섹션을 지나가는가
+                지나치지 않았는가 여부를 if문으로 가려 .active 효과를 추가할지 제거할지를 설정한다.
             </p>
             <div class="t_code">
-<pre><code class="language-js">const scroll = document.querySelector("#parallax__info .scroll span");
+<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el => {
+  el.addEventListener("click", e => {
+    e.preventDefault();   // 부드러운 애니메이션을 주기 위해 내비게이션바에서 다른 페이지로 이동 잠시 불가능하게 만듬
 
-window.addEventListener("scroll", () => {
-    // scrollTop값 구하는 방법 3가지
-    // let scrollTop = window.pageYOffset;
-    // let scrollTop = window.scrollY;
-    // let scrollTop = document.documentElement.scrollTop;
-
-    // 3가지를 다 써도 상관없음
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-    // active 효과 작동시키기 (수동)
-    // if(scrollTop >= document.getElementById("section1").offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
-    // }
-    // if(scrollTop >= document.getElementById("section2").offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active");
-    //     });
-    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
-    // }
-    // 이걸 9번이나 써줘야 하니 귀찮기 때문에 for문 / forEach문을 사용해야 한다.
-
-    // active 효과 작동시키기: for문
-    // for(let i=1; i&lt;=9; i++) {
-    //     if(scrollTop >= document.getElementById("section"+i).offsetTop){
-    //         document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //             li.classList.remove("active");
-    //         });
-    //         document.querySelector("#parallax__nav li:nth-child("+i+")").classList.add("active");
-    //     }
-    // }
-
-    // active 효과 작동시키기 : forEach
-    document.querySelectorAll(".content__item").forEach((element, index) => {
-        if(scrollTop >= element.offsetTop -2){
-            document.querySelectorAll("#parallax__nav li").forEach(li => {
-                li.classList.remove("active");
-            });
-            document.querySelector("#parallax__nav li:nth-child("+(index+1)+")").classList.add("active");
-        }
-    });
-
-    // Info : 스크롤탑값 표시하기
-    // scroll.innerText = Math.round(scrollTop);
-    document.querySelector("#parallax__info .scroll span").innerText = Math.round(scrollTop);
-
-    // document.querySelector(".offset1").innerText = document.getElementById("section1").offsetTop;
-    // document.querySelector(".offset2").innerText = document.getElementById("section2").offsetTop;
-    // document.querySelector(".offset3").innerText = document.getElementById("section3").offsetTop;
-    // document.querySelector(".offset4").innerText = document.getElementById("section4").offsetTop;
-    // document.querySelector(".offset5").innerText = document.getElementById("section5").offsetTop;
-    // document.querySelector(".offset6").innerText = document.getElementById("section6").offsetTop;
-    // document.querySelector(".offset7").innerText = document.getElementById("section7").offsetTop;
-    // document.querySelector(".offset8").innerText = document.getElementById("section8").offsetTop;
-    // document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop;
-
-    for(let i=1; i&lt;=9; i++) {
-        document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
-    }
+    document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"}); // 이동 애니메이션을 스무스하게
+  });
 });
 
-    // 스크롤 이동
-    document.querySelectorAll("#parallax__nav li a").forEach(li => {
-        li.addEventListener("click", (e) => {
-            e.preventDefault();
-            document.querySelector(li.getAttribute("href")).scrollIntoView({
-                behavior: "smooth"  // 이동 부드럽게
-            });
-        });
-    });
+window.addEventListener("scroll", () => {
+  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;   // 현재 표시되는 브라우저의 최상단 위치값
+
+  document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);   // Math.floor로 scrollTop값 반올림하기
+
+  document.querySelectorAll(".content__item").forEach((e, i) => {
+    if(scrollTop >= e.offsetTop - 10) {   // 10을 빼서 안맞는 부분을 최적화
+      document.querySelectorAll("#parallax__dot li").forEach(li => {
+        li.classList.remove("active");  // 스크롤을 지나친 곳은 active를 지워줌
+      });
+      document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");   // 넘어가면서 active를 추가해줌
+    }
+  });
+});
 </code></pre>
             </div>
             <!-- // js01 -->
-
-            <h3 class="t_tit2">JS 소스 : 스크롤 이동 효과</h3>
-            <p class="t_desc">
-                이제 내비게이션 바에서 메뉴 버튼을 누를 때 스크롤 이동이 되도록 작업해주도록 하자. forEach문을 이용해서
-                작업하며, behavior : "smooth" 를 통해 이동 애니메이션을 부드럽게 (말 그대로 스무스하게) 설정할 수 있다.
-            </p>
-            <div class="t_code">
-<pre><code class="language-js">// 스크롤 이동
-document.querySelectorAll("#parallax__nav li a").forEach(li => {
-    li.addEventListener("click", (e) => {
-        e.preventDefault();
-        document.querySelector(li.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"  // 이동 부드럽게
-        });
-    });
-});
-</code></pre>
-            </div>
-            <!-- // js02 -->
 
             <h3 class="t_tit2">CSS 소스</h3>
             <p class="t_desc">
@@ -484,6 +402,46 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
         line-height: 1.4;
     }
 
+    /* parallax__dot */
+    #parallax__dot {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10000;
+        background-color: #00000040;
+        padding: 20px 10px;
+        border-radius: 30px;
+    }
+    #parallax__dot li {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 12px 8px;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+        transition: box-shadow 0.2s ease;
+    }
+    #parallax__dot li a {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        transition: transform 0.2s ease;
+    }
+    #parallax__dot li span {
+        display: none;
+    }
+    #parallax__dot li.active {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
+    }
+    #parallax__dot li.active a {
+        transform: scale(0.4);
+    }
+
     /* 반응형 */
     @media (max-width: 800px) {
         #parallax__cont {
@@ -524,7 +482,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
 
             <h3 class="t_tit2">이미지 설명으로 한 눈에 보기</h3>
             <div class="t_iframe">
-                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F0sc6cwdunIHWvHkaSz7QF1%2F%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8%25EC%259A%25A9-%25EC%2598%2588%25EC%25A0%259C%3Fnode-id%3D1%253A2" allowfullscreen></iframe>
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F0sc6cwdunIHWvHkaSz7QF1%2F%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8%25EC%259A%25A9-%25EC%2598%2588%25EC%25A0%259C%3Fnode-id%3D315%253A2" allowfullscreen></iframe>
             </div>
             <!-- // 설명 -->
             

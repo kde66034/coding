@@ -4,7 +4,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 body {
@@ -27,14 +27,14 @@ li {
 }
 
 /* 스크롤바 */
-::-webkit-scrollbar {
+.modal__box ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
-::-webkit-scrollbar-track {
+.modal__box ::-webkit-scrollbar-track {
   background: #1f224a26;
 }
-::-webkit-scrollbar-thumb {
+.modal__box ::-webkit-scrollbar-thumb {
   background: rgba(69, 71, 100, 0.321);
   border-radius: 20px;
 }
