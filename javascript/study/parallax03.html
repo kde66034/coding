@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 패럴럭스02</title>
+    <title>자바스크립트 : 패럴럭스03</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -58,13 +58,13 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">패럴럭스 이펙트 02</h2>
+            <h2 class="t_tit">패럴럭스 이펙트 03</h2>
             <p class="t_desc2">
                 이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 패럴럭스(parallax, 패럴랙스) 이펙트를 만들어보도록 하겠습니다. 
                 먼저 <i>parallax란, '시차(視差)'라는 의미를 가진 천문학 용어</i>이며, 이번 포스팅에서 내비게이션 바에서 특정 섹션으로 가는 버튼을 
                 누르면 해당 섹션으로 시차를 두고 스무스하게 이동시켜 주는 효과를 만들어보고자 합니다. <br>
                 <br>
-                지난 <a href="https://kde66034.tistory.com/91">패럴럭스 01 포스팅</a>에서 내비게이션 형태만 사이드바 형식의 dot으로 바꿔보았습니다.
+                지난 <a href="https://kde66034.tistory.com/91">패럴럭스 01 포스팅</a>에서 만든 틀을 그대로 유지한 채 메뉴 바를 숨겼다 나타나게 하는 기능을 추가하겠습니다.
             </p>
 
             <!-- // 패럴럭스 이펙트 만들기  -->
@@ -79,12 +79,12 @@
             <div class="t_code">
 <pre><code class="language-html">&lt;body class="img10">
     &lt;header id="header">
-        &lt;h1>JAVASCRIPT PARALLAX EFFECT 02&lt;/h1>
+        &lt;h1>JAVASCRIPT PARALLAX EFFECT 03&lt;/h1>
         &lt;p>패럴럭스 이펙트&lt;/p>
         &lt;ul>
             &lt;li>&lt;a href="parallaxEffect01.html">01&lt;/a>&lt;/li>
-            &lt;li class="active">&lt;a href="parallaxEffect02.html">02&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="parallaxEffect03.html">03&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="parallaxEffect02.html">02&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="parallaxEffect03.html">03&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect04.html">04&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect05.html">05&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect06.html">06&lt;/a>&lt;/li>
@@ -93,7 +93,7 @@
     &lt;/header>
     &lt;!-- //header -->
 
-    &lt;nav id="parallax__dot">
+    &lt;nav id="parallax__nav">
         &lt;ul>
             &lt;li class="active">&lt;a href="#section1">메뉴1&lt;/a>&lt;/li>
             &lt;li>&lt;a href="#section2">&lt;span>메뉴2&lt;/span>&lt;/a>&lt;/li>
@@ -106,7 +106,12 @@
             &lt;li>&lt;a href="#section9">&lt;span>메뉴9&lt;/span>&lt;/a>&lt;/li>
         &lt;/ul>
     &lt;/nav>
-    &lt;!-- //parallax__dot -->
+    &lt;!-- //parallax__nav -->
+
+    &lt;div id="parallax__top">
+        Top
+    &lt;/div>
+    &lt;!-- //parallax__top -->
 
     &lt;main id="parallax__cont">
         &lt;div id="contents">
@@ -228,28 +233,52 @@
                 지나치지 않았는가 여부를 if문으로 가려 .active 효과를 추가할지 제거할지를 설정한다.
             </p>
             <div class="t_code">
-<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el => {
-  el.addEventListener("click", e => {
-    e.preventDefault();   // 부드러운 애니메이션을 주기 위해 내비게이션바에서 다른 페이지로 이동 잠시 불가능하게 만듬
+<pre><code class="language-js">window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;     // 현재 브라우저 화면 중 최상단 위치 값
 
-    document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"}); // 이동 애니메이션을 스무스하게
-  });
-});
-
-window.addEventListener("scroll", () => {
-  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;   // 현재 표시되는 브라우저의 최상단 위치값
-
-  document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);   // Math.floor로 scrollTop값 반올림하기
-
-  document.querySelectorAll(".content__item").forEach((e, i) => {
-    if(scrollTop >= e.offsetTop - 10) {   // 10을 빼서 안맞는 부분을 최적화
-      document.querySelectorAll("#parallax__dot li").forEach(li => {
-        li.classList.remove("active");  // 스크롤을 지나친 곳은 active를 지워줌
-      });
-      document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");   // 넘어가면서 active를 추가해줌
+    // 문서전체높이 - 브라우저높이(즉, 마지막 섹션에 도달했을 때) ==> TOP 버튼 나타나게 함
+    if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+        document.querySelector("#parallax__top").classList.add("show");
+    } else {
+        document.querySelector("#parallax__top").classList.remove("show");
     }
-  });
+
+    // top 버튼 : 눌렀을 때 페이지 최상단으로 스무스하게 이동시켜줌
+    document.querySelector("#parallax__top").addEventListener("click", () => {
+        window.scrollTo({left:0, top:0, behavior:"smooth"});
+    });
+    
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
 });
+
+// 스크롤 움직일 때
+// 트리거 변수 이용
+let nowScroll = true;   // 트루일때 실행
+let lastScroll = 0;
+
+function scrollProgress() {
+    nowScroll = true;   // 현재 스크롤이 
+
+    setInterval(() => {
+        if(nowScroll) {
+            nowScroll = false;  // false일때 실행x : 0.3초마다 실행 없애줌
+            hasScroll();    // 사용자 스크롤 액션 감지 X
+        }
+    }, 300) // 0.3초마다
+}
+
+  function hasScroll() {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    if(scrollTop &lt; lastScroll) {
+      document.querySelector("#parallax__nav").classList.add("show");
+    } else {
+      document.querySelector("#parallax__nav").classList.remove("show");
+    }
+    lastScroll = scrollTop;
+  }
+
+  window.addEventListener("scroll", scrollProgress);
 </code></pre>
             </div>
             <!-- // js01 -->
