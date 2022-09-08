@@ -87,3 +87,42 @@
 .slider__dot a.stop {
     background-position: -60px -70px;
 }
+
+/* 반응형 */
+@media (max-width: 800px) {
+    .slider__img .desc {
+        width: 800px;
+    }
+    .slider__img .desc span {
+        font-size: 16px;
+        margin-left: 36px;
+    }
+    .slider__img .desc h3 {
+        font-size: 40px;
+        margin-left: 36px;
+    }
+    .slider__img .desc p {
+        font-size: 18px;
+        margin-bottom: 32px;
+        margin-left: 36px;
+    }
+    .slider__img .desc .btn a {
+        font-size: 16px;
+        padding: 10px 30px;
+        margin-left: 36px;
+    }
+
+    .slider__arrow a {
+        width: 16px;
+        height: 46px;
+    }
+    .slider__arrow a.left {
+        left: 16px;
+    }
+    .slider__arrow a.right {
+        right: 16px;
+        background-position: -64px 0;
+    }
+
+
+}

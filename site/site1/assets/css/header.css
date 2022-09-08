@@ -60,6 +60,9 @@
 
 /* 반응형 */
 @media (max-width: 800px) {
+    #headerType {
+        margin-bottom: 220px;
+    }
     .header__inner {
         display: block;
         height: 260px;

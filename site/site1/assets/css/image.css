@@ -41,3 +41,10 @@
     color: #fff;
     display: inline-block;
 }
+
+/* 반응형 */
+@media (max-width: 800px) {
+    .image__inner {
+        flex-direction: column;
+    }
+}
