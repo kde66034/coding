@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>220911 롯데월드</title>
+
+    <!-- CSS -->
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        /* wrap */
+        #wrap {
+            width: 1000px;
+            height: 1000px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        #header {
+            height: 100px;
+        }
+
+        #header h1 {
+            float: left;
+            padding-top: 5px;
+        }
+
+        #header h1 img {
+            width: 130px;
+        }
+
+        #header .nav {
+            float: right;
+            z-index: 100;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        #header .nav li {
+            position: relative;
+            float: left;
+            width: 140px;
+            text-align: center;
+        }
+
+        #header .nav li a {
+            display: block;
+            padding: 20px 15px;
+            background: #ccc;
+        }
+
+        #header .nav li a:hover {
+            background: #ddd;
+        }
+
+        #header .nav li ul.submenu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 59px;
+            background: #ddd;
+        }
+
+        #header .nav li ul.submenu li a {
+            padding: 10px;
+        }
+
+        #header .nav li ul.submenu li a:hover {
+            background: #999;
+        }
+
+        /* banner */
+        #banner {
+            width: 1000px;
+            height: 378px;
+            overflow: hidden;
+        }
+
+        #banner img {
+            width: 100%;
+        }
+
+        .slideList {
+            position: relative;
+        }
+
+        .slideList .slideImg {
+            position: relative;
+        }
+
+        .slideList .slideImg h2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 30px;
+            border-radius: 25px;
+            color: #fff;
+        }
+
+        .slideList .slideImg img {
+            display: block;
+        }
+
+        /* content1 */
+        #content1 {
+            margin-top: 15px;
+        }
+
+        #content1 .notice {
+            float: left;
+            width: 49%;
+            height: 220px;
+            margin-right: 2%;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        #content1 .ad {
+            float: left;
+            width: 49%;
+            margin-right: 0;
+        }
+
+        #content1 .ad img {
+            width: 100%;
+            display: block;
+        }
+
+        /* notice */
+        .notice {
+            position: relative;
+            padding: 30px;
+        }
+
+        .notice ul li {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .notice ul li a {
+            font-size: 24px;
+            color: #999;
+            font-weight: bold;
+        }
+
+        .notice ul li.active a {
+            color: #000;
+        }
+
+        .notice ul li ul {
+            position: absolute;
+            left: 30px;
+            top: 70px;
+        }
+
+        .notice ul li ul li {
+            width: 95%;
+            padding: 5px 0;
+        }
+
+        .notice ul li ul li a {
+            float: left;
+            width: 60%;
+            font-size: 16px;
+            color: #333;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: normal;
+        }
+
+        .notice ul li ul li span {
+            float: right;
+            width: 20%;
+        }
+
+        .notice .more {
+            position: absolute;
+            right: 30px;
+            top: 35px;
+        }
+
+        /* content2 */
+        #content2 {
+            margin-top: 25px;
+        }
+
+        #content2 h2 {
+            margin-bottom: 10px;
+        }
+
+        #content2 li {
+            float: left;
+            width: 24.25%;
+            margin-right: 1%;
+        }
+
+        #content2 li:last-child {
+            margin-right: 0;
+        }
+
+        #content2 li img {
+            width: 100%;
+        }
+
+        #content2 li span {
+            display: block;
+            padding: 10px 0;
+        }
+
+        /* footer */
+        #footer {
+            border-top: 1px solid #ccc;
+            margin-top: 30px;
+            padding: 30px 0;
+        }
+
+        #footer address {
+            font-style: normal;
+            color: #666;
+        }
+
+        #footer address ul {
+            width: 670px;
+        }
+
+        #footer address li {
+            position: relative;
+            display: inline;
+            line-height: 1.7;
+            padding: 0px 15px 0px 10px;
+        }
+
+        #footer address li:after {
+            content: '';
+            width: 1px;
+            height: 13px;
+            background: #666;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #footer address li.left {
+            padding-left: 0;
+        }
+
+        #footer address p {
+            text-transform: uppercase;
+            padding-top: 30px;
+        }
+
+        /* layer */
+        .layer_bg {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 900
+        }
+
+        .layer {
+            width: 500px;
+            height: 500px;
+            background: #ccc;
+            border: 2px solid #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1000;
+            transform: translate(-50%, -50%);
+        }
+
+        .layer h2 {
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .layer .close {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="assets/img/Test/logo.jpg" alt="롯데월드"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- // header -->
+
+        <section id="banner">
+            <div class="slideList">
+                <div class="slideImg">
+                    <h2>이미지1</h2>
+                    <img src="assets/img/Test/banner.jpg" alt="메리 크리스마스1">
+                </div>
+                <div class="slideImg">
+                    <h2>이미지2</h2>
+                    <img src="assets/img/Test/banner2.jpg" alt="메리 크리스마스2">
+                </div>
+                <div class="slideImg">
+                    <h2>이미지3</h2>
+                    <img src="assets/img/Test/banner3.jpg" alt="메리 크리스마스3">
+                </div>
+            </div>
+        </section>
+        <!-- // banner -->
+
+        <section id="content1" class="clearfix">
+            <article class="notice">
+                <ul class="clearfix">
+                    <li class="active"><a href="#">롯데월드 소식</a>
+                        <ul>
+                            <li><a href="#">1. 첫번째 목록이 있었는데 없었습니다.</a><span>2022.09.11</span></li>
+                            <li><a href="#">1. 첫번째 목록이 있었는데 없었습니다.</a><span>2022.09.11</span></li>
+                            <li><a href="#">1. 첫번째 목록이 있었는데 없었습니다.</a><span>2022.09.11</span></li>
+                            <li><a href="#">1. 첫번째 목록이 있었는데 없었습니다.</a><span>2022.09.11</span></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#">뉴스·공지</a>
+                        <ul>
+                            <li><a href="#">2. 두번째 목록이 없었는데 있었는데 없었습니다.</a><span>2022.09.10</span></li>
+                            <li><a href="#">2. 두번째 목록이 없었는데 있었는데 없었습니다.</a><span>2022.09.10</span></li>
+                            <li><a href="#">2. 두번째 목록이 없었는데 있었는데 없었습니다.</a><span>2022.09.10</span></li>
+                            <li><a href="#">2. 두번째 목록이 없었는데 있었는데 없었습니다.</a><span>2022.09.10</span></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="#" class="more">더보기 +</a>
+            </article>
+            <figure class="ad">
+                <img src="assets/img/Test/ad.jpg" alt="온종일 혜택">
+            </figure>
+        </section>
+        <!-- // content1 -->
+
+        <section id="content2">
+            <h2>특별한 경험</h2>
+            <ul class="clearfix">
+                <li>
+                    <a href="#">
+                        <img src="assets/img/Test/img01.jpg" alt="이미지01">
+                        <span>연간회원안내</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/Test/img02.jpg" alt="이미지02">
+                        <span>연간회원안내</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/Test/img03.jpg" alt="이미지03">
+                        <span>연간회원안내</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/Test/img04.jpg" alt="이미지04">
+                        <span>연간회원안내</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- // content2 -->
+
+        <footer id="footer">
+            <address>
+                <ul>
+                    <li class="left">서울특별시 송파구 올림픽로 240 롯데월드</li>
+                    <li>대표자 : 박동기</li>
+                    <li>사업자등록번호 : 229-093-00392</li>
+                    <li class="left">통신판매업신고번호 : 229-093-00392-222</li>
+                    <li>전화 : 02-3045-3943</li>
+                </ul>
+                <p>Copyright 2018 LotteWorld, All Rights Reserved.</p>
+            </address>
+        </footer>
+        <!-- // footer -->
+
+        <!-- 팝업 -->
+        <div class="layer_bg">
+            <div class="layer">
+                <h2>타이틀</h2>
+                <a href="#" class="close">닫기</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    //#header .nav li ul.submenu {display:none}
+    //선택자 {속성: 속성값}
+
+    //$(".submenu").css("display","block");
+    //선택자.메서드(속성,속성값)
+
+    //첫번째 유형
+    // $(".nav > ul > li").mouseover(function(){   //li에 마우스 오버했을 때
+    //     $(this).find(".submenu").css("display","block");
+    // });
+
+    // $(".nav > ul > li").mouseout(function(){   //li에 마우스 아웃했을 때
+    //     $(this).find(".submenu").css("display","none");
+    // });
+
+    //두번째 유형
+    // $(".nav > ul > li").mouseover(function(){   //li에 마우스 오버했을 때
+    //     $(".nav > ul > li").find(".submenu").css("display","block");
+    // });
+
+    // $(".nav > ul > li").mouseout(function(){   //li에 마우스 아웃했을 때
+    //     $(".nav > ul > li").find(".submenu").css("display","none");
+    // });
+
+    // $(".nav > ul > li").mouseover(function(){
+    //     $(this).find(".submenu").stop().show(500);
+    // });
+
+    // $(".nav > ul > li").mouseout(function(){
+    //     $(this).find(".submenu").stop().hide(500);
+    // });
+
+    //첫번째 유형
+    $(".nav > ul > li").mouseover(function () {
+        $(this).find(".submenu").stop().slideDown(200);
+    });
+
+    $(".nav > ul > li").mouseout(function () {
+        $(this).find(".submenu").stop().slideUp(200);
+    });
+
+    //두번째 유형
+    //$(".nav > ul > li").mouseover(function(){
+    //    $(".nav > ul > li").find(".submenu").stop().slideDown(200);
+    //});
+
+    //$(".nav > ul > li").mouseout(function(){
+    //    $(".nav > ul > li").find(".submenu").stop().slideUp(200);
+    //});
+
+
+    //이미지 슬라이드
+    //이미지를 top으로 이미지의 height값 만큼 설정
+
+    //$(".slideList").css("top","-300px");
+    //$(".slideList").animate({"top":"-300px"},4000);
+
+    //현재 이미지 = 0    -> top:  0;
+    //두번째 이미지 = 1   -> top: -378px; 
+    //세번째 이미지 = 2   -> top: -756px;
+
+    var currentIndex = 0;       //현재 이미지를 변수에 저장
+
+    setInterval(function () {
+        if (currentIndex < 2) {
+            currentIndex++
+        } else {
+            currentIndex = 0;
+        }
+        var slidePosition = currentIndex * (-378) + "px";
+
+        //console.log(slidePosition);
+        $(".slideList").animate({ top: slidePosition }, 400);
+    }, 3000);
+
+
+    //탭메뉴
+    var tabMenu = $(".notice");
+
+    tabMenu.find("ul > li > ul").hide();
+    tabMenu.find("ul > li.active > ul").show();
+
+    function tabList(e) {
+        e.preventDefault();
+        var target = $(this);
+        target.next().show().parent("li").addClass("active").siblings("li").removeClass("active").find("ul").hide();
+    };
+
+    tabMenu.find("ul > li > a").click(tabList).focus(tabList);
+
+    //팝업
+    $(".ad").click(function () {
+        $(".layer_bg").css("display", "block");
+    });
+    $(".layer .close").click(function () {
+        $(".layer_bg").css("display", "none");
+    });
+
+</script>
+
+</html>

@@ -33,3 +33,14 @@
     -webkit-line-clamp: 4;  /* 4줄까지 제한 */
     -webkit-box-orient: vertical;
 }
+
+/* 반응형 */
+@media (max-width: 800px) {
+    .card__inner {
+        flex-direction: column;
+    }
+    .card {
+        width: 38%;
+        margin-bottom: 20px;
+    }
+}

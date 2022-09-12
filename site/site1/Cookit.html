@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>220911 COOKIT</title>
+
+    <!-- CSS -->
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        /* warp */
+        #warp {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        #header h1 {
+            float: left;
+            padding: 15px 0 10px;
+        }
+
+        #header h1 img {
+            width: 110px;
+        }
+
+        #header .nav {
+            float: right;
+        }
+
+        #header .nav li {
+            position: relative;
+            float: left;
+            width: 150px;
+            text-align: center;
+        }
+
+        #header .nav li a {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 24px 20px 20px 20px;
+        }
+
+        #header .nav li a:hover {
+            background: #ccc;
+        }
+
+        #header .nav li ul.submenu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 67px;
+            z-index: 100;
+        }
+
+        #header .nav li ul.submenu li a {
+            padding: 10px;
+            background: #888;
+        }
+
+        #header .nav li ul.submenu li a:hover {
+            background: #666;
+        }
+
+        /* banner */
+        #banner {
+            height: 389px;
+            overflow: hidden;
+        }
+
+        #banner img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 상하
+        .slideList {
+            position: relative; 
+            width: 1000px; 
+            height: 389px;
+        }
+        .slideList .slideImg {
+            position: relative;
+        }
+        .slideList .slideImg h2 {
+            position: absolute; 
+            left: 50%; 
+            top: 50%;
+            transform: translate(-50%,-50%); 
+            background: rgba(0,0,0,0.4); 
+            padding: 10px 30px;
+            border-radius: 20px;
+        }
+        */
+
+        /* 좌우 */
+        .slideList {
+            position: relative;
+            width: 3000px;
+            z-index: 50;
+        }
+
+        .slideList .slideImg {
+            position: relative;
+            width: 1000px;
+            float: left;
+        }
+
+        .slideList .slideImg h2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px 30px;
+            border-radius: 20px;
+        }
+
+
+        /* content1 */
+        #content1 {
+            margin-top: 20px;
+        }
+
+        #content1 .left {
+            float: left;
+            width: 49%;
+            padding: 20px;
+            background: #f2f2f2 url(assets/img/Test02/icon1.jpg) no-repeat right 20px center;
+            background-size: 80px;
+            box-sizing: border-box;
+            margin-right: 2%;
+        }
+
+        #content1 .left .title {
+            font-size: 22px;
+            padding-bottom: 5px;
+        }
+
+        #content1 .left .desc {
+            font-size: 14px;
+            color: #666;
+            padding-bottom: 15px;
+        }
+
+        #content1 .left .btn {
+            background: url(assets/img/Test02/map_icon.jpg) no-repeat left top;
+            background-size: 20px;
+            padding-left: 25px;
+            padding-top: 3px;
+        }
+
+        #content1 .right {
+            float: left;
+            width: 49%;
+            padding: 20px;
+            background: #f2f2f2 url(assets/img/Test02/icon2.jpg) no-repeat right 20px center;
+            background-size: 80px;
+            box-sizing: border-box;
+            margin-right: 0;
+        }
+
+        #content1 .right .title {
+            font-size: 22px;
+            padding-bottom: 5px;
+        }
+
+        #content1 .right .desc {
+            font-size: 14px;
+            color: #666;
+            padding-bottom: 15px;
+        }
+
+        #content1 .right .btn {
+            background: url(assets/img/Test02/shopping_icon.jpg) no-repeat left top;
+            background-size: 20px;
+            padding-left: 25px;
+            padding-top: 2px;
+        }
+
+        #content1 .right .btn em {
+            font-size: 13px;
+            color: 999;
+            font-style: normal;
+        }
+
+        /* content2 */
+        #content2 {
+            margin-top: 30px;
+        }
+
+        .tab-menu .tab-btn ul {
+            overflow: hidden;
+        }
+
+        .tab-menu .tab-btn li {
+            float: left;
+            margin-right: 15px;
+        }
+
+        .tab-menu .tab-btn li a {
+            display: block;
+            color: #999;
+            font-size: 24px;
+            padding-bottom: 10px;
+        }
+
+        .tab-menu .tab-btn li.active a {
+            color: #000;
+        }
+
+        .tab-cont .best figure {
+            float: left;
+            width: 32%;
+            margin-right: 2%;
+        }
+
+        .tab-cont .best figure img {
+            width: 100%;
+        }
+
+        .tab-cont .best figure:last-child {
+            margin-right: 0;
+        }
+
+        #content2 h2 {
+            font-size: 24px;
+            padding-bottom: 10px;
+        }
+
+        #content2 .best figure {
+            float: left;
+            width: 32%;
+            margin-right: 2%;
+        }
+
+        #content2 .best figure img {
+            width: 100%;
+        }
+
+        #content2 .best figure:last-child {
+            margin-right: 0;
+        }
+
+        /* footer */
+        #footer {
+            padding: 20px 0;
+            background: #202020;
+            margin-top: 30px;
+        }
+
+        #footer h2 {
+            float: left;
+            padding-left: 20px;
+        }
+
+        #footer h2 img {
+            width: 150px;
+        }
+
+        #footer .foot {
+            float: right;
+            padding-right: 30px;
+        }
+
+        #footer .foot ul {
+            padding-bottom: 10px;
+        }
+
+        #footer .foot ul li {
+            display: inline;
+        }
+
+        #footer .foot ul li a {
+            color: #fff;
+            padding-right: 10px;
+        }
+
+        #footer .foot address {
+            font-style: normal;
+            color: #ccc;
+        }
+
+        /* layer */
+        .layer_bg {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 900;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .layer {
+            display: none;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            z-index: 1000;
+            width: 500px;
+            height: 500px;
+            border: 3px solid #000;
+            background: #fff;
+        }
+
+        .layer h2 {
+            padding: 20px;
+            color: #000;
+        }
+
+        .layer .close {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="warp">
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="assets/img/Test02/logo.jpg" alt="Cookit 로고"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">Cookit 소개</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Cookit 메뉴</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">리뷰</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu4</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">My쿡킷</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub-menu5</a></li>
+                            <li><a href="#">sub-menu5</a></li>
+                            <li><a href="#">sub-menu5</a></li>
+                            <li><a href="#">sub-menu5</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- // header-->
+
+        <section id="banner">
+            <div class="slideList">
+                <div class="slideImg">
+                    <h2>이미지1</h2>
+                    <img src="assets/img/Test02/slide.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트1">
+                </div>
+                <div class="slideImg">
+                    <h2>이미지2</h2>
+                    <img src="assets/img/Test02/slide.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트2">
+                </div>
+                <div class="slideImg">
+                    <h2>이미지3</h2>
+                    <img src="assets/img/Test02/slide.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트3">
+                </div>
+            </div>
+        </section>
+        <!-- // banner -->
+
+        <section id="content1" class="clearfix">
+            <article class="left">
+                <h2 class="title">우리집도 배달되냐?😡</h2>
+                <p class="desc">너네집은 배달 안된다🤬</p>
+                <a href="#" class="btn">배송지 검색</a>
+            </article>
+            <article class="right">
+                <h2 class="title">우리집도 배달되냐?😡</h2>
+                <p class="desc">너네집은 배달 안된다🤬</p>
+                <a href="#" class="btn">62:23:10 <em>남은시간</em></a>
+            </article>
+        </section>
+        <!-- // content1 -->
+
+        <section id="content2">
+            <div class="tab-menu">
+                <div class="tab-btn">
+                    <ul>
+                        <li><a href="#">실시간 베스트</a></li>
+                        <li><a href="#">생생한 리뷰</a></li>
+                    </ul>
+                </div>
+                <div class="tab-cont">
+                    <!-- <h2>실시간 베스트</h2> -->
+                    <div class="best clearfix">
+                        <figure>
+                            <img src="assets/img/Test02/img1.jpg" alt="어복쟁반">
+                            <figcaption>
+                                평양식 어복쟁반
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/Test02/img2.jpg" alt="어복쟁반">
+                            <figcaption>
+                                평양식 어복쟁반
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/Test02/img3.jpg" alt="어복쟁반">
+                            <figcaption>
+                                평양식 어복쟁반
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="best clearfix">
+                        <figure>
+                            <img src="assets/img/Test02/img3.jpg" alt="어복쟁반">
+                            <figcaption>
+                                의주식 어복쟁반
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/Test02/img2.jpg" alt="어복쟁반">
+                            <figcaption>
+                                의주식 어복쟁반
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/Test02/img1.jpg" alt="어복쟁반">
+                            <figcaption>
+                                의주식 어복쟁반
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- // content2 -->
+
+        <footer id="footer" class="clearfix">
+            <h2><img src="assets/img/Test02/footer_logo.jpg" alt="Cookit footer logo"></h2>
+            <div class="foot">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">법적고지</a></li>
+                    <li><a href="#">사업자 정보확인</a></li>
+                </ul>
+                <address>
+                    씨제이제일제당주(주) 대표자:신현재<br>
+                    주소: 서울시 강남구 서초대로 77길 13 사업자등록번호 : 100-38-30489<br>
+                    통신판매업신고 중구 88903호 개인정보취급방침
+                </address>
+            </div>
+        </footer>
+        <!-- //footer-->
+    </div>
+    <!-- //warp-->
+
+    <!-- layer -->
+    <div class="layer_bg"></div>
+    <div class="layer">
+        <h2>제목</h2>
+        <a href="#" class="close">닫기</a>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    // 내비게이션
+    $(".nav > ul > li").mouseover(function () {
+        $(this).find(".submenu").stop().slideDown(200);
+    });
+    $(".nav > ul > li").mouseout(function () {
+        $(this).find(".submenu").stop().slideUp(200);
+    });
+
+    //currentIndex = 0; 첫번째 이미지 : 0
+    //currentIndex = 1; 두번째 이미지 : -389
+    //currentIndex = 2; 세번째 이미지 : -778
+
+    // 이미지 슬라이드 (상하)
+    // var currentIndex = 0; //첫번째 이미지
+    // 
+    // setInterval(function(){
+    //     if(currentIndex < 2){
+    //         currentIndex++;
+    //     } else {
+    //         currentIndex = 0;
+    //     }
+    //     var slidePosition = currentIndex * (-389)+"px";
+    //     $(".slideList").animate({top: slidePosition},400);
+    //     
+    // }, 3000);
+
+    // 이미지 슬라이드 (좌우)
+    var currentIndex = 0;
+
+    setInterval(function () {
+        if (currentIndex < 2) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        var slidePosition = currentIndex * (-1000) + "px";
+        $(".slideList").animate({ left: slidePosition }, 400);
+    }, 3000);
+
+    // 탭 메뉴
+    var tabBtn = $(".tab-btn > ul > li");
+    var tabCont = $(".tab-cont > div");
+    
+    tabCont.hide().eq(0).show();
+    
+    tabBtn.click(function(event){
+        event.preventDefault();
+        var target = $(this);
+        var index = target.index();
+        //alert(index);
+        tabBtn.removeClass("active");
+        target.addClass("active");
+        tabCont.css("display","none");
+        tabCont.eq(index).css("display","block");
+    });
+
+    // 레이어 팝업
+    $("#content1 .right").click(function(){
+        $(".layer").slideDown(300);
+        $(".layer_bg").show();
+    });
+    $(".layer .close").click(function(){
+        $(".layer").slideUp(300);
+        $(".layer_bg").hide();
+    });
+</script>
+
+</html>

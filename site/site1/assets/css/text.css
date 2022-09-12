@@ -74,3 +74,13 @@
     text-underline-position: under; /* 텍스트와 언더라인 간격 벌려줌 */
     color: #666;
 }
+
+/* 반응형 */
+@media (max-width: 800px) {
+    .text__inner {
+        flex-direction: column;
+    }
+    .text {
+        width: 38%;
+    }
+}

@@ -1,6 +1,5 @@
 .footer__menu {
     display: flex;
-
 }
 .footer__menu > div {
     width: 16%;
@@ -21,4 +20,17 @@
     padding-top: 40px;
     color: #666;
     line-height: 1.5;
+}
+
+/* 반응형 */
+@media (max-width: 800px) {
+    .footer__menu {
+        flex-direction: column;
+    }
+    .footer__menu > div {
+        margin-bottom: 40px;
+    }
+    .footer__right {
+        text-align: left;
+    }
 }

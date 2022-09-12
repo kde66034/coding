@@ -77,3 +77,14 @@
 .imgText__img.img2 {
     background: url(../img/imgTextType/imgText_bg02.jpg) no-repeat center / cover;
 }
+
+/* 반응형 */
+@media (max-width: 800px) {
+    .imgText__inner {
+        flex-direction: column;
+    }
+    .imgText__inner > div {
+        width: 38%;
+        margin-bottom: 20px;
+    }
+}

@@ -65,6 +65,7 @@
                 누르면 해당 섹션으로 시차를 두고 스무스하게 이동시켜 주는 효과를 만들어보고자 합니다. <br>
                 <br>
                 지난 <a href="https://kde66034.tistory.com/91">패럴럭스 01 포스팅</a>에서 만든 틀을 그대로 유지한 채 메뉴 바를 숨겼다 나타나게 하는 기능을 추가하겠습니다.
+                또한 페이지 최하단으로 내려가면 TOP 버튼이 나타나고, TOP 버튼을 누르면 페이지 최상단으로 올라가게 하는 이펙트도 추가해보도록 합시다.
             </p>
 
             <!-- // 패럴럭스 이펙트 만들기  -->
@@ -257,12 +258,12 @@ let nowScroll = true;   // 트루일때 실행
 let lastScroll = 0;
 
 function scrollProgress() {
-    nowScroll = true;   // 현재 스크롤이 
+    nowScroll = true;
 
     setInterval(() => {
         if(nowScroll) {
-            nowScroll = false;  // false일때 실행x : 0.3초마다 실행 없애줌
-            hasScroll();    // 사용자 스크롤 액션 감지 X
+            nowScroll = false;
+            hasScroll();
         }
     }, 300) // 0.3초마다
 }
@@ -270,12 +271,13 @@ function scrollProgress() {
   function hasScroll() {
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
+    // scrollTop값이 lastScroll보다 적으면
     if(scrollTop &lt; lastScroll) {
-      document.querySelector("#parallax__nav").classList.add("show");
+      document.querySelector("#parallax__nav").classList.add("show");   //내비게이션 바 보여주기
     } else {
-      document.querySelector("#parallax__nav").classList.remove("show");
+      document.querySelector("#parallax__nav").classList.remove("show");    // (아닐 경우) 숨기기
     }
-    lastScroll = scrollTop;
+    lastScroll = scrollTop;     // scrollTop값을 lastScroll에 저장함.
   }
 
   window.addEventListener("scroll", scrollProgress);
@@ -293,17 +295,21 @@ function scrollProgress() {
     #parallax__nav {
         position: fixed;
         right: 20px;
-        top: 20px;
+        top: -200px;
         z-index: 2000;
         background-color: rgba(0,0,0,0.4);
         padding: 20px 30px;
         border-radius: 50px;
+        transition: top .4s ease;
     }
-
+    #parallax__nav.show {
+            top: 20px;
+        }
     #parallax__nav li {
         display: inline;
         margin: 0 5px;
     }
+    
     #parallax__nav li a {
         display: inline-block;
         height: 30px;
@@ -431,44 +437,29 @@ function scrollProgress() {
         line-height: 1.4;
     }
 
-    /* parallax__dot */
-    #parallax__dot {
+    #parallax__top {
         position: fixed;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+        left: 50%;
+        bottom: -220px;
         z-index: 10000;
-        background-color: #00000040;
-        padding: 20px 10px;
-        border-radius: 30px;
-    }
-    #parallax__dot li {
-        position: relative;
-        width: 20px;
-        height: 20px;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background: rgba(0,0,0,0.4);
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
         border-radius: 50%;
-        margin: 12px 8px;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
-        transition: box-shadow 0.2s ease;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
     }
-    #parallax__dot li a {
-        background: #fff;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 50%;
-        transition: transform 0.2s ease;
+    #parallax__top.show {
+        bottom: 20px;
     }
-    #parallax__dot li span {
-        display: none;
-    }
-    #parallax__dot li.active {
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
-    }
-    #parallax__dot li.active a {
-        transform: scale(0.4);
+    #parallax__top:hover {
+       background: #fff;
+       color: #000;
     }
 
     /* 반응형 */
@@ -511,23 +502,23 @@ function scrollProgress() {
 
             <h3 class="t_tit2">이미지 설명으로 한 눈에 보기</h3>
             <div class="t_iframe">
-                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F0sc6cwdunIHWvHkaSz7QF1%2F%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8%25EC%259A%25A9-%25EC%2598%2588%25EC%25A0%259C%3Fnode-id%3D315%253A2" allowfullscreen></iframe>
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F0sc6cwdunIHWvHkaSz7QF1%2F%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8%25EC%259A%25A9-%25EC%2598%2588%25EC%25A0%259C%3Fnode-id%3D582%253A2" allowfullscreen></iframe>
             </div>
             <!-- // 설명 -->
             
             <!-- // 패럴럭스01 -->
             <h3 class="t_tit2">결과</h3>
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
-                <iframe src="https://kde66034.github.io/coding/javascript/effect/parallaxEffect02.html" frameborder="0"></iframe>
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/parallaxEffect03.html" frameborder="0"></iframe>
             </div>
             <div class="t_link">
-                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/parallaxEffect02.html">원본(HTML/JS) 소스 보기</a>
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/parallaxEffect03.html">원본(HTML/JS) 소스 보기</a>
             </div>
             <div class="t_link">
                 <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/parallax.css">CSS 소스 보기</a>
             </div>
             <div class="t_link">
-                <a href="https://kde66034.github.io/coding/javascript/effect/parallaxEffect02.html">원본 사이트 바로가기</a>
+                <a href="https://kde66034.github.io/coding/javascript/effect/parallaxEffect03.html">원본 사이트 바로가기</a>
             </div>
             <!-- //  -->
 
