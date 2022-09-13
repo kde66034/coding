@@ -21,7 +21,6 @@
     width: 1160px;
     padding: 0 20px;
     margin: 0 auto;
-    min-width: 1160px;  /* 반응형 할 때 없애줄 것 */
 }
 
 /* 섹션 공통 요소 */
@@ -79,3 +78,16 @@
 .mt50 {margin-top: 50px !important;}
 .mt60 {margin-top: 60px !important;}
 .mt70 {margin-top: 70px !important;}
+
+/* 반응형 container */
+@media (max-width: 1250px) {
+    .container {
+        width: 96%;
+    }
+}
+
+@media (max-width: 1080px) {
+    .container {
+        width: 96%;
+    }
+}

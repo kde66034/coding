@@ -1,12 +1,12 @@
 /* imgTextType */
 .imgText__inner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .imgText__inner > div {
     width: 32%;
-    height: 500px;
-    
+    /* height: 500px; */
 }
 .imgText__txt {}
 .imgText__txt span {
@@ -22,19 +22,19 @@
     font-weight: 300;
     word-break: keep-all;
     line-height: 1.4;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .imgText__txt p {
     font-size: 18px;
     font-weight: 300;
     line-height: 1.5;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 .imgText__txt ul {
     font-size: 18px;
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 2;
 }
 .imgText__txt ul li {        
     position: relative;
@@ -42,6 +42,9 @@
 }
 .imgText__txt ul li a {
     color: #666;
+}
+.imgText__txt ul li a:hover {
+    text-decoration: underline;
 }
 .imgText__txt ul li::before {
     content: '';
@@ -61,16 +64,24 @@
     position: absolute;
     left: 30px;
     bottom: 30px;
-    background-color: #7c2b39;
+    background-color: rgb(136, 119, 74);
     color: #fff;
-    font-size: 18px;
-    padding: 10px 30px;
+    font-size: 16px;
+    padding: 8px 25px;
     border-radius: 30px;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 .imgText__img a.blue {
-    background-color: #2b387c;
+    background-color: rgb(45, 83, 69);
+    color: #fff;
 }
+.imgText__img a:hover, 
+.imgText__img a.blue:hover {
+    background-color: #fff;
+    color: rgb(80, 80, 80);
+}
+
 .imgText__img.img1 {
     background: url(../img/imgTextType/imgText_bg01.jpg) no-repeat center / cover;
 }
@@ -79,12 +90,57 @@
 }
 
 /* 반응형 */
-@media (max-width: 800px) {
+@media (max-width: 1080px) {
     .imgText__inner {
-        flex-direction: column;
+        
     }
-    .imgText__inner > div {
-        width: 38%;
+    .imgText__inner .imgText__txt {
+        width: 96%;
+        text-align: center;
+    }
+    .imgText__inner .imgText__img {
+        display: inline-block;
+        width: 48%;
+        height: 300px;
+        padding: 10px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .imgText__txt > h3 {
+        font-size: 40px;
+    }
+    .imgText__txt > p {
+        font-size: 18px;
+    }
+    .imgText__txt ul {
+        margin-bottom: 40px;
+    }
+    .imgText__txt ul li::before {
+        display: none;
+    }
+    .imgText__img a {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .imgText__inner .imgText__txt {
+        margin: 0 auto;
+        width: 96%;
         margin-bottom: 20px;
+    }
+    .imgText__inner .imgText__img {
+        width: 96%;
+        margin-bottom: 20px;
+    }
+    .imgText__txt > h3 {
+        font-size: 30px;
+    }
+    .imgText__txt > p {
+        font-size: 16px;
+    }
+    .imgText__txt ul {
+        font-size: 16px;
     }
 }

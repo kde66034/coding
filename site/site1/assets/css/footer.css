@@ -1,8 +1,8 @@
 .footer__menu {
+    padding-bottom: 70px;
     display: flex;
-}
-.footer__menu > div {
-    width: 16%;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .footer__menu > div h3 {
     font-size: 18px;
@@ -23,14 +23,11 @@
 }
 
 /* 반응형 */
-@media (max-width: 800px) {
-    .footer__menu {
-        flex-direction: column;
+@media (max-width: 768px) {
+    .footer__menu > div h3 {
+        font-size: 16px;
     }
-    .footer__menu > div {
-        margin-bottom: 40px;
-    }
-    .footer__right {
-        text-align: left;
+    .footer__menu li a {
+        font-size: 12px;
     }
 }

@@ -29,7 +29,11 @@
     <link rel="stylesheet" href="assets/css/slider.css">
 
     <style>
-        html { scroll-behavior: smooth; }
+        /* 모바일 수평 스크롤 금지 */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body>
@@ -53,35 +57,39 @@
     <main id="mainType">
         <section id="headerType" class="header__wrap nexon">
             <div class="header__inner">
-                <div class="header__logo">
-                    <a href="#">별빛제빵교실 <em>Baking Class🍞</em></a>
+                <h1 class="header__logo">
+                    <a href="#">별빛제빵교실 <em>Baking Class</em></a>
+                </h1>
+                <div class="menu__bar">
+                    <div class="ico"></div>
                 </div>
                 <div class="header__menu">
                     <ul>
-                        <li><a href="#headerType">헤더 영역</a></li>
-                        <li><a href="#sliderType">슬라이드 영역</a></li>
-                        <li><a href="#imageType">이미지 영역</a></li>
-                        <li><a href="#imgTextType">컨텐츠 영역</a></li>
-                        <li><a href="#footerType">푸터 영역</a></li>
+                        <li class="active"><a href="#headerType">MAIN</a></li>
+                        <li><a href="#imageType">NOTICE</a></li>
+                        <li><a href="#imgTextType">CERTIFICATION</a></li>
+                        <li><a href="#cardType">CLASS</a></li>
+                        <li><a href="#bannerType">YOUTUBE</a></li>
+                        <li><a href="#textType">GOAL</a></li>
                     </ul>
                 </div>
                 <div class="header__member">
-                    <a href="#">로그인</a>
+                    <a href="#">SIGN IN</a>
                 </div>
             </div>
         </section>
 
-        <section id="sliderType" class="slider__wrap">
+        <section id="sliderType" class="slider__wrap scroll">
             <h2 class="blind">슬라이드 영역</h2>
             <div class="slider__inner">
                 <div class="slider">
                     <div class="slider__img">
-                        <div class="desc">
+                        <div class="desc container">
                             <span>BAKING CLASS</span>
-                            <h3>BAKING PROJECT</h3>
+                            <h3>AWESOME BAKING CLASS</h3>
                             <p>
-                                당신도 될 수 있다! 제빵사 훌륭한! <br>
-                                당신도 할 수 있다! 창업하기 빵집!
+                                훌륭한 제빵사가 되고 싶으신가요? <br>
+                                별빛제빵교실에 오신 것을 환영합니다!
                             </p>
                             <div class="btn">
                                 <a href="#">자세히 보기</a>
@@ -105,27 +113,28 @@
         </section>
         <!-- // sliderType -->
 
-        <section id="imageType" class="image__wrap nexon section">
-            <h2>별빛 제빵교실 개강소식🍞</h2>
-            <p>별빛 제빵교실이 2022년 8월 23일 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!</p>
-            <div class="image__inner container">
+        <section id="imageType" class="image__wrap nexon section scroll container">
+            <h2>별빛제빵교실 개강 소식🍞</h2>
+            <p>별빛제빵교실이 올 겨울에 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!</p>
+            <div class="image__inner">
                 <article class="image img1">
-                    <h3 class="image__title">나만의 제빵 포트폴리오</h3>
+                    <h3 class="image__title">Class A</h3>
                     <p class="image__desc">
-                        자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. 
-                        열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
+                        12월 17일부터 23년 3월 18일까지 약 3개월동안 진행되며, 
+                        입문자 눈높이에 맞춰 제빵의 기초에 포커스를 두고 차근차근 수업이 이루어집니다.
                     </p>
-                    <a class="image__btn" href="/" title="자세히 보기">
+                    <a class="image__btn" href="#" title="자세히 보기">
                         자세히 보기
                     </a>
                 </article>
                 <article class="image img2">
-                    <h3 class="image__title">나만의 제빵 포트폴리오</h3>
+                    <h3 class="image__title">Class B</h3>
                     <p class="image__desc">
-                        자신만의 제빵 포트폴리오를 만들 수 있도록 돕겠습니다. 
-                        열심히만 한다면 완전 수료할 때 즈음에는 당신도 훌륭한 제빵사!
+                        12월 22일부터 23년 6월 21일까지 약 6개월동안 진행되며, 
+                        베이킹 입문 제과+제빵 기능사와 실무에서의 기본기, 제조 기술 습득 과정인 디저트 '올베이직',
+                        케이크디자인 자격증 과정까지 실무 끝판왕 '올마스터' 교육을 목표로 하는 파티셰 완성 과정입니다.
                     </p>
-                    <a class="image__btn" href="/" title="자세히 보기">
+                    <a class="image__btn" href="#" title="자세히 보기">
                         자세히 보기
                     </a>
                 </article>
@@ -133,36 +142,36 @@
         </section>
         <!-- // imageType -->
 
-        <section id="imgTextType" class="imgText__wrap nexon section gray">
-            <h2 class="blind">유용한 사이트 살펴보기</h2>
+        <section id="imgTextType" class="imgText__wrap nexon section scroll gray">
+            <h2 class="blind">자격증 과정</h2>
             <div class="imgText__inner container">
                 <div class="imgText__txt">
-                    <span>이미지 텍스트 유형 01</span>
-                    <h3>유용한 사이트 살펴보기</h3>
-                    <p>웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유용한 사이트입니다.</p>
+                    <span>CERTIFICATION</span>
+                    <h3>자격증 과정</h3>
+                    <p>수강 중, 취득 가능한 자격증 목록입니다.</p>
                     <ul>
-                        <li><a href="/">튜토리얼 사이트</a></li>
-                        <li><a href="/">레퍼런스 사이트</a></li>
-                        <li><a href="/">웹폰트 사이트</a></li>
-                        <li><a href="/">CSS 사이트</a></li>
-                        <li><a href="/">WebGL 사이트</a></li>
-                        <li><a href="/">Youtube 사이트</a></li>
+                        <li><a href="#">조리기능사 필기</a></li>
+                        <li><a href="#">제과·제빵기능사</a></li>
+                        <li><a href="#">커피 바리스타</a></li>
+                        <li><a href="#">산업기사/기능장</a></li>
+                        <li><a href="#">양식조리기능사</a></li>
+                        <li><a href="#">한식조리기능사</a></li>
                     </ul>
                 </div>
                 <div class="imgText__img img1">
-                    <a href="/">레퍼런스 사이트</a>
+                    <a href="#">자세히 보러가기</a>
                 </div>
                 <div class="imgText__img img2">
-                    <a href="/" class="blue">튜토리얼 사이트</a>
+                    <a href="#" class="blue">큐넷 바로가기</a>
                 </div>
             </div>
         </section>
         <!-- // imgTextType -->
 
-        <section id="cardType" class="card__wrap nexon section gray">
-            <h2>별빛 제빵교실 개강소식🍞</h2>
-            <p>별빛 제빵교실이 2022년 8월 23일 개강합니다. 수강신청 기회는 지금 뿐이니 서두르세요!</p>
-            <div class="card__inner container">
+        <section id="cardType" class="card__wrap nexon section scroll container">
+            <h2>과정 소개</h2>
+            <p>기초 과정부터 심화 과정까지, 그리고 나만의 제빵 포트폴리오를 만들기까지의 과정을 소개합니다.</p>
+            <div class="card__inner">
                 <article class="card">
                     <!-- 이미지 넣을 때 그냥 img태그 쓰지말고 figure 태그 안에 넣어서 써야 웹표준 준수한거임 -->
                     <figure class="card__header">
@@ -174,7 +183,7 @@
                             제빵의 기초가 되는 강의입니다. 초심자도 이해하기 쉽게 강의가 진행되며 
                             초반에는 이론 강의부터 시작해 중반부터는 실습을 시작하여 제빵의 기초를 익히도록 합니다.
                         </p>
-                        <a class="btn" href="/">
+                        <a class="btn" href="#">
                             더 자세히 보기
                             <span aria-hidden="true">   <!-- 시각장애인용 스크린리더기가 필요없는 부분을 읽지 못하도록 막아주는 기능 -->
                                 <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -194,7 +203,7 @@
                             이제 기초 강의가 너무 쉬워 시시하다고 느껴질 즈음 심화과정에 들어가게 될 겁니다.
                             시중에 판매되고 있는 제과점 빵들을 직접 만들어보는 시간을 갖게 됩니다.
                         </p>
-                        <a class="btn" href="/">
+                        <a class="btn" href="#">
                             더 자세히 보기
                             <span aria-hidden="true">
                                 <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +223,7 @@
                             이제 빵집 창업해도 문제 없을 정도의 실력을 갖추게 되셨을 겁니다! 이제는 능숙해진 제빵 실력에
                             나만의 개성을 더하여 튼튼한 포트폴리오를 만들어보아요!
                         </p>
-                        <a class="btn" href="/">
+                        <a class="btn" href="#">
                             더 자세히 보기
                             <span aria-hidden="true">
                                 <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -228,52 +237,79 @@
         </section>
         <!-- // cardType -->
 
-        <section id="bannerType" class="banner__wrap nexon section">
+        <section id="bannerType" class="banner__wrap nexon section scroll">
             <h2 class="blind">배너 영역</h2>
             <div class="banner__inner">
                 <h3 class="title">김제빵 유튜브</h3>
                 <p class="desc">
-                    더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+                    별빛제빵교실 유명 강사 김제빵의 유튜브 채널입니다!
                     <a href="https://www.youtube.com/c/CozyRain" title="유튜브 페이지로 이동">https://www.youtube.com/c/kim_baking</a>
                 </p>
-                <span class="small">배너 유형 01</span>
             </div>
         </section>
         <!-- // bannerType -->
 
-        <section id="textType" class="text__wrap nexon section">
-            <span>텍스트 유형 01</span>
-            <h2 class="mb70">스크립트를 익히는 방법</h2>
-            <div class="text__inner container">
+        <section id="textType" class="text__wrap nexon section scroll container">
+            <span>GOAL</span>
+            <h2 class="mb70">강의 목표에 대해 설명합니다.</h2>
+            <div class="text__inner">
                 <div class="text t1">
-                    <h3 class="text__title">검색 이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.</p>
-                    <a class="text__btn" href="/">더보기</a>
+                    <h3 class="text__title">형태와 맛 표현</h3>
+                    <p class="text__desc">
+                        빵과 과자의 고유 형태와 맛을
+                        표현하는 방법을 습득하고 레시피를
+                        정확하게 이해하며 기초 조리 기술을
+                        습득할 수 있습니다. 
+                    </p>
+                    <a class="text__btn" href="#">더보기</a>
                 </div>
                 <div class="text t2">
-                    <h3 class="text__title">퀴즈 이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.</p>
-                    <a class="text__btn" href="/">더보기</a>
+                    <h3 class="text__title">제과/제빵사 자격증 취득</h3>
+                    <p class="text__desc">
+                        시험대비에 맞춘 체계적인 실기 수업
+                        진행으로 제과/제빵사 자격증 합격을
+                        위한 취득 노하우를 확실하게
+                        전수합니다.
+                    </p>
+                    <a class="text__btn" href="#">더보기</a>
                 </div>
                 <div class="text t3">
-                    <h3 class="text__title">마우스 이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.</p>
-                    <a class="text__btn" href="/">더보기</a>
+                    <h3 class="text__title">1시간 이내에 빠르게 만들기</h3>
+                    <p class="text__desc">
+                        지급된 재료로 요구하는 품목을
+                        시험기간(1시간이내)에 1인분을
+                        만들어내는 실기 시험 형태로 진행할
+                        수 있게 준비합니다.
+                    </p>
+                    <a class="text__btn" href="#">더보기</a>
                 </div>
                 <div class="text t4">
-                    <h3 class="text__title">슬라이드 이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.</p>
-                    <a class="text__btn" href="/">더보기</a>
+                    <h3 class="text__title">훌륭한 파티시에로 성장하기</h3>
+                    <p class="text__desc">
+                        디저트 문화를 이끌어 갈 파티시에
+                        양성을 목표로 최선의 교육을
+                        제공하여 수강생 모두가 원하는 꿈을
+                        이루실 수 있습니다.
+                    </p>
+                    <a class="text__btn" href="#">더보기</a>
                 </div>
                 <div class="text t5">
-                    <h3 class="text__title">검색 이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.</p>
-                    <a class="text__btn" href="/">더보기</a>
+                    <h3 class="text__title">창업 노하우 학습</h3>
+                    <p class="text__desc">
+                        훌륭한 제빵사로 일하는 것도 물론 좋지만
+                        자본이 모이게 된다면 제과점을 차리는 것도
+                        좋지요. 저희 학원에서 창업 노하우도 알려드립니다.
+                    </p>
+                    <a class="text__btn" href="#">더보기</a>
                 </div>
                 <div class="text t6">
-                    <h3 class="text__title">게임 이펙트</h3>
-                    <p class="text__desc">자바스크립트의 기본 메서드를 통해 어쩌구저쩌구 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 샬랴샬라샬랴샬라 샬랴샬라 분석합시다.</p>
-                    <a class="text__btn" href="/">더보기</a>
+                    <h3 class="text__title">맛나게 먹기</h3>
+                    <p class="text__desc">
+                        맛있게 만든 빵을 맛나게 먹는 것도 중요합니다. 
+                        여기까지 오셨다면 '내가 만든 게 맞나?' 싶을 정도로
+                        빵의 맛이 무척 맛있을 것입니다. 
+                    </p>
+                    <a class="text__btn" href="#">더보기</a>
                 </div>
             </div>
         </section>
@@ -286,52 +322,46 @@
         <div class="footer__inner container">
             <div class="footer__menu">
                 <div>
-                    <h3>사이트</h3>
+                    <h3>상담신청</h3>
                     <ul>
-                        <li><a href="#">웹표준 사이트</a></li>
-                        <li><a href="#">반응형 사이트</a></li>
-                        <li><a href="#">패럴랙스 사이트</a></li>
-                        <li><a href="#">포트폴리오 사이트</a></li>
+                        <li><a href="#">방문 상담신청</a></li>
+                        <li><a href="#">온라인 상담신청</a></li>
+                        <li><a href="#">1:1 문의</a></li>
                     </ul>    
                 </div>
                 <div>
-                    <h3>헤더 영역</h3>
+                    <h3>시간표 조회</h3>
                     <ul>
-                        <li><a href="#">메뉴 유형 01</a></li>
-                        <li><a href="#">메뉴 유형 02</a></li>
+                        <li><a href="#">클래스A</a></li>
+                        <li><a href="#">클래스B</a></li>
+                        <li><a href="#">클래스C</a></li>
+                        <li><a href="#">클래스D</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>슬라이드 영역</h3>
+                    <h3>아카데미 찾기</h3>
                     <ul>
-                        <li><a href="#">슬라이드 유형 01</a></li>
-                        <li><a href="#">슬라이드 유형 02</a></li>
+                        <li><a href="#">강남 캠퍼스</a></li>
+                        <li><a href="#">종로 캠퍼스</a></li>
+                        <li><a href="#">구로 캠퍼스</a></li>
+                        <li><a href="#">안산 캠퍼스</a></li>
+                        <li><a href="#">수원 캠퍼스</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>이미지 영역</h3>
+                    <h3>문의 게시판</h3>
                     <ul>
-                        <li><a href="#">이미지 유형 01</a></li>
-                        <li><a href="#">이미지 유형 02</a></li>
-                        <li><a href="#">이미지/텍스트 유형 01</a></li>
-                        <li><a href="#">이미지/텍스트 유형 02</a></li>
-                        <li><a href="#">텍스트 유형 01</a></li>
+                        <li><a href="#">질문하기</a></li>
+                        <li><a href="#">건의사항</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>컨텐츠 영역</h3>
+                    <h3>수강료문의</h3>
                     <ul>
-                        <li><a href="#">카드 유형 01</a></li>
-                        <li><a href="#">카드 유형 02</a></li>
-                        <li><a href="#">카드 유형 03</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>푸터 영역</h3>
-                    <ul>
-                        <li><a href="#">푸터 메뉴 유형 01</a></li>
-                        <li><a href="#">푸터 컨텍트 유형 02</a></li>
-                        <li><a href="#">푸터 이메일 유형 03</a></li>
+                        <li><a href="#">방문 상담신청</a></li>
+                        <li><a href="#">온라인 상담신청</a></li>
+                        <li><a href="#">전화 상담신청</a></li>
+                        <li><a href="#">카카오톡 상담신청</a></li>
                     </ul>
                 </div>
             </div>
@@ -343,14 +373,40 @@
     </footer>
     <!-- // footerType -->
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="http://fatlinesofcode.github.io/jquery.smoothwheel/src/jquery.smoothwheel.js"></script>
     <script>
-    // 스크롤 부드럽게 이동시키는 JS
-    $(document).ready(function(){
-    	$("body").smoothWheel()
-    });
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            document.querySelectorAll(".scroll").forEach((element, index) => {
+                if(scrollTop >= element.offsetTop-500){
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(".header__menu li:nth-child("+(index+1)+")").classList.add("active");
+                };
+            });
+        });
+
+        // 스크롤 이동
+        document.querySelectorAll("#headerType .header__inner .header__menu li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"  // 이동 부드럽게
+                });
+            });
+        });
+
+        // 메뉴 버튼 (반응형)
+        const menuBtn = document.querySelector(".menu__bar .ico");  // 메뉴 아이콘
+        const menu = document.querySelector(".header__menu");   // 메뉴
+
+        menuBtn.addEventListener("mouseover", () => {
+            menu.classList.add("on");   // 메뉴 아이콘에 마우스 커서 올려놓으면 메뉴 보이기
+        });
+        menu.addEventListener("mouseleave", () => {
+            menu.classList.remove("on");    // 메뉴 아이콘에 마우스 커서 벗어나면 메뉴 사라지기
+        });
     </script>
 </body>
 </html>
