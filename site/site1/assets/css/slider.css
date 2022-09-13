@@ -105,7 +105,16 @@
 }
 
 @media (max-width: 768px) {
+    .slider__img .desc {
+        margin-left: 20px;
+    }
+    .slider__img .desc span {
+        font-size: 14px;
+    }
     .slider__img .desc h3 {
-        font-size: 40px;
+        font-size: 24px;
+    }
+    .slider__img .desc p {
+        font-size: 16px;
     }
 }
