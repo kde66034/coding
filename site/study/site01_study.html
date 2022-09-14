@@ -42,11 +42,13 @@
 
             <h3 class="t_tit2">HTML 소스</h3>
             <p class="t_desc">
-                웹 표준 준수를 위해 <i>시맨틱 태그를 적극 사용</i>하도록 하자. 
-                img 태그의 alt와 같은 효과를 주기 위해 아이콘이 들어갈 span 태그의 클래스 값을 <i>"ir"</i>로 설정하자.
-                자세한 설명은 아래 예시 코드의 주석처리 내용을 참조할 것.
+                <i>헤더, 슬라이드, 이미지, 이미지/텍스트, 카드, 배너, 텍스트, 푸터</i>  순으로 영역이 이루어져 있다. (※ 스압주의!)
             </p>
-            <div class="t_code">
+            <div class="result">
+                <details>
+                    <summary>코드 펼쳐보기</summary>
+                    <div class="sample01_result">
+                        <div class="t_code">
 <pre><code lang="language-html">&lt;body&gt;
     &lt;div id="skip">
         &lt;a href="#headerType">헤더 영역 바로가기&lt;/a>
@@ -92,7 +94,7 @@
 
         &lt;section id="sliderType" class="slider__wrap scroll">
             &lt;h2 class="blind">슬라이드 영역&lt;/h2>
-            &lt;div class="slider__inner">
+            &lt;!-- &lt;div class="slider__inner">
                 &lt;div class="slider">
                     &lt;div class="slider__img">
                         &lt;div class="desc container">
@@ -120,6 +122,57 @@
                         &lt;a href="#" class="stop">&lt;span class="ir">정지&lt;/span>&lt;/a>
                     &lt;/div>
                 &lt;/div>
+            &lt;/div> --&gt;
+
+            &lt;!-- Swiper -->
+            &lt;div class="swiper mySwiper">
+                &lt;div class="swiper-wrapper">
+                    &lt;div class="swiper-slide">
+                        &lt;div class="desc container">
+                            &lt;span>BAKING CLASS&lt;/span>
+                            &lt;h3>AWESOME BAKING&lt;/h3>
+                            &lt;p>
+                                훌륭한 제빵사가 되고 싶으신가요? &lt;br>
+                                별빛제빵교실에 오신 것을 환영합니다!
+                            &lt;/p>
+                            &lt;div class="btn">
+                                &lt;a href="#">자세히 보기&lt;/a>
+                                &lt;a href="#" class="black">사이트 보기&lt;/a>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="swiper-slide">
+                        &lt;div class="desc container">
+                            &lt;span>BAKING CLASS&lt;/span>
+                            &lt;h3>AWESOME BAKING&lt;/h3>
+                            &lt;p>
+                                훌륭한 제빵사가 되고 싶으신가요? &lt;br>
+                                별빛제빵교실에 오신 것을 환영합니다!
+                            &lt;/p>
+                            &lt;div class="btn">
+                                &lt;a href="#">자세히 보기&lt;/a>
+                                &lt;a href="#" class="black">사이트 보기&lt;/a>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="swiper-slide">
+                        &lt;div class="desc container">
+                            &lt;span>BAKING CLASS&lt;/span>
+                            &lt;h3>AWESOME BAKING&lt;/h3>
+                            &lt;p>
+                                훌륭한 제빵사가 되고 싶으신가요? &lt;br>
+                                별빛제빵교실에 오신 것을 환영합니다!
+                            &lt;/p>
+                            &lt;div class="btn">
+                                &lt;a href="#">자세히 보기&lt;/a>
+                                &lt;a href="#" class="black">사이트 보기&lt;/a>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="swiper-pagination">&lt;/div>
+                &lt;div class="swiper-button-next">&lt;/div>
+                &lt;div class="swiper-button-prev">&lt;/div>
             &lt;/div>
         &lt;/section>
         &lt;!-- // sliderType -->
@@ -385,12 +438,909 @@
     &lt;!-- // footerType -->
 &lt;/body&gt;
 </code></pre>
+                        </div>
+                    </div>
+                </details>
             </div>
             <!-- // HTML 소스 -->
 
             <h3 class="t_tit2">CSS 소스</h3>
             <p class="t_desc">
-                <i>CSS 소스는 하단의 [원본 소스 보기] 버튼을 클릭하여 참조</i>할 것. <br>
+                각 영역별 CSS 코드이다. <br>
+                <i>common 요소 등의 CSS 코드는 하단의 [원본 사이트 보기] 버튼을 눌러 페이지 소스를 참조</i>할 것. <br>
+            </p>
+            <div class="result">
+                <details>
+                    <summary>헤더 영역</summary>
+                    <div class="sample02_result">
+                        <div class="t_code">
+<pre><code class="language-css">/* headerType */
+.header__inner {
+    /* height: 70px; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+    background: #fff;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 4px #999;
+}
+.header__logo {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.header__logo a {
+    color: rgb(80, 80, 80);
+}
+.header__logo em {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(130, 130, 130);
+}
+.header__menu {
+    text-align: center;
+}
+.header__menu li {
+    display: inline;
+}
+.header__menu li a {
+    padding: 8px 30px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+.header__menu li.active a {
+    background: rgb(80, 80, 80);
+    border-radius: 5px;
+    color: #fff;
+}
+.header__menu li a:hover {
+    background: rgb(130, 130, 130);
+    border-radius: 5px;
+    color: #fff;
+}
+
+.header__member {
+    text-align: right;
+}
+.header__member a {
+    font-size: 16px;
+    border: 1px solid rgb(80, 80, 80);
+    padding: 8px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.header__member a:hover {
+    background: rgb(80, 80, 80);
+    color: #fff;
+}
+
+/* 반응형 */
+@media (max-width: 1420px) {
+    .header__inner {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: unset;
+        overflow-x: unset;
+    }
+    .menu__bar {
+        cursor: pointer;
+        position: fixed;
+        right: 20px;
+        top: 30px;
+    }
+    .menu__bar .ico {
+        width: 20px;
+        height: 20px;
+        background-image: url("../img/bars-solid.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .header__menu {
+        display: none;
+    }
+    .header__menu.on {
+        display: block;
+    }
+    .header__menu ul {
+        padding: 20px;
+        position: fixed;
+        right: 20px;
+        top: 60px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        box-shadow: 0 0 4px #999;
+        border-radius: 5px;
+    }
+    .header__menu ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .header__menu ul li a {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+
+    .header__logo {
+        margin-right: 10px;
+    }
+    .header__member {
+        text-align: left;
+    }
+}
+
+@media (max-width: 1080px) {
+    .header__inner > h1 {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    .header__logo em {
+        display: none;
+    }
+    .header__inner .header__menu ul li a {
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+    .header__member a {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- // 헤더 영역 -->
+
+            <div class="result">
+                <details>
+                    <summary>슬라이드(swiper) 영역</summary>
+                    <div class="sample03_result">
+                        <div class="t_code">
+<pre><code class="language-css">/* swiper */
+.swiper-slide {
+    background: url(../img/sliderType/slider_bg01.jpg) no-repeat center / cover;
+}
+.swiper-slide .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+.swiper-slide .desc span {
+    font-size: 16px;
+    background: #fff;
+    padding: 1px 14px 0 14px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+.swiper-slide .desc h3 {
+    font-size: 85px;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+    text-shadow: 0 0 5px #666;
+}
+.swiper-slide .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 60px;
+    text-shadow: 0 0 5px #666;
+}
+.swiper-slide .desc .btn a {
+    font-size: 16px;
+    background: #fff;
+    padding: 12px 40px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.swiper-slide .desc .btn a.black {
+    background: rgb(60, 60, 60);
+    color: #fff;
+}
+.swiper-slide .desc .btn a:hover {
+    border-radius: 50px;
+}
+
+.swiper-button-next {
+    background-position: -50px 0;
+}
+.swiper-button-next, .swiper-button-prev {
+    width: 30px !important;
+    height: 56px !important;
+    background-image: url(../img/sliderType/slider_icon.svg);
+}
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+    opacity: 0;
+}
+
+.swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url(../img/sliderType/slider_icon.svg) !important;
+    background-position: -20px -70px !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+    background-position: 0 -70px !important;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .swiper-slide .desc {
+        width: 100%;
+        text-align: center;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .swiper-slide .desc {
+        padding: 80px 0;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 40px;
+    }
+    .swiper-slide .desc p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .swiper-slide .desc .btn a {
+        padding: 10px 25px;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- // 슬라이드 영역 -->
+
+            <div class="result">
+                <details>
+                    <summary>이미지 영역</summary>
+                    <div class="sample04_result">
+                        <div class="t_code">
+<pre><code class="language-css">/* imageType */
+#imageType > p {
+    font-size: 22px;
+    padding: 0 20px;
+    word-break: keep-all;
+    line-height: 1.6;
+}
+
+.image__inner {
+    display: flex;
+    justify-content: space-between;     /* 간격 떨어뜨리기 */
+    flex-wrap: wrap;
+    width: 100%;
+}
+.image {
+    width: 49%;
+    height: 370px;
+    padding: 200px 30px 30px 30px;
+    color: #fff;
+    box-sizing: border-box;
+}
+.image.img1 {
+    background-image: url(../img/imageType/imageType01_bg01.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.image.img2 {
+    background-image: url(../img/imageType/imageType01_bg02.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.image__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 4px rgb(80,80,80);
+    /* 1줄 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.image__desc {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-weight: 300;
+    text-shadow: 0 0 4px rgb(80,80,80);
+    /* 2줄효과 : 글이 넘쳐도 2줄을 넘지 않도록 해줌 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-right: 30px;
+}
+.image__btn {
+    background: rgb(80,80,80);
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 300;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.image__btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .image__inner .image {
+        margin: 0 auto;
+        width: 98%;
+    }
+    .image:first-child {
+        margin-bottom: 30px;
+    }
+    #imageType > h2 {
+        font-size: 40px;
+    }
+    #imageType > p {
+        font-size: 18px;
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    #imageType > h2 {
+        font-size: 30px;
+    }
+    #imageType > p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .image__inner .image {
+        width: 96%;
+        margin: 0 auto;
+        padding: 210px 20px 20px 20px;
+    }
+    .image:first-child {
+        margin-bottom: 20px;
+    }
+    .image__title {
+        font-size: 24px;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- // 이미지 영역 -->
+
+            <div class="result">
+                <details>
+                    <summary>이미지/텍스트 영역</summary>
+                    <div class="sample05_result">
+                        <div class="t_code">
+<pre><code class="language-css">/* imgTextType */
+.imgText__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.imgText__inner > div {
+    width: 32%;
+    /* height: 500px; */
+}
+.imgText__txt {}
+.imgText__txt span {
+    font-size: 16px;
+    color: #666;
+    text-decoration: underline;
+    text-underline-position: under;
+    margin-bottom: 20px;
+    display: block;
+}
+.imgText__txt h3 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.imgText__txt p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 40px;
+}
+.imgText__txt ul {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 2;
+}
+.imgText__txt ul li {        
+    position: relative;
+    padding-left: 20px;
+}
+.imgText__txt ul li a {
+    color: #666;
+}
+.imgText__txt ul li a:hover {
+    text-decoration: underline;
+}
+.imgText__txt ul li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: #666;
+}
+.imgText__img {
+    border-radius: 10px;
+    position: relative;
+}
+.imgText__img a {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    background-color: rgb(136, 119, 74);
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 25px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.imgText__img a.blue {
+    background-color: rgb(45, 83, 69);
+    color: #fff;
+}
+.imgText__img a:hover, 
+.imgText__img a.blue:hover {
+    background-color: #fff;
+    color: rgb(80, 80, 80);
+}
+
+.imgText__img.img1 {
+    background: url(../img/imgTextType/imgText_bg01.jpg) no-repeat center / cover;
+}
+.imgText__img.img2 {
+    background: url(../img/imgTextType/imgText_bg02.jpg) no-repeat center / cover;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .imgText__inner {
+        flex-wrap: wrap;
+    }
+    .imgText__inner > .imgText__txt {
+        width: 96%;
+        height: auto;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .imgText__inner > .imgText__img {
+        width: 48%;
+        height: 300px;
+        padding: 10px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .imgText__txt > h3 {
+        font-size: 40px;
+    }
+    .imgText__txt > p {
+        margin-bottom: 60px;
+    }
+    .imgText__txt ul {
+        display: none;
+    }
+    .imgText__txt ul li::before {
+        display: none;
+    }
+    .imgText__img a {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .imgText__inner > .imgText__txt {
+        margin-bottom: 20px;
+    }
+    .imgText__inner > .imgText__img {
+        width: 96%;
+        height: 200px;
+        margin-right: 20px;
+    }
+    .imgText__inner > .imgText__img.img1 {
+        margin-bottom: 20px;
+    }
+    .imgText__txt > span {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .imgText__txt > h3 {
+        font-size: 30px;
+    }
+    .imgText__txt > p {
+        font-size: 16px;
+    }
+    .imgText__txt ul {
+        font-size: 16px;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- // 이미지/텍스트 영역 -->
+
+            <div class="result">
+                <details>
+                    <summary>카드 영역</summary>
+                    <div class="sample06_result">
+                        <div class="t_code">
+<pre><code class="language-css">/* cardType */
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;     /* 간격 떨어뜨리기 */
+}
+.card {
+    width: 32%;
+    background: #fff;
+}
+.card__body {
+    padding: 24px;
+    background: #f5f5f5;
+}
+.card__body .title {
+    font-size: 22px;
+    padding-bottom: 10px;
+    /* 한 줄 효과 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 30px;    /* 제목 길어져도 한 줄 유지 */
+}
+.card__body .desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    padding-bottom: 20px;
+    color: #666;
+    /* 4줄효과 : 글이 넘쳐도 4줄을 넘지 않도록 해줌 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;  /* 4줄까지 제한 */
+    -webkit-box-orient: vertical;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .card__inner {
+        justify-content: space-around;
+    }
+    #cardType > h2 {
+        font-size: 40px;
+    }
+    #cardType > p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    .card__body .desc {
+        margin-bottom: 16px;
+        /* 3줄효과 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #cardType > h2 {
+        font-size: 30px;
+    }
+    #cardType > p {
+        font-size: 16px;
+        padding: 0px 20px;
+    }
+    .card__inner .card {
+        width: 96%;
+        margin-bottom: 20px;
+    }
+    .card__body {
+        padding: 20px;
+    }
+    .card__body .title {
+        font-size: 20px;
+    }
+    .card__body .desc {
+        font-size: 16px;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- // 카드 영역 -->
+
+            <div class="result">
+                <details>
+                    <summary>배너 영역</summary>
+                    <div class="sample07_result">
+                        <div class="t_code">
+<pre><code class="language-css">/* bannerType */
+.banner__inner {
+    background-image: url(../img/bannerType/banner_bg01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+.banner__inner .small {
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+    .banner__inner {
+        padding: 100px 0;
+    }
+    .banner__inner .title {
+        font-size: 40px;
+    }
+    .banner__inner .desc {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner__inner {
+        padding: 80px 0;
+    }
+    .banner__inner .title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .banner__inner .desc {
+        font-size: 16px;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- // 배너 영역 -->
+
+            <div class="result">
+                <details>
+                    <summary>텍스트 영역</summary>
+                    <div class="sample08_result">
+                        <div class="t_code">
+<pre><code class="language-css">/* textType */
+.text__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.text {
+    width: 32%;
+    margin-bottom: 2%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: background-color 0.4s ease;
+}
+.text:hover {
+    background-color: #f5f5f5;
+}
+.text__title {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    padding-top: 75px;
+}
+.text__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: url(../img/textType/text_icon.svg);
+}
+.text.t1 .text__title::before {
+    background-position: 0 0;
+}
+.text.t2 .text__title::before {
+    background-position: -60px 0;
+}
+.text.t3 .text__title::before {
+    background-position: -120px 0;
+}
+.text.t4 .text__title::before {
+    background-position: -180px 0;
+}
+.text.t5 .text__title::before {
+    background-position: -240px 0;
+}
+.text.t6 .text__title::before {
+    background-position: -300px 0;
+}
+.text__desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    /* 3줄효과 : 글이 넘쳐도 4줄을 넘지 않도록 해줌 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;  /* 3줄까지 제한 */
+    -webkit-box-orient: vertical;
+
+    color: #666;
+    margin-bottom: 20px;
+}
+.text__btn {
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: underline;
+    text-underline-position: under; /* 텍스트와 언더라인 간격 벌려줌 */
+    color: #666;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .text {
+        width: 48%;
+        margin: 10px auto;
+        background: #f5f5f5;
+    }
+    #textType > h2 {
+        font-size: 40px;
+    }
+    .text__title {
+        font-size: 22px;
+    }
+    .text__desc {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    #textType > h2 {
+        font-size: 30px;
+    }
+    .text__title {
+        font-size: 20px;
+    }
+    .text__desc {
+        font-size: 16px;
+    }
+    .text {
+        width: 96%;
+        margin: 10px auto;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- // 텍스트 영역 -->
+
+            <div class="result">
+                <details>
+                    <summary>푸터 영역</summary>
+                    <div class="sample09_result">
+                        <div class="t_code">
+<pre><code class="language-css">/* footerType */
+.footer__menu {
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__menu > div h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer__menu li a {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+.footer__right {
+    border-top: 1px solid #d9d9d9;
+    text-align: center;
+    padding-top: 40px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .footer__menu {
+        display: none;
+    }
+    .footer__right {
+        padding-top: 0;
+        border-top: 0;
+    }
+    .footer__wrap {
+        padding: 40px 0;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- // 푸터 영역 -->
+
+            <h3 class="t_tit2">CSS 소스 : 가로 스크롤바 사라지게 하기</h3>
+            <p class="t_desc">
                 반응형을 따로 설정해줬음에도 가로 스크롤바가 사라지지 않는 버그를 방지하기 위해 아래와 같이 코드를 넣어줬다. 
                 (저만 그런건지 모르겠지만 스크롤바가 안사라지더라구요😭 열심히 검색하다가 겨우 찾은 방법입니다...ㅎ)
             </p>

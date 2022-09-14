@@ -1,8 +1,8 @@
 /* imgTextType */
 .imgText__inner {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .imgText__inner > div {
     width: 32%;
@@ -90,14 +90,15 @@
 /* 반응형 */
 @media (max-width: 960px) {
     .imgText__inner {
-        
+        flex-wrap: wrap;
     }
     .imgText__inner > .imgText__txt {
         width: 96%;
+        height: auto;
         text-align: center;
+        margin: 0 auto;
     }
     .imgText__inner > .imgText__img {
-        display: inline-block;
         width: 48%;
         height: 300px;
         padding: 10px;
@@ -123,16 +124,15 @@
 }
 
 @media (max-width: 600px) {
-    .imgText__inner .imgText__txt {
-        margin: 0 auto;
-        width: 96%;
+    .imgText__inner > .imgText__txt {
         margin-bottom: 20px;
     }
-    .imgText__inner .imgText__img {
+    .imgText__inner > .imgText__img {
         width: 96%;
         height: 200px;
+        margin-right: 20px;
     }
-    .imgText__inner .imgText__img.img1 {
+    .imgText__inner > .imgText__img.img1 {
         margin-bottom: 20px;
     }
     .imgText__txt > span {

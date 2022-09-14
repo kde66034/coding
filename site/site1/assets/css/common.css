@@ -80,13 +80,13 @@
 .mt70 {margin-top: 70px !important;}
 
 /* 반응형 container */
-@media (max-width: 1250px) {
+@media (max-width: 960px) {
     .container {
         width: 96%;
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 600px) {
     .container {
         width: 96%;
     }
