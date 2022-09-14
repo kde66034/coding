@@ -72,8 +72,10 @@
 @media (max-width: 960px) {
     .image__inner .image {
         margin: 0 auto;
-        width: 96%;
-        margin-bottom: 20px;
+        width: 98%;
+    }
+    .image:first-child {
+        margin-bottom: 30px;
     }
     #imageType > h2 {
         font-size: 40px;
@@ -92,8 +94,9 @@
         font-size: 16px;
         margin-bottom: 50px;
     }
-    .image {
-        width: 100%;
+    .image__inner .image {
+        width: 96%;
+        margin: 0 auto;
         padding: 210px 20px 20px 20px;
     }
     .image:first-child {

@@ -94,27 +94,95 @@
     background-position: -60px -70px;
 }
 
+
+
+
+/* swiper */
+
+.swiper-slide {
+    background: url(../img/sliderType/slider_bg01.jpg) no-repeat center / cover;
+}
+.swiper-slide .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+.swiper-slide .desc span {
+    font-size: 16px;
+    background: #fff;
+    padding: 1px 14px 0 14px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+.swiper-slide .desc h3 {
+    font-size: 85px;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+    text-shadow: 0 0 5px #666;
+}
+.swiper-slide .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 60px;
+    text-shadow: 0 0 5px #666;
+}
+.swiper-slide .desc .btn a {
+    font-size: 16px;
+    background: #fff;
+    padding: 12px 40px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.swiper-slide .desc .btn a.black {
+    background: rgb(60, 60, 60);
+    color: #fff;
+}
+.swiper-slide .desc .btn a:hover {
+    border-radius: 50px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    width: 30px;
+    height: 56px;
+    background-image: url(../img/sliderType/slider_icon.svg);
+    transform: translateY(-50%);
+}
+.swiper-button-next, .swiper-button-prev:after {
+    
+}
+
 /* 반응형 */
-@media (max-width: 1080px) {
-    .slider__img .desc {
-        margin-left: 80px;
+@media (max-width: 960px) {
+    .swiper-slide .desc {
+        width: 100%;
+        text-align: center;
     }
-    .slider__img .desc h3 {
-        font-size: 55px;
+    .swiper-slide .desc h3 {
+        font-size: 70px;
     }
 }
 
-@media (max-width: 768px) {
-    .slider__img .desc {
-        margin-left: 20px;
+@media (max-width: 600px) {
+    .swiper-slide .desc {
+        padding: 80px 0;
     }
-    .slider__img .desc span {
-        font-size: 14px;
+    .swiper-slide .desc h3 {
+        font-size: 40px;
     }
-    .slider__img .desc h3 {
-        font-size: 24px;
-    }
-    .slider__img .desc p {
+    .swiper-slide .desc p {
         font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .swiper-slide .desc .btn a {
+        padding: 10px 25px;
     }
 }

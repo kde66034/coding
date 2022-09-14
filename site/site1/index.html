@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="assets/css/banner.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/slider.css">
+    
+    <!-- swiper -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
 
     <style>
         /* 모바일 수평 스크롤 금지 */
@@ -91,7 +94,7 @@
         <section id="sliderType" class="slider__wrap scroll">
             <h2 class="blind">슬라이드 영역</h2>
             <div class="slider__inner">
-                <div class="slider">
+                <!-- <div class="slider">
                     <div class="slider__img">
                         <div class="desc container">
                             <span>BAKING CLASS</span>
@@ -117,6 +120,56 @@
                         <a href="#" class="play"><span class="ir">플레이</span></a>
                         <a href="#" class="stop"><span class="ir">정지</span></a>
                     </div>
+                </div> -->
+                
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="desc container">
+                                <span>BAKING CLASS</span>
+                                <h3>AWESOME BAKING</h3>
+                                <p>
+                                    훌륭한 제빵사가 되고 싶으신가요? <br>
+                                    별빛제빵교실에 오신 것을 환영합니다!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc container">
+                                <span>BAKING CLASS</span>
+                                <h3>AWESOME BAKING</h3>
+                                <p>
+                                    훌륭한 제빵사가 되고 싶으신가요? <br>
+                                    별빛제빵교실에 오신 것을 환영합니다!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc container">
+                                <span>BAKING CLASS</span>
+                                <h3>AWESOME BAKING</h3>
+                                <p>
+                                    훌륭한 제빵사가 되고 싶으신가요? <br>
+                                    별빛제빵교실에 오신 것을 환영합니다!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </section>
@@ -381,6 +434,20 @@
         </div>
     </footer>
     <!-- // footerType -->
+
+
+
+    <!-- SCRIPT -->
+    <script src="assets/js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+    </script>
 
     <script>
         window.addEventListener("scroll", () => {
