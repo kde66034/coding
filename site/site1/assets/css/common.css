@@ -86,7 +86,7 @@
     }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 960px) {
     .container {
         width: 96%;
     }

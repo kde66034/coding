@@ -36,7 +36,7 @@
 }
 
 /* 반응형 */
-@media (max-width: 1080px) {
+@media (max-width: 960px) {
     .card__inner {
         justify-content: space-around;
     }
@@ -45,6 +45,7 @@
     }
     #cardType > p {
         font-size: 18px;
+        line-height: 1.6;
     }
     .card__body .desc {
         margin-bottom: 16px;
@@ -58,16 +59,20 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     #cardType > h2 {
         font-size: 30px;
     }
     #cardType > p {
         font-size: 16px;
+        padding: 0px 20px;
     }
     .card__inner .card {
         width: 96%;
         margin-bottom: 20px;
+    }
+    .card__body {
+        padding: 20px;
     }
     .card__body .title {
         font-size: 20px;

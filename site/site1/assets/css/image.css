@@ -1,4 +1,11 @@
 /* imageType */
+#imageType > p {
+    font-size: 22px;
+    padding: 0 20px;
+    word-break: keep-all;
+    line-height: 1.6;
+}
+
 .image__inner {
     display: flex;
     justify-content: space-between;     /* 간격 떨어뜨리기 */
@@ -28,6 +35,10 @@
     font-size: 32px;
     margin-bottom: 10px;
     text-shadow: 0 0 4px rgb(80,80,80);
+    /* 1줄 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .image__desc {
     font-size: 16px;
@@ -58,7 +69,7 @@
 }
 
 /* 반응형 */
-@media (max-width: 1080px) {
+@media (max-width: 960px) {
     .image__inner .image {
         margin: 0 auto;
         width: 96%;
@@ -69,14 +80,26 @@
     }
     #imageType > p {
         font-size: 18px;
+        margin-bottom: 60px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     #imageType > h2 {
         font-size: 30px;
     }
     #imageType > p {
         font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .image {
+        width: 100%;
+        padding: 210px 20px 20px 20px;
+    }
+    .image:first-child {
+        margin-bottom: 20px;
+    }
+    .image__title {
+        font-size: 24px;
     }
 }

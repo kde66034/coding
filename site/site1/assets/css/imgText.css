@@ -20,8 +20,6 @@
 .imgText__txt h3 {
     font-size: 50px;
     font-weight: 300;
-    word-break: keep-all;
-    line-height: 1.4;
     margin-bottom: 10px;
 }
 .imgText__txt p {
@@ -90,15 +88,15 @@
 }
 
 /* 반응형 */
-@media (max-width: 1080px) {
+@media (max-width: 960px) {
     .imgText__inner {
         
     }
-    .imgText__inner .imgText__txt {
+    .imgText__inner > .imgText__txt {
         width: 96%;
         text-align: center;
     }
-    .imgText__inner .imgText__img {
+    .imgText__inner > .imgText__img {
         display: inline-block;
         width: 48%;
         height: 300px;
@@ -110,10 +108,10 @@
         font-size: 40px;
     }
     .imgText__txt > p {
-        font-size: 18px;
+        margin-bottom: 60px;
     }
     .imgText__txt ul {
-        margin-bottom: 40px;
+        display: none;
     }
     .imgText__txt ul li::before {
         display: none;
@@ -124,7 +122,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .imgText__inner .imgText__txt {
         margin: 0 auto;
         width: 96%;
@@ -132,7 +130,14 @@
     }
     .imgText__inner .imgText__img {
         width: 96%;
+        height: 200px;
+    }
+    .imgText__inner .imgText__img.img1 {
         margin-bottom: 20px;
+    }
+    .imgText__txt > span {
+        font-size: 14px;
+        margin-bottom: 10px;
     }
     .imgText__txt > h3 {
         font-size: 30px;

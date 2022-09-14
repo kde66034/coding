@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : MySQL</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+        <div class="document">
+            <h1 class="t_tit">MySQL이란?</h1>
+            <p class="t_desc2">
+                MySQL은 데이터베이스 소프트웨어입니다. 일반적으로 데이터를 추가하거나 검색, 추출하는 기능을 모두
+                포함해서 데이터베이스라고 부릅니다. 
+            </p>
+            <p class="t_desc1">
+                MySQL은 세계에서 가장 많이 쓰이는 오픈 소스의 관계형 데이터베이스 관리시스템(RDBMS)입니다. 
+                MySQL은 PHP 스크립트 언어와 상호 연동이 잘 되면서 오픈 소스로 개발된 무료 프로그램입니다. 
+                그래서 홈페이지나 쇼핑몰(워드프레스, cafe24, 제로보드, 그누보드) 등 일반적으로 웹 개발에 널리
+                사용되고 있습니다.
+            </p>
+            <!-- // MySQL이란? -->
+
+            <h2 class="t_tit2">MySQL 설치하기</h2>
+            <div class="t_desc2">
+                MAMP란 웹사이트를 개발할 때 쓰이는 기술 스택인 macOS, Apache, MySQL, PHP 의 약어이자 솔루션 스택입니다.
+            </div>
+            <div class="t_box">
+                다운로드 링크 : <a href="https://www.mamp.info/en/downloads/" target="_blank">https://www.mamp.info/en/downloads/</a>
+            </div>
+            <!-- // MySQL 설치하기 -->
+
+            <h2 class="t_tit2">MySQL 실행하기</h2>
+            <h3 class="t_tit3">Windows의 경우</h3>
+            <div class="t_box">
+                Windows : cd MAMP/bin/mysql/bin <br>
+                로그인 : mysql -uroot -proot
+            </div>
+            <div class="t_code">
+<pre><code class="language-js">mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+// 이러한 코드가 출력된다면 성공적으로 실행한 것.
+</code></pre>
+            </div>
+            <br>
+            <h3 class="t_tit3">Mac의 경우</h3>
+            <div class="t_box">
+                Mac : cd /Application/mamp/Libary/bin <br>
+                로그인 : sudo ./ -uroot -proot
+            </div>
+            <div class="t_code">
+<pre><code class="language-js">mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor. Commands end with ; or \g.
+Your MySQL connection id is 188
+Server version: 5.7.34 MySQL Community Server (GPL)
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+// 이러한 코드가 출력된다면 성공적으로 실행한 것.
+</code></pre>
+            </div>
+            <!-- // MySQL 실행하기 -->
+
+            <hr>
+
+            <br>
+            <h2 class="t_tit">데이터베이스</h2>
+            <h3 class="t_tit2">데이터베이스 만들기</h3>
+            <p class="t_box">
+                create database 데이터베이스 이름;
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">mysql > create database sample01;
+Query OK, 1 row affected (0.00 sec)
+</code></pre>
+            </div>
+            <!-- // 데이터베이스 만들기 -->
+
+            <h3 class="t_tit2">데이터베이스 보기</h3>
+            <p class="t_box">
+                show databases;
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample01           |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+</code></pre>
+            </div>
+            <!-- // 데이터베이스 보기 -->
+
+            <h3 class="t_tit2">데이터베이스 사용</h3>
+            <p class="t_box">
+                use 데이터베이스 이름;
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">mysql> use sample01;
+Database changed
+</code></pre>
+            </div>
+            <!-- // 데이터베이스 사용 -->
+
+            <h3 class="t_tit2">데이터베이스 삭제</h3>
+            <p class="t_box">
+                drop database 데이터베이스 이름;
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">mysql> drop database sample02;
+Query OK, 0 rows affected (0.03 sec)
+</code></pre>
+            </div>
+            <!-- // 데이터베이스 삭제 -->
+
+            <!-- // 데이터베이스 -->
+
+            <hr>
+
+            <h2 class="t_tit">테이블</h2>
+
+            <h3 class="t_tit2">테이블 만들기</h3>
+            <p class="t_box">
+                create table 테이블 이름
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">create table member (
+    myMemberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL,
+    youName varchar(20) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(20) NOT NULL,
+    regTime int(20) NOT NULL,
+    PRIMARY KEY (myMemberID)
+) charset=utf8;
+</code></pre>
+            </div>
+            <!-- // 데이터베이스 삭제 -->
+            
+            <!-- // 테이블 -->
+
+            <h2 class="t_tit2">timing-function : step</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="timing-function - step" src="https://codepen.io/kde66034/embed/wvjKRRY?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/wvjKRRY">
+                    timing-function - step</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // step -->
+
+            <h2 class="t_tit2">timing-function : cubic-bezier</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="timing-function" src="https://codepen.io/kde66034/embed/jOxbXJo?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/jOxbXJo">
+                    timing-function</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // cubic-bezier -->
+
+            <h2 class="t_tit2">timing-function : animation-delay</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="animation-delay" src="https://codepen.io/kde66034/embed/GRdpPad?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/GRdpPad">
+                    animation-delay</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-delay -->
+
+            <h2 class="t_tit2">timing-function : animation-iteration-count</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="animation-iteration-count" src="https://codepen.io/kde66034/embed/gOzaZVj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/gOzaZVj">
+                    animation-iteration-count</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-iteration-count -->
+
+            <h2 class="t_tit2">timing-function : animation-direction</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="Untitled" src="https://codepen.io/kde66034/embed/yLjYZyy?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/yLjYZyy">
+                    Untitled</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-direction -->
+
+            <h2 class="t_tit2">timing-function : animation-fill-mode</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="animation-fill-mode" src="https://codepen.io/kde66034/embed/MWGaLKa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/MWGaLKa">
+                    animation-fill-mode</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-fill-mode -->
+
+            <h2 class="t_tit2">timing-function : animation-play-state</h2>
+            <div class="t_iframe">
+                <iframe scrolling="no" title="animation-play-state" src="https://codepen.io/kde66034/embed/ExLVryW?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/ExLVryW">
+                    animation-play-state</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- // animation-play-state -->
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
