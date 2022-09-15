@@ -27,7 +27,7 @@
         <div class="document">
             <h2 class="t_tit">사이트 만들기 : 실전 유형 01</h2>
             <p class="t_desc2">
-                그동안 배웠던 헤더, 카드, 이미지, 이미지/텍스트, 텍스트, 슬라이드, 푸터 유형을 한 곳에 모아
+                그동안 배웠던 헤더(반응형 전용 메뉴바 포함), 카드, 이미지, 이미지/텍스트, 텍스트, 슬라이드, 푸터 유형을 한 곳에 모아
                 본격적으로 웹 페이지를 만들어보도록 하겠습니다.
             </p>
 
@@ -453,7 +453,7 @@
             </p>
             <div class="result">
                 <details>
-                    <summary>헤더 영역</summary>
+                    <summary>헤더 & 반응형 전용 메뉴바 영역</summary>
                     <div class="sample02_result">
                         <div class="t_code">
 <pre><code class="language-css">/* headerType */
@@ -996,7 +996,6 @@
     .imgText__inner > .imgText__img {
         width: 96%;
         height: 200px;
-        margin-right: 20px;
     }
     .imgText__inner > .imgText__img.img1 {
         margin-bottom: 20px;
@@ -1357,17 +1356,22 @@
             </div>
             <!-- // 푸터 영역 -->
 
-            <h3 class="t_tit2">CSS 소스 : 가로 스크롤바 사라지게 하기</h3>
+            <h3 class="t_tit2">CSS 소스 : 반응형 버그 해결하기</h3>
             <p class="t_desc">
-                반응형을 따로 설정해줬음에도 가로 스크롤바가 사라지지 않는 버그를 방지하기 위해 아래와 같이 코드를 넣어줬다. 
-                (저만 그런건지 모르겠지만 스크롤바가 안사라지더라구요😭 열심히 검색하다가 겨우 찾은 방법입니다...ㅎ)
+                반응형(모바일, 태블릿 PC 전용 화면) 버그를 해결하기 위해 아래와 같은 코드를 입력해주었다. 
+                
             </p>
             <div class="t_code">
 <pre><code lang="language-css">&lt;style&gt;
-    /* 모바일 수평 스크롤 금지 */
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden;
+    /* Windows에서 페이지 이동 시 웹뷰화면 흔들림 버그 없애줌 */
+    body{
+        overflow: overlay;
+    }
+
+    /* 햄버거 모양 메뉴 클릭 시 스크롤바를 없애줌 */
+    body.fixed {
+        overflow: hidden;
+        height: 100vh;
     }
 &lt;/style&gt;
 </code></pre>
@@ -1378,8 +1382,8 @@
             <p class="t_desc">
                 첫번째로는 스크롤을 이동할 때마다 현재 위치한 메뉴에 active 효과를 적용시키는 스크립트를 입력하였고, 
                 두번째는 스크롤 이동을 부드럽게 하기 위해 behavior:"smooth"를 적용하였으며, 
-                마지막으로는 반응형 전용 메뉴 버튼과 해당 버튼에 마우스 커서를 올려놓음으로 인해 발생하는 이벤트 등을
-                설정해주었다.
+                마지막으로는 반응형 전용 햄버거 모양 메뉴 버튼과 해당 버튼을 클릭(또는 터치)하면 메뉴 바를 나타나게 하고, 
+                X 버튼을 누르면 사라지게 하도록 스크립트를 짜 놓았다.
             </p>
             <div class="t_code">
 <pre><code lang="language-js">&lt;script&gt;
@@ -1407,14 +1411,23 @@
     });
 
     // 메뉴 버튼 (반응형)
-    const menuBtn = document.querySelector(".menu__bar .ico");  // 메뉴 아이콘
-    const menu = document.querySelector(".header__menu");   // 메뉴
+    const btnHam = document.querySelector(".header__ham");
+    const btnMenu = document.querySelector(".header__menu");
+    const btnMenuList = btnMenu.querySelectorAll(".header__menu ul li a");
 
-    menuBtn.addEventListener("mouseover", () => {
-        menu.classList.add("on");   // 메뉴 아이콘에 마우스 커서 올려놓으면 메뉴 보이기
+    btnHam.addEventListener("click", () => {
+        btnHam.classList.toggle("active");
+        btnMenu.classList.toggle("active");
+        document.body.classList.toggle("fixed");
     });
-    menu.addEventListener("mouseleave", () => {
-        menu.classList.remove("on");    // 메뉴 아이콘에 마우스 커서 벗어나면 메뉴 사라지기
+
+    // 반응형에서 메뉴 버튼 누르는 즉시 메뉴창 닫히게 하기
+    btnMenuList.forEach((list) => {
+        list.addEventListener("click", () => {
+            document.body.classList.remove("fixed");
+            btnHam.classList.remove("active");
+            btnMenu.classList.remove("active");
+        });
     });
 &lt;/script&gt;
 </code></pre>
