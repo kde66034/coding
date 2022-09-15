@@ -170,9 +170,33 @@
     background-position: -20px -70px !important;
     background-color: transparent !important;
     opacity: 1 !important;
+    cursor: pointer;
 }
 .swiper-pagination-bullet-active {
     background-position: 0 -70px !important;
+}
+
+.swiper-button {
+    position: absolute;
+    margin-left: 40px;
+    display: flex;
+    left: 50%;
+    bottom: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.swiper-button-play {
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/sliderType/slider_icon.svg);
+    background-position: -40px -70px;
+}
+.swiper-button-stop {
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/sliderType/slider_icon.svg);
+    background-position: -60px -70px;
 }
 
 /* 반응형 */

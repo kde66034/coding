@@ -37,15 +37,6 @@
             max-width: 100%;
             overflow-x: hidden;
         }
-
-        /* #headerType {display: none;}
-        #sliderType {display: none;}
-        #imageType {display: none;}
-        #imgTextType {display: none;}
-        #cardType {display: none;}
-        #bannerType {display: none;}
-        #textType {display: none;}
-        #footerType {display: none;} */
     </style>
 </head>
 <body>
@@ -72,9 +63,6 @@
                 <h1 class="header__logo">
                     <a href="#">별빛제빵교실 <em>Baking Class</em></a>
                 </h1>
-                <div class="menu__bar">
-                    <div class="ico"></div>
-                </div>
                 <div class="header__menu">
                     <ul>
                         <li class="active"><a href="#headerType">MAIN</a></li>
@@ -87,6 +75,11 @@
                 </div>
                 <div class="header__member">
                     <a href="#">SIGN IN</a>
+                </div>
+                <div class="header__ham">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </section>
@@ -169,6 +162,10 @@
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
@@ -448,13 +445,33 @@
             prevEl: ".swiper-button-prev",
           },
           autoplay: {
-            delay: 4000
+            delay: 2000,
+            disableOnInteraction: false
           },
           pagination: {
             el: '.swiper-pagination',
-            type: 'bullets'
+            type: 'bullets',
+            clickable: true
           }
         });
+
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnStop = document.querySelector(".swiper-button-stop");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+        
     </script>
 
     <script>
@@ -481,15 +498,24 @@
             });
         });
 
-        // 메뉴 버튼 (반응형)
-        const menuBtn = document.querySelector(".menu__bar .ico");  // 메뉴 아이콘
-        const menu = document.querySelector(".header__menu");   // 메뉴
+        // 메뉴 버튼 (반응형) - 舊
+        // const menuBtn = document.querySelector(".menu__bar .ico");  // 메뉴 아이콘
+        // const menu = document.querySelector(".header__menu");   // 메뉴
 
-        menuBtn.addEventListener("mouseover", () => {
-            menu.classList.add("on");   // 메뉴 아이콘에 마우스 커서 올려놓으면 메뉴 보이기
-        });
-        menu.addEventListener("mouseleave", () => {
-            menu.classList.remove("on");    // 메뉴 아이콘에 마우스 커서 벗어나면 메뉴 사라지기
+        // menuBtn.addEventListener("mouseover", () => {
+        //     menu.classList.add("on");   // 메뉴 아이콘에 마우스 커서 올려놓으면 메뉴 보이기
+        // });
+        // menu.addEventListener("mouseleave", () => {
+        //     menu.classList.remove("on");    // 메뉴 아이콘에 마우스 커서 벗어나면 메뉴 사라지기
+        // });
+
+        // 메뉴 버튼 (반응형)
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("overlay");
         });
     </script>
 </body>
