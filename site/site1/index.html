@@ -30,14 +30,6 @@
     
     <!-- swiper -->
     <link rel="stylesheet" href="assets/css/swiper.css">
-
-    <style>
-        /* 모바일 수평 스크롤 금지 */
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-    </style>
 </head>
 <body>
     <div id="skip">
@@ -512,11 +504,35 @@
         // 메뉴 버튼 (반응형)
         const btnHam = document.querySelector(".header__ham");
         const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = btnMenu.querySelectorAll(".header__menu ul li a");
 
         btnHam.addEventListener("click", () => {
             btnHam.classList.toggle("active");
-            btnMenu.classList.toggle("overlay");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
         });
+
+        // 반응형에서 메뉴 버튼 누르는 즉시 메뉴창 닫히게 하기
+        btnMenuList.forEach((list) => {
+            list.addEventListener("click", () => {
+                document.body.classList.remove("fixed");
+                btnHam.classList.remove("active");
+                btnMenu.classList.remove("active");
+            });
+        });
+
+        // 사이드 메뉴바가 나오면 스크롤바 없애주기
+        // window.addEventListener("resize", () => {
+        //     let width = window.innerWidth;
+            
+        //     if(width > 1300){
+        //         document.body.classList.remove("fixed");
+        //         btnMenu.classList.remove("active");
+        //         btnHam.classList.remove("active");
+        //     } 
+        // });
+
+        
     </script>
 </body>
 </html>
