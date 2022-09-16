@@ -187,55 +187,6 @@ li {
   }
 }
 
-.mouse__cursor {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  background-color: rgba(255,255,255,0.1);
-  transition: 
-    background-color 0.3s,
-    border-color 0.3s,
-    transform 0.6s,
-    border-radius 0.3s
-  ;
-  /* 선택/클릭 방지 */
-  user-select: none;
-  pointer-events: none;
-}
-.mouse__cursor.style1 {
-  background-color: rgba(255, 166, 0, 0.5);
-  border-color: rgba(255, 166, 0, 1);
-}
-.mouse__cursor.style2 {
-  background-color: rgba(238, 130, 238, 0.5);
-  border-color: rgba(238, 130, 238, 1);
-  transform: scale(2) rotateY(720deg);
-}
-.mouse__cursor.style3 {
-  background-color: rgba(176, 224, 230, 0.5);
-  border-color: rgba(176, 224, 230, 1);
-  transform: scale(1.5) rotateX(45deg);
-}
-.mouse__cursor.style4 {
-  background-color: rgba(152, 251, 152, 0.5);
-  border-color: rgba(152, 251, 152, 1);
-  transform: scale(5);
-}
-.mouse__cursor.style5 {
-  background-color: rgba(188, 143, 143, 0.5);
-  border-color: rgba(188, 143, 143, 1);
-}
-.mouse__cursor.style6 {
-  background-color: rgba(216, 112, 147, 0.5);
-  border-color: rgba(216, 112, 147, 1);
-  border-radius: 0;
-  transform: scale(2.5);
-  
-}
 
 .mouse__info {
   position: absolute;
