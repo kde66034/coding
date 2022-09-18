@@ -1119,9 +1119,11 @@
           function scroll() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
 
-            document.querySelectorAll(".content__item").forEach(item => {
+            document.querySelectorAll(".content__item").forEach(item => { 
+              // .content__item 섹션의 스크롤탑값이 각각 아이템의 offsetTop값 - window.innerHeight의 절반값보다 작을 경우
+              // 좀 더 빠르게 애니메이션을 적용해주기 위해 2로 나눈 것임
               if(scrollTop > item.offsetTop - window.innerHeight / 2) {
-                item.classList.add("show");
+                item.classList.add("show");   // 아이템에 ".show" 클래스값 붙여주기
               }
             });
 

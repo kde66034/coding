@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스 효과 02</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 02 : GSAP</h2>
+            <p class="t_desc2">
+                이번 시간에는 자바스크립트와는 살짝 다른 <a href="https://kde66034.tistory.com/66">GSAP</a>를 이용하여 마우스 이펙트를 만들어보도록 하겠습니다. 
+            </p>
+
+            <!-- // 마우스 이펙트 만들기  -->
+
+            <hr>
+
+            <h3 class="t_tit2">HTML 소스</h3>
+            <p class="t_desc">
+                header, main(마우스 커서 2개 & 명언), footer(모달 박스) 크게 3가지로 이루어져 있다. 
+                footer의 모달 박스 내용은 너무 길어지므로 생략한다. 모달 박스를 나타내는 방법에 대해서는 이전에 업로드한
+                 <a href="https://kde66034.tistory.com/62">슬라이드 이펙트</a> 게시물을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;body class="img04"> &lt;!-- 백그라운드 이미지 / CSS로 이미지 출력시킴 -->
+    &lt;header id="header">
+        &lt;h1>JAVASCRIPT MOUSE EFFECT 02&lt;/h1>
+        &lt;p>마우스 이펙트 - 마우스 따라다니기(GSAP)&lt;/p>
+        &lt;ul>
+            &lt;li>&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect05.html">05&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect06.html">06&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect07.html">07&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/header>
+    &lt;!-- //header -->
+
+    &lt;main id="main">
+      &lt;section id="mouseType">
+        &lt;div class="mouse__cursor">&lt;/div>
+        &lt;div class="mouse__cursor2">&lt;/div>
+
+        &lt;div class="mouse__wrap">
+          &lt;p>&lt;span class="style1">The future&lt;/span> depends on &lt;span class="style2">what we do&lt;/span> in the &lt;span class="style3">present&lt;/span>.&lt;/p>
+          &lt;p>&lt;span class="style4">미래&lt;/span>는 &lt;span class="style5">현재&lt;/span> 우리가 &lt;span class="style6">무엇을 하는가&lt;/span>에 달려 있다.&lt;/p>
+        &lt;/div>
+      &lt;/section>
+    &lt;/main>
+    &lt;!-- //main -->
+
+    &lt;footer>
+        &lt;!-- 모달 박스 내용 들어갈 곳. 길어지므로 생략. -->
+    &lt;/footer>
+    &lt;!-- //footer -->
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">CSS 소스</h3>
+            <p class="t_desc">
+                마우스 커서 두 개(mouse__cursor, mouse__cursor2)의 모양을 만든다. 
+                클래스값 active가 붙었을 때의 모양도 함께 기술한다. 
+                공통/초기화 CSS 소스는 하단의 [CSS 소스 보기]버튼을 클릭하여 볼 수 있다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.mouse__cursor2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 9998;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.mouse__cursor.active {
+    transform: scale(0);
+}
+.mouse__cursor2.active {
+    transform: scale(5);
+    background: rgba(255,166,0,0.6);
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">JS 소스</h3>
+            <p class="t_desc">
+                GSAP 방식을 이용해서 마우스 커서가 움직였을 때의 스타일(CSS)을 입혀주도록 한다. (기존 방식과 함께 기술하였음) 
+                그런 다음, 마우스 커서가 특정 문구 위에 올라갔을 때(= hover 됐을 때) active 효과를 붙여주고 커서가 떠났을 때는
+                active 효과를 제거해주도록 스크립트를 짰다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
+const cursor2 = document.querySelector(".mouse__cursor2");
+const span = document.querySelectorAll(".mouse__wrap span")
+
+window.addEventListener("mousemove", e => {
+    // 커서 좌표값 할당
+    // cursor.style.left = e.pageX -5+ "px";
+    // cursor.style.top = e.pageY -5+ "px";
+    // cursor2.style.left = e.pageX -15+ "px";
+    // cursor2.style.top = e.pageY -15+ "px";
+
+    // GSAP
+    gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top:e.pageY -5});
+    gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top:e.pageY -15});
+
+    // 오버 효과
+    // mouseenter / mouseover / 이벤트 버블링
+    span.forEach(span => {
+        span.addEventListener("mouseenter", () => {
+            cursor.classList.add("active");
+            cursor2.classList.add("active");
+        });
+        span.addEventListener("mouseleave", () => {
+            cursor.classList.remove("active");
+            cursor2.classList.remove("active");
+        });
+    });
+});
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/mouseEffect02.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/mouseEffect02.html">원본(HTML/JS) 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/mouse.css">CSS 소스 보기</a>
+            </div>
+            <!-- //  -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
