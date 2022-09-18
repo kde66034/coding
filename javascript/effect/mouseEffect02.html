@@ -140,112 +140,45 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">&lt;body>
-  // 마우스 움직이는 값 가져오기 - 마우스 커서 좌표값을 표시시킴
-  // mouseInfo로부터 떨어진 값 == 좌표값
-  window.addEventListener("mousemove", (event) => {       
-    document.querySelector(".clientX").innerText = event.clientX;
-    document.querySelector(".clientY").innerText = event.clientY;
-    document.querySelector(".offsetX").innerText = event.offsetX;
-    document.querySelector(".offsetY").innerText = event.offsetY;
-    document.querySelector(".pageX").innerText = event.pageX;
-    document.querySelector(".pageY").innerText = event.pageY;
-    document.querySelector(".screenX").innerText = event.screenX;
-    document.querySelector(".screenY").innerText = event.screenY;
-  });
-
-  // css로 만든 마우스커서 적용시키기
+<pre><code class="language-js">&lt;script>
   const cursor = document.querySelector(".mouse__cursor");
+  const cursor2 = document.querySelector(".mouse__cursor2");
+  const span = document.querySelectorAll(".mouse__wrap span")
 
-  window.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX - 25 + "px";
-    cursor.style.top = e.clientY -25 + "px";
+  window.addEventListener("mousemove", e => {
+      // 커서 좌표값 할당
+      // cursor.style.left = e.pageX -5+ "px";
+      // cursor.style.top = e.pageY -5+ "px";
+      // cursor2.style.left = e.pageX -15+ "px";
+      // cursor2.style.top = e.pageY -15+ "px";
+
+      // GSAP
+      gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top:e.pageY -5});
+      gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top:e.pageY -15});
+
+      // 오버 효과
+      // mouseenter / mouseover / 이벤트 버블링
+      span.forEach(span => {
+          span.addEventListener("mouseenter", () => {
+              cursor.classList.add("active");
+              cursor2.classList.add("active");
+          });
+          span.addEventListener("mouseleave", () => {
+              cursor.classList.remove("active");
+              cursor2.classList.remove("active");
+          });
+      });
   });
-
-  // 마우스 커서 변경하기 (수동)
-  // document.querySelector(".style1").addEventListener("mouseover", () => {
-  //   cursor.classList.add("style1");
-  // });
-  // document.querySelector(".style1").addEventListener("mouseout", () => {
-  //   cursor.classList.remove("style1");
-  // });
-
-  // document.querySelector(".style2").addEventListener("mouseover", () => {
-  //   cursor.classList.add("style2");
-  // });
-  // document.querySelector(".style2").addEventListener("mouseout", () => {
-  //   cursor.classList.remove("style2");
-  // });
-
-  // document.querySelector(".style3").addEventListener("mouseover", () => {
-  //   cursor.classList.add("style3");
-  // });
-  // document.querySelector(".style3").addEventListener("mouseout", () => {
-  //   cursor.classList.remove("style3");
-  // });
-
-  // document.querySelector(".style4").addEventListener("mouseover", () => {
-  //   cursor.classList.add("style4");
-  // });
-  // document.querySelector(".style4").addEventListener("mouseout", () => {
-  //   cursor.classList.remove("style4");
-  // });
-
-  // document.querySelector(".style5").addEventListener("mouseover", () => {
-  //   cursor.classList.add("style5");
-  // });
-  // document.querySelector(".style5").addEventListener("mouseout", () => {
-  //   cursor.classList.remove("style5");
-  // });
-
-  // document.querySelector(".style6").addEventListener("mouseover", () => {
-  //   cursor.classList.add("style6");
-  // });
-  // document.querySelector(".style6").addEventListener("mouseout", () => {
-  //   cursor.classList.remove("style6");
-  // });
-
-  // for문
-  // for(let i=1; i &lt;= 6; i++) {
-  //   document.querySelector(".style" + i).addEventListener("mouseover", () => {
-  //     cursor.classList.add("style" + i);
-  //   });
-  //   document.querySelector(".style" + i).addEventListener("mouseout", () => {
-  //   cursor.classList.remove("style" + i);
-  //   });
-  // };
-
-  // forEach
-  // document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
-  //   span.addEventListener("mouseover", () => {
-  //     cursor.classList.add("style" + (num+1));
-  //   });
-  //   span.addEventListener("mouseout", () => {
-  //     cursor.classList.remove("style" + (num+1));
-  //   });
-  // });
-
-  // getAtrribute() : 'style'이 담김 클래스값을 그대로 가져와 더 정확한 방법
-  document.querySelectorAll(".mouse__wrap span").forEach((span) => {
-    let attr = span.getAttribute("class");
-
-    span.addEventListener("mouseover", () => {
-      cursor.classList.add(attr);
-    });
-    span.addEventListener("mouseout", () => {
-      cursor.classList.remove(attr);
-    });
-  });
-&lt;/body>
+&lt;/script>
 </code></pre>
                         </div>
                         <div>
 <pre><code class="language-html">&lt;header id="header">
-  &lt;h1>JAVASCRIPT MOUSE EFFECT 01&lt;/h1>
-  &lt;p>마우스 이펙트 - 마우스 따라다니기&lt;/p>
+  &lt;h1>JAVASCRIPT MOUSE EFFECT 02&lt;/h1>
+  &lt;p>마우스 이펙트 - 마우스 따라다니기(GSAP)&lt;/p>
   &lt;ul>
-      &lt;li class="active">&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
+      &lt;li class="active">&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
       &lt;li>&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
       &lt;li>&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
       &lt;li>&lt;a href="mouseEffect05.html">05&lt;/a>&lt;/li>
@@ -258,24 +191,13 @@
 &lt;main id="main">
 &lt;section id="mouseType">
   &lt;div class="mouse__cursor">&lt;/div>
+  &lt;div class="mouse__cursor2">&lt;/div>
+
   &lt;div class="mouse__wrap">
     &lt;p>&lt;span class="style1">The future&lt;/span> depends on &lt;span class="style2">what we do&lt;/span> in the &lt;span class="style3">present&lt;/span>.&lt;/p>
     &lt;p>&lt;span class="style4">미래&lt;/span>는 &lt;span class="style5">현재&lt;/span> 우리가 &lt;span class="style6">무엇을 하는가&lt;/span>에 달려 있다.&lt;/p>
   &lt;/div>
 &lt;/section>
-
-&lt;div class="mouse__info">
-  &lt;ul>
-    &lt;li>clientX : &lt;span class="clientX">0&lt;/span>px&lt;/li>
-    &lt;li>clientY : &lt;span class="clientY">0&lt;/span>px&lt;/li>
-    &lt;li>offsetX : &lt;span class="offsetX">0&lt;/span>px&lt;/li>
-    &lt;li>offsetY : &lt;span class="offsetY">0&lt;/span>px&lt;/li>
-    &lt;li>pageX : &lt;span class="pageX">0&lt;/span>px&lt;/li>
-    &lt;li>pageY : &lt;span class="pageY">0&lt;/span>px&lt;/li>
-    &lt;li>screenX : &lt;span class="screenX">0&lt;/span>px&lt;/li>
-    &lt;li>screenY : &lt;span class="screenY">0&lt;/span>px&lt;/li>
-  &lt;/ul>
-&lt;/div>
 &lt;/main>
 &lt;!-- //main -->
 
@@ -286,523 +208,39 @@
                         </div>
                         <div>
 <pre><code class="language-css">&lt;style>  
-  /* fonts */
-  @import url("https://webfontworld.github.io/score/SCoreDream.css");
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "SCoreDream";
-  }
-  
-  body {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  body.img01 {
-    background: #000 url(../img/effect_bg01@2x.jpg) no-repeat center / cover;
-  }
-  body.img02 {
-    background: #000 url(../img/effect_bg02@2x.jpg) no-repeat center / cover;
-  }
-  body.img03 {
-    background: #000 url(../img/effect_bg03@2x.jpg) no-repeat center / cover;
-  }
-  body.img04 {
-    background: #000 url(../img/effect_bg04@2x.jpg) no-repeat center / cover;
-  }
-  body.img05 {
-    background: #000 url(../img/effect_bg05@2x.jpg) no-repeat center / cover;
-  }
-  body.img06 {
-    background: #000 url(../img/effect_bg06@2x.jpg) no-repeat center / cover;
-  }
-  body.img07 {
-    background: #000 url(../img/effect_bg07@2x.jpg) no-repeat center / cover;
-  }
-  body.img08 {
-    background: #000 url(../img/effect_bg08@2x.jpg) no-repeat center / cover;
-  }
-  body.img09 {
-    background: #000 url(../img/effect_bg09@2x.jpg) no-repeat center / cover;
-  }
-  body.img10 {
-    background: #000 url(../img/effect_bg10@2x.jpg) no-repeat center / cover;
-  }
-  
-  body::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(90, 101, 105, 0.65);
-    z-index: -1;
-  }
-  img {
-    width: 100%;
-    vertical-align: top;
-  }
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-  li {
-    list-style: none;
-  }
-  
-  /* 스크롤바 */
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #1f224a26;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: rgba(69, 71, 100, 0.321);
-    border-radius: 20px;
-  }
-  
-  /* layout */
-  #header {
-    z-index: 2000;
-  }
-  #main {
-    width: 100%;
-    height: 100vh;
-    position: relative; /* z-index 먹히게 함 */
-    z-index: 1000;
-  }
-  #footer {
-    position: relative; /* z-index 먹히게 함 */
-    z-index: 5000;
-  }
-  
-  /* header */
-  #header {
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #fff;
-    padding: 20px;
-  }
-  #header h1 {
-    display: inline-block;
-    font-weight: 300;
-    margin-bottom: 10px;
-    border-bottom: 0.25px solid #fff;
-  }
-  #header p {
-    margin-bottom: 5px;
-  }
-  #header ul {
-  }
-  #header li {
-    display: inline-block;
-  }
-  #header li a {
-    border: 1px solid #fff;
-    border-radius: 50%;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    font-size: 14px;
-  }
-  #header li.active a {
-    background-color: #fff;
-    color: rgba(90, 101, 105, 0.8);
-  }
-  
-  /* footer */
-  #footer {
-  }
-  #footer .source {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    border: 1px solid #fff;
-    border-radius: 40px;
-    padding: 10px 30px;
-    font-size: 14px;
-  }
-  
-  /* mouseType */
-  .mouse__wrap {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    overflow: hidden;
-    flex-direction: column;
-    /* 커서 안보이게 하기 */
-    cursor: none;
-  }
-  .mouse__wrap p {
-    font-size: 2vw;
-    line-height: 2;
-    font-weight: 300;
-  }
-  .mouse__wrap p:last-child {
-    font-size: 3vw;
-    font-weight: 300;
-  }
-  .mouse__wrap p span {
-    border-bottom: 0.15vw dashed peachpuff;
-    color: peachpuff;
-  }
-  
-  @media (max-width: 800px) {
-    .mouse__wrap p {
-      padding: 0 20px;
-      font-size: 24px;
-      line-height: 1.5;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    .mouse__wrap p:last-child {
-      font-size: 40px;
-      line-height: 1.5;
-      text-align: center;
-      word-break: keep-all;
-    }
-  }
-  
   .mouse__cursor {
     position: absolute;
     left: 0;
     top: 0;
-    width: 50px;
-    height: 50px;
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
     border-radius: 50%;
-    border: 3px solid #fff;
-    background-color: rgba(255,255,255,0.1);
-    transition: 
-      background-color 0.3s,
-      border-color 0.3s,
-      transform 0.6s,
-      border-radius 0.3s
-    ;
-    /* 선택/클릭 방지 */
+    background: rgba(255,255,255,0.1);
     user-select: none;
     pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
   }
-  .mouse__cursor.style1 {
-    background-color: rgba(255, 166, 0, 0.5);
-    border-color: rgba(255, 166, 0, 1);
-  }
-  .mouse__cursor.style2 {
-    background-color: rgba(238, 130, 238, 0.5);
-    border-color: rgba(238, 130, 238, 1);
-    transform: scale(2) rotateY(720deg);
-  }
-  .mouse__cursor.style3 {
-    background-color: rgba(176, 224, 230, 0.5);
-    border-color: rgba(176, 224, 230, 1);
-    transform: scale(1.5) rotateX(45deg);
-  }
-  .mouse__cursor.style4 {
-    background-color: rgba(152, 251, 152, 0.5);
-    border-color: rgba(152, 251, 152, 1);
-    transform: scale(5);
-  }
-  .mouse__cursor.style5 {
-    background-color: rgba(188, 143, 143, 0.5);
-    border-color: rgba(188, 143, 143, 1);
-  }
-  .mouse__cursor.style6 {
-    background-color: rgba(216, 112, 147, 0.5);
-    border-color: rgba(216, 112, 147, 1);
-    border-radius: 0;
-    transform: scale(2.5);
-    
-  }
-  
-  .mouse__info {
+  .mouse__cursor2 {
     position: absolute;
-    left: 20px;
-    bottom: 10px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #fff;
-  }
-  
-  /* modal__wrap */
-  .modal__wrap {
-  }
-  
-  .modal__cont {
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.3);
-    position: fixed;
     left: 0;
     top: 0;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 30px;
+    height: 30px;
+    z-index: 9998;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
+  }
+  .mouse__cursor.active {
     transform: scale(0);
   }
-  
-  .modal__btn {
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    display: inline-block;
-    padding: 10px 20px;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  .mouse__cursor2.active {
+    transform: scale(5);
+    background: rgba(255,166,0,0.6);
   }
-  .modal__btn:hover {
-    background-color: #fff;
-    color: rgba(90, 101, 105, 0.8);
-  }
-  
-  .modal__box {
-    width: 70%;
-    height: 70vh;
-    border-radius: 0.6rem;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
-    transform: scale(0);
-    overflow: hidden;
-  }
-  .modal__box .title {
-    padding-inline: 1rem;
-    background-color: #1c1d25;
-    display: flex;
-    align-items: center;
-    color: rgb(233, 233, 244);
-    height: 50px;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-  }
-  .modal__box .title .dot {
-    width: 15px;
-    height: 15px;
-    background-color: hsl(180 2% 50%);
-    display: inline-block;
-    border-radius: 50%;
-    position: relative;
-    margin-left: 30px;
-  }
-  .modal__box .title .dot::before {
-    content: "";
-    position: absolute;
-    left: 25px;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background-color: hsl(180 2% 50%);
-    border-radius: 50%;
-  }
-  .modal__box .title .dot::after {
-    content: "";
-    position: absolute;
-    right: 25px;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background-color: hsl(180 2% 50%);
-    border-radius: 50%;
-  }
-  .modal__box .title .plus {
-    background: #282936;
-    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
-    border-radius: 0.5rem;
-  }
-  .modal__box .title .tabs {
-    display: flex;
-    margin-left: 50px;
-  }
-  .modal__box .title .tabs > div {
-    color: rgb(233, 233, 244);
-    background-color: #282936;
-    padding: 0.35rem 0.8rem 0.35rem 0.8rem;
-    margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
-    border-radius: 0.4rem;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-  .modal__box .title .tabs > div.active {
-    background-color: #1f224a;
-  }
-  .modal__box .title .tabs > div em {
-    font-style: normal;
-  }
-  .modal__box .title .tabs > div .favicon {
-    margin-right: 0.4rem;
-    margin-top: 0.2rem;
-  }
-  .modal__box .title .tabs > div .close {
-    margin-left: 3rem;
-  }
-  .modal__box .cont {
-    background-color: #282936;
-    height: 100%;
-    box-sizing: border-box;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    overflow-y: auto;
-  }
-  .modal__box .cont > div {
-    display: none;
-  }
-  
-  .modal__box .cont > div.active {
-    display: block;
-    height: 100%;
-  }
-  
-  /* 모달 창 닫기 */
-  .modal__close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background-color: #1f224a;
-    padding: 1rem 1rem 0.8rem 1rem;
-    border-radius: 5px;
-    box-shadow: 0 5px 7px -5px hsl(180deg 2% 10%);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0;
-  }
-  .modal__close:hover {
-    background-color: #33377d;
-  }
-  .modal__close svg {
-    color: #fff;
-  }
-  
-  /* 모달 애니메이션 */
-  .modal__cont.show {
-    /* 전체 배경 */
-    animation: foldOut 1s ease forwards;
-  }
-  .modal__cont.show .modal__box {
-    /* 스크립트 박스 */
-    animation: zoomOut 0.5s 1s ease forwards;
-  }
-  .modal__cont.show .modal__close {
-    /* 닫기 버튼 */
-    animation: opacityOut 0.5s 1s ease forwards;
-    /* 초 두개 나올 때 뒤에꺼 delay 초 */
-  }
-  
-  .modal__cont.show.hide {
-    animation: foldIn 0.3s 0.5s ease backwards;
-  }
-  .modal__cont.show.hide .modal__box {
-    animation: zoomIn 0.5s ease forwards;
-  }
-  .modal__cont.show.hide .modal__close {
-    animation: opacityIn 0.5s ease forwards;
-  }
-  
-  @keyframes foldOut {
-    0% {
-      transform: scaleX(0) scaleY(0.001);
-    }
-    50% {
-      transform: scaleX(1) scaleY(0.001);
-    }
-    100% {
-      transform: scaleX(1) scaleY(1);
-    }
-  }
-  @keyframes foldIn {
-    0% {
-      transform: scaleX(1) scaleY(1);
-    }
-    50% {
-      transform: scaleX(1) scaleY(0.001);
-    }
-    100% {
-      transform: scaleX(0) scaleY(0.001);
-    }
-  }
-  @keyframes zoomOut {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes zoomIn {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes opacityOut {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes opacityIn {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-  /* 모바일 */
-  @media (max-width: 1100px) {
-    .modal__box .title {
-      overflow: hidden;
-    }
-    .modal__box .title .dot {
-      display: none;
-    }
-    .modal__box .title .tabs {
-      margin-left: 0;
-    }
-    .modal__box .title .tabs > div .close {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 800px) {
-    #header {
-      width: 100%;
-      text-align: center;
-    }
-    #header h1 {
-      line-height: 1.4;
-    }
-    .modal__box {
-      width: 96%;
-    }
-  }
-  
-  /* 요소를 안보이게 하는 방법 4가지 
-      1. display: none; (애니메이션 X, 영역 사라짐)
-      2. opacity: 0; (애니메이션 O, 영역 남아있음)
-      3. visibility: hidden; (애니메이션 X, 영역 사라짐)
-      4. transform: scale(0) (애니메이션O, 영역 X)
-      5. width: 0; height: 0 (애니메이션 X, 영역 사라짐) : blind
-  */
 &lt;/style>  
 </code></pre>
                         </div>
