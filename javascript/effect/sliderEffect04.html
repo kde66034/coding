@@ -377,7 +377,7 @@ sliderBtnNext.addEventListener("click", () => {
         
         // 왼쪽 버튼 클릭했을 때
         sliderBtnPrev.addEventListener("click", () => {
-            let prevIndex = (currentIndex + sliderCount - 1) % sliderCount;
+            let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
             
             gotoSlider(prevIndex);
             // 0 4 3 2 1

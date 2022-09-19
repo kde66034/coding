@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : VSCode SASS</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">VSCode에서 Sass(SCSS)를 사용하는 방법</h2>
+                <p class="t_desc2">
+                  이번 포스팅에서는 VSCode에서 Sass를 사용하는 방법에 대해 설명드리겠습니다.
+                </p>
+                <!-- // Sass를 사용하는 방법 -->
+
+                <h3 class="t_tit2">프로그램 설치하기</h3>
+                <!-- 사진1 -->
+                <p class="t_desc">
+                  먼저 <i>Live Server, Live Sass Compiler, Sass</i>, 이렇게 세 가지의 프로그램을 설치합니다.
+                </p>
+                <br>
+                <!-- 사진2 -->
+                <p class="t_desc">
+                  그런 다음, 환경 설정 탭 상단의 검색창에 「formats」를 검색한 다음 Live Sass Compiler 항목에서 [Edit in setting.json]을 클릭합니다.
+                </p>
+                <br>
+                <!-- 사진3 -->
+                <p class="t_desc">
+                  위 사진처럼 편집 파일이 열릴텐데 아래의 코드를 덧붙여주세요.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">"liveSassCompile.settings.generateMap": false,
+"liveSassCompile.settings.formats": [
+  
+    // {
+    // "format": "expanded",
+    // "extensionName": ".css",
+    // "savePath": "../css/"
+    // },
+    {
+    "format": "compressed",
+    "extensionName": ".min.css",
+    "savePath": "~/../css/"
+    }
+],
+</code></pre>
+                </div>
+                <br>
+                <!-- 사진4 -->
+                <p class="t_desc">
+                  위 이미지와 같이 우측 하단의 Watch Sass가 나오면 성공적으로 설치된 것이며 이를 클릭하면 
+                  자동으로 CSS 폴더와 CSS 파일을 생성하여 컴파일해줍니다. 
+                  정말 편리한 프로그램이죠?
+                </p> 
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

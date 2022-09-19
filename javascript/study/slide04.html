@@ -231,7 +231,7 @@ function gotoSlider(num) {
 // 왼쪽 버튼 클릭했을 때 (이전 이미지로)
 sliderBtnPrev.addEventListener("click", () => {
     // 현재 이미지(0+5-1)÷5
-    let prevIndex = (currentIndex + sliderCount - 1) % sliderCount;
+    let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
     
     gotoSlider(prevIndex);
     // 0 4 3 2 1
