@@ -407,21 +407,22 @@
 
             <h3 class="t_tit2">JS 소스</h3>
             <p class="t_desc">
-                스크롤 탑 값을 변수 scrollTop에 저장하고 target1,2,3 상수를 생성하여 각 섹션의 이미지, 설명, 번호를 저장한다. 
+                스크롤 탑 값을 변수 scrollTop에 저장하고 target1,2,3 상수를 생성하여 각 섹션의 이미지, 명언, 번호를 저장한다. 
                 그런 다음 offset1,2,3 변수를 생성하여 어느정도 움직임을 줄지에 대한 수치를 저장하고
                 마지막으로 <a href="https://kde66034.tistory.com/66">GSAP 방식</a>으로 애니메이션을 적용해준다.
             </p>
             <div class="t_code">
 <pre><code class="language-js">function scroll() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;   // 스크롤탑값 저장
 
-    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);    // 스크롤탑값표시
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);    // 스크롤탑값 표시
 
     document.querySelectorAll(".content__item").forEach(item => {
-        const target1 = item.querySelector(".content__item__img");
-        const target2 = item.querySelector(".content__item__desc");
-        const target3 = item.querySelector(".content__item__num");
+        const target1 = item.querySelector(".content__item__img");  // 이미지
+        const target2 = item.querySelector(".content__item__desc"); // 명언
+        const target3 = item.querySelector(".content__item__num");  // 번호
 
+        // 움직임을 어느정도 줄 것인지 설정하는 곳
         let offset1 = (scrollTop - item.offsetTop) * 0.1;
         let offset2 = (scrollTop - item.offsetTop) * 0.15;
         let offset3 = (scrollTop - item.offsetTop) * 0.2;
@@ -429,6 +430,7 @@
         // target1.style.transform = `translateY(${offset}px)`;
         // target2.style.transform = `translateX(${offset2}px)`;
 
+        // GSAP 방식으로 offset값을 적용시킴
         gsap.to(target1, {duration: .3, y: offset1, ease: "power4.out"})
         gsap.to(target2, {duration: .3, y: offset2})
         gsap.to(target3, {duration: .3, y: offset3, ease: "expo.out"})

@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracula.css">
+    <link rel="stylesheet" href="assets/css/parallaxTop.css">
 </head>
 <body>
     <header id="header">
@@ -889,7 +890,7 @@
                 <!-- //sample22 -->
 
                 <div id="sample23" class="sample">
-                    <h3>객체 : 데이터 불러오기 : 객체구조분해할당</h3>
+                    <h3>23. 객체 : 데이터 불러오기 : 객체구조분해할당</h3>
                     <p>
                         설명
                     </p>
@@ -926,6 +927,12 @@
         </div>
     </main>
     <!-- //main -->
+
+    <div id="parallax__top">
+        Top
+    </div>
+    <!-- // parallax__top -->
+
     <footer id="footer">
         <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
     </footer>
@@ -1190,9 +1197,9 @@
 
             const { a, b, c } = obj;
 
-            document.write(a);
-            document.write(b);
-            document.write(c);
+            // document.write(a);
+            // document.write(b);
+            // document.write(c);
         }
 
         // 23. 객체 : 데이터 불러오기 : 객체구조분해할당
@@ -1205,10 +1212,30 @@
 
             const { a: name1, b: name2, c: name3 } = obj;
 
-            document.write(name1);
-            document.write(name2);
-            document.write(name3);
+            // document.write(name1);
+            // document.write(name2);
+            // document.write(name3);
         }
+    </script>
+
+    <!-- top버튼 -->
+    <script>
+        window.addEventListener("scroll", () => {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+              // 문서전체높이 - 브라우저높이
+              if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+                document.querySelector("#parallax__top").classList.add("show");
+              } else {
+                document.querySelector("#parallax__top").classList.remove("show");
+              }
+
+              // top 버튼
+              document.querySelector("#parallax__top").addEventListener("click", () => {
+                window.scrollTo({left:0, top:0, behavior:"smooth"});
+              });
+              
+              document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+        });
     </script>
 </body>
 </html>

@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracula.css">
+    <link rel="stylesheet" href="assets/css/parallaxTop.css">
 </head>
 <body>
     <header id="header">
@@ -1143,6 +1144,11 @@ document.write(func());
     </main>
     <!-- // main -->
 
+    <div id="parallax__top">
+        Top
+    </div>
+    <!-- // parallax__top -->
+
     <footer id="footer">
         <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
     </footer>
@@ -1657,6 +1663,26 @@ document.write(func());
             // info2.result();
             // info2.result2();
         }
+    </script>
+
+    <!-- top버튼 -->
+    <script>
+        window.addEventListener("scroll", () => {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+              // 문서전체높이 - 브라우저높이
+              if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+                document.querySelector("#parallax__top").classList.add("show");
+              } else {
+                document.querySelector("#parallax__top").classList.remove("show");
+              }
+
+              // top 버튼
+              document.querySelector("#parallax__top").addEventListener("click", () => {
+                window.scrollTo({left:0, top:0, behavior:"smooth"});
+              });
+              
+              document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+        });
     </script>
 </body>
 </html>
