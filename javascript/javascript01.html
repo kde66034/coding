@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracula.css">
     
+    <style>
+        #parallax__top {
+            position: fixed;
+            left: 50%;
+            bottom: -220px;
+            z-index: 10000;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.4);
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #parallax__top.show {
+            bottom: 20px;
+        }
+        #parallax__top:hover {
+           background: #fff;
+           color: #000;
+        }
+    </style>
+    
 </head>
 <body>
     <header id="header">
@@ -617,6 +644,11 @@
     </main>
     <!-- // main -->
 
+    <div id="parallax__top">
+        Top
+    </div>
+    <!-- // parallax__top -->
+
     <footer id="footer">
         <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
     </footer>
@@ -896,7 +928,25 @@
             // obj.f();
             // obj.g();
         }
+    </script>
+    <!-- top버튼 -->
+    <script>
+        window.addEventListener("scroll", () => {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+              // 문서전체높이 - 브라우저높이
+              if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+                document.querySelector("#parallax__top").classList.add("show");
+              } else {
+                document.querySelector("#parallax__top").classList.remove("show");
+              }
 
+              // top 버튼
+              document.querySelector("#parallax__top").addEventListener("click", () => {
+                window.scrollTo({left:0, top:0, behavior:"smooth"});
+              });
+              
+              document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+        });
     </script>
 </body>
 </html>

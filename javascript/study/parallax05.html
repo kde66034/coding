@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 패럴럭스04</title>
+    <title>자바스크립트 : 패럴럭스05</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -58,14 +58,13 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">패럴럭스 이펙트 04</h2>
+            <h2 class="t_tit">패럴럭스 이펙트 05</h2>
             <p class="t_desc2">
                 이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 패럴럭스(parallax, 패럴랙스) 이펙트를 만들어보도록 하겠습니다. 
                 먼저 <i>parallax란, '시차(視差)'라는 의미를 가진 천문학 용어</i>이며, 이번 포스팅에서 내비게이션 바에서 특정 섹션으로 가는 버튼을 
                 누르면 해당 섹션으로 시차를 두고 스무스하게 이동시켜 주는 효과를 만들어보고자 합니다. <br>
                 <br>
-                이번 패럴럭스 이펙트 04 포스팅에서는 
-                지난 패럴럭스 이펙트 1, 2, 3보다 더욱 자연스럽고 스무스하게 사진과 명언이 등장하도록 애니메이션을 줘 보도록 하겠습니다. 
+                이번 패럴럭스 이펙트 05 포스팅에서는 스크롤 할 때 이질적인 느낌을 줘보도록 하겠습니다.
             </p>
 
             <!-- // 패럴럭스 이펙트 만들기  -->
@@ -81,13 +80,13 @@
 <pre><code class="language-html">&lt;body class="img10">
     &lt;header id="header">
         &lt;h1>JAVASCRIPT PARALLAX EFFECT 04&lt;/h1>
-        &lt;p>패럴럭스 이펙트 - 나타나기&lt;/p>
+        &lt;p>패럴럭스 이펙트 - 이질감 효과&lt;/p>
         &lt;ul>
             &lt;li>&lt;a href="parallaxEffect01.html">01&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect02.html">02&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect03.html">03&lt;/a>&lt;/li>
-            &lt;li class="active">&lt;a href="parallaxEffect04.html">04&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="parallaxEffect05.html">05&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="parallaxEffect04.html">04&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="parallaxEffect05.html">05&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect06.html">06&lt;/a>&lt;/li>
             &lt;li>&lt;a href="parallaxEffect07.html">07&lt;/a>&lt;/li>
         &lt;/ul>
@@ -108,11 +107,6 @@
         &lt;/ul>
     &lt;/nav>
     &lt;!-- //parallax__nav -->
-
-    &lt;div id="parallax__top">
-        Top
-    &lt;/div>
-    &lt;!-- //parallax__top -->
 
     &lt;main id="parallax__cont">
         &lt;div id="contents">
@@ -234,16 +228,13 @@
     #parallax__nav {
         position: fixed;
         right: 20px;
-        top: -200px;
+        top: 20px;
         z-index: 2000;
         background-color: rgba(0,0,0,0.4);
         padding: 20px 30px;
         border-radius: 50px;
         transition: top .4s ease;
     }
-    #parallax__nav.show {
-            top: 20px;
-        }
     #parallax__nav li {
         display: inline;
         margin: 0 5px;
@@ -320,7 +311,7 @@
         left: -5%;
         top: -5%;
         filter: saturate(0%);
-        transition: all 1s;
+        /* transition: all 1s; */
     }
     .content__item:nth-child(1) .content__item__img {
         background-image: url(../assets/img/effect_bg10.jpg);
@@ -349,7 +340,6 @@
     .content__item:nth-child(9) .content__item__img {
         background-image: url(../assets/img/effect_bg02.jpg);
     }
-
     .content__item__desc {
         font-size: 4vw;
         line-height: 1.4;
@@ -362,6 +352,7 @@
         margin-right: -4vw;
     }
 
+    /* info */
     #parallax__info {
         position: fixed;
         left: 20px;
@@ -374,31 +365,6 @@
     }
     #parallax__info li, .scrollTop {
         line-height: 1.4;
-    }
-
-    #parallax__top {
-        position: fixed;
-        left: 50%;
-        bottom: -220px;
-        z-index: 10000;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 40px;
-        background: rgba(0,0,0,0.4);
-        text-align: center;
-        line-height: 40px;
-        color: #fff;
-        border-radius: 50%;
-        padding: 10px;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    #parallax__top.show {
-        bottom: 20px;
-    }
-    #parallax__top:hover {
-       background: #fff;
-       color: #000;
     }
 
     /* 반응형 */
@@ -439,96 +405,36 @@
             </div>
             <!-- // css -->
 
-            <h3 class="t_tit2">CSS 소스 : 애니메이션 효과</h3>
-            <p class="t_desc">
-                <i>한 번에 나타나게 하는 방식</i>과 <i>개별적으로 나타나게 하는 방식</i> 모두 기술하겠다. 
-                최종적으로는 개별적으로 나타나게 하는 방식의 애니메이션을 적용할 것이므로 한 번에 나타나게 하는 코드는 주석 처리하였다. 
-            </p>
-            <div class="t_code">
-<pre><code class="language-css">/* 한 번에 나타나기 */
-/* #contents > section {
-  opacity: 0;
-  transition: all 1s;
-}
-#contents > section.show {
-  opacity: 1;
-} */
-
-/* 개별적으로 나타나게 하기 */
-#contents > section .content__item__num {
-  opacity: 0;
-  transform: translateY(200px);
-  transition: all 1s 0.1s cubic-bezier(0,-0.04, 0, 1);
-}
-#contents > section .content__item__title {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all 1s 0.3s cubic-bezier(0,-0.04, 0, 1);
-}
-#contents > section .content__item__imgWrap {
-  opacity: 0;
-  transform: translateY(200px) rotate(30deg) skew(20deg);
-  transition: all 1s 0.6s cubic-bezier(0,-0.04, 0, 1);
-}
-#contents > section .content__item__desc {
-  opacity: 0;
-  transform: translateX(-200px);
-  transition: all 1s 0.9s cubic-bezier(0,-0.04, 0, 1);
-}
-
-#contents > section.show .content__item__num {
-  opacity: 0.07;
-  transform: translateY(0);
-}
-#contents > section.show .content__item__title {
-  opacity: 1;
-  transform: translateX(0);
-}
-#contents > section.show .content__item__imgWrap {
-  opacity: 1;
-  transform: translateY(0) rotate(0) skew(0);
-}
-#contents > section.show .content__item__desc {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-#contents > section:nth-child(even) .content__item__title {
-  transform: translateX(100px);
-}
-#contents > section:nth-child(even).show .content__item__title {
-  transform: translateX(0);
-}
-#contents > section:nth-child(even) .content__item__desc {
-  transform: translateX(200px);
-}
-#contents > section:nth-child(even).show .content__item__desc {
-  transform: translateX(0);
-}
-</code></pre>
-            </div>
-
             <h3 class="t_tit2">JS 소스</h3>
             <p class="t_desc">
-                각각의 <i>섹션 클래스(.content__item)에 도달했을 때 .show 클래스값을 붙여주는 스크립트 소스</i>이다. 
-                자세한 것은 아래의 예시 코드와 주석 설명을 참조할 것.
+                스크롤 탑 값을 변수 scrollTop에 저장하고 target1,2,3 상수를 생성하여 각 섹션의 이미지, 설명, 번호를 저장한다. 
+                그런 다음 offset1,2,3 변수를 생성하여 어느정도 움직임을 줄지에 대한 수치를 저장하고
+                마지막으로 <a href="https://kde66034.tistory.com/66">GSAP 방식</a>으로 애니메이션을 적용해준다.
             </p>
             <div class="t_code">
-<pre><code class="language-js">// window.addEventListener("scroll", scrollProgress);
+<pre><code class="language-js">function scroll() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-// 재귀함수
-function scroll() {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);    // 스크롤탑값표시
 
-  document.querySelectorAll(".content__item").forEach(item => { 
-    // .content__item 섹션의 스크롤탑값이 각각 아이템의 offsetTop값 - window.innerHeight의 절반값보다 작을 경우
-    // 좀 더 빠르게 애니메이션을 적용해주기 위해 2로 나눈 것임
-    if(scrollTop > item.offsetTop - window.innerHeight / 2) {
-      item.classList.add("show");   // 아이템에 ".show" 클래스값 붙여주기
-    }
-  });
+    document.querySelectorAll(".content__item").forEach(item => {
+        const target1 = item.querySelector(".content__item__img");
+        const target2 = item.querySelector(".content__item__desc");
+        const target3 = item.querySelector(".content__item__num");
 
-  requestAnimationFrame(scroll);
+        let offset1 = (scrollTop - item.offsetTop) * 0.1;
+        let offset2 = (scrollTop - item.offsetTop) * 0.15;
+        let offset3 = (scrollTop - item.offsetTop) * 0.2;
+
+        // target1.style.transform = `translateY(${offset}px)`;
+        // target2.style.transform = `translateX(${offset2}px)`;
+
+        gsap.to(target1, {duration: .3, y: offset1, ease: "power4.out"})
+        gsap.to(target2, {duration: .3, y: offset2})
+        gsap.to(target3, {duration: .3, y: offset3, ease: "expo.out"})
+    });
+
+    requestAnimationFrame(scroll);
 }
 scroll();
 </code></pre>
@@ -537,16 +443,16 @@ scroll();
 
             <h3 class="t_tit2">결과</h3>
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
-                <iframe src="https://kde66034.github.io/coding/javascript/effect/parallaxEffect04.html" frameborder="0"></iframe>
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/parallaxEffect05.html" frameborder="0"></iframe>
             </div>
             <div class="t_link">
-                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/parallaxEffect04.html">원본(HTML/JS) 소스 보기</a>
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/parallaxEffect05.html">원본(HTML/JS) 소스 보기</a>
             </div>
             <div class="t_link">
                 <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/parallax.css">CSS 소스 보기</a>
             </div>
             <div class="t_link">
-                <a href="https://kde66034.github.io/coding/javascript/effect/parallaxEffect04.html">원본 사이트 바로가기</a>
+                <a href="https://kde66034.github.io/coding/javascript/effect/parallaxEffect05.html">원본 사이트 바로가기</a>
             </div>
             <!-- //  -->
 

@@ -10,7 +10,10 @@
     <!-- fonts가 제일 위에 있어야 적용됨 -->
     <link rel="stylesheet" href="../site1/assets/css/fonts.css"> 
     <link rel="stylesheet" href="../site1/assets/css/reset.css"> 
-    <link rel="stylesheet" href="../site1/assets/css/common.css"> 
+    <link rel="stylesheet" href="../site1/assets/css/common.css">
+    
+    <!-- swiper -->
+    <link rel="stylesheet" href="../site1/assets/css/swiper.css">
 
     <style>
         * {
@@ -310,6 +313,58 @@
     </section>
     <!-- // headerType -->
 
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="desc container">
+                    <h3>AWESOME BAKING <br> PORTFOLIO</h3>
+                    <p>
+                        훌륭한 제빵사가 되고 싶으신가요? <br>
+                        좋은 제빵 학원을 찾고 계신가요? <br>
+                        그렇다면 별빛제빵교실로 오세요!
+                    </p>
+                    <div class="btn">
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="desc container">
+                    <h3>AWESOME BAKING <br> PORTFOLIO</h3>
+                    <p>
+                        훌륭한 제빵사가 되고 싶으신가요? <br>
+                        좋은 제빵 학원을 찾고 계신가요? <br>
+                        그렇다면 별빛제빵교실로 오세요!
+                    </p>
+                    <div class="btn">
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="desc container">
+                    <h3>AWESOME BAKING <br> PORTFOLIO</h3>
+                    <p>
+                        훌륭한 제빵사가 되고 싶으신가요? <br>
+                        좋은 제빵 학원을 찾고 계신가요? <br>
+                        그렇다면 별빛제빵교실로 오세요!
+                    </p>
+                    <div class="btn">
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button">
+            <div class="swiper-button-play"><span class="ir">play</span></div>
+            <div class="swiper-button-stop"><span class="ir">stop</span></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
     <section id="sliderType" class="slider__wrap">
         <h2 class="blind">슬라이드 영역</h2>
         <div class="slider__inner">
@@ -343,4 +398,39 @@
     </section>
     <!-- // sliderType -->
 </body>
+<script src="../site1/assets/js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          }
+        });
+
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnStop = document.querySelector(".swiper-button-stop");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+</script>
 </html>
