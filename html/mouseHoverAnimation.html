@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : 마우스 오버 애니메이션</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">마우스 오버 효과 만들기🐭</h2>
+                <p class="t_desc2">
+                    이번 포스팅에서는 마우스 오버 효과를 만들어보도록 하겠다.
+                </p>
+                <!-- // 마우스 오버 효과 -->
+
+                <h3 class="t_tit2">HTML 코드</h3>
+                <p class="t_desc">
+                  hover__wrap 안에 hover__updown, hover__leftright 두 개의 div 박스가 들어가고
+                  각각의 div 박스 안에 figure class="front"와 "back" 안에 이미지가 들어간 형태로 
+                  Hover시에는 back, 평상시에는 front가 되도록 나중에 CSS 코딩을 해준다.
+                </p>
+	              <div class="result">
+                    <details>
+                        <summary>코드 펼쳐보기</summary>
+                        <div class="sample01_result">
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="hover__wrap">
+  &lt;div class="hover__updown">
+    &lt;figure class="front">
+      &lt;img src="https://oranssy.github.io/coding/animation/img/hoverUp.jpg" alt="">
+      &lt;figcaption>
+        &lt;h3>Mouse Hover Effect&lt;/h3>
+        &lt;p>마우스 올리면 Up&lt;/p>
+      &lt;/figcaption>
+    &lt;/figure>
+    &lt;figure class="back">
+      &lt;img src="https://oranssy.github.io/coding/animation/img/hoverDown.jpg" alt="">
+      &lt;figcaption>
+        &lt;h3>Mouse Hover Effect&lt;/h3>
+        &lt;p>마우스 내리면 Down&lt;/p>
+      &lt;/figcaption>
+   &lt;/figure>
+  &lt;/div>
+  
+  &lt;div class="hover__leftright">
+    &lt;figure class="front">
+      &lt;img src="https://oranssy.github.io/coding/animation/img/hoverLeft.jpg" alt="">
+      &lt;figcaption>
+        &lt;h3>Mouse Hover Effect&lt;/h3>
+        &lt;p>마우스 올리면 to Right&lt;/p>
+      &lt;/figcaption>
+    &lt;/figure>
+    &lt;figure class="back">
+      &lt;img src="https://oranssy.github.io/coding/animation/img/hoverRight.jpg" alt="">
+      &lt;figcaption>
+        &lt;h3>Mouse Hover Effect&lt;/h3>
+        &lt;p>마우스 내리면 to Left&lt;/p>
+      &lt;/figcaption>
+   &lt;/figure>
+  &lt;/div>
+&lt;/div>
+</code></pre>
+                </div>
+	  	</div>
+	        </details>
+	    </div>
+                <!-- html 컴파일 -->
+
+                <h3 class="t_tit2">CSS 코드</h3>
+                <div class="t_code">
+<pre><code class="language-css">/* 웹폰트 */
+@font-face {
+    font-family: 'LocusSangsang';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.ttf') format("truetype");
+    font-display: swap;
+}
+
+body {
+  font-family: 'LocusSangsang';
+  background-image: linear-gradient(135deg, #191970 0%, #483D8B 40%, #9370DB 100%);
+  height: 100vh;
+}
+
+.hover__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hover__wrap > div {
+  max-width: 400px;
+  margin: 3%;
+  position: relative;
+  perspective: 1000px;
+}
+
+.hover__wrap > div img {
+  width: 100%;
+  border: 10px solid #F0F8FF;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.hover__wrap > div .front {
+  transition: transform 1s;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.hover__wrap > div .back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.hover__wrap > div figcaption {
+  background: rgba(0,0,0,0.4);
+  color: #F8F8FF;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translatez(100px);
+  width: 60%;
+  backface-visibility: hidden;
+}
+
+/* mouse hover effect */
+.hover__updown .front {
+  transform: rotateX(0deg);
+}
+.hover__updown:hover .front {
+  transform: rotateX(180deg);
+}
+.hover__updown .back {
+  transform: rotateX(-180deg);
+}
+.hover__updown:hover .back {
+  transform: rotateX(0deg);
+}
+
+/* mouse hover effect */
+.hover__leftright .front {
+  transform: rotateY(0deg);
+}
+.hover__leftright:hover .front {
+  transform: rotateY(180deg);
+}
+.hover__leftright .back {
+  transform: rotateY(-180deg);
+}
+.hover__leftright:hover .back {
+  transform: rotateY(0deg);
+}
+</code></pre>
+                </div>
+                <!-- css -->
+
+                <h3 class="t_tit2">결과물</h3>
+                <p class="t_desc">
+                    완~성🐭🐭
+                </p>
+                <div class="t_iframe">
+                  <iframe scrolling="no" title="Mouse Hover Effect" src="https://codepen.io/kde66034/embed/LYmLRLb?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/LYmLRLb">
+                    Mouse Hover Effect</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
