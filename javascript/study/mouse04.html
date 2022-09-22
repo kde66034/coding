@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : 마우스 효과 03</title>
+    <title>자바스크립트 : 마우스 효과 04</title>
     
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -58,9 +58,10 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">마우스 이펙트 03 : 조명효과</h2>
+            <h2 class="t_tit">마우스 이펙트 04 : 이미지 효과</h2>
             <p class="t_desc2">
-                이번 시간에는 <a href="https://kde66034.tistory.com/66">GSAP</a>를 이용하여 마우스 커서에 조명효과를 입혀 보도록 하겠습니다. 
+                이번 시간에는 <a href="https://kde66034.tistory.com/66">GSAP</a>를 이용하여 이미지 영역 내부에서만 마우스 커서가 바뀌고 마우스 위치에 따라
+                사진도 같이 미세하게 움직이는 효과를 만들어보도록 하겠습니다.
             </p>
 
             <!-- // 마우스 이펙트 만들기  -->
@@ -69,20 +70,20 @@
 
             <h3 class="t_tit2">HTML 소스</h3>
             <p class="t_desc">
-                header, main(마우스 커서 & 명언), footer(모달 박스) 크게 3가지로 이루어져 있다. 
+                header, main(마우스 커서 & 이미지 & 명언 & 마우스 인포(좌표값)), footer(모달 박스) 크게 3가지로 이루어져 있다. 
                 footer의 모달 박스 내용은 너무 길어지므로 생략한다. 모달 박스를 나타내는 방법에 대해서는 이전에 업로드한
                  <a href="https://kde66034.tistory.com/62">슬라이드 이펙트</a> 게시물을 참조할 것.
             </p>
             <div class="t_code">
 <pre><code class="language-html">&lt;body class="img04">
     &lt;header id="header">
-        &lt;h1>JAVASCRIPT MOUSE EFFECT 03&lt;/h1>
-        &lt;p>마우스 이펙트 - 조명효과&lt;/p>
+        &lt;h1>JAVASCRIPT MOUSE EFFECT 04&lt;/h1>
+        &lt;p>마우스 이펙트 - 이미지 효과&lt;/p>
         &lt;ul>
             &lt;li>&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
             &lt;li>&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
-            &lt;li class="active">&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
             &lt;li>&lt;a href="mouseEffect05.html">05&lt;/a>&lt;/li>
             &lt;li>&lt;a href="mouseEffect06.html">06&lt;/a>&lt;/li>
             &lt;li>&lt;a href="mouseEffect07.html">07&lt;/a>&lt;/li>
@@ -91,14 +92,27 @@
     &lt;!-- //header -->
 
     &lt;main id="main">
-      &lt;section id="mouseType">
-        &lt;div class="mouse__cursor">&lt;/div>
-
-        &lt;div class="mouse__wrap">
-          &lt;p>&lt;span class="style1">The future&lt;/span> depends on &lt;span class="style2">what we do&lt;/span> in the &lt;span class="style3">present&lt;/span>.&lt;/p>
-          &lt;p>&lt;span class="style4">미래&lt;/span>는 &lt;span class="style5">현재&lt;/span> 우리가 &lt;span class="style6">무엇을 하는가&lt;/span>에 달려 있다.&lt;/p>
+        &lt;section id="mouseType">
+            &lt;div class="mouse__cursor">&lt/div>
+            &lt;div class="mouse__wrap">
+              &lt;figure>
+                    &lt;img src="../assets/img/effect_bg02.jpg" alt="이미지">
+                    &lt;figcaption>
+                        &lt;p>I never dreamed about success, I worked for it&lt;/p>
+                        &lt;p>난 결코 성공에 대해 꿈꾸지 않았다, 나는 꿈을 위해 행동했다.&lt;/p>
+                    &lt;/figcaption>
+              &lt;/figure>
+            &lt;/div>
+        &lt;/section>
+  
+        &lt;div class="mouse__info">
+            &lt;ul>
+                &lt;li>mousePageX : &lt;span class="mousePageX">0&lt;/span>px&lt;/li>
+                &lt;li>mousePageY : &lt;span class="mousePageY">0&lt;/span>px&lt;/li>
+                &lt;li>centerPageX : &lt;span class="centerPageX">0&lt;/span>px&lt;/li>
+                &lt;li>centerPageY : &lt;span class="centerPageY">0&lt;/span>px&lt;/li>
+            &lt;/ul>
         &lt;/div>
-      &lt;/section>
     &lt;/main>
     &lt;!-- //main -->
 
@@ -113,117 +127,128 @@
 
             <h3 class="t_tit2">CSS 소스</h3>
             <p class="t_desc">
-                body에 사용된 이미지와 동일한 이미지를 마우스 커서 영역에 background-image로 불러온다.
-                이렇게 하면 마우스 커서에 조명 효과를 줄 수 있다. 
+                이번 포스팅 마우스 효과 04번에서 처음 쓰인 <i>object-fit: cover;는 background의 cover와 같은 효과</i>를 지닌다.
                 공통/초기화 CSS 소스는 하단의 [CSS 소스 보기]버튼을 클릭하여 볼 수 있다.
             </p>
             <div class="t_code">
-<pre><code class="language-css">.mouse__wrap {
+<pre><code class="language-css">/* mouseType */
+.mouse__wrap {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    color: white;
+    color: #fff;
     overflow: hidden;
+    flex-direction: column;
 }
-
-.mouse__wrap p {
-    font-size: 2vw;
-    line-height: 2;
+.mouse__wrap figure {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    transition: transform 500ms ease;
+    cursor: none;
+}
+.mouse__wrap figure:hover {
+    transform: scale(1.025);
+}
+.mouse__wrap figure img {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;  /* background cover와 같은 효과, 이미지에 줄 수 있음  */
+}
+.mouse__wrap figure figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
+    line-height: 1.4;
     font-weight: 300;
-}
-
-.mouse__wrap p:last-child {
-    font-weight: 300;
-    font-size: 3vw;
-}
-
-.mouse__wrap p span {
-    border-bottom: 0.15vw dashed orange;
-    color: orange;
-}
-
-@media (max-width: 800px) {
-    .mouse__wrap p {
-        padding: 0 20px;
-        font-size: 24px;
-        line-height: 1.5;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .mouse__wrap p:last-child {
-        font-size: 40px;
-        line-height: 1.5;
-        text-align: center;
-        word-break: keep-all;
-    }
 }
 
 .mouse__cursor {
     position: absolute;
     left: 0;
     top: 0;
-    width: 200px;
-    height: 200px;
-    z-index: -1;
+    width: 20px;
+    height: 20px;
+    background: #fff;
     border-radius: 50%;
-    background-image: url(../assets/img/effect_bg04.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    border: 10px solid snow;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
 }
 </code></pre>
             </div>
 
             <h3 class="t_tit2">JS 소스</h3>
             <p class="t_desc">
-                마우스 커서가 담긴 상수를 생성하고, 원의 너비값을 구한 다음 GSAP 방식으로 커서의 움직임을 부드럽게 해주도록 한다.
+                마우스 커서의 움직임을 부드럽게 해줄 gsap을 이용하고, 마우스 좌표값을 구하고, 좌표값을 가운데로 초기화한다. 
+                그런 다음, 이미지 또한 gsap으로 부드럽게 움직여주며 마지막으로 마우스 페이지 좌표값을 출력해준다. 
             </p>
             <div class="t_code">
-<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");     // 마우스 커서
+<pre><code class="language-js">
+    const cursor = document.querySelector(".mouse__cursor");
+    const cursorRect = cursor.getBoundingClientRect();
 
-// 원의 너비값 구하는 방법 1
-//   const circleW = cursor.offsetWidth    // 200
-//   const circleH = cursor.offsetWidth;   // 200
-//   const circle2 = cursor.clientWidth;   // 190 : 보더값 제외
+    document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
+      // 커서
+      gsap.to(cursor, {
+        duration: .5,
+        left: e.pageX - cursorRect.width/2,
+        top: e.pageY - cursorRect.height/2,
+      });
 
-// 원의 너비값 구하는 방법 2 (많이 쓰이는 방법 ★★★)
-const circle = cursor.getBoundingClientRect();
-console.log(circle);
-//   const DOMRect = {
-//     x: 0,
-//     y: 0,
-//     bottom: 200,
-//     height: 200,
-//     left: 0,
-//     right: 200,
-//     top: 0,
-//     width: 200
-//   }
+      // 마우스 좌표값
+      let mousePageX = e.pageX;
+      let mousePageY = e.pageY;
 
-window.addEventListener("mousemove", (e) => {
-  gsap.to(cursor, {
-      duration: 0.5,
-      left: e.pageX - circle.width/2,
-      top: e.pageY - circle.height/2,
-  });
-});
+      // 전체 가로
+      // window.innerWidth  // 브라우저 크기 1920 (브라우저 줄어들면 값도 줄어든다.)
+      // window.outerWidth  // 브라우저 크기(스크롤바 포함) 1920 (브라우저 줄어들면 값도 줄어든다. / 스크롤바 생기면 값이 줄어든다.)
+      // wiudow.screen.width  // 화면 크기 1920 (브라우저 줄어들어도 값 그대로 1920)
+
+      // 마우스 좌표값 가운데로 초기화
+      // 전체 길이 / 2 - 마우스 좌표값 == 0 (전체 길이 ÷ 2 - 마우스 좌표값 = 0)
+      let centerPageX = window.innerWidth / 2 - mousePageX;
+      let centerPageY = window.innerHeight / 2 - mousePageY;
+
+      // 이미지 움직이기 (기존 JS 방식)
+      const imgMove = document.querySelector(".mouse__wrap figure img");
+      // imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+ centerPageY/20 +"px)";
+
+      // 이미지 움직이기 - GSAP 방식 (훨씬 더 부드러워짐)
+      gsap.to(imgMove, {
+        duration: 0.3,
+        x: centerPageX/20,
+        y: centerPageY/20
+      })
+
+      // 출력
+      document.querySelector(".mousePageX").textContent = mousePageX;
+      document.querySelector(".mousePageY").textContent = mousePageY;
+      document.querySelector(".centerPageX").textContent = centerPageX;
+      document.querySelector(".centerPageY").textContent = centerPageY;
+    });
 </code></pre>
             </div>
 
             <h3 class="t_tit2">결과</h3>
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
-                <iframe src="https://kde66034.github.io/coding/javascript/effect/mouseEffect03.html" frameborder="0"></iframe>
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/mouseEffect04.html" frameborder="0"></iframe>
             </div>
             <div class="t_link">
-                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/mouseEffect03.html">원본(HTML/JS) 소스 보기</a>
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/mouseEffect04.html">원본(HTML/JS) 소스 보기</a>
             </div>
             <div class="t_link">
-                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/mouse.css">CSS 소스 보기</a>
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/mouse04.css">CSS 소스 보기</a>
             </div>
             <!-- //  -->
 

@@ -165,106 +165,133 @@
                     <div class="cont">
                         <div class="active">
 <pre><code class="language-js">&lt;script>
-  const cursor = document.querySelector(".mouse__cursor");
-  const cursor2 = document.querySelector(".mouse__cursor2");
-  const span = document.querySelectorAll(".mouse__wrap span")
+    const cursor = document.querySelector(".mouse__cursor");     // 마우스 커서
 
-  window.addEventListener("mousemove", e => {
-      // 커서 좌표값 할당
-      // cursor.style.left = e.pageX -5+ "px";
-      // cursor.style.top = e.pageY -5+ "px";
-      // cursor2.style.left = e.pageX -15+ "px";
-      // cursor2.style.top = e.pageY -15+ "px";
-
-      // GSAP
-      gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top:e.pageY -5});
-      gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top:e.pageY -15});
-
-      // 오버 효과
-      // mouseenter / mouseover / 이벤트 버블링
-      span.forEach(span => {
-          span.addEventListener("mouseenter", () => {
-              cursor.classList.add("active");
-              cursor2.classList.add("active");
-          });
-          span.addEventListener("mouseleave", () => {
-              cursor.classList.remove("active");
-              cursor2.classList.remove("active");
-          });
+    // 원의 너비값 구하는 방법 1
+    //   const circleW = cursor.offsetWidth    // 200
+    //   const circleH = cursor.offsetWidth;   // 200
+    //   const circle2 = cursor.clientWidth;   // 190 : 보더값 제외
+    
+    // 원의 너비값 구하는 방법 2 (많이 쓰이는 방법 ★★★)
+    const circle = cursor.getBoundingClientRect();
+    console.log(circle);
+    //   const DOMRect = {
+    //     x: 0,
+    //     y: 0,
+    //     bottom: 200,
+    //     height: 200,
+    //     left: 0,
+    //     right: 200,
+    //     top: 0,
+    //     width: 200
+    //   }
+    
+    window.addEventListener("mousemove", (e) => {
+      gsap.to(cursor, {
+          duration: 0.5,
+          left: e.pageX - circle.width/2,
+          top: e.pageY - circle.height/2,
       });
-  });
+    });
 &lt;/script>
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">&lt;header id="header">
-  &lt;h1>JAVASCRIPT MOUSE EFFECT 02&lt;/h1>
-  &lt;p>마우스 이펙트 - 마우스 따라다니기(GSAP)&lt;/p>
-  &lt;ul>
-      &lt;li>&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
-      &lt;li class="active">&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect05.html">05&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect06.html">06&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect07.html">07&lt;/a>&lt;/li>
-  &lt;/ul>
-&lt;/header>
-&lt;!-- //header -->
+<pre><code class="language-html">&lt;body class="img04">
+    &lt;header id="header">
+        &lt;h1>JAVASCRIPT MOUSE EFFECT 03&lt;/h1>
+        &lt;p>마우스 이펙트 - 조명효과&lt;/p>
+        &lt;ul>
+            &lt;li>&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect05.html">05&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect06.html">06&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect07.html">07&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/header>
+    &lt;!-- //header -->
 
-&lt;main id="main">
-&lt;section id="mouseType">
-  &lt;div class="mouse__cursor">&lt;/div>
-  &lt;div class="mouse__cursor2">&lt;/div>
+    &lt;main id="main">
+      &lt;section id="mouseType">
+        &lt;div class="mouse__cursor">&lt;/div>
 
-  &lt;div class="mouse__wrap">
-    &lt;p>&lt;span class="style1">The future&lt;/span> depends on &lt;span class="style2">what we do&lt;/span> in the &lt;span class="style3">present&lt;/span>.&lt;/p>
-    &lt;p>&lt;span class="style4">미래&lt;/span>는 &lt;span class="style5">현재&lt;/span> 우리가 &lt;span class="style6">무엇을 하는가&lt;/span>에 달려 있다.&lt;/p>
-  &lt;/div>
-&lt;/section>
-&lt;/main>
-&lt;!-- //main -->
+        &lt;div class="mouse__wrap">
+          &lt;p>&lt;span class="style1">The future&lt;/span> depends on &lt;span class="style2">what we do&lt;/span> in the &lt;span class="style3">present&lt;/span>.&lt;/p>
+          &lt;p>&lt;span class="style4">미래&lt;/span>는 &lt;span class="style5">현재&lt;/span> 우리가 &lt;span class="style6">무엇을 하는가&lt;/span>에 달려 있다.&lt;/p>
+        &lt;/div>
+      &lt;/section>
+    &lt;/main>
+    &lt;!-- //main -->
 
-&lt;footer> 
-&lt;/footer> 
-&lt;!-- //footer -->
+    &lt;footer>
+        &lt;!-- 모달 박스 내용 들어갈 곳. 길어지므로 생략. -->
+    &lt;/footer>
+    &lt;!-- //footer -->
+&lt;/body&gt;
 </code></pre>
                         </div>
                         <div>
 <pre><code class="language-css">&lt;style>  
-  .mouse__cursor {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 10px;
-    height: 10px;
-    z-index: 9999;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    user-select: none;
-    pointer-events: none;
-    transition: transform 0.3s, opacity 0.2s;
-  }
-  .mouse__cursor2 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 30px;
-    height: 30px;
-    z-index: 9998;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    user-select: none;
-    pointer-events: none;
-    transition: transform 0.3s, opacity 0.2s;
-  }
-  .mouse__cursor.active {
-    transform: scale(0);
-  }
-  .mouse__cursor2.active {
-    transform: scale(5);
-    background: rgba(255,166,0,0.6);
-  }
+    .mouse__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        overflow: hidden;
+    }
+    
+    .mouse__wrap p {
+        font-size: 2vw;
+        line-height: 2;
+        font-weight: 300;
+    }
+    
+    .mouse__wrap p:last-child {
+        font-weight: 300;
+        font-size: 3vw;
+    }
+    
+    .mouse__wrap p span {
+        border-bottom: 0.15vw dashed orange;
+        color: orange;
+    }
+    
+    @media (max-width: 800px) {
+        .mouse__wrap p {
+            padding: 0 20px;
+            font-size: 24px;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    
+        .mouse__wrap p:last-child {
+            font-size: 40px;
+            line-height: 1.5;
+            text-align: center;
+            word-break: keep-all;
+        }
+    }
+    
+    .mouse__cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        z-index: -1;
+        border-radius: 50%;
+        background-image: url(../assets/img/effect_bg04.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        border: 10px solid snow;
+    }
 &lt;/style>  
 </code></pre>
                         </div>

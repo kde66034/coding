@@ -39,7 +39,7 @@
         top: -5%;
         width: 110%;
         height: 110%;
-        object-fit: cover;
+        object-fit: cover;  /* background cover와 같은 효과, 이미지에 줄 수 있음  */
       }
       .mouse__wrap figure figcaption {
         position: absolute;
@@ -177,106 +177,156 @@
                         <div class="active">
 <pre><code class="language-js">&lt;script>
   const cursor = document.querySelector(".mouse__cursor");
-  const cursor2 = document.querySelector(".mouse__cursor2");
-  const span = document.querySelectorAll(".mouse__wrap span")
+  const cursorRect = cursor.getBoundingClientRect();
 
-  window.addEventListener("mousemove", e => {
-      // 커서 좌표값 할당
-      // cursor.style.left = e.pageX -5+ "px";
-      // cursor.style.top = e.pageY -5+ "px";
-      // cursor2.style.left = e.pageX -15+ "px";
-      // cursor2.style.top = e.pageY -15+ "px";
+  document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
+    // 커서
+    gsap.to(cursor, {
+      duration: .5,
+      left: e.pageX - cursorRect.width/2,
+      top: e.pageY - cursorRect.height/2,
+    });
 
-      // GSAP
-      gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top:e.pageY -5});
-      gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top:e.pageY -15});
+    // 마우스 좌표값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
 
-      // 오버 효과
-      // mouseenter / mouseover / 이벤트 버블링
-      span.forEach(span => {
-          span.addEventListener("mouseenter", () => {
-              cursor.classList.add("active");
-              cursor2.classList.add("active");
-          });
-          span.addEventListener("mouseleave", () => {
-              cursor.classList.remove("active");
-              cursor2.classList.remove("active");
-          });
-      });
+    // 전체 가로
+    // window.innerWidth  // 브라우저 크기 1920 (브라우저 줄어들면 값도 줄어든다.)
+    // window.outerWidth  // 브라우저 크기(스크롤바 포함) 1920 (브라우저 줄어들면 값도 줄어든다. / 스크롤바 생기면 값이 줄어든다.)
+    // wiudow.screen.width  // 화면 크기 1920 (브라우저 줄어들어도 값 그대로 1920)
+
+    // 마우스 좌표값 가운데로 초기화
+    // 전체 길이 / 2 - 마우스 좌표값 == 0 (전체 길이 ÷ 2 - 마우스 좌표값 = 0)
+    let centerPageX = window.innerWidth / 2 - mousePageX;
+    let centerPageY = window.innerHeight / 2 - mousePageY;
+
+    // 이미지 움직이기
+    const imgMove = document.querySelector(".mouse__wrap figure img");
+    // imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+ centerPageY/20 +"px)";
+
+    // 이미지 움직이기 - GSAP 방식 (훨씬 더 부드러워짐)
+    gsap.to(imgMove, {
+      duration: 0.3,
+      x: centerPageX/20,
+      y: centerPageY/20
+    })
+
+    // 출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
   });
 &lt;/script>
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">&lt;header id="header">
-  &lt;h1>JAVASCRIPT MOUSE EFFECT 02&lt;/h1>
-  &lt;p>마우스 이펙트 - 마우스 따라다니기(GSAP)&lt;/p>
-  &lt;ul>
-      &lt;li>&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
-      &lt;li class="active">&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect05.html">05&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect06.html">06&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="mouseEffect07.html">07&lt;/a>&lt;/li>
-  &lt;/ul>
-&lt;/header>
-&lt;!-- //header -->
+<pre><code class="language-html">&lt;body class="img04">
+  &lt;header id="header">
+      &lt;h1>JAVASCRIPT MOUSE EFFECT 04&lt;/h1>
+      &lt;p>마우스 이펙트 - 이미지 효과&lt;/p>
+      &lt;ul>
+          &lt;li>&lt;a href="mouseEffect01.html">01&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="mouseEffect02.html">02&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="mouseEffect03.html">03&lt;/a>&lt;/li>
+          &lt;li class="active">&lt;a href="mouseEffect04.html">04&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="mouseEffect05.html">05&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="mouseEffect06.html">06&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="mouseEffect07.html">07&lt;/a>&lt;/li>
+      &lt;/ul>
+  &lt;/header>
+  &lt;!-- //header -->
 
-&lt;main id="main">
-&lt;section id="mouseType">
-  &lt;div class="mouse__cursor">&lt;/div>
-  &lt;div class="mouse__cursor2">&lt;/div>
+  &lt;main id="main">
+      &lt;section id="mouseType">
+          &lt;div class="mouse__cursor">&lt/div>
+          &lt;div class="mouse__wrap">
+            &lt;figure>
+                  &lt;img src="../assets/img/effect_bg02.jpg" alt="이미지">
+                  &lt;figcaption>
+                      &lt;p>I never dreamed about success, I worked for it&lt;/p>
+                      &lt;p>난 결코 성공에 대해 꿈꾸지 않았다, 나는 꿈을 위해 행동했다.&lt;/p>
+                  &lt;/figcaption>
+            &lt;/figure>
+          &lt;/div>
+      &lt;/section>
 
-  &lt;div class="mouse__wrap">
-    &lt;p>&lt;span class="style1">The future&lt;/span> depends on &lt;span class="style2">what we do&lt;/span> in the &lt;span class="style3">present&lt;/span>.&lt;/p>
-    &lt;p>&lt;span class="style4">미래&lt;/span>는 &lt;span class="style5">현재&lt;/span> 우리가 &lt;span class="style6">무엇을 하는가&lt;/span>에 달려 있다.&lt;/p>
-  &lt;/div>
-&lt;/section>
-&lt;/main>
-&lt;!-- //main -->
+      &lt;div class="mouse__info">
+          &lt;ul>
+              &lt;li>mousePageX : &lt;span class="mousePageX">0&lt;/span>px&lt;/li>
+              &lt;li>mousePageY : &lt;span class="mousePageY">0&lt;/span>px&lt;/li>
+              &lt;li>centerPageX : &lt;span class="centerPageX">0&lt;/span>px&lt;/li>
+              &lt;li>centerPageY : &lt;span class="centerPageY">0&lt;/span>px&lt;/li>
+          &lt;/ul>
+      &lt;/div>
+  &lt;/main>
+  &lt;!-- //main -->
 
-&lt;footer> 
-&lt;/footer> 
-&lt;!-- //footer -->
+  &lt;footer>
+      &lt;!-- 모달 박스 내용 들어갈 곳. 길어지므로 생략. -->
+  &lt;/footer>
+  &lt;!-- //footer -->
+&lt;/body&gt;
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">&lt;style>  
+<pre><code class="language-css">&lt;style>
+  /* mouseType */
+  .mouse__wrap {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+      flex-direction: column;
+  }
+  .mouse__wrap figure {
+      width: 50vw;
+      height: 50vh;
+      position: relative;
+      overflow: hidden;
+      transition: transform 500ms ease;
+      cursor: none;
+  }
+  .mouse__wrap figure:hover {
+      transform: scale(1.025);
+  }
+  .mouse__wrap figure img {
+      position: absolute;
+      left: -5%;
+      top: -5%;
+      width: 110%;
+      height: 110%;
+      object-fit: cover;  /* background cover와 같은 효과, 이미지에 줄 수 있음  */
+  }
+  .mouse__wrap figure figcaption {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 16px;
+      white-space: nowrap;
+      line-height: 1.4;
+      font-weight: 300;
+  }
+  
   .mouse__cursor {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 10px;
-    height: 10px;
-    z-index: 9999;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    user-select: none;
-    pointer-events: none;
-    transition: transform 0.3s, opacity 0.2s;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      z-index: 1000;
+      user-select: none;
+      pointer-events: none;
   }
-  .mouse__cursor2 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 30px;
-    height: 30px;
-    z-index: 9998;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    user-select: none;
-    pointer-events: none;
-    transition: transform 0.3s, opacity 0.2s;
-  }
-  .mouse__cursor.active {
-    transform: scale(0);
-  }
-  .mouse__cursor2.active {
-    transform: scale(5);
-    background: rgba(255,166,0,0.6);
-  }
-&lt;/style>  
+&lt;/style>
 </code></pre>
                         </div>
                     </div>
