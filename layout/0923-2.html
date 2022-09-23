@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 유형 02_01 : Float</title>
+    <title>평가문항02</title>
 
     <style>
         * {
@@ -30,7 +30,6 @@
         }
         #main {
             width: 1200px;
-            /* overflow: hidden; */
         }
         #aside {
             width: 300px;
@@ -38,11 +37,18 @@
             background-color: #81C784;
             float: left;
         }
-        #section {
-            width: 600px;
-            height: 780px;
-            background-color: #66BB6A;
+        #section_wrap {
             float: left;
+        }
+        #section1 {
+            width: 600px;
+            height: 390px;
+            background-color: #57a45c;
+        }
+        #section2 {
+            width: 600px;
+            height: 390px;
+            background-color: #66BB6A;
         }
         #article {
             width: 300px;
@@ -56,16 +62,29 @@
             background-color: #43A047;
             clear: both;
         }
+
+        /* clearfix */
+        .clearfix::before, 
+        .clearfix::after {
+            content: '';
+            display: block;
+            line-height: 0;
+        }
+        .clearfix::after {
+            clear: both;
+        }
     </style>
 </head>
 <body>
     <div id="wrap">
         <div id="header"></div>
         <div id="nav"></div>
-        <div class="main">
+        <div class="main" class="clearfix">
             <div id="aside"></div>
-            <div id="section"></div>
-            <div id="section2"></div>
+            <div id="section_wrap" class="clearfix">
+                <div id="section1"></div>
+                <div id="section2"></div>
+            </div>
             <div id="article"></div>
         </div>
         <div id="footer"></div>
