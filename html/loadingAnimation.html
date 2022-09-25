@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북 : 로딩 애니메이션</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/monokai-sublime.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">HTML 레퍼런스 북</a></h1>
+        <span>이름 : 김동언</span>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조·인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹 표준·웹 접근성·웹 호환성</a></li>
+                <li><a href="semantic_markup.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색 엔진 시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃 01</a></li>
+                <li><a href="layout02.html">레이아웃 02</a></li>
+                <li><a href="layout03.html">레이아웃 03</a></li>
+                <li><a href="layout04.html">레이아웃 04</a></li>
+                <li><a href="layout05.html">레이아웃 05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">로딩 애니메이션 만들기</h2>
+                <p class="t_desc2">
+                    이번 포스팅에서는 로딩 애니메이션을 만들어보도록 하겠습니다.
+                </p>
+                <!-- // 로딩 애니메이션 만들기 -->
+
+                <h3 class="t_tit2">HTML 코드</h3>
+                <p class="t_desc">
+                  loader 클래스값을 가진 div 안에 ball 클래스값 div를 10개를 만들어주도록 한다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="loader">
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+    &lt;div class="ball">&lt;/div>
+&lt;/div>
+</code></pre>
+                </div>
+                <!-- html -->
+
+                <h3 class="t_tit2">CSS 코드</h3>
+                <p class="t_desc">
+                    ball 클래스를 지닌 div의 형태를 만들어 준 다음 nth-child를 이용하여 애니메이션 딜레이를 주고
+                    마지막으로 키프레임을 통해 본격적으로 움직임을 주도록 한다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">body {
+  background-color: #b38dff;
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  animation: spin .6s linear infinite reverse;
+}
+
+.ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  animation: spin 1s infinite ease-in-out;
+}
+
+.ball:after {
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  top: 0;
+}
+
+.ball:nth-child(2){
+  animation-delay: -0.1s;
+}
+.ball:nth-child(3){
+  animation-delay: -0.2s;
+}
+.ball:nth-child(4){
+  animation-delay: -0.3s;
+}
+.ball:nth-child(5){
+  animation-delay: -0.4s;
+}
+.ball:nth-child(6){
+  animation-delay: -0.5s;
+}
+.ball:nth-child(7){
+  animation-delay: -0.6s;
+}
+.ball:nth-child(8){
+  animation-delay: -0.7s;
+}
+.ball:nth-child(9){
+  animation-delay: -0.8s;
+}
+.ball:nth-child(10){
+  animation-delay: -0.9s;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+</code></pre>
+                </div>
+                <!-- css -->
+
+                <h3 class="t_tit2">결과물</h3>
+                <p class="t_desc">
+                    로딩 화면 애니메이션이 완성됐습니다~!😊
+                </p>
+                <div class="t_iframe">
+                  <iframe height="300" style="width: 100%;" scrolling="no" title="로딩 애니메이션 0923" src="https://codepen.io/kde66034/embed/bGMoBZX?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kde66034/pen/bGMoBZX">
+                    로딩 애니메이션 0923</a> by kde66034 (<a href="https://codepen.io/kde66034">@kde66034</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 유형 03_02 : Float 반응형</title>
+    <title>평가문항03 반응형</title>
 
     <style>
         * {
@@ -21,10 +21,6 @@
         #header {
             height: 100px;
             background-color: #B3E5FC;
-        }
-        #nav {
-            height: 100px;
-            background-color: #81D4FA;
         }
         #main {
             
@@ -75,43 +71,55 @@
             #wrap {
                 width: 96%;
             }
+            #article1 {
+                width: 70%;
+                height: 390px;
+            }
             #article2 {
-                width: 35%;
-                height: 520px;
+                width: 70%;
+                height: 390px;
             }
             #article3 {
-                width: 35%;
-                height: 520px;
+                width: 100%;
+                height: 390px;
             }
         }
         @media (max-width : 768px) {
             #wrap {
                 width: 100%;
             }
+            #aside {
+                width: 100%;
+                height: 180px;
+            }
             #article1 {
-                width: 70%;
+                width: 50%;
                 height: 390px;
             }
             #article2 {
-                width: 70%;
+                width: 50%;
                 height: 390px;
             }
             #article3 {
-                display: none;
+                width: 100%;
+                height: 180px;
             }
         }
         @media (max-width : 480px) {
             #aside {
                 width: 100%;
-                height: 100px;
+                height: 300px;
             }
             #article1 {
                 width: 100%;
-                height: 430px;
+                height: 300px;
             }
             #article2 {
                 width: 100%;
-                height: 150px;
+                height: 300px;
+            }
+            #article3 {
+                display: none;
             }
         }
     </style>
@@ -119,7 +127,6 @@
 <body>
     <div id="wrap">
         <div id="header"></div>
-        <div id="nav"></div>
         <div id="main" class="clearfix">
             <div id="aside"></div>
             <div id="article1"></div>
@@ -128,15 +135,5 @@
         </div>
         <div id="footer"></div>
     </div>
-
-
-    <!-- 
-        layout 03_01 : float 방식 레이아웃
-        layout 03_02 : float 방식 반응형 레이아웃
-        layout 03_03 : flex 방식 레이아웃
-        layout 03_04 : flex 방식 반응형 레이아웃
-        layout 03_05 : grid 방식 레이아웃
-        layout 03_06 : grid 방식 반응형 레이아웃
-     -->
 </body>
 </html>

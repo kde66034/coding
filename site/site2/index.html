@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 02</title>
+
+    <!-- SEO (검색엔진최적화) -->
+    <meta name="author" content="KDE">
+    <meta name="description" content="사이트 만들기 튜토리얼입니다.">
+    <meta name="keyword" content="사이트, 사이트 만들기, 튜토리얼, KDE, 코딩공책, webstoryboy">
+    <meta name="robots" content="all">
+
+    <!-- CSS -->
+    <!-- fonts가 제일 위에 있어야 적용됨 -->
+    <link rel="stylesheet" href="assets/css/fonts.css"> 
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+
+    <!-- CSS(섹션별) -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/text.css">
+    <link rel="stylesheet" href="assets/css/image.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/review.css">
+    <link rel="stylesheet" href="assets/css/imgText.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    
+    <!-- swiper -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+
+    <style>
+        /* #headerType {display: none;} */
+        /* #sliderType {display: none;} */
+        /* #textType {display: none;} */
+        /* #imageType {display: none;} */
+        /* #cardType {display: none;} */
+        /* #bannerType {display: none;} */
+        /* #reviewType {display: none;} */
+        /* #footerType {display: none;} */
+    </style>
+</head>
+<body>
+    <div id="skip">
+        <a href="#headerType">헤더 영역 바로가기</a>
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#textType">텍스트 영역 바로가기</a>
+        <a href="#imageType">이미지 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#reviewType">리뷰 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
+    </div>
+    <!-- // skip : 웹표준 준수 위해 만들어줌 -->
+
+    <header id="headerType">
+        <h1>web site</h1>
+    </header>
+    <!-- // headerType -->
+
+    <main id="mainType">
+        <section id="headerType" class="header__wrap">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="#">WEB site</a>
+                </div>
+                <div class="header__menu">
+                    <ul>
+                        <li><a href="#sliderType">슬라이드 영역</a></li>
+                        <li><a href="#textType">텍스트 영역</a></li>
+                        <li><a href="#imageType">이미지 영역</a></li>
+                        <li><a href="#cardType">카드 영역</a></li>
+                        <li><a href="#bannerType">배너 영역</a></li>
+                        <li><a href="#reviewType">리뷰 영역</a></li>
+                        <li><a href="#footerType">푸터 영역</a></li>
+                    </ul>
+                </div>
+                <div class="header__ham">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+        <!-- // header -->
+
+        <section id="sliderType" class="slider__wrap scroll">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="desc container">
+                                <h3>AWESOME BAKING <br> PORTFOLIO</h3>
+                                <p>
+                                    훌륭한 제빵사가 되고 싶으신가요? <br>
+                                    좋은 제빵 학원을 찾고 계신가요? <br>
+                                    그렇다면 별빛제빵교실로 오세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc container">
+                                <h3>AWESOME BAKING <br> PORTFOLIO</h3>
+                                <p>
+                                    훌륭한 제빵사가 되고 싶으신가요? <br>
+                                    좋은 제빵 학원을 찾고 계신가요? <br>
+                                    그렇다면 별빛제빵교실로 오세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc container">
+                                <h3>AWESOME BAKING <br> PORTFOLIO</h3>
+                                <p>
+                                    훌륭한 제빵사가 되고 싶으신가요? <br>
+                                    좋은 제빵 학원을 찾고 계신가요? <br>
+                                    그렇다면 별빛제빵교실로 오세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc container">
+                                <h3>AWESOME BAKING <br> PORTFOLIO</h3>
+                                <p>
+                                    훌륭한 제빵사가 되고 싶으신가요? <br>
+                                    좋은 제빵 학원을 찾고 계신가요? <br>
+                                    그렇다면 별빛제빵교실로 오세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc container">
+                                <h3>AWESOME BAKING <br> PORTFOLIO</h3>
+                                <p>
+                                    훌륭한 제빵사가 되고 싶으신가요? <br>
+                                    좋은 제빵 학원을 찾고 계신가요? <br>
+                                    그렇다면 별빛제빵교실로 오세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">자세히 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <!-- // sliderType -->
+
+        <section id="textType" class="text__wrap target scroll">
+            <h2 class="blind">텍스트 영역</h2>
+            <div class="text__inner container">
+                <div class="text__text">
+                    <p class="logo">FRONTEND</p>
+                    <p class="title">프론트앤드 <br>전문과정</p>
+                    <p class="desc">프론트엔드 개발자로 취업하기 위한 <br> 전문 과정입니다. <br> 여러분들도 도전해보세요!</p>
+                </div>
+                <div class="text__card">
+                    <article class="text">
+                        <div class="icon">
+                            <span class="ir">아이콘1</span>
+                        </div>
+                        <h3>웹 디자인</h3>
+                        <p>
+                            웹 디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 퍼블리싱은 웹 사이트를 제작할
+                        </p>
+                    </article>
+                    <article class="text">
+                        <div class="icon"><span class="ir">아이콘2</span></div>
+                        <h3>웹 퍼블리셔</h3>
+                        <p>
+                            퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.
+                        </p>
+                    </article>
+                    <article class="text">
+                        <div class="icon"><span class="ir">아이콘3</span></div>
+                        <h3>프론트앤드 개발자</h3>
+                        <p>
+                            사이트와 상호작용하는 모든 부분에 대한 개발,관리 유지 보수를 하는 것 솔루션의 프로세스를 개발합니다.
+                        </p>
+                    </article>
+                    <article class="text">
+                        <div class="icon"><span class="ir">아이콘4</span></div>
+                        <h3>백앤드 개발자</h3>
+                        <p>
+                            용어 자체에서 알 수 있듯이, 백엔드는 웹사이트나 웹 애플리케이션 또는 모바일 솔루션의 프로세스와 관련된 일 입니다.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- // textType -->
+
+        <section id="imageType" class="image__wrap section scroll">
+            <h2 class="blind">이미지 영역</h2>
+            <h2>별빛 제빵교실 강사 소개🍞</h2>
+            <p>사람 아닌 동물이지만 훌륭한 실력을 가진 별빛 제빵교실의 강사분들을 소개합니다!</p>
+            <div class="image__inner container">
+                <article class="image img1">
+                    <figure class="image__box">
+                        <img src="assets/img/imageType/imageType02_bg01.jpg" alt="댕댕이">
+                    </figure>
+                    <div class="image__desc">
+                        <h3>댕댕이</h3>
+                        <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                    </div>
+                </article>
+                <article class="image img2">
+                    <figure class="image__box">
+                        <img src="assets/img/imageType/imageType02_bg02.jpg" alt="냥냥이">
+                    </figure>
+                    <div class="image__desc">
+                        <h3>냥냥이</h3>
+                        <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                    </div>
+                </article>
+                <article class="image img3">
+                    <figure class="image__box">
+                        <img src="assets/img/imageType/imageType02_bg03.jpg" alt="북극곰">
+                    </figure>
+                    <div class="image__desc">
+                        <h3>북극곰</h3>
+                        <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- // imageType -->
+
+        <section id="cardType" class="card__wrap gray section scroll">
+            <h2 class="blind">카드 영역</h2>
+            <h2>포트폴리오 만들기</h2>
+            <p>
+                취업용 포트폴리오, 어떻게 만들지 고민되시나요? 걱정하지 마세요☺<br>
+                저희 학원에서 포트폴리오 제작 과정을 꼼꼼하고 자세하게 다 알려드립니다! 
+            </p>
+            <div class="card__inner gray container">
+                <article class="card">
+                    <img src="assets/img/cardType/card2_bg01.jpg" alt="아이디어 스케치">
+                    <h3 class="title">아이디어 스케치</h3>
+                    <p class="desc">
+                        무(無)에서 유(有)를 창조할 수는 없습니다. 리서치와 아이디어 스케치를 통해 포트폴리오를 구성할 것입니다.
+                    </p>
+                    <a class="more" href="#"><span class="ir">더 보기</span></a>
+                </article>
+                <article class="card">
+                    <img src="assets/img/cardType/card2_bg02.jpg" alt="팀 만들기">
+                    <h3 class="title">팀 만들기</h3>
+                    <p class="desc">
+                        실무에서 팀 워크는 매우 중요하며
+                        팀원끼리의 커뮤니케이션 능력과 협동력이 요구됩니다. 팀 만들기를…
+                    </p>
+                    <a class="more" href="#"><span class="ir">더 보기</span></a>
+                </article>
+                <article class="card">
+                    <img src="assets/img/cardType/card2_bg03.jpg" alt="설문 조사">
+                    <h3 class="title">설문 조사</h3>
+                    <p class="desc">
+                        팀원 구성을 마치고 주제를 다 정했다면 바깥으로 나가 직접 주제를 바탕으로 한 설문 조사를 하도록 합…
+                    </p>
+                    <a class="more" href="#"><span class="ir">더 보기</span></a>
+                </article>
+                <article class="card">
+                    <img src="assets/img/cardType/card2_bg04.jpg" alt="문제 해결하기">
+                    <h3 class="title">문제 해결하기</h3>
+                    <p class="desc">
+                        설문 조사 결과를 바탕으로 사람들이 직면하는 문제와 불편 사항을 해결할 방법에 대해 팀원들과 토론…
+                    </p>
+                    <a class="more" href="#"><span class="ir">더 보기</span></a>
+                </article>
+                <article class="card">
+                    <img src="assets/img/cardType/card2_bg05.jpg" alt="아이디어 도출">
+                    <h3 class="title">아이디어 도출</h3>
+                    <p class="desc">
+                        팀원들과의 토론 끝에 아이디어를 도출해내는 시간을 갖습니다. 포스트잇도 붙여가면서 즐겁게 문제…
+                    </p>
+                    <a class="more" href="#"><span class="ir">더 보기</span></a>
+                </article>
+                <article class="card">
+                    <img src="assets/img/cardType/card2_bg06.jpg" alt="와이어프레임 구상">
+                    <h3 class="title">와이어프레임 구상</h3>
+                    <p class="desc">
+                        이제 문제 해결 방법도 무사히 도출해냈으니 와이어프레임을 구상해보도록 하죠. 이런 식으로 스마트폰…
+                    </p>
+                    <a class="more" href="#"><span class="ir">더 보기</span></a>
+                </article>
+                <article class="card">
+                    <img src="assets/img/cardType/card2_bg07.jpg" alt="GUI 구상">
+                    <h3 class="title">GUI 구상</h3>
+                    <p class="desc">
+                        Fimga나 XD 등의 프로그램을 이용하여 GUI를 구상해내도록 합시다. 위와 같이 스마트폰으로 테스…
+                    </p>
+                    <a class="more" href="#"><span class="ir">더 보기</span></a>
+                </article>
+                <article class="card">
+                    <img src="assets/img/cardType/card2_bg08.jpg" alt="코딩 작업">
+                    <h3 class="title">코딩 작업</h3>
+                    <p class="desc">
+                        이제 코딩을 통해 앱 스토어에 출시된 앱들과 마찬가지로 서비스를 실체화시켜보도록 합니다. 팀원들과…
+                    </p>
+                    <a class="more" href="#"><span class="ir">더 보기</span></a>
+                </article>
+            </div>
+        </section>
+        <!-- // cardType -->
+
+        <section id="bannerType" class="banner__wrap target scroll">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner container">
+                <h3 class="title">유튜버 웹보이</h3>
+                <p class="desc">더 다양한 강의는 유튜브를 통해 제공하고 있습니다.<br>
+                    구독과 좋아요! 부탁드립니다.
+                </p>
+                <div class="banner_btn">
+                    <a href="#" title="바로가기">바로가기</a>
+                </div>
+                <figure>
+                    <img src="assets/img/bannerType/banner_img01.png" class="img1" alt="이미지1">
+                    <img src="assets/img/bannerType/banner_img02.png" class="img2" alt="이미지2">
+                </figure>
+                <div>
+                    <div class="ball1"></div>
+                    <div class="ball2"></div>
+                    <div class="ball3"></div>
+                    <div class="ball4"></div>
+                    <div class="ball5"></div>
+                    <div class="ball6"></div>
+                </div>
+            </div>
+        </section>
+        <!-- // bannerType -->
+
+        <section id="reviewType" class="review__wrap pink section scroll">
+            <h2>가을에 대해 이야기해보자🌾</h2>
+            <p>곧 다가올 가을에 대하여 이런저런 이야기들을 해보아요!</p>
+            <div class="review__inner container">
+                <article class="review">
+                    <div class="review__body">
+                        <p class="desc">
+                            비염인인 나에게 가장 고통스러운 계절이 돌아왔다. 많은 이들이 좋아하는 봄과 가을을 싫어하는 이유도 이 빌어먹을 비염 때문이지… 오늘도 콧물이 쉴새없이 흐르는구나🤧 빨리 환절기가 끝나고 겨울이 찾아왔으면 좋겠다. 난 겨울이 제일 좋아🥶
+                        </p>
+                        <hr>
+                        <div class="profile">
+                            <span id="review__icon" class="icon__logo1" aria-hidden="김명희">
+                                <a href="#" class="link1"><span class="ir">김명희</span></a>
+                            </span>
+                            <div class="user__name">
+                                <h2>김명희</h2>
+                                <p>@mh123</p>
+                                <span id="star">
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_empty"><span class="ir">별 비워짐</span></a>
+                                    <a class="star_empty"><span class="ir">별 비워짐</span></a>
+                                    <a class="star_empty"><span class="ir">별 비워짐</span></a>
+                                    <a class="star_empty"><span class="ir">별 비워짐</span></a>
+                                </span>
+                            </div>
+                        </div>
+                        <hr>
+                        <button class="more">
+                            <a href="#">자세히 보기</a>
+                        </button>
+                    </div>
+                </article>
+                <article class="review">
+                    <div class="review__body">
+                        <p class="desc">
+                            내가 사계절 중 가장 좋아하는 계절이 온다. 낮이 긴 것을 별로 좋아하지 않는 나에게 일조량이 낮아지고 낮의 길이가 짧아져가는 이 시기는 안정감을 안겨준다. 무엇보다 그 악몽같은 더위가 끝났다는 것에 대한 안도감도 크다. 아무튼 곧 올 가을을 환영한다☺
+                        </p>
+                        <hr>
+                        <div class="profile">
+                            <span id="review__icon" class="icon__logo2" aria-hidden="최가을">
+                                <a href="#" class="link2"><span class="ir">최가을</span></a>
+                            </span>
+                            <div class="user__name">
+                                <h2>최가을</h2>
+                                <p>@autumn_lover</p>
+                                <span id="star">
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                </span>
+                            </div>
+                        </div>
+                        <hr>
+                        <button class="more">
+                            <a href="#">자세히 보기</a>
+                        </button>
+                    </div>
+                </article>
+                <article class="review">
+                    <div class="review__body">
+                        <p class="desc">
+                            가을은 독서의 계절이지요. 하지만 요즘 바빠서 책 읽을 시간이 없네요. 쨌든 저는 가을이 좋습니다. 앞에 분처럼 저도 비염인이라서 완전히 사랑할 순 없는 애증의 계절이지만요…😂 겨울 혹한과 여름 혹서를 못견딜 정도로 싫어해서일까요? ㅎㅎ
+                        </p>
+                        <hr>
+                        <div class="profile">
+                            <span id="review__icon" class="icon__logo3" aria-hidden="이땡땡">
+                                <a href="#" class="link3"><span class="ir">이땡땡</span></a>
+                            </span>
+                            <div class="user__name">
+                                <h2>이땡땡</h2>
+                                <p>@lee_tt</p>
+                                <span id="star">
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_fill"><span class="ir">별 채워짐</span></a>
+                                    <a class="star_empty"><span class="ir">별 비워짐</span></a>
+                                </span>
+                            </div>
+                        </div>
+                        <hr>
+                        <button class="more">
+                            <a href="#">자세히 보기</a>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- // reviewType -->
+    </main>
+    <!-- // mainType -->
+
+    <footer id="footerType" class="footer__wrap section scroll">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__top">
+                <div class="footer__left">
+                    <h3>Webstoryboy</h3>
+                    <ul class="desc">
+                        <li>안녕하세요!</li>
+                        <li>더 다양한 정보 확인</li>
+                        <li>webstoryboy@naver.com</li>
+                    </ul>
+                    <ul class="icon">
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer__right">
+                    <article>
+                        <h3>사이트</h3>
+                        <ul>
+                            <li><a href="#">웹표준 사이트</a></li>
+                            <li><a href="#">반응형 사이트</a></li>
+                            <li><a href="#">패럴랙스 사이트</a></li>
+                            <li><a href="#">포트폴리오 사이트</a></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>유형</h3>
+                        <ul>
+                            <li><a href="#">이미지 유형</a></li>
+                            <li><a href="#">카드 유형</a></li>
+                            <li><a href="#">이미지/텍스트 유형</a></li>
+                            <li><a href="#">배너 유형</a></li>
+                            <li><a href="#">텍스트 유형</a></li>
+                            <li><a href="#">푸터 유형</a></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>스크립트</h3>
+                        <ul>
+                            <li><a href="#">검색 이펙트</a></li>
+                            <li><a href="#">퀴즈 이펙트</a></li>
+                            <li><a href="#">마우스 이펙트</a></li>
+                            <li><a href="#">슬라이드 이펙트</a></li>
+                            <li><a href="#">패랠랙스 이펙트</a></li>
+                            <li><a href="#">게임 이펙트</a></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>레퍼런스</h3>
+                        <ul>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">FONTS</a></li>
+                            <li><a href="#">BLOG</a></li>
+                            <li><a href="#">REFERENCE</a></li>
+                            <li><a href="#">TUTORIAL</a></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>                
+            <div class="footer__copyright">
+                <p>Copyright 2022. All Rights Reserved. - Designed by Webstoryboy</p>
+            </div>
+        </div>
+    </footer>
+    <!-- // footerType -->
+
+
+
+    <!-- SCRIPT -->
+    <script src="assets/js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          }
+        });
+
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnStop = document.querySelector(".swiper-button-stop");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+        
+    </script>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            document.querySelectorAll(".scroll").forEach((element, index) => {
+                if(scrollTop >= element.offsetTop-200){
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(`.header__menu li:nth-child(${index+1})`).classList.add("active");
+                };
+            });
+        });
+
+        // 스크롤 이동
+        document.querySelectorAll("#headerType .header__inner .header__menu li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"  // 이동 부드럽게
+                });
+            });
+        });
+
+        // 메뉴 버튼 (반응형) - 舊
+        // const menuBtn = document.querySelector(".menu__bar .ico");  // 메뉴 아이콘
+        // const menu = document.querySelector(".header__menu");   // 메뉴
+
+        // menuBtn.addEventListener("mouseover", () => {
+        //     menu.classList.add("on");   // 메뉴 아이콘에 마우스 커서 올려놓으면 메뉴 보이기
+        // });
+        // menu.addEventListener("mouseleave", () => {
+        //     menu.classList.remove("on");    // 메뉴 아이콘에 마우스 커서 벗어나면 메뉴 사라지기
+        // });
+
+        // 메뉴 버튼 (반응형)
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = btnMenu.querySelectorAll(".header__menu ul li a");
+
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+        });
+
+        // 반응형에서 메뉴 버튼 누르는 즉시 메뉴창 닫히게 하기
+        btnMenuList.forEach((list) => {
+            list.addEventListener("click", () => {
+                document.body.classList.remove("fixed");
+                btnHam.classList.remove("active");
+                btnMenu.classList.remove("active");
+            });
+        });
+
+        // 사이드 메뉴바가 나오면 스크롤바 없애주기
+        // window.addEventListener("resize", () => {
+        //     let width = window.innerWidth;
+            
+        //     if(width > 1300){
+        //         document.body.classList.remove("fixed");
+        //         btnMenu.classList.remove("active");
+        //         btnHam.classList.remove("active");
+        //     } 
+        // });
+
+        
+    </script>
+</body>
+</html>

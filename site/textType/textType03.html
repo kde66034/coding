@@ -66,18 +66,18 @@
             color: #666;
         }
 
-        /* cardType */
-        .card__inner {
+        /* reviewType */
+        .review__inner {
             display: flex;
             justify-content: space-between;     /* 간격 떨어뜨리기 */
         }
-        .card {
+        .review {
             width: 33%;
             background: #fff;
             border-radius: 10px;
             margin-right: 20px;
         }
-        #card__icon {
+        #review__icon {
             width: 60px;
             height: 60px;
             display: block;
@@ -95,10 +95,10 @@
             background-color: #fcebfb;
         }
 
-        .card__body {
+        .review__body {
             padding: 30px;
         }
-        .card__body .title {
+        .review__body .title {
             font-size: 24px;
             margin-bottom: 10px;
             font-weight: 500;
@@ -108,7 +108,7 @@
             text-overflow: ellipsis;
             padding-right: 30px;    /* 제목 길어져도 한 줄 유지 */
         }
-        .card__body .desc {
+        .review__body .desc {
             font-size: 20px;
             font-weight: 500;
             line-height: 1.4;
@@ -119,7 +119,7 @@
             -webkit-line-clamp: 7;  /* 7줄까지 제한 */
             -webkit-box-orient: vertical;
         }
-        .card__body .more {
+        .review__body .more {
             margin: 0 82px;
             font-size: 18px;
             font-weight: 500;
@@ -161,7 +161,7 @@
         /* 이미지 스프라이트 */
         /* 아이콘 5개를 이어 만든 프레임을 SVG로 추출하여 그 좌표값을 아래와 같이
             옮겨가며 아이콘 하나씩 보이도록 하는 기법 */
-        #card__icon a {
+        #review__icon a {
             width: 30px;
             height: 30px;
             display: block;
@@ -169,13 +169,13 @@
             padding: 15px;
         }
         /* nth-child가 먹히지 않으니 a의 클래스값을 link1, link2... 이런식으로 바꾸자 */
-        #card__icon a.link1 {
+        #review__icon a.link1 {
             background-position: 0px 0;
         }
-        #card__icon a.link2 {
+        #review__icon a.link2 {
             background-position: -80px 0;
         }
-        #card__icon a.link3 {
+        #review__icon a.link3 {
             background-position: -160px 0;
         }
         
@@ -194,18 +194,18 @@
     </style>
 </head>
 <body>
-    <section id="cardType03" class="card__wrap gmarket section">
+    <section id="reviewType" class="review__wrap gmarket section">
         <h2>가을에 대해 이야기해보자🌾</h2>
         <p>곧 다가올 가을에 대하여 이런저런 이야기들을 해보아요!</p>
-        <div class="card__inner container">
-            <article class="card">
-                <div class="card__body">
+        <div class="review__inner container">
+            <article class="review">
+                <div class="review__body">
                     <p class="desc">
                         비염인인 나에게 가장 고통스러운 계절이 돌아왔다. 많은 이들이 좋아하는 봄과 가을을 싫어하는 이유도 이 빌어먹을 비염 때문이지… 오늘도 콧물이 쉴새없이 흐르는구나🤧 빨리 환절기가 끝나고 겨울이 찾아왔으면 좋겠다. 난 겨울이 제일 좋아🥶
                     </p>
                     <hr>
                     <div class="profile">
-                        <span id="card__icon" class="icon__logo1" aria-hidden="김명희">
+                        <span id="review__icon" class="icon__logo1" aria-hidden="김명희">
                             <a href="#" class="link1"><span class="ir">김명희</span></a>
                         </span>
                         <div class="user__name">
@@ -226,14 +226,14 @@
                     </button>
                 </div>
             </article>
-            <article class="card">
-                <div class="card__body">
+            <article class="review">
+                <div class="review__body">
                     <p class="desc">
                         내가 사계절 중 가장 좋아하는 계절이 온다. 낮이 긴 것을 별로 좋아하지 않는 나에게 일조량이 낮아지고 낮의 길이가 짧아져가는 이 시기는 안정감을 안겨준다. 무엇보다 그 악몽같은 더위가 끝났다는 것에 대한 안도감도 크다. 아무튼 곧 올 가을을 환영한다☺
                     </p>
                     <hr>
                     <div class="profile">
-                        <span id="card__icon" class="icon__logo2" aria-hidden="최가을">
+                        <span id="review__icon" class="icon__logo2" aria-hidden="최가을">
                             <a href="#" class="link2"><span class="ir">최가을</span></a>
                         </span>
                         <div class="user__name">
@@ -254,14 +254,14 @@
                     </button>
                 </div>
             </article>
-            <article class="card">
-                <div class="card__body">
+            <article class="review">
+                <div class="review__body">
                     <p class="desc">
                         가을은 독서의 계절이지요. 하지만 요즘 바빠서 책 읽을 시간이 없네요. 쨌든 저는 가을이 좋습니다. 앞에 분처럼 저도 비염인이라서 완전히 사랑할 순 없는 애증의 계절이지만요…😂 겨울 혹한과 여름 혹서를 못견딜 정도로 싫어해서일까요? ㅎㅎ
                     </p>
                     <hr>
                     <div class="profile">
-                        <span id="card__icon" class="icon__logo3" aria-hidden="이땡땡">
+                        <span id="review__icon" class="icon__logo3" aria-hidden="이땡땡">
                             <a href="#" class="link3"><span class="ir">이땡땡</span></a>
                         </span>
                         <div class="user__name">

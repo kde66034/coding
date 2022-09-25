@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>220923 - 시험</title>
+
+    <!-- SEO (검색엔진최적화) -->
+    <meta name="author" content="KDE">
+    <meta name="description" content="사이트 만들기 튜토리얼입니다.">
+    <meta name="keyword" content="사이트, 사이트 만들기, 튜토리얼, KDE, 코딩공책, webstoryboy">
+    <meta name="robots" content="all">
+
+    <!-- CSS -->
+    <!-- fonts가 제일 위에 있어야 적용됨 -->
+    <!-- <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/dracula2.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/common.css"> -->
+
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        /* layout */
+        #wrap {
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        #aside {
+            float: left;
+            width: 270px;
+        }
+
+        #contents {
+            float: right;
+            width: 700px;
+        }
+
+        #footer {
+            float: left;
+            width: 100%;
+            background: #edf2f8
+        }
+
+        /* aside */
+        #aside h1 {
+            margin-bottom: 30px;
+        }
+
+        #aside h1 img {
+            width: 150px;
+        }
+
+        #aside .nav li {
+            position: relative;
+            z-index: 1000;
+            padding-bottom: 5px;
+            background: #f1f1f1;
+            padding: 10px;
+        }
+
+        #aside .nav li a {
+            font-size: 23px;
+        }
+
+        #aside .nav li a:hover {
+            text-decoration: underline;
+        }
+
+        #aside .nav li.active a {
+            color: blueviolet;
+        }
+
+        #aside .nav li ul.submenu {
+            display: none;
+            width: 150px;
+            position: absolute;
+            right: -140px;
+            top: 0;
+        }
+
+        #aside .nav li ul.submenu li a {
+            display: block;
+            font-size: 20px;
+            color: #333;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #aside .nav li ul.submenu li a:hover {
+            text-decoration: none;
+        }
+
+        /* banner */
+        .banner {
+            height: 384px;
+        }
+
+        .banner img {
+            width: 100%;
+            display: block;
+        }
+
+        .slideList {
+            width: 700px;
+            position: relative;
+        }
+
+        .slideList .slideImg {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .slideList .slideImg h2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        /* tab */
+        .tab {
+            padding: 40px 0;
+            height: 200px;
+            position: relative;
+            width: 100%;
+        }
+
+        .tab img {
+            width: 100px;
+        }
+
+        .tab ul {
+            text-align: center;
+        }
+
+        .tab ul li {
+            display: inline;
+            padding: 5px;
+        }
+
+        .tab ul li a {
+            font-size: 24px;
+            color: #999;
+        }
+
+        .tab ul li ul {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .tab ul li ul li {
+            width: 20%;
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .tab ul li ul li a {
+            font-size: 14px;
+        }
+
+        .tab ul li ul li a span {
+            display: block;
+        }
+
+        .tab ul li.active a {
+            color: #000;
+        }
+
+        /* layer */
+        .layer {
+            background: #f7f7f7;
+            padding: 15px;
+        }
+
+        .layer>div {
+            position: relative;
+            float: left;
+            width: 32%;
+            padding: 6% 3%;
+            text-align: center;
+            margin-right: 2%;
+            background: #fff;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .layer>div:last-child {
+            margin-right: 0;
+        }
+
+        .layer>div img {
+            width: 100px;
+            padding: 20px 0;
+        }
+
+        .layer>div ul li {
+            text-align: left;
+            padding-bottom: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .layer>div .more {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+        }
+
+        /* #footer */
+        #footer {
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        #footer h2 {
+            float: left;
+        }
+
+        #footer h2 img {
+            width: 80px;
+        }
+
+        #footer address {
+            float: left;
+            font-style: normal;
+            padding: 20px 0 0 20px;
+        }
+
+        #footer .sns {
+            float: right;
+            margin-top: 20px;
+        }
+
+        #footer .sns ul {
+            overflow: hidden;
+        }
+
+        #footer .sns li {
+            float: left;
+            padding-bottom: 5px;
+        }
+
+        #footer .sns li img {
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="clearfix">
+        <aside id="aside">
+            <h1><img src="assets/img/Test03/logo.jpg" alt="정부24"></h1>
+            <nav class="nav">
+                <ul>
+                    <li class="active"><a href="#">서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">정책정보</a>
+                        <ul class="submenu">
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">기관정보</a>
+                        <ul class="submenu">
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">고객센터</a>
+                        <ul class="submenu">
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section id="contents">
+            <article class="banner">
+                <div class="slideList">
+                    <div class="slideImg">
+                        <h2>페이드 효과 이미지1</h2>
+                        <img src="assets/img/Test03/slider.jpg" alt="정부!!">
+                    </div>
+                    <div class="slideImg">
+                        <h2>페이드 효과 이미지2</h2>
+                        <img src="assets/img/Test03/slider.jpg" alt="정부!!">
+                    </div>
+                    <div class="slideImg">
+                        <h2>페이드 효과 이미지3</h2>
+                        <img src="assets/img/Test03/slider.jpg" alt="정부!!">
+                    </div>
+                </div>
+            </article>
+            <article class="tab">
+                <ul>
+                    <li class="active"><a href="#">자주 찾는 서비스</a>
+                        <ul>
+                            <li><a href="#"><img src="assets/img/Test03/icon1.jpg" alt=""><span>주민등록표등폰</span></a></li>
+                            <li><a href="#"><img src="assets/img/Test03/icon2.jpg" alt=""><span>주민등록표등폰</span></a></li>
+                            <li><a href="#"><img src="assets/img/Test03/icon3.jpg" alt=""><span>주민등록표등폰</span></a></li>
+                            <li><a href="#"><img src="assets/img/Test03/icon4.jpg" alt=""><span>주민등록표등폰</span></a></li>
+                            <li><a href="#"><img src="assets/img/Test03/icon5.jpg" alt=""><span>주민등록표등폰</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">키워드 서비스</a>
+                        <ul style="display: none">
+                            <li><a href="#"><img src="assets/img/Test03/icon5.jpg" alt=""><span>주민등록표등폰2</span></a></li>
+                            <li><a href="#"><img src="assets/img/Test03/icon4.jpg" alt=""><span>주민등록표등폰2</span></a></li>
+                            <li><a href="#"><img src="assets/img/Test03/icon3.jpg" alt=""><span>주민등록표등폰2</span></a></li>
+                            <li><a href="#"><img src="assets/img/Test03/icon2.jpg" alt=""><span>주민등록표등폰2</span></a></li>
+                            <li><a href="#"><img src="assets/img/Test03/icon1.jpg" alt=""><span>주민등록표등폰2</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+            <article class="layer clearfix">
+                <div>
+                    <h3>공지사항</h3>
+                    <img src="assets/img/Test03/notice.jpg" alt="공지사항">
+                    <ul>
+                        <li>[어디서나 대학민원] 호서대학교 팩스…</li>
+                        <li>[전라북도 고창군] 새올행정시스템 D…</li>
+                        <li>교육부 행정전자서명인증센터 시스템…</li>
+                    </ul>
+                    <a href="#" class="more">+</a>
+                </div>
+                <div>
+                    <h3>자료실</h3>
+                    <img src="assets/img/Test03/data.jpg" alt="자료실">
+                    <ul>
+                        <li>인터넷 민원발급 위한 프로그램(주민…</li>
+                        <li>정부24 발급물 등록 프로그램</li>
+                        <li>전자문서 관련 설치 프로그램</li>
+                    </ul>
+                    <a href="#" class="more">+</a>
+                </div>
+                <div>
+                    <h3>FQA</h3>
+                    <img src="assets/img/Test03/fqa.jpg" alt="FQA">
+                    <ul>
+                        <li>'민원발급불가' 또는 '발급불가' 프린터…</li>
+                        <li>가족관계증명서 프린터 발급이 가능…</li>
+                        <li>온라인 전입신고 시 [세대주확인]은 어…</li>
+                    </ul>
+                    <a href="#" class="more">+</a>
+                </div>
+            </article>
+        </section>
+        <footer id="footer" class="clearfix">
+            <h2><img src="assets/img/Test03/footerLogo.jpg" alt="정부24"></h2>
+            <address>
+                서울 특별시 세종대로 209 행정안전부<br>
+                정부 콜센터 1588-2188<br>
+                Copyright © All right reserved
+            </address>
+            <div class="sns">
+                <ul>
+                    <li><a href="#"><img src="assets/img/Test03/naverBlog.jpg" alt="네이버"></a></li>
+                    <li><a href="#"><img src="assets/img/Test03/twitter.jpg" alt="트위터"></a></li>
+                    <li><a href="#"><img src="assets/img/Test03/facebook.jpg" alt="페이스북"></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        //세로 메뉴
+        $(".nav > ul > li").hover(
+            function () {
+                $(this).find(".submenu").stop().slideDown();
+            }, function () {
+                $(this).find(".submenu").stop().slideUp();
+            });
+
+        //slideList > slideImg (1) eq(0)
+        //slideList > slideImg (2) eq(1)
+        //slideList > slideImg (3) eq(2)
+
+        //이미지 슬라이드 
+        $(".slideList").children("div:gt(0)").hide();
+
+        var currentIndex = 0;
+        //var currentIndex = 1;
+        //var currentIndex = 2;
+
+        setInterval(function () {
+            var next = (currentIndex + 1) % 3;
+
+                        // 0 + 1 / 3 = 1
+                        // 1 + 1 / 3 = 2
+                        // 2 + 1 / 3 = 0
+                        // 0 + 1 / 3 = 1
+
+            $(".slideList").find("div").eq(currentIndex).fadeOut();
+            $(".slideList").find("div").eq(next).fadeIn();
+
+            console.log("currentIndex=" + currentIndex);
+            console.log("next=" + next);
+            //currentIndex = 0
+            //next = 1
+            currentIndex = next;
+        }, 3000);
+    </script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

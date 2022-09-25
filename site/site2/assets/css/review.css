@@ -1,0 +1,158 @@
+/* reviewType */
+.review__inner {
+    display: flex;
+    justify-content: space-between;     /* 간격 떨어뜨리기 */
+}
+.review {
+    width: 33%;
+    background: #fff;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.review:nth-child(3) {
+    margin-right: 0;
+}
+#review__icon {
+    width: 60px;
+    height: 60px;
+    display: block;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+/* 아이콘 하나하나에 색깔 넣어주기 */
+.icon__logo1 {
+    background-color: #fceceb;
+}
+.icon__logo2 {
+    background-color: #ecfceb;
+}
+.icon__logo3 {
+    background-color: #fcebfb;
+}
+
+.review__body {
+    padding: 30px;
+}
+.review__body .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    /* 한 줄 효과 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 30px;    /* 제목 길어져도 한 줄 유지 */
+}
+.review__body .desc {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    /* 7줄효과 : 글이 넘쳐도 7줄을 넘지 않도록 해줌 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;  /* 7줄까지 제한 */
+    -webkit-box-orient: vertical;
+}
+.review__body .more {
+    display: block;
+    margin: 0 70px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 17px;
+    background-color: #e1a39f;
+    padding: 8px 25px;
+}
+
+.profile {
+    display: flex;
+    position: relative;
+}
+.user__name > h2 {
+    font-size: 28px;
+    font-weight: 500;
+}
+.user__name > p {
+    font-size: 18px;
+    font-weight: 300;
+    padding-left: 90px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666;
+    position: absolute;
+    top: 6px;
+    left: 66px;
+
+}
+
+/* ir 효과 (이미지 대체 효과 == alt) */
+/* 화면상에서는 안나오게 함과 동시에 스크린리더기에는 읽히게 하는 작업 */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* 이미지 스프라이트 */
+/* 아이콘 5개를 이어 만든 프레임을 SVG로 추출하여 그 좌표값을 아래와 같이
+    옮겨가며 아이콘 하나씩 보이도록 하는 기법 */
+#review__icon a {
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: url(../img/textType/textType_icon03.svg);
+    padding: 15px;
+}
+/* nth-child가 먹히지 않으니 a의 클래스값을 link1, link2... 이런식으로 바꾸자 */
+#review__icon a.link1 {
+    background-position: 0px 0;
+}
+#review__icon a.link2 {
+    background-position: -80px 0;
+}
+#review__icon a.link3 {
+    background-position: -160px 0;
+}
+
+/* 별점 */
+#star a {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+}
+#star > .star_fill {
+    background: url(../img/textType/star.svg);
+}
+#star > .star_empty {
+    background: url(../img/textType/star_empty.svg);
+}
+
+/* button > a */
+button > a {
+    color: #fff;
+}
+
+/* hr */
+hr {
+    margin: 30px 0;
+}
+
+/* button */
+button {
+    border: none;
+    cursor: pointer;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .review__inner {
+        flex-direction: column;
+    }
+    .review {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
