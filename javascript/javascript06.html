@@ -602,10 +602,9 @@ const text4 = arrNum.join('-');     // 전화번호 표기 등에 쓰이기 적�
 
     const arrNum3 = [100, 200, 300, 400, 500];
     let sum = 0;
-    for(let i=0; i<arrNum3.length; i++) {
+    for(let i=0; i &lt; arrNum3.length; i++) {
         sum += arrNum3[i];
     }
-    document.write(sum);
 
     document.querySelector(".sample07_N3").innerHTML = "3";
     document.querySelector(".sample07_Q3").innerHTML = "[100, 200, 300, 400, 500]";
@@ -818,7 +817,61 @@ const text4 = arrNum.join('-');     // 전화번호 표기 등에 쓰이기 적�
                         </table>
                     </div>
                     <div class="script">
-<pre><code lang="language-js">
+<pre><code lang="language-js">{
+    const arrNum = [100, 200, 300, 400, 500];
+    const result = arrNum.splice(2);
+    
+    document.querySelector(".sample09_N1").innerHTML = "1";
+    document.querySelector(".sample09_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+    document.querySelector(".sample09_M1").innerHTML = "arrNum.splice(2)";
+    document.querySelector(".sample09_P1").innerHTML = result;
+    document.querySelector(".sample09_A1").innerHTML = arrNum;
+    
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const result2 = arrNum2.splice(2, 3);
+    
+    document.querySelector(".sample09_N2").innerHTML = "2";
+    document.querySelector(".sample09_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+    document.querySelector(".sample09_M2").innerHTML = "arrNum.splice(2, 3)";
+    document.querySelector(".sample09_P2").innerHTML = result2;
+    document.querySelector(".sample09_A2").innerHTML = arrNum2;
+    
+    const arrNum3 = [100, 200, 300, 400, 500];
+    const result3 = arrNum3.splice(2, 3, 'javascript');
+    
+    document.querySelector(".sample09_N3").innerHTML = "3";
+    document.querySelector(".sample09_Q3").innerHTML = "[100, 200, 300, 400, 500]";
+    document.querySelector(".sample09_M3").innerHTML = "arrNum.splice(2, 3, 'javascript')";
+    document.querySelector(".sample09_P3").innerHTML = result3;
+    document.querySelector(".sample09_A3").innerHTML = arrNum3;
+    
+    const arrNum4 = [100, 200, 300, 400, 500];
+    const result4 = arrNum4.splice(1, 1, 'javascript');
+    
+    document.querySelector(".sample09_N4").innerHTML = "4";
+    document.querySelector(".sample09_Q4").innerHTML = "[100, 200, 300, 400, 500]";
+    document.querySelector(".sample09_M4").innerHTML = "arrNum.splice(1, 1, 'javascript')";
+    document.querySelector(".sample09_P4").innerHTML = result4;
+    document.querySelector(".sample09_A4").innerHTML = arrNum4;
+    
+    const arrNum5 = [100, 200, 300, 400, 500];
+    const result5 = arrNum5.splice(1, 0, 'javascript');
+    
+    document.querySelector(".sample09_N5").innerHTML = "5";
+    document.querySelector(".sample09_Q5").innerHTML = "[100, 200, 300, 400, 500]";
+    document.querySelector(".sample09_M5").innerHTML = "arrNum.splice(1, 0, 'javascript')";
+    document.querySelector(".sample09_P5").innerHTML = result5;
+    document.querySelector(".sample09_A5").innerHTML = arrNum5;
+    
+    const arrNum6 = [100, 200, 300, 400, 500];
+    const result6 = arrNum6.splice(0, 4, 'javascript');
+    
+    document.querySelector(".sample09_N6").innerHTML = "6";
+    document.querySelector(".sample09_Q6").innerHTML = "[100, 200, 300, 400, 500]";
+    document.querySelector(".sample09_M6").innerHTML = "arrNum.splice(0, 4, 'javascript')";
+    document.querySelector(".sample09_P6").innerHTML = result6;
+    document.querySelector(".sample09_A6").innerHTML = arrNum6;
+}
 </code></pre>
                     </div>
                 </div>
@@ -1510,7 +1563,6 @@ const text4 = arrNum.join('-');     // 전화번호 표기 등에 쓰이기 적�
             for(let i=0; i<arrNum3.length; i++) {
                 sum += arrNum3[i];
             }
-            document.write(sum);
 
             document.querySelector(".sample07_N3").innerHTML = "3";
             document.querySelector(".sample07_Q3").innerHTML = "[100, 200, 300, 400, 500]";
@@ -1610,11 +1662,11 @@ const text4 = arrNum.join('-');     // 전화번호 표기 등에 쓰이기 적�
             document.querySelector(".sample09_A3").innerHTML = arrNum3;
 
             arrNum4 = [100, 200, 300, 400, 500];
-            const result4 = arrNum4.splice(2, 3, 'javascript');
+            const result4 = arrNum4.splice(1, 1, 'javascript');
 
             document.querySelector(".sample09_N4").innerHTML = "4";
             document.querySelector(".sample09_Q4").innerHTML = "[100, 200, 300, 400, 500]";
-            document.querySelector(".sample09_M4").innerHTML = "arrNum4.splice(2, 3, 'javascript')";
+            document.querySelector(".sample09_M4").innerHTML = "arrNum4.splice(1, 1, 'javascript')";
             document.querySelector(".sample09_P4").innerHTML = result4;
             document.querySelector(".sample09_A4").innerHTML = arrNum4;
 
@@ -1628,11 +1680,11 @@ const text4 = arrNum.join('-');     // 전화번호 표기 등에 쓰이기 적�
             document.querySelector(".sample09_A5").innerHTML = arrNum5;
 
             arrNum6 = [100, 200, 300, 400, 500];
-            const result6 = arrNum6.splice(2, 3, 'javascript');
+            const result6 = arrNum6.splice(0, 4, 'javascript');
 
             document.querySelector(".sample09_N6").innerHTML = "6";
             document.querySelector(".sample09_Q6").innerHTML = "[100, 200, 300, 400, 500]";
-            document.querySelector(".sample09_M6").innerHTML = "arrNum6.splice(2, 3, 'javascript')";
+            document.querySelector(".sample09_M6").innerHTML = "arrNum6.splice(0, 4, 'javascript')";
             document.querySelector(".sample09_P6").innerHTML = result6;
             document.querySelector(".sample09_A6").innerHTML = arrNum6;
         }
