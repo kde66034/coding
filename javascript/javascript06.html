@@ -1904,11 +1904,31 @@ const text4 = arrNum.join('-');     // 전화번호 표기 등에 쓰이기 적�
 
         // 미션 0928
         {
-            const num = [a, b, c, d, e, f, g, h, i, k];
+            const num = ['a','b','c','d','e','f','g','h','i','k'];
             
             // b d f h k 가 출력될 수 있는 방법 4가지
 
-            
+            //1
+            for(let i=1; i < num.length; i+=2) {
+                // console.log(num[i]);
+            }
+
+            //2
+            for(let i=0; i < num.length; i++) {
+                if(i % 2 == 1) {
+                    // console.log(num[i]);
+                }
+            }
+
+            //3
+            console.log(`${num[1]}, ${num[3]}, ${num[5]}, ${num[7]}, ${num[9]}`);
+
+            //4
+            console.log(num.map((el, index) => {
+                if(index % 2 === 1) {
+                    return el;
+                }
+            }).join('').split(''));
         }
     </script>
 </body>

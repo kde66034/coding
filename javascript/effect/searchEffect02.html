@@ -7,6 +7,7 @@
     <title>검색 이펙트 02</title>
 
     <link rel="stylesheet" href="../assets/css/search.css">
+    <link rel="stylesheet" href="../assets/css/dracula2.css">
 
     <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
@@ -437,6 +438,376 @@
 
     <footer id="footer">
         <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>Javascript</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>HTML</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="plus" aria-label="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+<pre><code class="language-js">&lt;script>
+    //선택자
+    const searchBox = document.querySelector(".search__box input");   // input 박스 , 검색 영역
+    const searchList = document.querySelectorAll(".search__list ul li")  // 목록 리스트
+    const searchInfo = document.querySelector(".search__info .num")   // 전체 갯수
+    
+    //속성 갯수 설정하기
+    for(i=1; i &lt;= searchList.length; i++){
+        const searchInfo = document.querySelector(".search__info .num")
+        searchInfo.innerHTML =i;
+    }
+    
+    // 검색 영역
+    searchBox.addEventListener("keyup", () => {
+        const searchWord = searchBox.value;   // 사용자가 입력한 키워드
+        searchList.forEach(el => {
+            const cssType = el.dataset.type;   // CSS 속성 모든 값
+            const cssName = el.querySelector("strong").innerText;
+            //console.log(cssName)
+            //"all".includes("all")   // 있으면 true 로 나옴
+            if(cssName.includes(searchWord) || cssType.includes(searchWord)){
+                el.classList.remove("hide");
+            } else {
+                el.classList.add("hide");
+            }
+        });
+    });
+&lt;/script>
+</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-html">&lt;body>
+    &lt;header id="header">
+        &lt;h1>Search&lt;/h1>
+        &lt;nav>
+            &lt;ul>
+                &lt;li>&lt;a href="searchEffect01.html">01&lt;/a>&lt;/li>
+                &lt;li class="active">&lt;a href="searchEffect02.html">02&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect03.html">03&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect04.html">04&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect05.html">05&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect06.html">06&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+    &lt;!-- // header -->
+
+    &lt;main id="main">
+        &lt;div class="search__wrap">
+            &lt;span>indexOf()를 이용하여 검색하기&lt;/span>
+            &lt;h1>CSS 속성 검색하기&lt;/h1>
+            &lt;div class="search__box">
+                &lt;label for="search">검색하기&lt;/label>
+                &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요.">
+            &lt;/div>
+            &lt;div class="search__info">
+                &lt;div class="type">플렉스, 애니메이션, 백그라운드, 기타 등등 유형별로 검색해보세요.&lt;/div>
+                &lt;div>전체 속성 개수 : &lt;span class="num">0&lt;/span>&lt;/div>
+            &lt;/div>
+            &lt;div class="search__list">
+                &lt;div class="css">
+                    &lt;ul>
+                        &lt;!-- 이곳에 CSS 속성 목록 작성 / 리스트 목록이 너무 길어지므로 생략 -->
+                    &lt;/ul>
+                &lt;/div>            
+            &lt;/div>
+        &lt;/div>
+    &lt;/main>
+    &lt;!-- // main -->
+
+    &lt;footer id="footer">
+        &lt;a href="mailto:kde66034@gmail.com">kde66034@gmail.com&lt;/a>
+    &lt;/footer> 
+    &lt;!-- //footer -->
+&lt;/body>
+</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-css">&lt;style> 
+    :root {
+        --htmlColor : #223547;
+        --cssColor : #472222;
+        --jsColor : #224736;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'NexonLv1Gothic';
+        /* color: var(--htmlColor); */
+    }
+    
+    *, *:before, *:after {
+        box-sizing:border-box;
+    }
+    
+    a {
+        color: var(--htmlColor);
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
+    
+    /* header */
+    #header {
+        display: flex;
+        justify-content: space-between;
+    }
+    #header h1 {
+        margin: 10px;
+        font-family: 'Tmon';
+    }
+    #header nav {
+        margin: 10px;
+    }
+    #header nav ul {}
+    #header nav li {
+        display: inline;
+        position: relative;
+    }
+    #header nav li a {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        font-family: 'NexonLv1Gothic';
+    }
+    #header nav li.active a {
+        background-color: var(--htmlColor);
+        color: #fff;
+    }
+    #header nav li .sub {
+        position: absolute;
+        left: 0;
+        top: 35px;
+        width: 400px;
+    }
+    #header nav li .sub li a {
+        width: auto;
+        background-color: transparent;
+        color: var(--htmlColor);
+        border: 0;
+        text-align: left;
+        line-height: 1.2;
+    }
+    #header nav li .sub li.active a {
+        text-decoration: underline;
+    }
+    
+    /* main */
+    #main {
+        margin: 50px 10px;
+    }
+    .search__wrap {
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 3px solid var(--htmlColor);
+        border-radius: 20px;
+        background-color: #f1f3f6;
+        padding: 30px;
+        text-align: center;
+    }
+    .search__wrap > span {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    .search__wrap > h1 {
+        font-family: 'Tmon';
+        color: #223547;
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .search__box {
+        margin-bottom: 40px;
+    }
+    .search__box input {
+        border: 2px solid var(--htmlColor);
+        padding: 15px 40px;
+        width: 70%;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+    .search__box label {
+        position:absolute;
+        clip:rect(0 0 0 0);
+        width:1px;
+        height:1px;
+        margin:-1px;
+        overflow:hidden
+    }
+    
+    .search__list {}
+    .search__list li {
+        text-align: left;
+        line-height: 1.7;
+    }
+    .search__list li.hide {
+        display: none;
+    }
+    .search__list li.show {
+        display: block;
+    }
+    .search__list span {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50px;
+        margin: 5px;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    .search__list span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+    }
+    
+    .search__info {
+        text-align: right;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px dashed var(--htmlColor);
+    }
+    .search__info .type {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info .keyword {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info .keyword span {
+        border: 2px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .search__info .keyword span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+        cursor: pointer;
+    }
+    
+    .search__desc {
+        padding: 20px 40px 20px 60px;
+        margin-bottom: 50px;
+        border-radius: 50px;
+        display: inline-block;
+        background-color: var(--htmlColor);
+        color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 22px 17px;
+    }
+    
+    @media (max-width : 600px) {
+        .search__wrap {
+            padding: 20px;
+        }
+        .search__wrap > span {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .search__wrap > h1 {
+            font-size: 44px;
+        }
+        .search__box input {
+            font-size: 16px;
+            padding: 12px 30px;
+        }
+    }
+    
+    /* footer */
+    #footer {
+        text-align: center;
+    }
+    
+    #footer a {
+        color: #000;
+        font-family: 'NexonLv1Gothic';
+        padding-bottom: 50px;
+    }
+    
+    #footer a:hover {
+        text-decoration: underline;
+    }
+&lt;/style>  
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__close">
+                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- // footer -->
 
@@ -474,6 +845,8 @@
         });
     </script> -->
 
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.min.js"></script>
     <script>
         //선택자
         const searchBox = document.querySelector(".search__box input");   // input 박스 , 검색 영역
