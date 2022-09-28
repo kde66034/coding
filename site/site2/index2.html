@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 02</title>
+
+    <!-- SEO (검색엔진최적화) -->
+    <meta name="author" content="KDE">
+    <meta name="description" content="사이트 만들기 튜토리얼2입니다.">
+    <meta name="keyword" content="사이트, 사이트 만들기, 튜토리얼, KDE, 코딩공책, webstoryboy">
+    <meta name="robots" content="all">
+
+    <!-- ICON -->
+    <link rel="icon" href="assets/img/icon.png" />
+    <link rel="shortcut icon" href="assets/img/icon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- swiper -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+</head>
+<body>
+    <div id="skip">
+        <a href="#headerType">헤더 유형 바로가기</a>
+        <a href="#sliderType">슬라이드 유형 바로가기</a>
+        <a href="#textType">텍스트 유형1 바로가기</a>
+        <a href="#imageType">이미지 유형 바로가기</a>
+        <a href="#cardType">카드 유형 바로가기</a>
+        <a href="#bannerType">배너 유형 바로가기</a>
+        <a href="#textType2">텍스트 유형2 바로가기</a>
+        <a href="#footerType">푸터 유형 바로가기</a>
+    </div>
+    <!-- // skip : 웹표준 준수 위해 만들어줌 -->
+
+    <header id="headerType">
+        <div class="header__inner">
+            
+        </div>
+    </header>
+    <!-- // headerType -->
+
+    <main id="mainType">
+        <section id="sliderType"></section>
+        <!-- // sliderType -->
+
+        <section id="textType"></section>
+        <!-- // textType -->
+
+        <section id="imageType"></section>
+        <!-- // imageType -->
+
+        <section id="cardType"></section>
+        <!-- // cardType -->
+
+        <section id="bannerType"></section>
+        <!-- // bannerType -->
+
+        <section id="textType2"></section>
+        <!-- // textType2 -->
+    </main>
+    <!-- // mainType -->
+
+    <footer id="footerType" class="footer__wrap nexon section gray">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>상담신청</h3>
+                    <ul>
+                        <li><a href="#">방문 상담신청</a></li>
+                        <li><a href="#">온라인 상담신청</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>    
+                </div>
+                <div>
+                    <h3>시간표 조회</h3>
+                    <ul>
+                        <li><a href="#">클래스A</a></li>
+                        <li><a href="#">클래스B</a></li>
+                        <li><a href="#">클래스C</a></li>
+                        <li><a href="#">클래스D</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>아카데미 찾기</h3>
+                    <ul>
+                        <li><a href="#">강남 캠퍼스</a></li>
+                        <li><a href="#">종로 캠퍼스</a></li>
+                        <li><a href="#">구로 캠퍼스</a></li>
+                        <li><a href="#">안산 캠퍼스</a></li>
+                        <li><a href="#">수원 캠퍼스</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>문의 게시판</h3>
+                    <ul>
+                        <li><a href="#">질문하기</a></li>
+                        <li><a href="#">건의사항</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>수강료문의</h3>
+                    <ul>
+                        <li><a href="#">방문 상담신청</a></li>
+                        <li><a href="#">온라인 상담신청</a></li>
+                        <li><a href="#">전화 상담신청</a></li>
+                        <li><a href="#">카카오톡 상담신청</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__right">
+                ⓒ2022 Byeolbit Jeppang Kyoshil<br>
+                All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- // footerType -->
+
+    <!-- SCRIPT -->
+    <script src="assets/js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          }
+        });
+
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnStop = document.querySelector(".swiper-button-stop");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+    </script>
+
+    <script>
+        
+    </script>
+</body>
+</html>

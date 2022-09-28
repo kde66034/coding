@@ -56,6 +56,10 @@
     font-family: 'NexonLv1Gothic';
     font-weight: 400;
 }
+.gmarket {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+}
 
 /* 배경 */
 .gray {
