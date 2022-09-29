@@ -842,14 +842,14 @@
         });
 
         // 속성 클릭 작업
-        const searchListSpan = searchList.querySelectorAll('span');
-        searchListSpan.forEach((span) => {
-            span.addEventListener('click', (e) => {
-                const seachWord = e.target.textContent;
-                findProperty(seachWord);
-                window.scrollTo({left : 0, top : 0, behavior : "smooth"});
-            });
-        });
+        // const searchListSpan = searchList.querySelectorAll('span');
+        // searchListSpan.forEach((span) => {
+        //     span.addEventListener('click', (e) => {
+        //         const seachWord = e.target.textContent;
+        //         findProperty(seachWord);
+        //         window.scrollTo({left : 0, top : 0, behavior : "smooth"});
+        //     });
+        // });
 
         // 입력하기
         searchBox.addEventListener("keyup", () => {
@@ -857,6 +857,14 @@
             // console.log(searchWord);
 
             findProperty(searchWord);
+        });
+
+        // 클릭하기
+        document.querySelectorAll(".search__list span").forEach(span => {
+            span.addEventListener("click", () => {
+                const clickWord = span.innerText;
+                findProperty(clickWord);
+            });
         });
 
         // 속성 찾기
