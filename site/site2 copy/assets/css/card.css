@@ -1,0 +1,94 @@
+/* cardType02 */
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card__inner .card {
+    width: 24%;
+    position: relative;
+    /* .more 포지션 기준점 */
+}
+
+.card__inner .card:first-child {
+    margin-bottom: 50px;
+}
+
+.card__inner .card img {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.card__inner .card .title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    /* 한 줄 효과 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 30px;
+    /* 제목 길어져도 한 줄 유지 */
+}
+
+.card__inner .card .desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #666;
+    /* 3줄효과 : 글이 넘쳐도 3줄을 넘지 않도록 해줌 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card__inner .card .more {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/cardType/arrow.svg);
+    display: block;
+    /* 24x24 사이즈 잡기 위해 사용 */
+    position: absolute;
+    right: 0;
+    top: 218px;
+    border-radius: 5px;
+}
+
+
+@media(max-width : 960px) {
+    #cardType > h2 {
+        width: 96%;
+        text-align: center;
+    }
+    #cardType > p {
+        width: 96%;
+        text-align: center;
+    }
+    .card__inner {
+        width: 100%;
+    }
+    .card__inner .card {
+        width: 48%;
+        margin-bottom: 30px;
+    }
+    .card__inner .card:last-child {
+        margin-bottom: 0;
+    }
+    .card__inner .card .tit {
+        font-size: 20px;
+    }
+    .card__inner .card .desc {
+        font-size: 16px;
+    }
+    .card__inner .card .more {
+        display: none;
+    }
+}
+
+@media(max-width : 600px) {
+    .card__inner .card {
+        width: 96%;
+    }
+}
