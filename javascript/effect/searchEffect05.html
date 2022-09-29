@@ -43,10 +43,10 @@
                     <li data-star="5"><a href="#">★★★★★</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">1개 이상</a></li>
-                    <li><a href="#">2개 이상</a></li>
-                    <li><a href="#">3개 이상</a></li>
-                    <li><a href="#">4개 이상</a></li>
+                    <li data-number="1"><a href="#">1개 이상</a></li>
+                    <li data-number="2"><a href="#">2개 이상</a></li>
+                    <li data-number="3"><a href="#">3개 이상</a></li>
+                    <li data-number="4"><a href="#">4개 이상</a></li>
                 </ul>
             </div>
 
@@ -841,15 +841,24 @@
 
         const searchList = document.querySelector(".search__list ul");
         const searchClick = document.querySelectorAll(".search__click ul li");
+        const star = document.querySelectorAll(".search__click ul li a")
+        const searchNum = document.querySelector(".search__info .num");        // 전체 개수
 
+        let count=0;
 
         // 출력하기
         function updateList(list){
             listCSS = "";
 
             for(const data of list){
-                listCSS += `<li><strong>${data.name}</strong> : ${data.desc} <em>${data.star}</em></li>`;
+                starList = star[data.star].innerText;   // 숫자를 별로 치환함
+                count++;
+
+                listCSS += `<li><strong>${data.name}</strong> : ${data.desc} <em>${starList}</em></li>`;
+                // 속성 이름 : 설명 <em>숫자를 별로 치환한 값</em>
             }
+            searchNum.innerHTML = count;
+            count = 0;
 
             searchList.innerHTML = listCSS;
         }
@@ -859,7 +868,11 @@
         searchClick.forEach(star => {
             star.addEventListener("click", () => {
                 const target = star.dataset.star;
-                const filterList = cssProperty.filter(data => data.star == target);
+                const target2 = star.dataset.number;
+
+                const filterList = cssProperty.filter(data => data.star == target || data.star >= target2);
+                
+                searchNum.innerHTML = filterList.length;        // 속성 개수 표시
 
                 updateList(filterList);
             });
@@ -870,8 +883,6 @@
         // dataset 안쓰고 가져오는 방법
 
         // 조건문 들어간거 완료하기
-
-        // 전체 속성 개수 표시
     </script>
 </body>
 </html>

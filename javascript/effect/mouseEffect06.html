@@ -70,6 +70,11 @@
         background-color: rgba(255,255,255,0.9);
         user-select: none;
         pointer-events: none;
+        mix-blend-mode: difference;
+        transition: transform 0.3s;
+      }
+      .mouse__cursor.active {
+        transform: scale(5);
       }
     </style>
 </head>
@@ -401,14 +406,11 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.min.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
-    <script>
-      hljs.highlightAll();
-    </script>
 
     <script>
       const mouseMove = (e) => {
-        let positionSlow = (e.pageX - (window.innerWidth / 2)) * 0.1;
-        let positionFast = (e.pageX - (window.innerWidth / 2)) * 0.2;
+        let positionSlow = (e.pageX - window.innerWidth / 2) * 0.1;
+        let positionFast = (e.pageX - window.innerWidth / 2) * 0.2;
 
         gsap.to(".spanSlow", {duration: 0.4, x: positionSlow});
         gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
@@ -416,7 +418,30 @@
       }
       window.addEventListener("mousemove", mouseMove);
 
-      // 미션 : 마우스 커서가 글씨 위에 올라가면 원 크기 5배 크게 작업.. 글씨 반전효과 추가
+      //마우스 커서가 글씨 위에 올라가면 크기는 5배(2번) 정도 크게 작업... 글씨 반전효과(5번) 추가
+      
+      const text = document.querySelectorAll(".spanSlow");
+      const text2 = document.querySelectorAll(".spanFast");
+      
+      text.forEach((e) => {
+        e.addEventListener("mouseenter", () => {
+          document.querySelector(".mouse__cursor").classList.add("active");
+        });
+        e.addEventListener("mouseleave", () => {
+          document.querySelector(".mouse__cursor").classList.remove("active");
+        });
+      });
+      text2.forEach((e) => {
+        e.addEventListener("mouseenter", () => {
+          document.querySelector(".mouse__cursor").classList.add("active");
+        });
+        e.addEventListener("mouseleave", () => {
+          document.querySelector(".mouse__cursor").classList.remove("active");
+        });
+      });
+
+      
+      
     </script>
 </body>
 </html>

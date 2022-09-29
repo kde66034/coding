@@ -158,7 +158,7 @@
         }
 
         /* option */
-        /* .split span {
+        .split span {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
@@ -169,7 +169,7 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .split.show span:nth-child(1){transition-delay: 100ms;}
+        /* .split.show span:nth-child(1){transition-delay: 100ms;}
         .split.show span:nth-child(2){transition-delay: 150ms;}
         .split.show span:nth-child(3){transition-delay: 200ms;}
         .split.show span:nth-child(4){transition-delay: 250ms;}
@@ -807,47 +807,53 @@
         <script src="../assets/js/common.min.js"></script>
         <script>
             // 글씨 쪼개기
-            // let text = document.querySelector("#section1 .content__item__desc");
-            // let splitText = text.innerText;
-            // let splitWrap = splitText = splitText.split('').join('</span><span>');
-            // text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
-            
+            // let text = document.querySelector('#section1 .content__item__desc');
+            // let splitTextWrap = text.innerText.split('').join('</span><span>');
+            // splitTextWrap = "<span>" + splitTextWrap + "</span>";
+            // text.innerHTML = splitTextWrap;
+
             // 글씨 쪼개기(다중이)
-            document.querySelectorAll(".split").forEach(text => {
+            // let texts = document.querySelectorAll('.content__item__desc');
+            // texts.forEach((text, index) => {
+            //     let splitTextWrap = text.innerText.split('').join('</span><span>');
+            //     splitTextWrap = "<span>" + splitTextWrap + "</span>";
+            //     text.innerHTML = splitTextWrap;
+            // });
+        
+            document.querySelectorAll('.split').forEach((text) => {
                 let splitText = text.innerText;
-                let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
-                splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+                let splitWrap = splitText.split('').join('</span><span aria-hidden = "true">');
+                splitWrap = "<span aria-hidden = 'true'>" + splitWrap + "</span>";
                 text.innerHTML = splitWrap;
                 text.setAttribute("aria-label", splitText);
             });
-
-            function scroll(){
+        
+            function scroll() {
                 let scrollTop = window.scrollY;
-                document.querySelector("#parallax__info .scroll span").innerText = Math.round(scrollTop);
+                document.querySelector('.scroll span').innerText = Math.ceil(scrollTop);
 
-                // CSS 클래스 추가(수동적 방식)
-                // document.querySelectorAll(".content__item").forEach(item => {
-                //     if(scrollTop >= item.offsetTop){
-                //         item.querySelector(".split").classList.add("show");
+                // css 클래스 추가(수동적 방법)
+                // document.querySelectorAll('.content__item').forEach((item) => {
+                //     if(scrollTop >= item.offsetTop - 200) {
+                //         item.querySelector('.split').classList.add('show');
                 //     }
-                // })
-
-                document.querySelectorAll(".content__item").forEach(item => {
-                    if(scrollTop >= item.offsetTop){
-                        item.querySelectorAll(".split span").forEach((span, index) => {
-                            span.classList.add("show");
+                // });
+                
+                document.querySelectorAll('.content__item').forEach((item) => {
+                    if(scrollTop >= item.offsetTop - 200) {
+                        item.querySelector('.split').classList.add('show');
+                        item.querySelectorAll('.split span').forEach((span, index) => {
+                            span.style.transitionDelay = `${index * 50}ms`;
                         });
                     }
                 });
-
                 requestAnimationFrame(scroll);
-
-                // 첫 번째 span --> 0.01
-                // 두 번째 span --> 0.02
-                // 세 번째 span --> 0.03
-                // ... 힌트 : index
             }
             scroll();
+
+            // 첫 번째 span 0.01, 
+            // 두 번째 span 0.02, 
+            // 세 번째 span 0.03
         </script>
     </body>
 </body>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 서치 05</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">검색 이펙트 만들기 05</h2>
+            <p class="t_desc2">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 검색 이펙트를 만들어보도록 하겠습니다. <br>
+                이번 학습 내용을 잘 활용하여 그동안 배웠던 CSS 속성들을 <i>검색창 형식으로 원하는 결과가 나오도록</i>
+                만들어보도록 합시다. 나중에 모르는 게 생겼을 때 공부하기 편하게 말이죠!<br>
+                <br>
+                자, 그럼 시작해볼까요?
+            </p>
+
+     <!-- // 검색 이펙트 만들기  -->
+
+    <hr>
+
+            <h3 class="t_tit2">HTML 소스 보기</h3>
+            <p class="t_desc">
+                검색 이펙트 05의 HTML 소스와 부연 설명(주석 처리됨)이다. <br>
+                CSS 소스를 함께 보고 싶다면 맨 아래의 'CSS 소스 보기' 버튼을 누를 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;body&gt;
+    &lt;header id="header">
+        &lt;h1>Search&lt;/h1>
+        &lt;nav>
+            &lt;ul>
+                &lt;li>&lt;a href="searchEffect01.html">01&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect02.html">02&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect03.html">03&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect04.html">04&lt;/a>&lt;/li>
+                &lt;li class="active">&lt;a href="searchEffect05.html">05&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect06.html">06&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+    &lt;!-- // header -->
+
+    &lt;main id="main">
+        &lt;div class="search__wrap">
+            &lt;span>filter()를 이용하여 속성의 중요도 보여주기&lt;/span>
+            &lt;h1>CSS 속성 검색하기&lt;/h1>
+
+            &lt;div class="search__click">
+                &lt;ul>
+                    &lt;li data-star="0">&lt;a href="#">☆☆☆☆☆&lt;/a>&lt;/li>
+                    &lt;li data-star="1">&lt;a href="#">★☆☆☆☆&lt;/a>&lt;/li>
+                    &lt;li data-star="2">&lt;a href="#">★★☆☆☆&lt;/a>&lt;/li>
+                    &lt;li data-star="3">&lt;a href="#">★★★☆☆&lt;/a>&lt;/li>
+                    &lt;li data-star="4">&lt;a href="#">★★★★☆&lt;/a>&lt;/li>
+                    &lt;li data-star="5">&lt;a href="#">★★★★★&lt;/a>&lt;/li>
+                &lt;/ul>
+                &lt;ul>
+                    &lt;li data-number="1">&lt;a href="#">1개 이상&lt;/a>&lt;/li>
+                    &lt;li data-number="2">&lt;a href="#">2개 이상&lt;/a>&lt;/li>
+                    &lt;li data-number="3">&lt;a href="#">3개 이상&lt;/a>&lt;/li>
+                    &lt;li data-number="4">&lt;a href="#">4개 이상&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/div>
+
+            &lt;div class="search__info">
+                &lt;div>전체 속성 개수 : &lt;span class="num">0&lt;/span>&lt;/div>
+            &lt;/div>
+
+            &lt;div class="search__list">
+                &lt;ul class="line">
+
+                &lt;/ul>
+            &lt;/div>
+        &lt;/div>
+    &lt;/main>
+    &lt;!-- // main -->
+
+    &lt;footer id="footer">
+        &lt;a href="mailto:kde66034@gmail.com">kde66034@gmail.com&lt;/a>
+    &lt;/footer> 
+    &lt;!-- //footer -->
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">JavaScript 소스 보기</h3>
+            <p class="t_desc">
+                검색 이펙트 05의 JavaScript 소스와 부연 설명(주석 처리됨)이다.
+                상수 cssProperty에 검색결과에 띄울 CSS 속성 리스트들을 모두 저장하고 이것들을
+                출력하고 속성 클릭 시 설명이 나오도록 하는 작업과 마지막으로 사용자가 입력한 값과
+                일치하는 속성 name의 desc를 출력시켜주는 스크립트를 짠다.
+                숫자를 별로 치환하는 작업은 아래 주석 처리된 부연 설명을 참조할 것.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">// CSS 속성 리스트 저장
+const cssProperty = [
+    { name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+    { name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
+    { name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
+]
+
+const searchList = document.querySelector(".search__list ul");
+const searchClick = document.querySelectorAll(".search__click ul li");
+const star = document.querySelectorAll(".search__click ul li a")
+const searchNum = document.querySelector(".search__info .num");        // 전체 개수
+
+let count=0;
+
+// 출력하기
+function updateList(list){
+    listCSS = "";
+
+    for(const data of list){
+        starList = star[data.star].innerText;   // 숫자를 별로 치환함
+        count++;
+
+        listCSS += `&lt;li>&lt;strong>${data.name}&lt;/strong> : ${data.desc} &lt;em>${starList}&lt;/em>&lt;/li>`;
+        // 속성 이름 : 설명 &lt;em>숫자를 별로 치환한 값&lt;/em>
+    }
+    searchNum.innerHTML = count;
+    count = 0;
+
+    searchList.innerHTML = listCSS;
+}
+updateList(cssProperty);
+
+// 클릭하기
+searchClick.forEach(star => {
+    star.addEventListener("click", () => {
+        const target = star.dataset.star;
+        const target2 = star.dataset.number;
+
+        const filterList = cssProperty.filter(data => data.star == target || data.star >= target2);
+        
+        searchNum.innerHTML = filterList.length;        // 속성 개수 표시
+
+        updateList(filterList);
+    });
+});
+</code></pre>
+            </div>
+
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/searchEffect05.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/searchEffect05.html">원본(HTML/JS) 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/search.css">CSS 소스 보기</a>
+            </div>
+            <!-- // JS소스 -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
