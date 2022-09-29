@@ -1,165 +1,169 @@
+
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마우스 이펙트 06</title>
-    <link rel="stylesheet" href="../assets/css/mouse04.css">
-    <link rel="stylesheet" href="../assets/css/dracula2.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>마우스 이펙트 06</title>
 
-    <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
-    <style>
-      /* mouseType */
-      .mouse__wrap {
-        color: #fff;
-        width: 100%;
-        height: 100vh;
-        cursor: none;
-      }
-      .mouse__img {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-      }
-      .mouse__text {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -20%);
-        font-size: 3vw;
-        line-height: 1.5;
-      }
-      .mouse__text .line {
-        width: 100%;
-        display: flex;
-      }
-      .mouse__text .line .left {
-        width: 50vw;
-        color: orange;
-        overflow: hidden;
-        transform: skew(0deg, -15deg);
-      }
-      .mouse__text .line .left .spanWrap {
-        width: 100vw;
-        text-align: center;
-      }
-      .mouse__text .line .right {
-        width: 50vw;
-        overflow: hidden;
-        transform: skew(0deg, 15deg);
-      }
-      .mouse__text .line .right .spanWrap {
-        width: 100vw;
-        text-align: center;
-        transform: translateX(-50vw);
-      }
-      .mouse__text span {
-        display: inline-block;
-      }
-      .mouse__cursor {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        z-index: 9999;
-        border-radius: 50%;
-        background-color: rgba(255,255,255,0.9);
-        user-select: none;
-        pointer-events: none;
-        mix-blend-mode: difference;
-        transition: transform 0.3s;
-      }
-      .mouse__cursor.active {
-        transform: scale(5);
-      }
-    </style>
-</head>
-<body class="img04">
-    <header id="header">
-        <h1>JAVASCRIPT MOUSE EFFECT 06</h1>
-        <p>마우스 이펙트 - 텍스트 효과</p>
-        <ul>
-            <li><a href="mouseEffect01.html">01</a></li>
-            <li><a href="mouseEffect02.html">02</a></li>
-            <li><a href="mouseEffect03.html">03</a></li>
-            <li><a href="mouseEffect04.html">04</a></li>
-            <li><a href="mouseEffect05.html">05</a></li>
-            <li class="active"><a href="mouseEffect06.html">06</a></li>
-            <li><a href="mouseEffect07.html">07</a></li>
-        </ul>
-    </header>
-    <!-- //header -->
+        <link rel="stylesheet" href="../assets/css/mouse04.css" />
+        <link rel="stylesheet" href="../assets/css/dracula.css" />
 
-    <main id="main">
-      <section id="mouseType">
-        <div class="mouse__cursor"></div>
-        <div class="mouse__wrap">
-          <div class="mouse__img">
-            <figure>
-              <img src="../assets/img/effect_bg01.jpg" alt="이미지">
-            </figure>
-            <div class="mouse__text">
-              <div class="line">
-                <div class="left">
-                  <div class="spanWrap">
-                    <span class="spanSlow">Pain Past</span>
-                  </div>
-                </div>
-                <div class="right">
-                  <div class="spanWrap">
-                    <span class="spanSlow">Pain Past</span>
-                  </div>
-                </div>
-              </div>
-              <div class="line">
-                <div class="left">
-                  <div class="spanWrap">
-                    <span class="spanFast">is pleasure.</span>
-                  </div>
-                </div>
-                <div class="right">
-                  <div class="spanWrap">
-                    <span class="spanFast">is pleasure.</span>
-                  </div>
-                </div>
-              </div>
-              <div class="line">
-                <div class="left">
-                  <div class="spanWrap">
-                    <span class="spanSlow">지나간 고통은</span>
-                  </div>
-                </div>
-                <div class="right">
-                  <div class="spanWrap">
-                    <span class="spanSlow">지나간 고통은</span>
-                  </div>
-                </div>
-              </div>
-              <div class="line">
-                <div class="left">
-                  <div class="spanWrap">
-                    <span class="spanFast">쾌락이다.</span>
-                  </div>
-                </div>
-                <div class="right">
-                  <div class="spanWrap">
-                    <span class="spanFast">쾌락이다.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- //main -->
+        <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
+        <style>
+            /* mouseType */
+            .mouse__wrap {
+                color: #fff;
+                width: 100%;
+                height: 100vh;
+                cursor: none;
+            }
+            .mouse__img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+            }
+            .mouse__text {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -20%);
+                font-size: 3vw;
+                line-height: 1.5;
+            }
+            .mouse__text .line {
+                width: 100%;
+                display: flex;
+            }
+            .mouse__text .line .left {
+                width: 50vw;
+                color: orange;
+                overflow: hidden;
+                transform: skew(0deg, -15deg);
+            }
+            .mouse__text .line .left .spanWrap {
+                width: 100vw;
+                text-align: center;
+            }
+            .mouse__text .line .right {
+                width: 50vw;
+                overflow: hidden;
+                transform: skew(0deg, 15deg);
+            }
+            .mouse__text .line .right .spanWrap {
+                width: 100vw;
+                text-align: center;
+                transform: translateX(-50vw);
+            }
+            .mouse__text span {
+                display: inline-block;
+            }
+            .mouse__cursor {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                z-index: 9999;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.9);
+                user-select: none;
+                pointer-events: none;
+                /* 반전효과 */
+                mix-blend-mode: difference;
+                transition: transform 0.3s;
+            }
+            .mouse__cursor.active {
+                transform: scale(5);
+            }
+        </style>
+    </head>
 
-    <footer id="footer">
-        <div class="modal__wrap">
+    <body class="img04">
+        <header id="header">
+            <h1><a href="mouseEffect.html">JAVASCRIPT MOUSE EFFECT 06</a></h1>
+            <p>마우스 이펙트 : 텍스트 효과</p>
+            <ul>
+                <li><a href="mouseEffect01.html">01</a></li>
+                <li><a href="mouseEffect02.html">02</a></li>
+                <li><a href="mouseEffect03.html">03</a></li>
+                <li><a href="mouseEffect04.html">04</a></li>
+                <li><a href="mouseEffect05.html">05</a></li>
+                <li class="active"><a href="mouseEffect06.html">06</a></li>
+                <li><a href="mouseEffect07.html">07</a></li>
+            </ul>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <section id="mouseType">
+                <div class="mouse__cursor"></div>
+                <div class="mouse__wrap">
+                    <div class="mouse__img">
+                        <figure>
+                            <img src="../assets/img/effect_bg01.jpg" alt="" />
+                        </figure>
+                    </div>
+                    <div class="mouse__text">
+                        <div class="line">
+                            <div class="left">
+                                <div class="spanWrap">
+                                    <span class="spanSlow">Pain Fast</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="spanWrap">
+                                    <span class="spanSlow">Pain Fast</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="left">
+                                <div class="spanWrap">
+                                    <span class="spanFast">is pleasure.</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="spanWrap">
+                                    <span class="spanFast">is pleasure.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="left">
+                                <div class="spanWrap">
+                                    <span class="spanSlow">지나간 고통은</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="spanWrap">
+                                    <span class="spanSlow">지나간 고통은</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="left">
+                                <div class="spanWrap">
+                                    <span class="spanFast">쾌락이다.</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="spanWrap">
+                                    <span class="spanFast">쾌락이다.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+          <div class="modal__wrap">
             <div class="modal__btn">소스 보기</div>
             <div class="modal__cont">
                 <div class="modal__box">
@@ -399,49 +403,45 @@
                     </svg>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- //footer -->
+          </div>
+        </footer>
+        <!-- //footer -->
 
-    <script src="../assets/js/highlight.min.js"></script>
-    <script src="../assets/js/common.min.js"></script>
-    <script src="../assets/js/gsap.min.js"></script>
+        <script src="../assets/js/highlight.min.js"></script>
+        <script src="../assets/js/common.js"></script>
+        <script src="../assets/js/gsap.min.js"></script>
+        <script>
+            const mouseMove = (e) => {
+                let positionSlow = (e.pageX - window.innerWidth / 2) * 0.1;
+                let positionFast = (e.pageX - window.innerWidth / 2) * 0.2;
 
-    <script>
-      const mouseMove = (e) => {
-        let positionSlow = (e.pageX - window.innerWidth / 2) * 0.1;
-        let positionFast = (e.pageX - window.innerWidth / 2) * 0.2;
+                gsap.to(".spanSlow", { duration: 0.4, x: positionSlow });
+                gsap.to(".spanFast", { duration: 0.4, x: -positionFast });
+                gsap.to(".mouse__cursor", { duration: 0.3, left: e.pageX - 5, top: e.pageY - 5 });
+            };
 
-        gsap.to(".spanSlow", {duration: 0.4, x: positionSlow});
-        gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
-        gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX - 5, top: e.pageY - 5});
-      }
-      window.addEventListener("mousemove", mouseMove);
+            window.addEventListener("mousemove", mouseMove);
 
-      //마우스 커서가 글씨 위에 올라가면 크기는 5배(2번) 정도 크게 작업... 글씨 반전효과(5번) 추가
-      
-      const text = document.querySelectorAll(".spanSlow");
-      const text2 = document.querySelectorAll(".spanFast");
-      
-      text.forEach((e) => {
-        e.addEventListener("mouseenter", () => {
-          document.querySelector(".mouse__cursor").classList.add("active");
-        });
-        e.addEventListener("mouseleave", () => {
-          document.querySelector(".mouse__cursor").classList.remove("active");
-        });
-      });
-      text2.forEach((e) => {
-        e.addEventListener("mouseenter", () => {
-          document.querySelector(".mouse__cursor").classList.add("active");
-        });
-        e.addEventListener("mouseleave", () => {
-          document.querySelector(".mouse__cursor").classList.remove("active");
-        });
-      });
+            //마우스 커서가 글씨 위에 올라가면 크기는 5배(2번) 정도 크게 작업... 글씨 반전효과(5번) 추가
 
-      
-      
-    </script>
-</body>
+            const text = document.querySelectorAll(".spanSlow");
+            const text2 = document.querySelectorAll(".spanFast");
+            text.forEach((e) => {
+                e.addEventListener("mouseenter", () => {
+                    document.querySelector(".mouse__cursor").classList.add("active");
+                });
+                e.addEventListener("mouseleave", () => {
+                    document.querySelector(".mouse__cursor").classList.remove("active");
+                });
+            });
+            text2.forEach((e) => {
+                e.addEventListener("mouseenter", () => {
+                    document.querySelector(".mouse__cursor").classList.add("active");
+                });
+                e.addEventListener("mouseleave", () => {
+                    document.querySelector(".mouse__cursor").classList.remove("active");
+                });
+            });
+        </script>
+    </body>
 </html>
