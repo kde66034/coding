@@ -1929,6 +1929,28 @@ const text4 = arrNum.join('-');     // 전화번호 표기 등에 쓰이기 적�
                     return el;
                 }
             }).join('').split(''));
+
+            // 0929
+
+            // e, f 출력 3가지
+
+            //1
+            console.log(`${num[4]}, ${num[5]}`);
+            
+            //2
+            const numPush = num.pop(num.push('e'));
+            const numPush2 = num.pop(num.push('f'));
+            console.log(numPush + ", " + numPush2);
+
+            //3
+            const numShift = num.shift(num.unshift('e'));
+            const numShift2 = num.shift(num.unshift('f'));
+            console.log(numShift + ", " + numShift2);
+
+            //4
+            const numFind = num.find(el => el === 'e');
+            const numFind2 = num.find(el => el === 'f');
+            console.log(numFind + ", " + numFind2);
         }
     </script>
 </body>
