@@ -447,18 +447,19 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         let a = [2,3,2,4,5,6,7,2,3,3,2];
         let value = 0;
         for( i=0; i&lt;a.length; i++){      // i가 10이 될때까지
-            if( a[i] != 2 ){    // a 배열 중 2가 아닌 데이터가 있으면
+            if( a[i] !== "2" ){    // a 배열 중 문자열 "2"가 아닌 데이터가 있으면
                 value++;        // value수를 증가시켜라
             }
         }
-        document.write(value);  // 2 아닌 데이터 개수가 7개임
-                                // 정답 == 7
+        document.write(value);  // a 배열에는 문자열2는 존재하지 않음, 즉 정답은 a 배열 안 데이터개수 11이 됨
+                                // 정답 == 11
     }
     func();
 }
 </code></pre>
         </div>
     </div>
+
     <!-- 7 -->
 
 
