@@ -127,20 +127,25 @@
         }
 
         /* notice1 */
-        .notice1__wrap {
-            width: 1160px;
+        #notice1__wrap {
+            width: 100%;
             margin-bottom: 40px;
             background: #f3f7f8;
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
-        .notice1__wrap > h2 {
+        #notice1__wrap > h2 {
             text-align: center;
             font-size: 28px;
             margin-bottom: 20px;
             font-weight: 500;
         }
         .box__wrap {
+            width: 1160px;
             display: flex;
             justify-content: space-between;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
         .notice__box {
             width: 20%;
@@ -347,8 +352,8 @@
     </style>
 </head>
 <body>
-    <div id="wrap" class="container">
-        <section id="headerType">
+    <div id="wrap">
+        <section id="headerType" class="container">
             <div class="header__inner">
                 <div class="header__logo">
                     <a href="#"> <img src="assets/img/Test04/logo.jpg" alt="로고"> </a>
@@ -365,7 +370,7 @@
         </section>
         <!-- // headerType -->
 
-        <header id="sliderType01">
+        <header id="sliderType01" class="container">
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
@@ -377,7 +382,7 @@
         <!-- // banner slider Type -->
 
         <section id="notice1">
-            <div class="notice1__wrap">
+            <div id="notice1__wrap">
                 <h2>KITA 사업 일정</h2>
                 <div class="box__wrap">
                     <div class="notice__box">
@@ -421,7 +426,7 @@
         </section>
         <!-- // notice1 -->
 
-        <section id="notice2">
+        <section id="notice2" class="container">
             <div class="bodojaryo">
                 <h3>보도자료 | <em>언론기고</em></h3>
                 <ul class="document__title">
@@ -453,7 +458,7 @@
         </section>
         <!-- // notice2 -->
 
-        <section id="notice3">
+        <section id="notice3" class="container">
             <div class="onlineseminar">
                 <h3>온라인세미나</h3>
                 <p>무역협회에서 실시하는 국내 무역 관련 세미나,<br>설명회 등을 VOD 서비스로 제공</p>
