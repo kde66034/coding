@@ -357,14 +357,16 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     function func(){
-        let i = 12, hap = 0;
+        let i = 6, hap = 0;
         while(i > 1){               
             if( i % 2 == 0){        
-                hap += i;           
-            }
+                hap += i;
+            } else {
+                break;
+            }     
             i--;                    
         }
-        document.write(hap);        
+        document.write(hap - i);        
     }
     func(); 
 }
@@ -507,7 +509,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         c = b*a;
         result = a &lt; b ? b*a : c;
 
-        document.write(result);
+        document.write((result + a) - (b + c));
     }
     func13();
 }
