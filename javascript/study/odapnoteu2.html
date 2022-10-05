@@ -357,16 +357,19 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     function func(){
-        let i = 12, hap = 0;
-        while(i > 1){               // ① i가 1보다 작아질 때까지...
-            if( i % 2 == 0){        // ③ i를 2으로 나눴을 때 나머지 값이 0이 남는 것 ==  2, 4, 6, 8, 10, 12
-                hap += i;           // ④ hap에다가 12+10+8+6+4+2 저장함
+        let i = 6, hap = 0;
+        while(i > 1){               // i가 1보다 작아질 때까지...
+            if( i % 2 == 0){        // i를 2으로 나눴을 때 나머지 값이 0이 남는 것 ==  2, 4, 6
+                hap += i;           // hap에다가 6+4+2 저장함
+            } else {
+                break;              // 6에서 break되어 4+2는 저장하지 못함
+                                    // i는 5에서 멈춤
             }
-            i--;                    // ② 12,11,10... 작아짐
+            i--;                    // 654... 작아짐
         }
-        document.write(hap);        // 결론적으로 ④ 12+10+8+6+4+2의 합인 42가 답이 된다.
+        document.write(hap - i);        // 결론적으로 hap == 6 / i == 5 / 6-5==1
     }
-    func();         // 정답 == 42
+    func();         // 정답 == 1
 }
 </code></pre>
         </div>
@@ -523,9 +526,9 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         // 20보다 10이 클 경우 b와 a를 곱하라 == 200  ||   아닌 경우 c 출력하라는 뜻
         // c를 출력해야 함 == 200
 
-        document.write(result);         // 정답 == 200
+        document.write((result + a) - (b + c));        // 220 - 210 == 10
     }
-    func13();
+    func13();   // 정답 == 10
 }
 </code></pre>
         </div>
@@ -557,21 +560,20 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
     function func(s){
         let answer = "";
         for(let x of s){        // x 변수에 "CodingNote" 문자열 저장
-            if( x != 'C') answer += '+';    // x 중 'C'가 아닌 것들을 '+'으로 바꾼다
+            if( x !== 'C') answer += '+';    // x 중 'C'가 아닌 것들을 '+'으로 바꾼다
             else answer += x;       // 아니면 그대로 두기?
         }
-        return answer;              // "CodingNote" 중 c가 아닌 걸 전부 +으로 바꿈
-                                    // 정답 == C+++++++++
+        return answer;              // "codingNote" 중 'C'가 아닌 걸 전부 +으로 바꿈
+                                    // 정답 == ++++++++++
     }
     
-    let str = "CodingNote";
+    let str = "codingNote";
     document.write(func(str));
 }
 </code></pre>
         </div>
     </div>
     <!-- w########## -->
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
