@@ -857,7 +857,15 @@
         <script src="../assets/js/common.min.js"></script>
         <script>
 
-            // reveal 클래스 자식에 글씨만 있다면, 가상으로 span 태그를 만들어서 넣어주세요.
+            // reveal 클래스 자식에 글씨가 있는 경우, 가상으로 span 태그를 만들어서 넣기
+            revealText.forEach((el)=>{
+                let splitText = el.innerText;           
+
+                // console.log(splitText)
+                if(splitText){
+                    el.innerHTML = '<span>' + splitText + '</span>';
+                }
+            });     
 
             function scroll() {
                 let scrollTop = window.scrollY;
