@@ -511,10 +511,23 @@
 
             <h3 class="t_tit2">JS 소스</h3>
             <p class="t_desc">
-                
+                reveal 클래스 자식에 글씨가 있는 경우 그 글씨를 span 태그로 감싸도록 스크립트를 짜고, 
+                스크롤 값이 섹션 영역에 도달했을 경우 show 클래스값을 붙여 리빌 효과를 주도록 스크립트를 짰다.
             </p>
             <div class="t_code">
 <pre><code class="language-js">&lt;script>
+    const revealText = document.querySelectorAll(".reveal");
+
+    // reveal 클래스 자식에 글씨가 있는 경우, 가상으로 span 태그를 만들어서 넣기
+    revealText.forEach((el)=>{
+        let splitText = el.innerText;           
+
+        // console.log(splitText)
+        if(splitText){
+            el.innerHTML = '&lt;span>' + splitText + '&lt;/span>';
+        }
+    });  
+    
     function scroll() {
         let scrollTop = window.scrollY;     // 스크롤탑값
         
