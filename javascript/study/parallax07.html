@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 패럴럭스07</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">패럴럭스 이펙트 07</h2>
+            <p class="t_desc2">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 패럴럭스(parallax, 패럴랙스) 이펙트를 만들어보도록 하겠습니다. 
+                먼저 <i>parallax란, '시차(視差)'라는 의미를 가진 천문학 용어</i>이며, 이번 포스팅에서 내비게이션 바에서 특정 섹션으로 가는 버튼을 
+                누르면 해당 섹션으로 시차를 두고 스무스하게 이동시켜 주는 효과를 만들어보고자 합니다. <br>
+                <br>
+                이번 패럴럭스 이펙트 07에서는 리빌(reveal) 효과 애니메이션을 주겠습니다.
+            </p>
+
+            <!-- // 패럴럭스 이펙트 만들기  -->
+
+            <hr>
+
+            <h3 class="t_tit2">HTML 소스
+            </h3>
+            <p class="t_desc">
+                <i>애니메이션을 주고자 하는 이미지와 텍스트 영역에 reveal 클래스값</i>을 준다.
+            </p>
+            <p class="t_box">
+                · <i>reveal-RTL</i> : 우측에서 좌측으로 리빌 효과 <br>
+                · <i>reveal-TTB</i> : 상단에서 하단으로 리빌 효과 <br>
+                · <i>reveal-BTT</i> : 하단에서 상단으로 리빌 효과 <br>
+                · <i>reveal-TWO</i> : 두 가지 애니메이션을 동시에 줌
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;body class="img10">
+    &lt;header id="header">
+        &lt;h1>JAVASCRIPT PARALLAX EFFECT 07&lt;/h1>
+        &lt;p>패럴럭스 이펙트 - 리빌 효과&lt;/p>
+        &lt;ul>
+            &lt;li>&lt;a href="parallaxEffect01.html">01&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="parallaxEffect02.html">02&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="parallaxEffect03.html">03&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="parallaxEffect04.html">04&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="parallaxEffect05.html">05&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="parallaxEffect06.html">06&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="parallaxEffect07.html">07&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/header>
+    &lt;!-- //header -->
+
+    &lt;nav id="parallax__nav">
+        &lt;ul>
+            &lt;li class="active">&lt;a href="#section1">메뉴1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section2">&lt;span>메뉴2&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section3">&lt;span>메뉴3&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section4">&lt;span>메뉴4&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section5">&lt;span>메뉴5&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section6">&lt;span>메뉴6&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section7">&lt;span>메뉴7&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section8">&lt;span>메뉴8&lt;/span>&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#section9">&lt;span>메뉴9&lt;/span>&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/nav>
+    &lt;!-- //parallax__nav -->
+
+    &lt;main id="parallax__cont">
+        &lt;div id="contents">
+            &lt;section id="section1" class="content__item">
+                &lt;span class="content__item__num">01&lt;/span>
+                &lt;h2 class="content__item__title">section1&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal">결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section1 -->
+
+            &lt;section id="section2" class="content__item">
+                &lt;span class="content__item__num">02&lt;/span>
+                &lt;h2 class="content__item__title">section2&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal reveal-RTL">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal reveal-RTL">인생에서 많은 패배에 직면하겠지만 결코 패배하지 말라.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section2 -->
+
+            &lt;section id="section3" class="content__item">
+                &lt;span class="content__item__num">03&lt;/span>
+                &lt;h2 class="content__item__title">section3&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal reveal-TTB">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal reveal-TTB">“내 너 그럴 줄 알았다” 알았으면 제발 미리 말 해줘라.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section3 -->
+
+            &lt;section id="section4" class="content__item">
+                &lt;span class="content__item__num">04&lt;/span>
+                &lt;h2 class="content__item__title">section4&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal reveal-BTT">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal reveal-BTT">늦었다고 생각할 때가 진짜 너무 늦었다.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section4 -->
+
+            &lt;section id="section5" class="content__item">
+                &lt;span class="content__item__num">05&lt;/span>
+                &lt;h2 class="content__item__title">section5&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal reveal-TWO">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal reveal-TWO">즐길 수 없으면 피하라.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section5 -->
+
+            &lt;section id="section6" class="content__item">
+                &lt;span class="content__item__num">06&lt;/span>
+                &lt;h2 class="content__item__title">section6&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal reveal-TWO reveal-RTL">생활은 과감한 모험이거나 아니면 아무것도 아니다.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section6 -->
+
+            &lt;section id="section7" class="content__item">
+                &lt;span class="content__item__num">07&lt;/span>
+                &lt;h2 class="content__item__title">section7&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal reveal-TWO reveal-TTB">어려운 길은 길이 아니다.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section7 -->
+
+            &lt;section id="section8" class="content__item">
+                &lt;span class="content__item__num">08&lt;/span>
+                &lt;h2 class="content__item__title">section8&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal reveal-TWO reveal-BTT">잠을 자도 피로가 안 풀리냐.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section8 -->
+
+            &lt;section id="section9" class="content__item">
+                &lt;span class="content__item__num">09&lt;/span>
+                &lt;h2 class="content__item__title">section9&lt;/h2>
+                &lt;figure class="content__item__imgWrap reveal">
+                    &lt;div class="content__item__img">&lt;/div>
+                &lt;/figure>
+                &lt;p class="content__item__desc reveal">인생은 위대한 모험이거나 아니면 아무것도 아니다.&lt;/p>
+            &lt;/section>
+            &lt;!-- //section9 -->
+        &lt;/div>
+    &lt;/main>
+    &lt;!-- //main -->
+
+    &lt;aside id="parallax__info">
+        &lt;div class="scroll">scrollTop : &lt;span>0&lt;/span>px&lt;/div>
+    &lt;/aside>
+    &lt;!-- //parallax__info -->
+
+    &lt;footer id="footer">
+        &lt;div class="modal__wrap">
+        &lt;/div>
+    &lt;/footer>
+    &lt;!-- //footer -->
+&lt;/body>
+</code></pre>
+            </div>
+            <!-- // html -->
+
+            <h3 class="t_tit2">CSS 소스</h3>
+            <p class="t_desc">
+                패럴럭스 효과에만 적용되는 CSS 소스이다. 공통/초기화 부분 CSS는 하단의 CSS 소스 보기 버튼을 눌러 확인할 것. 
+                <i>reveal 효과는 /* option */ 항목을 참조</i>할 것. <i>키프레임을 만들어서 animation 태그에 연결</i>시켜주는 작업을 했다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">&lt;style>
+    /* parallax__nav */
+    #parallax__nav {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 2000;
+        background-color: rgba(0,0,0,0.4);
+        padding: 20px 30px;
+        border-radius: 50px;
+        transition: top .4s ease;
+    }
+    #parallax__nav li {
+        display: inline;
+        margin: 0 5px;
+    }
+    
+    #parallax__nav li a {
+        display: inline-block;
+        height: 30px;
+        padding: 5px 20px;
+        text-align: center;
+        line-height: 30px;
+    }
+    #parallax__nav li.active a {
+        background: #fff;
+        color: #000;
+        border-radius: 20px;
+        box-sizing: content-box;
+    }
+
+    #parallax__cont {
+        max-width: 1600px;
+        width: 98%;
+        margin: 0 auto;
+        /* background-color: rgba(255,255,255,0.1); */
+    }
+    .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255,255,255,0.1); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 7vw;
+    }
+    .content__item:nth-child(even) {  /* even == 짝수만 선택 */
+        margin-left: 0;
+        text-align: right;
+    }
+    .content__item__num {
+        font-size: 35vw;
+        font-family: 'Lato';
+        font-weight: 100;
+        position: absolute;
+        left: -5vw;
+        top: -16vw;
+        opacity: 0.07;
+        z-index: -2;
+    }
+    .content__item:nth-child(even) .content__item__num {
+        left: auto;
+        right: -5vw;
+    }
+    .content__item__title {
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        /* background: #000; */
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+    }
+    .content__item__img {
+        position: absolute;
+        background-image: url(../assets/img/effect_bg10.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -5%;
+        filter: saturate(0%);
+        /* transition: all 1s; */
+    }
+    .content__item:nth-child(1) .content__item__img {
+        background-image: url(../assets/img/effect_bg10.jpg);
+    }
+    .content__item:nth-child(2) .content__item__img {
+        background-image: url(../assets/img/effect_bg09.jpg);
+    }
+    .content__item:nth-child(3) .content__item__img {
+        background-image: url(../assets/img/effect_bg08.jpg);
+    }
+    .content__item:nth-child(4) .content__item__img {
+        background-image: url(../assets/img/effect_bg07.jpg);
+    }
+    .content__item:nth-child(5) .content__item__img {
+        background-image: url(../assets/img/effect_bg06.jpg);
+    }
+    .content__item:nth-child(6) .content__item__img {
+        background-image: url(../assets/img/effect_bg05.jpg);
+    }
+    .content__item:nth-child(7) .content__item__img {
+        background-image: url(../assets/img/effect_bg04.jpg);
+    }
+    .content__item:nth-child(8) .content__item__img {
+        background-image: url(../assets/img/effect_bg03.jpg);
+    }
+    .content__item:nth-child(9) .content__item__img {
+        background-image: url(../assets/img/effect_bg02.jpg);
+    }
+    .content__item__desc {
+        font-size: 4vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -4vw;
+        word-break: keep-all;
+    }
+    .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: -4vw;
+    }
+
+    /* info */
+    #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 20px 30px;
+        border-radius: 10px;
+    }
+    #parallax__info li, .scrollTop {
+        line-height: 1.4;
+    }
+
+    /* option */
+    .reveal > div,
+    .reveal > span {
+        opacity: 0;
+    }
+    .reveal.show > div {
+        animation: opacity 1s linear forwards;
+    }
+    .reveal.show > span {
+        opacity: 1;
+    }
+    .reveal {
+        position: relative;
+    }
+    .reveal::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: #fff;
+        z-index: 1;
+    }
+    .reveal.reveal-TWO::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        z-index: 1;
+        background: orange;
+    }
+
+    /* 1개 */
+    .reveal.show::before {
+        animation: reveal 1s;
+    }
+    .reveal.reveal-RTL.show::before {
+        animation: reveal-RTL 1s;
+    }
+    .reveal.reveal-TTB.show::before {
+        animation: reveal-TTB 1s;
+    }
+    .reveal.reveal-BTT.show::before {
+        animation: reveal-BTT 1s;
+    }
+
+    /* 2개 */
+    .reveal.show::after {
+        animation: reveal 1s 0.3s;
+    }
+    .reveal.reveal-RTL.show::after {
+        animation: reveal-RTL 1s 0.3s;
+    }
+    .reveal.reveal-TTB.show::after {
+        animation: reveal-TTB 1s 0.3s;
+    }
+    .reveal.reveal-BTT.show::after {
+        animation: reveal-BTT 1s 0.3s;
+    }
+
+    @keyframes opacity {
+        0%      {opacity: 0;}
+        60%     {opacity: 0;}
+        70%     {opacity: 1;}
+        100%    {opacity: 1;}
+    }
+    @keyframes reveal {
+        0%      {width: 0;     left: 0;}
+        50%     {width: 100%;  left: 0;}
+        80%     {width: 100%;  left: 0;}
+        100%    {width: 0;     left: 100%;}
+    }
+    @keyframes reveal-RTL {
+        0%      {width: 0;     right: 0;     left: auto;}
+        50%     {width: 100%;  right: 0;     left: auto;}
+        80%     {width: 100%;  right: 0;     left: auto;}
+        100%    {width: 0;     right: 100%;  left: auto;}
+    }
+    @keyframes reveal-TTB {
+        0%      {width: 100%;  height: 0;     top: 0;}
+        50%     {width: 100%;  height: 100%;  top: 0;}
+        80%     {width: 100%;  height: 100%;  top: 0;}
+        100%    {width: 100%;  height: 0;     top: 100%;}
+    }
+    @keyframes reveal-BTT {
+        0%      {width: 100%;  height: 0;     bottom: 0;     top: auto;}
+        50%     {width: 100%;  height: 100%;  bottom: 0;     top: auto;}
+        80%     {width: 100%;  height: 100%;  bottom: 0;     top: auto;}
+        100%    {width: 100%;  height: 0;     bottom: 100%;  top: auto;}
+    }
+
+    .content__item__num { display: none; }
+    .content__item__title { display: none; }
+
+    /* 반응형 */
+    @media (max-width: 800px) {
+        #parallax__cont {
+            margin-top: 70vw;
+        }
+        #parallax__nav {
+            padding: 10px;
+            right: auto;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px;
+            background-color: rgba(0,0,0,0.8);
+        }
+        #parallax__nav li {
+            display: block;
+            margin: 5px;
+        }
+        #parallax__nav li a {
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            line-height: 1;
+        }
+        #parallax__nav li.active a {
+            border-radius: 5px;
+        }
+        #parallax__info {
+            left: 10px;
+            bottom: 10px;
+        }
+    }
+&lt;/style>
+</code></pre>
+            </div>
+            <!-- // css -->
+
+            <h3 class="t_tit2">JS 소스</h3>
+            <p class="t_desc">
+                
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">&lt;script>
+    function scroll() {
+        let scrollTop = window.scrollY;     // 스크롤탑값
+        
+        const reveal = document.querySelectorAll(".reveal");    // 리빌 효과 상수
+
+        reveal.forEach(el => {
+            let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+            let revealDelay = el.dataset.delay;     // 딜레이 주기
+
+            // if(scrollTop > revealOffset - window.innerHeight/2){
+            //     el.classList.add("show");     // 스크롤 위치가 영역에 도달할 시 show 붙여주기
+            // }
+
+            if(scrollTop >= revealOffset - window.innerHeight){
+                if(revealDelay == undefined){
+                    el.classList.add("show");
+                } else {
+                    setTimeout(() => {
+                        el.classList.add("show");
+                    }, revealDelay)
+                }
+            }
+        });
+
+        requestAnimationFrame(scroll);
+    }
+    scroll();
+&lt;/script>
+</code></pre>
+            </div>
+            <!-- // js01 -->
+
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/parallaxEffect07.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/parallaxEffect07.html">원본(HTML/JS) 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/parallax.css">CSS 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://kde66034.github.io/coding/javascript/effect/parallaxEffect07.html">원본 사이트 바로가기</a>
+            </div>
+            <!-- //  -->
+
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
