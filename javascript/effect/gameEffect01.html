@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 이펙트 01</title>
+
+    <link rel="stylesheet" href="../assets/css/bg.css">
+    <link rel="stylesheet" href="../assets/css/game.css">
+</head>
+<body>
+    <header id="header">
+        <h1>Coding Note's Game World</h1>
+        <div class="time"></div>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <div class="agent">agent</div>
+    </footer>
+    <!-- // footer -->
+
+    <!-- script -->
+    <script>
+        function printTime(){
+            const clock = document.querySelector(".time");
+            const now = new Date();
+            const nowTime = `${now.getFullYear()}년 ${(now.getMonth()+1)}월 ${now.getDate()}일 ${now.getHours()}시 ${now.getMinutes()}분 ${now.getSeconds()}초`;
+
+            clock.innerText = nowTime;
+            setTimeout("printTime()", 1000);
+        }
+        function printAgent() {
+            const agent = document.querySelector(".agent");
+            const os = navigator.userAgent.toLocaleLowerCase();
+
+            agent.innerText = os;
+
+            if(os.indexOf("window") >= 0){
+                agent.innerText = "현재 Windows를 사용하고 있습니다.";
+                document.querySelector("body").classList.add("window");
+            } else if(os.indexOf("macintosh") >= 0){
+                agent.innerText = "현재 Mac을 사용하고 있습니다.";
+                document.querySelector("body").classList.add("mac");
+            } else if(os.indexOf("iphone") >= 0){
+                agent.innerText = "현재 iPhone을 사용하고 있습니다.";
+                document.querySelector("body").classList.add("iphone");
+            } else if(os.indexOf("android") >= 0){
+                agent.innerText = "현재 Android를 사용하고 있습니다."
+                document.querySelector("body").classList.add("android");
+            }
+        }
+
+        window.onload = function() {
+            printTime();
+            printAgent();
+        }
+    </script>
+</body>
+</html>
