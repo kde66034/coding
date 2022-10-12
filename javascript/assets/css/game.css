@@ -1,12 +1,12 @@
-@import url('https://webfontworld.github.io/neodgm/NeoDunggeunmo.css');
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'NeoDunggeunmo';
+    font-family: 'Galmuri11';
     font-weight: normal;
-    cursor: url(../img/kuromi_cursor.cur), auto;
+    cursor: url(../img/mymelody_cursor.cur), auto;
 }
 body {
     width: 100%;
@@ -87,7 +87,7 @@ body {
 .window #footer {}
 
 /* 마우스 커서 */
-.mouse__cursor {
+/* .mouse__cursor {
     position: absolute;
     left: 0;
     top: 0;
@@ -98,4 +98,4 @@ body {
     background: url(../img/kuromi_cursor.png);
     background-size: contain;
     z-index: 10000;
-  }
+  } */

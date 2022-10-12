@@ -62,7 +62,7 @@
     border-radius: 5px;
 }
 .music__control .progress .bar {
-    width: 30%;
+    width: 0%;
     height: inherit;
     background: #7fff5b;
     border-radius: 5px;
@@ -79,18 +79,96 @@
     justify-content: space-between;
     margin-top: 30px;
 }
-.music__control .repeat {}
-.music__control .repeat_one {}
-.music__control .shuffle {}
-.music__control .prev {}
-.music__control .play {}
-.music__control .stop {}
-.music__control .next {
-    max-width: 48px;
-    max-height: 48px;
-    background: url(../img/music_icon.svg) no-repeat;
-    background-position: 0 -8px;
+.music__control .repeat {
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-position: -238px 0px;
 }
-.music__control .list {}
+.music__control .repeat_one {
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-position: -286px 0px;
+}
+.music__control .shuffle {
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-position: -332px 0px;
+}
+.music__control .prev {
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-position: -96px 0px;
+}
+.music__control .play {
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-position: 0 0px;
+}
+.music__control .stop {
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-position: -48px 0px;
+}
+.music__control .next {
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-position: -144px 0px;
+}
+.music__control .list {
+    width: 48px;
+    height: 48px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-position: -190px 0px;
+}
 
-.music__footer {}
+.music__footer {
+    background: #c4c4c4;
+}
+.music__list {
+    padding: 20px;
+}
+.music__list h3 {
+    font-size: 24px;
+    border-top: 2px solid #000;
+    padding-top: 10px;
+}
+.music__list h3 .list {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../img/music_control.svg) no-repeat;
+    background-size: 200px;
+    background-position: -100px 0px;
+    margin-right: 5px;
+    vertical-align: -5px;
+}
+.music__list ul {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.music__list li {
+    border-bottom: 1px solid #000;
+    list-style: none;
+    position: relative;
+    padding: 7px 5px 0;
+}
+.music__list li strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.music__list li em {
+    font-style: normal;
+}
+.music__list li span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
