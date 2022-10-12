@@ -1,0 +1,30 @@
+<svg width="400" height="48" viewBox="0 0 400 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_706_3527)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20 40H16V8H20V12H24L24 18H28V22H32V26H28V30H24L24 36H20V40Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M68 8H58V40H68V8ZM86 8H76V40H86V8Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M108 8H112V40H108V8ZM132 8H128V12H124V18H120L120 22H116V26H120L120 32H124V36H128V40H132V8Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M180 40H176V8H180V40ZM156 40H160V36H164V30H168L168 26H172V22H168L168 16H164V12H160V8H156V40Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M276 10H272V14H276V18H264V22L260 22V34H244V38H260V34H264L264 22H276V26H272V30H276V26H280V22H284V18H280V14H276V10ZM244 18H256V22H244V18ZM284 34H268V38H284V34Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M212 26H224V18V10H228H236V18H228V26V30V34V38H212V34V30V26ZM216 30V34H224V30H216ZM196 34H208V38H196V34ZM208 26H196V30H208V26ZM196 18H220V22H196V18ZM220 10H196V14H220V10Z" fill="black"/>
+<rect x="296" y="7" width="33" height="33" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M368 4H364V8H368V12H344V16H340V26H344V16H368V20L364 20V24H368V20H372V16H376V12H372V8H368V4ZM348 40H352V44H356V40H352V36H376V32H380V22H376V32H352V28L356 28V24H352V28H348V32H344V36H348V40Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M353 3H343V5H341V7H339V17H341V19H343V21H353V19H355V17H357V7H355V5H353V3ZM353 5V7H355V17H353V19H343V17H341V7H343V5H353Z" fill="white"/>
+<rect x="341" y="7" width="14" height="11" fill="black"/>
+<rect x="343" y="5" width="10" height="10" fill="black"/>
+<rect x="343" y="8" width="10" height="11" fill="black"/>
+<rect x="347" y="6" width="2" height="2" fill="white"/>
+<rect x="347" y="8" width="2" height="2" fill="white"/>
+<rect x="347" y="9" width="2" height="2" fill="white"/>
+<rect x="347" y="11" width="2" height="2" fill="white"/>
+<rect x="347" y="13" width="2" height="2" fill="white"/>
+<rect x="347" y="14" width="2" height="2" fill="white"/>
+<rect x="347" y="16" width="2" height="2" fill="white"/>
+<rect width="1" height="1" transform="matrix(1 0 0 -1 341 18)" fill="white"/>
+<rect width="1" height="1" transform="matrix(1 0 0 -1 354 18)" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_706_3527">
+<rect width="400" height="48" fill="white"/>
+</clipPath>
+</defs>
+</svg>

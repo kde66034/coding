@@ -8,8 +8,11 @@
 
     <link rel="stylesheet" href="../assets/css/bg.css">
     <link rel="stylesheet" href="../assets/css/game.css">
+    <link rel="stylesheet" href="../assets/css/music.css">
 </head>
 <body>
+    <div class="mouse__cursor"></div>
+
     <header id="header">
         <h1>Coding Note's Game World</h1>
         <div class="time"></div>
@@ -17,7 +20,32 @@
     <!-- // header -->
 
     <main id="main">
-
+        <div class="icon_box">
+            <div class="icon0">
+                <img src="../assets/img/icon0.png" alt="디스크">
+                <span>디스크</span>
+            </div>
+            <div class="icon1">
+                <img src="../assets/img/icon1.png" alt="뮤직">
+                <span>뮤직 듣기</span>
+            </div>
+            <div class="icon2">
+                <img src="../assets/img/icon2.png" alt="샵 폴더">
+                <span>샵 폴더</span>
+            </div>
+            <div class="icon3">
+                <img src="../assets/img/icon3.png" alt="동영상">
+                <span>동영상</span>
+            </div>
+            <div class="icon4">
+                <img src="../assets/img/icon4.png" alt="파일">
+                <span>파일</span>
+            </div>
+            <div class="icon5">
+                <img src="../assets/img/icon5.png" alt="FIGMA">
+                <span>FIGMA</span>
+            </div>
+        </div>
     </main>
     <!-- // main -->
 
@@ -26,8 +54,61 @@
     </footer>
     <!-- // footer -->
 
+    <!-- 뮤직 플레이어 -->
+    <div class="music__wrap">
+        <div class="music__inner">
+            <div class="music__header">
+                <div>***</div>
+                <h2>MUSIC PLAYER</h2>
+                <div>***</div>
+            </div>
+            <div class="music__contents">
+                <div class="music__view">
+                    <div class="img">
+                        <img src="../assets/img/music_view01.png" alt="">
+                    </div>
+                    <div class="title">
+                        <h3>Kazoom - Quincas Moreira</h3>
+                        <p>YouTube Music</p>
+                    </div>
+                </div>
+                <div class="music__control">
+                    <div class="progress">
+                        <div class="bar"></div>
+                        <div class="timer">
+                            <span class="current">0:00</span>
+                            <span class="duration">4:00</span>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <i title="전체 반복" class="repeat">전체 반복</i>
+                        <!-- <i title="한곡 반복" class="repeat_one"></i>
+                        <i title="랜덤 재생" class="shuffle"></i> -->
+                        <i title="이전곡 재생" class="prev">이전곡 재생</i>
+                        <div>
+                            <i title="재생" class="play">재생</i>
+                            <!-- <i title="정지" class="stop"></i> -->
+                        </div>
+                        <i title="다음곡 재생" class="next">다음곡 재생</i>
+                        <i title="재생목록" class="list">재생목록</i>
+                    </div>
+                </div>
+            </div>
+            <div class="music__footer"></div>
+        </div>
+    </div>
+
     <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
+        $(".icon0").draggable();
+        $(".icon1").draggable();
+        $(".icon2").draggable();
+        $(".icon3").draggable();
+        $(".icon4").draggable();
+        $(".icon5").draggable();
+
         function printTime(){
             const clock = document.querySelector(".time");
             const now = new Date();
@@ -43,16 +124,16 @@
             agent.innerText = os;
 
             if(os.indexOf("window") >= 0){
-                agent.innerText = "현재 Windows를 사용하고 있습니다.";
+                agent.innerText = "현재 Windows를 사용하고 있으며, 화면 크기는 "+ screen.width +"x"+ screen.height + "입니다.";
                 document.querySelector("body").classList.add("window");
             } else if(os.indexOf("macintosh") >= 0){
-                agent.innerText = "현재 Mac을 사용하고 있습니다.";
+                agent.innerText = "현재 Mac을 사용하고 있으며, 화면 크기는 "+ screen.width +"x"+ screen.height + "입니다.";
                 document.querySelector("body").classList.add("mac");
-            } else if(os.indexOf("iphone") >= 0){
-                agent.innerText = "현재 iPhone을 사용하고 있습니다.";
-                document.querySelector("body").classList.add("iphone");
+            } else if(os.indexOf("iphone") >= 0){l
+                agent.innerText = "현재 iPhone을 사용하고 있으며, 화면 크기는 "+ screen.width +"x"+ screen.height + "입니다.";
+                document.querySelector("body").cassList.add("iphone");
             } else if(os.indexOf("android") >= 0){
-                agent.innerText = "현재 Android를 사용하고 있습니다."
+                agent.innerText = "현재 Android를 사용하고 있으며, 화면 크기는 "+ screen.width +"x"+ screen.height + "입니다.";
                 document.querySelector("body").classList.add("android");
             }
         }
@@ -61,6 +142,15 @@
             printTime();
             printAgent();
         }
+
+        // 마우스 커서
+        // css로 만든 마우스커서 적용시키기
+        const cursor = document.querySelector(".mouse__cursor");
+
+        window.addEventListener("mousemove", (e) => {
+          cursor.style.left = e.clientX - 25 + "px";
+          cursor.style.top = e.clientY -25 + "px";
+        });
     </script>
 </body>
 </html>

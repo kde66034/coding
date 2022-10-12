@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'NeoDunggeunmo';
     font-weight: normal;
+    cursor: url(../img/kuromi_cursor.cur), auto;
 }
 body {
     width: 100%;
@@ -16,7 +17,7 @@ body {
 #header {
     position: fixed;
     width: 100%;
-    background: #000;
+    background: rgb(85, 63, 90);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,7 +28,43 @@ body {
     font-size: 30px;
 }
 #header .time {
+    text-align: right;
     color: #fff;
+}
+.icon0, .icon1, .icon2, .icon3, .icon4, .icon5 {
+    position: absolute;
+    width: 70px;
+    left: 50px;
+}
+.icon0 {
+    top: 100px;
+}
+.icon1 {
+    top: 220px;
+}
+.icon2 {
+    top: 340px;
+}
+.icon3 {
+    top: 460px;
+}
+.icon4 {
+    top: 580px;
+}
+.icon5 {
+    top: 700px;
+}
+.icon0 img, .icon1 img, .icon2 img, .icon3 img, .icon4 img, .icon5 img {
+    width: 70px;
+}
+.icon0 span, .icon1 span, .icon2 span, .icon3 span, .icon4 span, .icon5 span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+    white-space:nowrap;
+    text-align: center;
 }
 
 #footer {
@@ -35,12 +72,12 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #000;
+    background: rgb(85, 63, 90);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: 10px;
 }
 #footer .agent {
     
@@ -48,3 +85,17 @@ body {
 
 .mac #footer {}
 .window #footer {}
+
+/* 마우스 커서 */
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 90px;
+    height: 90px;
+    user-select: none;
+    pointer-events: none;
+    background: url(../img/kuromi_cursor.png);
+    background-size: contain;
+    z-index: 10000;
+  }
