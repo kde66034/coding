@@ -25,6 +25,34 @@
     background: #c4c4c4;
     width: 100%;
 }
+.music__contents .volume_icon {
+    position: absolute;
+    top: 40px;
+    right: 170px;
+}
+.music__contents .volumeOff_icon {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 170px;
+}
+.music__contents .volume_icon.hide {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 170px;
+}
+.music__contents .volumeOff_icon.show {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 170px;
+}
+.music__contents .volume_bar {
+    position: absolute;
+    right: 25px;
+    top: 40px;
+}
 .music__view {
     display: flex;
     padding: 20px;
@@ -187,3 +215,5 @@
     right: 0;
     top: 10px;
 }
+
+/* 볼륨 조절 */

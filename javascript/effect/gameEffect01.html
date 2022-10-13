@@ -51,6 +51,24 @@
 
     <footer id="footer">
         <div class="agent">agent</div>
+        <div class="modal__wrap">
+            <div class="modal__btn">
+                <label for="btn">소스 보기</label>
+            </div>
+            <div class="modal__cont">
+                <div class="modal__close">
+                    <span class="close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="t_iframe">
+                    <iframe src="https://github1s.com/kde66034/coding" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- // footer -->
 
@@ -63,6 +81,13 @@
                 <div>***</div>
             </div>
             <div class="music__contents">
+                <div class="volume__wrap">
+                    <img class="volume_icon" src="../assets/img/volume.svg" alt="볼륨" />
+                    <img class="volumeOff_icon" src="../assets/img/volumeoff.svg" alt="볼륨" />
+                    <div class="volume_bar">
+                        <input type="range" id="volume-control" min="0" max="10" />
+                    </div>
+                </div>
                 <div class="music__view">
                     <div class="img">
                         <img src="../assets/img/music-1.png" alt="">
@@ -175,6 +200,43 @@
             printTime();
             printAgent();
         }
+    </script>
+    <script>
+        //모달
+        const modalBtn = document.querySelector(".modal__btn");
+        const modalCont = document.querySelector(".modal__cont");
+        const modalClose = document.querySelector(".modal__close");
+
+        modalBtn.addEventListener("click", () => {
+            modalCont.classList.add("show");
+            modalCont.classList.remove("hide");
+        });
+        modalClose.addEventListener("click", () => {
+            modalCont.classList.add("hide");
+        });
+
+        // 탭 메뉴
+        const tabBtn = document.querySelectorAll(".modal__box .tabs > div");
+        const tabCont = document.querySelectorAll(".modal__box .cont > div");
+
+        tabBtn.forEach((element, index) => {
+            element.addEventListener("click", (event)=> {
+                event.preventDefault();
+            
+                tabBtn.forEach(el => {
+                    el.classList.remove("active");
+                })
+            
+                element.classList.add("active");
+            
+                tabCont.forEach(div => {
+                    div.style.display = "none";
+                });
+            
+            
+                tabCont[index].style.display = "block";
+            });
+        });
     </script>
 </body>
 </html>
