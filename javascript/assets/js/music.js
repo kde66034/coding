@@ -307,7 +307,7 @@ window.addEventListener("load", () => {
 });
 
 // 뮤직 플레이어 리스트 닫기 버튼 누르면
-const musicListList = document.querySelector(".music__list ul");
+const musicListList = document.querySelector(".music__list");
 const musicListCloseBtn = document.querySelector("#control-close");
 
 musicListCloseBtn.addEventListener("click", () => {

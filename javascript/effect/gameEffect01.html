@@ -95,8 +95,8 @@
                 </div>
             </div>
             <div class="music__footer">
-                <div class="music__list">
-                    <h3><span class="list">뮤직 리스트</span>  <span class="close-btn" id="control-close"></span></h3>
+                <div class="music__list close">
+                    <h3><span class="list">뮤직 리스트</span> <span class="close-btn" id="control-close"></span></h3>
                     <ul>
                         <!-- <li>
                             <strong>제목</strong>
@@ -115,12 +115,16 @@
     <script src="../assets/js/gsap.min.js"></script>
     <script src="../assets/js/music.js"></script>
     <script>
-        $(".icon0").draggable();
-        $(".icon1").draggable();
-        $(".icon2").draggable();
-        $(".icon3").draggable();
-        $(".icon4").draggable();
-        $(".icon5").draggable();
+        $( function() {
+            $(".icon0").draggable();
+            $(".icon1").draggable();
+            $(".icon2").draggable();
+            $(".icon3").draggable();
+            $(".icon4").draggable();
+            $(".icon5").draggable();
+            $(".music__wrap").draggable({
+            });
+        } );
 
         function printTime(){
             const clock = document.querySelector(".time");
@@ -171,8 +175,6 @@
             printTime();
             printAgent();
         }
-
-
     </script>
 </body>
 </html>

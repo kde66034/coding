@@ -79,7 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 34px;
 }
 .music__control .repeat {
     width: 48px;
@@ -135,7 +135,10 @@
 }
 
 .music__list {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
+}
+.music__list.close {
+    display: none;
 }
 .music__list h3 {
     font-size: 24px;
@@ -161,9 +164,6 @@
 .music__list ul {
     max-height: 200px;
     overflow-y: scroll;
-}
-.music__list ul.close {
-    max-height: 0px;
 }
 .music__list li {
     border-bottom: 1px solid #000;
