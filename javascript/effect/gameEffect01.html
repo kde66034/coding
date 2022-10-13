@@ -96,7 +96,7 @@
             </div>
             <div class="music__footer">
                 <div class="music__list">
-                    <h3><span class="list"></span> 뮤직 리스트</h3>
+                    <h3><span class="list">뮤직 리스트</span>  <span class="close-btn" id="control-close"></span></h3>
                     <ul>
                         <!-- <li>
                             <strong>제목</strong>
@@ -125,7 +125,23 @@
         function printTime(){
             const clock = document.querySelector(".time");
             const now = new Date();
-            const nowTime = `${now.getFullYear()}년 ${(now.getMonth()+1)}월 ${now.getDate()}일 ${now.getHours()}시 ${now.getMinutes()}분 ${now.getSeconds()}초`;
+
+            let nowHours = now.getHours();
+            let nowMins = now.getMinutes();
+            let nowSecs = now.getSeconds();
+            if(nowHours > 12) {
+                nowHours = `${nowHours - 12}`
+            } else if(nowHours >= 0 && nowHours<=9){
+                nowHours = `0${nowHours}`
+            };
+            if(nowMins < 10) nowMins = `0${nowMins}`;
+            if(nowSecs < 10) nowSecs = `0${nowSecs}`;
+            let nowMonth = now.getMonth() + 1;
+            let nowDate = now.getDate();
+            if(nowMonth  < 10 ) nowMonth = `0${nowMonth}`
+            if(nowDate < 10 ) nowDate = `0${nowDate}`
+
+            const nowTime = `${now.getFullYear()}년 ${(now.getMonth()+1)}월 ${now.getDate()}일 ${nowHours}시 ${nowMins}분 ${nowSecs}초`;
 
             clock.innerText = nowTime;
             setTimeout("printTime()", 1000);
@@ -155,6 +171,7 @@
             printTime();
             printAgent();
         }
+
 
     </script>
 </body>
