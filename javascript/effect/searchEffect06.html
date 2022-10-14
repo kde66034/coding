@@ -36,11 +36,12 @@
 
             <div class="search__click">
                 <ul>
-                    <li><a href="#c" class="btn1">반대로 정렬하기</a></li>
-                    <li><a href="#c" class="btn2">내림차순 정렬하기</a></li>
-                    <li><a href="#c" class="btn3">오름차순 정렬하기</a></li>
+                    <li><a href="#c" class="btn1">반대로 정렬</a></li>
+                    <li><a href="#c" class="btn2">내림차순 정렬</a></li>
+                    <li><a href="#c" class="btn3">오름차순 정렬</a></li>
                     <li><a href="#c" class="btn4">알파벳순(a~z)</a></li>
                     <li><a href="#c" class="btn5">알파벳순(z~a)</a></li>
+                    <li><a href="#c" class="btn6">랜덤 정렬</a></li>
                 </ul>
             </div>
 
@@ -834,7 +835,9 @@
             { num: 382, name: "z-index", desc: "요소들의 수직 위치를 설정합니다." },
         ];
 
-        const cssList = document.querySelector(".search__list .line");
+        const cssList = document.querySelector(".search__list .line");      // css 속성들 출력할 공간
+        
+        const cssProp = [];
 
         // 데이터 출력하기
         const updateList = () => {
@@ -842,6 +845,7 @@
 
             cssProperty.forEach((data, index) => {
                 listCSS += `<li>${data.num}. <strong>${data.name}</strong> : ${data.desc}</li>`;
+                cssProp.push(`<li>${data.num}. <strong>${data.name}</strong> : ${data.desc}</li>`);
             });
             cssList.innerHTML = listCSS;
         }
@@ -871,16 +875,20 @@
 
         // 알파벳 정렬(a~z)
         function sortAlphabet(){
-            cssProperty.sort((a,z) => {
-                return a.name - z.name;
+            cssProperty.sort((prev,cur) => {
+                const [upperPrev, upperCur] = [prev.name.toUpperCase(), cur.name.toUpperCase()]
+                if (upperPrev > upperCur) return 1;
+                if (upperPrev < upperCur) return -1;
             });
             updateList();
         }
 
         // 알파벳 정렬(z~a)
         function sortAlphabetZ(){
-            cssProperty.sort((a,z) => {
-                return z.name - a.name;
+            cssProperty.sort((prev, cur) => { 
+                const [upperPrev, upperCur] = [prev.name.toUpperCase(), cur.name.toUpperCase()]
+                if (upperPrev < upperCur) return 1;
+                if (upperPrev > upperCur) return -1;
             });
             updateList();
         }
@@ -908,6 +916,21 @@
         // 알파벳 정렬(z~a) 클릭
         document.querySelector(".btn5").addEventListener("click", () => {
             sortAlphabetZ();
+        });
+
+        // 피셔 예이츠 알고리즘
+        function shuffle(data) {
+            for(let i=data.length-1; i>=0; i--){
+                const randomIndex = Math.floor(Math.random() * (i + 1));
+                // console.log(randomIndex);
+                [data[i], data[randomIndex]] = [data[randomIndex], data[i]];
+                cssList.innerHTML += data[i];
+            }
+        }
+
+        document.querySelector(".btn6").addEventListener("click", () => {
+            cssList.innerHTML = "";
+            shuffle(cssProp);
         });
     </script>
 </body>

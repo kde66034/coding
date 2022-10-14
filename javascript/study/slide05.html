@@ -73,7 +73,8 @@
             </h3>
             <p class="t_desc">
                 slider__wrap > slider__img > slider__inner 안에 이미지 5장이 들어간 구조이며, 그 아래의 <i>slider__btn</i> div태그 안에
-                <i>이미지를 좌우로 슬라이드 할 수 있는 버튼</i>을 만들어두었다.
+                <i>이미지를 좌우로 슬라이드 할 수 있는 버튼</i>을 만들어두었다. 마지막 <i>slider__dot</i>의 경우 안의 a 태그들을 JS로 출력시키기 위해
+                <i>주석 처리</i>한다.
             </p>
             <div class="t_code">
 <pre><code class="language-html">&lt;body class="img08">
@@ -130,7 +131,7 @@
             <h3 class="t_tit2">CSS 소스
             </h3>
             <p class="t_desc">
-                기존의 슬라이드 효과에서 쓰던 CSS 코드에 버튼용(slider__btn) 코드를 추가하였다. 
+                기존의 슬라이드 효과에서 쓰던 CSS 코드에 닷 버튼(slider__dot) 코드를 추가하였다. 
                 공통/초기화 부분 CSS는 하단의 CSS 소스 보기 버튼을 눌러 확인할 것.
             </p>
             <div class="t_code">
@@ -205,6 +206,26 @@
 .slider__btn a.next {
     right: 0;
 }
+
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 2px;
+}
+.slider__dot .dot.active {
+    background: rgba(255,255,255,0.9);
+}
 </code></pre>
             </div>
             <!-- // CSS -->
@@ -216,40 +237,58 @@
                 주석을 참조할 것.
             </p>
             <div class="t_code">
-<pre><code class="language-js">// 상수·변수 생성
-const sliderWrap = document.querySelector(".slider__wrap");
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
 const sliderImg = document.querySelector(".slider__img");       // 보여지는 영역
 const sliderInner = document.querySelector(".slider__inner");   // 움직이는 영역
 const slider = document.querySelectorAll(".slider");            // 각각의 이미지
-const sliderBtn = document.querySelector(".slider__btn");    // 버튼
-const sliderBtnPrev = document.querySelector(".prev");       // 왼쪽 버튼
-const sliderBtnNext = document.querySelector(".next");       // 오른쪽 버튼
+const sliderDot = document.querySelector(".slider__dot");      // 슬라이더 닷
 
 let currentIndex = 0;                       // 현재 이미지
 let sliderCount = slider.length;            // 이미지 개수
 let sliderWidth = sliderImg.offsetWidth;    // 이미지 가로값
+let dotIndex = "";
 
-// 이미지 움직이는 영역
-function gotoSlider(num) {
+function init(){
+    slider.forEach(() => dotIndex += "<a href='#' class='dot'>이미지1</a>");
+    sliderDot.innerHTML = dotIndex;
+    // 첫 번째 닷 버튼한테 활성화 표시
+    sliderDot.firstElementChild.classList.add("active");
+}
+init();
+
+// 이미지 이동
+function gotoSlider(num){
     sliderInner.style.transition = "all 400ms";
     sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
     currentIndex = num;
+
+    // 두번째 이미지 ==> 두번째 닷 클래스 추가
+    // 1. 닷 메뉴 클래스 모두 삭제
+    // 2. 해당 이미지 해당 닷 메뉴 클래스 추가
+    let dotActive = document.querySelectorAll(".slider__dot .dot");
+    dotActive.forEach(el => el.classList.remove("active"));
+    dotActive[num].classList.add("active");
 }
     
-// 왼쪽 버튼 클릭했을 때 (이전 이미지로)
-sliderBtnPrev.addEventListener("click", () => {
-    // 현재 이미지(0+5-1)÷5
-    let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
-    
-    gotoSlider(prevIndex);
-    // 0 4 3 2 1
-});
-// 오른쪽 버튼 클릭했을 때 (다음 이미지로)
-sliderBtnNext.addEventListener("click", () => {
-    let nextIndex = (currentIndex + 1) % sliderCount;
+// 버튼 클릭했을 때
+document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+        let nextIndex = (currentIndex + 1) % sliderCount;
 
-    gotoSlider(nextIndex);
-    //0 1 2 3 4 
+        if(btn.classList.contains("prev")){
+            gotoSlider(prevIndex);
+        } else {
+            gotoSlider(nextIndex);
+        }
+    });
+})
+
+// 닷 버튼 클릭했을 때
+document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        gotoSlider(index);
+    });
 });
 </code></pre>
             </div>
@@ -259,10 +298,10 @@ sliderBtnNext.addEventListener("click", () => {
             <!-- // 슬라이드04 -->
 
             <div class="t_iframe" style="height: 1000px; padding-top: 0;">
-                <iframe src="https://kde66034.github.io/coding/javascript/effect/sliderEffect04.html" frameborder="0"></iframe>
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/sliderEffect05.html" frameborder="0"></iframe>
             </div>
             <div class="t_link">
-                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/sliderEffect04.html">원본(HTML/JS) 소스 보기</a>
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/sliderEffect05.html">원본(HTML/JS) 소스 보기</a>
             </div>
             <div class="t_link">
                 <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/slider.css">CSS 소스 보기</a>
