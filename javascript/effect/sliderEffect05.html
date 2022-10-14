@@ -386,9 +386,6 @@ sliderBtnNext.addEventListener("click", () => {
         const sliderImg = document.querySelector(".slider__img");       // 보여지는 영역
         const sliderInner = document.querySelector(".slider__inner");   // 움직이는 영역
         const slider = document.querySelectorAll(".slider");            // 각각의 이미지
-        const sliderBtn = document.querySelector(".slider__btn");    // 버튼
-        const sliderBtnPrev = sliderBtn.querySelector(".prev");       // 왼쪽 버튼
-        const sliderBtnNext = sliderBtn.querySelector(".next");       // 오른쪽 버튼
         const sliderDot = document.querySelector(".slider__dot");      // 슬라이더 닷
 
         let currentIndex = 0;                       // 현재 이미지
@@ -400,9 +397,44 @@ sliderBtnNext.addEventListener("click", () => {
             slider.forEach(() => dotIndex += "<a href='#' class='dot'>이미지1</a>");
             sliderDot.innerHTML = dotIndex;
             // 첫 번째 닷 버튼한테 활성화 표시
-            sliderDot.firstChild.classList.add("active");
+            sliderDot.firstElementChild.classList.add("active");
         }
         init();
+
+        // 이미지 이동
+        function gotoSlider(num){
+            sliderInner.style.transition = "all 400ms";
+            sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+            currentIndex = num;
+
+            // 두번째 이미지 ==> 두번째 닷 클래스 추가
+            // 1. 닷 메뉴 클래스 모두 삭제
+            // 2. 해당 이미지 해당 닷 메뉴 클래스 추가
+            let dotActive = document.querySelectorAll(".slider__dot .dot");
+            dotActive.forEach(el => el.classList.remove("active"));
+            dotActive[num].classList.add("active");
+        }
+        
+        // 버튼 클릭했을 때
+        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+                let nextIndex = (currentIndex + 1) % sliderCount;
+
+                if(btn.classList.contains("prev")){
+                    gotoSlider(prevIndex);
+                } else {
+                    gotoSlider(nextIndex);
+                }
+            });
+        })
+
+        // 닷 버튼 클릭했을 때
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                gotoSlider(index);
+            });
+        });
     </script>
 </body>
 </html>
