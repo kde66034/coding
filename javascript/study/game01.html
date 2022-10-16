@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 게임 효과 01</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">JavaScript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/sliderEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">패랠랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수·전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기 01</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기 02</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기 03</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">게임 이펙트 01</h2>
+            <p class="t_desc2">
+                이번 시간에는 그 동안 배웠던 JavaScript를 이용하여 게임 이펙트를 만들어보도록 하겠습니다. <br>
+                컴퓨터 바탕화면과 작동되는 뮤직 플레이어를 만들어보도록 하겠습니다.
+            </p>
+
+            <!-- // 게임 이펙트 만들기  -->
+
+            <hr>
+
+            <h3 class="t_tit2">HTML 소스 보기</h3>
+            <p class="t_desc">
+                HTML 구성은 헤더(제목, 시간)와 메인(바탕화면 아이콘), 푸터(agent, 소스 보기), 뮤직 플레이어로 구성된다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;body>
+    &lt;div class="mouse__cursor">&lt;/div>
+    &lt;!-- png 형식으로 마우스 커서를 적용할 때에 필요함, cur 파일 적용의 경우 불필요 -->
+
+    &lt;header id="header">
+        &lt;h1>Coding Note's Game World&lt;/h1>
+        &lt;div class="time">&lt;/div>
+    &lt;/header>
+    &lt;!-- // header -->
+
+    &lt;main id="main">
+        &lt;div class="icon_box">
+            &lt;div class="icon0">
+                &lt;img src="../assets/img/icon0.png" alt="디스크">
+                &lt;span>디스크&lt;/span>
+            &lt;/div>
+            &lt;div class="icon1">
+                &lt;img src="../assets/img/icon1.png" alt="뮤직">
+                &lt;span>뮤직 듣기&lt;/span>
+            &lt;/div>
+            &lt;div class="icon2">
+                &lt;img src="../assets/img/icon2.png" alt="샵 폴더">
+                &lt;span>샵 폴더&lt;/span>
+            &lt;/div>
+            &lt;div class="icon3">
+                &lt;img src="../assets/img/icon3.png" alt="동영상">
+                &lt;span>동영상&lt;/span>
+            &lt;/div>
+            &lt;div class="icon4">
+                &lt;img src="../assets/img/icon4.png" alt="파일">
+                &lt;span>파일&lt;/span>
+            &lt;/div>
+            &lt;div class="icon5">
+                &lt;img src="../assets/img/icon5.png" alt="FIGMA">
+                &lt;span>FIGMA&lt;/span>
+            &lt;/div>
+        &lt;/div>
+    &lt;/main>
+    &lt;!-- // main -->
+
+    &lt;footer id="footer">
+        &lt;div class="agent">agent&lt;/div>
+        &lt;div class="modal__wrap">
+            &lt;div class="modal__btn">
+                &lt;label for="btn">소스 보기&lt;/label>
+            &lt;/div>
+            &lt;div class="modal__cont">
+                &lt;div class="modal__close">
+                    &lt;span class="close">
+                        &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                            &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">&lt;/path>
+                        &lt;/svg>
+                    &lt;/span>
+                &lt;/div>
+                &lt;div class="t_iframe">
+                    &lt;iframe src="https://github1s.com/kde66034/coding" frameborder="0">&lt;/iframe>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/footer>
+    &lt;!-- // footer -->
+
+    &lt;!-- 뮤직 플레이어 -->
+    &lt;div class="music__wrap">
+        &lt;div class="music__inner">
+            &lt;div class="music__header">
+                &lt;div>***&lt;/div>
+                &lt;h2>MUSIC PLAYER&lt;/h2>
+                &lt;div>***&lt;/div>
+            &lt;/div>
+            &lt;div class="music__contents">
+                &lt;div class="volume__wrap">
+                    &lt;img class="volume_icon" src="../assets/img/volume.svg" alt="볼륨" />
+                    &lt;img class="volumeOff_icon" src="../assets/img/volumeoff.svg" alt="볼륨" />
+                    &lt;div class="volume_bar">
+                        &lt;input type="range" id="volume-control" min="0" max="10" />
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="music__view">
+                    &lt;div class="img">
+                        &lt;img src="../assets/img/music-1.png" alt="">
+                    &lt;/div>
+                    &lt;div class="title">
+                        &lt;h3>Kazoom - Quincas Moreira&lt;/h3>
+                        &lt;p>YouTube Music&lt;/p>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="music__control">
+                    &lt;div class="progress">
+                        &lt;div class="bar">
+                            &lt;audio id="main-audio" src="../assets/audio/music-1.mp3">&lt;/audio>
+                        &lt;/div>
+                        &lt;div class="timer">
+                            &lt;span class="current">0:00&lt;/span>
+                            &lt;span class="duration">4:00&lt;/span>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="control">
+                        &lt;i title="전체 반복" class="repeat" id="control-repeat">&lt;/i>
+                        &lt;!-- &lt;i title="한곡 반복" class="repeat_one">&lt;/i>
+                        &lt;i title="랜덤 재생" class="shuffle">&lt;/i> -->
+                        &lt;i title="이전곡 재생" class="prev" id="control-prev">&lt;/i>
+                        &lt;i title="재생" class="play" id="control-play">&lt;/i>
+                        &lt;i title="정지" class="stop" id="control-stop">&lt;/i>
+                        &lt;i title="다음곡 재생" class="next" id="control-next">&lt;/i>
+                        &lt;i title="재생목록" class="list" id="control-list">&lt;/i>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="music__footer">
+                &lt;div class="music__list close">
+                    &lt;h3>&lt;span class="list">뮤직 리스트&lt;/span> &lt;span class="close-btn" id="control-close">&lt;/span>&lt;/h3>
+                    &lt;ul>
+                        &lt;!-- &lt;li>
+                            &lt;strong>제목&lt;/strong>
+                            &lt;em>아티스트&lt;/em>
+                            &lt;span>재생시간&lt;/span>
+                        &lt;/li> -->
+                    &lt;/ul>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <!-- // HTML 소스 -->
+
+            <h3 class="t_tit2">JavaScript 소스 보기 : 헤더(상단바)에 시간 표시하기</h3>
+            <p class="t_desc">
+                시간, 날짜를 저장할 상수와 시, 분, 초를 저장할 변수를 생성한 다음
+                if문을 이용하여 시간을 나타내는 스크립트를 짜도록 한다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function printTime(){
+const clock = document.querySelector(".time");
+const now = new Date();
+
+let nowHours = now.getHours();
+let nowMins = now.getMinutes();
+let nowSecs = now.getSeconds();
+if(nowHours > 12) {
+    nowHours = `${nowHours - 12}`
+} else if(nowHours >= 0 && nowHours<=9){
+    nowHours = `0${nowHours}`
+};
+if(nowMins < 10) nowMins = `0${nowMins}`;
+if(nowSecs < 10) nowSecs = `0${nowSecs}`;
+let nowMonth = now.getMonth() + 1;
+let nowDate = now.getDate();
+if(nowMonth  < 10 ) nowMonth = `0${nowMonth}`
+if(nowDate < 10 ) nowDate = `0${nowDate}`
+
+const nowTime = `${now.getFullYear()}년 ${(now.getMonth()+1)}월 ${now.getDate()}일 ${nowHours}시 ${nowMins}분 ${nowSecs}초`;
+
+    clock.innerText = nowTime;
+    setTimeout("printTime()", 1000);
+}
+</code></pre>
+            </div>
+            <!-- // js 01 -->
+
+            <h3 class="t_tit2">JavaScript 소스 보기 : Agent</h3>
+            <p class="t_desc">
+                하단 푸터 영역에 현재 사용하고 있는 기기와 화면 크기를 표시시키기 위한 스크립트이다. 
+                agent, os라는 상수를 만들고 agent 영역에 innerText로 os 정보를 출력시킨다. 
+                if, else if문을 이용하여 각각 운영체제별로 출력시킬 문구를 스크립트로 짠다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function printAgent() {
+    const agent = document.querySelector(".agent");
+    const os = navigator.userAgent.toLocaleLowerCase();
+
+    agent.innerText = os;
+
+    if(os.indexOf("window") >= 0){
+        agent.innerText = "현재 Windows를 사용하고 있으며, 화면 크기는 "+ screen.width +"x"+ screen.height + "입니다.";
+        document.querySelector("body").classList.add("window");
+    } else if(os.indexOf("macintosh") >= 0){
+        agent.innerText = "현재 Mac을 사용하고 있으며, 화면 크기는 "+ screen.width +"x"+ screen.height + "입니다.";
+        document.querySelector("body").classList.add("mac");
+    } else if(os.indexOf("iphone") >= 0){l
+        agent.innerText = "현재 iPhone을 사용하고 있으며, 화면 크기는 "+ screen.width +"x"+ screen.height + "입니다.";
+        document.querySelector("body").cassList.add("iphone");
+    } else if(os.indexOf("android") >= 0){
+        agent.innerText = "현재 Android를 사용하고 있으며, 화면 크기는 "+ screen.width +"x"+ screen.height + "입니다.";
+        document.querySelector("body").classList.add("android");
+    }
+}
+
+window.onload = function() {
+    printTime();
+    printAgent();
+}
+</code></pre>
+            </div>
+            <!-- // js 02 -->
+
+            <h3 class="t_tit2">JavaScript 소스 보기 : 아이콘과 뮤직 플레이어를 자유자재로 드래그</h3>
+            <p class="t_desc">
+                아이콘과 뮤직 플레이어를 자유자재로 드래그하여 위치 이동을 가능하게 하도록 하는 스크립트이다.
+                jQuery를 설치하여야 하며 자유자재 드래그를 시켜주고자 하는 div의 클래스값에 .draggable를 붙이면 된다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">$( function() {
+    $(".icon0").draggable();
+    $(".icon1").draggable();
+    $(".icon2").draggable();
+    $(".icon3").draggable();
+    $(".icon4").draggable();
+    $(".icon5").draggable();
+    $(".music__wrap").draggable({
+    });
+} );
+</code></pre>
+            </div>
+            <!-- // js 03 -->
+
+            <h3 class="t_tit2">JavaScript 소스 보기 : 뮤직 플레이어</h3>
+            <p class="t_desc">
+                allMusic 상수에는 음악 정보(곡명, 아티스트, 이미지, 오디오 파일명)를 담고, 필요한 만큼의 상수를 선언한다.
+                현재 음악 인덱스 번호를 처음에는 1로 설정한다.
+                그런 다음엔 음악 재생, 재생 버튼, 정지 버튼, 이전 곡 듣기 버튼, 다음 곡 듣기 버튼 스크립트를 짠 다음
+                버튼을 클릭했을 때 해당 스크립트들이 실행될 수 있도록 addEventListener를 이용하여 스크립트를 짜도록 한다. 
+                그 외에도 뮤직 리스트 구현, 뮤직 진행바, 오디오가 끝났을 때, 버튼 바꿔주기 등의 스크립트가 있으며 아래 코드의
+                주석 처리된 설명문을 참고하도록 한다.
+            </p>
+            <details>
+                <summary>뮤직 플레이어 JS 소스 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">const allMusic = [
+    {
+        name: "1. Kazoom",
+        artist: "Quincas Moreira",
+        img: "music-1",
+        audio: "music-1"
+    },
+    {
+        name: "2. Calimba",
+        artist: "E's Jammy Jams",
+        img: "music-2",
+        audio: "music-2"
+    },
+    {
+        name: "3. This Old Man (instrumental)",
+        artist: "The Green Orbs",
+        img: "music-3",
+        audio: "music-3"
+    },
+    {
+        name: "4. This Old Man (vocal)",
+        artist: "The Green Orbs",
+        img: "music-4",
+        audio: "music-4"
+    },
+    {
+        name: "5. The Farmer In The Dell",
+        artist: "The Green Orbs",
+        img: "music-5",
+        audio: "music-5"
+    },
+    {
+        name: "6. The Farmer In The Dell (Instrumental)",
+        artist: "The Green Orbs",
+        img: "music-6",
+        audio: "music-6"
+    },
+    {
+        name: "7. Snack Time",
+        artist: "The Green Orbs",
+        img: "music-7",
+        audio: "music-7"
+    },
+    {
+        name: "8. Sand Castles",
+        artist: "The Green Orbs",
+        img: "music-8",
+        audio: "music-8"
+    },
+    {
+        name: "9. Rock-a-bye Baby",
+        artist: "The Green Orbs",
+        img: "music-9",
+        audio: "music-9"
+    },
+    {
+        name: "10. A Walk Into Space",
+        artist: "Topher Mohr and Alex Elena",
+        img: "music-10",
+        audio: "music-10"
+    },
+]
+
+const musicWrap = document.querySelector(".music__wrap");
+const musicView = musicWrap.querySelector(".music__view .img img");
+const musicName = musicWrap.querySelector(".music__view .title h3");
+const musicArtist = musicWrap.querySelector(".music__view .title p");
+const musicAudio = musicWrap.querySelector("#main-audio");
+const musicPlay = musicWrap.querySelector("#control-play");
+const musicPrevBtn = musicWrap.querySelector("#control-prev");
+const musicNextBtn = musicWrap.querySelector("#control-next");
+const musicProgress = musicWrap.querySelector(".progress");
+const musicProgressBar = musicWrap.querySelector(".progress .bar");
+const musicProgressCurrent = musicWrap.querySelector(".progress .timer .current");
+const musicProgressDuration = musicWrap.querySelector(".progress .timer .duration");
+const musicRepeat = musicWrap.querySelector("#control-repeat");
+const musicListBtn = musicWrap.querySelector("#control-list");
+const musicList = musicWrap.querySelector(".music__list");
+const musicListUl = musicList.querySelector(".music__list ul");
+
+let musicIndex = 1;     // 현재 음악 인덱스
+
+// 음악 재생
+function loadMusic(num){
+    musicName.innerText = allMusic[num-1].name;     // 뮤직 이름 로드
+    musicArtist.innerText = allMusic[num-1].artist;     // 뮤직 아티스트 로드
+    musicView.src = `../assets/img/${allMusic[num-1].img}.png`;     // 뮤직 이미지 로드
+    musicView.alt = allMusic[num-1].name;       // 뮤직 이미지 alt 태그 로드
+    musicAudio.src = `../assets/audio/${allMusic[num-1].audio}.mp3`;    // 뮤직 파일 로드
+}
+musicAudio.play();
+
+// 재생 버튼
+function playMusic() {
+    musicWrap.classList.add("paused");
+    musicPlay.setAttribute("title", "정지");
+    musicPlay.setAttribute("class", "stop");
+    musicAudio.play();
+}
+
+// 정지 버튼
+function pauseMusic() {
+    musicWrap.classList.remove("paused");
+    musicPlay.setAttribute("title", "재생");
+    musicPlay.setAttribute("class", "play");
+    musicAudio.pause();
+}
+
+// 이전 곡 듣기 버튼
+function prevMusic() {
+    // musicIndex --
+    musicIndex == 1 ? musicIndex = allMusic.length : musicIndex--;
+    loadMusic(musicIndex);
+    playMusic();
+    playListMusic();        // 재생목록 업데이트
+}
+
+// 다음 곡 듣기 버튼
+function nextMusic() {
+    // musicIndex ++
+    musicIndex == allMusic.length ? musicIndex = 1 : musicIndex++;
+    loadMusic(musicIndex);
+    playMusic();
+    playListMusic();        // 재생목록 업데이트
+}
+
+// 플레이 버튼 클릭
+musicPlay.addEventListener("click", () => {
+    const isMusicPaused = musicWrap.classList.contains("paused");   // 음악이 재생중
+    isMusicPaused ? pauseMusic() : playMusic();
+});
+
+// 이전곡 버튼 클릭
+musicPrevBtn.addEventListener("click", () => {
+    prevMusic();
+});
+
+// 다음곡 버튼 클릭
+musicNextBtn.addEventListener("click", () => {
+    nextMusic();
+});
+
+// 뮤직 리스트 버튼
+musicListBtn.addEventListener("click", () => {
+    musicList.classList.add("show");
+});
+
+// 뮤직 리스트 구현하기
+for(let i=0; i&lt;allMusic.length; i++){
+    let li = `
+        &lt;li data-index="${i+1}">
+            &lt;strong>${allMusic[i].name}&lt;/strong>
+            &lt;em>${allMusic[i].artist}&lt;/em>
+            &lt;audio class="${allMusic[i].audio}" src="../assets/audio/${allMusic[i].audio}.mp3">&lt;/audio>
+            &lt;span class="audio-duration" id="${allMusic[i].audio}">재생시간&lt;/span>
+        &lt;/li>
+    `;
+
+    // musicListUl.innerHTML += li;     // 맨 마지막 곡의 시간만 표시되는 문제有
+    musicListUl.insertAdjacentHTML("beforeend", li);    // 문제 해결 : 모든 곡의 시간을 표시 가능
+
+    // 리스트에 음악 시간 불러오기
+    let liAudioDuration = musicListUl.querySelector(`#${allMusic[i].audio}`);       // 리스트에서 시간을 표시할 선택자를 가져옴
+    let liAudio = musicListUl.querySelector(`.${allMusic[i].audio}`);               // 리스트에서 오디오를 가져옴
+    liAudio.addEventListener("loadeddata", () => {
+        let audioDuration = liAudio.duration;                                       // 오디오 전체 길이
+        let totalMin = Math.floor(audioDuration / 60);                              // 전체 길이를 분 단위로 쪼갬
+        let totalSec = Math.floor(audioDuration % 60);                              // 초 계산
+        if(totalSec &lt; 10) totalSec = `0${totalSec}`;                                // 앞 자리에 0 추가
+        liAudioDuration.innerText = `${totalMin}:${totalSec}`;                      // 문자열 출력
+        liAudioDuration.setAttribute("data-duration", `${totalMin}:${totalSec}`);   // 속성에 오디오 길이 기록
+    });
+}
+
+// 뮤직 리스트를 클릭하면 재생
+function playListMusic(){
+    const musicListAll = musicListUl.querySelectorAll("li");    // 뮤직 리스트 목록 가져오기
+    for(let i=0; i&lt;musicListAll.length; i++){
+        let audioTag = musicListAll[i].querySelector(".audio-duration");
+
+        if(musicListAll[i].classList.contains("playing")){
+            musicListAll[i].classList.remove("playing");        // 클래스 존재시 삭제
+            let adDuration = audioTag.getAttribute("data-duration");    // 오디오 길이값 가져오기
+            audioTag.innerText = adDuration;    // 오디오 길이값 출력
+        }
+
+        if(musicListAll[i].getAttribute("data-index") == musicIndex){   // 현재 뮤직인덱스랑 리스트 인덱스 값이 같다면
+            musicListAll[i].classList.add("playing");                   // 클래스 playing 추가
+            audioTag.innerText = "재생중";                              // 재생중일 경우 재생중 멘트 추가   
+        }
+
+        musicListAll[i].setAttribute("onclick", "clicked(this)");
+    }
+}
+
+// 뮤직 리스트를 클릭하면
+function clicked(el){
+    let getLiIndex = el.getAttribute("data-index");     // 클릭한 리스트의 인덱스 값을 저장
+    musicIndex = getLiIndex;    // 클릭한 인덱스 값을 뮤직 인덱스에 저장
+    loadMusic(musicIndex);      // 해당 인덱스 뮤직 로드
+    playMusic();                // 음악 재생
+    playListMusic();            // 음악 리스트 업데이트
+}
+
+// 뮤직 진행바
+musicAudio.addEventListener("timeupdate", e => {
+    // console.log(e);
+
+    const currentTime = e.target.currentTime;   // 현재 재생되는 시간
+    const duration = e.target.duration;         // 오디오의 총 길이
+    let progressWidth = (currentTime/duration) * 100;   // 전체길이에서 현재 진행되는 시간을 백분위로 나눔
+    
+    musicProgressBar.style.width = `${progressWidth}%`;
+
+    // 전체 시간
+    musicAudio.addEventListener("loadeddata", () => {
+        let audioDuration = musicAudio.duration;
+        let totalMin = Math.floor(audioDuration / 60);    // 전체시간을 분단위로 쪼갬
+        let totalSec = Math.floor(audioDuration % 60);    // 남은 초를 저장
+        if(totalSec &lt; 10) totalSec = `0${totalSec}`;      // 초가 한자리수일때 일의 자리수 앞에 0을 붙임
+        musicProgressDuration.innerText = `${totalMin}:${totalSec}`;    // 완성된 시간 문자열                                 
+    });
+
+    // 진행 시간
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec &lt; 10) currentSec = `0${currentSec}`;
+    musicProgressCurrent.innerText = `${currentMin}:${currentSec}`;
+});
+
+// 진행 버튼 클릭
+musicProgress.addEventListener("click", (e) => {
+    let progressWidth = musicProgress.clientWidth;  // 진행바 전체 길이
+    let clickedOffsetX = e.offsetX;                 // 진행바 기준으로 측정되는 X좌표값
+    let songDuration = musicAudio.duration;         // 오디오 전체 길이
+
+    musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;   // 백분위로 나눈 숫자에 다시 전체 길이를 곱해서 현재 재생값으로 바꿈
+});
+
+// 반복 버튼 클릭
+musicRepeat.addEventListener("click", () => {
+    let getAttr = musicRepeat.getAttribute("class");
+
+    switch(getAttr){
+        case "repeat" : 
+            musicRepeat.setAttribute("class", "repeat_one");
+            musicRepeat.setAttribute("title", "한곡 반복");
+        break;
+        case "repeat_one" :
+            musicRepeat.setAttribute("class", "shuffle");
+            musicRepeat.setAttribute("title", "랜덤 재생");
+        break;
+        case "shuffle" : 
+            musicRepeat.setAttribute("class", "repeat");
+            musicRepeat.setAttribute("title", "전체 반복");
+        break;
+    }
+});
+
+// 오디오가 끝나면
+musicAudio.addEventListener("ended", () => {
+    let getAttr = musicRepeat.getAttribute("class");
+    
+    switch(getAttr) {
+        case "repeat" :
+            nextMusic();
+        break;
+        case "repeat_one" : 
+            playMusic();
+        break;
+        case "shuffle" :
+            let randomIndex = Math.floor(Math.random() * allMusic.length + 1);      // 랜덤 인덱스 생성
+
+            do {
+                randomIndex = Math.floor(Math.random() * allMusic.length + 1);
+            } while ( musicIndex == randomIndex )
+                musicIndex = randomIndex;   // 현재 인덱스를 랜덤 인덱스로 변경
+                loadMusic(musicIndex);      // 랜덤 인덱스가 반영된 현재 인덱스 값으로 음악을 다시 로드
+                playMusic();                // 로드한 음악을 재생
+            break;
+    }
+    playListMusic();        // 재생목록 업데이트
+});
+
+// 버튼 바꿔주기
+const btnPlay = document.querySelector("#control-play");
+const btnStop = document.querySelector("#control-stop");
+
+btnStop.style.display = "none";
+
+btnPlay.addEventListener("click", () => {
+    playMusic();
+    btnStop.style.display = "block";
+    btnPlay.style.display = "none";
+});
+
+btnStop.addEventListener("click", () => {
+    pauseMusic();
+    btnStop.style.display = "none";
+    btnPlay.style.display = "block";
+});
+
+// 로드
+window.addEventListener("load", () => {
+    loadMusic(musicIndex);  // 음악 재생
+    playListMusic();        // 리스트 초기화
+});
+
+// 뮤직 플레이어 리스트 닫기 버튼 누르면
+const musicListList = document.querySelector(".music__list");
+const musicListCloseBtn = document.querySelector("#control-close");
+
+musicListCloseBtn.addEventListener("click", () => {
+    musicListList.classList.add("close");
+});
+
+// 뮤직 플레이어 리스트 버튼 누르면
+const musicControlListBtn = document.querySelector(".music__control .list");
+
+musicControlListBtn.addEventListener("click", () => {
+    musicListList.classList.remove("close");
+});
+
+// 볼륨 조절
+const audio = document.getElementById("main-audio");
+const audioVolume = document.getElementById("volume-control");
+const volumeIcon = document.querySelector(".volume_icon");
+const volumeOffIcon = document.querySelector(".volumeOff_icon");
+
+audioVolume.addEventListener("change", function (e) {
+    audio.volume = this.value / 10;
+    if (this.value == 0) {
+        volumeIcon.classList.add("hide");
+        volumeOffIcon.classList.add("show");
+    } else {
+        volumeIcon.classList.remove("hide");
+        volumeOffIcon.classList.remove("show");
+    }
+});
+</code></pre>
+                </div>
+            </details>
+            <!-- // js 04 -->
+
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="height: 1000px; padding-top: 0;">
+                <iframe src="https://kde66034.github.io/coding/javascript/effect/gameEffect01.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kde66034.github.io/coding/javascript/effect/gameEffect01.html">원본 사이트 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/effect/gameEffect01.html">원본(HTML/JS) 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/game.css">게임 이펙트 CSS</a>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/kde66034/coding/blob/main/javascript/assets/css/music.css">뮤직 플레이어 CSS</a>
+            </div>
+            <!-- //  -->
+        </div>
+    </main>
+    <!-- // main -->
+
+    <footer id="footer">
+        <a href="mailto:kde66034@gmail.com">kde66034@gmail.com</a>
+    </footer>
+    <!-- // footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
