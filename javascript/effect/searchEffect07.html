@@ -1194,28 +1194,28 @@
         searchRestart.addEventListener("click", restart);
 
         // 버튼 바꿔주기
-        // const btnPlay = document.querySelector(".search__audio .play");
-        // const btnStop = document.querySelector(".search__audio .stop");
+        const btnPlay = document.querySelector(".search__audio .play");
+        const btnStop = document.querySelector(".search__audio .stop");
 
-        // btnPlay.style.display = "none";
+        btnPlay.style.display = "none";
 
-        // searchStart.addEventListener("click", () => {
-        //     btnPlay.style.display = "block";
-        //     btnStop.style.display = "none";
-        //     searchAudio.play();
-        // });
+        searchStart.addEventListener("click", () => {
+            btnPlay.style.display = "block";
+            btnStop.style.display = "none";
+            searchAudio.play();
+        });
 
-        // btnStop.addEventListener("click", () => {
-        //     searchAudio.play();
-        //     btnStop.style.display = "none";
-        //     btnPlay.style.display = "block";
-        // });
+        btnStop.addEventListener("click", () => {
+            searchAudio.play();
+            btnStop.style.display = "none";
+            btnPlay.style.display = "block";
+        });
 
-        // btnPlay.addEventListener("click", () => {
-        //     searchAudio.pause();
-        //     btnPlay.style.display = "none";
-        //     btnStop.style.display = "block";
-        // });
+        btnPlay.addEventListener("click", () => {
+            searchAudio.pause();
+            btnPlay.style.display = "none";
+            btnStop.style.display = "block";
+        });
 
         // 전체 속성 개수 출력
         const searchInfoAll = document.querySelector(".search__info .info__all");
