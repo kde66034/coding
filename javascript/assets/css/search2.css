@@ -1,13 +1,14 @@
 :root {
   --htmlColor: #223547;
-  --countColor1: #472222;
-  --countColor2: #224736;
+  --cssColor: #472222;
+  --javascriptColor: #224736;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "NexonLv1Gothic";
+  color: var(--htmlColor);
 }
 *,
 *:before,
@@ -191,9 +192,8 @@ li {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
-
 .search__info .type {
   text-align: center;
   margin-bottom: 10px;
@@ -214,31 +214,6 @@ li {
   color: #fff;
   cursor: pointer;
 }
-
-.search__answers {
-  border-bottom: 2px dashed var(--htmlColor);
-  padding-bottom: 40px;
-}
-.search__answers span {
-  display: inline-block;
-  background: var(--htmlColor);
-  padding: 10px 20px;
-  color: #fff;
-  border-radius: 30px;
-  margin: 3px;
-}
-.search__missAnswers {
-  border-bottom: 2px dashed var(--htmlColor);
-  padding: 40px 0;
-}
-.search__missAnswers span {
-  display: inline-block;
-  border: 1px solid var(--htmlColor);
-  color: var(--htmlColor);
-  padding: 10px 20px;
-  border-radius: 30px;
-}
-
 .search__desc {
   padding: 20px 40px 20px 60px;
   margin-bottom: 50px;
@@ -268,73 +243,6 @@ li {
   background-color: var(--htmlColor);
   color: #fff;
 }
-
-.search__audio {
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.search__result {
-  position: fixed;
-  right: 1vw;
-  top: 3vw;
-  /* transform: translate(-50%, -50%); */
-  width: 40vw;
-  height: 40vw;
-  display: flex;
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
-  display: none;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px solid #946bc5;
-}
-.search__result.show {
-  display: flex;
-  animation: rubberBand 1s 0.6s ease;
-}
-.search__result .result {
-  margin-top: 30px;
-  font-size: 1.2vw;
-  line-height: 1.5;
-}
-.search__result .restart {
-  background: #946bc5;
-  color: #fff;
-  border: 0;
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-@keyframes rubberBand {
-  from {
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-
 @media (max-width: 600px) {
   .search__wrap {
     padding: 20px;
@@ -366,7 +274,6 @@ li {
 .search__answers {
   border-bottom: 2px dashed var(--htmlColor);
   padding-bottom: 40px;
-  display: none;
 }
 .search__answers span {
   display: inline-block;
@@ -374,11 +281,11 @@ li {
   padding: 10px 20px;
   color: #fff;
   border-radius: 30px;
+  margin: 3px;
 }
 .search__missAnswers {
   border-bottom: 2px dashed var(--htmlColor);
   padding: 40px 0;
-  display: none;
 }
 .search__missAnswers span {
   display: inline-block;
@@ -386,9 +293,86 @@ li {
   color: var(--htmlColor);
   padding: 10px 20px;
   border-radius: 30px;
+  margin: 3px;
+}
+.search__audio {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.search__audio > span {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 6.3706C14 4.65827 11.9884 3.73774 10.6926 4.85712L7.36317 7.73321C6.99989 8.04704 6.53583 8.21972 6.05576 8.21973L4.49998 8.21974C3.11928 8.21975 2 9.33903 2 10.7197V14.0127C2 15.3934 3.11929 16.5127 4.5 16.5127H6.0558C6.53587 16.5127 6.99993 16.6854 7.36322 16.9992L10.6926 19.8753C11.9884 20.9947 14 20.0741 14 18.3618V12.3662V6.3706Z' fill='%23223547' stroke='%23223547' stroke-width='1.5'/%3E%3Cpath d='M18 14.1215L22.2427 9.87891' stroke='%23223547' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18 9.87894L22.2427 14.1216' stroke='%23223547' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.search__audio .playing {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 6.3706C15 4.65827 12.9884 3.73774 11.6926 4.85712L8.36317 7.73321C7.99989 8.04704 7.53583 8.21972 7.05576 8.21973L5.49998 8.21974C4.11928 8.21975 3 9.33903 3 10.7197V14.0127C3 15.3934 4.11929 16.5127 5.5 16.5127H7.0558C7.53587 16.5127 7.99993 16.6854 8.36322 16.9992L11.6926 19.8753C12.9884 20.9947 15 20.0741 15 18.3618V12.3662V6.3706Z' fill='%23223547' stroke='%23223547' stroke-width='1.5'/%3E%3Cpath d='M18 15.3667C18.6279 14.531 19 13.4923 19 12.3667C19 11.2411 18.6279 10.2024 18 9.3667' stroke='%23223547' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M20 18.3667C21.2558 16.6954 22 14.6179 22 12.3667C22 10.1155 21.2558 8.03802 20 6.3667' stroke='%23223547' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.search__result {
+  position: fixed;
+  right: 1vw;
+  top: 1vw;
+  transform: scale3d(0, 0, 0);
+  width: 40vw;
+  height: 40vw;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  border: 6px solid #946BC5;
+}
+.search__result.show {
+  display: flex;
+  animation: rubberBand 1s 0.6s ease forwards;
+}
+.search__result .result {
+  margin-top: 30px;
+  font-size: 1.4vw;
+  line-height: 1.4;
+}
+.search__result .restart {
+  background: #946BC5;
+  color: #fff;
+  border: 0;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+@keyframes rubberBand {
+  from {
+    transform: scale3d(0, 0, 0);
+  }
+  20% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 /* modal__wrap */
+.modal__wrap {
+}
+
 .modal__cont {
   width: 100%;
   height: 100vh;
@@ -646,11 +630,3 @@ li {
     width: 96%;
   }
 }
-
-/* 요소를 안보이게 하는 방법 4가지 
-    1. display: none; (애니메이션 X, 영역 사라짐)
-    2. opacity: 0; (애니메이션 O, 영역 남아있음)
-    3. visibility: hidden; (애니메이션 X, 영역 사라짐)
-    4. transform: scale(0) (애니메이션O, 영역 X)
-    5. width: 0; height: 0 (애니메이션 X, 영역 사라짐) : blind
-*/

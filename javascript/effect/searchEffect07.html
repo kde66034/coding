@@ -19,7 +19,7 @@
 </head>
 <body>
     <header id="header">
-        <h1>Search</h1>
+        <h1><a href="searchEffect.html">Search</a></h1>
         <nav>
             <ul>
                 <li><a href="searchEffect01.html">01</a></li>
@@ -1032,15 +1032,19 @@
         const searchStart = document.querySelector(".search__box .start");
         const searchInput = document.querySelector("#search");
         const searchAudio = document.querySelector("#audio");
+        const searchAudioBtn = document.querySelector(".search__audio > span");
         const searchScoreTotal = document.querySelector(".search__info .info__all");
         const searchScoreNow = document.querySelector(".search__info .info__result");
         const searchResult = document.querySelector(".search__result .result");
         const searchResultWrap = document.querySelector(".search__result");
+        const searchRestart = document.querySelector(".search__result .restart");
 
         // 2분동안
-        let timeReamining = 5,    //남은 시간
+        let timeReamining = 3,    //남은 시간
+            timeInterval = "",      //시간 간격
             score = 0,              //점수
             answers = {};           //새로운 정답
+            
 
         // 리스트 뽑아주기  // 나중에 힌트보기가 될 것.
         function updateList(){
@@ -1056,17 +1060,35 @@
             searchStart.style.display = "none";
             searchList.style.display = "none";
 
+            // 다시 시작할 때 기존 데이터 초기화
+            searchAnswers.innerHTML = "";
+            searchMissAnswers.innerHTML = "";
+
             // 시간 설정 //1초(1000)에 한번씩 실행되라
-            setInterval(reduceTime, 1000);
+            timeInterval= setInterval(reduceTime, 1000);
 
             // 뮤직 추가하기
-            searchAudio.play();
+            searchAudioBtn.classList.add("playing");
+            audio();
 
             // 점수 계산
-            
+            searchScoreTotal.innerText = cssProperty.length;
 
             // 정답 체크
             checkAnswers();
+        }
+
+        // 음악 설정
+        function audio(){
+            searchAudioBtn.addEventListener("click", () => {
+                searchAudioBtn.classList.toggle("playing");
+
+                if(searchAudioBtn.classList.contains("playing")){
+                    searchAudio.play();
+                } else {
+                    searchAudio.pause();
+                }
+            });
         }
 
         // 인풋 체크하기
@@ -1121,9 +1143,9 @@
 
         // 시간 표시하기
         function displayTime(){
-            // timeReamining글씨가 120,119 이런식으로 나오기때문에 분초로 나눠주기
+            // timeReamining 글씨가 120, 119 이런식으로 초만 나옴
             if(timeReamining <= 0){
-                return "0:00";
+                return "0:00";  // 형식을 분:초로 변경
             } else {
                 let minutes = Math.floor(timeReamining / 60);
                 let seconds = timeReamining % 60;
@@ -1136,51 +1158,64 @@
         // 게임 끝났을 때
         function endQuiz(){
             // alert("게임이 끝났습니다.!!!");
-            // 다시 시작하기
+            // 시작 버튼 만들기
             searchStart.style.display = "block";
+            searchStart.style.pointerEvents = "none";
 
             // 오답 보여주기
             missAnswers();
 
             // 음악 끝내기
             searchAudio.pause();
-            btnPlay.style.display = "none";
-            btnStop.style.display = "block";
+            searchAudioBtn.classList.remove("playing");
+
+            // 시간 정지
+            clearInterval(timeInterval);
 
             // 메시지 출력
             searchResultWrap.classList.add("show");
             let point = Math.round(score/cssProperty.length * 100);
             searchResult.innerHTML = `게임이 끝났습니다. <br> 당신은 ${cssProperty.length}개 중에 ${score}개를 맞췄습니다. <br> 당신의 점수는 ${point}점입니다.`;
         }
-        searchStart.addEventListener("click", startQuiz);
+        // 다시 시작하기
+        function restart(){
+            searchResultWrap.classList.remove("show");
+            searchAudioBtn.classList.remove("playing");
+            searchAudio.play();
+            startQuiz();
+            timeReamining = 120;
+            score = 0;
+            searchScoreNow.innerText = "0";
+        }
 
         // 게임 버튼 이벤트
         searchStart.addEventListener("click", startQuiz);
         searchInput.addEventListener("input", checkInput);
+        searchRestart.addEventListener("click", restart);
 
         // 버튼 바꿔주기
-        const btnPlay = document.querySelector(".search__audio .play");
-        const btnStop = document.querySelector(".search__audio .stop");
+        // const btnPlay = document.querySelector(".search__audio .play");
+        // const btnStop = document.querySelector(".search__audio .stop");
 
-        btnPlay.style.display = "none";
+        // btnPlay.style.display = "none";
 
-        searchStart.addEventListener("click", () => {
-            btnPlay.style.display = "block";
-            btnStop.style.display = "none";
-            searchAudio.play();
-        });
+        // searchStart.addEventListener("click", () => {
+        //     btnPlay.style.display = "block";
+        //     btnStop.style.display = "none";
+        //     searchAudio.play();
+        // });
 
-        btnStop.addEventListener("click", () => {
-            searchAudio.play();
-            btnStop.style.display = "none";
-            btnPlay.style.display = "block";
-        });
+        // btnStop.addEventListener("click", () => {
+        //     searchAudio.play();
+        //     btnStop.style.display = "none";
+        //     btnPlay.style.display = "block";
+        // });
 
-        btnPlay.addEventListener("click", () => {
-            searchAudio.pause();
-            btnPlay.style.display = "none";
-            btnStop.style.display = "block";
-        });
+        // btnPlay.addEventListener("click", () => {
+        //     searchAudio.pause();
+        //     btnPlay.style.display = "none";
+        //     btnStop.style.display = "block";
+        // });
 
         // 전체 속성 개수 출력
         const searchInfoAll = document.querySelector(".search__info .info__all");
