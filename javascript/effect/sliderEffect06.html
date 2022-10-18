@@ -467,7 +467,17 @@ sliderBtnNext.addEventListener("click", () => {
         });
         sliderInner.addEventListener("transitionend", checkIndex);
 
-                // 닷 넘어가게 하는거 숙제임!!!
+        // 닷 버튼 클릭
+        document.querySelectorAll('.slider__dot a').forEach((a, index) => {
+            a.addEventListener('click', e => {
+                document.querySelectorAll('.slider__dot a').forEach(b => {
+                    b.classList.remove('active');
+                });
+                a.classList.add('active');
+                sliderInner.style.left = `${-((index + 1) * sliderWidth)}px`;
+                currentIndex = index;
+            });
+        });
     </script>
 </body>
 </html>
