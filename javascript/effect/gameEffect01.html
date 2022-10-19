@@ -359,10 +359,8 @@
             $(".icon3").draggable();
             $(".icon4").draggable();
             $(".icon5").draggable();
-            $(".music__wrap").draggable({
-            });
-            $(".search__wrap").draggable({
-            });
+            $(".music__wrap").draggable();
+            $(".search__wrap").draggable();
         } );
 
         function printTime(){
@@ -410,6 +408,11 @@
             }
         }
 
+        window.onload = function() {
+            printTime();
+            printAgent();
+        }
+
         // 서치 게임 열기
         document.querySelector(".icon_box .icon2").addEventListener("click", () => {
             document.querySelector(".search__wrap").classList.add("show");
@@ -421,10 +424,7 @@
             document.querySelector(".search__wrap").classList.remove('show');
         });
 
-        window.onload = function() {
-            printTime();
-            printAgent();
-        }
+        
     </script>
     <script>
         //모달
