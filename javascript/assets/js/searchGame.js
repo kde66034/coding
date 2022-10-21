@@ -401,163 +401,341 @@ const searchResult = document.querySelector(".search__result .result");
 const searchResultWrap = document.querySelector(".search__result");
 const searchRestart = document.querySelector(".search__result .restart");
 
+// let timeReamining = 120,    //남은시간
+//     timeInterval = "",    //시간 간격
+//     Score = 0,            //점수
+//     answers = {};         //새로운 정답
+
+// function updateList(){
+//     cssProperty.forEach( data =>{
+//         searchList.innerHTML += `<span>${data.name}</span>`;
+//     });
+// }
+// updateList();
+
+// //게임 시작하기
+// function startQuiz(){
+//     //시작버튼 없애기 / 속성 리스트 없애기
+//     searchStart.style.display = "none";
+//     searchList.style.display = "none";
+
+//     // 다시 시작할때 기존 데이터 초기화
+//     searchAnswers.innerHTML = "";
+//     searchMissAnswers.innerHTML = "";
+    
+
+//     //시간 설정
+//     timeInterval = setInterval(reduceTime, 1000);
+
+//     //뮤직 추가하기
+//     searchAudio.play();
+//     searchAudioStop.style.display = "none";
+//     searchAudioPlay.style.display = "block";
+    
+//     //점수 계산하기
+//     searchTotal.innerText = cssProperty.length;
+
+//     //정답 체크
+//     checkAnswers();
+// }
+
+// //인풋 체크하기
+// function checkInput(){
+//     let input = event.currentTarget.value.trim().toLowerCase();
+    
+//     if(answers.hasOwnProperty(input) && !answers[input]){
+//         answers[input] = true;  //정답일 경우 true로 바꿔주기
+        
+//         //정답표시
+//         searchAnswers.style.display = "block";
+//         searchAnswers.innerHTML += `<span>${input}</span>`;
+        
+//         //점수 표시
+//         Score++;    //점수++
+//         searchCount.innerHTML = Score;
+        
+
+//         //정답 사운드
+//         searchAudioC.play();
+
+//         //정답 초기화
+//         searchInput.value = "";
+//     }
+
+// }
+// //정답 체크하기 : 정답을 객체 파일로 만들기
+// function checkAnswers(){
+//     cssProperty.forEach(item =>{
+//         let answer = item.name.trim().toLowerCase();
+//         answers[answer] = false;
+//     });
+//     // console.log(answers);
+// }
+
+// // 오답 보여주기
+// function missAnswers(){
+//     searchMissAnswers.style.display = "block";
+//     cssProperty.forEach(miss =>{
+//         let answer = miss.name.trim().toLowerCase();
+//         if(answers[answer] == false){
+//             searchMissAnswers.innerHTML += `<span>${miss.name}</span>`;
+//         }
+//     });
+// }
+
+// //시간 설정하기
+// function reduceTime(){
+//     timeReamining--;
+
+//     if(timeReamining == 0) endQuiz();
+
+//     searchTime.innerText = displayTime();
+// }
+
+// //시간 표시하기
+// function displayTime(){
+//     if(timeReamining <= 0){
+//         return "0:00";
+//     } else {
+//         let minutes = Math.floor(timeReamining / 60);
+//         let seconds = timeReamining % 60;
+        
+//         //초 단위가 한자리 수일 때 0추가
+//         if( seconds < 10) seconds = "0" + seconds;
+//         return minutes + ":" + seconds;
+//     }
+// }
+
+// //게임 끝났을 때
+// function endQuiz(){
+//     // alert("게임이 끝났습니다.");
+
+//     //시작버튼 만들기
+//     searchStart.style.display = "block";
+//     searchStart.style.pointerEvents = "none";
+
+//     //오답 보여주기
+//     missAnswers();
+
+//     // 음악 끄기
+//     searchAudio.pause();
+//     searchAudioPlay.style.display = "none";
+//     searchAudioStop.style.display = "block";
+
+//     // 시간 정지
+//     clearInterval(timeInterval);
+
+//     //메세지 출력
+//     searchResultWrap.classList.add("show");
+//     let point = Math.round((Score / cssProperty.length)*100);
+//     searchResult.innerHTML = `게임이 끝났습니다.<br> 당신은 ${cssProperty.length}개 중에 ${Score}개를 맟추셨습니다.<br>점수는 ${point}점 입니다.`;
+
+// };
+
+// // 다시 시작하기
+// function restart(){
+//     setTimeout(()=>{
+//         searchResultWrap.classList.remove("show");
+//         timeReamining = 120;
+//         Score = 0;
+
+//         searchCount.innerHTML = "0";
+//         searchAnswers.innerHTML = "";
+//         searchMissAnswers.innerHTML = "";
+//         searchAudio.play();
+        
+//         startQuiz();
+//     }, 1000)            
+// }
+
+// //버튼 이벤트
+// searchStart.addEventListener("click", startQuiz);
+// searchInput.addEventListener("input", checkInput);
+// searchRestart.addEventListener("click", restart);
+
+
+// searchAudioPlay.addEventListener("click", ()=>{
+//     searchAudioPlay.style.display = "none";
+//     searchAudioStop.style.display = "block";
+//     searchAudio.pause();
+// });
+// searchAudioStop.addEventListener("click", ()=>{
+//     searchAudioPlay.style.display = "block";
+//     searchAudioStop.style.display = "none";
+//     searchAudio.play();
+// });
+
 let timeReamining = 120,    //남은시간
-    timeInterval = "",    //시간 간격
-    Score = 0,            //점수
-    answers = {};         //새로운 정답
+        timeInterval = "",  //시간 간격
+        Score = 0,    //점수
+        answers = {}; //새로운 정답
 
-function updateList(){
-    cssProperty.forEach( data =>{
-        // searchList.innerHTML += `<span>${data.name}</span>`;
-    });
-}
-updateList();
-
-//게임 시작하기
-function startQuiz(){
-    //시작버튼 없애기 / 속성 리스트 없애기
-    searchStart.style.display = "none";
-    searchList.style.display = "none";
-
-    // 다시 시작할때 기존 데이터 초기화
-    searchAnswers.innerHTML = "";
-    searchMissAnswers.innerHTML = "";
-    
-
-    //시간 설정
-    timeInterval = setInterval(reduceTime, 1000);
-
-    //뮤직 추가하기
-    searchAudio.play();
-    searchAudioStop.style.display = "none";
-    searchAudioPlay.style.display = "block";
-    
-    //점수 계산하기
-    searchTotal.innerText = cssProperty.length;
-
-    //정답 체크
-    checkAnswers();
-}
-
-//인풋 체크하기
-function checkInput(){
-    let input = event.currentTarget.value.trim().toLowerCase();
-    
-    if(answers.hasOwnProperty(input) && !answers[input]){
-        answers[input] = true;  //정답일 경우 true로 바꿔주기
-        
-        //정답표시
-        searchAnswers.style.display = "block";
-        searchAnswers.innerHTML += `<span>${input}</span>`;
-        
-        //점수 표시
-        Score++;    //점수++
-        searchCount.innerHTML = Score;
-        
-
-        //정답 사운드
-        searchAudioC.play();
-
-        //정답 초기화
-        searchInput.value = "";
+    function updateList(){
+        cssProperty.forEach( data =>{
+            searchList.innerHTML += `<span>${data.name}</span>`;
+        });
     }
+    updateList();
 
-}
-//정답 체크하기 : 정답을 객체 파일로 만들기
-function checkAnswers(){
-    cssProperty.forEach(item =>{
-        let answer = item.name.trim().toLowerCase();
-        answers[answer] = false;
-    });
-    // console.log(answers);
-}
-
-// 오답 보여주기
-function missAnswers(){
-    searchMissAnswers.style.display = "block";
-    cssProperty.forEach(miss =>{
-        let answer = miss.name.trim().toLowerCase();
-        if(answers[answer] == false){
-            searchMissAnswers.innerHTML += `<span>${miss.name}</span>`;
-        }
-    });
-}
-
-//시간 설정하기
-function reduceTime(){
-    timeReamining--;
-
-    if(timeReamining == 0) endQuiz();
-
-    searchTime.innerText = displayTime();
-}
-
-//시간 표시하기
-function displayTime(){
-    if(timeReamining <= 0){
-        return "0:00";
-    } else {
-        let minutes = Math.floor(timeReamining / 60);
-        let seconds = timeReamining % 60;
+    //게임 시작하기
+    function startQuiz(){
+        //시작버튼 없애기 / 속성 리스트 없애기
+        searchStart.style.display = "none";
+        searchList.style.display = "none";
         
-        //초 단위가 한자리 수일 때 0추가
-        if( seconds < 10) seconds = "0" + seconds;
-        return minutes + ":" + seconds;
-    }
-}
 
-//게임 끝났을 때
-function endQuiz(){
-    // alert("게임이 끝났습니다.");
+        //시간 설정
+        timeInterval = setInterval(reduceTime, 1000);
 
-    //시작버튼 만들기
-    searchStart.style.display = "block";
-    searchStart.style.pointerEvents = "none";
-
-    //오답 보여주기
-    missAnswers();
-
-    // 음악 끄기
-    searchAudio.pause();
-    searchAudioPlay.style.display = "none";
-    searchAudioStop.style.display = "block";
-
-    // 시간 정지
-    clearInterval(timeInterval);
-
-    //메세지 출력
-    searchResultWrap.classList.add("show");
-    let point = Math.round((Score / cssProperty.length)*100);
-    searchResult.innerHTML = `게임이 끝났습니다.<br> 당신은 ${cssProperty.length}개 중에 ${Score}개를 맟추셨습니다.<br>점수는 ${point}점 입니다.`;
-
-};
-
-// 다시 시작하기
-function restart(){
-    setTimeout(()=>{
-        searchResultWrap.classList.remove("show");
+        //뮤직 추가하기
         searchAudio.play();
+        searchAudioStop.style.display = "none";
+        searchAudioPlay.style.display = "block";
         
-        startQuiz();
+        //점수 계산하기
+        searchTotal.innerText = cssProperty.length;
+
+        //정답 체크
+        checkAnswers();
+
+    }
+
+    //인풋 체크하기
+    function checkInput(){
+        let input = event.currentTarget.value.trim().toLowerCase();
+        
+        if(answers.hasOwnProperty(input) && !answers[input]){
+            answers[input] = true;  //정답일 경우 true로 바꿔주기
+            Score++;    //점수++
+
+            //정답표시
+            searchAnswers.style.display = "block";
+            searchAnswers.innerHTML += `<span>${input}</span>`;
+            //점수 표시
+            searchCount.innerHTML = Score;
+
+            //정답 사운드
+            // searchAudioC.play();
+
+            //정답 초기화
+            searchInput.value = "";
+        }
+
+    }
+    //정답 체크하기 : 정답을 객체 파일로 만들기
+    function checkAnswers(){
+        cssProperty.forEach(item =>{
+            let answer = item.name.trim().toLowerCase();
+            answers[answer] = false;
+        });
+        // console.log(answers);
+    }
+
+    // 오답 보여주기
+    function missAnswers(){
+        searchMissAnswers.style.display = "block";
+        cssProperty.forEach(miss =>{
+            let answer = miss.name.trim().toLowerCase();
+            if(answers[answer] == false){
+                searchMissAnswers.innerHTML += `<span>${miss.name}</span>`;
+            }
+        });
+    }
+
+    //시간 설정하기
+    function reduceTime(){
+        timeReamining--;
+
+        if(timeReamining == 0) endQuiz();
+
+        searchTime.innerText = displayTime();
+    }
+
+    //시간 표시하기
+    function displayTime(){
+        if(timeReamining <= 0){
+            return "0:00";
+        } else {
+            let minutes = Math.floor(timeReamining / 60);
+            let seconds = timeReamining % 60;
+            
+            //초 단위가 한자리 수일 때 0추가
+            if( seconds < 10) seconds = "0" + seconds;
+            return minutes + ":" + seconds;
+        }
+    }
+
+    //게임 끝났을 때
+    function endQuiz(){
+        // alert("게임이 끝났습니다.");
+        //시작버튼 만들기
+        searchStart.style.display = "block";
+        searchStart.style.pointerEvents = "none";
+
+        //오답 보여주기
+        missAnswers();
+
+        // 음악 끄기
+        searchAudio.pause();
+        searchAudioPlay.style.display = "none";
+        searchAudioStop.style.display = "block";
+
+        //시간 정지
+        clearInterval(timeInterval);
+
+        //메세지 출력
+        searchResultWrap.classList.add("show");
+        let point = Math.round((Score / cssProperty.length)*100);
+        searchResult.innerHTML = `게임이 끝났습니다.<br> 당신은 ${cssProperty.length}개 중에 ${Score}개를 맟추셨습니다.<br>점수는 ${point}점 입니다.`;
+
+    };
+
+    //다시 시작하기
+    function restart(){
+        setTimeout(()=>{
+            searchResultWrap.classList.remove("show");
+            timeReamining = 120;
+            Score = 0;
+            searchCount.innerText = "0";
+
+            searchAnswers.innerHTML = "";
+            searchMissAnswers.innerHTML = "";
+
+            startQuiz();
+        }, 1000);
+    }
+
+    
+    //버튼 이벤트
+    searchStart.addEventListener("click", startQuiz);
+    searchInput.addEventListener("input", checkInput);
+    searchAudioPlay.addEventListener("click", ()=>{
+        searchAudioPlay.style.display = "none";
+        searchAudioStop.style.display = "block";
+        searchAudio.pause();
+    });
+    searchAudioStop.addEventListener("click", ()=>{
+        searchAudioPlay.style.display = "block";
+        searchAudioStop.style.display = "none";
+        searchAudio.play();
+    });
+    searchRestart.addEventListener("click", restart);
+
+    // 서치게임
+    const searchClose2 = document.querySelectorAll(".search__header div");
+    searchClose2.addEventListener("click", ()=>{
+        searchResultWrap.classList.remove("show");
         timeReamining = 120;
         Score = 0;
-        searchCount.innerHTML = "0";
-    }, 1000)            
-}
+        searchCount.innerText = "0";
 
-//버튼 이벤트
-searchStart.addEventListener("click", startQuiz);
-searchInput.addEventListener("input", checkInput);
-searchRestart.addEventListener("click", restart);
+        searchAnswers.innerHTML = "";
+        searchMissAnswers.innerHTML = "";
 
+        
+        searchAudio.pause();
+        searchAudioPlay.style.display = "none";
+        searchAudioStop.style.display = "block";
 
-searchAudioPlay.addEventListener("click", ()=>{
-    searchAudioPlay.style.display = "none";
-    searchAudioStop.style.display = "block";
-    searchAudio.pause();
-});
-searchAudioStop.addEventListener("click", ()=>{
-    searchAudioPlay.style.display = "block";
-    searchAudioStop.style.display = "none";
-    searchAudio.play();
-});
+        clearInterval(timeInterval);
+    });

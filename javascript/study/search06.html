@@ -157,8 +157,8 @@ const updateList = () => {
     let listCSS = "";
     
     cssProperty.forEach((data, index) => {
-        listCSS += `<li>${data.num}. <strong>${data.name}</strong> : ${data.desc}</li>`;
-        cssProp.push(`<li>${data.num}. <strong>${data.name}</strong> : ${data.desc}</li>`);
+        listCSS += `&lt;li>${data.num}. &lt;strong>${data.name}&lt;/strong> : ${data.desc}&lt;/li>`;
+        cssProp.push(`&lt;li>${data.num}. &lt;strong>${data.name}&lt;/strong> : ${data.desc}&lt;/li>`);
     });
     cssList.innerHTML = listCSS;
 }
@@ -191,7 +191,7 @@ function sortAlphabet(){
     cssProperty.sort((prev,cur) => {
         const [upperPrev, upperCur] = [prev.name.toUpperCase(), cur.name.toUpperCase()]
         if (upperPrev > upperCur) return 1;
-        if (upperPrev < upperCur) return -1;
+        if (upperPrev &lt; upperCur) return -1;
     });
     updateList();
 }
@@ -200,7 +200,7 @@ function sortAlphabet(){
 function sortAlphabetZ(){
     cssProperty.sort((prev, cur) => { 
         const [upperPrev, upperCur] = [prev.name.toUpperCase(), cur.name.toUpperCase()]
-        if (upperPrev < upperCur) return 1;
+        if (upperPrev &lt; upperCur) return 1;
         if (upperPrev > upperCur) return -1;
     });
     updateList();
