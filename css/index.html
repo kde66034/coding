@@ -18,6 +18,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <style>
+        .main__title {
+            display: none;
+        }
+        .subContents > div {
+            display: none;
+        }
+        .subContents > div.active {
+            display: block;
+        }
+
         :root {
             --black: #624a29;
             --white: #fff;
@@ -1061,7 +1071,7 @@
                 <!-- // subtitle -->
 
                 <div class="subContents">
-                    <div class="subCont1">
+                    <div class="subCont1 active">
                         <div class="table">
                             <table>
                                 <colgroup>
