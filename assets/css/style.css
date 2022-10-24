@@ -220,10 +220,10 @@
 }
 #contents_tit p {
 	padding:35px 0; 
-	font-family: 'Gaegu', cursive; font-size: 40px;
+	font-family: 'abel', cursive; font-size: 40px;
 }
 #contents_tit p a {
-	color:#2c94c4; 
+	color: #7a79de;
 }
 
 
@@ -384,8 +384,8 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #f2a1d1;
-	color: #FFFFFF;
+	background: #c0bdff;
+	color: #fff;
 	font-size: 25px;
 	font-weight: 300;
 	line-height: 32px;
@@ -451,6 +451,41 @@
 	text-transform: uppercase;
 }
 
+.image-wrap .hover-wrap .overlay-text-thumb-donut.bts {
+    background: #7a79de;
+    color: #fff;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    line-height: 1;
+    height: auto;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: 20px;
+}
+.image-wrap .hover-wrap .overlay-text-thumb-donut.bts:hover {
+    background: #6563ca;
+}
+.image-wrap .hover-wrap .overlay-text-thumb1-donut.bts {
+    background: #7a79de;
+    color: #fff;
+    width: auto;
+    left: 50%;
+    top: 54%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    line-height: 1;
+    height: auto;
+}
+.image-wrap .hover-wrap .overlay-text-thumb1-donut.bts:hover {
+    background: #6563ca;
+}
 
 /* 사과 */
 
