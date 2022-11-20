@@ -52,13 +52,13 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 /* Header  */
 
 #header{
-	background:#a5d5fa center 57px;
+	background:#e2e0ff center 57px;
 	padding: 10px 0 10px 0px;
 }
 #header.sub {
 	background:url(../img/header_bg.png) center 7px;
 	padding: 35px 0 55px 0px;
-	border-top: 3px solid #32799e;
+	border-top: 3px solid #7a79de;
 }
 #header.sub .header_icon {
 	display: none;
@@ -75,7 +75,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 #header img {width: 190px; display: block; margin: 0 auto; padding-right: 50px;}
 
 #header h1{
-	color: #fff;
+	color: #7a79de;
 	margin-bottom: 0px;
 	margin-top: 20px;
 	font-weight: 500;
@@ -134,24 +134,24 @@ pre.pre-show{
 
 .header_icon {text-align: center;}
 .header_icon li {display: inline; margin: 0 2px;}
-.header_icon li a {position: relative; background-color: #77b5e6; width: 60px; height: 60px; border-radius: 50%; display: inline-block; font-size: 28px; color: #fff; line-height: 60px; transition: box-shadow 0.3s ease;}
+.header_icon li a {position: relative; background-color: #a3a6e3; width: 60px; height: 60px; border-radius: 50%; display: inline-block; font-size: 28px; color: #fff; line-height: 60px; transition: box-shadow 0.3s ease;}
 .header_icon li a span {
     position: absolute; left: 50%; top: -40px; transform: translateX(-50%);
-    font-size: 12px; line-height: 1.6; background: #77b5e6; padding: 3px 9px;
+    font-size: 12px; line-height: 1.6; background: #8285c9; padding: 3px 9px;
     border-radius: 6px 0; opacity: 0; transition: opacity 0.3s ease, top 0.3s ease;
 }
 .header_icon li a span:before {
     content: '';
     position: absolute; left: 50%; bottom: -5px;
     transform: translateX(-50%);
-    border-top: 5px solid #77b5e6;
+    border-top: 5px solid #8285c9;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
 }
 .header_icon li a:hover span {opacity: 1; top: -33px;}
 .header_icon li a:hover {
     box-shadow: 
-        0 0 0 3px rgba(97,148,189,0.9) inset,
+        0 0 0 3px #8285c9 inset,
         0 0 0 100px rgba(0,0,0,0.1) inset;
 }
 
